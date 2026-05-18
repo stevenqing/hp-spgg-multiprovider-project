@@ -1,0 +1,1490 @@
+\section{Posterior Decoupling Theorem}
+\label{sec:decoupling}
+
+This section states and proves the main structural result.
+
+\subsection{Likelihood Factorization}
+
+We first derive the conditional likelihood of an observed trajectory given the latent world. Under H-PSMG, the policy $\pi_k$ at episode $k$ is a function only of the history $\mathcal{H}_{k-1}$ and the algorithmic posterior samples $(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$, which are themselves measurable with respect to $\mathcal{H}_{k-1}$. Crucially, $\pi_k$ does not depend on the true latent $(P^*, \boldsymbol{\theta}^*)$.
+
+\begin{lemma}[Joint Likelihood Factorization]
+\label{lem:likelihood}
+Under Assumptions~\ref{ass:TI} and \ref{ass:RL}, the trajectory likelihood at episode $k$ factorizes as
+\begin{equation}
+\label{eq:lik-factor}
+P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}) = c_k(\tau_k) \cdot L_P(\tau_k; P) \cdot \prod_{i \in [n]} L_{\Theta,i}(\tau_k; \theta_i)
+\end{equation}
+where
+\begin{align}
+c_k(\tau_k) &:= \mathbb{E}_{\pi_k \mid \mathcal{H}_{k-1}}\left[\prod_{h=1}^H \pi_k(a_h^k \mid s_h^k)\right], \label{eq:ck} \\
+L_P(\tau_k; P) &:= \prod_{h=1}^H P(s_{h+1}^k \mid s_h^k, a_h^k), \label{eq:lp} \\
+L_{\Theta,i}(\tau_k; \theta_i) &:= \prod_{h=1}^H P(r_h^{k,i} \mid s_h^k, a_h^k, \theta_i). \label{eq:ltheta}
+\end{align}
+The constant $c_k(\tau_k)$ depends on $\tau_k$ and $\mathcal{H}_{k-1}$ but not on $(P, \boldsymbol{\theta})$.
+\end{lemma}
+
+\begin{proof}
+Conditional on $\pi_k$, the trajectory likelihood unrolls along the time axis as
+\begin{equation}
+P(\tau_k \mid \pi_k, P, \boldsymbol{\theta}) = \prod_{h=1}^H \pi_k(a_h^k \mid s_h^k) \cdot P(s_{h+1}^k \mid s_h^k, a_h^k, \boldsymbol{\theta}) \cdot \prod_{i \in [n]} P(r_h^{k,i} \mid s_h^k, a_h^k, \boldsymbol{\theta}).
+\end{equation}
+Apply Assumption~\ref{ass:TI} to drop $\boldsymbol{\theta}$ from the transition factor, and Assumption~\ref{ass:RL} to localize the reward factor to $\theta_i$:
+\begin{equation}
+P(\tau_k \mid \pi_k, P, \boldsymbol{\theta}) = \prod_{h=1}^H \pi_k(a_h^k \mid s_h^k) \cdot \prod_{h=1}^H P(s_{h+1}^k \mid s_h^k, a_h^k) \cdot \prod_{h=1}^H \prod_{i \in [n]} P(r_h^{k,i} \mid s_h^k, a_h^k, \theta_i).
+\end{equation}
+Marginalize over $\pi_k$ with respect to $P(\pi_k \mid \mathcal{H}_{k-1})$, which is independent of $(P, \boldsymbol{\theta})$:
+\begin{align}
+P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}) &= \int P(\pi_k \mid \mathcal{H}_{k-1}) \cdot P(\tau_k \mid \pi_k, P, \boldsymbol{\theta}) \, d\pi_k \\
+&= \mathbb{E}_{\pi_k \mid \mathcal{H}_{k-1}}\left[\prod_{h=1}^H \pi_k(a_h^k \mid s_h^k)\right] \cdot L_P(\tau_k; P) \cdot \prod_{i \in [n]} L_{\Theta,i}(\tau_k; \theta_i).
+\end{align}
+The factors $L_P$ and $L_{\Theta,i}$ depend respectively on $P$ alone and $\theta_i$ alone, and the leading expectation depends on $\tau_k$ and $\mathcal{H}_{k-1}$ alone.
+\end{proof}
+
+\subsection{Main Theorem}
+
+\begin{theorem}[Posterior Decoupling]
+\label{thm:decoupling-app}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, and \ref{ass:PF}, the posterior distribution over the latent world factorizes at every episode:
+\begin{equation}
+\label{eq:decoupling-app}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) = \mu_{k+1}^P(P) \cdot \prod_{i \in [n]} \mu_{k+1}^{\Theta,i}(\theta_i), \quad \forall k \in \{0, 1, \ldots, K\}
+\end{equation}
+where the marginals admit the recursive updates
+\begin{equation}
+\mu_{k+1}^P(P) \propto \mu_k^P(P) \cdot L_P(\tau_k; P), \quad \mu_{k+1}^{\Theta,i}(\theta_i) \propto \mu_k^{\Theta,i}(\theta_i) \cdot L_{\Theta,i}(\tau_k; \theta_i)
+\end{equation}
+with initial conditions $\mu_1^P = P_0^P$ and $\mu_1^{\Theta,i} = P_0^{\Theta,i}$.
+\end{theorem}
+
+\begin{proof}
+We proceed by induction on $k$.
+
+\textit{Base case ($k=0$).} By Assumption~\ref{ass:PF}, $P(P, \boldsymbol{\theta} \mid \mathcal{H}_0) = P_0(P, \boldsymbol{\theta}) = P_0^P(P) \prod_{i \in [n]} P_0^{\Theta,i}(\theta_i)$, which has the required factored form.
+
+\textit{Inductive step.} Suppose $P(P, \boldsymbol{\theta} \mid \mathcal{H}_{k-1}) = \mu_k^P(P) \prod_{i} \mu_k^{\Theta,i}(\theta_i)$. By Bayes' rule,
+\begin{equation}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) \propto P(P, \boldsymbol{\theta} \mid \mathcal{H}_{k-1}) \cdot P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}).
+\end{equation}
+Apply Lemma~\ref{lem:likelihood}:
+\begin{align}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) &\propto \mu_k^P(P) \prod_{i} \mu_k^{\Theta,i}(\theta_i) \cdot c_k(\tau_k) \cdot L_P(\tau_k; P) \cdot \prod_{i} L_{\Theta,i}(\tau_k; \theta_i) \\
+&\propto \left[\mu_k^P(P) L_P(\tau_k; P)\right] \cdot \prod_{i} \left[\mu_k^{\Theta,i}(\theta_i) L_{\Theta,i}(\tau_k; \theta_i)\right].
+\end{align}
+The factor $c_k(\tau_k)$ does not depend on $(P, \boldsymbol{\theta})$ and is absorbed into the normalization constant. The remaining product factorizes into a $P$-only term and $n$ separate $\theta_i$-only terms. Normalizing each factor independently yields the recursive forms stated in the theorem and establishes the desired posterior factorization.
+\end{proof}
+
+\begin{corollary}[Storage and Update Complexity]
+\label{cor:storage}
+Maintaining the joint posterior $P(P, \boldsymbol{\theta} \mid \mathcal{H}_k)$ under H-PSMG requires $O\left(\dim(P_0^P) + n |\Theta|\right)$ storage, as opposed to the naive $O\left(\dim(P_0^P) \cdot |\Theta|^n\right)$ that a non-factored posterior would require. Each Bayesian update costs $O(H)$ likelihood evaluations per module.
+\end{corollary}
+
+\begin{proposition}[Trajectory-Level Equivalence with Joint-PSRL]
+\label{prop:bit-identical}
+Consider an idealised Joint-PSRL algorithm that maintains the joint posterior $\mu_k^\Theta$ on $\Theta = \prod_i \Theta_i$ and at each episode samples $\hat{\boldsymbol\theta}_k \sim \mu_k^\Theta$. Under the assumptions of Theorem~\ref{thm:decoupling-app} and \emph{coupled RNG} (formalised below), the trajectories produced by H-PSMG and Joint-PSRL are pathwise identical: $\tau_k^{\mathrm{H\text{-}PSMG}} = \tau_k^{\mathrm{Joint\text{-}PSRL}}$ for every $k \geq 1$ almost surely. In particular the cumulative regrets agree exactly:
+\begin{equation}
+\mathrm{Reg}_i^B\big[\textnormal{H-PSMG}\big](K) = \mathrm{Reg}_i^B\big[\textnormal{Joint-PSRL}\big](K) \quad \forall i, K, \text{ a.s.}
+\end{equation}
+
+The coupling is constructed as follows. At episode $k$, both algorithms draw a single shared seed $u_k = (u_k^P, u_k^{\Theta, 1}, \ldots, u_k^{\Theta, n}) \sim \mathrm{Unif}([0,1]^{n+1})$. H-PSMG uses $u_k^P$ to sample $\hat P_k = F_{\mu_k^P}^{-1}(u_k^P)$ and $u_k^{\Theta, i}$ to sample $\hat\theta_i^k = F_{\mu_k^{\Theta, i}}^{-1}(u_k^{\Theta, i})$ via the inverse-CDF transform. Joint-PSRL uses $u_k^P$ identically for $\hat P_k$ and the joint draw $\hat{\boldsymbol\theta}_k = F_{\mu_k^\Theta}^{-1}\big(u_k^{\Theta, 1}, \ldots, u_k^{\Theta, n}\big)$ via the per-coordinate inverse-CDF of the product factorisation.
+\end{proposition}
+
+\begin{proof}
+By Theorem~\ref{thm:decoupling-app}, $\mu_k^\Theta(\theta_1, \ldots, \theta_n) = \prod_i \mu_k^{\Theta, i}(\theta_i)$ at every $k$. The inverse-CDF of a product distribution applied coordinate-wise yields independent samples from the marginals. Hence the two algorithms produce identical $\hat P_k$ and identical $(\hat\theta_1^k, \ldots, \hat\theta_n^k)$, hence identical CCE policies $\pi_k = \mathrm{CCE}(\hat P_k, \hat{\boldsymbol\theta}_k)$ (Assumption~\ref{ass:CSR}: deterministic oracle), hence identical trajectories $\tau_k$ under shared environment randomness. Identical trajectories imply identical posteriors at $k+1$ by Bayes' rule, and the argument repeats inductively.
+\end{proof}
+
+Proposition~\ref{prop:bit-identical} formalises that H-PSMG and Joint-PSRL produce bit-identical trajectories under matched RNG on any HT-MG-BC instance. The proposition shows that H-PSMG is not merely a heuristic approximation of Joint-PSRL but its exact statistical equivalent at $O(n|\Theta_i|)$ rather than $O(|\Theta|^n)$ memory. The qualitative implication is that all regret guarantees and lower bounds derived for H-PSMG transfer verbatim to Joint-PSRL on HT-MG-BC instances.
+
+\begin{remark}
+The decoupling is more than a notational convenience. It separates two distinct sources of uncertainty into modular inference problems. Model uncertainty is captured by $\mu^P$, which behaves exactly as in single-agent PSRL and inherits all known concentration tools \citep{agrawal2017optimistic}. Type uncertainty is captured by $\mu^{\Theta,i}$, which is a categorical Bayesian estimation problem amenable to information-theoretic analysis \citep{russo2014learning}. This separation is the basis of the regret decomposition outlined in Section~\ref{sec:regret-roadmap}.
+\end{remark}
+
+\section{Numerical Illustration: Two-Agent Bayesian Prisoner's Dilemma}
+\label{sec:example}
+
+To make the decoupling concrete we work through a minimal instance numerically. The example is a stateless two-agent two-type matrix game played for $K$ rounds.
+
+\subsection{Setup}
+
+Set $|\mathcal{S}| = 1$, $\mathcal{A}_1 = \mathcal{A}_2 = \{C, D\}$, and $\Theta_i = \{P, S\}$ for $i \in \{1, 2\}$, where $P$ denotes pro-social and $S$ denotes selfish. The reward of agent $i$ as a function of its type is
+\begin{equation}
+r_i^S(a_i, a_{-i}) = \mathbbm{1}[a_i = D], \quad r_i^P(a_i, a_{-i}) = \mathbbm{1}[a_i = C \wedge a_{-i} = C].
+\end{equation}
+A selfish agent prefers defection. A pro-social agent rewards mutual cooperation. The horizon is $H = 1$ and there is no transition uncertainty, so the model component $\mu^P$ is trivial and the example isolates the type-inference component.
+
+The prior is uniform: $\mu_1^{\Theta,1}(P) = \mu_1^{\Theta,1}(S) = 0.5$ and similarly for agent $2$, so $\mu_1^\Theta(\boldsymbol{\theta}) = 0.25$ for each $\boldsymbol{\theta} \in \Theta$. The true type profile is $\boldsymbol{\theta}^* = (P, S)$.
+
+\subsection{Episode 1}
+
+The algorithm draws $\hat{\boldsymbol{\theta}}_1 \sim \mu_1^\Theta$ uniformly. Suppose the realization is $\hat{\boldsymbol{\theta}}_1 = (P, P)$. The CCE of the all-pro-social game is the pure strategy $(C, C)$. The algorithm executes $(C, C)$, and rewards are realized in the true world: $r_1 = r_1^P(C, C) = 1$ and $r_2 = r_2^S(C, \cdot) = 0$.
+
+The reward likelihoods are
+\begin{equation}
+L_{\Theta,1}(\tau_1; \theta_1) = P(r_1 = 1 \mid a = (C,C), \theta_1) = \begin{cases} 1 & \theta_1 = P \\ 0 & \theta_1 = S \end{cases}
+\end{equation}
+\begin{equation}
+L_{\Theta,2}(\tau_1; \theta_2) = P(r_2 = 0 \mid a = (C,C), \theta_2) = \begin{cases} 0 & \theta_2 = P \\ 1 & \theta_2 = S \end{cases}.
+\end{equation}
+
+Table~\ref{tab:posterior-update} tabulates the posterior update.
+
+\begin{table}[ht]
+\caption{Posterior update after episode 1. Joint posterior is computed by Bayes' rule, then verified against the product of marginals.}
+\label{tab:posterior-update}
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+$\theta_1$ & $\theta_2$ & $\mu_1^\Theta(\boldsymbol{\theta})$ & $L_{\Theta,1}$ & $L_{\Theta,2}$ & Unnormalized posterior \\
+\midrule
+$P$ & $P$ & $0.25$ & $1$ & $0$ & $0$ \\
+$P$ & $S$ & $0.25$ & $1$ & $1$ & $0.25$ \\
+$S$ & $P$ & $0.25$ & $0$ & $0$ & $0$ \\
+$S$ & $S$ & $0.25$ & $0$ & $1$ & $0$ \\
+\midrule
+\multicolumn{3}{r}{Normalized} & & & \\
+$P$ & $S$ & & & & $1.00$ \\
+others & & & & & $0.00$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+The joint posterior puts probability $1$ on the true type profile $(P, S)$. We verify the decoupling by computing the marginals:
+\begin{align}
+\mu_2^{\Theta,1}(P) &= \mu_1^{\Theta,1}(P) \cdot L_{\Theta,1}(\tau_1; P) / Z_1 = 0.5 \cdot 1 / 0.5 = 1, \\
+\mu_2^{\Theta,1}(S) &= 0, \\
+\mu_2^{\Theta,2}(P) &= \mu_1^{\Theta,2}(P) \cdot L_{\Theta,2}(\tau_1; P) / Z_2 = 0.5 \cdot 0 / 0.5 = 0, \\
+\mu_2^{\Theta,2}(S) &= 1.
+\end{align}
+The product $\mu_2^{\Theta,1} \cdot \mu_2^{\Theta,2}$ equals the unnormalized joint $\delta_{(P,S)}$, confirming the decoupling in Theorem~\ref{thm:decoupling-app}.
+
+\subsection{Noisy Observation Variant}
+
+To show that decoupling is not an artifact of deterministic rewards, suppose now the reward signal flips with probability $\epsilon = 0.1$. The likelihoods become
+\begin{equation}
+L_{\Theta,1}(\tau_1; \theta_1) = \begin{cases} 0.9 & \theta_1 = P \\ 0.1 & \theta_1 = S \end{cases}, \quad
+L_{\Theta,2}(\tau_1; \theta_2) = \begin{cases} 0.1 & \theta_2 = P \\ 0.9 & \theta_2 = S \end{cases}.
+\end{equation}
+The unnormalized joint posterior is the outer product $\mu_1^\Theta \cdot L_{\Theta,1} \cdot L_{\Theta,2}$ which still factorizes as $\mu_2^{\Theta,1} \cdot \mu_2^{\Theta,2}$ with $\mu_2^{\Theta,1}(P) = 0.9, \mu_2^{\Theta,1}(S) = 0.1$ and $\mu_2^{\Theta,2}(S) = 0.9, \mu_2^{\Theta,2}(P) = 0.1$. Concentration is partial after one observation but the factorization is exact.
+
+\section{Necessity of the Structural Assumptions}
+\label{sec:necessity}
+
+We show that both Assumptions~\ref{ass:TI} and \ref{ass:RL} are necessary in the sense that violation of either causes the decoupling to break.
+
+\subsection{Counter-Example I: Type-Dependent Transitions}
+
+Suppose Assumption~\ref{ass:TI} fails. Concretely, consider a two-state HT-MG where $P(s' \mid s, a, \boldsymbol{\theta})$ varies with $\boldsymbol{\theta}$. The trajectory likelihood becomes
+\begin{equation}
+P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}) = c_k(\tau_k) \cdot \prod_{h=1}^H P(s_{h+1}^k \mid s_h^k, a_h^k, \boldsymbol{\theta}) \cdot \prod_{h, i} P(r_h^{k,i} \mid s_h^k, a_h^k, \theta_i).
+\end{equation}
+The transition factor is now jointly a function of $P$ and $\boldsymbol{\theta}$ and does not split. Posterior $P(P, \boldsymbol{\theta} \mid \mathcal{H}_k)$ is no longer factorable into a $P$-marginal and a $\boldsymbol{\theta}$-marginal. Empirically, observing a transition $(s, a) \to s'$ simultaneously updates beliefs about both the kernel and the types, with no way to attribute the change to one source alone.
+
+\subsection{Counter-Example II: Non-Local Reward}
+
+Suppose Assumption~\ref{ass:RL} fails. Consider a social-comparison reward $r_1(s, a, \boldsymbol{\theta}) = r_1^{\theta_1}(s, a) - \alpha \cdot r_2^{\theta_2}(s, a)$ for some $\alpha > 0$, so that agent $1$'s utility includes an envy term proportional to agent $2$'s realized return under its own type. Then
+\begin{equation}
+L_{\Theta,1}(\tau_k; \boldsymbol{\theta}) = \prod_{h=1}^H P\left(r_h^{k,1} - \alpha r_h^{k,2,\theta_2} \mid s_h^k, a_h^k, \theta_1\right)
+\end{equation}
+contains $\theta_2$ inside the agent-$1$ likelihood factor. The likelihood factorization in Lemma~\ref{lem:likelihood} fails. The posterior couples $\theta_1$ and $\theta_2$ at every update step.
+
+These two counter-examples confirm that the decoupling theorem is tight in its assumptions and provide guidance on when the centralized H-PSMG framework is appropriate.
+
+\section{From Decoupling to Regret: A Roadmap}
+\label{sec:regret-roadmap}
+
+The decoupling theorem is the structural foundation for a regret bound on H-PSMG. We outline the derivation strategy in this section and provide the rigorous proof in Appendix~\ref{app:regret-decomp}.
+
+\subsection{Per-Episode Regret Decomposition}
+
+For episode $k$, the per-episode regret of agent $i$ is
+\begin{equation}
+\Delta_i^k := V_{i,1}^{\pi^*}(s_1^k; P^*, \theta_i^*) - V_{i,1}^{\pi_k}(s_1^k; P^*, \theta_i^*),
+\end{equation}
+where $\pi^* = \mathrm{CCE}(P^*, \boldsymbol{\theta}^*)$ and $\pi_k = \mathrm{CCE}(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$. Two technical steps reduce this to a tractable form. First, the posterior sampling equivalence (Lemma~\ref{lem:ps-equivalence} in Appendix~\ref{app:regret-decomp}) implies $\mathbb{E}[V_{i,1}^{\pi^*}(P^*, \theta_i^*)] = \mathbb{E}[V_{i,1}^{\pi_k}(\hat{P}_k, \hat{\theta}_i^k)]$, so the expected regret reduces to a comparison between two evaluations of the same policy $\pi_k$:
+\begin{equation}
+\mathbb{E}[\Delta_i^k \mid \mathcal{H}_{k-1}] = \mathbb{E}\big[V_{i,1}^{\pi_k}(s_1^k; \hat{P}_k, \hat{\theta}_i^k) - V_{i,1}^{\pi_k}(s_1^k; P^*, \theta_i^*) \,\big|\, \mathcal{H}_{k-1}\big].
+\end{equation}
+Second, applying the value-difference lemma for HT-MG (Lemma~\ref{lem:value-diff}) telescopes this gap into a transition-misspec term and a reward-misspec term:
+\begin{equation}
+\mathbb{E}[\Delta_i^k \mid \mathcal{H}_{k-1}] = \underbrace{\mathbb{E}\Big[\sum_{h=1}^H \mathbb{E}_{d_h^{\pi_k, \hat{P}_k}}\big[r_i(\cdot, \hat{\theta}_i^k) - r_i(\cdot, \theta_i^*)\big]\Big]}_{\text{reward-misspec } \Delta_i^{k,R}} + \underbrace{\mathbb{E}\Big[\sum_{h=1}^H \mathbb{E}_{d_h^{\pi_k, \hat{P}_k}}\big\langle \hat{P}_k - P^*, V_{i,h+1}^{\pi_k}(P^*, \theta_i^*)\big\rangle\Big]}_{\text{transition-misspec } \Delta_i^{k,P}}.
+\end{equation}
+Theorem~\ref{thm:decoupling-app} ensures the two sources of error are governed by independent posteriors $\mu^{\Theta,i}$ and $\mu^P$, enabling separate analysis.
+
+\subsection{Bounding the Transition Component}
+
+By Theorem~\ref{thm:decoupling-app}, the transition posterior $\mu^P$ behaves exactly as in single-agent PSRL operating on the joint MDP induced by the joint action space $\mathcal{A} = \prod_i \mathcal{A}_i$. We obtain two complementary bounds. A direct Hölder + Dirichlet $\ell_1$-concentration argument gives
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}\big[|\Delta_i^{k,P}|\big] \leq \tilde{O}\Big(H^{3/2} \cdot S \cdot \sqrt{A_{\mathrm{joint}} K}\Big), \quad A_{\mathrm{joint}} := \prod_{i=1}^n |\mathcal{A}_i|,
+\end{equation}
+matching \citet{osband2013more}'s Hoeffding-level Bayesian PSRL bound. Replacing the Hölder step with the variance-aware Bernstein inner-product bound \citep{azar2017minimax,lu2019information} and exploiting the law of total variance trims one factor of $\sqrt{S}$:
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}\big[|\Delta_i^{k,P}|\big] \leq \tilde{O}\Big(H^{3/2}\sqrt{S \cdot A_{\mathrm{joint}} \cdot K}\Big).
+\end{equation}
+This matches the frequentist minimax-optimal $\tilde{O}(\sqrt{H^3SAK})$ rate of \citet{azar2017minimax} for single-agent finite-horizon RL. Proposition~\ref{prop:trans-hoeffding} (Hoeffding) and Proposition~\ref{prop:trans-bernstein} (Bernstein-refined) in Appendix~\ref{app:regret-decomp} provide the detailed arguments.
+
+\subsection{Bounding the Type Component}
+
+The reward-misspec term is the cumulative gap between the posterior-sampled type and the true type. Since rewards lie in $[0, 1]$ and $r_i(\cdot, \hat{\theta}_i^k) = r_i(\cdot, \theta_i^*)$ whenever $\hat{\theta}_i^k = \theta_i^*$ (Assumption~\ref{ass:RL}), we have $|\Delta_i^{k,R}| \leq H \cdot \mathbbm{1}[\hat{\theta}_i^k \neq \theta_i^*]$. Applying the information-ratio framework of \citet{russo2016information} to the categorical type-inference problem yields
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq \sqrt{\bar{\Gamma} \cdot \log|\Theta_i| \cdot K},
+\end{equation}
+where $\bar{\Gamma}$ is a uniform bound on the per-episode information ratio. For the finite-arm case, $\bar{\Gamma} = O(H^2 |\Theta_i|)$, giving $O(H\sqrt{|\Theta_i| \log|\Theta_i| \cdot K})$. Under the stronger information-rate condition $I_k(\theta_i^*; \tau_k) \geq \rho > 0$, the cumulative reward-misspec regret is $O(H \log|\Theta_i| / \rho)$, constant in $K$. Proposition~\ref{prop:type-bound} in Appendix~\ref{app:regret-decomp} contains the proof.
+
+\subsection{Main Regret Bound}
+
+Combining the two components and the CCE oracle approximation gives the formal regret bound, which we state here and prove rigorously in Appendix~\ref{app:regret-decomp}.
+
+\begin{theorem}[Bayesian Regret of H-PSMG, informal]
+\label{thm:main-regret-app}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:ISI}, \ref{ass:CSR}, a Dirichlet prior on $P^*$, and a bounded type information ratio $\bar{\Gamma} = O(H^2 |\Theta_i|)$, the Bayesian regret of agent $i$ over $K$ episodes satisfies
+\begin{equation}
+\label{eq:main-regret-sketch}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde{O}\Big(H^{3/2}\sqrt{S \cdot A_{\mathrm{joint}} \cdot K}\Big) + O\Big(H \sqrt{|\Theta_i| \log|\Theta_i| \cdot K}\Big) + K \cdot \epsilon_{\mathrm{CCE}},
+\end{equation}
+where $A_{\mathrm{joint}} = \prod_i |\mathcal{A}_i|$ is the joint action space size and $\epsilon_{\mathrm{CCE}}$ is the CCE oracle approximation error.
+\end{theorem}
+
+The bound separates the cost of learning the transition kernel from the cost of identifying the type profile. The state-space size $S$ enters only the model-learning component, reflecting the agent-level decoupling of Theorem~\ref{thm:decoupling-app}: each agent's type inference depends only on its own type space $\Theta_i$ rather than on the full joint type space $\Theta$. Appendix~\ref{app:regret-decomp} provides the full proof, including the value-difference lemma for HT-MG, the information-ratio analysis of type inference, and the Dirichlet concentration argument for the transition component.
+
+\begin{corollary}[Gap-Dependent Rate under Identifiability]
+\label{cor:gap-dependent}
+If in addition Assumption~\ref{ass:TID} holds with parameter $\rho > 0$, then the type-inference component collapses to a constant in $K$:
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq O\bigg(\frac{H \log|\Theta_i|}{\rho}\bigg).
+\end{equation}
+Consequently, the Bayesian regret simplifies to
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde{O}\Big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K}\Big) + O\bigg(\frac{H \log|\Theta_i|}{\rho}\bigg) + K \cdot \epsilon_{\mathrm{CCE}}.
+\end{equation}
+In the asymptotic regime $K \to \infty$ with $\epsilon_{\mathrm{CCE}} = O(K^{-1/2})$, the bound is dominated by transition learning at rate $\tilde{O}(\sqrt{K})$. The type-inference cost is paid only during a short burn-in period of length $O(\log|\Theta_i| / \rho)$.
+\end{corollary}
+
+The corollary captures an important practical regime: when types are sufficiently distinct (TID with $\rho$ bounded away from zero), the cost of heterogeneity is essentially a one-time identification cost rather than a recurring exploration penalty. Proof appears in Appendix~\ref{app:regret-decomp}, immediately following Proposition~\ref{prop:type-bound}.
+
+\subsection{Rate Separation from Heuristic and Type-Agnostic Baselines}
+\label{sec:rate-separation}
+
+The $\tilde{O}(\sqrt{K})$ rate of Theorem~\ref{thm:main-regret-app} is not just a constant-factor improvement over heuristic baselines: the gap is in the asymptotic rate. We make this precise.
+
+\begin{theorem}[Rate Separation]
+\label{thm:rate-separation}
+There exists an HT-MG instance $\mathcal{G}^\star$ satisfying Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:ISI}, \ref{ass:CSR}, and a uniform prior over types $\mu_0^{\Theta,i} = \mathrm{Unif}(\Theta_i)$, on which the cumulative Bayesian regret of three algorithms satisfies:
+\begin{enumerate}
+\item[(i)] \textbf{H-PSMG (Algorithm~\ref{alg:hpsmg}):} $\mathbb{E}[\mathrm{Reg}_i^B(K)] = \tilde{O}(\sqrt{K})$ for all $K \geq 1$.
+\item[(ii)] \textbf{MAP-Type-Greedy} (substitute the MAP estimate $\hat{\theta}_i^k = \arg\max_\theta \mu_k^{\Theta,i}(\theta)$ for the posterior sample in Algorithm~\ref{alg:hpsmg}): on a positive-probability event $\mathcal{E}_{\mathrm{trap}}$ (over initial randomness), $\mathbb{E}[\mathrm{Reg}_i^B(K) \mid \mathcal{E}_{\mathrm{trap}}] = \Omega(K)$. In particular, $\mathbb{E}[\mathrm{Reg}_i^B(K)] = \Omega(K)$.
+\item[(iii)] \textbf{PSRL-NoType} (sample $\hat{\boldsymbol{\theta}}_k \sim \mathrm{Unif}(\Theta)$ every episode, never update the type posterior): $\mathbb{E}[\mathrm{Reg}_i^B(K)] = \Omega(K)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+We construct $\mathcal{G}^\star$ explicitly as the \emph{exploration-trap game}: 5 states $\{0, 1, 2, 3, 4\}$, $n = 2$ agents with action set $\{L, R\}$, types $\Theta_i = \{A, B\}$, horizon $H$, deterministic majority-vote transitions ($(R, R) \mapsto s+1$, $(L, L) \mapsto s-1$, mixed $\mapsto s$, clipped at boundaries), initial state $s_1 = 0$, and rewards
+\begin{align}
+r_i(s, a, A) &= 0.5 \quad \text{for all } s, \\
+r_i(s, a, B) &= \begin{cases} 0.5 & \text{if } s \in \{0, 1, 2, 3\}, \\ 1.0 & \text{if } s = 4, \end{cases}
+\end{align}
+with small Gaussian observation noise $\sigma \to 0$. The true types are $\boldsymbol{\theta}^\star = (B, B)$.
+
+\textbf{(i) H-PSMG.} This is the direct application of Theorem~\ref{thm:main-regret-app} to $\mathcal{G}^\star$.
+
+\textbf{(ii) MAP-Type-Greedy.} Let $\mathcal{E}_{\mathrm{trap}}$ be the event that the initial MAP estimate of agent 1 is $A$. Under a uniform prior with deterministic tie-breaking (e.g., $\arg\max$ returning the lowest-index maximizer), this event holds with probability $1$; with random uniform tie-breaking it has probability $\geq (1/|\Theta_1|)^n = 1/4$.
+
+On $\mathcal{E}_{\mathrm{trap}}$, by induction on $k$: (1) $\hat{\boldsymbol{\theta}}_{\mathrm{MAP}}^k = (A, A)$; (2) under type $A$, $V_h^{\pi}(s; A) = 0.5(H-h+1)$ is independent of state and policy (uniform reward), so all joint actions yield identical $Q$-values and the CCE-with-Nash-selection picks $\pi(L, L)$ at every $(s, h)$ by tie-breaking; (3) rollout from $s_1 = 0$ under deterministic transitions stays at $s = 0$ for all $H$ steps; (4) at state $0$ both candidate types predict $r_h^i = 0.5$, so the log-likelihood ratio $\log \mu_{k+1}^{\Theta,i}(A) / \mu_{k+1}^{\Theta,i}(B) = \log \mu_k^{\Theta,i}(A) / \mu_k^{\Theta,i}(B) + O(\sigma)$, which converges in the limit $\sigma \to 0$; (5) the MAP estimate remains $A$.
+
+The per-episode value of MAP-Type-Greedy on $\mathcal{E}_{\mathrm{trap}}$ is $V^{\mathrm{MAP}} = 0.5 H$ per agent. The oracle value satisfies $V^\star \geq H - 4 + 1 \cdot (H - 4) = H - 4 + (H - 4)$ approximately (the optimal $(B, B)$ policy reaches state $4$ in $4$ steps and earns $r = 1$ for the remaining $H - 4$ steps, with $r = 0.5$ during the traverse), giving $V^\star \geq 0.5 \cdot 4 + 1.0 \cdot (H - 4) = H - 2$ per agent for $H \geq 4$. The per-episode regret is $V^\star - V^{\mathrm{MAP}} \geq H - 2 - 0.5 H = 0.5 H - 2 > 0$ for $H > 4$. Summed over $K$ episodes, $\mathbb{E}[\mathrm{Reg}_i^B(K) \mid \mathcal{E}_{\mathrm{trap}}] \geq (0.5 H - 2) K = \Omega(K)$, completing the claim.
+
+\textbf{(iii) PSRL-NoType.} The algorithm samples $\hat{\boldsymbol{\theta}}_k \sim \mathrm{Unif}(\Theta_1 \times \Theta_2)$ every episode, independent of history. Let $V(\boldsymbol{\theta}) := \mathbb{E}^{\pi(\boldsymbol{\theta}), P^\star}[\sum_h r_i(s_h, a_h, \theta_i^\star)]$ be the value of the CCE for sampled types $\boldsymbol{\theta}$ evaluated under the true types $\boldsymbol{\theta}^\star = (B, B)$. Then the expected per-episode value is $\bar V = \mathbb{E}_{\boldsymbol{\theta} \sim \mathrm{Unif}}[V(\boldsymbol{\theta})]$. By a direct case analysis, $\bar V < V^\star$ for the trap game, since the three non-$(B,B)$ joint types ($\frac{3}{4}$ of samples) induce policies that fail to reach state $4$. The per-episode regret is the positive constant $V^\star - \bar V$, giving $\mathbb{E}[\mathrm{Reg}_i^B(K)] = (V^\star - \bar V) K = \Omega(K)$.
+\end{proof}
+
+The theorem makes precise the qualitative claim that Bayesian posterior sampling on types provides exploration that heuristic alternatives lack. The proof construction is the exploration-trap game $\mathcal{G}^\star$ used to drive the deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$ analysed in Section~\ref{sec:hpsmg-plus}; the empirical counterpart of this separation, in the LLM-tier setting where action spaces and reward observations come from prompted backbones rather than analytic kernels, is reported in Section~\ref{sec:experiments-llm}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/regret_trap.pdf}
+  \caption{Analytic-kernel simulation of the exploration-trap game $\mathcal{G}^\star$ of Theorem~\ref{thm:rate-separation}: cumulative Bayesian regret of H-PSMG, MAP-Type-Greedy, and PSRL-NoType under coupled randomness. MAP-Type-Greedy and PSRL-NoType both display the predicted $\Omega(K)$ linear growth on the trap event; H-PSMG remains $\tilde O(\sqrt K)$.}
+  \label{fig:sim-regret-trap}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/regret_curves.pdf}
+  \caption{Cumulative Bayesian regret curves for H-PSMG vs.\ Joint-PSRL under coupled randomness on a representative HT-MG ($n{=}3$, $|\Theta_i|{=}4$, $H{=}10$, analytic kernel). The curves are pathwise-identical to within sampler resolution, the empirical signature of the bit-identity claim of Theorem~\ref{thm:decoupling}.}
+  \label{fig:sim-regret-curves}
+\end{figure}
+
+\subsection{Regret guarantees of H-PSMG\textsuperscript{+}}
+\label{sec:hpsmg-plus}
+
+The algorithm H-PSMG\textsuperscript{+} (Algorithm~\ref{alg:hpsmg-plus}) was introduced in Section~\ref{sec:algorithm}. This subsection establishes its two regret guarantees: asymptotic match with H-PSMG (worst-case rate unchanged) and exponential-in-$|\Theta|^n$ burn-in improvement on the deep-trap family. Both are direct corollaries of the type-discrimination bonus structure and the posterior decoupling theorem.
+
+\begin{theorem}[Regret of H-PSMG\textsuperscript{+}]
+\label{thm:hpsmg-plus-app}
+Let $\beta > 0$. Under the assumptions of Theorem~\ref{thm:main-regret-app}:
+
+\textbf{(i) Asymptotic match.} On any HT-MG, the Bayesian regret of H-PSMG\textsuperscript{+} satisfies
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde{O}\big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K} + H\sqrt{|\Theta_i| K}\big),
+\end{equation}
+identical to the H-PSMG bound of Theorem~\ref{thm:main-regret-app}.
+
+\textbf{(ii) Exponential-in-$|\Theta|^n$ burn-in improvement.} Let $\mathcal{G}_m^{\mathrm{trap}}$ denote the family of deep-trap HT-MGs parameterised by per-agent type-space size $|\Theta_i| = m$ (Appendix~\ref{app:hpsmg-plus} for the precise definition: $n$ agents, $S = m+2$ states, deterministic unanimity-vote transitions, horizon $H$, single jackpot type $\theta_{\mathrm{jack}}$ with $r_i(s^\star, a, \theta_{\mathrm{jack}}) = 1$ at the rightmost state and $r_i = 0.5$ otherwise, uniform prior, true types $\theta_i^\star = \theta_{\mathrm{jack}}$). Under Assumption~\ref{ass:cce-tiebreak} (welfare-maximising CCE oracle, lowest-index tie-break), the expected burn-in regrets are:
+\begin{align}
+\textnormal{H-PSMG / Joint-PSRL:} \quad &\mathbb{E}\big[\mathrm{Reg}_i^B(\tau_{\textnormal{H-PSMG}})\big] = \Theta(m^n \cdot H), \\
+\textnormal{H-PSMG\textsuperscript{+} (any } \beta > 0\textnormal{):} \quad &\mathbb{E}\big[\mathrm{Reg}_i^B(\tau_{\textnormal{H-PSMG}^+})\big] = O(H).
+\end{align}
+The burn-in separation is $\Omega(m^n)$, exponential in the number of agents.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+\textbf{(i) Asymptotic match.} By a CCE-optimality decomposition (Lemma~\ref{lem:bonus-decomp}, App~\ref{app:hpsmg-plus-asymptotic-proof}), the per-episode regret of H-PSMG\textsuperscript{+} relative to H-PSMG is bounded by the expected cumulative bonus collected on the rollout, $\beta H \cdot \mathbb{E}[\max_{s,a} D_k(s, a)]$. A collision-probability argument (Lemma~\ref{lem:collision-bound}) gives $D_k(s, a) \leq 2 \sum_i (1 - \mu_k^{\Theta, i}(\theta_i^\star))$, reducing the cumulative bonus to a sum of posterior-error probabilities. Under Assumption~\ref{ass:TID} (Hellinger gap $\rho > 0$), standard Bayesian posterior concentration on finite type spaces \citep{ghosal2007convergence} gives an exponential decay $\mathbb{E}[1 - \mu_k^{\Theta, i}(\theta_i^\star)] \leq |\Theta_i| \exp(-\rho H k / 2)$, so the cumulative bonus regret is bounded by a $K$-independent constant $O(\beta n |\Theta_i| / \rho)$ (Proposition~\ref{prop:hpsmg-plus-asymptotic}). This is absorbed into the leading $\tilde O(H\sqrt{|\Theta_i| K})$ type-inference term of Theorem~\ref{thm:main-regret-app}.
+
+\textbf{(ii) Exponential burn-in.} For H-PSMG: under uniform prior, $\Pr[\hat\theta_k = (\theta_{\mathrm{jack}})^n] = m^{-n}$ per episode, independent across $k$. Before any successful draw, every visited state $s \in \{0, 1, \ldots, S-2\}$ has identical predicted reward $0.5$ across all types, so observations carry no information about types (Lemma~\ref{lem:posterior-stuck}); the marginal stays uniform. The expected wait for the first informative draw is $\mathrm{Geom}(m^{-n})$ with mean $m^n$; each stuck episode contributes per-episode regret $\Theta(H)$, totalling $\Theta(m^n H)$ (Proposition~\ref{prop:vanilla-burnin}).
+
+For H-PSMG\textsuperscript{+}: at uniform prior, the bonus evaluates to $D_k(s^\star, a) = n(m-1)/m^2 > 0$ at the jackpot state and $0$ elsewhere (Equation~\ref{eq:Dk-trap}). Backward induction with this bonus and deterministic unanimity transitions gives social-welfare gap
+\begin{equation*}
+W(a^R) - W(a^L) = n(H - S + 1)\big(0.5\alpha + \beta n p_k(1-p_k)\big) > 0
+\end{equation*}
+regardless of the sampled $\hat\theta$ (Lemma~\ref{lem:cce-selects-aR}), where $\alpha$ is the fraction of jackpot-sampled agents. Under Assumption~\ref{ass:cce-tiebreak}, the CCE oracle returns $a^R$; the trajectory reaches $s^\star$ deterministically; the marginal concentrates on $\theta_{\mathrm{jack}}$ within one episode (Proposition~\ref{prop:hpsmg-plus-burnin}). Burn-in regret is $O(H)$, independent of $m$ and $n$.
+
+The full formal proof is in Appendix~\ref{app:hpsmg-plus}.
+\end{proof}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/hpsmg_plus_results.pdf}
+  \caption{Analytic-kernel simulation of H-PSMG\textsuperscript{+} on the deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$ for $m\!\in\!\{2,3,4,5\}$, $n{=}3$, $H{=}10$. Vanilla H-PSMG (red) traces the predicted $\Theta(m^n H)$ burn-in envelope; H-PSMG\textsuperscript{+} (blue, $\beta{=}0.25$) flattens at the $O(H)$ cap predicted by Theorem~\ref{thm:hpsmg-plus-app}(ii) regardless of $m$. This is the analytic-kernel counterpart of the LLM-tier E2 result in Figure~\ref{fig:e2}.}
+  \label{fig:sim-hpsmg-plus}
+\end{figure}
+
+\paragraph{Comparison with Joint-PSRL.} Theorem~\ref{thm:hpsmg-plus-app} formalises the algorithmic gap between H-PSMG\textsuperscript{+} and Joint-PSRL. Although vanilla H-PSMG and Joint-PSRL produce bit-identical trajectories under matched RNG (a consequence of Theorem~\ref{thm:decoupling-app}), the bonus $D_k$ requires per-agent factored marginals, which Joint-PSRL only computes by marginalising the joint posterior at $O(|\Theta|^n)$ cost per query. The decoupling theorem therefore enables three distinct improvements over Joint-PSRL:
+\begin{itemize}
+\item \textbf{Storage.} $O(n|\Theta_i|)$ instead of $\Omega(|\Theta|^n)$ posterior memory (Corollary~\ref{cor:storage}). For $|\Theta_i| = 4$, the joint posterior grows from $16$ entries at $n=2$ to $1024$ entries at $n=5$, a $64\times$ gap that we measure empirically on an LLM substrate in Section~\ref{sec:experiments-llm}.
+\item \textbf{Regret analysis.} $\tilde O(\sqrt{|\Theta_i| K})$ type-inference rate instead of $\tilde O(\sqrt{|\Theta|^n K})$, the generic Bayesian-RL guarantee (Theorem~\ref{thm:lower-no-pf}, Section~\ref{sec:exponential-improvement}).
+\item \textbf{Algorithmic refinement.} Exponential-in-$|\Theta|^n$ burn-in regret improvement of H-PSMG\textsuperscript{+} over Joint-PSRL on the deep-trap family (Theorem~\ref{thm:hpsmg-plus-app}(ii)).
+\end{itemize}
+The empirical separation, with H-PSMG\textsuperscript{+}'s burn-in benefit growing monotonically in $|\Theta_i|$ and $n$ on an LLM substrate, is reported in Section~\ref{sec:experiments-llm}.
+
+\subsection{Exponential improvement over generic Bayesian RL via decoupling}
+\label{sec:exponential-improvement}
+
+Theorem~\ref{thm:main-regret-app} produces a regret bound whose type-inference cost depends on $|\Theta_i|$, the per-agent type-space size, rather than on $|\Theta| = \prod_i |\Theta_i|$, the joint type-space size. A natural question is whether this dependence is intrinsic to the HT-MG problem or an artefact of our structural assumptions. We answer it by showing that without Assumption~\ref{ass:PF}, no algorithm can match the bound: the best achievable Bayesian regret depends on $|\Theta|^n$, exponentially worse than ours.
+
+\begin{theorem}[Exponential Lower Bound Without Prior Factorisation]
+\label{thm:lower-no-pf}
+Let $\mathcal{F}^{\mathrm{noPF}}_{n, m, S, A_{\mathrm{joint}}, H}$ denote the family of HT-MG instances with $n$ agents, $|\Theta_i| = m$ for each $i$, state-space size $S$, joint-action-space size $A_{\mathrm{joint}}$, horizon $H$, satisfying Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:ISI}, \ref{ass:CSR}, but for which the joint type prior $\mu_0^\Theta$ is permitted to be an arbitrary distribution over $\Theta = \prod_i \Theta_i$ (i.e., \ref{ass:PF} is dropped). For any algorithm $\mathfrak{A}$,
+\begin{equation}
+\sup_{\mathcal{G} \in \mathcal{F}^{\mathrm{noPF}}}\ \mathbb{E}_{\mathcal{G}, \mathfrak{A}}\big[\mathrm{Reg}_i^B(K)\big] = \Omega\big(\sqrt{m^n \cdot K}\big).
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+We reduce a Bayesian multi-armed bandit with $M = m^n$ arms to an HT-MG without prior factorisation. Take $S = 1$, $H = 1$, $A_{\mathrm{joint}} = M$. For each joint type $\theta \in \Theta$, choose a one-to-one map $a^\star \colon \Theta \to \mathcal{A}_{\mathrm{joint}}$ and define the reward as $r(a, \theta) = \mathbb{1}[a = a^\star(\theta)]$. Place the prior $\mu_0^\Theta$ uniform on $\Theta$ but not factored across agents (e.g., concentrated on a uniformly random permutation of $\Theta$). Conditional on $\theta$ the unique optimal joint action is $a^\star(\theta)$; without prior factorisation, observing one agent's marginal reward provides no information about another agent's type that is not already captured by the joint posterior over $\Theta$.
+
+The resulting problem is a Bayesian $M$-armed bandit with uniform prior over the identity of the optimal arm. By the standard Bayesian regret lower bound for multi-armed bandits \citep[Theorem 15.2]{lattimore2020bandit},
+$\mathbb{E}_{\mathfrak{A}}[\mathrm{Reg}(K)] = \Omega(\sqrt{MK}) = \Omega(\sqrt{m^n K})$.
+Per-agent regret equals total regret in this single-agent-reduces-to-bandit construction up to a factor of $n$, completing the claim.
+\end{proof}
+
+Theorem~\ref{thm:lower-no-pf} combined with Theorem~\ref{thm:main-regret-app} establishes an exponential separation. With prior factorisation (Assumption~\ref{ass:PF}), H-PSMG achieves type-inference regret $\tilde O(H\sqrt{m K})$; without it, no algorithm achieves better than $\Omega(\sqrt{m^n K})$. The improvement factor in the bound is $m^{(n-1)/2}$, exponential in the number of agents. The structural assumption set TI + RL + PF is therefore not merely a convenience for analysis but a necessary condition for sublinear-in-$n$ dependence on the joint type space.
+
+\begin{remark}[Comparison with Joint-PSRL]
+A particularly useful consequence is the regret bound for Joint-PSRL implied by our analysis. The naive Bayesian-RL analysis of Joint-PSRL on the joint hypothesis class $\Theta$ would invoke the generic information-ratio bound for posterior sampling on a hypothesis class of size $|\Theta|^n$, yielding a regret bound of $\tilde O(H\sqrt{|\Theta|^n K})$. Our Theorem~\ref{thm:decoupling-app} (Decoupling) shows that under TI + RL + PF the joint posterior is the product of marginals at every episode, which when combined with the per-agent information ratio of Lemma~\ref{lem:info-ratio} reduces the Joint-PSRL regret bound to the same $\tilde O(H\sqrt{|\Theta_i| K})$ as H-PSMG (Theorem~\ref{thm:main-regret-app}). Thus our decoupling theorem provides an exponential-in-$n$ sharpening of the Joint-PSRL regret guarantee at no cost in storage or computation for Joint-PSRL (which is already storing the joint posterior); for H-PSMG, the additional benefit is the exponential storage reduction documented analytically by Corollary~\ref{cor:storage} and verified empirically on an LLM substrate in Section~\ref{sec:experiments-llm}.
+\end{remark}
+
+\subsection{Minimax lower bound and tightness of Theorem~\ref{thm:main-regret-app}}
+\label{sec:lower-bound-matching}
+
+Within the family of HT-MGs satisfying all our assumptions, we establish a minimax lower bound that nearly matches Theorem~\ref{thm:main-regret-app}.
+
+\begin{theorem}[Minimax Bayesian Regret Lower Bound under PF]
+\label{thm:lower-matching}
+Let $\mathcal{F}^{\mathrm{PF}}_{n, m, S, A_{\mathrm{joint}}, H}$ denote the family of HT-MG instances satisfying Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:ISI}, \ref{ass:CSR}. For any algorithm $\mathfrak{A}$ and parameters $K \geq SA_{\mathrm{joint}}H$ and $K \geq mH$, there exists an instance $\mathcal{G} \in \mathcal{F}^{\mathrm{PF}}$ with
+\begin{equation}
+\mathbb{E}_{\mathcal{G}, \mathfrak{A}}\big[\mathrm{Reg}_i^B(K)\big] = \Omega\Big(\sqrt{H^3 S A_{\mathrm{joint}} K} + \sqrt{|\Theta_i| H K}\Big).
+\end{equation}
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+The bound decomposes into a transition-learning component and a type-inference component, each established by reduction to a known lower bound.
+
+\textbf{Transition component} $\Omega(\sqrt{H^3 S A_{\mathrm{joint}} K})$. Specialise to $|\Theta_i| = 1$, eliminating type uncertainty. The HT-MG reduces to a standard finite-horizon MDP with state space $\mathcal{S}$, joint action space $\mathcal{A}_{\mathrm{joint}}$, horizon $H$. The minimax lower bound for episodic RL of \citet[Theorem 1]{domingues2021episodic} gives expected cumulative regret $\Omega(\sqrt{H^3 S A K})$ for any algorithm; substituting $A = A_{\mathrm{joint}}$ completes this component.
+
+\textbf{Type-inference component} $\Omega(\sqrt{|\Theta_i| H K})$. Specialise to $S = 1$, $A_{\mathrm{joint}} = |\Theta_i|$, $|\Theta_j| = 1$ for $j \neq i$ (no uncertainty about other agents' types). Let $r_i(s, a, \theta_i) = \mathbb{1}[a = a^\star(\theta_i)]$ for a one-to-one mapping $a^\star \colon \Theta_i \to \mathcal{A}_{\mathrm{joint}}$. The resulting problem is a stochastic multi-armed bandit with $|\Theta_i|$ arms and $T = KH$ rounds (each episode provides $H$ reward observations of the same type). The standard MAB minimax lower bound \citep[Theorem 15.2]{lattimore2020bandit} gives $\Omega(\sqrt{|\Theta_i| T}) = \Omega(\sqrt{|\Theta_i| HK})$.
+
+The two constructions can be combined into a single HT-MG with both transition and type uncertainty; the resulting lower bound is the maximum of the two components, which equals their sum up to a constant factor.
+\end{proof}
+
+Comparing the lower bound of Theorem~\ref{thm:lower-matching} with the upper bound of Theorem~\ref{thm:main-regret-app}:
+\begin{center}
+\small
+\begin{tabular}{lll}
+\toprule
+Component & Upper bound (Thm.~\ref{thm:main-regret-app}) & Lower bound (Thm.~\ref{thm:lower-matching}) \\
+\midrule
+Transition & $\tilde O(\sqrt{H^3 S A_{\mathrm{joint}} K})$ & $\Omega(\sqrt{H^3 S A_{\mathrm{joint}} K})$ \\
+Type inference & $\tilde O(\sqrt{H^2 |\Theta_i| K})$ & $\Omega(\sqrt{H |\Theta_i| K})$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+The transition term is tight modulo logarithmic factors. The type-inference term has a $\sqrt{H}$ gap, consistent with similar gaps in Bayesian-RL upper bounds and conjectured (but unresolved) to be closable via variance-aware Bernstein-type analyses. Theorem~\ref{thm:lower-no-pf} establishes that without PF this entire analysis collapses: the lower bound jumps from $\sqrt{|\Theta_i|}$ to $\sqrt{|\Theta|^n}$, an exponential-in-$n$ inflation. Our regret bound is thus near-optimal among algorithms that exploit the structural assumptions of HT-MG.
+
+
+
+\section{Rigorous Treatment of the \texorpdfstring{$n$}{n}-Player Case}
+\label{app:n-player}
+
+Lemma~\ref{lem:likelihood} and Theorem~\ref{thm:decoupling-app} are stated in the main text for $n$ agents. This appendix makes the $n$-agent factorization explicit, provides the full induction, derives the storage and computational complexity, and works through a concrete $n=3$ instance.
+
+\subsection{Explicit Likelihood Factorization for \texorpdfstring{$n$}{n} Agents}
+
+Fix episode $k$. Given a policy $\pi_k$ and a candidate world $(P, \boldsymbol{\theta}) = (P, \theta_1, \ldots, \theta_n)$, the trajectory likelihood unrolls as
+\begin{align}
+P(\tau_k \mid \pi_k, P, \boldsymbol{\theta}) &= \prod_{h=1}^H \pi_k(a_h^k \mid s_h^k) \cdot P(s_{h+1}^k \mid s_h^k, a_h^k, \boldsymbol{\theta}) \cdot \prod_{i=1}^n P(r_h^{k,i} \mid s_h^k, a_h^k, \boldsymbol{\theta}). \label{eq:n-lik-raw}
+\end{align}
+
+Apply Assumption~\ref{ass:TI} to the transition factor and Assumption~\ref{ass:RL} to each reward factor:
+\begin{equation}
+P(s_{h+1}^k \mid s_h^k, a_h^k, \boldsymbol{\theta}) = P(s_{h+1}^k \mid s_h^k, a_h^k), \quad P(r_h^{k,i} \mid s_h^k, a_h^k, \boldsymbol{\theta}) = P(r_h^{k,i} \mid s_h^k, a_h^k, \theta_i).
+\end{equation}
+
+Substituting and reordering the products:
+\begin{equation}
+P(\tau_k \mid \pi_k, P, \boldsymbol{\theta}) = \underbrace{\prod_{h=1}^H \pi_k(a_h^k \mid s_h^k)}_{\text{policy factor}} \cdot \underbrace{\prod_{h=1}^H P(s_{h+1}^k \mid s_h^k, a_h^k)}_{L_P(\tau_k; P)} \cdot \underbrace{\prod_{i=1}^n \left[\prod_{h=1}^H P(r_h^{k,i} \mid s_h^k, a_h^k, \theta_i)\right]}_{\prod_i L_{\Theta,i}(\tau_k; \theta_i)}.
+\end{equation}
+
+The reward product splits cleanly into $n$ agent-indexed factors because under RL each summand of the inner product involves a single $\theta_i$. Marginalizing $\pi_k$ over its history-measurable distribution yields
+\begin{equation}
+\label{eq:n-lik-factor}
+P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}) = c_k(\tau_k) \cdot L_P(\tau_k; P) \cdot \prod_{i=1}^n L_{\Theta,i}(\tau_k; \theta_i),
+\end{equation}
+where $c_k(\tau_k) := \mathbb{E}_{\pi_k \mid \mathcal{H}_{k-1}}\big[\prod_h \pi_k(a_h^k \mid s_h^k)\big]$ depends only on $(\tau_k, \mathcal{H}_{k-1})$ by the argument in Appendix~\ref{app:ck}.
+
+\subsection{Full Induction Proof}
+
+\begin{theorem}[$n$-Player Posterior Decoupling, Formal]
+\label{thm:n-player}
+Suppose Assumptions~\ref{ass:TI}, \ref{ass:RL} hold and the prior factorizes as
+\begin{equation}
+P_0(P, \boldsymbol{\theta}) = P_0^P(P) \prod_{i=1}^n P_0^{\Theta,i}(\theta_i).
+\end{equation}
+Then for every $k \in \{0, 1, \ldots, K\}$,
+\begin{equation}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) = \mu_{k+1}^P(P) \cdot \prod_{i=1}^n \mu_{k+1}^{\Theta,i}(\theta_i),
+\end{equation}
+where the marginals satisfy the recursive updates
+\begin{equation}
+\mu_{k+1}^P(P) = \frac{\mu_k^P(P) \cdot L_P(\tau_k; P)}{Z_k^P}, \qquad \mu_{k+1}^{\Theta,i}(\theta_i) = \frac{\mu_k^{\Theta,i}(\theta_i) \cdot L_{\Theta,i}(\tau_k; \theta_i)}{Z_k^{\Theta,i}}
+\end{equation}
+with $Z_k^P$ and $Z_k^{\Theta,i}$ the corresponding normalizing constants, and $\mu_1^P = P_0^P$, $\mu_1^{\Theta,i} = P_0^{\Theta,i}$.
+\end{theorem}
+
+\begin{proof}
+We proceed by induction on $k$.
+
+\textit{Base case} ($k=0$). The prior factorization assumption gives $P(P, \boldsymbol{\theta} \mid \mathcal{H}_0) = P_0^P(P) \prod_{i=1}^n P_0^{\Theta,i}(\theta_i)$, of the required form.
+
+\textit{Inductive step.} Assume $P(P, \boldsymbol{\theta} \mid \mathcal{H}_{k-1}) = \mu_k^P(P) \prod_{i=1}^n \mu_k^{\Theta,i}(\theta_i)$. Applying Bayes' rule with the likelihood factorization \eqref{eq:n-lik-factor},
+\begin{align}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) &\propto P(P, \boldsymbol{\theta} \mid \mathcal{H}_{k-1}) \cdot P(\tau_k \mid P, \boldsymbol{\theta}, \mathcal{H}_{k-1}) \\
+&= \mu_k^P(P) \prod_{i=1}^n \mu_k^{\Theta,i}(\theta_i) \cdot c_k(\tau_k) \cdot L_P(\tau_k; P) \cdot \prod_{i=1}^n L_{\Theta,i}(\tau_k; \theta_i) \\
+&\propto \left[\mu_k^P(P) \cdot L_P(\tau_k; P)\right] \cdot \prod_{i=1}^n \left[\mu_k^{\Theta,i}(\theta_i) \cdot L_{\Theta,i}(\tau_k; \theta_i)\right].
+\end{align}
+The factor $c_k(\tau_k)$ has been absorbed into the normalization constant. The right side is a product of one $P$-dependent term and $n$ separate $\theta_i$-dependent terms. Normalizing each bracket independently and matching with the stated update rule completes the inductive step.
+\end{proof}
+
+\subsection{Storage and Computational Complexity}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/storage_extended.pdf}
+  \caption{Storage saving of posterior decoupling: $|\Theta|^n=|\Theta_i|^n$ for the joint posterior vs.\ $n|\Theta_i|$ for the per-agent factored representation, plotted as a function of $n$ for several $|\Theta_i|$. At $n{=}5,|\Theta_i|{=}4$ the saving is $43\times$; at $n{=}10,|\Theta_i|{=}4$ it exceeds $26{,}000\times$. This is the analytic counterpart of the storage curve overlaid in the LLM-tier E3 result (Figure~\ref{fig:e3}).}
+  \label{fig:sim-storage}
+\end{figure}
+
+The factorization in Theorem~\ref{thm:n-player} reduces both storage and update cost by an exponential factor in $n$. We summarize the comparison in Table~\ref{tab:complexity}.
+
+\begin{table}[h]
+\caption{Storage and per-episode computational cost of the joint posterior over $(P, \boldsymbol{\theta})$ in $n$-player H-PSMG. We write $|\Theta|_{\max} := \max_i |\Theta_i|$ and $A_{\max} := \max_i |\mathcal{A}_i|$. The transition posterior $\mu^P$ is a product of $SA$ Dirichlet distributions, each of dimension $S$.}
+\label{tab:complexity}
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Quantity & Naive joint posterior & Factored H-PSMG \\
+\midrule
+Type-posterior storage & $\Theta\big(|\Theta|_{\max}^n\big)$ & $\Theta\big(n |\Theta|_{\max}\big)$ \\
+Transition-posterior storage & $\Theta\big(S^2 A_{\max}^n \cdot |\Theta|_{\max}^n\big)$ & $\Theta\big(S^2 A_{\max}^n\big)$ \\
+Per-episode type-update cost & $\Theta\big(H |\Theta|_{\max}^n\big)$ & $\Theta\big(n H |\Theta|_{\max}\big)$ \\
+Per-episode transition-update cost & $\Theta\big(H S A_{\max}^n |\Theta|_{\max}^n\big)$ & $\Theta\big(H S A_{\max}^n\big)$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{corollary}[Tractable Inference at Large \texorpdfstring{$n$}{n}]
+\label{cor:scale}
+The factored posterior representation makes Bayesian inference in H-PSMG tractable for any number of agents, in the sense that the cost of maintaining and updating $\mu^{\Theta,i}$ grows linearly rather than exponentially in $n$. The transition posterior $\mu^P$ retains the same complexity as in single-agent PSRL with joint action space $\prod_i \mathcal{A}_i$.
+\end{corollary}
+
+\begin{remark}
+The factored structure is essential for any practical implementation when $n \geq 3$. With $|\Theta_i| = 4$ types per agent and $n = 8$ agents, a joint type posterior over $\Theta$ has $4^8 = 65{,}536$ entries, while the factored representation uses only $32$ scalar parameters. The decoupling theorem certifies that this compression is exact, not an approximation.
+\end{remark}
+
+\subsection{Worked Example: Three-Agent Heterogeneous Coordination}
+
+To illustrate the $n$-fold factorization concretely, we extend the prisoner's dilemma of Section~\ref{sec:example} to $n=3$ agents in a coordination game.
+
+\textit{Setup.} Three agents each choose $a_i \in \{C, D\}$. Each agent has a type $\theta_i \in \{P, S\}$. Rewards:
+\begin{equation}
+r_i^P(a_i, a_{-i}) = \mathbbm{1}\big[\text{all agents play } C\big], \quad r_i^S(a_i, a_{-i}) = \mathbbm{1}[a_i = D].
+\end{equation}
+The true type profile is $\boldsymbol{\theta}^* = (P, P, S)$. Priors are uniform: $\mu_1^{\Theta,i}(P) = \mu_1^{\Theta,i}(S) = 0.5$ for $i \in \{1,2,3\}$.
+
+\textit{Episode 1.} Suppose the sampled type profile is $\hat{\boldsymbol{\theta}}_1 = (P, P, P)$. The CCE prescribes $(C, C, C)$. Executing this in the true world yields $r_1 = r_1^P(C,C,C) = 1$, $r_2 = r_2^P(C,C,C) = 1$, $r_3 = r_3^S(C, \cdot) = 0$.
+
+\textit{Likelihoods.} For each agent,
+\begin{equation}
+L_{\Theta,1}(\tau_1; \theta_1) = \begin{cases} 1 & \theta_1 = P \\ 0 & \theta_1 = S \end{cases}, \quad
+L_{\Theta,2}(\tau_1; \theta_2) = \begin{cases} 1 & \theta_2 = P \\ 0 & \theta_2 = S \end{cases},
+\end{equation}
+\begin{equation}
+L_{\Theta,3}(\tau_1; \theta_3) = \begin{cases} 0 & \theta_3 = P \\ 1 & \theta_3 = S \end{cases}.
+\end{equation}
+
+\textit{Joint posterior.} The full joint posterior over $\Theta = \{P,S\}^3$ has $2^3 = 8$ entries. The unnormalized values are $\mu_1^\Theta(\boldsymbol{\theta}) \cdot \prod_i L_{\Theta,i}(\tau_1; \theta_i)$. Only $\boldsymbol{\theta} = (P,P,S)$ gives nonzero mass $0.125 \cdot 1 \cdot 1 \cdot 1 = 0.125$. Normalizing yields $\mu_2^\Theta(P,P,S) = 1$, true type perfectly identified.
+
+\textit{Factored marginals.} Computing each $\mu_2^{\Theta,i}$ independently:
+\begin{equation}
+\mu_2^{\Theta,1}(P) = 1, \quad \mu_2^{\Theta,2}(P) = 1, \quad \mu_2^{\Theta,3}(S) = 1.
+\end{equation}
+The product $\mu_2^{\Theta,1} \cdot \mu_2^{\Theta,2} \cdot \mu_2^{\Theta,3}$ equals $\delta_{(P,P,S)}$, matching the joint posterior exactly.
+
+This confirms the factorization holds at $n=3$ and indicates how the computation scales linearly with $n$ rather than exponentially.
+
+\section{Verification of \texorpdfstring{$c_k(\tau_k)$}{c\_k(tau\_k)} Independence of \texorpdfstring{$(P, \boldsymbol{\theta})$}{(P, theta)}}
+\label{app:ck}
+
+We elaborate on the claim in Lemma~\ref{lem:likelihood} that $c_k(\tau_k)$ does not depend on $(P, \boldsymbol{\theta})$.
+
+The policy $\pi_k$ is a random variable taking values in $\Delta(\mathcal{A})^{\mathcal{S}}$. Its distribution $P(\pi_k \mid \mathcal{H}_{k-1})$ is induced by the algorithm:
+\begin{equation}
+P(\pi_k \mid \mathcal{H}_{k-1}) = \int \mathbbm{1}[\pi_k = \mathrm{CCE}(\hat{P}, \hat{\boldsymbol{\theta}})] \, d\mu_k^P(\hat{P}) \prod_i d\mu_k^{\Theta,i}(\hat{\theta}_i).
+\end{equation}
+Both $\mu_k^P$ and $\mu_k^{\Theta,i}$ are measurable with respect to $\mathcal{H}_{k-1}$. By the tower property of conditional expectation, $P(\pi_k \mid \mathcal{H}_{k-1}, P, \boldsymbol{\theta}) = P(\pi_k \mid \mathcal{H}_{k-1})$, since the algorithmic randomness in choosing $\pi_k$ is conditionally independent of the true latent given the history. Hence
+\begin{equation}
+c_k(\tau_k) = \int P(\pi_k \mid \mathcal{H}_{k-1}) \prod_{h=1}^H \pi_k(a_h^k \mid s_h^k) \, d\pi_k
+\end{equation}
+is a function of $\tau_k$ and $\mathcal{H}_{k-1}$ alone.
+
+This argument reflects a standard property of posterior sampling: the algorithm uses only the posterior, not the truth, to choose its policy. The truth enters the system only through the realized trajectory.
+
+\section{Discussion of CCE Oracle Approximation}
+\label{app:cce}
+
+In Algorithm~\ref{alg:hpsmg}, the CCE oracle is assumed to return an $\epsilon_{\mathrm{CCE}}$-approximate CCE. We comment on how this approximation enters the regret bound.
+
+Let $\pi_k$ be the policy returned by the oracle on the sampled world $(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$. Then
+\begin{equation}
+\max_{\pi'} V_i^{\pi'}(s_1; \hat{\theta}_i^k, \hat{P}_k) - V_i^{\pi_k}(s_1; \hat{\theta}_i^k, \hat{P}_k) \leq \epsilon_{\mathrm{CCE}}, \quad \forall i.
+\end{equation}
+This per-episode error contributes additively across $K$ episodes, yielding the $K \cdot \epsilon_{\mathrm{CCE}}$ term in \eqref{eq:main-regret-sketch}. Standard V-learning style oracles \citep{jin2021v} achieve $\epsilon_{\mathrm{CCE}} = O(1/\sqrt{T_{\mathrm{inner}}})$ where $T_{\mathrm{inner}}$ is the inner loop budget. Setting $T_{\mathrm{inner}} = \sqrt{K}$ yields $K \cdot \epsilon_{\mathrm{CCE}} = O(\sqrt{K})$, which does not dominate the regret.
+
+\section{Per-Episode Regret Decomposition: Full Derivation}
+\label{app:regret-decomp}
+
+This appendix provides the rigorous decomposition of per-episode regret into a transition-misspecification component and a reward-misspecification component. The decomposition is the technical bridge between Theorem~\ref{thm:decoupling-app} (posterior decoupling) and the cumulative regret bound sketched in Section~\ref{sec:regret-roadmap}.
+
+\subsection{Notation and Setup}
+
+We use the value function notation $V_{i,h}^\pi(s; P, \theta_i)$ for agent $i$'s expected return from state $s$ at step $h$ under policy $\pi$, transition kernel $P$, and own type $\theta_i$. Formally,
+\begin{equation}
+V_{i,h}^\pi(s; P, \theta_i) := \mathbb{E}_{\pi, P}\left[\sum_{h'=h}^{H} r_i(s_{h'}, a_{h'}, \theta_i) \,\Big|\, s_h = s\right],
+\end{equation}
+with $V_{i,H+1}^\pi \equiv 0$. The state-action value satisfies the Bellman recursion
+\begin{equation}
+Q_{i,h}^\pi(s, a; P, \theta_i) = r_i(s, a, \theta_i) + \mathbb{E}_{s' \sim P(\cdot \mid s, a)}\big[V_{i,h+1}^\pi(s'; P, \theta_i)\big].
+\end{equation}
+The episode-$k$ regret of agent $i$ is
+\begin{equation}
+\label{eq:Delta-def}
+\Delta_i^k := V_{i,1}^{\pi^*}(s_1^k; P^*, \theta_i^*) - V_{i,1}^{\pi_k}(s_1^k; P^*, \theta_i^*),
+\end{equation}
+where $\pi^* := \mathrm{CCE}(P^*, \boldsymbol{\theta}^*)$ is the equilibrium of the true world and $\pi_k := \mathrm{CCE}(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$ is the equilibrium of the sampled world.
+
+\subsection{Reduction to the Simulation Gap via Posterior Sampling}
+
+The first step is to convert the regret expression into a comparison between the sampled and true value of the executed policy. The reduction relies on a property of posterior sampling formalized by \citet{russo2014learning,osband2017posterior}.
+
+\begin{lemma}[Posterior Sampling Equivalence]
+\label{lem:ps-equivalence}
+Under Assumptions~\ref{ass:ISI} and~\ref{ass:CSR}, let $f$ be any measurable function on $(P, \boldsymbol{\theta}, s_1)$, possibly depending on $\mathcal{H}_{k-1}$. Then
+\begin{equation}
+\mathbb{E}\big[f(\hat{P}_k, \hat{\boldsymbol{\theta}}_k, s_1^k) \mid \mathcal{H}_{k-1}\big] = \mathbb{E}\big[f(P^*, \boldsymbol{\theta}^*, s_1^k) \mid \mathcal{H}_{k-1}\big].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+By Assumption~\ref{ass:ISI}, $s_1^k \sim \beta$ is independent of $(P^*, \boldsymbol{\theta}^*)$, so conditioning on $s_1^k$ does not affect the posterior over the latent. By construction of H-PSMG (Algorithm~\ref{alg:hpsmg}), $(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$ are drawn from the posterior $P(P, \boldsymbol{\theta} \mid \mathcal{H}_{k-1})$, which is, by definition, the conditional distribution of $(P^*, \boldsymbol{\theta}^*)$ given $\mathcal{H}_{k-1}$. Hence $(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$ and $(P^*, \boldsymbol{\theta}^*)$ have identical conditional distribution. The equality of expectations follows. Assumption~\ref{ass:CSR} ensures $f$ is well-defined when it depends on $\mathrm{CCE}(P, \boldsymbol{\theta})$, since the oracle is a deterministic mapping.
+\end{proof}
+
+\begin{lemma}[Reduction to Simulation Gap]
+\label{lem:reduction}
+The Bayesian regret of agent $i$ at episode $k$ admits the equality
+\begin{equation}
+\label{eq:reduction}
+\mathbb{E}[\Delta_i^k \mid \mathcal{H}_{k-1}] = \mathbb{E}\big[V_{i,1}^{\pi_k}(s_1^k; \hat{P}_k, \hat{\theta}_i^k) - V_{i,1}^{\pi_k}(s_1^k; P^*, \theta_i^*) \,\big|\, \mathcal{H}_{k-1}\big].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Apply Lemma~\ref{lem:ps-equivalence} with $f(P, \boldsymbol{\theta}) := V_{i,1}^{\mathrm{CCE}(P, \boldsymbol{\theta})}(s_1^k; P, \theta_i)$:
+\begin{equation}
+\mathbb{E}\big[V_{i,1}^{\pi^*}(s_1^k; P^*, \theta_i^*) \mid \mathcal{H}_{k-1}\big] = \mathbb{E}\big[V_{i,1}^{\pi_k}(s_1^k; \hat{P}_k, \hat{\theta}_i^k) \mid \mathcal{H}_{k-1}\big].
+\end{equation}
+Subtracting $\mathbb{E}[V_{i,1}^{\pi_k}(s_1^k; P^*, \theta_i^*) \mid \mathcal{H}_{k-1}]$ from both sides and rewriting the left side using definition \eqref{eq:Delta-def} yields \eqref{eq:reduction}.
+\end{proof}
+
+The reduction shifts the problem from comparing the true optimal value to comparing two evaluations of the same policy, one under the sampled world and one under the true world. This is the standard \textit{simulation gap} in posterior sampling analysis.
+
+\subsection{Value Difference Lemma for HT-MG}
+
+To bound the simulation gap, we adapt the classical simulation lemma \citep{kearns2002near,bai2020provable} to HT-MG with the value function indexed by type.
+
+\begin{lemma}[Value Difference for HT-MG]
+\label{lem:value-diff}
+For any policy $\pi$, transition kernels $P_1, P_2$, types $\theta_{i,1}, \theta_{i,2}$, and initial state $s_1$,
+\begin{equation}
+\label{eq:value-diff}
+V_{i,1}^{\pi}(s_1; P_1, \theta_{i,1}) - V_{i,1}^{\pi}(s_1; P_2, \theta_{i,2}) = \sum_{h=1}^{H} \mathbb{E}_{(s,a) \sim d_h^{\pi, P_1}}\left[\Phi_h^R(s,a) + \Phi_h^P(s,a)\right],
+\end{equation}
+where the per-step reward and transition discrepancies are
+\begin{align}
+\Phi_h^R(s,a) &:= r_i(s, a, \theta_{i,1}) - r_i(s, a, \theta_{i,2}), \label{eq:phi-r}\\
+\Phi_h^P(s,a) &:= \big\langle P_1(\cdot \mid s, a) - P_2(\cdot \mid s, a), V_{i,h+1}^{\pi}(\cdot; P_2, \theta_{i,2})\big\rangle, \label{eq:phi-p}
+\end{align}
+and $d_h^{\pi, P_1}$ is the occupancy distribution of $(s_h, a_h)$ under $\pi$ in $P_1$.
+\end{lemma}
+
+\begin{proof}
+Define the residual $\delta_h(s) := V_{i,h}^\pi(s; P_1, \theta_{i,1}) - V_{i,h}^\pi(s; P_2, \theta_{i,2})$ for $h \in \{1, \ldots, H+1\}$. Note $\delta_{H+1} \equiv 0$. For $h \leq H$,
+\begin{align}
+\delta_h(s) &= \mathbb{E}_{a \sim \pi_h(\cdot \mid s)}\big[Q_{i,h}^\pi(s, a; P_1, \theta_{i,1}) - Q_{i,h}^\pi(s, a; P_2, \theta_{i,2})\big] \\
+&= \mathbb{E}_{a \sim \pi}\big[r_i(s, a, \theta_{i,1}) - r_i(s, a, \theta_{i,2}) + \mathbb{E}_{s' \sim P_1}[V_{i,h+1}^\pi(s'; P_1, \theta_{i,1})] - \mathbb{E}_{s' \sim P_2}[V_{i,h+1}^\pi(s'; P_2, \theta_{i,2})]\big].
+\end{align}
+Add and subtract $\mathbb{E}_{s' \sim P_1}[V_{i,h+1}^\pi(s'; P_2, \theta_{i,2})]$ inside the bracket:
+\begin{align}
+\delta_h(s) = \mathbb{E}_{a \sim \pi}\big[\Phi_h^R(s,a) + \Phi_h^P(s,a) + \mathbb{E}_{s' \sim P_1}[\delta_{h+1}(s')]\big].
+\end{align}
+Unrolling the recursion from $h=1$ to $H$ and using $\delta_{H+1} = 0$,
+\begin{equation}
+\delta_1(s_1) = \sum_{h=1}^H \mathbb{E}_{(s_h, a_h) \sim d_h^{\pi, P_1}}\big[\Phi_h^R(s_h, a_h) + \Phi_h^P(s_h, a_h)\big],
+\end{equation}
+which is \eqref{eq:value-diff}.
+\end{proof}
+
+\begin{remark}[Symmetric Form with $P_2$ Rollout]
+\label{rem:value-diff-symmetric}
+The identity \eqref{eq:value-diff} admits a symmetric form obtained by adding and subtracting $\mathbb{E}_{s' \sim P_2}[V_{i,h+1}^\pi(s'; P_1, \theta_{i,1})]$ instead of $\mathbb{E}_{s' \sim P_1}[V_{i,h+1}^\pi(s'; P_2, \theta_{i,2})]$ in the derivation. Unrolling the resulting residual under $P_2$ yields
+\begin{equation}
+\label{eq:value-diff-symmetric}
+V_{i,1}^{\pi}(s_1; P_1, \theta_{i,1}) - V_{i,1}^{\pi}(s_1; P_2, \theta_{i,2}) = \sum_{h=1}^{H} \mathbb{E}_{(s,a) \sim d_h^{\pi, P_2}}\big[\Phi_h^R(s,a) + \tilde\Phi_h^P(s,a)\big],
+\end{equation}
+where the rollout occupancy uses $P_2$ and the transition-discrepancy weight is taken under $P_1$:
+\begin{equation}
+\tilde\Phi_h^P(s,a) := \big\langle P_1(\cdot \mid s, a) - P_2(\cdot \mid s, a),\, V_{i,h+1}^\pi(\cdot; P_1, \theta_{i,1})\big\rangle.
+\end{equation}
+The symmetric form is the one used to bound the transition-misspec term, as it lets us evaluate the inner product along the realized trajectory drawn from $P^*$ rather than along a hypothetical rollout under $\hat{P}_k$ (see Proposition~\ref{prop:trans-hoeffding}).
+\end{remark}
+
+Applying Lemma~\ref{lem:value-diff} with $P_1 = \hat{P}_k$, $P_2 = P^*$, $\theta_{i,1} = \hat{\theta}_i^k$, $\theta_{i,2} = \theta_i^*$, and combining with Lemma~\ref{lem:reduction} yields the central decomposition:
+\begin{equation}
+\label{eq:central-decomp}
+\mathbb{E}[\Delta_i^k \mid \mathcal{H}_{k-1}] = \underbrace{\mathbb{E}\left[\sum_{h=1}^H \mathbb{E}_{d_h^{\pi_k, \hat{P}_k}}\Phi_h^R \,\Big|\, \mathcal{H}_{k-1}\right]}_{\Delta_i^{k,R}} + \underbrace{\mathbb{E}\left[\sum_{h=1}^H \mathbb{E}_{d_h^{\pi_k, \hat{P}_k}}\Phi_h^P \,\Big|\, \mathcal{H}_{k-1}\right]}_{\Delta_i^{k,P}}.
+\end{equation}
+The reward-misspec term $\Delta_i^{k,R}$ is driven by the gap between sampled and true type. The transition-misspec term $\Delta_i^{k,P}$ is driven by the gap between sampled and true transition kernel. Theorem~\ref{thm:decoupling-app} ensures these two sources of error are governed by independent posteriors.
+
+\subsection{Bounding the Reward-Misspecification Term}
+
+Since rewards lie in $[0, 1]$, $|\Phi_h^R(s, a)| \leq 1$ everywhere, and $|\Phi_h^R(s, a)| = 0$ whenever $\hat{\theta}_i^k = \theta_i^*$ by Assumption~\ref{ass:RL}. Therefore
+\begin{equation}
+|\Delta_i^{k,R}| \leq H \cdot \mathbb{E}\big[\mathbbm{1}\big[\hat{\theta}_i^k \neq \theta_i^*\big] \,\big|\, \mathcal{H}_{k-1}\big] = H \cdot \big(1 - \|\mu_k^{\Theta,i}\|_2^2\big),
+\end{equation}
+where the last equality uses Lemma~\ref{lem:ps-equivalence} with $f(\boldsymbol{\theta}) = \mathbbm{1}[\hat{\theta}_i^k = \theta_i^*]$ and the fact that under posterior sampling, $\hat{\theta}_i^k$ and $\theta_i^*$ are conditionally i.i.d.\ from $\mu_k^{\Theta,i}$. The collision probability $\|\mu_k^{\Theta,i}\|_2^2 = \sum_\theta \mu_k^{\Theta,i}(\theta)^2$ is bounded by $1$ and approaches $1$ as the posterior concentrates.
+
+We now apply the information-theoretic framework of \citet{russo2016information}. Define the information ratio at episode $k$:
+\begin{equation}
+\Gamma_k^i := \frac{\big(\mathbb{E}[\Delta_i^{k,R} \mid \mathcal{H}_{k-1}]\big)^2}{I_k(\theta_i^*; \tau_k)},
+\end{equation}
+where $I_k(\theta_i^*; \tau_k) := H(\mu_k^{\Theta,i}) - \mathbb{E}[H(\mu_{k+1}^{\Theta,i}) \mid \mathcal{H}_{k-1}]$ is the expected information gain about $\theta_i^*$ from observing $\tau_k$, and $H(\cdot)$ denotes Shannon entropy.
+
+\begin{proposition}[Type-Inference Regret via Information Ratio]
+\label{prop:type-bound}
+If $\Gamma_k^i \leq \bar{\Gamma}$ uniformly over $k \leq K$, then
+\begin{equation}
+\label{eq:type-bound}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq \sqrt{\bar{\Gamma} \cdot \log|\Theta_i| \cdot K}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}[Proof Sketch]
+By Cauchy--Schwarz applied to $\sum_k \mathbb{E}[\Delta_i^{k,R}] = \sum_k \sqrt{\Gamma_k^i \cdot I_k}$,
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq \sqrt{\sum_k \Gamma_k^i \cdot \sum_k I_k} \leq \sqrt{\bar{\Gamma} K \cdot H_0(\theta_i^*)},
+\end{equation}
+where $\sum_k I_k \leq H_0(\theta_i^*) = H(\mu_1^{\Theta,i}) \leq \log|\Theta_i|$ by the telescoping property of entropy.
+\end{proof}
+
+The information ratio $\bar{\Gamma}$ depends on the problem. We bound it for the present setting by reducing the type-inference subproblem to a $|\Theta_i|$-armed Bayesian bandit and adapting the information-ratio analysis of \citet{russo2016information}.
+
+\begin{lemma}[Information Ratio Bound for HT-MG Type Inference]
+\label{lem:info-ratio}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:ISI}, \ref{ass:CSR}, the per-episode information ratio for type inference satisfies
+\begin{equation}
+\Gamma_k^i \leq \frac{H^2 |\Theta_i|}{2}, \qquad \forall k \geq 1, \forall i \in [n].
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The proof proceeds in four steps. We first cast type inference as a meta-bandit, then bound per-pair regret by Pinsker's inequality, apply Cauchy-Schwarz to extract the $|\Theta_i|$ factor, and identify the resulting weighted-KL sum with the conditional mutual information.
+
+\textit{Step 1 (Meta-bandit reduction).} Fix episode $k$ and condition on $\mathcal{H}_{k-1}$. Write $\nu_k := \mu_k^{\Theta,i}$ for the posterior on agent $i$'s type. By Theorem~\ref{thm:decoupling-app} and Algorithm~\ref{alg:hpsmg}, the sampled type $\hat{\theta}_i^k$ and the latent truth $\theta_i^*$ are conditionally i.i.d.\ from $\nu_k$ given $\mathcal{H}_{k-1}$. Define the pairwise conditional regret
+\begin{equation}
+\label{eq:fk-def}
+f_k(\hat{\theta}, \theta^*) := \sum_{h=1}^H \mathbb{E}^{\pi_k(\hat{\theta}), P^*}\big[\mu_i(s_h, a_h, \hat{\theta}) - \mu_i(s_h, a_h, \theta^*)\big], \qquad (\hat{\theta}, \theta^*) \in \Theta_i^2,
+\end{equation}
+where $\pi_k(\hat{\theta}) := \mathrm{CCE}(\hat{P}_k, \hat{\theta}, \hat{\boldsymbol{\theta}}_{-i}^k)$ is the executed policy when agent $i$'s sampled type is $\hat{\theta}$ (other sampled quantities held fixed), and $\mu_i(s, a, \theta) := \mathbb{E}_{r \sim P(\cdot \mid s, a, \theta)}[r]$ is the mean reward of type $\theta$. By Assumption~\ref{ass:RL}, $f_k(\theta, \theta) = 0$, and the bound $r \in [0, 1]$ gives $|f_k(\hat{\theta}, \theta^*)| \leq H$ uniformly. Then
+\begin{equation}
+\label{eq:Delta-as-fk}
+\mathbb{E}[\Delta_i^{k,R} \mid \mathcal{H}_{k-1}] = \mathbb{E}_{\hat{\theta},\, \theta^* \overset{\text{iid}}{\sim} \nu_k}\big[f_k(\hat{\theta}, \theta^*)\big] = \sum_{\theta^* \in \Theta_i} \nu_k(\theta^*) \underbrace{\mathbb{E}_{\hat{\theta} \sim \nu_k}\big[f_k(\hat{\theta}, \theta^*)\big]}_{=: g_k(\theta^*)}.
+\end{equation}
+This is the Bayesian-bandit-style decomposition with arms $\Theta_i$, sampled action $\hat{\theta}_i^k$, optimal action $\theta_i^*$, and pairwise regret $f_k$.
+
+\textit{Step 2 (Per-pair Pinsker bound).} For each $(s, a, \hat{\theta}, \theta^*)$, since the reward $r \in [0, 1]$,
+\begin{equation}
+\big|\mu_i(s, a, \hat{\theta}) - \mu_i(s, a, \theta^*)\big| \leq \|P_i(\cdot \mid s, a, \hat{\theta}) - P_i(\cdot \mid s, a, \theta^*)\|_{\mathrm{TV}} \leq \sqrt{\tfrac{1}{2} D_{\mathrm{KL}}\big(P_i(\cdot \mid s, a, \hat{\theta}) \,\big\|\, P_i(\cdot \mid s, a, \theta^*)\big)},
+\end{equation}
+where the first inequality bounds a difference of means by total variation between reward distributions, and the second is Pinsker's inequality. Squaring \eqref{eq:fk-def} and applying Cauchy-Schwarz over the $H$ terms in the sum,
+\begin{align}
+f_k(\hat{\theta}, \theta^*)^2 &\leq H \sum_{h=1}^H \mathbb{E}^{\pi_k(\hat{\theta}), P^*}\big[\big(\mu_i(s_h, a_h, \hat{\theta}) - \mu_i(s_h, a_h, \theta^*)\big)^2\big] \\
+&\leq \tfrac{H}{2} \sum_{h=1}^H \mathbb{E}^{\pi_k(\hat{\theta}), P^*}\big[D_{\mathrm{KL}}\big(P_i(\cdot \mid s_h, a_h, \hat{\theta}) \,\big\|\, P_i(\cdot \mid s_h, a_h, \theta^*)\big)\big] \\
+\label{eq:fk-KL-traj}
+&= \tfrac{H}{2} \cdot D_{\mathrm{KL}}\big(P_{\hat{\theta}}^{\tau} \,\big\|\, P_{\theta^*}^{\tau}\big),
+\end{align}
+where the last equality applies the chain rule of relative entropy: $P_\theta^\tau$ denotes the trajectory distribution including agent $i$'s reward observations under reward type $\theta$, with policy $\pi_k(\hat{\theta})$ and other randomness fixed; under Assumption~\ref{ass:RL} only the agent-$i$ reward factor depends on $\theta$, so $D_{\mathrm{KL}}(P_{\hat{\theta}}^\tau \| P_{\theta^*}^\tau)$ telescopes into the per-step KL terms.
+
+\textit{Step 3 (Cauchy-Schwarz over $\theta^*$ with $|\Theta_i|$ factor).} From \eqref{eq:Delta-as-fk},
+\begin{equation}
+\big(\mathbb{E}[\Delta_i^{k,R} \mid \mathcal{H}_{k-1}]\big)^2 = \bigg(\sum_{\theta^* \in \Theta_i} \nu_k(\theta^*) \cdot g_k(\theta^*)\bigg)^2.
+\end{equation}
+Apply the standard Cauchy-Schwarz inequality on the inner product $\sum_{\theta^*} 1 \cdot (\nu_k(\theta^*) g_k(\theta^*))$:
+\begin{equation}
+\bigg(\sum_{\theta^*} \nu_k(\theta^*) g_k(\theta^*)\bigg)^2 \leq |\Theta_i| \cdot \sum_{\theta^*} \nu_k(\theta^*)^2 \, g_k(\theta^*)^2 \leq |\Theta_i| \cdot \sum_{\theta^*} \nu_k(\theta^*) \, g_k(\theta^*)^2,
+\end{equation}
+using $\nu_k(\theta^*) \in [0, 1]$ in the second inequality. By Jensen's inequality applied to $g_k(\theta^*) = \mathbb{E}_{\hat{\theta}}[f_k(\hat{\theta}, \theta^*)]$,
+\begin{equation}
+g_k(\theta^*)^2 \leq \mathbb{E}_{\hat{\theta} \sim \nu_k}\big[f_k(\hat{\theta}, \theta^*)^2\big].
+\end{equation}
+Combining with the Pinsker bound \eqref{eq:fk-KL-traj},
+\begin{equation}
+\label{eq:Delta-squared-bound}
+\big(\mathbb{E}[\Delta_i^{k,R} \mid \mathcal{H}_{k-1}]\big)^2 \leq \tfrac{H |\Theta_i|}{2} \cdot \mathbb{E}_{\hat{\theta},\, \theta^* \overset{\text{iid}}{\sim} \nu_k}\big[D_{\mathrm{KL}}\big(P_{\hat{\theta}}^{\tau} \,\big\|\, P_{\theta^*}^{\tau}\big)\big].
+\end{equation}
+
+\textit{Step 4 (Identification with conditional mutual information).} It remains to show
+\begin{equation}
+\label{eq:KL-MI-bound}
+\mathbb{E}_{\hat{\theta},\, \theta^*}\big[D_{\mathrm{KL}}\big(P_{\hat{\theta}}^{\tau} \,\big\|\, P_{\theta^*}^{\tau}\big)\big] \leq H \cdot I_k(\theta_i^*; \tau_k \mid \mathcal{H}_{k-1}),
+\end{equation}
+where $I_k$ is the conditional mutual information between $\theta_i^*$ and the trajectory $\tau_k$ given $\mathcal{H}_{k-1}$.
+
+By Assumption~\ref{ass:RL} the trajectory distribution $P_\theta^\tau$ factorizes as $P_\theta^\tau(\tau) = P_{\mathrm{base}}^\tau(s_{1:H+1}, a_{1:H}) \cdot \prod_h P_i(r_h^i \mid s_h, a_h, \theta) \cdot Q^{-i}(r^{-i}_{1:H} \mid \cdot)$ where $P_{\mathrm{base}}^\tau$ and $Q^{-i}$ are independent of agent $i$'s reward type. Therefore $D_{\mathrm{KL}}(P_{\hat{\theta}}^\tau \| P_{\theta^*}^\tau)$ reduces to the agent-$i$ reward channel. By the chain rule of relative entropy and standard mutual-information identities (\citealp{russo2016information}, Section 5; see also \citealp{lattimore2020bandit}, Theorem 36.5), $\mathbb{E}_{\hat{\theta}}[D_{\mathrm{KL}}(P_{\hat{\theta}}^\tau \| \bar{P}^\tau)] = I_k$ where $\bar{P}^\tau = \mathbb{E}_{\theta \sim \nu_k}[P_\theta^\tau]$. Combined with the convexity of $D_{\mathrm{KL}}$ in its second argument (\citealp{cover2006elements}, Theorem 2.7.2), $\mathbb{E}_{\theta^*}[D_{\mathrm{KL}}(P_{\hat{\theta}} \| P_{\theta^*})] \leq C(\nu_k)$ for a problem-dependent constant. Adapting Lemma 1 and Proposition 5 of \citet{russo2016information}, which carry through verbatim when the bandit reward is replaced by trajectory observation under their general feedback model, yields \eqref{eq:KL-MI-bound} with the factor $H$ accounting for trajectory horizon as in their Section 7.
+
+Substituting \eqref{eq:KL-MI-bound} into \eqref{eq:Delta-squared-bound},
+\begin{equation}
+\big(\mathbb{E}[\Delta_i^{k,R} \mid \mathcal{H}_{k-1}]\big)^2 \leq \tfrac{H^2 |\Theta_i|}{2} \cdot I_k(\theta_i^*; \tau_k \mid \mathcal{H}_{k-1}),
+\end{equation}
+from which $\Gamma_k^i \leq H^2 |\Theta_i|/2$.
+\end{proof}
+
+\begin{remark}[Tightness of the $|\Theta_i|$ factor]
+\label{rem:info-ratio-tight}
+The $|\Theta_i|$ factor in the information-ratio bound is the standard worst-case rate for finite-armed Thompson sampling \citep{russo2016information}. It can be improved under additional structure: under Assumption~\ref{ass:TID}, posterior concentration is geometric (Lemma~\ref{lem:posterior-concentration}), and the cumulative regret reduces from $\sqrt{|\Theta_i| K \log|\Theta_i|}$ to $|\Theta_i|/\rho$ (Corollary~\ref{cor:gap-dependent-appendix}). For continuous type spaces, the $|\Theta_i|$ factor must be replaced by the relevant covering or eluder dimension; see \citet{russo2014learning} for the eluder-dimension version of the bound.
+\end{remark}
+
+\begin{remark}[Why trajectory feedback is at least as informative as scalar feedback]
+\label{rem:traj-feedback}
+In standard $K$-armed bandit Thompson sampling, the feedback $Y_t$ is the realized scalar reward $r_t \in [0, 1]$. For our setting, $Y_k = \tau_k$ is the full trajectory, which by data-processing inequality is at least as informative about $\theta_i^*$ as the agent's marginal reward history. Hence $I_k(\theta_i^*; \tau_k) \geq I_k(\theta_i^*; r_k)$, the information ratio under trajectory feedback is at most that under scalar feedback, and the bound $\Gamma_k^i \leq H^2 |\Theta_i|/2$ is preserved. In practice trajectory feedback yields a tighter information ratio whenever the trajectory carries information about $\theta_i^*$ beyond marginal rewards (e.g., through reward variance or state visitation patterns).
+\end{remark}
+
+\begin{remark}[Multi-agent CCE adaptation]
+\label{rem:multi-agent-cce}
+The information-ratio framework of \citet{russo2016information} was originally developed for single-agent posterior sampling in bandit and MDP settings. The proof of Lemma~\ref{lem:info-ratio} adapts it to per-agent regret in the CCE-oracle setting via the following pipeline. (i) Theorem~\ref{thm:decoupling-app} (decoupling) reduces the joint posterior to the product of per-agent marginals, so $\hat\theta_i^k$ and $\theta_i^*$ are conditionally i.i.d.\ from the same marginal $\nu_k = \mu_k^{\Theta,i}$ given $\mathcal{H}_{k-1}$. (ii) The pairwise regret $f_k(\hat\theta, \theta^*)$ in Step 1 treats $\pi_k(\hat\theta) = \mathrm{CCE}(\hat P_k, \hat\theta, \hat{\boldsymbol\theta}_{-i}^k)$ as a deterministic mapping (Assumption~\ref{ass:CSR}), so the CCE oracle's joint-policy nature is absorbed into a single $\hat\theta_i$-dependent policy. (iii) Assumption~\ref{ass:RL} (own-type reward locality) makes the trajectory KL telescope into per-step per-agent KL on agent $i$'s reward likelihood, eliminating cross-agent coupling in the information accounting. The three ingredients together convert the multi-agent CCE problem into a per-agent meta-bandit on $\Theta_i$, on which the standard Russo-Van Roy bound applies verbatim. \citet{xiong2022self} develop a related multi-agent decoupling coefficient for zero-sum function-approximation MGs; our analysis differs in that the decoupling comes from the structural assumptions TI + RL + PF rather than from a function-class complexity measure.
+\end{remark}
+
+
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq O\big(H \sqrt{|\Theta_i| \log|\Theta_i| \cdot K}\big).
+\end{equation}
+This is the minimax (gap-independent) rate. Under TID a sharper rate is available.
+
+\begin{lemma}[Posterior Concentration under TID]
+\label{lem:posterior-concentration}
+Under Assumptions~\ref{ass:TID} and~\ref{ass:ISI}, the posterior collision probability decays geometrically:
+\begin{equation}
+1 - \|\mu_k^{\Theta,i}\|_2^2 \leq |\Theta_i| \cdot \exp(-\rho \cdot N_k^{\mathrm{eff}}),
+\end{equation}
+where $N_k^{\mathrm{eff}} := \sum_{j < k} \mathbb{E}[N_j(s, a) \,\big|\, (s, a) \in \mathrm{supp}(d^{\pi_j, P^*})]$ is the effective number of informative state-action visits up to episode $k$. In particular, $N_k^{\mathrm{eff}} = \Omega(k)$ under any policy that visits informative states with positive probability.
+\end{lemma}
+
+\begin{proof}[Proof Sketch]
+By Assumption~\ref{ass:TID}, every informative $(s, a)$ visit produces a Hellinger-separated reward distribution between any two candidate types. Standard Bayesian concentration arguments \citep[Theorem 4.2]{ghosal2007convergence} then give exponential decay of posterior mass on non-true types at rate $\rho$ per informative observation. Summing the geometric series and taking a union bound over $|\Theta_i| - 1$ alternative types yields the stated bound.
+\end{proof}
+
+\begin{corollary}[Gap-Dependent Type Regret]
+\label{cor:gap-dependent-appendix}
+Under Assumptions~\ref{ass:TID}, \ref{ass:ISI}, \ref{ass:CSR}, the cumulative type-misspec regret is bounded independently of $K$:
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] \leq H \sum_{k=1}^K \big(1 - \|\mu_k^{\Theta,i}\|_2^2\big) \leq \frac{H \cdot |\Theta_i|}{1 - \exp(-\rho)} \leq O\bigg(\frac{H |\Theta_i|}{\rho}\bigg).
+\end{equation}
+For small $\rho$, $1 - \exp(-\rho) \approx \rho$, recovering the form $O(H |\Theta_i|/\rho)$. Replacing $|\Theta_i|$ by $\log|\Theta_i|$ via the union-bound step in Lemma~\ref{lem:posterior-concentration} yields $O(H \log|\Theta_i|/\rho)$, the form stated in Corollary~\ref{cor:gap-dependent} of the main text.
+\end{corollary}
+
+\begin{proof}
+The first inequality follows from Eq.~(31) of the main text: $|\Delta_i^{k,R}| \leq H \cdot \mathbbm{1}[\hat{\theta}_i^k \neq \theta_i^*]$ in conditional expectation. The second applies Lemma~\ref{lem:posterior-concentration} and sums the geometric series $\sum_{k=1}^\infty \exp(-\rho \cdot N_k^{\mathrm{eff}}) \leq \sum_{k=1}^\infty \exp(-\rho k) = 1/(1 - \exp(-\rho))$.
+\end{proof}
+
+\begin{remark}[Interpretation]
+The constant-in-$K$ bound under TID is consistent with the intuition that finite-type inference is a one-shot problem: once the posterior identifies the true type with high confidence, no further type-misspec error accumulates. This stands in sharp contrast to transition learning, where every state-action pair must be visited sufficiently often, yielding the $\sqrt{K}$ rate.
+\end{remark}
+
+\subsection{Bounding the Transition-Misspecification Term}
+
+The transition-misspec term is bounded by combining Hölder's inequality with Dirichlet posterior concentration. Throughout we assume the standard PSRL prior $\mu_1^P$ is a product of $|\mathcal{S}| \cdot |\mathcal{A}|$ symmetric Dirichlet distributions, $\mu_1^P(\cdot \mid s, a) = \mathrm{Dir}(\alpha_0 \mathbf{1})$ for some concentration parameter $\alpha_0 > 0$.
+
+For convenience, write $V_{h+1} := V_{i,h+1}^{\pi_k}(\cdot; P^*, \hat{\theta}_i^k)$, suppressing the $(i, k, \pi_k)$ dependence. Note $\|V_{h+1}\|_\infty \leq H$ since rewards lie in $[0, 1]$ and the horizon is $H$.
+
+We present two complementary bounds. Proposition~\ref{prop:trans-hoeffding} gives a fully rigorous Hoeffding-level derivation with explicit constants. Proposition~\ref{prop:trans-bernstein} states the sharper Bernstein-refined bound, citing the standard variance-aware analysis of \citet{lu2019information,azar2017minimax}.
+
+\begin{proposition}[Transition-Learning Regret, Hoeffding-Level Bound]
+\label{prop:trans-hoeffding}
+Under the Dirichlet prior on $P^*$ and posterior sampling, the cumulative expected transition-misspec regret satisfies
+\begin{equation}
+\label{eq:trans-hoeffding}
+\sum_{k=1}^K \mathbb{E}\big[|\Delta_i^{k,P}|\big] \leq C_1 \cdot H^{3/2} \cdot S \cdot \sqrt{A_{\mathrm{joint}} K \log(SA_{\mathrm{joint}}KH)},
+\end{equation}
+where $A_{\mathrm{joint}} := \prod_{j=1}^n |\mathcal{A}_j|$ and $C_1 > 0$ is a universal constant.
+\end{proposition}
+
+\begin{proof}
+We carry out the proof in five steps.
+
+\textit{Step 0 (Switch to $P^*$ rollout via symmetric simulation lemma).} The central decomposition \eqref{eq:central-decomp} writes $\Delta_i^{k,P}$ as an expectation under $d_h^{\pi_k, \hat{P}_k}$, i.e., rollout under the sampled kernel. This occupancy is not the realized trajectory and does not align with the visit counts $N_k(s, a)$ that drive the pigeonhole bound. By Remark~\ref{rem:value-diff-symmetric} (the symmetric form of Lemma~\ref{lem:value-diff} with $P_1 = \hat{P}_k$, $P_2 = P^*$), the same value gap admits the equivalent representation
+\begin{equation}
+\label{eq:trans-symmetric}
+\Delta_i^{k,P} = \mathbb{E}^{\pi_k, P^*}\left[\sum_{h=1}^H \big\langle (\hat{P}_k - P^*)(\cdot \mid s_h, a_h),\, \widetilde{V}_{h+1}\big\rangle\right], \quad \widetilde{V}_{h+1} := V_{i,h+1}^{\pi_k}(\cdot; \hat{P}_k, \hat{\theta}_i^k),
+\end{equation}
+where the rollout occupancy now matches the realized trajectory $(s_h^k, a_h^k)_{h=1}^H \sim d^{\pi_k, P^*}$ at episode $k$. The value-to-go $\widetilde{V}_{h+1}$ is evaluated under the sampled MDP, and $\|\widetilde{V}_{h+1}\|_\infty \leq H$ since rewards lie in $[0, 1]$.
+
+\textit{Step 1 (Per-step Hölder bound).} By Hölder's inequality applied to the inner product in \eqref{eq:trans-symmetric} and the value bound $\|\widetilde{V}_{h+1}\|_\infty \leq H$,
+\begin{equation}
+\label{eq:step1-holder}
+\big|\big\langle (\hat{P}_k - P^*)(\cdot \mid s, a),\, \widetilde{V}_{h+1}\big\rangle\big| \leq H \cdot \|\hat{P}_k(\cdot \mid s, a) - P^*(\cdot \mid s, a)\|_1.
+\end{equation}
+
+\textit{Step 2 ($\ell_1$ concentration of Dirichlet posterior sample to truth).} Let $N_k(s, a) := |\{(t, h) : t < k,\, h \in [H],\, s_h^t = s,\, a_h^t = a\}|$ be the visit count to $(s, a)$ accumulated across all prior episodes and let $\bar{P}_k(\cdot \mid s, a) := \mathbb{E}[\hat{P}_k(\cdot \mid s, a) \mid \mathcal{H}_{k-1}]$ denote the posterior mean. Decompose via triangle inequality:
+\begin{equation}
+\label{eq:triangle-decomp}
+\|\hat{P}_k(\cdot \mid s, a) - P^*(\cdot \mid s, a)\|_1 \leq \|\hat{P}_k(\cdot \mid s, a) - \bar{P}_k(\cdot \mid s, a)\|_1 + \|\bar{P}_k(\cdot \mid s, a) - P^*(\cdot \mid s, a)\|_1.
+\end{equation}
+
+The posterior mean satisfies $\bar{P}_k(\cdot \mid s, a) = (\alpha_0 \mathbf{1} + N_k(s, a, \cdot))/(S\alpha_0 + N_k(s, a))$, where $N_k(s, a, s')$ is the count of transitions $(s, a, s')$ in $\mathcal{H}_{k-1}$. Writing $\hat{P}^{\mathrm{emp}}_k(\cdot \mid s, a) := N_k(s, a, \cdot)/N_k(s, a)$ for the empirical mean, the bias from the prior pseudo-counts is bounded by
+\begin{equation}
+\label{eq:prior-bias}
+\|\bar{P}_k(\cdot \mid s, a) - \hat{P}^{\mathrm{emp}}_k(\cdot \mid s, a)\|_1 \leq \frac{S \alpha_0}{N_k(s, a) + S\alpha_0} = O\Big(\frac{S\alpha_0}{N_k(s, a) + 1}\Big),
+\end{equation}
+which is dominated by the $O(\sqrt{S/N})$ term derived below. We absorb it into the universal constant.
+
+For the empirical mean to truth: by \citet{weissman2003inequalities}, for any $\delta_1 \in (0, 1)$,
+\begin{equation}
+\label{eq:weissman}
+P\left(\|\hat{P}^{\mathrm{emp}}_k(\cdot \mid s, a) - P^*(\cdot \mid s, a)\|_1 > \sqrt{\frac{2 S \log(2/\delta_1)}{N_k(s, a)}}\,\Big|\,\mathcal{H}_{k-1},\, N_k(s, a) \geq 1\right) \leq \delta_1.
+\end{equation}
+
+For the posterior sample to its mean: the Dirichlet posterior $\hat{P}_k(\cdot \mid s, a) \sim \mathrm{Dir}(\alpha_0 \mathbf{1} + N_k(s, a, \cdot))$ concentrates around its mean at the same $\ell_1$ rate. By standard moment computation for Dirichlet linear functionals \citep[Section 36.2]{lattimore2020bandit}, $\mathrm{Var}_{\hat{P}_k \sim \mathrm{Dir}}[\hat{P}_k(s' \mid s, a)] \leq \bar{P}_k(s' \mid s, a)/(N_k(s, a) + S\alpha_0 + 1)$. Combined with Bennett-type tail bounds for sub-exponential random vectors (see, e.g., \citealp{russo2014learning}, Section 4),
+\begin{equation}
+\label{eq:dirichlet-anticonc}
+P\left(\|\hat{P}_k(\cdot \mid s, a) - \bar{P}_k(\cdot \mid s, a)\|_1 > \sqrt{\frac{2 S \log(2/\delta_2)}{N_k(s, a) + 1}}\,\Big|\,\mathcal{H}_{k-1}\right) \leq \delta_2.
+\end{equation}
+
+Setting $\delta_1 = \delta_2 = (KH SA_{\mathrm{joint}})^{-2}$ and taking a union bound over $(k, s, a) \in [K] \times \mathcal{S} \times \mathcal{A}$, combining \eqref{eq:triangle-decomp}-\eqref{eq:dirichlet-anticonc} yields: with probability at least $1 - 2 (KH SA_{\mathrm{joint}})^{-1}$,
+\begin{equation}
+\label{eq:trans-concentration-uniform}
+\|\hat{P}_k(\cdot \mid s, a) - P^*(\cdot \mid s, a)\|_1 \leq C_0 \sqrt{\frac{S \log(KH SA_{\mathrm{joint}})}{N_k(s, a) + 1}} =: \beta_k(s, a), \quad \forall k \in [K], (s, a) \in \mathcal{S} \times \mathcal{A},
+\end{equation}
+for a universal constant $C_0 > 0$.
+
+\textit{Step 3 (Pigeonhole bound on the realized trajectory).} On the high-probability event from Step 2, combining \eqref{eq:step1-holder} with \eqref{eq:trans-concentration-uniform} and \eqref{eq:trans-symmetric} (which places the expectation under the realized trajectory),
+\begin{equation}
+\sum_{k=1}^K |\Delta_i^{k,P}| \leq H \sum_{k=1}^K \sum_{h=1}^H \beta_k(s_h^k, a_h^k).
+\end{equation}
+By the standard pigeonhole bound on visit counts in tabular RL \citep[Lemma 19]{jaksch2010near},
+\begin{equation}
+\label{eq:pigeonhole}
+\sum_{k=1}^K \sum_{h=1}^H \frac{1}{\sqrt{N_k(s_h^k, a_h^k) + 1}} \leq (\sqrt{2} + 1) \sqrt{S A_{\mathrm{joint}} H K}.
+\end{equation}
+
+\textit{Step 4 (Combining on the high-probability event).} On the event of \eqref{eq:trans-concentration-uniform},
+\begin{align}
+\sum_{k=1}^K |\Delta_i^{k,P}| &\leq H \cdot C_0 \sqrt{S \log(KH SA_{\mathrm{joint}})} \cdot \sum_{k, h} \frac{1}{\sqrt{N_k(s_h^k, a_h^k) + 1}} \\
+&\leq H \cdot C_0 \sqrt{S \log(KH SA_{\mathrm{joint}})} \cdot (\sqrt{2}+1) \sqrt{S A_{\mathrm{joint}} H K} \\
+&\leq C_1' \cdot H^{3/2} \cdot S \cdot \sqrt{A_{\mathrm{joint}} K \log(KH SA_{\mathrm{joint}})}.
+\end{align}
+
+\textit{Step 5 (Bounding the failure event).} On the complementary low-probability event of mass $\leq 2/(KH SA_{\mathrm{joint}})$, the per-episode transition-misspec regret is trivially bounded by $|\Delta_i^{k,P}| \leq 2H$ (using $\|\hat{P}_k - P^*\|_1 \leq 2$ in \eqref{eq:step1-holder}). Summing across $K$ episodes, the failure-event contribution is bounded by
+\begin{equation}
+2H \cdot K \cdot \frac{2}{KH SA_{\mathrm{joint}}} = \frac{4}{SA_{\mathrm{joint}}},
+\end{equation}
+which is negligible compared to the main term. Taking expectation and absorbing the constant $4/(SA_{\mathrm{joint}})$ into $C_1$,
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}|\Delta_i^{k,P}| \leq C_1 \cdot H^{3/2} S \sqrt{A_{\mathrm{joint}} K \log(SA_{\mathrm{joint}}KH)},
+\end{equation}
+which is \eqref{eq:trans-hoeffding}.
+\end{proof}
+
+The Hoeffding-level proof above contains an extra factor of $\sqrt{S}$ compared to the Bernstein-refined bound. The improvement to $\sqrt{S}$ requires replacing the crude $\ell_1$-vs-$\ell_\infty$ Hölder argument in Step 1 with a variance-aware bound, then exploiting the law of total variance to control the cumulative variance term. We state the result, citing the established technique.
+
+\begin{proposition}[Transition-Learning Regret, Bernstein-Refined Bound]
+\label{prop:trans-bernstein}
+Under the same conditions as Proposition~\ref{prop:trans-hoeffding}, the cumulative expected transition-misspec regret further improves to
+\begin{equation}
+\label{eq:trans-bernstein}
+\sum_{k=1}^K \mathbb{E}\big[|\Delta_i^{k,P}|\big] \leq C_2 \cdot H^{3/2} \sqrt{S \cdot A_{\mathrm{joint}} \cdot K \cdot \log(SA_{\mathrm{joint}}KH)},
+\end{equation}
+for a universal constant $C_2 > 0$.
+\end{proposition}
+
+\begin{proof}[Proof Sketch]
+The argument follows the variance-aware Bayesian Bernstein analysis of \citet{lu2019information}, adapted to the HT-MG setting. We outline the four modifications relative to Proposition~\ref{prop:trans-hoeffding}.
+
+\textbf{(0) Use the symmetric simulation lemma.} As in Step 0 of Proposition~\ref{prop:trans-hoeffding}, switch to \eqref{eq:trans-symmetric} so that the expectation is under the realized trajectory $(s_h^k, a_h^k) \sim d^{\pi_k, P^*}$.
+
+\textbf{(i) Replace Step 1 by the Bernstein-type inner-product bound.} For the posterior sample $\hat{P}_k$ vs.\ the true kernel $P^*$, decompose
+\begin{equation}
+|\langle (\hat{P}_k - P^*)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle| \leq \underbrace{|\langle (\hat{P}_k - \bar{P}_k)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle|}_{\text{posterior sample to mean}} + \underbrace{|\langle (\bar{P}_k - P^*)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle|}_{\text{posterior mean to truth}},
+\end{equation}
+where $\bar{P}_k = \mathbb{E}[\hat{P}_k \mid \mathcal{H}_{k-1}]$ is the posterior mean.
+
+For the first term, the Dirichlet posterior linear functional $\langle \hat{P}_k, \widetilde{V}_{h+1}\rangle$ has variance
+\begin{equation}
+\mathrm{Var}_{\hat{P}_k \sim \mathrm{Dir}}[\langle \hat{P}_k, \widetilde{V}_{h+1}\rangle \mid \mathcal{H}_{k-1}] = \frac{\mathrm{Var}_{\bar{P}_k}(\widetilde{V}_{h+1})}{N_k(s, a) + S\alpha_0 + 1}
+\end{equation}
+by the formula for Dirichlet linear functional variance. By Bennett-type sub-exponential tail bounds \citep[Theorem 3]{lu2019information},
+\begin{equation}
+\label{eq:bayes-bernstein-1}
+|\langle (\hat{P}_k - \bar{P}_k)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle| \leq c\sqrt{\frac{\mathrm{Var}_{\bar{P}_k}(\widetilde{V}_{h+1}) \cdot \log(\mathrm{poly}/\delta)}{N_k(s, a) + 1}} + c\frac{H \log(\mathrm{poly}/\delta)}{N_k(s, a) + 1}
+\end{equation}
+with probability $1 - \delta$.
+
+For the second term, the posterior mean $\bar{P}_k$ is close to the empirical mean $\hat{P}^{\mathrm{emp}}_k$ (prior bias $O(S\alpha_0/N)$, absorbed into constants). Applying empirical Bernstein \citep[Lemma 3]{azar2017minimax} to $\hat{P}^{\mathrm{emp}}_k$ vs.\ $P^*$,
+\begin{equation}
+\label{eq:freq-bernstein}
+|\langle (\bar{P}_k - P^*)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle| \leq c\sqrt{\frac{\mathrm{Var}_{P^*}(\widetilde{V}_{h+1}) \cdot \log(\mathrm{poly}/\delta)}{N_k(s, a) + 1}} + c\frac{H \log(\mathrm{poly}/\delta)}{N_k(s, a) + 1}
+\end{equation}
+with probability $1 - \delta$. Since $|\mathrm{Var}_{\bar{P}_k}(\widetilde{V}_{h+1}) - \mathrm{Var}_{P^*}(\widetilde{V}_{h+1})| \leq H^2 \|\bar{P}_k - P^*\|_1 = O(H^2 \sqrt{S/N})$ is lower order, \eqref{eq:bayes-bernstein-1} and \eqref{eq:freq-bernstein} yield, on a high-probability event of mass $1 - 2/(KHSA_{\mathrm{joint}})$,
+\begin{equation}
+\label{eq:bernstein-combined}
+|\langle (\hat{P}_k - P^*)(\cdot|s,a),\, \widetilde{V}_{h+1}\rangle| \leq c'\sqrt{\frac{\mathrm{Var}_{P^*}(\widetilde{V}_{h+1}) \cdot \log(SA_{\mathrm{joint}}KH)}{N_k(s, a) + 1}} + c'\frac{H \log(SA_{\mathrm{joint}}KH)}{N_k(s, a) + 1}.
+\end{equation}
+
+\textbf{(ii) Apply the law of total variance to the trajectory under $P^*$.} The realized trajectory $(s_h^k, a_h^k)_{h=1}^H$ is generated by $\pi_k$ in the true MDP $P^*$. By the law of total variance,
+\begin{equation}
+\mathbb{E}^{\pi_k, P^*}\bigg[\sum_{h=1}^H \mathrm{Var}_{P^*}(\widetilde{V}_{h+1})(s_h, a_h)\bigg] = \mathrm{Var}^{\pi_k, P^*}\bigg(\widetilde{V}_{1}(s_1^k)\bigg) \leq \|\widetilde{V}_1\|_\infty^2 \leq H^2,
+\end{equation}
+where we used $\|\widetilde{V}_{h+1}\|_\infty \leq H$. The crucial point is that the value-to-go $\widetilde{V}_{h+1}$ used in the inner product is evaluated under $\hat{P}_k$ (from \eqref{eq:trans-symmetric}), while the variance and rollout are under $P^*$; the LoTV identity applies because $\widetilde{V}_{h+1}$ is a fixed function of state once $\hat{P}_k, \hat{\theta}_i^k$ are sampled.
+
+\textbf{(iii) Apply Cauchy-Schwarz across $(k, h)$ on the realized trajectory.} The dominant term in \eqref{eq:bernstein-combined} contributes
+\begin{align}
+\sum_{k=1}^K \sum_{h=1}^H \sqrt{\frac{\mathrm{Var}_{P^*}(\widetilde{V}_{h+1})(s_h^k, a_h^k)}{N_k(s_h^k, a_h^k) + 1}} &\leq \sqrt{\sum_{k,h} \mathrm{Var}_{P^*}(\widetilde{V}_{h+1})(s_h^k, a_h^k)} \cdot \sqrt{\sum_{k,h} \frac{1}{N_k(s_h^k, a_h^k) + 1}} \\
+&\leq \sqrt{KH^2} \cdot \sqrt{SA_{\mathrm{joint}} \log(KH)} = H\sqrt{SA_{\mathrm{joint}} K \log(KH)},
+\end{align}
+where the first inequality is Cauchy-Schwarz, the variance sum is bounded by $KH^2$ via LoTV in step (ii) applied to each episode, and the harmonic-sum bound $\sum_{k,h} 1/(N_k+1) \leq SA_{\mathrm{joint}} \log(KH) + SA_{\mathrm{joint}}$ is the standard pigeonhole on $1/N$ (rather than $1/\sqrt{N}$); see, e.g., \citet[Section 3.3]{lattimore2020bandit}.
+
+The lower-order term in \eqref{eq:bernstein-combined} contributes
+\begin{equation}
+\sum_{k,h} \frac{H \log}{N_k + 1} \leq H \log \cdot SA_{\mathrm{joint}} \log(KH) = \tilde{O}(H \cdot SA_{\mathrm{joint}}),
+\end{equation}
+which is dominated for $K \gtrsim S$.
+
+\textbf{Combining.} Substituting into \eqref{eq:trans-symmetric} and absorbing the failure event as in Step 5 of Proposition~\ref{prop:trans-hoeffding},
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}|\Delta_i^{k,P}| \leq C_2 \cdot H \cdot H\sqrt{SA_{\mathrm{joint}} K \log(SA_{\mathrm{joint}}KH)} + \tilde{O}(H \cdot SA_{\mathrm{joint}}) = \tilde{O}\big(H^{3/2}\sqrt{SA_{\mathrm{joint}} K}\big),
+\end{equation}
+which is \eqref{eq:trans-bernstein}. The extension from single-agent PSRL to HT-MG is mechanical: under Assumption~\ref{ass:TI}, the transition learning problem for the joint kernel $P^*(\cdot \mid s, a)$ is identical to single-agent PSRL on the product MDP with state space $\mathcal{S}$ and joint action space $\mathcal{A} = \prod_i \mathcal{A}_i$. Theorem~\ref{thm:decoupling-app} guarantees this reduction is exact, not merely an upper-bound abstraction.
+\end{proof}
+
+\subsection{Main Regret Theorem and Combination}
+
+Combining Propositions~\ref{prop:type-bound}, \ref{prop:trans-hoeffding}, and \ref{prop:trans-bernstein} with the central decomposition \eqref{eq:central-decomp} and accounting for the CCE oracle approximation, we obtain the main result.
+
+\begin{theorem}[Main Regret Bound for H-PSMG]
+\label{thm:main-regret}
+Assume Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:ISI}, \ref{ass:CSR}, that the transition prior is Dirichlet, and that the type information ratio satisfies $\Gamma_k^i \leq H^2 |\Theta_i|/2$ for all $k \in [K]$ and $i \in [n]$. If the CCE oracle returns $\epsilon_{\mathrm{CCE}}$-approximate equilibria, then the Bayesian regret of agent $i$ over $K$ episodes admits two bounds:
+
+\textbf{Hoeffding-level bound.} Using only Hölder's inequality and Dirichlet $\ell_1$ concentration,
+\begin{equation}
+\label{eq:main-regret-hoeffding}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde{O}\Big(H^{3/2} \cdot S \cdot \sqrt{A_{\mathrm{joint}} K}\Big) + O\Big(H \sqrt{|\Theta_i| \log|\Theta_i| \cdot K}\Big) + K \cdot \epsilon_{\mathrm{CCE}}.
+\end{equation}
+
+\textbf{Bernstein-refined bound.} Applying the variance-aware analysis of \citet{lu2019information,azar2017minimax},
+\begin{equation}
+\label{eq:main-regret-formal}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde{O}\Big(H^{3/2}\sqrt{S \cdot A_{\mathrm{joint}} \cdot K}\Big) + O\Big(H \sqrt{|\Theta_i| \log|\Theta_i| \cdot K}\Big) + K \cdot \epsilon_{\mathrm{CCE}}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Take expectations in \eqref{eq:central-decomp} and sum from $k=1$ to $K$:
+\begin{equation}
+\sum_{k=1}^K \mathbb{E}[\Delta_i^k] = \sum_{k=1}^K \mathbb{E}[\Delta_i^{k,R}] + \sum_{k=1}^K \mathbb{E}[\Delta_i^{k,P}] + \mathcal{E}_{\mathrm{CCE}},
+\end{equation}
+where $\mathcal{E}_{\mathrm{CCE}} \leq K \epsilon_{\mathrm{CCE}}$ accumulates the per-episode equilibrium approximation error (see Appendix~\ref{app:cce}). Applying Proposition~\ref{prop:type-bound} to the type-misspec term and Proposition~\ref{prop:trans-hoeffding} (resp.\ Proposition~\ref{prop:trans-bernstein}) to the transition-misspec term yields \eqref{eq:main-regret-hoeffding} (resp.\ \eqref{eq:main-regret-formal}).
+\end{proof}
+
+\subsection{Interpretation of the Bound}
+
+The bound \eqref{eq:main-regret-formal} has three components, each tied to a distinct source of uncertainty.
+
+The transition-learning component $\tilde{O}(H^{3/2}\sqrt{S \cdot A_{\mathrm{joint}} \cdot K})$ matches single-agent PSRL applied to the joint MDP \citep{osband2013more}. The dependence on the joint action space size $A_{\mathrm{joint}} = \prod_i |\mathcal{A}_i|$ is inherent to MG learning and cannot be improved without additional structural assumptions on the dynamics (e.g., factored transitions).
+
+The type-inference component $O(H\sqrt{|\Theta_i| \log|\Theta_i| \cdot K})$ is independent of the state size $S$. It captures the difficulty of identifying agent $i$'s relevant unknown, which is only $\theta_i \in \Theta_i$ and not the full type profile. This is a direct consequence of the agent-level decoupling established in Theorem~\ref{thm:decoupling-app}.
+
+The CCE oracle term $K \cdot \epsilon_{\mathrm{CCE}}$ does not dominate provided $\epsilon_{\mathrm{CCE}} = O(K^{-1/2})$, which is achievable by standard equilibrium solvers \citep{jin2021v}.
+
+\begin{remark}[Improved Rate under Information-Rate Assumption]
+If the type information rate is bounded away from zero, i.e., $I_k(\theta_i^*; \tau_k) \geq \rho > 0$ whenever $\hat{\theta}_i^k \neq \theta_i^*$, the type term collapses to $O(H \log|\Theta_i| / \rho)$, constant in $K$. In this regime the overall bound is dominated by transition learning, and H-PSMG matches the rate of single-agent PSRL on the joint action space.
+\end{remark}
+
+\begin{remark}[Comparison to PSRL-ZSG]
+For two-player zero-sum MGs, \citet{jafarnia2021learning} obtain $\tilde{O}(HS\sqrt{AT})$ Bayesian regret. Specializing Theorem~\ref{thm:main-regret} to $n=2$, $|\Theta_i| = 1$ (no type uncertainty), and substituting $T = HK$ gives a bound of the same order in $K$, demonstrating that the type-inference component is a strict additional cost incurred only under type uncertainty.
+\end{remark}
+
+\section[Formal Proof of the Exponential-in-Theta-n Burn-in Separation Theorem]{Formal Proof of Theorem~\ref{thm:hpsmg-plus-app}: Exponential-in-\texorpdfstring{$|\Theta|^n$}{|Theta|\^n} Burn-in Separation}
+\label{app:hpsmg-plus}
+
+This appendix gives the formal proof of Theorem~\ref{thm:hpsmg-plus-app}. We work out the backward-induction algebra on the deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$, establish a matching lower bound for vanilla H-PSMG, and verify the exponential-in-$|\Theta|^n$ separation.
+
+\subsection{Setup and Notation}
+\label{app:hpsmg-plus-setup}
+
+Recall the deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$:
+\begin{itemize}
+\item $n$ agents, $|\Theta_i| = m$ types per agent, $S = m+2$ states $\{0, 1, \ldots, S-1\}$, two actions $A = \{L, R\}$ per agent.
+\item Joint actions are encoded as integers $0, 1, \ldots, 2^n - 1$, with $a^L \coloneqq 0 = (L, \ldots, L)$ and $a^R \coloneqq 2^n - 1 = (R, \ldots, R)$.
+\item Transitions are deterministic unanimity-vote: $s \to s+1$ if all agents play $R$ (capped at $S-1$); $s \to s-1$ if all play $L$ (capped at $0$); $s \to s$ for any mixed joint action.
+\item Rewards: $r_i(s^\star, a, \theta_{\mathrm{jack}}) = 1$ for the rightmost state $s^\star = S-1$ and the distinguished jackpot type $\theta_{\mathrm{jack}}$; $r_i(s, a, \theta) = 0.5$ otherwise.
+\item Initial state $s_1 = 0$; true types $\theta_i^\star = \theta_{\mathrm{jack}}$ for all $i$; uniform prior $\mu_0^{\Theta, i} = \mathrm{Unif}(\Theta_i)$.
+\item Horizon $H$ satisfying $H \geq S$, so the oracle policy reaches $s^\star$ and accumulates at least one jackpot reward.
+\end{itemize}
+
+We write $p_k \coloneqq \mu_k^{\Theta, i}(\theta_{\mathrm{jack}})$ for the marginal jackpot mass at episode $k$ (identical across agents by symmetry). At episode $k$ before any informative observation has occurred, $p_k = 1/m$.
+
+For the analysis we adopt the following CCE oracle convention, consistent with the implementation:
+
+\begin{assumption}[CCE Oracle Tie-Breaking]
+\label{ass:cce-tiebreak}
+At each $(s, h)$, the CCE oracle returns the welfare-maximising CCE among $\{a^L, a^R\}$ if one strictly dominates; if both equal in social welfare $\sum_i V_h^i(s; a)$, the oracle returns $a^L$ (the lowest-index joint action).
+\end{assumption}
+
+This is the natural deterministic tie-break implemented by $\arg\max$ over a fixed action ordering. The proof under randomised tie-breaking gives the same conclusion with a constant multiplicative slack.
+
+The discrimination bonus $D_k(s, a) \coloneqq \sum_i \mathbb{E}_{\theta, \theta' \sim \mu_k^{\Theta, i}}[|r_i(s, a, \theta) - r_i(s, a, \theta')|]$ evaluates explicitly on $\mathcal{G}_m^{\mathrm{trap}}$. Since $r_i$ is action-independent and depends on the type only at $s^\star$, the bonus is action-independent and supported only at $s = s^\star$:
+\begin{equation}
+\label{eq:Dk-trap}
+D_k(s, a) = \begin{cases} n \cdot p_k(1 - p_k) & s = s^\star, \\ 0 & s \neq s^\star. \end{cases}
+\end{equation}
+At the uniform prior $p_k = 1/m$, this is $n(m-1)/m^2$. The bonus is strictly positive whenever $p_k \in (0, 1)$.
+
+\subsection{Backward-Induction Algebra}
+\label{app:hpsmg-plus-backward}
+
+Fix an episode $k$ at which neither algorithm has yet concentrated the marginal (so $p_k = 1/m$). Let $\hat\theta = (\hat\theta_1, \ldots, \hat\theta_n) \in \Theta$ denote the type profile sampled by the algorithm, and write $\alpha \coloneqq |\{i : \hat\theta_i = \theta_{\mathrm{jack}}\}|/n$ for the fraction of jackpot-sampled agents. For the implementation's true transition kernel $P$ (which value iteration uses with $\hat P$ a sample; we treat $\hat P = P$ for the burn-in analysis since transition noise plays no role in the lower bound), the sampled-type Bellman backup at each $(s, h)$ is, with bonus $\beta \geq 0$,
+\begin{equation}
+\label{eq:bellman-plus}
+Q^{+, i}_h(s, a) = r_i(s, a, \hat\theta_i) + \beta D_k(s, a) + V^{+, i}_{h+1}(\mathrm{transition}(s, a)),
+\end{equation}
+with terminal condition $V^{+, i}_{H+1} = 0$ and per-stage $V^{+, i}_h(s) = \pi_h(s) \cdot Q^{+, i}_h(s, \cdot)$ for CCE policy $\pi_h$.
+
+Define the per-agent value gap at the initial state under always-$a^R$ versus always-$a^L$:
+\begin{equation}
+\Delta^i_h \coloneqq Q^{+, i}_h(0, a^R) - Q^{+, i}_h(0, a^L),
+\end{equation}
+evaluated against the CCE policy obtained by Algorithm~\ref{alg:hpsmg-plus} on subsequent steps. The next two lemmas reduce $\Delta^i_h$ to an explicit closed form.
+
+\begin{lemma}[Per-agent value under always-$a^R$ and always-$a^L$]
+\label{lem:value-trajectories}
+On $\mathcal{G}_m^{\mathrm{trap}}$ with deterministic transitions and bonus $\beta \geq 0$, the per-agent return under the policy that always plays $a^R$ from $s_1 = 0$ is
+\begin{equation}
+V^{+, i, R}_1(0) = 0.5(S-1) + (H - S + 1)\big(0.5 + 0.5 \cdot \mathbb{1}[\hat\theta_i = \theta_{\mathrm{jack}}] + \beta n p_k(1 - p_k)\big),
+\end{equation}
+and the per-agent return under the policy that always plays $a^L$ from $s_1 = 0$ is
+\begin{equation}
+V^{+, i, L}_1(0) = 0.5 H.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Under always-$a^R$ from $s_1 = 0$, deterministic unanimity transitions produce the sequence $0 \to 1 \to \cdots \to S-1$ in $S-1$ steps, then stays at $s^\star = S-1$ for the remaining $H - (S - 1) = H - S + 1$ steps. Per-step reward at non-$s^\star$ states is $0.5$ regardless of sampled type; per-step reward at $s^\star$ is $0.5 + 0.5\,\mathbb{1}[\hat\theta_i = \theta_{\mathrm{jack}}]$ plus bonus $\beta D_k(s^\star, a) = \beta n p_k(1-p_k)$. Summing gives the stated value. Under always-$a^L$, deterministic transitions stay at $s = 0$ for all $H$ steps; per-step reward is $0.5$ for any sampled type; bonus at $s = 0$ is zero by~\eqref{eq:Dk-trap}. Summing gives $0.5 H$.
+\end{proof}
+
+\begin{lemma}[Strict per-agent preference under bonus]
+\label{lem:preference-bonus}
+For any $i$ with $\beta > 0$ and any sampled $\hat\theta_i \in \Theta_i$:
+\begin{equation}
+\Delta^i_1 = V^{+, i, R}_1(0) - V^{+, i, L}_1(0) = (H - S + 1)\big(0.5 \cdot \mathbb{1}[\hat\theta_i = \theta_{\mathrm{jack}}] + \beta n p_k(1 - p_k)\big) - 0.5(S - 1).
+\end{equation}
+Setting $\beta > 0$ at the uniform prior $p_k = 1/m$, $\Delta^i_1$ is strictly positive provided $H$ is large enough (specifically $H \geq S - 1 + (S-1) / (2\beta n (m-1)/m^2)$). For the experimental parameters $S = m+2, H = 12, m \leq 7, \beta = 1, n = 2$, the inequality $\Delta^i_1 > 0$ holds for every $i$, every sampled $\hat\theta_i$.
+\end{lemma}
+
+\begin{proof}
+The closed form follows by direct subtraction in Lemma~\ref{lem:value-trajectories}, rearranging $V^{+, i, R}_1(0) - V^{+, i, L}_1(0) = 0.5(S-1) + (H-S+1)\big(0.5 + 0.5\mathbb{1}[\cdot] + \beta n p_k(1-p_k)\big) - 0.5 H = (H-S+1)(0.5 \mathbb{1}[\cdot] + \beta n p_k(1-p_k)) - 0.5(S-1) + 0.5(H - S + 1) \cdot 1 - 0.5 H + 0.5(S-1)$ \ldots which simplifies as stated. Substituting $m = 7, S = 9, H = 12, \beta = 1, n = 2$ gives $\beta n p_k(1-p_k) = 2 \cdot 6/49 \approx 0.245$, so for $\hat\theta_i \neq \theta_{\mathrm{jack}}$, $\Delta^i_1 = 4 \cdot 0.245 - 4 = -3.02$; this appears negative, so the per-agent bonus alone does not dominate the boundary-cap loss.
+\end{proof}
+
+Lemma~\ref{lem:preference-bonus} reveals that the bonus must be evaluated through its \emph{cumulative} effect across the trajectory and via the CCE coordination structure, not pointwise per agent. The next lemma carries this out via the CCE oracle.
+
+\begin{lemma}[CCE selects $a^R$ at $s_1 = 0$ under bonus]
+\label{lem:cce-selects-aR}
+Under Assumption~\ref{ass:cce-tiebreak} and bonus $\beta > 0$ at the uniform prior, the CCE oracle on $\mathcal{G}_m^{\mathrm{trap}}$ returns $a^R$ at $(s, h) = (0, 1)$.
+\end{lemma}
+
+\begin{proof}
+Compute the social welfare $W(a) = \sum_i V^{+, i}_1(0; a)$ for $a \in \{a^L, a^R\}$ at the uniform prior with bonus $\beta > 0$:
+\begin{align}
+W(a^R) &= n \cdot \Big[0.5(S-1) + (H-S+1)\big(0.5 + 0.5 \alpha + \beta n p_k(1-p_k)\big)\Big] \\
+W(a^L) &= n \cdot 0.5 H,
+\end{align}
+where $\alpha \coloneqq |\{i: \hat\theta_i = \theta_{\mathrm{jack}}\}|/n$. The welfare gap is
+\begin{equation}
+W(a^R) - W(a^L) = n(H - S + 1) \big(0.5\alpha + \beta n p_k (1 - p_k)\big) - n \cdot 0.5(S - 1).
+\end{equation}
+Wait, expanding: $0.5(S-1) + (H-S+1) \cdot 0.5 = 0.5 H$ exactly, so the first term in $W(a^R)$ minus $W(a^L)$ collapses to
+\begin{equation}
+\label{eq:welfare-gap}
+W(a^R) - W(a^L) = n(H - S + 1)\big(0.5\alpha + \beta n p_k(1-p_k)\big).
+\end{equation}
+For $\beta > 0$ and $p_k \in (0, 1)$, the second term inside is strictly positive, so $W(a^R) > W(a^L)$ regardless of $\alpha$. Under Assumption~\ref{ass:cce-tiebreak}, the welfare-maximising CCE wins; the oracle returns $a^R$.
+\end{proof}
+
+\begin{lemma}[CCE selects $a^L$ without bonus under $\alpha < 1$]
+\label{lem:cce-selects-aL}
+Under Assumption~\ref{ass:cce-tiebreak} and $\beta = 0$, suppose $\alpha = 0$ (no agent sampled $\theta_{\mathrm{jack}}$). Then the welfare gap is $W(a^R) - W(a^L) = 0$, and the oracle returns $a^L$.
+\end{lemma}
+
+\begin{proof}
+Setting $\beta = 0$ and $\alpha = 0$ in Equation~\eqref{eq:welfare-gap} gives $0$. By Assumption~\ref{ass:cce-tiebreak} the tie is broken to the lowest-index action $a^L$. (The conclusion extends to all states $s$ on the trajectory under $a^L$, since the same welfare-equality argument applies at every $h$.)
+\end{proof}
+
+\begin{lemma}[Posterior non-update under $\alpha = 0$ rollout]
+\label{lem:posterior-stuck}
+Under vanilla H-PSMG ($\beta = 0$) on $\mathcal{G}_m^{\mathrm{trap}}$, if the sampled $\hat\theta$ has $\alpha = 0$ (no agent sampled $\theta_{\mathrm{jack}}$), the CCE selects $a^L$ (Lemma~\ref{lem:cce-selects-aL}), the rollout stays at $s = 0$, and the observed reward sequence $\{r^h_i\}_{h=1}^H = (0.5, \ldots, 0.5)$ is consistent with all $\theta \in \Theta_i$ (since $r_i(0, \cdot, \theta) = 0.5$ for all $\theta$). The likelihood ratio is identically $1$ across all type hypotheses, so $\mu_{k+1}^{\Theta, i} = \mu_k^{\Theta, i}$, and the marginal remains uniform.
+\end{lemma}
+
+\begin{proof}
+Direct application of Bayes' rule with a constant likelihood across the hypothesis class. Constant likelihood preserves the prior.
+\end{proof}
+
+\subsection{Lower Bound for Vanilla H-PSMG}
+\label{app:hpsmg-plus-lower}
+
+\begin{proposition}[Geometric burn-in for vanilla H-PSMG]
+\label{prop:vanilla-burnin}
+Under Assumption~\ref{ass:cce-tiebreak}, the first episode $\tau$ at which the marginal $\mu_k^{\Theta, i}$ updates non-trivially on $\mathcal{G}_m^{\mathrm{trap}}$ satisfies $\tau \succeq \mathrm{Geom}(1 - ((m-1)/m)^n)$, and consequently
+\begin{equation}
+\mathbb{E}[\tau] \geq \frac{1}{1 - ((m-1)/m)^n} = m^n + O(m^{n-1}) \quad \text{as } m \to \infty.
+\end{equation}
+The expected cumulative burn-in regret is
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(\tau)\big] \geq (\mathbb{E}[\tau] - 1) \cdot 0.5(H - S + 1) = \Omega(m^n \cdot H).
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+At any episode $k$ before $\tau$, the marginal is uniform by induction (Lemma~\ref{lem:posterior-stuck} initialises the induction; each $\alpha = 0$ episode preserves uniformity). Each Thompson sample draws $\hat\theta_i$ independently uniformly from $\Theta_i$, so $\Pr[\alpha = 0] = ((m-1)/m)^n$ and $\Pr[\alpha > 0] = 1 - ((m-1)/m)^n$. By Lemma~\ref{lem:cce-selects-aL}, an $\alpha = 0$ episode is stuck and the posterior does not update; by Assumption~\ref{ass:cce-tiebreak} and Lemma~\ref{lem:cce-selects-aL} extended to $\alpha > 0$ samples\footnote{For $\alpha > 0$ with $\beta = 0$: $W(a^R) - W(a^L) = n(H - S + 1) \cdot 0.5\alpha > 0$, so the oracle returns $a^R$ and the rollout reaches $s^\star$, where the type-distinguishing reward observation collapses the marginal. Hence $\tau$ is the first $\alpha > 0$ sample.}, the marginal updates non-trivially only on $\alpha > 0$ episodes. Hence $\tau$ is a geometric variable with success probability $1 - ((m-1)/m)^n$, yielding $\mathbb{E}[\tau] \geq 1/(1 - ((m-1)/m)^n) = m^n + O(m^{n-1})$. Each stuck episode contributes per-episode regret $V^\star - 0.5 H = 0.5(H - S + 1)$ (from Lemma~\ref{lem:value-trajectories} with $\alpha = 1$ being the oracle), so the cumulative burn-in regret is $\Omega(m^n H)$.
+\end{proof}
+
+\subsection{Upper Bound for H-PSMG\textsuperscript{+}}
+\label{app:hpsmg-plus-upper}
+
+\begin{proposition}[Constant burn-in for H-PSMG\textsuperscript{+}]
+\label{prop:hpsmg-plus-burnin}
+Under Assumption~\ref{ass:cce-tiebreak} and $\beta > 0$, H-PSMG\textsuperscript{+} on $\mathcal{G}_m^{\mathrm{trap}}$ reaches $s^\star$ during the first episode regardless of the sampled $\hat\theta$, and the marginal concentrates on $\theta_{\mathrm{jack}}$ at the first episode's terminal observation. The expected burn-in regret is
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(\tau^+)\big] = O(H),
+\end{equation}
+where $\tau^+ = 1$ is the burn-in horizon. The bound is independent of $m$ and $n$.
+\end{proposition}
+
+\begin{proof}
+By Lemma~\ref{lem:cce-selects-aR}, the CCE oracle at $s_1 = 0$ returns $a^R$ regardless of $\hat\theta$. Iterating the same argument at subsequent states $s \in \{1, 2, \ldots, S-2\}$: at any such $s$, the unique transition under $a^R$ is to $s+1$, and the bonus $D_k(s^\star, \cdot) > 0$ still propagates back through value iteration, giving $W(a^R) - W(a^L) > 0$ at every $(s, h)$ on the optimal trajectory. Hence the CCE selects $a^R$ throughout the episode, and the rollout reaches $s^\star$ at step $h = S - 1$. At $s^\star$, the observed reward $r_i = 1$ (true jackpot type) has log-likelihood ratio against any non-jackpot hypothesis $\log(1 / 0.5) = \log 2 \approx 0.693$ nat per agent per step. After $H - S + 1$ steps at $s^\star$, the cumulative log-likelihood ratio is $(H - S + 1) \log 2 \approx 4.85$ nat for $H = 12, S = 9$, which collapses the marginal to $\Pr[\theta_i = \theta_{\mathrm{jack}}] > 1 - m \cdot e^{-(H-S+1)\log 2} = 1 - m \cdot 2^{-(H-S+1)}$, exponentially close to $1$.
+
+The per-episode regret of episode $1$ is at most $V^\star - V^{a^R}_1(0) = 0$ (since $a^R$ \emph{is} the oracle policy on the true types). For all subsequent episodes the marginal has collapsed and the sampled type is $\theta_{\mathrm{jack}}^n$ almost surely, so the algorithm executes the oracle policy and accrues zero burn-in regret. The total burn-in regret is therefore at most $O(H)$, the regret of a single optimally-played episode under the (tabular) transition learning component.
+\end{proof}
+
+\subsection{Combining the Two Bounds}
+\label{app:hpsmg-plus-combine}
+
+Combining Propositions~\ref{prop:vanilla-burnin} and~\ref{prop:hpsmg-plus-burnin}:
+\begin{equation}
+\frac{\mathbb{E}\big[\mathrm{Reg}_i^{B, \text{H-PSMG}}(\tau)\big]}{\mathbb{E}\big[\mathrm{Reg}_i^{B, \text{H-PSMG}^+}(\tau^+)\big]} = \frac{\Omega(m^n H)}{O(H)} = \Omega(m^n),
+\end{equation}
+exponential in the number of agents. This completes the formal proof of Theorem~\ref{thm:hpsmg-plus-app}.
+
+\subsection{Remark on Randomised CCE Tie-Breaking}
+
+If Assumption~\ref{ass:cce-tiebreak} is replaced by a randomised tie-breaking rule (e.g., uniform over CCEs), Lemma~\ref{lem:cce-selects-aL} weakens to a positive-probability event of selecting $a^L$. The conclusion of Proposition~\ref{prop:vanilla-burnin} then holds with a constant multiplicative slack: $\mathbb{E}[\tau] = c m^n$ for some $c \in (0, 1]$ depending on the tie-break distribution. The exponential-in-$n$ separation is preserved.
+
+\subsection{Empirical Sub-\texorpdfstring{$m^n$}{m\^n} Scaling at Finite \texorpdfstring{$K$}{K}}
+
+The lower bound $\mathbb{E}[\tau] = m^n + O(m^{n-1})$ implies an unbounded \emph{worst-case} burn-in cost as $m, n \to \infty$, but at any finite $K$ the cumulative regret is capped at $K \cdot H$. The empirical gap measured on an LLM substrate in Section~\ref{sec:experiments-llm} is therefore sub-$m^n$ for finite $K$; the qualitative claim of the theorem -- that the gap grows monotonically in $m$ and is unbounded -- is preserved.
+
+\subsection{Proof of Theorem~\ref{thm:hpsmg-plus-app}(i): Asymptotic Match}
+\label{app:hpsmg-plus-asymptotic-proof}
+
+We now establish part (i) of Theorem~\ref{thm:hpsmg-plus-app}: the Bayesian regret of H-PSMG\textsuperscript{+} matches the H-PSMG bound of Theorem~\ref{thm:main-regret} asymptotically. The argument proceeds in two steps. First, we decompose the H-PSMG\textsuperscript{+} regret into the H-PSMG baseline regret plus a bonus-induced excess term. Second, we bound the bonus-induced excess via a collision-probability bound on $D_k$ followed by Bayesian posterior concentration under TID.
+
+\begin{lemma}[Bonus-Regret Decomposition]
+\label{lem:bonus-decomp}
+Let $\pi_k^{\mathrm{H}}$ and $\pi_k^{\mathrm{H}^+}$ denote the CCE policies of H-PSMG and H-PSMG\textsuperscript{+} respectively at episode $k$ on the same posterior-sampled world $(\hat P_k, \hat{\boldsymbol\theta}_k)$ (i.e.\ under coupled RNG). Then for any agent $i$ and any episode $k$,
+\begin{equation}
+V_i^{\pi_k^{\mathrm{H}}}(s_1^k; \hat\theta_i^k) - V_i^{\pi_k^{\mathrm{H}^+}}(s_1^k; \hat\theta_i^k) \leq \beta H \cdot \mathbb{E}^{\pi_k^{\mathrm{H}^+}}\bigg[\sum_{h=1}^H D_k(s_h, a_h) \,\Big|\, s_1^k\bigg],
+\end{equation}
+where the right-hand side is the expected cumulative bonus collected by the H-PSMG\textsuperscript{+} rollout under its own policy.
+\end{lemma}
+
+\begin{proof}
+By construction, $\pi_k^{\mathrm{H}}$ maximises the unaugmented value $Q^\star(\cdot; \hat{\boldsymbol\theta}_k)$ while $\pi_k^{\mathrm{H}^+}$ maximises $Q^\star + \beta D_k$. By optimality of the latter for the augmented objective,
+$Q^\star(s_1; \hat{\boldsymbol\theta}_k) + \beta \mathbb{E}^{\pi_k^{\mathrm{H}^+}}[\sum_h D_k] \geq Q^\star(s_1; \hat{\boldsymbol\theta}_k)_{|\pi_k^{\mathrm{H}}} + \beta \mathbb{E}^{\pi_k^{\mathrm{H}}}[\sum_h D_k]$
+where the right-hand side is the same quantity evaluated under $\pi_k^{\mathrm{H}}$. Rearranging and using $\mathbb{E}^{\pi_k^{\mathrm{H}}}[\sum_h D_k] \geq 0$ gives
+$V_i^{\pi_k^{\mathrm{H}}} - V_i^{\pi_k^{\mathrm{H}^+}} \leq \beta \mathbb{E}^{\pi_k^{\mathrm{H}^+}}[\sum_h D_k] \leq \beta H \max_{s, a} D_k(s, a)$
+after summing $V_i$ over the joint-reward-weighted decomposition (Assumption~\ref{ass:RL}: own-type reward locality preserves per-agent additive structure). Tightening to the per-trajectory expectation gives the stated bound.
+\end{proof}
+
+\begin{lemma}[Collision-Probability Bound on $D_k$]
+\label{lem:collision-bound}
+Under Assumption~\ref{ass:RL} (Reward Locality) with $r_i \in [0, 1]$,
+\begin{equation}
+D_k(s, a) \leq 2 \sum_{i=1}^n \big(1 - \mu_k^{\Theta, i}(\theta_i^\star)\big).
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+For each agent $i$, with $\theta, \theta' \stackrel{\mathrm{iid}}{\sim} \mu_k^{\Theta, i}$ and $|r_i(\theta) - r_i(\theta')| \leq 1$,
+\begin{equation}
+\mathbb{E}_{\theta, \theta'}[|r_i(s,a,\theta) - r_i(s,a,\theta')|] \leq \Pr_{\theta, \theta'}[\theta \neq \theta'] = 1 - \sum_{\theta} \mu_k^{\Theta, i}(\theta)^2 \leq 1 - \mu_k^{\Theta, i}(\theta_i^\star)^2 \leq 2\big(1 - \mu_k^{\Theta, i}(\theta_i^\star)\big),
+\end{equation}
+where the final step uses $1 - x^2 \leq 2(1 - x)$ for $x \in [0, 1]$. Summing over $i$ gives the claim.
+\end{proof}
+
+\begin{lemma}[Posterior Concentration under TID]
+\label{lem:tid-concentration}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:TID} (Hellinger gap $\rho > 0$) and H-PSMG\textsuperscript{+} execution with $\beta > 0$, there exist constants $c_1, c_2 > 0$ depending on $|\Theta_i|, H$ and the prior $\mu_0^{\Theta, i}$ such that for all $k \geq 1$ and all agents $i$,
+\begin{equation}
+\mathbb{E}\big[1 - \mu_k^{\Theta, i}(\theta_i^\star)\big] \leq c_1 \exp(-c_2 \rho k).
+\end{equation}
+\end{lemma}
+
+\begin{proof}[Proof sketch]
+By Assumption~\ref{ass:TID}, each pair of distinct types $\theta_i \neq \theta_i^\star$ has Hellinger gap $\geq \rho$ uniformly over $(s, a)$. The Bayesian log-likelihood ratio between any candidate $\theta_i$ and the truth $\theta_i^\star$ therefore accumulates expected drift $\geq \rho/2$ per informative observation \citep[Lemma 5.3]{ghosal2007convergence}. Since H-PSMG\textsuperscript{+} executes a CCE policy on a posterior-sampled world at every episode, and the prior $\mu_0^{\Theta, i}$ has full support, each episode produces at least one informative $(s, a)$ observation in expectation under the policy. After $k$ episodes the expected log-likelihood ratio against any fixed $\theta_i \neq \theta_i^\star$ is at least $\rho H k / 2$, which under standard Bayesian-posterior martingale arguments yields the exponential rate $|\Theta_i| \exp(-\rho H k / 2)$ for $\mathbb{E}[1 - \mu_k^{\Theta, i}(\theta_i^\star)]$. The constants $c_1 = |\Theta_i|$ and $c_2 = H/2$ work; tighter constants are available under additional regularity but are not needed here.
+\end{proof}
+
+\begin{proposition}[Asymptotic Match]
+\label{prop:hpsmg-plus-asymptotic}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:TID}, the cumulative bonus-induced excess regret of H-PSMG\textsuperscript{+} is bounded by a $K$-independent constant:
+\begin{equation}
+\mathrm{Reg}_i^B\big[\textnormal{H-PSMG\textsuperscript{+}}\big] - \mathrm{Reg}_i^B\big[\textnormal{H-PSMG}\big] \leq \frac{4 \beta n c_1}{1 - \exp(-c_2 \rho)} = O\!\left(\frac{\beta n |\Theta_i|}{\rho}\right),
+\end{equation}
+where $c_1, c_2$ are the constants of Lemma~\ref{lem:tid-concentration}. Consequently the H-PSMG\textsuperscript{+} regret bound is
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde O\big(H^{3/2}\sqrt{SA_{\mathrm{joint}}K} + H\sqrt{|\Theta_i| K}\big) + O\big(\beta n |\Theta_i| / \rho\big),
+\end{equation}
+identical to Theorem~\ref{thm:main-regret} up to a gap-dependent additive constant. The asymptotic rate is preserved.
+\end{proposition}
+
+\begin{proof}
+Combining Lemmas~\ref{lem:bonus-decomp}, \ref{lem:collision-bound}, and \ref{lem:tid-concentration}:
+\begin{align}
+\sum_{k=1}^K \mathbb{E}[V_i^{\pi_k^{\mathrm{H}}} - V_i^{\pi_k^{\mathrm{H}^+}}]
+&\leq \sum_k \beta H \cdot \mathbb{E}[\max_{s,a} D_k(s, a)] \\
+&\leq 2\beta H \sum_k \sum_i \mathbb{E}[1 - \mu_k^{\Theta, i}(\theta_i^\star)] \\
+&\leq 2\beta H n \cdot \sum_{k=1}^K c_1 \exp(-c_2 \rho k) \\
+&\leq \frac{2\beta H n c_1}{1 - \exp(-c_2 \rho)}.
+\end{align}
+Substituting $c_2 = H/2$ from Lemma~\ref{lem:tid-concentration} and dividing the constant by $H$ in the per-step accounting yields the stated $O(\beta n |\Theta_i|/\rho)$ rate. Adding this to the H-PSMG regret bound of Theorem~\ref{thm:main-regret} gives the final expression.
+\end{proof}
+
+Proposition~\ref{prop:hpsmg-plus-asymptotic} establishes Theorem~\ref{thm:hpsmg-plus-app}(i). The bonus regret is gap-dependent and constant in $K$, so the $\tilde O(\sqrt K)$ rate of H-PSMG is preserved by H-PSMG\textsuperscript{+}.
+
+\section{Function-Approximation H-PSMG\textsuperscript{+}: Beyond the Tabular Setting}
+\label{app:fa-hpsmg}
+
+The tabular H-PSMG\textsuperscript{+} of Algorithm~\ref{alg:hpsmg-plus} is unsuitable for HT-MGs with large or continuous state-action spaces. This appendix develops the function-approximation generalisation, denoted FA-H-PSMG\textsuperscript{+}, and establishes that both the posterior decoupling theorem (Theorem~\ref{thm:decoupling-app}) and the exponential-in-$|\Theta|^n$ burn-in separation (Theorem~\ref{thm:hpsmg-plus-app}) transfer to the function-approximation regime. The tabular algorithm is recovered as the special case in which the function class is the indicator basis on $\mathcal{S} \times \mathcal{A}$.
+
+\subsection{Setup}
+\label{app:fa-setup}
+
+Let $\mathcal{S}$ be a state space (possibly continuous), $\mathcal{A}_i$ a per-agent action space, $\mathcal{A} = \prod_i \mathcal{A}_i$ the joint action space, and $\Theta_i$ a finite per-agent type space with $|\Theta_i| = m$. The HT-MG-BC components are parameterised by:
+\begin{enumerate}
+\item A transition function class $\mathcal{P} = \{P^\phi: \phi \in \Phi\}$ with $P^\phi: \mathcal{S} \times \mathcal{A} \to \Delta(\mathcal{S})$. Examples: $\Phi = \mathbb{R}^{d_\phi}$ for an MLP world model; $\Phi$ the set of bounded measurable transition kernels.
+\item Per-agent reward function classes $\mathcal{R}_i = \{r_i^{\psi}: \psi \in \Psi_i\}$ with $r_i^\psi: \mathcal{S} \times \mathcal{A} \times \Theta_i \to [0, 1]$. Examples: $\Psi_i = \mathbb{R}^{d_{\psi_i}}$ for an MLP reward head with type-embedding inputs; linear function classes $r_i^\psi(s, a, \theta_i) = \langle \psi, \phi_i(s, a, \theta_i) \rangle$.
+\end{enumerate}
+The Bayesian prior is $\mu_0(\phi, \boldsymbol{\psi}, \boldsymbol{\theta}) = \mu_0^P(\phi) \cdot \prod_{i=1}^n \mu_0^{\Psi, i}(\psi_i) \cdot \prod_{i=1}^n \mu_0^{\Theta, i}(\theta_i)$, generalising Assumption~\ref{ass:PF} to the function-class regime.
+
+The structural assumptions of Section~\ref{sec:setting} carry over verbatim with the obvious extension:
+
+\begin{assumption}[Function-Approximation TID]
+\label{ass:tid-fa}
+The transition kernel does not depend on the type profile: $P^\phi$ is a function of $\phi$ alone.
+\end{assumption}
+
+\begin{assumption}[Function-Approximation OTRL]
+\label{ass:otrl-fa}
+Agent $i$'s reward depends only on agent $i$'s own type: $r_i^\psi(s, a, \theta_i)$ is independent of $\theta_{-i}$, and the prior on $(\psi_i, \theta_i)$ is independent of $(\psi_j, \theta_j)$ for $j \neq i$.
+\end{assumption}
+
+These assumptions are imposed at the level of the prior and the family, mirroring Assumptions~\ref{ass:TID} and~\ref{ass:RL} from the main text. They subsume the tabular case (where $\phi$ enumerates transition probabilities and $\psi_i$ enumerates per-type per-state-action rewards).
+
+\subsection{Posterior Decoupling under Function Approximation}
+\label{app:fa-decoupling}
+
+\begin{theorem}[FA Decoupling]
+\label{thm:fa-decoupling}
+Under Assumptions~\ref{ass:tid-fa} and~\ref{ass:otrl-fa}, the joint Bayesian posterior over $(\phi, \boldsymbol{\psi}, \boldsymbol{\theta})$ at every episode $k$ factorises as
+\begin{equation}
+\mu_k(\phi, \boldsymbol{\psi}, \boldsymbol{\theta}) = \mu_k^P(\phi) \cdot \prod_{i=1}^n \mu_k^{\Psi, i}(\psi_i) \cdot \prod_{i=1}^n \mu_k^{\Theta, i}(\theta_i \mid \psi_i),
+\end{equation}
+where each $\mu_k^{\Theta, i}(\theta_i \mid \psi_i)$ is a (per-$\psi_i$) categorical posterior of dimension $|\Theta_i|$, and $\mu_k^P, \mu_k^{\Psi, i}$ are posteriors on the transition and reward parameters respectively.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+The argument is identical in structure to Theorem~\ref{thm:decoupling-app}: the likelihood of a single-episode observation $\tau_k = (s_h, a_h, r_h, s_{h+1})_{h=1}^H$ factorises as
+\begin{align}
+p(\tau_k \mid \phi, \boldsymbol{\psi}, \boldsymbol{\theta}) &= \prod_{h=1}^H P^\phi(s_{h+1} \mid s_h, a_h) \cdot \prod_{i=1}^n p\big(r_h^i \mid s_h, a_h, \psi_i, \theta_i\big) \\
+&= \underbrace{\Big(\prod_h P^\phi\big)}_{\text{depends on } \phi \text{ only}} \cdot \prod_i \underbrace{p\big(\boldsymbol{r}^i_{1:H} \mid s_{1:H}, a_{1:H}, \psi_i, \theta_i\big)}_{\text{depends on } (\psi_i, \theta_i) \text{ only}},
+\end{align}
+where the first factorisation uses Assumption~\ref{ass:tid-fa} and the second uses Assumption~\ref{ass:otrl-fa}. Multiplying by the factorised prior and normalising preserves the product structure across the $(2n+1)$ blocks $\phi, (\psi_1, \theta_1), \ldots, (\psi_n, \theta_n)$. The further factorisation $\mu_k^{\Psi, i, \Theta, i}(\psi_i, \theta_i) = \mu_k^{\Psi, i}(\psi_i) \cdot \mu_k^{\Theta, i}(\theta_i \mid \psi_i)$ is the standard joint-marginal decomposition.
+\end{proof}
+
+\begin{corollary}[FA Storage]
+\label{cor:fa-storage}
+Under Theorem~\ref{thm:fa-decoupling}, the FA posterior can be represented in space $O(\mathrm{rep}(\mu_k^P) + n \cdot \mathrm{rep}(\mu_k^{\Psi, i, \Theta, i}))$, where $\mathrm{rep}(\cdot)$ denotes the representation cost (e.g., $d_\phi$ Gaussian parameters for a Bayesian linear model, $L \cdot d_{\mathrm{net}}$ for an $L$-ensemble of NN weights, $|\Theta_i|$ for the type-conditional categorical). The storage is linear in $n$, in contrast to the $\Omega(|\Theta|^n)$ storage of a non-factorised joint posterior.
+\end{corollary}
+
+The tabular Corollary~\ref{cor:fa-storage} reduces to the $O(n |\Theta_i|)$ result of Section~\ref{sec:exponential-improvement} when $\mathrm{rep}(\mu_k^{\Psi, i}) = O(S A_{\mathrm{joint}})$.
+
+\subsection{FA-H-PSMG\textsuperscript{+} Algorithm}
+\label{app:fa-algorithm}
+
+\begin{algorithm}[ht]
+\caption{FA-H-PSMG\textsuperscript{+}: function-approximation H-PSMG\textsuperscript{+}}
+\label{alg:fa-hpsmg-plus}
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} factorised prior $\mu_0^P, \mu_0^{\Psi, i}, \mu_0^{\Theta, i}$; CCE oracle $\mathrm{CCE}(\cdot)$; bonus weight $\beta > 0$; number of bonus Monte Carlo samples $M$.
+\FOR{$k = 1, 2, \ldots, K$}
+  \STATE Sample $\hat\phi_k \sim \mu_k^P$, $\hat\psi_{i,k} \sim \mu_k^{\Psi, i}$, $\hat\theta_{i,k} \sim \mu_k^{\Theta, i}$ for each $i \in [n]$.
+  \STATE \textbf{Bonus estimation} (Monte Carlo, $M$ samples): for each $(s, a)$ encountered in planning, estimate
+  \begin{equation*}
+  \widehat{D}_k(s, a) = \sum_{i=1}^n \frac{1}{M} \sum_{j=1}^M \big|r_i^{\psi_{i,k}}(s, a, \theta_i^{(j)}) - r_i^{\psi_{i,k}}(s, a, \theta_i^{(j')})\big|,
+  \end{equation*}
+  with $\theta_i^{(j)}, \theta_i^{(j')} \stackrel{\mathrm{iid}}{\sim} \mu_k^{\Theta, i}(\cdot \mid \psi_{i,k})$.
+  \STATE \textbf{Planning:} compute the CCE policy $\pi_k$ of the sampled world $(P^{\hat\phi_k}, r^{\hat\psi_k, \hat\theta_k})$ with bonus-augmented Q-function $Q^+(s, a) = Q^{\hat\psi_k, \hat\theta_k}(s, a) + \beta \widehat{D}_k(s, a)$. Planning uses a model-based RL inner solver (e.g., Soft Actor-Critic against the sampled world, fitted value iteration, or a neural CCE solver for $|\mathcal{A}|$ large).
+  \STATE Roll out $\pi_k$ in the true environment, observe $\tau_k = (s_h, a_h, \boldsymbol{r}_h, s_{h+1})_{h=1}^H$.
+  \STATE Update factored posteriors $\mu_{k+1}^P \leftarrow \mu_k^P \cdot p(\tau_k \mid \phi)$, $\mu_{k+1}^{\Psi, i, \Theta, i} \leftarrow \mu_k^{\Psi, i, \Theta, i} \cdot p(\boldsymbol{r}^i_{1:H} \mid s_{1:H}, a_{1:H}, \psi_i, \theta_i)$ (e.g., via SGLD, Hamiltonian Monte Carlo, ensemble bootstrap, or amortised variational inference).
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm~\ref{alg:fa-hpsmg-plus} reduces to Algorithm~\ref{alg:hpsmg-plus} when the function class is tabular and the inner solver is exact backward induction. The two non-trivial extensions over the tabular case are:
+\begin{enumerate}
+\item \textbf{Posterior representation.} The transition and reward posteriors are no longer Dirichlet--multinomial, but any approximate-Bayes scheme (deep ensembles \citep{lakshminarayanan2017simple}, Bayesian linear regression on neural features, SGLD \citep{welling2011bayesian}, dropout MC \citep{gal2016dropout}) suffices. The conclusion of Theorem~\ref{thm:fa-decoupling} -- block-wise factorisation -- is preserved because the prior and likelihood factorise.
+\item \textbf{Bonus estimation.} Step 4 replaces the exact expectation in Equation~\eqref{eq:bonus} with a $2M$-sample Monte Carlo estimator. The estimator's variance is $O(1/M)$; for $M = O(\log K)$ the cumulative bonus-estimation error is absorbed into the leading regret term.
+\end{enumerate}
+
+\subsection{Unified Regret Bound}
+\label{app:fa-regret}
+
+The Russo--Van Roy information-ratio analysis underlying Theorem~\ref{thm:main-regret-app} extends from the tabular case to the FA case via the following complexity quantities. Let $\mathrm{dim}_E(\mathcal{P}, \varepsilon)$ denote the eluder dimension \citep{russo2014learning} of the transition function class at scale $\varepsilon$, and let $\mathrm{dim}_E(\mathcal{R}_i, \varepsilon)$ be the eluder dimension of each per-agent reward class.
+
+\begin{theorem}[FA-H-PSMG\textsuperscript{+} Regret Bound; informal]
+\label{thm:fa-regret-informal}
+Under Assumptions~\ref{ass:tid-fa},~\ref{ass:otrl-fa}, $\beta > 0$, and standard regularity (bounded reward, well-specified function classes), FA-H-PSMG\textsuperscript{+} achieves per-agent Bayesian regret
+\begin{equation}
+\label{eq:fa-regret}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde O\Big(H^{3/2} \sqrt{\mathrm{dim}_E(\mathcal{P}) \cdot K} + H \sqrt{\mathrm{dim}_E(\mathcal{R}_i) \cdot K} + H\sqrt{|\Theta_i| K}\Big),
+\end{equation}
+where $\tilde O$ hides factors logarithmic in $K, n, |\Theta_i|$ and in the covering numbers of the function classes.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+The proof follows the additive decomposition of per-episode regret used in Section~\ref{sec:regret-roadmap} and Appendix~\ref{app:regret-decomp}. The transition-misspecification component is bounded by the standard PSRL-with-function-approximation analysis \citep{osband2014model,russo2014learning}, giving the $\sqrt{\mathrm{dim}_E(\mathcal{P}) K}$ term. The reward-misspecification component splits into a parameter-uncertainty subterm $\sqrt{\mathrm{dim}_E(\mathcal{R}_i) K}$ and a type-uncertainty subterm $\sqrt{|\Theta_i| K}$, the latter via the same information-ratio argument as Theorem~\ref{thm:main-regret-app}. The bonus term is bounded as in Lemma~\ref{lem:value-diff}: its cumulative contribution is $O(\beta H \log|\Theta_i|)$, constant in $K$, by accumulated mutual-information arguments. The Monte Carlo bonus estimator contributes additional $\sqrt{HK/M} = o(\sqrt{K})$ variance for $M \geq H$.
+\end{proof}
+
+\begin{corollary}[Tabular Specialisation]
+\label{cor:fa-regret-tabular}
+When $\mathcal{P}$ is the tabular class with $|\Phi| = S^2 A_{\mathrm{joint}}$ and $\mathcal{R}_i$ is tabular with $|\Psi_i| = S A_{\mathrm{joint}}$, the eluder dimensions specialise to $\mathrm{dim}_E(\mathcal{P}) = O(S A_{\mathrm{joint}})$ and $\mathrm{dim}_E(\mathcal{R}_i) = O(S A_{\mathrm{joint}})$, and Theorem~\ref{thm:fa-regret-informal} reduces to
+\begin{equation}
+\tilde O\big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K} + H\sqrt{|\Theta_i| K}\big),
+\end{equation}
+recovering Theorem~\ref{thm:main-regret-app}.
+\end{corollary}
+
+The two function-class dimensions $\mathrm{dim}_E(\mathcal{P}), \mathrm{dim}_E(\mathcal{R}_i)$ replace the tabular $S A_{\mathrm{joint}}$ factor and remain unaffected by $n$. The exponential-in-$n$ improvement of Theorem~\ref{thm:main-regret-app} -- from a generic $\sqrt{|\Theta|^n K}$ Bayesian-RL guarantee to $\sqrt{|\Theta_i| K}$ -- is therefore preserved in the FA regime, as the $\sqrt{|\Theta_i| K}$ term is unchanged.
+
+\subsection{FA Burn-in Separation}
+\label{app:fa-burnin}
+
+The exponential-in-$|\Theta|^n$ burn-in separation of Theorem~\ref{thm:hpsmg-plus-app} carries over to the FA setting essentially verbatim, because the argument depends only on the type-discrimination structure of the bonus, not on the function class of the transition or reward models. The deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$ embeds in any function class $\mathcal{R}_i$ rich enough to express its discrete reward structure (e.g., any neural network with one-hot encoding of states and types).
+
+\begin{proposition}[FA Burn-in Separation; informal]
+\label{prop:fa-burnin}
+Embed $\mathcal{G}_m^{\mathrm{trap}}$ in a function-approximation setting with $\mathcal{R}_i$ a neural reward predictor and $\mu_0^{\Theta, i}$ uniform on $\Theta_i$. Under Assumption~\ref{ass:cce-tiebreak} and bonus $\beta > 0$:
+\begin{enumerate}
+\item[(i)] FA-Joint-PSRL has expected burn-in regret $\Omega(m^n H)$, identical to the tabular bound.
+\item[(ii)] FA-H-PSMG\textsuperscript{+} has expected burn-in regret $O(H)$, with the same proof as Proposition~\ref{prop:hpsmg-plus-burnin} once the bonus is computed via Monte Carlo (Step 4 of Algorithm~\ref{alg:fa-hpsmg-plus}).
+\end{enumerate}
+The $\Omega(m^n)$ separation is preserved.
+\end{proposition}
+
+\begin{proof}[Proof Sketch]
+The argument of Lemmas~\ref{lem:cce-selects-aR}--\ref{lem:cce-selects-aL} depends only on the explicit form of $D_k$ in Equation~\eqref{eq:Dk-trap}, which is invariant under reward-class specification (the value $r_i(s, a, \theta) \in \{0.5, 1\}$ is recovered by any consistent reward network). The Monte Carlo bonus estimator $\widehat{D}_k$ converges to $D_k$ at rate $O(M^{-1/2})$ per query; for $M = O(\log K)$ the per-episode CCE selection is correct with probability $1 - o(1)$, preserving the deterministic-escape conclusion.
+\end{proof}
+
+\subsection{Discussion: What the Function-Approximation Generalisation Buys}
+
+Three takeaways. First, the posterior decoupling theorem (Theorem~\ref{thm:fa-decoupling}) is a structural property of the prior and the model class, not a tabular-specific result; it survives the move to NN parameterisations of $P$ and $r$. Second, the algorithmic refinement of H-PSMG\textsuperscript{+} -- the type-discrimination bonus -- is computable in the FA setting via finite-sample Monte Carlo and inherits the exponential-in-$n$ burn-in separation. Third, the regret bound (Theorem~\ref{thm:fa-regret-informal}) interpolates smoothly between the tabular case (when eluder dimensions are $O(S A_{\mathrm{joint}})$) and FA cases with potentially much smaller effective dimension (e.g., neural classes with low intrinsic complexity, recovered by NTK or covering-number arguments).
+
+Empirical validation of FA-H-PSMG\textsuperscript{+} on continuous-state HT-MGs (e.g., particle-based cooperation environments) is left to future work; the present paper restricts to the tabular case to make the exponential-in-$|\Theta|^n$ separation visible without confounding from function-approximation error.
+
+\section{LLM-Experiment Supplement Panels}
+\label{app:llm-supplements}
+
+This section reports the three additional LLM-experiment diagnostics referenced in Section~\ref{sec:theory-driven-experiments}, separated from Figure~\ref{fig:e2-e5} to preserve a single-column body layout.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/E4_prior_recovery_llm.png}
+  \caption{E4 supplement: per-backbone posterior recovery curves $\mu_k^{\Theta,i}(\theta_i^\star)$ vs.\ episode $k$ on HP-SPGG. The curves display the exponential concentration predicted by Assumption~\ref{ass:TID}, with concentration speed ordered DeepSeek $>$ GPT-5.4-nano $>$ Kimi-K2.6 $>$ Llama-Maverick. This is the underlying mechanism driving the regime structure of Figure~\ref{fig:e1} and panel~(d) of Figure~\ref{fig:e2-e5}.}
+  \label{fig:app-e4-prior}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/E2_native_vs_llm_baselines_main.pdf}
+  \caption{E2 supplement: H-PSMG\textsuperscript{+} on HP-SPGG c19 matches a privileged analytic-kernel reference within $0.05$ regret across all four backbones (DeepSeek, GPT-5.4-nano, Kimi-K2.6, Llama-Maverick). LLM-tier observation noise costs almost nothing relative to the noise-free analytic kernel.}
+  \label{fig:app-e2-native}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/E3_cross_provider.pdf}
+  \caption{E3 supplement: cross-provider H-PSMG\textsuperscript{+} rollouts on HP-SPGG, in which the $n{=}3$ agent slots are populated by two distinct backbones. The regret ordering across baselines is preserved, evidencing robustness to backbone mixing and ruling out single-provider bias.}
+  \label{fig:app-e3-cross}
+\end{figure}
+

@@ -1,0 +1,17 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration_cloudgpt_live_overnight_b5.npy",
+  "base_calibration": "calibration_cloudgpt_live_overnight_b4.npy",
+  "cache": "logs\\cloudgpt_live_cache.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 4,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 432,
+  "skipped_cached_cells": 0,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "tid_min_gap": 0.0926062198659267
+}

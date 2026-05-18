@@ -1,0 +1,84 @@
+{
+  "rows": [
+    {
+      "type_count": 2,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 0.19800000000000004,
+      "sem": 0.13462540622037136,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type2_live.npz"
+    },
+    {
+      "type_count": 2,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 0.06200000000000001,
+      "sem": 0.062000000000000006,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type2_live.npz"
+    },
+    {
+      "type_count": 3,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 0.632,
+      "sem": 0.4938360051677074,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type3_live.npz"
+    },
+    {
+      "type_count": 3,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type3_live.npz"
+    },
+    {
+      "type_count": 4,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 0.23200000000000004,
+      "sem": 0.14207040508142435,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type4_live.npz"
+    },
+    {
+      "type_count": 4,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type4_live.npz"
+    },
+    {
+      "type_count": 5,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 0.9199999999999999,
+      "sem": 0.08916277250063495,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type5_live.npz"
+    },
+    {
+      "type_count": 5,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 1.0959999999999999,
+      "sem": 0.5778806105070491,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type5_live.npz"
+    },
+    {
+      "type_count": 6,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 1.2800000000000005,
+      "sem": 0.2715695122800052,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type6_live.npz"
+    },
+    {
+      "type_count": 6,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 0.20000000000000084,
+      "sem": 0.08191458966508985,
+      "seeds": 5,
+      "input": "results\\e1_e4_llm\\E2_type6_live.npz"
+    }
+  ]
+}

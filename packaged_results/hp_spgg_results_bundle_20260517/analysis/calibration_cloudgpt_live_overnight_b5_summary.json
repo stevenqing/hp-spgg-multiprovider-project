@@ -1,0 +1,120 @@
+{
+  "calibration": "calibration_cloudgpt_live_overnight_b5.npy",
+  "report": "analysis/calibration_cloudgpt_live_overnight_b5_report.json",
+  "audit": "logs/E5_audit_cloudgpt_live_b5.txt",
+  "tid_min_gap": 0.0926062198659267,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 432,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0.npz",
+      "beta": 0.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.856,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0p05.npz",
+      "beta": 0.05,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.856,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0p1.npz",
+      "beta": 0.1,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.856,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0p25.npz",
+      "beta": 0.25,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.856,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0p5.npz",
+      "beta": 0.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.88,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta0p75.npz",
+      "beta": 0.75,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.884,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta1.npz",
+      "beta": 1.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 1.012,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_live_b5_beta1p5.npz",
+      "beta": 1.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 1.036,
+        "hpsmg": 0.728,
+        "oracle": 0.0,
+        "random": 27.068909
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\cloudgpt\\E2_live_b5_beta0.npz",
+    "beta": 0.0,
+    "K": 20,
+    "seeds": 5,
+    "final_regret": {
+      "hpsmg_plus": 0.856,
+      "hpsmg": 0.728,
+      "oracle": 0.0,
+      "random": 27.068909
+    }
+  }
+}

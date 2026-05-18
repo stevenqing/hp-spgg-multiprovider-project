@@ -1,0 +1,13 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration_cloudgpt_live.npy",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 12,
+  "live_cells": 144,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "tid_min_gap": 0.06761302114377954
+}

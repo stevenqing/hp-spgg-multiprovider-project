@@ -1,0 +1,44 @@
+{
+  "calibration": "calibration_anthropic.npy",
+  "report": "analysis\\calibration_cloudgpt_multi_model_fast4_DeepSeek_V3_2_c4_report.json",
+  "audit": "logs\\E5_audit_calibration_cloudgpt_multi_model_fast4_DeepSeek_V3_2_c4.txt",
+  "tid_min_gap": 0.05190354963252427,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 384,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\smoke_8_algos.npz",
+      "beta": 1.0,
+      "K": 3,
+      "seeds": 1,
+      "final_regret": {
+        "hpsmg_plus": 0.0,
+        "hpsmg": 0.0,
+        "joint_psrl": 0.0,
+        "map_greedy": 0.0,
+        "psrl_notype": 0.088508,
+        "iql": 5.55027,
+        "random": 2.389837,
+        "oracle": 0.0
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\smoke_8_algos.npz",
+    "beta": 1.0,
+    "K": 3,
+    "seeds": 1,
+    "final_regret": {
+      "hpsmg_plus": 0.0,
+      "hpsmg": 0.0,
+      "joint_psrl": 0.0,
+      "map_greedy": 0.0,
+      "psrl_notype": 0.088508,
+      "iql": 5.55027,
+      "random": 2.389837,
+      "oracle": 0.0
+    }
+  }
+}

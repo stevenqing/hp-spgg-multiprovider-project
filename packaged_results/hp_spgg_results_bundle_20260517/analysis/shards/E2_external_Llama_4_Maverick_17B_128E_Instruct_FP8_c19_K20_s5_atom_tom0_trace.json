@@ -1,0 +1,4937 @@
+[
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 0,
+    "seed": 120000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          0.9
+        ],
+        "welfare": 1.8,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Unders"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the best course of action for the given task, let's analyze the provided information step by step.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Penalty, Symmetric Public-Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The Theory of Mind level indicates the level of reas"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 64,
+        "contributions": [
+          0.5,
+          0.5,
+          1.0
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind ("
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a public goods game with specific characteristics: it's a High-Payof"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, we need to analyze the given information and make an informed decision.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) l"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind ("
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a public goods game with specific characteristics: it's a High-Payof"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind ("
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a public goods game with specific characteristics: it's a High-Payof"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind ("
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution to balance individual reward and public welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, let's analyze the given information and the context.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. The "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, let's analyze the given information and the context.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. The "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Maintaining a higher contribution to maximize public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Maintaining higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Maintaining higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining a consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution for public welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent moderate contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Continuing higher contribution"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 1,
+    "seed": 120001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Unders"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the best course of action for the given task, let's analyze the provided information step by step.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Penalty, Symmetric Public-Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The Theory of Mind level indicates the level of reas"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goo"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theo"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theo"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level o"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.7,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 2,
+    "seed": 120002,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Unders"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the best course of action for the given task, let's analyze the provided information step by step.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Penalty, Symmetric Public-Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The Theory of Mind level indicates the level of reas"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and make an informed decision.\n\n1. **Task Understanding**: The task is about selecting an action for a player in an A-ToM HP-SPGG scenario. The player is at index 0 and has a Theory of Mind (ToM"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting an action (contribution level) for a player in a High-Payoff Symmetric Public Goods Game with a Theory "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in an A-ToM HP-S"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level o"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in an A-ToM HP-S"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in an A-ToM HP-S"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in an A-ToM HP-S"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in an A-ToM HP-S"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 57,
+        "contributions": [
+          0.5,
+          0.25,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4000000000000004,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain public goods welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to stabilize welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain public goods welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain public goods welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to stabilize welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 0 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 1 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Sustaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Consistent welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent welfare"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 3,
+    "seed": 120003,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Unders"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the best course of action for the given task, let's analyze the provided information step by step.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Penalty, Symmetric Public-Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The Theory of Mind level indicates the level of reas"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the game.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Understanding the Task**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind ("
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain public goods welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution to sustain public goods welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the game.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Consistent contribution maintains welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Maintaining consistent contribution"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 4,
+    "seed": 120004,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Unders"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the best course of action for the given task, let's analyze the provided information step by step.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods Game (HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Penalty, Symmetric Public-Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The Theory of Mind level indicates the level of reas"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, we need to analyze the given information and make an informed decision.\n\n1. **Task Understanding**: The task is to select an action (contribution level) for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mi"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action for a player in a High-Payoff Symmetric Public Goods "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level of 0. The"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in a High-Payoff Sy"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, let's analyze the given information and make an informed decision.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) leve"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in a High-Payoff Sy"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, let's analyze the given information and make an informed decision.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM) level "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, let's analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in a High-Payoff Symmetr"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task involves selecting a contribution for player 2 in a High-Payoff Symmetric "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for the player at index 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Understanding**: The task involves selecting a contribution for a player in a High-Payoff Symmetric Public Goods Game with a Theory of Mind (ToM)"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for the player at index 1, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is about selecting an action (contribution level) for a player in a High-Payoff Sy"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG, we need to analyze the given information and make an informed decision based on the task's constraints and objectives.\n\n1. **Task Understanding**: The task is to select a contribution level for player 2 in a High-Payoff Symmetric "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Consistent with previous rounds"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Stable contributions observed"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.9,
+          1.0
+        ],
+        "welfare": 1.9,
+        "oracle_welfare": 2.92,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Continuing observed stability"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+providers:
+  anthropic:
+    player_model: claude-haiku-4-5-20251001
+    judge_model: claude-sonnet-4-6-20251101
+    auth: api_key
+    api_key_env: ANTHROPIC_API_KEY
+    player_price_usd_per_million_input: 1.00
+    player_price_usd_per_million_output: 5.00
+    judge_price_usd_per_million_input: 3.00
+    judge_price_usd_per_million_output: 15.00
+  openai:
+    player_model: gpt-5.4-mini
+    judge_model: gpt-5.4
+    auth: api_key
+    api_key_env: OPENAI_API_KEY
+    player_price_usd_per_million_input: 0.75
+    player_price_usd_per_million_output: 4.50
+    judge_price_usd_per_million_input: 2.50
+    judge_price_usd_per_million_output: 15.00
+  cloudgpt:
+    player_model: gpt-5.4-mini-20260317
+    judge_model: gpt-5.4-mini-20260317
+    auth: azure_ad
+    tenant_id: 72f988bf-86f1-41af-91ab-2d7cd011db47
+    scope: api://feb7b661-cac7-44a8-8dc1-163b63c23df2/.default
+    base_url: https://cloudgpt-openai.azure-api.net/openai/
+    api_version: 2025-04-01-preview
+  google:
+    player_model: gemini-2.5-flash
+    judge_model: gemini-2.5-pro
+    auth: api_key
+    api_key_env: GOOGLE_API_KEY
+    player_price_usd_per_million_input: 0.30
+    player_price_usd_per_million_output: 2.50
+    judge_price_usd_per_million_input: 1.25
+    judge_price_usd_per_million_output: 10.00
+  qwen3:
+    player_model: Qwen/Qwen3-32B
+    judge_model: Qwen/Qwen3-235B-A22B
+    auth: api_key
+    api_key_env: DEEPINFRA_API_KEY
+    player_price_usd_per_million_input: 0.20
+    player_price_usd_per_million_output: 0.60
+    judge_price_usd_per_million_input: 0.50
+    judge_price_usd_per_million_output: 1.50
+  deepseek:
+    player_model: deepseek-ai/DeepSeek-V3.2
+    judge_model: deepseek-ai/DeepSeek-V3.2
+    auth: api_key
+    api_key_env: DEEPINFRA_API_KEY
+    base_url_env: DEEPINFRA_BASE_URL
+    player_price_usd_per_million_input: null
+    player_price_usd_per_million_output: null
+    judge_price_usd_per_million_input: null
+    judge_price_usd_per_million_output: null

@@ -1,0 +1,5 @@
+type_count,algorithm,mean_final_cumulative_regret,sem,seeds,input
+2,hpsmg,0.0,0.0,1,results\e1_e4_smoke\E2_type2_smoke.npz
+2,hpsmg_plus,0.0,0.0,1,results\e1_e4_smoke\E2_type2_smoke.npz
+3,hpsmg,0.0,0.0,1,results\e1_e4_smoke\E2_type3_smoke.npz
+3,hpsmg_plus,0.0,0.0,1,results\e1_e4_smoke\E2_type3_smoke.npz

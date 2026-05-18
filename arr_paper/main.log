@@ -1,0 +1,2504 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.18)  18 MAY 2026 20:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./main.tex
+(main.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (acl.sty
+Conference Style for ACL
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.st
+y
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\col
+or.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdf
+tex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcol
+or.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometr
+y.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.
+sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.s
+ty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.st
+y
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometr
+y.cfg))
+\titlebox=\skip51
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.
+sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3
+.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen157
+\captionmargin=\dimen158
+\caption@leftmargin=\dimen159
+\caption@rightmargin=\dimen160
+\caption@width=\dimen161
+\caption@indent=\dimen162
+\caption@parindent=\dimen163
+\caption@hangindent=\dimen164
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count286
+\c@continuedfloat=\count287
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.st
+y
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count288
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperre
+f.sty
+Package: hyperref 2025-07-12 v7.01o Hypertext links for LaTeX
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetk
+eys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\k
+vdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfe
+scape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmd
+s.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdf
+texcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infw
+arerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.
+sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref
+.sty
+Package: nameref 2025-06-21 v2.57 Cross-referencing by name of section
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcoun
+t.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring
+\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvopti
+ons.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count289
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbo
+x.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count290
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/stringenc\stri
+ngenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen165
+\Hy@linkcounter=\count291
+\Hy@pagecounter=\count292
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.
+def
+File: pd1enc.def 2025-07-12 v7.01o Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcal
+c.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count293
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.d
+ef
+File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 4066.
+Package hyperref Info: Hyper figures OFF on input line 4195.
+Package hyperref Info: Link nesting OFF on input line 4200.
+Package hyperref Info: Hyper index ON on input line 4203.
+Package hyperref Info: Plain pages OFF on input line 4210.
+Package hyperref Info: Backreferencing OFF on input line 4215.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4462.
+\c@Hy@tempcnt=\count294
+ (C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4801.
+\XeTeXLinkMargin=\dimen166
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.
+sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\big
+intcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count295
+\Field@Width=\dimen167
+\Fld@charsize=\dimen168
+Package hyperref Info: Hyper figures OFF on input line 6078.
+Package hyperref Info: Link nesting OFF on input line 6083.
+Package hyperref Info: Hyper index ON on input line 6086.
+Package hyperref Info: backreferencing OFF on input line 6093.
+Package hyperref Info: Link coloring OFF on input line 6098.
+Package hyperref Info: Link coloring with OCG OFF on input line 6103.
+Package hyperref Info: PDF/A mode OFF on input line 6108.
+\Hy@abspage=\count296
+\c@Item=\count297
+\c@Hfootnote=\count298
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex
+.def
+File: hpdftex.def 2025-07-12 v7.01o Hyperref driver for pdfTeX
+\Fld@listcount=\count299
+\c@bookmark@seq@number=\count300
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\r
+erunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\
+uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip54
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 305.
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlaye
+r\tikz.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\p
+gf.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pg
+frcs.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfutil-common.tex
+\pgfutil@everybye=\toks19
+\pgfutil@tempdima=\dimen169
+\pgfutil@tempdimb=\dimen170
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfutil-latex.def
+\pgfutil@abb=\box53
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfrcs.code.tex
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revisi
+on.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\p
+gfcore.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphic
+x.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphic
+s.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.st
+y
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gra
+phics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\
+pgfsys.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks22
+))
+\pgf@x=\dimen173
+\pgf@y=\dimen174
+\pgf@xa=\dimen175
+\pgf@ya=\dimen176
+\pgf@xb=\dimen177
+\pgf@yb=\dimen178
+\pgf@xc=\dimen179
+\pgf@yc=\dimen180
+\pgf@xd=\dimen181
+\pgf@yd=\dimen182
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count301
+\c@pgf@countb=\count302
+\c@pgf@countc=\count303
+\c@pgf@countd=\count304
+\t@pgf@toka=\toks23
+\t@pgf@tokb=\toks24
+\t@pgf@tokc=\toks25
+\pgf@sys@id@count=\count305
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count306
+\pgfsyssoftpath@bigbuffer@items=\count307
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlaye
+r\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+th.code.tex
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thutil.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thparser.code.tex
+\pgfmath@dimen=\dimen183
+\pgfmath@count=\count308
+\pgfmath@box=\box54
+\pgfmath@toks=\toks26
+\pgfmath@stack@operand=\toks27
+\pgfmath@stack@operation=\toks28
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.basic.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.trigonometric.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.random.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.comparison.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.base.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.round.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.misc.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfunctions.integerarithmetics.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thcalc.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+thfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count309
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfin
+t.code.tex)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen184
+\pgf@picmaxx=\dimen185
+\pgf@picminy=\dimen186
+\pgf@picmaxy=\dimen187
+\pgf@pathminx=\dimen188
+\pgf@pathmaxx=\dimen189
+\pgf@pathminy=\dimen190
+\pgf@pathmaxy=\dimen191
+\pgf@xx=\dimen192
+\pgf@xy=\dimen193
+\pgf@yx=\dimen194
+\pgf@yy=\dimen195
+\pgf@zx=\dimen196
+\pgf@zy=\dimen197
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen198
+\pgf@path@lasty=\dimen199
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen256
+\pgf@shorten@start@additional=\dimen257
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box55
+\pgf@hbox=\box56
+\pgf@layerbox@main=\box57
+\pgf@picture@serial@count=\count310
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen258
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen259
+\pgf@pt@y=\dimen260
+\pgf@pt@temp=\dimen261
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen262
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen263
+\pgf@sys@shading@range@num=\count311
+\pgf@shadingcount=\count312
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box58
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer
+\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pg
+fmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box59
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pg
+fmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibilit
+y\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen264
+\pgf@nodesepend=\dimen265
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibilit
+y\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pg
+ffor.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pg
+fkeys.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgfkeys.code.tex))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath
+.sty
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfma
+th.code.tex))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\
+pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen266
+\pgffor@skip=\dimen267
+\pgffor@stack=\toks29
+\pgffor@toks=\toks30
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendla
+yer/tikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\
+pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count313
+\pgfplotmarksize=\dimen268
+)
+\tikz@lastx=\dimen269
+\tikz@lasty=\dimen270
+\tikz@lastxsaved=\dimen271
+\tikz@lastysaved=\dimen272
+\tikz@lastmovetox=\dimen273
+\tikz@lastmovetoy=\dimen274
+\tikzleveldistance=\dimen275
+\tikzsiblingdistance=\dimen276
+\tikz@figbox=\box60
+\tikz@figbox@bg=\box61
+\tikz@tempbox=\box62
+\tikz@tempbox@bg=\box63
+\tikztreelevel=\count314
+\tikznumberofchildren=\count315
+\tikznumberofcurrentchild=\count316
+\tikz@fig@count=\count317
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pg
+fmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count318
+\pgfmatrixcurrentcolumn=\count319
+\pgf@matrix@numberofcolumns=\count320
+)
+\tikz@expandcount=\count321
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendla
+yer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algor
+ithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count322
+\float@exts=\toks31
+\float@box=\box64
+\@float@everytoks=\toks32
+\@floatcapt=\box65
+) (C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.st
+y
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks33
+\c@algorithm=\count323
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algor
+ithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count324
+\c@ALC@line=\count325
+\c@ALC@rem=\count326
+\c@ALC@depth=\count327
+\ALC@tlm=\skip55
+\algorithmicindent=\skip56
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/subfig\subfig.st
+y
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count328
+\sf@farskip=\skip57
+\sf@captopadj=\dimen277
+\sf@capskip=\skip58
+\sf@nearskip=\skip59
+\c@subfigure=\count329
+\c@subfigure@save=\count330
+\c@lofdepth=\count331
+\c@subtable=\count332
+\c@subtable@save=\count333
+\c@lotdepth=\count334
+\sf@top=\skip60
+\sf@bottom=\skip61
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.
+sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip62
+
+For additional information on amsmath, use the `?' option.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.
+sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.s
+ty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks34
+\ex@=\dimen278
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.s
+ty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen279
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.s
+ty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count335
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count336
+\leftroot@=\count337
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count338
+\DOTSCASE@=\count339
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box66
+\strutbox@=\box67
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen280
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count340
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count341
+\dotsspace@=\muskip18
+\c@parentequation=\count342
+\dspbrk@lvl=\count343
+\tag@help=\toks35
+\row@=\count344
+\column@=\count345
+\maxfields@=\count346
+\andhelp@=\toks36
+\eqnshift@=\dimen281
+\alignsep@=\dimen282
+\tagshift@=\dimen283
+\tagwidth@=\dimen284
+\totwidth@=\dimen285
+\lineht@=\dimen286
+\@envbody=\toks37
+\multlinegap=\skip63
+\multlinetaggap=\skip64
+\mathdisplay@stack=\toks38
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb
+.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfont
+s.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathto
+ols.sty
+Package: mathtools 2024/10/04 v1.31 mathematical typesetting tools
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count347
+\calc@Bcount=\count348
+\calc@Adimen=\dimen287
+\calc@Bdimen=\dimen288
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count349
+\calc@Cskip=\skip67
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetu
+p.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+\g_MT_multlinerow_int=\count350
+\l_MT_multwidth_dim=\dimen289
+\origjot=\skip68
+\l_MT_shortvdotswithinadjustabove_dim=\dimen290
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen291
+\l_MT_above_intertext_sep=\dimen292
+\l_MT_below_intertext_sep=\dimen293
+\l_MT_above_shortintertext_sep=\dimen294
+\l_MT_below_shortintertext_sep=\dimen295
+\xmathstrut@box=\box68
+\xmathstrut@dim=\dimen296
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.st
+y
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks39
+\thm@bodyfont=\toks40
+\thm@headfont=\toks41
+\thm@notefont=\toks42
+\thm@headpunct=\toks43
+\thm@preskip=\skip69
+\thm@postskip=\skip70
+\thm@headsep=\skip71
+\dth@everypar=\toks44
+) (C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/bbm\bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktab
+s.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen297
+\lightrulewidth=\dimen298
+\cmidrulewidth=\dimen299
+\belowrulesep=\dimen300
+\belowbottomsep=\dimen301
+\aboverulesep=\dimen302
+\abovetopsep=\dimen303
+\cmidrulesep=\dimen304
+\cmidrulekern=\dimen305
+\defaultaddspace=\dimen306
+\@cmidla=\count351
+\@cmidlb=\count352
+\@aboverulesep=\dimen307
+\@belowrulesep=\dimen308
+\@thisruleclass=\count353
+\@lastruleclass=\count354
+\@thisrulewidth=\dimen309
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multiro
+w.sty
+Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
+\multirow@colwidth=\skip72
+\multirow@cntb=\count355
+\multirow@dima=\skip73
+\bigstrutjot=\dimen310
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listing
+s.sty
+\lst@mode=\count356
+\lst@gtempboxa=\box69
+\lst@token=\toks45
+\lst@length=\count357
+\lst@currlwidth=\dimen311
+\lst@column=\count358
+\lst@pos=\count359
+\lst@lostspace=\dimen312
+\lst@width=\dimen313
+\lst@newlines=\count360
+\lst@lineno=\count361
+\lst@maxwidth=\dimen314
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstpatc
+h.sty
+File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc
+.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+\c@lstnumber=\count362
+\lst@skipnumbers=\count363
+\lst@framebox=\box70
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/listings\listing
+s.cfg
+File: listings.cfg 2025/11/14 1.11b listings configuration
+))
+Package: listings 2025/11/14 1.11b (Carsten Heinz)
+
+==> First Aid for listings.sty no longer applied!
+    Expected:
+        2024/09/23 1.10c (Carsten Heinz)
+    but found:
+        2025/11/14 1.11b (Carsten Heinz)
+    so I'm assuming it got fixed.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.st
+y
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks46
+\inpenc@posthook=\toks47
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+6.
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/units\nicefrac.s
+ty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip74
+\L@UnitsRaiseTextstyle=\skip75
+\L@UnitsRaiseScriptstyle=\skip76
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microt
+ype.sty
+Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
+\MT@toks=\toks48
+\MT@tempbox=\box71
+\MT@count=\count364
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1084.
+LaTeX Info: Redefining \leftprotrusion on input line 1085.
+\MT@prot@toks=\toks49
+LaTeX Info: Redefining \rightprotrusion on input line 1104.
+LaTeX Info: Redefining \textls on input line 1449.
+\MT@outer@kern=\dimen315
+LaTeX Info: Redefining \microtypecontext on input line 2053.
+LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
+\MT@listname@count=\count365
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microt
+ype-pdftex.def
+File: microtype-pdftex.def 2026/03/01 v3.2d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 944.
+LaTeX Info: Redefining \lslig on input line 944.
+\MT@outer@space=\skip77
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microt
+ype.cfg
+File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
+)
+LaTeX Info: Redefining \microtypesetup on input line 3065.
+)
+\c@theorem=\count366
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3back
+end-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count367
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp
+-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count368
+\scratchdimen=\dimen316
+\scratchbox=\box72
+\nofMPsegments=\count369
+\nofMParguments=\count370
+\everyMPshowfont=\toks50
+\MPscratchCnt=\count371
+\MPscratchDim=\dimen317
+\MPnumerator=\count372
+\makeMPintoPDFobject=\count373
+\everyMPtoPDFconversion=\toks51
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\eps
+topdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopd
+f-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: heightrounded 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=706.0pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=17.07182pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring ON on input line 63.
+(main.out) (main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+\c@lstlisting=\count374
+LaTeX Info: Redefining \microtypecontext on input line 63.
+Package microtype Info: Applying patch `item' on input line 63.
+Package microtype Info: Applying patch `toc' on input line 63.
+Package microtype Info: Applying patch `eqnum' on input line 63.
+Package microtype Info: Applying patch `footnote' on input line 63.
+Package microtype Info: Applying patch `verbatim' on input line 63.
+LaTeX Info: Redefining \microtypesetup on input line 63.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Patching command `\showhyphens'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr
+.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
+5.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
+5.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+65.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+65.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 65.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 65.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 65.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 65.
+
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa
+.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 65.
+
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb
+.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 6
+5.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 68.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 68.
+
+[1{C:/Users/v-shuqingshi/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/U
+sers/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
+
+
+
+{C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.e
+nc}{C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-m
+athsy.enc}{C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/
+lm/lm-mathit.enc}]
+Underfull \hbox (badness 1360) in paragraph at lines 81--82
+\T1/lmr/m/n/10 (+20) go-rithms for cen-tralised multi-agent co-or-di-na-
+ []
+
+
+Underfull \hbox (badness 1325) in paragraph at lines 81--82
+\T1/lmr/m/n/10 (+20) H-PSMG$[]$ -- that plug into any LLM back-
+ []
+
+
+Underfull \hbox (badness 1337) in paragraph at lines 90--91
+[]\T1/lmr/bx/n/10 (+20) General-sum equi-lib-rium learn-ing and
+ []
+
+[2{C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ma
+thex.enc}]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 132.
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+[4]
+Underfull \hbox (badness 1389) in paragraph at lines 202--203
+ []\T1/lmr/bx/n/10 (+20) Baselines.[] \T1/lmr/m/n/10 (+20) We com-pare H-PSMG$[
+]$ ($\OML/lmm/m/it/10 ^^L[]\OT1/lmr/m/n/10 (+20) 0\OML/lmm/m/it/10 :\OT1/lmr/m/
+n/10 (+20) 25$\T1/lmr/m/n/10 (+20) ,
+ []
+
+
+Underfull \hbox (badness 4205) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) fixed across back-bones) against three fam-i-
+ []
+
+
+Underfull \hbox (badness 3792) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) lies: \T1/lmr/m/it/10 (+20) Bayesian type-aware \T1/lmr/m/
+n/10 (+20) (H-PSMG, Joint-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) PSRL, MAP-Type-Greedy); \T1/lmr/m/it/10 (+20) LLM-coordina
+tion
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) (ECON-BNE ([][]Yang et al.[][], [][]2025[][]), A-ToM at
+ []
+
+
+Underfull \hbox (badness 2635) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) or-ders $\OMS/lmsy/m/n/10 f\OT1/lmr/m/n/10 (+20) 0\OML/lmm
+/m/it/10 ; \OT1/lmr/m/n/10 (+20) 1\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) 2\OM
+S/lmsy/m/n/10 g$ \T1/lmr/m/n/10 (+20) with Hedge/FTL ag-gre-ga-tion
+ []
+
+
+Underfull \hbox (badness 1436) in paragraph at lines 202--203
+\T1/lmr/m/n/10 (+20) ([][]Xu et al.[][], [][]2026[][]; [][]Cesa-Bianchi et al.[
+][], [][]1997[][]),
+ []
+
+<figs/fig10_hp_spgg_cross_model_v3.png, id=490, 680.944pt x 497.057pt>
+File: figs/fig10_hp_spgg_cross_model_v3.png Graphic file (type png)
+<use figs/fig10_hp_spgg_cross_model_v3.png>
+Package pdftex.def Info: figs/fig10_hp_spgg_cross_model_v3.png  used on input l
+ine 206.
+(pdftex.def)             Requested size: 219.08614pt x 159.91853pt.
+<figs/fig10_beta_sweep_v3.pdf, id=493, 822.88515pt x 296.85233pt>
+File: figs/fig10_beta_sweep_v3.pdf Graphic file (type pdf)
+<use figs/fig10_beta_sweep_v3.pdf>
+Package pdftex.def Info: figs/fig10_beta_sweep_v3.pdf  used on input line 217.
+(pdftex.def)             Requested size: 219.08614pt x 79.03238pt.
+[5 <./figs/fig10_hp_spgg_cross_model_v3.png>]
+<figs/fig10_concordia_main_v3.pdf, id=520, 827.30069pt x 442.3602pt>
+File: figs/fig10_concordia_main_v3.pdf Graphic file (type pdf)
+<use figs/fig10_concordia_main_v3.pdf>
+Package pdftex.def Info: figs/fig10_concordia_main_v3.pdf  used on input line 2
+31.
+(pdftex.def)             Requested size: 455.24411pt x 243.42035pt.
+ [6 <./figs/fig10_beta_sweep_v3.pdf>]
+<figs/fig_sotopia_three_exp_v1.pdf, id=638, 975.645pt x 231.26399pt>
+File: figs/fig_sotopia_three_exp_v1.pdf Graphic file (type pdf)
+<use figs/fig_sotopia_three_exp_v1.pdf>
+Package pdftex.def Info: figs/fig_sotopia_three_exp_v1.pdf  used on input line 
+248.
+(pdftex.def)             Requested size: 455.24411pt x 107.91069pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 248.
+<figs/fig_sotopia_traj_v1.pdf, id=639, 975.645pt x 231.26399pt>
+File: figs/fig_sotopia_traj_v1.pdf Graphic file (type pdf)
+<use figs/fig_sotopia_traj_v1.pdf>
+Package pdftex.def Info: figs/fig_sotopia_traj_v1.pdf  used on input line 250.
+(pdftex.def)             Requested size: 455.24411pt x 107.91069pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./figs/fig10_concordia_main_v3.pdf>] [8 <./figs/fig_sotopia_three_exp_v1.p
+df> <./figs/fig_sotopia_traj_v1.pdf>] (main.bbl [9]
+Underfull \hbox (badness 1430) in paragraph at lines 126--130
+[]\T1/lmr/m/n/10 (+20) Chi Jin, Qinghua Liu, Yuan-hao Wang, and
+ []
+
+
+Underfull \hbox (badness 2368) in paragraph at lines 150--156
+[]\T1/lmr/m/n/10 (+20) Marc Lanc-tot, Vini-cius Zam-baldi, Au-drunas
+ []
+
+
+Underfull \hbox (badness 3088) in paragraph at lines 175--178
+[]\T1/lmr/m/n/10 (+20) Xiuyuan Lu and Ben-jamin Van Roy. 2019.
+ []
+
+[10]) (appendix.tex
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[][]\T1/lmr/bx/n/10 (+20) Assumption A.3 \T1/lmr/m/n/10 (+20) (PF)\T1/lmr/bx/n/
+10 (+20) . []$\OML/lmm/m/it/10 P[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 P; []
+\OT1/lmr/m/n/10 (+20) ) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[][]\T1/lmr/bx/n/10 (+20) Assumption A.4 \T1/lmr/m/n/10 (+20) (TID)\T1/lmr/bx/n
+/10 (+20) . []$[][] \OML/lmm/m/it/10 D[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10
+ P\OT1/lmr/m/n/10 (+20) (\OMS/lmsy/m/n/10 ^^A  j
+ []
+
+[11]
+Overfull \hbox (55.69243pt too wide) detected at line 26
+[][][][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )  [][]=  \U/msb/m
+/n/10 E[]  []  []\OML/lmm/m/it/10 V[] \OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1
+/lmr/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML
+/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \OML/lmm
+/m/it/10 ^^R[]\OT1/lmr/m/n/10 )[]\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (14.79704pt too wide) detected at line 43
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 P; []; \OMS/lmsy/m/n/10 H[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/
+it/10 c[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n
+/10 ^^A \OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n
+/10 ; \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A [] \OML/lmm/m/it
+/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/1
+0 ^^R[]\OT1/lmr/m/n/10 )
+ []
+
+
+Overfull \hbox (103.9102pt too wide) detected at line 57
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 ^^Y[]; P; []\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 ^^Y[]\
+OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]\OT
+1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm
+/m/it/10 s[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 ) 
+\OMS/lmsy/m/n/10 ^^A [] \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 r[]
+ \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 )\OML/lmm/m/it
+/10 :
+ []
+
+
+Overfull \hbox (128.5613pt too wide) detected at line 61
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 ^^Y[]; P; []\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 ^^Y[]\
+OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]\OT
+1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A [] \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/
+lmm/m/it/10 s[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]\OT1/lmr/m/n/10 ) \
+OMS/lmsy/m/n/10 ^^A [] [] \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 r
+[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]; ^^R[]\OT1/lmr/m/n/10 )\OML/lmm
+/m/it/10 :
+ []
+
+
+Overfull \hbox (115.65268pt too wide) detected at line 66
+[]
+ []
+
+
+Overfull \hbox (38.11653pt too wide) detected at line 78
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 P; [] \OMS/lmsy/m/n/1
+0 j H[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it
+/10 P\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A [] \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m
+/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ;  \OMS/lmsy/m/n
+/10 8\OML/lmm/m/it/10 k \OMS/lmsy/m/n/10 2 f\OT1/lmr/m/n/10 0\OML/lmm/m/it/10 ;
+ \OT1/lmr/m/n/10 1\OML/lmm/m/it/10 ; [] ; K\OMS/lmsy/m/n/10 g
+ []
+
+
+Overfull \hbox (54.2663pt too wide) detected at line 82
+[][][]\OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 
+) \OMS/lmsy/m/n/10 / \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 P\
+OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML
+/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 )\OML/lmm
+/m/it/10 ;  ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) \OMS/
+lmsy/m/n/10 / \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1
+/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lm
+m/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 )
+ []
+
+
+Overfull \hbox (80.0856pt too wide) detected at line 99
+[]
+ []
+
+[12]
+Overfull \hbox (39.79176pt too wide) detected at line 113
+[][][][][][][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 ) = [][][][]
+[](\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 8\OML/lmm/m/it/10 i; K;
+ []
+ []
+
+
+Underfull \hbox (badness 7522) in paragraph at lines 119--120
+[]\T1/lmr/m/n/10 (+20) By The-o-rem [][]B.2[][], $\OML/lmm/m/it/10 ^^V[]\OT1/lm
+r/m/n/10 (+20) (\OML/lmm/m/it/10 ^^R[]; [] ; ^^R[]\OT1/lmr/m/n/10 (+20) ) =
+ []
+
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 137
+.
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/bbm\ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+Overfull \hbox (44.55887pt too wide) detected at line 138
+[][][]\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]; a[]\OT1/lmr/m/
+n/10 ) = \U/bbm/m/n/10 1\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 a[] \OT1/lmr/m/n/10 =
+ \OML/lmm/m/it/10 D\OT1/lmr/m/n/10 ]\OML/lmm/m/it/10 ;  r[]\OT1/lmr/m/n/10 (\OM
+L/lmm/m/it/10 a[]; a[]\OT1/lmr/m/n/10 ) = \U/bbm/m/n/10 1\OT1/lmr/m/n/10 [\OML/
+lmm/m/it/10 a[] \OT1/lmr/m/n/10 = \OML/lmm/m/it/10 C \OMS/lmsy/m/n/10 ^ \OML/lm
+m/m/it/10 a[] \OT1/lmr/m/n/10 = \OML/lmm/m/it/10 C\OT1/lmr/m/n/10 ]\OML/lmm/m/i
+t/10 :
+ []
+
+
+Overfull \hbox (23.11227pt too wide) detected at line 150
+[][][]\OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/1
+0 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 P\OT1/lmr/m/n/10
+ (\OML/lmm/m/it/10 r[] \OT1/lmr/m/n/10 = 1 \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 
+a \OT1/lmr/m/n/10 = (\OML/lmm/m/it/10 C; C\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ; ^
+^R[]\OT1/lmr/m/n/10 ) = []
+ []
+
+
+Overfull \hbox (27.55669pt too wide) detected at line 153
+[][][]\OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/1
+0 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 P\OT1/lmr/m/n/10
+ (\OML/lmm/m/it/10 r[] \OT1/lmr/m/n/10 = 0 \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 
+a \OT1/lmr/m/n/10 = (\OML/lmm/m/it/10 C; C\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ; ^
+^R[]\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (57.75201pt too wide) in paragraph at lines 161--175
+ [] 
+ []
+
+
+Overfull \hbox (12.3681pt too wide) detected at line 184
+[]
+ []
+
+[13]
+Overfull \hbox (52.98045pt too wide) detected at line 193
+[][][]\OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/1
+0 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 ;  L[]\OT1/lm
+r/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lm
+r/m/n/10 ) = [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (93.31454pt too wide) detected at line 206
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 P; []; \OMS/lmsy/m/n/10 H[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/
+it/10 c[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n
+/10 ^^A [] \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[] \OMS/lmsy/m/
+n/10 j \OML/lmm/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A [] \
+OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 r[] \OMS/lmsy/m/n/10 j \OML/
+lmm/m/it/10 s[]; a[]; ^^R[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 229--231
+\T1/lmr/m/n/10 (+20) form. First, the pos-te-rior sam-pling equiv-
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 229--231
+\T1/lmr/m/n/10 (+20) a-lence (Lemma [][]I.1[][] in Ap-pendix [][]I[][]) im-plie
+s
+ []
+
+
+Overfull \hbox (38.495pt too wide) detected at line 233
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/
+10 ] = \U/msb/m/n/10 E[]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s
+[]\OT1/lmr/m/n/10 ; []\OML/lmm/m/it/10 ; []\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^
+^@ \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \
+OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 ) [] \OMS/lmsy/m/n/10 H[][]\OML/lmm/m
+/it/10 :
+ []
+
+
+Overfull \hbox (194.65843pt too wide) detected at line 237
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/
+10 ] = [] + [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (38.76166pt too wide) detected at line 245
+[][][][] \U/msb/m/n/10 E[]\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/
+10 j[] ^^T [][]\OML/lmm/m/it/10 H[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 S \OM
+S/lmsy/m/n/10 ^^A [][]\OML/lmm/m/it/10 ;  A[] \OT1/lmr/m/n/10 := [] \OMS/lmsy/m
+/n/10 jA[]j\OML/lmm/m/it/10 ;
+ []
+
+[14]
+Overfull \hbox (112.65112pt too wide) detected at line 270
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[][][] \OT1/lmr/m/n/10 + \OML/lmm
+/m/it/10 O[]H[][] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 K \OMS/lmsy/m/n/10 ^^A \OM
+L/lmm/m/it/10 ^^O[];
+ []
+
+
+Overfull \hbox (60.2914pt too wide) detected at line 285
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[][][] \OT1/lmr/m/n/10 + \OML/lmm
+/m/it/10 O[][][] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 K \OMS/lmsy/m/n/10 ^^A \OML
+/lmm/m/it/10 ^^O[]:
+ []
+
+[15]
+<figs/regret_trap.pdf, id=1032, 570.67139pt x 386.92241pt>
+File: figs/regret_trap.pdf Graphic file (type pdf)
+<use figs/regret_trap.pdf>
+Package pdftex.def Info: figs/regret_trap.pdf  used on input line 329.
+(pdftex.def)             Requested size: 219.08614pt x 148.54346pt.
+
+Underfull \hbox (badness 2173) in paragraph at lines 330--330
+[]\T1/lmr/m/n/10 (+20) Figure 5: |Analytic-kernel sim-u-la-tion of the
+ []
+
+<figs/regret_curves.pdf, id=1035, 570.61179pt x 386.35529pt>
+File: figs/regret_curves.pdf Graphic file (type pdf)
+<use figs/regret_curves.pdf>
+Package pdftex.def Info: figs/regret_curves.pdf  used on input line 336.
+(pdftex.def)             Requested size: 219.08614pt x 148.33751pt.
+[16 <./figs/regret_trap.pdf> <./figs/regret_curves.pdf>]
+Overfull \hbox (42.65222pt too wide) detected at line 360
+[]
+ []
+
+
+Underfull \hbox (badness 2057) in paragraph at lines 365--366
+\T1/lmr/m/n/10 (+20) the per-episode re-gret of H-PSMG$[]$ rel-a-tive
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 365--366
+\T1/lmr/m/n/10 (+20) sump-tion [][]A.4[][] (Hellinger gap $\OML/lmm/m/it/10 ^^Z
+ > \OT1/lmr/m/n/10 (+20) 0$\T1/lmr/m/n/10 (+20) ), stan-
+ []
+
+
+Overfull \hbox (19.67pt too wide) detected at line 372
+\OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT1/lmr/m/n/10 ) \OMS/l
+msy/m/n/10 ^^@ \OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT1/lmr/
+m/n/10 ) = \OML/lmm/m/it/10 n\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 H \OMS/lmsy/m/n/
+10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1)[]0\OML/lmm/m/it/10 :\OT1/lmr/m/n
+/10 5\OML/lmm/m/it/10  \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 ^^Lnp[]\OT1/lmr/m/n/
+10 (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 p[]\OT1/lmr/m/n/10 )[] \OML/lmm/m/i
+t/10 > \OT1/lmr/m/n/10 0
+ []
+
+<figs/hpsmg_plus_results.pdf, id=1209, 822.34914pt x 276.594pt>
+File: figs/hpsmg_plus_results.pdf Graphic file (type pdf)
+<use figs/hpsmg_plus_results.pdf>
+Package pdftex.def Info: figs/hpsmg_plus_results.pdf  used on input line 380.
+(pdftex.def)             Requested size: 219.08614pt x 73.68533pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
+87.
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Underfull \hbox (badness 1762) in paragraph at lines 388--389
+\T1/lmr/m/n/10 (+20) rate in-stead of $[]\OT1/lmr/m/n/10 (+20) ([])$\T1/lmr/m/n
+/10 (+20) , the generic
+ []
+
+[17{C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-t
+s1.enc} <./figs/hpsmg_plus_results.pdf>]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 400
+.
+
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+(C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-euf
+.cfg
+File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
+
+)
+Overfull \hbox (2.28322pt too wide) detected at line 430
+[][][]\U/msb/m/n/10 E[][][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10
+ )[] = 
+[][] + [][]\OML/lmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 4316) in paragraph at lines 434--435
+[]\T1/lmr/m/n/10 (+20) The bound de-com-poses into a
+ []
+
+
+Underfull \hbox (badness 5460) in paragraph at lines 436--437
+[]\T1/lmr/bx/n/10 (+20) Transition com-po-nent $\OT1/lmr/m/n/10 (+20) 
+([])$\T1/lmr/m/n/10 (+20) .
+ []
+
+
+Underfull \hbox (badness 1248) in paragraph at lines 438--439
+[]\T1/lmr/bx/n/10 (+20) Type-inference com-po-nent $\OT1/lmr/m/n/10 (+20) 
+([])$\T1/lmr/m/n/10 (+20) .
+ []
+
+[18]
+Overfull \hbox (81.00319pt too wide) in paragraph at lines 446--454
+ [] 
+ []
+
+
+Overfull \hbox (108.06361pt too wide) detected at line 469
+[]
+ []
+
+
+Overfull \hbox (122.65709pt too wide) detected at line 474
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[] \OMS/lmsy/m/n/10 
+j \OML/lmm/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 P\OT1/lmr/m
+/n/10 (\OML/lmm/m/it/10 s[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]\OT1/lm
+r/m/n/10 )\OML/lmm/m/it/10 ;  P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 r[] \OMS/lmsy/
+m/n/10 j \OML/lmm/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 P\OT
+1/lmr/m/n/10 (\OML/lmm/m/it/10 r[] \OMS/lmsy/m/n/10 j \OML/lmm/m/it/10 s[]; a[]
+; ^^R[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (143.82588pt too wide) detected at line 479
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 ^^Y[]; P; []\OT1/lmr/m/n/10 ) = [] \OMS/lmsy/m/n/10 ^^A []
+ ^^A [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (12.83957pt too wide) detected at line 485
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[] \OMS/lmsy/m/n/1
+0 j \OML/lmm/m/it/10 P; []; \OMS/lmsy/m/n/10 H[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/
+it/10 c[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n
+/10 ^^A \OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n
+/10 ; \OML/lmm/m/it/10 P\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^A [] \OML/lmm/m/it
+/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/1
+0 ^^R[]\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (78.17743pt too wide) detected at line 503
+[][][]\OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 
+) = []\OML/lmm/m/it/10 ;  ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/
+m/n/10 ) = []
+ []
+
+
+Underfull \hbox (badness 2443) in paragraph at lines 510--511
+[]\T1/lmr/m/it/10 (+20) Base case \T1/lmr/m/n/10 (+20) ($\OML/lmm/m/it/10 k \OT
+1/lmr/m/n/10 (+20) = 0$\T1/lmr/m/n/10 (+20) ). The prior fac-tor-
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 510--511
+\T1/lmr/m/n/10 (+20) iza-tion as-sump-tion gives $\OML/lmm/m/it/10 P\OT1/lmr/m/
+n/10 (+20) (\OML/lmm/m/it/10 P; [] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/10 (+20) 
+) =
+ []
+
+
+Overfull \hbox (80.43872pt too wide) detected at line 517
+[]
+ []
+
+<figs/storage_extended.pdf, id=1374, 1040.32329pt x 363.00618pt>
+File: figs/storage_extended.pdf Graphic file (type pdf)
+<use figs/storage_extended.pdf>
+Package pdftex.def Info: figs/storage_extended.pdf  used on input line 525.
+(pdftex.def)             Requested size: 219.08614pt x 76.44402pt.
+[19]
+Overfull \hbox (138.59554pt too wide) in paragraph at lines 536--546
+ [] 
+ []
+
+
+Overfull \hbox (49.05505pt too wide) detected at line 565
+[][][]\OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]; a[]\OT1/lmr/m/
+n/10 ) = \U/bbm/m/n/10 1[][]\OML/lmm/m/it/10 C[];  r[]\OT1/lmr/m/n/10 (\OML/lmm
+/m/it/10 a[]; a[]\OT1/lmr/m/n/10 ) = \U/bbm/m/n/10 1\OT1/lmr/m/n/10 [\OML/lmm/m
+/it/10 a[] \OT1/lmr/m/n/10 = \OML/lmm/m/it/10 D\OT1/lmr/m/n/10 ]\OML/lmm/m/it/1
+0 :
+ []
+
+
+Overfull \hbox (37.42488pt too wide) detected at line 574
+[][][]\OML/lmm/m/it/10 L[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/1
+0 ; \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) = [] \OML/lmm/m/it/10 ;  L[]\OT1/lm
+r/m/n/10 (\OML/lmm/m/it/10 ^^\[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 ^^R[]\OT1/lm
+r/m/n/10 ) = [] \OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (39.77744pt too wide) detected at line 597
+[][][]\OML/lmm/m/it/10 P\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^Y[] \OMS/lmsy/m/n/1
+0 j H[]\OT1/lmr/m/n/10 ) = [] \U/bbm/m/n/10 1\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 
+^^Y[] \OT1/lmr/m/n/10 = []([]\OML/lmm/m/it/10 ; []\OT1/lmr/m/n/10 )] \OML/lmm/m
+/it/10 d^^V[]\OT1/lmr/m/n/10 ([]) [] \OML/lmm/m/it/10 d^^V[]\OT1/lmr/m/n/10 ([]
+)\OML/lmm/m/it/10 :
+ []
+
+[20 <./figs/storage_extended.pdf>]
+Underfull \hbox (badness 1142) in paragraph at lines 620--621
+\T1/lmr/m/n/10 (+20) si-tion of per-episode re-gret into a transition-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+\T1/lmr/m/n/10 (+20) misspecification com-po-nent and a reward-
+ []
+
+
+Overfull \hbox (32.51546pt too wide) detected at line 631
+[][][]\OML/lmm/m/it/10 Q[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10
+ ; \OML/lmm/m/it/10 P; ^^R[]\OT1/lmr/m/n/10 ) = \OML/lmm/m/it/10 r[]\OT1/lmr/m/
+n/10 (\OML/lmm/m/it/10 s; a; ^^R[]\OT1/lmr/m/n/10 ) + \U/msb/m/n/10 E[][]\OML/l
+mm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \OML/lmm/m
+/it/10 P; ^^R[]\OT1/lmr/m/n/10 )[]\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (0.52672pt too wide) detected at line 648
+[][][]\U/msb/m/n/10 E[]\OML/lmm/m/it/10 f\OT1/lmr/m/n/10 ([]\OML/lmm/m/it/10 ; 
+[][]; s[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 j H[][] \OT1/lmr/m/n/10 = \U/msb/m/
+n/10 E[]\OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 P[]; [][]; s[]\OT1/
+lmr/m/n/10 ) \OMS/lmsy/m/n/10 j H[][]\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (38.495pt too wide) detected at line 661
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/
+10 ] = \U/msb/m/n/10 E[]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s
+[]\OT1/lmr/m/n/10 ; []\OML/lmm/m/it/10 ; []\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^
+^@ \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \
+OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 ) [] \OMS/lmsy/m/n/10 H[][]\OML/lmm/m
+/it/10 :
+ []
+
+
+Underfull \hbox (badness 6825) in paragraph at lines 665--666
+[]\T1/lmr/m/n/10 (+20) Apply Lemma [][]I.1[][] with $\OML/lmm/m/it/10 f\OT1/lmr
+/m/n/10 (+20) (\OML/lmm/m/it/10 P; []\OT1/lmr/m/n/10 (+20) ) :=
+ []
+
+
+Overfull \hbox (21.91872pt too wide) detected at line 668
+[][][]\U/msb/m/n/10 E[]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[
+]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/1
+0 j H[][] \OT1/lmr/m/n/10 = \U/msb/m/n/10 E[]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/1
+0 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; []\OML/lmm/m/it/10 ; []\OT1/lmr/m/n/10
+ ) \OMS/lmsy/m/n/10 j H[][]\OML/lmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 680--681
+\T1/lmr/m/it/10 (+20) any pol-icy $\OML/lmm/m/it/10 ^^Y$\T1/lmr/m/it/10 (+20) ,
+ tran-si-tion ker-nels $\OML/lmm/m/it/10 P[]; P[]$\T1/lmr/m/it/10 (+20) , types
+
+ []
+
+
+Overfull \hbox (100.26118pt too wide) detected at line 684
+[][][]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 
+; \OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/
+it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/1
+0 P[]; ^^R[]\OT1/lmr/m/n/10 ) = [] \U/msb/m/n/10 E[] [] \OML/lmm/m/it/10 ;
+ []
+
+[21]
+Overfull \hbox (21.505pt too wide) detected at line 689
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
+[]\T1/lmr/m/n/10 (+20) Define the resid-ual $\OML/lmm/m/it/10 ^^N[]\OT1/lmr/m/n
+/10 (+20) (\OML/lmm/m/it/10 s\OT1/lmr/m/n/10 (+20) ) :=
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 694--695
+\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 s\OT1/lmr/m/n/10 (+
+20) ; \OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 (+20) ) \OMS/lmsy/m/n/10 ^^@ \
+OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 s\OT1/lmr/m/n/10 (+2
+0) ; \OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 (+20) )$ \T1/lmr/m/n/10 (+20) f
+or $\OML/lmm/m/it/10 h \OMS/lmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (205.11176pt too wide) detected at line 698
+[]
+ []
+
+
+Overfull \hbox (16.158pt too wide) detected at line 702
+[]
+ []
+
+
+Overfull \hbox (7.28079pt too wide) detected at line 706
+[][][]\OML/lmm/m/it/10 ^^N[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/1
+0 ) = [] \U/msb/m/n/10 E[][]\OT1/lmr/m/n/10 ^^H[](\OML/lmm/m/it/10 s[]; a[]\OT1
+/lmr/m/n/10 ) + ^^H[](\OML/lmm/m/it/10 s[]; a[]\OT1/lmr/m/n/10 )[]\OML/lmm/m/it
+/10 ;
+ []
+
+
+Overfull \hbox (92.4836pt too wide) detected at line 716
+[][][]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 
+; \OML/lmm/m/it/10 P[]; ^^R[]\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/
+it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 ; \OML/lmm/m/it/1
+0 P[]; ^^R[]\OT1/lmr/m/n/10 ) = [] \U/msb/m/n/10 E[][]\OT1/lmr/m/n/10 ^^H[](\OM
+L/lmm/m/it/10 s; a\OT1/lmr/m/n/10 ) + [](\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )
+[]\OML/lmm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 1112) in paragraph at lines 716--718
+\T1/lmr/m/it/10 (+20) where the roll-out oc-cu-pancy uses $\OML/lmm/m/it/10 P[]
+$ \T1/lmr/m/it/10 (+20) and the
+ []
+
+
+Overfull \hbox (18.7273pt too wide) detected at line 720
+[][][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 ) := []\OML/lmm/m
+/it/10 P[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr
+/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n/10 (\OMS/lmsy/m
+/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ;  V[]\OT1/l
+mr/m/n/10 (\OMS/lmsy/m/n/10 ^^A\OT1/lmr/m/n/10 ; \OML/lmm/m/it/10 P[]; ^^R[]\OT
+1/lmr/m/n/10 )[]\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (91.21101pt too wide) detected at line 728
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/
+10 ] = [] + [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (8.1313pt too wide) detected at line 736
+[][][]\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/10 j ^^T \OML/lmm/m/
+it/10 H \OMS/lmsy/m/n/10 ^^A \U/msb/m/n/10 E[]\U/bbm/m/n/10 1[][] \OMS/lmsy/m/n
+/10 6\OT1/lmr/m/n/10 = \OML/lmm/m/it/10 ^^R[][] [] \OMS/lmsy/m/n/10 H[][] \OT1/
+lmr/m/n/10 = \OML/lmm/m/it/10 H \OMS/lmsy/m/n/10 ^^A []\OT1/lmr/m/n/10 1 \OMS/l
+msy/m/n/10 ^^@ k\OML/lmm/m/it/10 ^^V[]\OMS/lmsy/m/n/10 k[][]\OML/lmm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 4699) in paragraph at lines 755--756
+[]\T1/lmr/m/n/10 (+20) By Cauchy--Schwarz ap-plied to
+ []
+
+[22]
+Overfull \hbox (91.13287pt too wide) detected at line 779
+[][][]\OML/lmm/m/it/10 f[]\OT1/lmr/m/n/10 ([]\OML/lmm/m/it/10 ; ^^R[]\OT1/lmr/m
+/n/10 ) := [] \U/msb/m/n/10 E[][]\OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lm
+m/m/it/10 s[]; a[]; []\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^
+^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]; a[]; ^^R[]\OT1/lmr/m/n/10 )[]\OML/lm
+m/m/it/10 ;  \OT1/lmr/m/n/10 ([]\OML/lmm/m/it/10 ; ^^R[]\OT1/lmr/m/n/10 ) \OMS/
+lmsy/m/n/10 2 \OT1/lmr/m/n/10 ^^B[]\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (86.30566pt too wide) detected at line 784
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/n/
+10 ] = \U/msb/m/n/10 E[][]\OML/lmm/m/it/10 f[]\OT1/lmr/m/n/10 ([]\OML/lmm/m/it/
+10 ; ^^R[]\OT1/lmr/m/n/10 )[] = [] \OML/lmm/m/it/10 ^^W[]\OT1/lmr/m/n/10 (\OML/
+lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) [] \OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (214.59267pt too wide) detected at line 790
+[][][][]\OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; []\OT1/lm
+r/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm
+/m/it/10 s; a; ^^R[]\OT1/lmr/m/n/10 )[] \OMS/lmsy/m/n/10 ^^T k\OML/lmm/m/it/10 
+P[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a; []\OT1/lmr/m/
+n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/
+10 ^^A j \OML/lmm/m/it/10 s; a; ^^R[]\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 k[] ^^T 
+[]\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (78.65057pt too wide) detected at line 797
+[]
+ []
+
+
+Overfull \hbox (97.97313pt too wide) detected at line 807
+[][][][] [] \OML/lmm/m/it/10 ^^W[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/l
+mr/m/n/10 )\OML/lmm/m/it/10 g[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/
+m/n/10 )[][] \OMS/lmsy/m/n/10 ^^T j\OT1/lmr/m/n/10 ^^B[]\OMS/lmsy/m/n/10 j ^^A 
+[] \OML/lmm/m/it/10 ^^W[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10
+ )[] \OML/lmm/m/it/10 g[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10
+ )[] \OMS/lmsy/m/n/10 ^^T j\OT1/lmr/m/n/10 ^^B[]\OMS/lmsy/m/n/10 j ^^A [] \OML/
+lmm/m/it/10 ^^W[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ) \OML/
+lmm/m/it/10 g[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/n/10 )[]\OML/l
+mm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 807--809
+\T1/lmr/m/n/10 (+20) using $\OML/lmm/m/it/10 ^^W[]\OT1/lmr/m/n/10 (+20) (\OML/l
+mm/m/it/10 ^^R[]\OT1/lmr/m/n/10 (+20) ) \OMS/lmsy/m/n/10 2 \OT1/lmr/m/n/10 (+20
+) [0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (+20) 1]$ \T1/lmr/m/n/10 (+20) in the se
+c-ond in-equal-
+ []
+
+
+Overfull \hbox (16.34886pt too wide) detected at line 816
+[][][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[] \OMS/lmsy/m/n/10 j H[]\OT1/lmr/m/
+n/10 ][][] \OMS/lmsy/m/n/10 ^^T [] ^^A \U/msb/m/n/10 E[][]\OML/lmm/m/it/10 D[][
+]P[] [] P[][][]:
+ []
+
+[23]
+Underfull \vbox (badness 1264) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 860--862
+\T1/lmr/m/it/10 (+20) where $\OML/lmm/m/it/10 N[] \OT1/lmr/m/n/10 (+20) := [][]
+ \U/msb/m/n/10 E\OT1/lmr/m/n/10 (+20) [\OML/lmm/m/it/10 N[]\OT1/lmr/m/n/10 (+20
+) (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 (+20) ) [] (\OML/lmm/m/it/10 s; a\OT1/l
+mr/m/n/10 (+20) ) \OMS/lmsy/m/n/10 2
+ []
+
+
+Underfull \hbox (badness 3668) in paragraph at lines 860--862
+[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 d[]\OT1/lmr/m/n/10 (+20) )]$ \T1/lmr/
+m/it/10 (+20) is the ef-fec-tive num-ber of in-
+ []
+
+
+Overfull \hbox (61.60793pt too wide) detected at line 873
+[][][][] \U/msb/m/n/10 E\OT1/lmr/m/n/10 [^^A[]] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m
+/it/10 H [] []\OT1/lmr/m/n/10 1 \OMS/lmsy/m/n/10 ^^@ k\OML/lmm/m/it/10 ^^V[]\OM
+S/lmsy/m/n/10 k[][] ^^T [] ^^T \OML/lmm/m/it/10 O[][][]:
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 873--875
+\T1/lmr/m/it/10 (+20) form $\OML/lmm/m/it/10 O\OT1/lmr/m/n/10 (+20) (\OML/lmm/m
+/it/10 H\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 (+20) ^^B[]\OMS/lmsy/m/n/10 j\OML/lmm
+/m/it/10 =^^Z\OT1/lmr/m/n/10 (+20) )$\T1/lmr/m/it/10 (+20) . Re-plac-ing $\OMS/
+lmsy/m/n/10 j\OT1/lmr/m/n/10 (+20) ^^B[]\OMS/lmsy/m/n/10 j$ \T1/lmr/m/it/10 (+2
+0) by $[] \OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 (+20) ^^B[]\OMS/lmsy/m/n/10 j$
+ []
+
+[24]
+Underfull \hbox (badness 2073) in paragraph at lines 889--890
+\T1/lmr/m/n/10 (+20) sup-press-ing the $\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10
+ i; k; ^^Y[]\OT1/lmr/m/n/10 (+20) )$ \T1/lmr/m/n/10 (+20) de-pen-dence. Note
+ []
+
+
+Overfull \hbox (18.66838pt too wide) detected at line 899
+[][][][] \U/msb/m/n/10 E[]\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/
+10 j[] ^^T \OML/lmm/m/it/10 C[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 H[] \OMS/
+lmsy/m/n/10 ^^A \OML/lmm/m/it/10 S \OMS/lmsy/m/n/10 ^^A []\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (122.06197pt too wide) detected at line 910
+[][][]\OT1/lmr/m/n/10 ^^A[] = \U/msb/m/n/10 E[] [] \OML/lmm/m/it/10 ;  [] \OT1/
+lmr/m/n/10 := \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A\OT1/lmr
+/m/n/10 ; []\OML/lmm/m/it/10 ; []\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (37.52304pt too wide) detected at line 917
+[][][][][]\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr
+/m/n/10 )(\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OML/lmm
+/m/it/10 ;  [][][] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 H \OMS/lmsy/m/n/10 ^^A
+ k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/1
+0 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 
+^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 k[]\OML/lmm/m/it/1
+0 :
+ []
+
+
+Overfull \hbox (141.60892pt too wide) detected at line 923
+[][][]\OMS/lmsy/m/n/10 k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it
+/10 s; a\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n
+/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n
+/10 k[] ^^T k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT
+1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \
+OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 k[] \OT1/lmr/m/n/10 + \OM
+S/lmsy/m/n/10 k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\
+OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n/10 (\OMS
+/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 k[]\O
+ML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (75.41403pt too wide) detected at line 929
+[][][]\OMS/lmsy/m/n/10 k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it
+/10 s; a\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/n/10 (\OMS/lmsy/m/n
+/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n/10 k[] ^^T [] \OT
+1/lmr/m/n/10 = \OML/lmm/m/it/10 O[][][];
+ []
+
+
+Overfull \hbox (128.42809pt too wide) detected at line 936
+[][][]\OML/lmm/m/it/10 P [] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 ^^N[]:
+ []
+
+
+Overfull \hbox (56.2568pt too wide) detected at line 942
+[][][]\OML/lmm/m/it/10 P [] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 ^^N[]:
+ []
+
+
+Overfull \hbox (174.70822pt too wide) detected at line 948
+[][][]\OMS/lmsy/m/n/10 k[]\OT1/lmr/m/n/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it
+/10 s; a\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 P[]\OT1/lmr/m/n
+/10 (\OMS/lmsy/m/n/10 ^^A j \OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OMS/lmsy/m/n
+/10 k[] ^^T \OML/lmm/m/it/10 C[][] \OT1/lmr/m/n/10 =: \OML/lmm/m/it/10 ^^L[]\OT
+1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OML/lmm/m/it/10 ;  \OMS/lm
+sy/m/n/10 8\OML/lmm/m/it/10 k \OMS/lmsy/m/n/10 2 \OT1/lmr/m/n/10 [\OML/lmm/m/it
+/10 K\OT1/lmr/m/n/10 ]\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a
+\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 2 S ^^B A\OML/lmm/m/it/10 ;
+ []
+
+[25]
+Overfull \hbox (58.5992pt too wide) detected at line 966
+[]
+ []
+
+
+Overfull \hbox (4.77943pt too wide) detected at line 975
+[][][][] \U/msb/m/n/10 E\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/10
+ j ^^T \OML/lmm/m/it/10 C[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 H[]S[];
+ []
+
+
+Overfull \hbox (33.11255pt too wide) detected at line 987
+[][][][] \U/msb/m/n/10 E[]\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/
+10 j[] ^^T \OML/lmm/m/it/10 C[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 H[][];
+ []
+
+
+Overfull \hbox (138.87355pt too wide) detected at line 999
+[][][]\OMS/lmsy/m/n/10 jh\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it
+/10 P[]\OT1/lmr/m/n/10 )(\OMS/lmsy/m/n/10 ^^Aj\OML/lmm/m/it/10 s; a\OT1/lmr/m/n
+/10 )\OML/lmm/m/it/10 ;  []\OMS/lmsy/m/n/10 ij ^^T [] \OT1/lmr/m/n/10 + []\OML/
+lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (4.28389pt too wide) detected at line 1005
+[][][][][]\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 h[]\OML/lmm/m/it/10 ; []\OMS/lmsy/m
+/n/10 i j H[]\OT1/lmr/m/n/10 ] = []
+ []
+
+
+Overfull \hbox (103.48256pt too wide) detected at line 1010
+[][][]\OMS/lmsy/m/n/10 jh\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/
+n/10 )(\OMS/lmsy/m/n/10 ^^Aj\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 )\OML/lmm/m/it
+/10 ;  []\OMS/lmsy/m/n/10 ij ^^T \OML/lmm/m/it/10 c[] \OT1/lmr/m/n/10 + \OML/lm
+m/m/it/10 c[]
+ []
+
+
+Overfull \hbox (105.43393pt too wide) detected at line 1017
+[][][]\OMS/lmsy/m/n/10 jh\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it
+/10 P[]\OT1/lmr/m/n/10 )(\OMS/lmsy/m/n/10 ^^Aj\OML/lmm/m/it/10 s; a\OT1/lmr/m/n
+/10 )\OML/lmm/m/it/10 ;  []\OMS/lmsy/m/n/10 ij ^^T \OML/lmm/m/it/10 c[] \OT1/lm
+r/m/n/10 + \OML/lmm/m/it/10 c[]
+ []
+
+
+Overfull \hbox (154.43321pt too wide) detected at line 1022
+[][][]\OMS/lmsy/m/n/10 jh\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it
+/10 P[]\OT1/lmr/m/n/10 )(\OMS/lmsy/m/n/10 ^^Aj\OML/lmm/m/it/10 s; a\OT1/lmr/m/n
+/10 )\OML/lmm/m/it/10 ;  []\OMS/lmsy/m/n/10 ij ^^T \OML/lmm/m/it/10 c[][] \OT1/
+lmr/m/n/10 + \OML/lmm/m/it/10 c[][]:
+ []
+
+
+Overfull \hbox (91.92055pt too wide) detected at line 1027
+[][][]\U/msb/m/n/10 E[][] [] [][]\OT1/lmr/m/n/10 ([])(\OML/lmm/m/it/10 s[]; a[]
+\OT1/lmr/m/n/10 )[] = [][][][](\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 )[] \OMS/lms
+y/m/n/10 ^^T k[]k[] ^^T \OML/lmm/m/it/10 H[];
+ []
+
+
+Overfull \hbox (162.95624pt too wide) detected at line 1034
+[]
+ []
+
+[26]
+Overfull \hbox (16.98555pt too wide) detected at line 1040
+[][][][] [] \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 H [] \OMS/lmsy/m/n/10 ^^A\OML
+/lmm/m/it/10 SA[] []\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 KH\OT1/lmr/m/n/10 ) = [](
+\OML/lmm/m/it/10 H \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 SA[]\OT1/lmr/m/n/10 )\
+OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (172.31316pt too wide) detected at line 1046
+[][][][] \U/msb/m/n/10 E\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ^^A[]\OMS/lmsy/m/n/10
+ j ^^T \OML/lmm/m/it/10 C[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 H \OMS/lmsy/m
+/n/10 ^^A \OML/lmm/m/it/10 H[] \OT1/lmr/m/n/10 + [](\OML/lmm/m/it/10 H \OMS/lms
+y/m/n/10 ^^A \OML/lmm/m/it/10 SA[]\OT1/lmr/m/n/10 ) = [][]\OML/lmm/m/it/10 H[][
+][];
+ []
+
+
+Overfull \hbox (103.76245pt too wide) detected at line 1062
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/
+m/it/10 S \OMS/lmsy/m/n/10 ^^A [][] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 O[]H[][]
+ \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 K \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 ^^O
+[]:
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 1064--1065
+[]\T1/lmr/bx/it/10 (+20) Bernstein-refined bound. \T1/lmr/m/it/10 (+20) Ap-ply-
+ing the
+ []
+
+
+Overfull \hbox (112.65112pt too wide) detected at line 1068
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[][][] \OT1/lmr/m/n/10 + \OML/lmm
+/m/it/10 O[]H[][] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 K \OMS/lmsy/m/n/10 ^^A \OM
+L/lmm/m/it/10 ^^O[]:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+[]\T1/lmr/m/n/10 (+20) The transition-learning com-po-nent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 H[][]\OT1/lmr/m/n/10 (+20) )$ \T1/lmr
+/m/n/10 (+20) matches single-agent
+ []
+
+
+Underfull \hbox (badness 2698) in paragraph at lines 1083--1084
+\T1/lmr/m/n/10 (+20) and can-not be im-proved with-out ad-di-tional
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1085--1086
+[]\T1/lmr/m/n/10 (+20) The type-inference com-po-nent
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 1085--1086
+\OML/lmm/m/it/10 O\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 H[]\OT1/lmr/m/n/10 (+
+20) )$ \T1/lmr/m/n/10 (+20) is in-de-pen-dent of the
+ []
+
+[27]
+Underfull \hbox (badness 7925) in paragraph at lines 1108--1109
+[]\T1/lmr/m/n/10 (+20) Joint ac-tions are en-coded as in-te-gers
+ []
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 1121--1122
+[]\T1/lmr/m/it/10 (+20) At each $\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 s; h\O
+T1/lmr/m/n/10 (+20) )$\T1/lmr/m/it/10 (+20) , the CCE or-a-cle re-turns the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1126--1127
+[]\T1/lmr/m/n/10 (+20) The dis-crim-i-na-tion bonus $\OML/lmm/m/it/10 D[]\OT1/l
+mr/m/n/10 (+20) (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 (+20) ) [][]=
+ []
+
+
+Underfull \hbox (badness 3000) in paragraph at lines 1126--1127
+[][] \U/msb/m/n/10 E[]\OT1/lmr/m/n/10 (+20) [\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10
+ r[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 s; a; ^^R\OT1/lmr/m/n/10 (+20) ) \O
+MS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 
+s; a; ^^R[]\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 (+20) ]$ \T
+1/lmr/m/n/10 (+20) eval-u-ates
+ []
+
+
+Overfull \hbox (32.10144pt too wide) detected at line 1140
+[][][]\OML/lmm/m/it/10 Q[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10
+ ) = \OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; []\OT1/lmr/m/n
+/10 ) + \OML/lmm/m/it/10 ^^LD[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m
+/n/10 ) + \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 ([](\OML/lmm/m/it/10 s; a\OT1/lmr
+/m/n/10 ))\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (89.21118pt too wide) detected at line 1154
+[][][]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (0) = 0\OML/lmm/m/it/10 :\OT1/lmr/m/n
+/10 5(\OML/lmm/m/it/10 S \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 1) + (\OML/lmm/m/
+it/10 H \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1)[]0\OML/lmm
+/m/it/10 :\OT1/lmr/m/n/10 5 + 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 5 \OMS/lmsy/m/
+n/10 ^^A \U/msb/m/n/10 1\OT1/lmr/m/n/10 [[] = \OML/lmm/m/it/10 ^^R[]\OT1/lmr/m/
+n/10 ] + \OML/lmm/m/it/10 ^^Lnp[]\OT1/lmr/m/n/10 (1 \OMS/lmsy/m/n/10 ^^@ \OML/l
+mm/m/it/10 p[]\OT1/lmr/m/n/10 )[]\OML/lmm/m/it/10 ;
+ []
+
+
+Overfull \hbox (143.12341pt too wide) detected at line 1170
+[][][]\OT1/lmr/m/n/10 ^^A[] = \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (0) \OMS/lmsy
+/m/n/10 ^^@ \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (0) = (\OML/lmm/m/it/10 H \OMS/
+lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1)[]0\OML/lmm/m/it/10 :\OT
+1/lmr/m/n/10 5 \OMS/lmsy/m/n/10 ^^A \U/msb/m/n/10 1\OT1/lmr/m/n/10 [[] = \OML/l
+mm/m/it/10 ^^R[]\OT1/lmr/m/n/10 ] + \OML/lmm/m/it/10 ^^Lnp[]\OT1/lmr/m/n/10 (1 
+\OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 p[]\OT1/lmr/m/n/10 )[] \OMS/lmsy/m/n/10 ^
+^@ \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 5(\OML/lmm/m/it/10 S \OMS
+/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 1)\OML/lmm/m/it/10 :
+ []
+
+[28]
+Underfull \hbox (badness 2828) in paragraph at lines 1186--1187
+[]\T1/lmr/m/n/10 (+20) Compute the so-cial wel-fare $\OML/lmm/m/it/10 W\OT1/lmr
+/m/n/10 (+20) (\OML/lmm/m/it/10 a\OT1/lmr/m/n/10 (+20) ) =
+ []
+
+
+Overfull \hbox (79.82819pt too wide) detected at line 1190
+[]
+ []
+
+
+Overfull \hbox (60.71442pt too wide) detected at line 1194
+[][][]\OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT1/lmr/m/n/10 ) 
+\OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT
+1/lmr/m/n/10 ) = \OML/lmm/m/it/10 n\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 H \OMS/lms
+y/m/n/10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1)[]0\OML/lmm/m/it/10 :\OT1/l
+mr/m/n/10 5\OML/lmm/m/it/10  \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 ^^Lnp[]\OT1/lm
+r/m/n/10 (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 p[]\OT1/lmr/m/n/10 )[] \OMS/l
+msy/m/n/10 ^^@ \OML/lmm/m/it/10 n \OMS/lmsy/m/n/10 ^^A \OT1/lmr/m/n/10 0\OML/lm
+m/m/it/10 :\OT1/lmr/m/n/10 5(\OML/lmm/m/it/10 S \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m
+/n/10 1)\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (4.11456pt too wide) detected at line 1199
+[][][]\OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT1/lmr/m/n/10 ) 
+\OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 W\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 a[]\OT
+1/lmr/m/n/10 ) = \OML/lmm/m/it/10 n\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 H \OMS/lms
+y/m/n/10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1)[]0\OML/lmm/m/it/10 :\OT1/l
+mr/m/n/10 5\OML/lmm/m/it/10  \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 ^^Lnp[]\OT1/lm
+r/m/n/10 (1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 p[]\OT1/lmr/m/n/10 )[]\OML/lm
+m/m/it/10 :
+ []
+
+
+Overfull \hbox (28.01778pt too wide) detected at line 1229
+[][][]\U/msb/m/n/10 E\OT1/lmr/m/n/10 [\OML/lmm/m/it/10 ^^\\OT1/lmr/m/n/10 ] \OM
+S/lmsy/m/n/10 ^^U [] \OT1/lmr/m/n/10 = \OML/lmm/m/it/10 m[] \OT1/lmr/m/n/10 + \
+OML/lmm/m/it/10 O\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 m[]\OT1/lmr/m/n/10 ) []\OML/
+lmm/m/it/10 m \OMS/lmsy/m/n/10 ! 1\OML/lmm/m/it/10 :
+ []
+
+
+Overfull \hbox (1.63646pt too wide) detected at line 1233
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^\\OT1/lmr/m/n/10
+ )[] \OMS/lmsy/m/n/10 ^^U \OT1/lmr/m/n/10 (\U/msb/m/n/10 E\OT1/lmr/m/n/10 [\OML
+/lmm/m/it/10 ^^\\OT1/lmr/m/n/10 ] \OMS/lmsy/m/n/10 ^^@ \OT1/lmr/m/n/10 1) \OMS/
+lmsy/m/n/10 ^^A \OT1/lmr/m/n/10 0\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 5(\OML/lmm/m
+/it/10 H \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 S \OT1/lmr/m/n/10 + 1) = 
+(\OML/lmm/m/it/10 m[] \OMS/lmsy/m/n/10 ^^A \OML/lmm/m/it/10 H\OT1/lmr/m/n/10 )\
+OML/lmm/m/it/10 :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1245--1246
+[][]\T1/lmr/bx/n/10 (+20) Proposition J.8 \T1/lmr/m/n/10 (+20) (Con-stant burn-
+in for
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 1245--1246
+\T1/lmr/m/it/10 (+20) episode re-gard-less of the sam-pled $[]$, and the
+ []
+
+[29]
+Overfull \hbox (43.61008pt too wide) detected at line 1285
+[][][]\OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s[]\OT1/lmr/m/n/10 
+; []) \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/1
+0 s[]\OT1/lmr/m/n/10 ; []) \OMS/lmsy/m/n/10 ^^T \OML/lmm/m/it/10 ^^LH \OMS/lmsy
+/m/n/10 ^^A \U/msb/m/n/10 E[][] [] \OML/lmm/m/it/10 D[]\OT1/lmr/m/n/10 (\OML/lm
+m/m/it/10 s[]; a[]\OT1/lmr/m/n/10 ) [] \OML/lmm/m/it/10 s[][];
+ []
+
+
+Overfull \hbox (181.42294pt too wide) detected at line 1309
+[][][]\U/msb/m/n/10 E[]\OT1/lmr/m/n/10 [\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 r[]\
+OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; ^^R\OT1/lmr/m/n/10 ) \OMS/lmsy/m/n/10 ^^
+@ \OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; ^^R[]\OT1/lmr/m/n
+/10 )\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 ] \OMS/lmsy/m/n/10 ^^T []\OT1/lmr/m/n/10
+ [\OML/lmm/m/it/10 ^^R \OMS/lmsy/m/n/10 6\OT1/lmr/m/n/10 = \OML/lmm/m/it/10 ^^R
+[]\OT1/lmr/m/n/10 ] = 1 \OMS/lmsy/m/n/10 ^^@ [] \OML/lmm/m/it/10 ^^V[]\OT1/lmr/
+m/n/10 (\OML/lmm/m/it/10 ^^R\OT1/lmr/m/n/10 )[] \OMS/lmsy/m/n/10 ^^T \OT1/lmr/m
+/n/10 1 \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/
+it/10 ^^R[]\OT1/lmr/m/n/10 )[] \OMS/lmsy/m/n/10 ^^T \OT1/lmr/m/n/10 2[]1 \OMS/l
+msy/m/n/10 ^^@ \OML/lmm/m/it/10 ^^V[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 ^^R[]\OT
+1/lmr/m/n/10 )[]\OML/lmm/m/it/10 ;
+ []
+
+[30]
+Overfull \hbox (89.47426pt too wide) detected at line 1330
+[][][][][][][][] \OMS/lmsy/m/n/10 ^^@ [][][][][] ^^T [] \OT1/lmr/m/n/10 = \OML/
+lmm/m/it/10 O  [] ;
+ []
+
+
+Overfull \hbox (58.20993pt too wide) detected at line 1334
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[][] \OT1/lmr/m/n/10 + \OML/lmm/m
+/it/10 H[][] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 O[]^^Ln\OMS/lmsy/m/n/10 j\OT1/l
+mr/m/n/10 ^^B[]\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 =^^Z[];
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1376--1377
+[][]\T1/lmr/bx/n/10 (+20) Assumption K.2 \T1/lmr/m/n/10 (+20) (Func-tion-Ap-pro
+x-i-ma-tion
+ []
+
+[31]
+Overfull \hbox (51.89174pt too wide) detected at line 1398
+[]
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 1404--1405
+\T1/lmr/m/it/10 (+20) the FA pos-te-rior can be rep-re-sented in space
+ []
+
+
+Underfull \hbox (badness 1642) in paragraph at lines 1407--1408
+[]\T1/lmr/m/n/10 (+20) The tab-u-lar Corol-lary [][]K.4[][] re-duces to the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1413
+[]\T1/lmr/bx/n/10 (+20) Algorithm 3 \T1/lmr/m/n/10 (+20) FA-H-PSMG$[]$: functio
+n-
+ []
+
+
+Overfull \hbox (47.62631pt too wide) detected at line 1422
+[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a\OT1/lmr/m/n/10 ) = [] [] [] []\OML/lmm
+/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; ^^R[]\OT1/lmr/m/n/10 ) \OMS
+/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 r[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 s; a; ^^
+R[]\OT1/lmr/m/n/10 )[]\OML/lmm/m/it/10 ;
+ []
+
+
+Underfull \hbox (badness 1052) in paragraph at lines 1433--1434
+[]\T1/lmr/bx/n/10 (+20) Posterior rep-re-sen-ta-tion. \T1/lmr/m/n/10 (+20) The 
+tran-si-
+ []
+
+
+Underfull \hbox (badness 1527) in paragraph at lines 1433--1434
+\T1/lmr/m/n/10 (+20) Bayes scheme (deep en-sem-bles ([][]Lak-sh-mi-
+ []
+
+[32]
+Overfull \hbox (99.04039pt too wide) detected at line 1448
+[][][]\U/msb/m/n/10 E[][][]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 K\OT1/lmr/m/n/10 )
+[] \OMS/lmsy/m/n/10 ^^T [][]\OML/lmm/m/it/10 H[][] \OT1/lmr/m/n/10 + \OML/lmm/m
+/it/10 H[] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 H[][];
+ []
+
+
+Underfull \hbox (badness 1430) in paragraph at lines 1453--1454
+\T1/lmr/m/n/10 (+20) Van Roy[][], [][]2014[][]; [][]Russo and Van Roy[][], [][]
+2014[][]),
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 1453--1454
+\T1/lmr/m/n/10 (+20) giv-ing the $[]$ term. The reward-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1465--1466
+[]\T1/lmr/m/n/10 (+20) The two function-class di-men-sions
+ []
+
+
+Underfull \hbox (badness 5490) in paragraph at lines 1490--1491
+[]\T1/lmr/m/n/10 (+20) Empirical val-i-da-tion of FA-H-PSMG$[]$ on
+ []
+
+<figs/fig_e2_type_scaling_v3.pdf, id=1957, 513.75061pt x 296.77626pt>
+File: figs/fig_e2_type_scaling_v3.pdf Graphic file (type pdf)
+<use figs/fig_e2_type_scaling_v3.pdf>
+Package pdftex.def Info: figs/fig_e2_type_scaling_v3.pdf  used on input line 14
+99.
+(pdftex.def)             Requested size: 218.51521pt x 126.23012pt.
+<figs/fig_e3_n_agent_scaling_v3.pdf, id=1958, 520.34402pt x 317.98799pt>
+File: figs/fig_e3_n_agent_scaling_v3.pdf Graphic file (type pdf)
+<use figs/fig_e3_n_agent_scaling_v3.pdf>
+Package pdftex.def Info: figs/fig_e3_n_agent_scaling_v3.pdf  used on input line
+ 1500.
+(pdftex.def)             Requested size: 218.51521pt x 133.53947pt.
+<figs/fig_e5_cumulative_regret_trajectories_v3.pdf, id=1959, 748.19528pt x 396.
+90685pt>
+File: figs/fig_e5_cumulative_regret_trajectories_v3.pdf Graphic file (type pdf)
+
+<use figs/fig_e5_cumulative_regret_trajectories_v3.pdf>
+Package pdftex.def Info: figs/fig_e5_cumulative_regret_trajectories_v3.pdf  use
+d on input line 1501.
+(pdftex.def)             Requested size: 218.51521pt x 115.91763pt.
+<figs/fig_e1_posterior_concentration_v3.pdf, id=1960, 505.89pt x 325.215pt>
+File: figs/fig_e1_posterior_concentration_v3.pdf Graphic file (type pdf)
+<use figs/fig_e1_posterior_concentration_v3.pdf>
+Package pdftex.def Info: figs/fig_e1_posterior_concentration_v3.pdf  used on in
+put line 1502.
+(pdftex.def)             Requested size: 218.51521pt x 140.4749pt.
+[33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<figs/E4_prior_recovery_llm.png, id=1991, 520.344pt x 325.215pt>
+File: figs/E4_prior_recovery_llm.png Graphic file (type png)
+<use figs/E4_prior_recovery_llm.png>
+Package pdftex.def Info: figs/E4_prior_recovery_llm.png  used on input line 151
+1.
+(pdftex.def)             Requested size: 219.08614pt x 136.93176pt.
+<figs/E2_native_vs_llm_baselines_main.pdf, id=1998, 520.34402pt x 317.98799pt>
+File: figs/E2_native_vs_llm_baselines_main.pdf Graphic file (type pdf)
+<use figs/E2_native_vs_llm_baselines_main.pdf>
+Package pdftex.def Info: figs/E2_native_vs_llm_baselines_main.pdf  used on inpu
+t line 1518.
+(pdftex.def)             Requested size: 219.08614pt x 133.88882pt.
+
+Underfull \hbox (badness 1484) in paragraph at lines 1519--1519
+\T1/lmr/m/n/10 (+20) (DeepSeek, GPT-5.4-nano, Kimi-K2.6, Llama-
+ []
+
+<figs/E3_cross_provider.pdf, id=1999, 505.89pt x 325.215pt>
+File: figs/E3_cross_provider.pdf Graphic file (type pdf)
+<use figs/E3_cross_provider.pdf>
+Package pdftex.def Info: figs/E3_cross_provider.pdf  used on input line 1525.
+(pdftex.def)             Requested size: 219.08614pt x 140.84212pt.
+[34 <./figs/fig_e2_type_scaling_v3.pdf> <./figs/fig_e3_n_agent_scaling_v3.pdf> 
+<./figs/fig_e5_cumulative_regret_trajectories_v3.pdf> <./figs/fig_e1_posterior_
+concentration_v3.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figs/fig_sotopia_hard_appendix_v2.pdf, id=2349, 530.72337pt x 235.02191pt>
+File: figs/fig_sotopia_hard_appendix_v2.pdf Graphic file (type pdf)
+<use figs/fig_sotopia_hard_appendix_v2.pdf>
+Package pdftex.def Info: figs/fig_sotopia_hard_appendix_v2.pdf  used on input l
+ine 1560.
+(pdftex.def)             Requested size: 219.08614pt x 97.01587pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35 <./figs/E4_prior_recovery_llm.png> <./figs/E2_native_vs_llm_baselines_main
+.pdf> <./figs/E3_cross_provider.pdf> <./figs/fig_sotopia_hard_appendix_v2.pdf>]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1613
+ []\T1/lmr/bx/n/10 (+20) Interpretation: grace-ful degra-da-tion
+ []
+
+
+Underfull \hbox (badness 3407) in paragraph at lines 1612--1613
+\T1/lmr/m/n/10 (+20) matches what The-o-rem [][]E.4[][] and the prior-
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 1612--1613
+\T1/lmr/m/n/10 (+20) no al-go-rithm achieves the $\OT1/lmr/m/n/10 (+20) 
+(\OMS/lmsy/m/n/10 j\OT1/lmr/m/n/10 (+20) ^^B\OMS/lmsy/m/n/10 j[]\OT1/lmr/m/n/10
+ (+20) )$ \T1/lmr/m/n/10 (+20) sep-a-ra-tion
+ []
+
+) [36] [37] (main.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DDDF95E7A0152754D6F81CC3EC90A008;15311.
+ ) 
+Here is how much of TeX's memory you used:
+ 29073 strings out of 467871
+ 530901 string characters out of 5414988
+ 967796 words of memory out of 5000000
+ 56546 multiletter control sequences out of 15000+600000
+ 765739 words of font info for 350 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 102i,19n,107p,2124b,765s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\v-shuqingshi\AppData\Local\MiKTeX\fonts/pk/ljfour/public/bbm/dpi60
+0\bbm10.pk><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/euler/eufm10.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Users/v-shuqingshi/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/v-shuqingshi/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/v-shuqi
+ngshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx7.pfb><C:/Users/v
+-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/U
+sers/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb
+><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmb
+xi10.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmex10.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/lm/lmmi10.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmmi12.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/v-shuqingshi/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/v-shuqingshi/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/v-shuqingshi/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/v-shuqingshi/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/v-shuqing
+shi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib10.pfb><C:/Users/v
+-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmib7.pfb><C:/
+Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pf
+b><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+r12.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr5.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmr6.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmr7.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/lm/lmr9.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/lm/lmri10.pfb><C:/Users/v-shuqingshi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/lm/lmri7.pfb><C:/Users/v-shuqingshi/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/v-shuqingshi/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/v-shuqingshi/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/v-shuqing
+shi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/v-s
+huqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Use
+rs/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
+<C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt
+12.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/symbols/msam10.pfb><C:/Users/v-shuqingshi/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (37 pages, 1824164 bytes).
+PDF statistics:
+ 2741 PDF objects out of 2984 (max. 8388607)
+ 454 named destinations out of 1000 (max. 500000)
+ 69218 words of extra memory for PDF output out of 74296 (max. 10000000)
+

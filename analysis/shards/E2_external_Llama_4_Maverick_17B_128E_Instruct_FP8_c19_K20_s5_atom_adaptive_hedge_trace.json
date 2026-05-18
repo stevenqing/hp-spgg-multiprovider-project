@@ -1,0 +1,5837 @@
+[
+  {
+    "algorithm": "atom_adaptive_hedge",
+    "seed_index": 0,
+    "seed": 160000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.0,
+          0.95,
+          0.9
+        ],
+        "welfare": 1.85,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Hierarchical Public Goods Game), we need to analyze the provided information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game with Strategic Planning) scenario, let's analyze the information provided.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG (Asymmetric Theory of Mind High-Payoff Stochastic Public Goods Game), we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.67,
+          0.83
+        ],
+        "welfare": 2.3000000000000003,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indicating that player 1 does not model others' mental states.\n3. **Allowed Co"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1 in the given A-ToM HP-SPGG scenario, let's analyze the provided information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contrib"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.6,
+          0.83
+        ],
+        "welfare": 2.23,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 98,
+        "contributions": [
+          0.75,
+          1.0,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.9,
+          0.83
+        ],
+        "welfare": 2.5300000000000002,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                1.0
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                1.0
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.6,
+          0.83
+        ],
+        "welfare": 2.23,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.08
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.74,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_adaptive_hedge",
+    "seed_index": 1,
+    "seed": 160001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.67,
+          0.8
+        ],
+        "welfare": 2.2700000000000005,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is related to a public-goods game, specifically an A-ToM HP-SPGG (Asymmetric Theory of Mind, High Penalty, Symmetric Public Goods Game) scenario. The player is asked to choose a contribution level that would improve"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Payoff Symmetric Public Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level indicates the level of reasoning about o"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, let's analyze the information provided.\n\n1. **Task**: The task is to select an action for player 2 in a public goods game.\n2. **Player Index**: The play"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.67,
+          0.8
+        ],
+        "welfare": 2.2700000000000005,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0.\n\n1. **Task Context**: The task is set in an A-ToM HP-SPGG scenario, which involves a public goods game with asymmetric theory of mind levels among players and a high p"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make a decision based on the context of the A-ToM HP-SPGG. The task is to choose the next contribution for player 1.\n\nFirst, let's analyze the given data:\n- The player index is 1.\n- The ToM level is 0, indicating a basic level of reaso"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The ToM level for player 2 is 2, indicating a relatively advanced level of"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.8,
+          0.67,
+          0.8
+        ],
+        "welfare": 2.2700000000000005,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1 in the given A-ToM HP-SPGG scenario, let's analyze the provided information.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 2, indicating an advanced "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The ToM level for player 2 is 1, indicating a moderate level of reasoning "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.6,
+          0.8
+        ],
+        "welfare": 2.2,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 2, indicating an advanced le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 2 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indicating a moderate lev"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 2 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indicating a moderat"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 2.\n2. **ToM Level**: The ToM level for player 2 is 0, indicating a basic level "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indicating a moderat"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 2.\n2. **ToM Level**: The ToM level for player 2 is 1, indicating a moderat"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the context of an A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty f"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indicating a moderate lev"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 2.\n2. **ToM Level**: The ToM level for player 2 is 2, indicating an advanc"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task Context**: The task involves a public goods game with asymmetric theory of mind levels among players and a high penalty for not contributing to the public goo"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, let's analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indicating a basic level "
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and the context of the A-ToM HP-SPGG.\n\n1. **Task and Player Index**: The task is to select an action (contribution level) for player 2.\n2. **ToM Level**: The ToM level for player 2 is 0, indicating a basic l"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "High ToM level and others contributing 0.75, so match their contribution"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "High ToM level and others contributing 0.75, so match their contribution"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.94,
+        "oracle_welfare": 2.94,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_adaptive_hedge",
+    "seed_index": 2,
+    "seed": 160002,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 89,
+        "contributions": [
+          0.75,
+          0.5,
+          1.0
+        ],
+        "rewards": [
+          0.8,
+          0.6,
+          0.8
+        ],
+        "welfare": 2.2,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is related to a public-goods game, specifically an A-ToM HP-SPGG (Asymmetric Theory of Mind, High Penalty, Symmetric Public Goods Game) scenario. The player is asked to choose a contribution level that would improve"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Payoff Symmetric Public Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level indicates the level of reasoning about o"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The ToM (Theory"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 14,
+        "contributions": [
+          0.0,
+          0.5,
+          1.0
+        ],
+        "rewards": [
+          0.0,
+          0.67,
+          0.4
+        ],
+        "welfare": 1.07,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0.\n\n1. **Task and Player Index**: The task is related to an A-ToM HP-SPGG, and we are making a decision for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, i"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1 in the given A-ToM HP-SPGG scenario, we need to analyze the provided information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**:"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply a strategic reasoning process.\n\n1. **Task and Player Index**: The task is to select an action for player 2 in an A-ToM HP-SPGG.\n2. **ToM Level**: The ToM level for player 2 is 2, indicating a high lev"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 43,
+        "contributions": [
+          0.25,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.2,
+          0.67,
+          0.8
+        ],
+        "welfare": 1.6700000000000002,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 1.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indicating a moderate leve"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply a strategic reasoning process based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 94,
+        "contributions": [
+          0.75,
+          0.75,
+          1.0
+        ],
+        "rewards": [
+          0.8,
+          0.9,
+          0.9
+        ],
+        "welfare": 2.6,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 1 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 2 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: The ToM level for player 2 is"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                1.0
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted high contributions"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG scenario, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 0 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make an informed decision about the next contribution for player 1 in the A-ToM HP-SPGG scenario.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: The ToM level for player 2 is 0, indic"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 1, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: The ToM level for player 2 is 0, indic"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 18,
+        "contributions": [
+          0.0,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.0,
+          0.67,
+          0.6
+        ],
+        "welfare": 1.27,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.6,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.2,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.0
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: The ToM level for player 2 is 1, indic"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 1, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.0
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 91,
+        "contributions": [
+          0.75,
+          0.75,
+          0.25
+        ],
+        "rewards": [
+          0.8,
+          0.8,
+          0.67
+        ],
+        "welfare": 2.27,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 2, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 2, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 2, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 1, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and apply strategic reasoning based on the Theory of Mind (ToM) level and the recent public history.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 2.\n2. **ToM Level**: T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 1, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.9699999999999998,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indic"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make an informed decision based on the task's requirements.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 1.\n2. **ToM Level**: The ToM level for player 1 is 2, indic"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_adaptive_hedge",
+    "seed_index": 3,
+    "seed": 160003,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.95,
+          0.9
+        ],
+        "welfare": 2.75,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to understand the context and the requirements. The task is about selecting an action in a public-goods game (specifically, a High-Payoff Symmetric Public Goods Game or HP-SPGG) with a Theory of Mind (ToM) level of 0. The ToM level indicates the level of reasoning about o"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game) scenario, we need to analyze the information provided.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The ToM (Theory"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.81,
+          0.67,
+          0.8
+        ],
+        "welfare": 2.2800000000000002,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, i"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2 in an A-ToM HP-SPGG.\n2. "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.83,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4299999999999997,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 91,
+        "contributions": [
+          0.75,
+          0.75,
+          0.25
+        ],
+        "rewards": [
+          0.83,
+          0.8,
+          0.67
+        ],
+        "welfare": 2.3,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To solve this task, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The ToM level for player 1 is 0, i"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.83,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4299999999999997,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "ToM level 0, match predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 1, match predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 2, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 2, match predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.83,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4299999999999997,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 118,
+        "contributions": [
+          1.0,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.24,
+          0.8,
+          0.9
+        ],
+        "welfare": 1.94,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.83,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.4299999999999997,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 1, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 2, match predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 2, match predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 0, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 1, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 0, match predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 0, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 1, match predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 2.\n2. **ToM Level**: The T"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.1,
+        "oracle_welfare": 2.75,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\n1. **Task and Player Index**: The task is to select an action for player 0.\n2. **ToM Level**: The T"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 0, match predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "ToM level 1, match predicted others"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_adaptive_hedge",
+    "seed_index": 4,
+    "seed": 160004,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.95,
+          0.95,
+          1.0
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Hierarchical Public Goods Game), we need to analyze the provided information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1 in the given A-ToM HP-SPGG (Asymmetric Theory of Mind Heterogeneous-Public-Goods-Game with Strategic Planning) scenario, let's analyze the information provided.\n\n1. **Task and Player Index**: The task is to select an action for player 1.\n2. **ToM Le"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the next contribution for player 2 in the A-ToM HP-SPGG (Asymmetric Theory of Mind High-Payoff Stochastic Public Goods Game), we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- "
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.8,
+          0.6,
+          0.8
+        ],
+        "welfare": 2.2,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information.\n\n1. **Task and Player Index**: The task is \"A-ToM HP-SPGG action selection\" for player 0.\n2. **ToM Level**: The ToM level for player 0 is 0, indicating that this player does not model others' mental states."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- Player index: 1\n- ToM level: 1\n- Allowed contributions: [0.0, 0.25, 0.5, 0.75, 1.0]\n- P"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 1, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 1\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 1\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 2, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 2\n- `tom_level`: 0\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "parse_error": true,
+                "reply": "To determine the optimal contribution for player 0, we need to analyze the given information and make a decision based on the Theory of Mind (ToM) level and the predicted contributions of other players.\n\nGiven:\n- `player_index`: 0\n- `tom_level`: 2\n- `allowed_contributions`: [0.0, 0.25, 0.5, 0.75, 1."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others and maintaining high welfare"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others and maintaining high welfare"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          1.0,
+          0.96
+        ],
+        "welfare": 2.95,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Matching predicted others"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

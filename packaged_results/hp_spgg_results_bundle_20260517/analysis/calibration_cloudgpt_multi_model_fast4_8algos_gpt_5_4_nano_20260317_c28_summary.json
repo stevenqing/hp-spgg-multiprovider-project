@@ -1,0 +1,156 @@
+{
+  "calibration": "calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c28.npy",
+  "report": "analysis/calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c28_report.json",
+  "audit": "logs/E5_audit_calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c28.txt",
+  "tid_min_gap": 0.09920000000000001,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 1296,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0.npz",
+      "beta": 0.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0p05.npz",
+      "beta": 0.05,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0p1.npz",
+      "beta": 0.1,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0p25.npz",
+      "beta": 0.25,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0p5.npz",
+      "beta": 0.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0p75.npz",
+      "beta": 0.75,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta1.npz",
+      "beta": 1.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta1p5.npz",
+      "beta": 1.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.632,
+        "hpsmg": 0.632,
+        "joint_psrl": 1.416,
+        "map_greedy": 0.712,
+        "psrl_notype": 16.418,
+        "iql": 29.338,
+        "random": 23.548,
+        "oracle": 0.0
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c28_beta0.npz",
+    "beta": 0.0,
+    "K": 20,
+    "seeds": 5,
+    "final_regret": {
+      "hpsmg_plus": 0.632,
+      "hpsmg": 0.632,
+      "joint_psrl": 1.416,
+      "map_greedy": 0.712,
+      "psrl_notype": 16.418,
+      "iql": 29.338,
+      "random": 23.548,
+      "oracle": 0.0
+    }
+  }
+}

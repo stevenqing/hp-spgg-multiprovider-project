@@ -1,0 +1,59 @@
+﻿{
+    "value":  [
+                  {
+                      "type":  "file",
+                      "oid":  "82859fec8eb6e61182c7fafb7b70470a88abdf53",
+                      "size":  2555,
+                      "path":  ".gitattributes"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "7bc0d51bca9636b4fdcbb6629286a3443a061632",
+                      "size":  1214,
+                      "path":  "README.md"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "fcef278088dcfbde994c9329240dc9f53e7630e4",
+                      "size":  15472,
+                      "path":  "benchmark_agents.json"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "b9b1cd925e230134c914139daf8eea06b51ae100",
+                      "size":  182386362,
+                      "lfs":  {
+                                  "oid":  "9a01a5d4b0f9f6dad6d2e8bfc9fec534bea36c913c1b280880c29a7604e1de62",
+                                  "size":  182386362,
+                                  "pointerSize":  134
+                              },
+                      "xetHash":  "92e0b99aceb93567512b96b1e38666047f46f16f6b5256568334bd43e054ba29",
+                      "path":  "sotopia_episodes_v1.csv"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "3c205f0dd260df8b8b604df849943d76743a706c",
+                      "size":  184497280,
+                      "lfs":  {
+                                  "oid":  "100a4ab47e058f6483d51f090cc1a0f76b9006499d32ad901eeb545e1b38cdcf",
+                                  "size":  184497280,
+                                  "pointerSize":  134
+                              },
+                      "xetHash":  "6d2500fa8695ae0447abcc000be5db86b2b22dbc47fa6a43daf6759d5d51a577",
+                      "path":  "sotopia_episodes_v1.jsonl"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "f079e1e292b3773d3e32d62bdc021ae039bc2376",
+                      "size":  180178928,
+                      "lfs":  {
+                                  "oid":  "3a282406c85f5d3c2b6a955c15e758573ef1b7d2a219d50cde29a9b7976611b7",
+                                  "size":  180178928,
+                                  "pointerSize":  134
+                              },
+                      "xetHash":  "081da1710da473b484b6c18b4cd760cd3bfc7ace95a61b911d2f45da422cfc3f",
+                      "path":  "sotopia_episodes_v1_hf.jsonl"
+                  }
+              ],
+    "Count":  6
+}

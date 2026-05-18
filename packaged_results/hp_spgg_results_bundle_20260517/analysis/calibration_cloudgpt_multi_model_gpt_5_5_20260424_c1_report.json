@@ -1,0 +1,75 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration_cloudgpt_multi_model_gpt_5_5_20260424_c1.npy",
+  "base_calibration": "calibration_cloudgpt_live_continued.npy",
+  "cache": "logs\\cloudgpt_live_cache_gpt_5_5_20260424.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 4,
+  "new_live_cells": 5,
+  "cached_cells_loaded": 36,
+  "skipped_cached_cells": 36,
+  "total_cells": 1500,
+  "parse_failure_count": 7,
+  "parse_failures": [
+    {
+      "profile_index": 2,
+      "player_index": 0,
+      "persona": "risk_averse_balancer",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 8,
+      "player_index": 1,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 2,
+      "player_index": 1,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 14,
+      "player_index": 0,
+      "persona": "risk_averse_balancer",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 14,
+      "player_index": 1,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 20,
+      "player_index": 2,
+      "persona": "conditional_cooperator",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 20,
+      "player_index": 2,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    }
+  ],
+  "workers": 8,
+  "tid_min_gap": 0.07408457327939474
+}

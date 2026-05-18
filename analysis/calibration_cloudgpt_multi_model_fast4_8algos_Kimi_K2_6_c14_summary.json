@@ -1,0 +1,156 @@
+{
+  "calibration": "calibration_cloudgpt_multi_model_fast4_8algos_Kimi_K2_6_c14.npy",
+  "report": "analysis/calibration_cloudgpt_multi_model_fast4_8algos_Kimi_K2_6_c14_report.json",
+  "audit": "logs/E5_audit_calibration_cloudgpt_multi_model_fast4_8algos_Kimi_K2_6_c14.txt",
+  "tid_min_gap": 0.08991505743838155,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 1008,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0.npz",
+      "beta": 0.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.936,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p05.npz",
+      "beta": 0.05,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.936,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p1.npz",
+      "beta": 0.1,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.936,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p25.npz",
+      "beta": 0.25,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.936,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p5.npz",
+      "beta": 0.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.96,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p75.npz",
+      "beta": 0.75,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.932,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta1.npz",
+      "beta": 1.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.946,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta1p5.npz",
+      "beta": 1.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.974,
+        "hpsmg": 0.644,
+        "joint_psrl": 1.55,
+        "map_greedy": 0.854,
+        "psrl_notype": 19.426,
+        "iql": 27.109825,
+        "random": 27.887358,
+        "oracle": 0.0
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\cloudgpt\\E2_Kimi_K2_6_c14_beta0p75.npz",
+    "beta": 0.75,
+    "K": 20,
+    "seeds": 5,
+    "final_regret": {
+      "hpsmg_plus": 0.932,
+      "hpsmg": 0.644,
+      "joint_psrl": 1.55,
+      "map_greedy": 0.854,
+      "psrl_notype": 19.426,
+      "iql": 27.109825,
+      "random": 27.887358,
+      "oracle": 0.0
+    }
+  }
+}

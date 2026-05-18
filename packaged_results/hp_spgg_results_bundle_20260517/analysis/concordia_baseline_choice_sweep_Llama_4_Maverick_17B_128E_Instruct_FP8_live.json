@@ -1,0 +1,38 @@
+[
+  {
+    "baseline": "llm_greedy",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\": 0, \"reason\": \"Alice likes The Anchor and Casey wants everyone to stay together, so The Anchor is a compatible choice\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "llm_belief",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\": 0, \"reason\": \"Alice likes The Anchor and Casey wants everyone to stay together, so choosing The Anchor is likely to be compatible with keeping the group together as it is one of Alice's preferences.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "atom_tom1",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\": 0, \"reason\": \"Alice likes The Anchor and Casey wants everyone to stay together, so The Anchor is a likely choice to keep the group together as Alice's preference is known.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "econ_bne",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\": 0, \"reason\": \"Alice likes The Anchor and Casey wants everyone to stay together, so The Anchor is the most compatible choice given the known facts and baseline.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  }
+]

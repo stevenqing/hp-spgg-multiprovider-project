@@ -1,0 +1,5837 @@
+[
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 0,
+    "seed": 140000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.25,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.25 each, a higher contribution (0.75) helps raise total public goods and improves long-run welfare while still not fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With other players predicted to contribute moderately (0.5 and 0.25), a higher contribution helps raise the public-good level and improves long-run welfare while still staying within the allowed set."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With moderate predicted others (0.5 and 0.25) and ToM level 2, a higher contribution helps public-goods welfare while still staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5 and 0.25) suggest moderate cooperation; contributing 0.75 boosts the public-good level and long-run welfare without fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5, 0.25) suggest moderate public-good provision; contributing 0.75 best supports long-run welfare by raising the total while remaining cooperative."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With both other players predicted to contribute 0.75, matching with 0.75 sustains a high public-goods level and supports long-run welfare without overcommitting beyond the cooperative norm."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching with 0.75 sustains a high public-good level and long-run welfare while staying within a cooperative, non-extreme cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching with 0.75 sustains a high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching with 0.75 sustains a high public-goods level and keeps cooperation stable for long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains a high public-goods level and long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains a high public-goods level and supports long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the high public-goods level and keeps cooperation stable for long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains a high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the high public-goods level and keeps cooperation stable for long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the high public-goods level and keeps cooperation stable for long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the high public-goods level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching keeps the public-good level high and sustains cooperative long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching keeps the public-good level high and sustains cooperative long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching keeps the public-good level high and sustains cooperative long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts the other two players will each contribute 0.75, so matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and cooperative long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75, so matching 0.75 sustains the high public-good level and cooperative long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the cooperative high public-good level and stable long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the high public-good level and cooperative long-run welfare without extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75; matching 0.75 sustains the cooperative high public-good level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75; matching keeps the public-good level high and sustains cooperative long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high public-good level and stable long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high public-good level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the cooperative high public-good level and stable long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75; matching 0.75 sustains the high public-good level and stable cooperative welfare without extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75; matching keeps the public-good level high and sustains cooperative long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75; matching keeps the public-good level high and sustains cooperative long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both others will contribute 0.75; matching sustains the cooperative high public-good level and stable long-run welfare without extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.98,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching sustains the high public-good level and cooperative long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts both other players will contribute 0.75, so matching sustains the high public-good level and cooperative long-run welfare without overcommitting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-2 ToM predicts the other two will each contribute 0.75, so matching 0.75 sustains the high public-good level and cooperative long-run welfare without overcommitting."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 1,
+    "seed": 140001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.25,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.25 each, a higher contribution (0.75) helps raise total public goods and improves long-run welfare while still not fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With other players predicted to contribute moderately (0.5 and 0.25), a higher contribution helps raise the public-good level and improves long-run welfare while still staying within the allowed set."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With moderate predicted others (0.5 and 0.25) and ToM level 2, a higher contribution helps public-goods welfare while still staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a higher contribution (0.75) is likely to raise the public-goods level and long-run welfare while remaining within a cooperative, non-maximal cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.75 each, matching with 0.75 sustains a high public-goods level and supports long-run welfare while remaining consistent with the observed cooperative pattern."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With predicted others contributing 0.5 and 0.25, matching a higher cooperative level (0.75) increases the public-goods total and should improve long-run welfare without fully maximizing individual cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains a high public-goods level and supports long-run welfare while staying within a cooperative, non-maximal cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level and supports long-run welfare while staying in the cooperative pattern observed."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains a high public-goods level and should improve long-run welfare while staying within a cooperative, non-maximal cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level and supports long-run welfare without overpaying."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the high public-goods level and keeps the cooperative pattern that has produced the best observed welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains a high public-goods level and supports long-run welfare while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high public-goods level and avoids the extra cost of 1.0 while supporting long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the high public-goods level and supports long-run welfare without the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the high public-goods level and cooperative welfare while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high public-goods level and avoids the extra cost of 1.0 while supporting long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others (0.75, 0.75) to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the extra cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          0.12,
+          0.98
+        ],
+        "welfare": 2.08,
+        "oracle_welfare": 2.7199999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level while avoiding the higher cost of 1.0."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 2,
+    "seed": 140002,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.25,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.25 each, a higher contribution (0.75) helps raise total public goods and improves long-run welfare while still not fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With other players predicted to contribute moderately (0.5 and 0.25), a higher contribution helps raise the public-good level and improves long-run welfare while still staying within the allowed set."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With moderate predicted others (0.5 and 0.25) and ToM level 2, a higher contribution helps public-goods welfare while still staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 each, matching a higher contribution (0.75) should better sustain the public-good level and improve long-run welfare without fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a higher contribution (0.75) best supports the public-good level and long-run welfare while remaining within a cooperative, plausible range."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a higher cooperative level (0.75) increases total public goods and long-run welfare while remaining within a plausible, non-maximal cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75, so matching with 0.75 sustains the high public-goods level and supports long-run welfare while staying cooperative."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching with 0.75 sustains a high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With both other players predicted to contribute 0.75, matching that level sustains the public-good level and supports long-run welfare while staying in a cooperative, non-maximal cost range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare while remaining cooperative."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare while staying cooperative."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare while staying cooperative."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With both other players predicted to contribute 0.75, matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-good level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.98,
+          0.08
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.7,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and support long-run welfare."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 3,
+    "seed": 140003,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.25,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.25 each, a higher contribution (0.75) helps raise total public goods and improves long-run welfare while still not fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With other players predicted to contribute moderately (0.5 and 0.25), a higher contribution helps raise the public-good level and improves long-run welfare while still staying within the allowed set."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With moderate predicted others (0.5 and 0.25) and ToM level 2, a higher contribution helps public-goods welfare while still staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a higher contribution (0.75) increases the public-goods level and supports long-run welfare without fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Given others are predicted to contribute 0.5 and 0.25, matching a higher contribution (0.75) should better sustain the public-good level and improve long-run welfare without fully maximizing cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 each, matching a higher contribution (0.75) sustains strong public-goods provision and improves long-run welfare without fully maximizing cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching with 0.75 sustains a high public-goods level and supports long-run welfare while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching with 0.75 sustains a high public-goods level and supports long-run welfare while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are already contributing 0.75 each; matching with 0.75 sustains a high public-goods level and supports long-run welfare while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both contributing 0.75, so matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both contributing 0.75, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost while keeping long-run welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains a high public-goods level and avoids unnecessary extra cost while supporting long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains a high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost while keeping long-run welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75 each; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping long-run welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost while keeping welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping long-run welfare near the observed optimum."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, supporting near-optimal long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level and avoids unnecessary extra cost, keeping long-run welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level while avoiding unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level while avoiding unnecessary extra cost, supporting near-optimal long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the high public-goods level and avoid unnecessary extra cost, keeping welfare near the observed optimum."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching keeps the public-goods level near the observed near-optimal welfare while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching keeps the group at the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.9299999999999997,
+        "oracle_welfare": 2.9699999999999998,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75; matching 0.75 sustains the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the near-optimal public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 4,
+    "seed": 140004,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.25,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.25 each, a higher contribution (0.75) helps raise total public goods and improves long-run welfare while still not fully maximizing cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With other players predicted to contribute moderately (0.5 and 0.25), a higher contribution helps raise the public-good level and improves long-run welfare while still staying within the allowed set."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With moderate predicted others (0.5 and 0.25) and ToM level 2, a higher contribution helps public-goods welfare while still staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With predicted others contributing 0.5 and 0.25, matching a higher contribution (0.75) helps sustain the public-good level and long-run welfare while remaining cooperative."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 each, matching a higher contribution (0.75) increases the public-goods level and supports long-run welfare while remaining within a cooperative, non-maximal cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a higher cooperative level (0.75) best supports public-goods welfare while remaining within a plausible ToM-2 strategy."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching with 0.75 sustains the high public-goods level and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75, so matching with 0.75 sustains the high public-goods level and supports long-run welfare without overpaying."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching with 0.75 sustains a high public-goods level and supports long-run welfare while staying cooperative."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary overpayment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching 0.75 sustains the high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 each, so matching 0.75 sustains the high public-goods level and supports long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-goods level and long-run welfare without extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the high public-good level and long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, so matching 0.75 sustains the high public-good level and long-run welfare without unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and supports long-run welfare without overpaying."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and long-run welfare without overpaying."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the high public-goods level and long-run welfare without unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level and avoids unnecessary overpayment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and avoids unnecessary overpayment."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each, so matching 0.75 sustains the cooperative high public-goods level and avoids unnecessary overpaying."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary overpayment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary overpaying."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary overpayment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary overpayment."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will each contribute 0.75, so matching 0.75 sustains the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary overpayment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary overpayment."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level while avoiding unnecessary overpayment."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level while avoiding unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.96
+        ],
+        "welfare": 1.2,
+        "oracle_welfare": 2.4,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative high public-goods level and avoid unnecessary extra cost."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

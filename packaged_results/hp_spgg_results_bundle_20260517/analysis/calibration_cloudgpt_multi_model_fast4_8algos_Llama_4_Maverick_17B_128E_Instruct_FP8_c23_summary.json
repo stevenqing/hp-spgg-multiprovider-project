@@ -1,0 +1,156 @@
+{
+  "calibration": "calibration_cloudgpt_multi_model_fast4_8algos_Llama_4_Maverick_17B_128E_Instruct_FP8_c23.npy",
+  "report": "analysis/calibration_cloudgpt_multi_model_fast4_8algos_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_report.json",
+  "audit": "logs/E5_audit_calibration_cloudgpt_multi_model_fast4_8algos_Llama_4_Maverick_17B_128E_Instruct_FP8_c23.txt",
+  "tid_min_gap": 0.12240000000000001,
+  "new_live_cells": 12,
+  "cached_cells_loaded": 1356,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0.npz",
+      "beta": 0.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0p05.npz",
+      "beta": 0.05,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0p1.npz",
+      "beta": 0.1,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0p25.npz",
+      "beta": 0.25,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0p5.npz",
+      "beta": 0.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0p75.npz",
+      "beta": 0.75,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta1.npz",
+      "beta": 1.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.296,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta1p5.npz",
+      "beta": 1.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.312,
+        "hpsmg": 1.134,
+        "joint_psrl": 1.524,
+        "map_greedy": 0.73,
+        "psrl_notype": 12.306,
+        "iql": 24.7,
+        "random": 24.142,
+        "oracle": 0.0
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\cloudgpt\\E2_Llama_4_Maverick_17B_128E_Instruct_FP8_c23_beta0.npz",
+    "beta": 0.0,
+    "K": 20,
+    "seeds": 5,
+    "final_regret": {
+      "hpsmg_plus": 0.296,
+      "hpsmg": 1.134,
+      "joint_psrl": 1.524,
+      "map_greedy": 0.73,
+      "psrl_notype": 12.306,
+      "iql": 24.7,
+      "random": 24.142,
+      "oracle": 0.0
+    }
+  }
+}

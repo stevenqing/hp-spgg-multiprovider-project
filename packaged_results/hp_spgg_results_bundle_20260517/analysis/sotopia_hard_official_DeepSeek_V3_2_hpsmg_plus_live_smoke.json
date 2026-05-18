@@ -1,0 +1,133 @@
+{
+  "task": "sotopia_hard_official_reconstructed",
+  "baseline": "hpsmg_plus",
+  "model": "DeepSeek-V3.2",
+  "evaluator_model": "DeepSeek-V3.2",
+  "target_case_count": 1,
+  "case_count": 1,
+  "complete": true,
+  "summary": {
+    "agent_1": {
+      "believability": 8.0,
+      "relationship": 2.0,
+      "knowledge": 7.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 1.0,
+      "goal": 4.0,
+      "overall_score": 3.142857142857143
+    },
+    "agent_2": {
+      "believability": 9.0,
+      "relationship": 3.0,
+      "knowledge": 8.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 2.0,
+      "goal": 6.0,
+      "overall_score": 4.0
+    },
+    "mean_overall": 3.571428571428571
+  },
+  "episodes": [
+    {
+      "combo_pk": "01H84XT6AEYC5PPA59TYN3TCDT",
+      "env_id": "01H7VFHPQQQY6H4DNC6NBQ8XTG",
+      "agent_ids": [
+        "01H5TNE5PQ00AJVSSVB9V2VA9K",
+        "01H5TNE5P83CZ1TDBVN74NGEEJ"
+      ],
+      "codename": "craigslist_bargains_00000",
+      "agent_names": [
+        "Eli Dawson",
+        "William Brown"
+      ],
+      "baseline": "hpsmg_plus",
+      "model": "DeepSeek-V3.2",
+      "evaluator_model": "DeepSeek-V3.2",
+      "turns_completed": 2,
+      "transcript": [
+        {
+          "turn": 0,
+          "actions": {
+            "agent_1": " said: \"I appreciate you're willing to take a loss on these phones. However, $650 seems quite high for a Galaxy S8, even brand new. Given you have six units and are motivated to move them, I'd be interested in discussing a more realistic price. What's the best you can do for one unit?\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 1,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"I understand your concern about the price, but these are brand new, sealed units with full warranty. The $650 reflects their current market value for new-in-box condition. However, since you're showing genuine interest and I do want to move these units, I could offer you one for $630. That's already taking a significant loss from what I paid. If you're considering multiple units, I could make the deal even more attractive.\""
+          }
+        }
+      ],
+      "scores": {
+        "agent_1": {
+          "believability": {
+            "score": 8.0,
+            "reasoning": "Eli's response is consistent with his assertive personality and strategic decision-making, questioning the price while acknowledging the seller's situation."
+          },
+          "relationship": {
+            "score": 2.0,
+            "reasoning": "Maintains polite but businesslike interaction, showing interest while challenging the price, which is appropriate for a negotiation."
+          },
+          "knowledge": {
+            "score": 7.0,
+            "reasoning": "Demonstrates understanding of negotiation tactics and market awareness by questioning the $650 price point for a Galaxy S8."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "No indication of his secret (funding a college student) being revealed or relevant to this interaction."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Follows appropriate social norms for a business negotiation, no violations observed."
+          },
+          "financial_and_material_benefits": {
+            "score": 1.0,
+            "reasoning": "Successfully prompted a price reduction from $650 to $630, moving toward his $454 target, though still far from it."
+          },
+          "goal": {
+            "score": 4.0,
+            "reasoning": "Made initial progress by getting seller to lower price, but $630 is still far from his $454 target price."
+          }
+        },
+        "agent_2": {
+          "believability": {
+            "score": 9.0,
+            "reasoning": "William's response aligns with his ambitious, strategic personality and chef background - methodical in justifying price while offering small concessions."
+          },
+          "relationship": {
+            "score": 3.0,
+            "reasoning": "Builds rapport by acknowledging buyer's concern and showing flexibility, while maintaining professional boundaries."
+          },
+          "knowledge": {
+            "score": 8.0,
+            "reasoning": "Demonstrates good product knowledge (new, sealed, warranty) and negotiation skills by offering small discount while suggesting better multi-unit deals."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "No connection to his secret (sabotaging competitor's dish) in this phone selling context."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Follows appropriate business etiquette, no social rule violations in the negotiation."
+          },
+          "financial_and_material_benefits": {
+            "score": 2.0,
+            "reasoning": "Successfully defended most of his asking price, only reducing by $20 while keeping door open for larger sale."
+          },
+          "goal": {
+            "score": 6.0,
+            "reasoning": "Maintained price at $630, close to his $610 target, while positioning for potential multi-unit sale."
+          }
+        }
+      },
+      "overall": {
+        "agent_1": 3.142857142857143,
+        "agent_2": 4.0
+      }
+    }
+  ]
+}

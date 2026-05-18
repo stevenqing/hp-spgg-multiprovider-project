@@ -1,0 +1,166 @@
+{
+  "task": "sotopia_hard_official_reconstructed",
+  "baseline": "hpsmg_plus",
+  "agent_strategy_profile": "sotopia_tuned",
+  "case_indices": [
+    48
+  ],
+  "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "evaluator_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "target_case_count": 1,
+  "case_count": 1,
+  "complete": true,
+  "summary": {
+    "agent_1": {
+      "believability": 8.0,
+      "relationship": 2.0,
+      "knowledge": 6.0,
+      "secret": -5.0,
+      "social_rules": -3.0,
+      "financial_and_material_benefits": -2.0,
+      "goal": 4.0,
+      "overall_score": 1.4285714285714286
+    },
+    "agent_2": {
+      "believability": 9.0,
+      "relationship": 2.0,
+      "knowledge": 8.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 0.0,
+      "goal": 7.0,
+      "overall_score": 3.7142857142857144
+    },
+    "mean_overall": 2.5714285714285716
+  },
+  "episodes": [
+    {
+      "combo_pk": "01H7ZN519SJGSAMR3MAHYWMD22",
+      "env_id": "01H7VFHN7A1ZX5KSMT2YN9RXC4",
+      "agent_ids": [
+        "01H5TNE5PQ00AJVSSVB9V2VA9K",
+        "01H5TNE5P98J20AEW94XQ0KC35"
+      ],
+      "codename": "sell_item",
+      "agent_names": [
+        "Eli Dawson",
+        "Ethan Smith"
+      ],
+      "baseline": "hpsmg_plus",
+      "agent_strategy_profile": "sotopia_tuned",
+      "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "evaluator_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "turns_completed": 6,
+      "transcript": [
+        {
+          "turn": 0,
+          "actions": {
+            "agent_1": " said: \"Hey, I found this vintage record that I think is worth a pretty penny. Would you be interested in buying it from me?\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 1,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"That's an interesting record, but I'm not sure it's really yours to sell, is it?\""
+          }
+        },
+        {
+          "turn": 2,
+          "actions": {
+            "agent_1": " said: \"I... uh... I think there's been a misunderstanding. I could've sworn it was mine, but now I'm not so sure.\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 3,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"Let's check with the person who originally owned it to see if it's really yours.\""
+          }
+        },
+        {
+          "turn": 4,
+          "actions": {
+            "agent_1": " said: \"That's a good idea, let's go ask the owner if it's really mine.\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 5,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"Let's go ask the owner together and clarify if it's really yours.\""
+          }
+        }
+      ],
+      "scores": {
+        "agent_1": {
+          "believability": {
+            "score": 8.0,
+            "reasoning": "Eli's initial confidence in selling the record and subsequent uncertainty when questioned by Ethan reflects a believable character response."
+          },
+          "relationship": {
+            "score": 2.0,
+            "reasoning": "The interaction between Eli and Ethan shows a cooperative and friendly dynamic as they work together to verify the record's ownership."
+          },
+          "knowledge": {
+            "score": 6.0,
+            "reasoning": "Eli demonstrates some knowledge about the record's potential value but lacks knowledge about its actual ownership."
+          },
+          "secret": {
+            "score": -5.0,
+            "reasoning": "Eli's secret about funding a college student isn't directly relevant to the interaction, but his mistake about the record's ownership is revealed."
+          },
+          "social_rules": {
+            "score": -3.0,
+            "reasoning": "Eli initially attempts to sell something that isn't his, violating a social rule, but corrects his action upon realizing the mistake."
+          },
+          "financial_and_material_benefits": {
+            "score": -2.0,
+            "reasoning": "Eli stands to gain financially from selling the record but ultimately doesn't due to verifying its ownership."
+          },
+          "goal": {
+            "score": 4.0,
+            "reasoning": "Eli's goal to sell the record isn't achieved due to his realization and subsequent verification process with Ethan."
+          }
+        },
+        "agent_2": {
+          "believability": {
+            "score": 9.0,
+            "reasoning": "Ethan's cautious response and suggestion to verify the record's ownership is believable given his knowledge that it belongs to another friend."
+          },
+          "relationship": {
+            "score": 2.0,
+            "reasoning": "Ethan's actions help maintain a positive relationship with Eli by preventing him from getting into trouble."
+          },
+          "knowledge": {
+            "score": 8.0,
+            "reasoning": "Ethan demonstrates knowledge about the record's true ownership and navigates the situation accordingly."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "Ethan's secret about donating to charities isn't relevant to this interaction."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Ethan adheres to social rules by not directly accusing Eli of trying to sell something that isn't his and instead suggests verifying the ownership."
+          },
+          "financial_and_material_benefits": {
+            "score": 0.0,
+            "reasoning": "Ethan doesn't directly gain financially from the interaction as the sale is put on hold due to ownership verification."
+          },
+          "goal": {
+            "score": 7.0,
+            "reasoning": "Ethan achieves his goal of ensuring Eli doesn't get into trouble and also doesn't proceed with buying the record, aligning with his secondary goal."
+          }
+        }
+      },
+      "overall": {
+        "agent_1": 1.4285714285714286,
+        "agent_2": 3.7142857142857144
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "baseline": "llm_greedy",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\":0,\"reason\":\"Baseline greedy choice aligns with the strongest explicit preference: Alice likes The Anchor, making it the most compatible option for a coordinated pick.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "llm_belief",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\":0,\"reason\":\"Baseline favors known individual preferences and staying together; Alice likes The Anchor, and no other option is supported as better for the group.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "atom_tom1",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\":0,\"reason\":\"Baseline atom_tom1 suggests prioritizing the most directly stated preference; Alice likes The Anchor, while the others are weaker (quieter) or about staying together rather than a specific venue.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  },
+  {
+    "baseline": "econ_bne",
+    "choice_index": 0,
+    "choice": "The Anchor",
+    "info": {
+      "reply": "{\"index\":0,\"reason\":\"Baseline econ_bne favors the most directly preferred option; Alice likes The Anchor and there\u2019s no preference for The Crown, while Riverside Arms is only a partial noise preference from Blair.\"}"
+    },
+    "prompt_embedding_norm": 1.0
+  }
+]

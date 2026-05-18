@@ -1,0 +1,58 @@
+{
+  "rows": [
+    {
+      "prior_mode": "adversarial",
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 1.4339999999999997,
+      "sem_final": 0.2562147536735539,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_adversarial_DeepSeek_V3_2_live.npz"
+    },
+    {
+      "prior_mode": "adversarial",
+      "algorithm": "map_greedy",
+      "mean_final_cumulative_regret": 1.6099999999999994,
+      "sem_final": 0.37296112397943,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_adversarial_DeepSeek_V3_2_live.npz"
+    },
+    {
+      "prior_mode": "correct",
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 0.7859999999999999,
+      "sem_final": 0.1906462693052239,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_correct_DeepSeek_V3_2_live.npz"
+    },
+    {
+      "prior_mode": "correct",
+      "algorithm": "map_greedy",
+      "mean_final_cumulative_regret": 0.0,
+      "sem_final": 0.0,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_correct_DeepSeek_V3_2_live.npz"
+    },
+    {
+      "prior_mode": "uniform",
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 1.2859999999999998,
+      "sem_final": 0.29550972911225765,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_uniform_DeepSeek_V3_2_live.npz"
+    },
+    {
+      "prior_mode": "uniform",
+      "algorithm": "map_greedy",
+      "mean_final_cumulative_regret": 0.8999999999999997,
+      "sem_final": 0.20796634343085416,
+      "seeds": 5,
+      "K": 20,
+      "input": "results\\e1_e4_llm\\E4_prior_uniform_DeepSeek_V3_2_live.npz"
+    }
+  ]
+}

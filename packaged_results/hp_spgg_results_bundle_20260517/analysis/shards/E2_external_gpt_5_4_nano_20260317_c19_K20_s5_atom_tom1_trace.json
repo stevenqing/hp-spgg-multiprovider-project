@@ -1,0 +1,5837 @@
+[
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 0,
+    "seed": 130000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.72,
+          0.68,
+          0.62
+        ],
+        "welfare": 2.02,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Other players are contributing moderately (0.5 and 0.25); contributing 0.75 supports public goods while still staying within a plausible level for a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "At ToM level 1, others are expected to contribute moderately (0.5 and 0.25); choosing a higher contribution (0.75) helps raise group welfare while still remaining within plausible cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute moderately (0.5 and 0.25), matching a mid-level contribution supports welfare while avoiding over-contributing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.72,
+          0.72,
+          0.35
+        ],
+        "welfare": 1.79,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a mid-level contribution (0.5) supports welfare while avoiding overpaying relative to the likely group behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Given predicted others at 0.5 and 0.25, a mid contribution (0.5) balances welfare gains with reduced free-riding risk, supporting long-run group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a level-1 ToM move is to raise the group\u2019s total toward higher welfare while staying within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.72,
+          0.72,
+          0.28
+        ],
+        "welfare": 1.72,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to give 0.5 and 0.25, a 0.5 contribution keeps us cooperative and helps welfare without overpaying relative to the likely group level."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are relatively cooperative (0.5 and 0.75); matching with a higher contribution should improve group welfare while remaining plausible for a level-1 A-ToM strategy."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.5 and 0.5, so matching with a higher contribution (0.75) should increase group welfare while remaining within plausible A-ToM level-1 cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are relatively cooperative (0.5 and 0.75); matching with 0.75 should raise group welfare while staying consistent with a level-1 A-ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are fairly cooperative (0.5 and 0.75), so matching with a higher contribution should raise group welfare while staying consistent with a level-1 A-ToM strategy."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are fairly cooperative (0.5 and 0.75); matching with 0.75 should raise group welfare while staying consistent with a level-1 A-ToM cooperative pattern."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains high group welfare while remaining consistent with a level-1 A-ToM cooperative pattern."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and recent rounds show that matching 0.75 yields high welfare; staying at 0.75 supports group welfare without overreacting."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and past rounds show 0.75 aligns with cooperative behavior and improves group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, and matching 0.75 has recently sustained the highest observed group welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and recent rounds show that matching 0.75 sustains high group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and recent rounds show that matching 0.75 sustains high group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and matching 0.75 has recently sustained the highest observed group welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and matching that level has recently sustained the highest observed group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and matching 0.75 has recently sustained the highest observed group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and recent rounds show that matching 0.75 sustains the highest observed group welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show that matching 0.75 sustains the highest observed group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and recent rounds show that matching 0.75 sustains the highest observed group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and matching this level has recently sustained the highest observed group welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show that matching 0.75 sustains the highest observed group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching that level has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are at 0.75; matching this level has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has consistently sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75; matching 0.75 has consistently sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level 0.75 matches the predicted others\u2019 contributions and has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching 0.75 has consistently sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.96,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.84,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching 0.75 has repeatedly sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching this level has consistently sustained the highest observed group welfare in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and matching 0.75 has consistently sustained the highest observed group welfare in recent rounds."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 1,
+    "seed": 130001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.86,
+          0.68,
+          0.62
+        ],
+        "welfare": 2.16,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Other players are contributing moderately (0.5 and 0.25); contributing 0.75 supports public goods while still staying within a plausible level for a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "At ToM level 1, others are expected to contribute moderately (0.5 and 0.25); choosing a higher contribution (0.75) helps raise group welfare while still remaining within plausible cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute moderately (0.5 and 0.25), matching a mid-level contribution supports welfare while avoiding over-contributing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.78,
+          0.72,
+          0.28
+        ],
+        "welfare": 1.78,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a mid-level contribution (0.5) supports group welfare while avoiding the risk of overpaying in a partially free-riding environment."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 ToM expects others to contribute moderately (0.75 and 0.5); matching with 0.75 supports higher group welfare while remaining consistent with plausible cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a level-1 ToM best response is to contribute moderately-high (0.75) to raise group welfare while staying within plausible cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5, 0.75) suggest moderate cooperation; contributing 0.75 maintains a cooperative signal and should improve group welfare without overcommitting."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5, 0.75) suggest moderate cooperation; contributing 0.75 supports higher group welfare while remaining consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.5 and 0.75; matching with a moderately high contribution (0.75) should raise group welfare while remaining consistent with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching with 0.75 sustains high group welfare and remains consistent with level-1 A-ToM cooperative behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching with 0.75 sustains cooperation and should improve long-run group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both contributing 0.75, so matching with 0.75 sustains cooperation and should improve long-run group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching 0.75 sustains cooperative welfare without overcommitting for a level-1 A-ToM."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains cooperative group welfare and aligns with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains cooperative group welfare and aligns with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains the cooperative equilibrium and keeps group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains high group welfare and aligns with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains high group welfare and remains consistent with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative pattern and keeps long-run group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains the cooperative equilibrium and supports high long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative equilibrium and keeps long-run group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and matching 0.75 sustains the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, so matching 0.75 sustains the cooperative pattern and supports high long-run group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative equilibrium and keep long-run welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are at 0.75; matching 0.75 sustains the cooperative pattern and keeps long-run group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75 and the group has sustained high welfare with this level; matching 0.75 maintains the cooperative equilibrium for long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative equilibrium and keep long-run group welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative pattern and keeps long-run group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative pattern and keep long-run welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two will contribute 0.75; matching 0.75 sustains the cooperative pattern and keeps long-run welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative equilibrium and keeps long-run welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative equilibrium and keeps long-run group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "A-ToM level-1 predicts the other two will contribute 0.75; matching 0.75 sustains the cooperative pattern and keeps long-run welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern and keep long-run welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern and keep long-run group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern and keep long-run welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two will contribute 0.75; matching 0.75 sustains the cooperative pattern and supports high long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 to sustain the cooperative pattern that has kept group welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75 contributions to sustain the cooperative pattern and keep long-run welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.99,
+          0.96,
+          0.08
+        ],
+        "welfare": 2.03,
+        "oracle_welfare": 2.76,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "A-ToM level-1 predicts the other two will contribute 0.75; matching 0.75 sustains the cooperative pattern and supports high long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "A-ToM level-1 predicts the other two will contribute 0.75; matching 0.75 sustains the cooperative pattern and supports high long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two contribute 0.75, sustaining the cooperative pattern that has kept group welfare high."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 2,
+    "seed": 130002,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.35,
+          0.68,
+          0.78
+        ],
+        "welfare": 1.81,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Other players are contributing moderately (0.5 and 0.25); contributing 0.75 supports public goods while still staying within a plausible level for a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "At ToM level 1, others are expected to contribute moderately (0.5 and 0.25); choosing a higher contribution (0.75) helps raise group welfare while still remaining within plausible cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute moderately (0.5 and 0.25), matching a mid-level contribution supports welfare while avoiding over-contributing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 63,
+        "contributions": [
+          0.5,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.42,
+          0.72,
+          0.86
+        ],
+        "welfare": 2.0,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a mid-level contribution (0.5) supports group welfare while avoiding over-contributing."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a mid-level contribution (0.5) supports group welfare while avoiding over-contributing."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a higher contribution (0.75) should better raise group welfare while remaining consistent with level-1 cooperative behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.38649103885506,
+          0.4721447601910988,
+          0.5182099815803677
+        ],
+        "welfare": 1.3768457806265264,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.5 and 0.5, so raising our contribution to 0.75 should increase group welfare without deviating much from level-1 cooperative behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Level-1 ToM predicts others will contribute 0.5 and 0.25; matching with a moderate 0.5 supports welfare while avoiding over-contributing."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.5 and 0.5, so matching with a higher contribution (0.75) should increase group welfare while staying within plausible level-1 cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5 and 0.75) suggest moderate-to-high cooperation; contributing 0.75 should raise group welfare while staying consistent with a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing relatively high (0.5 and 0.75), so matching with 0.75 should further raise group welfare while remaining consistent with level-1 cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing relatively high (0.5 and 0.75); matching with 0.75 should raise group welfare while remaining consistent with level-1 cooperative behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains high group welfare while remaining consistent with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 should sustain high group welfare while remaining consistent with level-1 cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains high group welfare while remaining consistent with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and 0.75; matching 0.75 sustains high group welfare and remains consistent with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75, so matching 0.75 sustains high group welfare consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and 0.75; matching 0.75 sustains high group welfare and aligns with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains high group welfare and remains consistent with a level-1 A-ToM cooperative strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains high group welfare and aligns with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains high group welfare and stays consistent with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and 0.75, so matching 0.75 sustains high group welfare and remains consistent with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains high group welfare and stays consistent with level-1 A-ToM cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 high contributions (0.75, 0.75) to sustain the cooperative state and support long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 and 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts others will contribute 0.75 and matching that sustains the high-cooperation state, supporting long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 and the group has sustained high welfare with 0.75; matching keeps cooperation stable and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM predicted others (0.75, 0.75) to sustain the observed high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75 each; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching keeps the group in the high-cooperation state and sustains long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that both other players contribute 0.75, sustaining the high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the observed high-cooperation state and supporting long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75 each, sustaining the high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching 0.75 sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will each contribute 0.75; matching 0.75 sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching keeps the group in the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching keeps the group in the observed high-cooperation state and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the observed high-cooperation state and long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that the other two players contribute 0.75, sustaining the high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching sustains the high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the level-1 A-ToM prediction that both other players contribute 0.75, sustaining the high-cooperation state and long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.96,
+          0.98
+        ],
+        "welfare": 2.06,
+        "oracle_welfare": 2.6399999999999997,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will each contribute 0.75; matching keeps the group in the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will each contribute 0.75; matching 0.75 sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will each contribute 0.75; matching 0.75 sustains the observed high-cooperation state and supports long-run welfare."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 3,
+    "seed": 130003,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.35,
+          0.35,
+          0.78
+        ],
+        "welfare": 1.48,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Other players are contributing moderately (0.5 and 0.25); contributing 0.75 supports public goods while still staying within a plausible level for a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "At ToM level 1, others are expected to contribute moderately (0.5 and 0.25); choosing a higher contribution (0.75) helps raise group welfare while still remaining within plausible cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute moderately (0.5 and 0.25), matching a mid-level contribution supports welfare while avoiding over-contributing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.35,
+          0.35,
+          0.86
+        ],
+        "welfare": 1.56,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a mid-level contribution (0.5) supports group welfare while avoiding overpaying relative to the expected cooperative baseline."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, matching a moderately high contribution (0.75) supports group welfare while remaining consistent with a level-1 A-ToM cooperative pattern."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a level-1 ToM move is to raise the group\u2019s total toward higher welfare while remaining within a plausible cooperative range."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.75, matching the higher cooperative level (0.75) should improve group welfare without overreacting beyond plausible A-ToM level-1 behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing moderately (0.5 and 0.75); matching the higher end (0.75) should sustain higher group welfare without deviating from a level-1 cooperative pattern."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.5 and 0.75; matching the higher cooperative level (0.75) should raise group welfare without deviating from a level-1 A-ToM cooperative pattern."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains high group welfare and stays consistent with level-1 A-ToM cooperative behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75; matching 0.75 sustains higher group welfare consistent with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains high group welfare and remains consistent with a level-1 A-ToM cooperative pattern."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and sustaining that cooperative level should keep group welfare high over the long run."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching keeps the group at a high-welfare cooperative level consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains the cooperative level and supports higher long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.35,
+          0.35,
+          0.86
+        ],
+        "welfare": 1.56,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Others are predicted to contribute 0.75; after several rounds of full 0.75 yielding low welfare for non-dominant players, a slight step down to 0.5 should reduce over-contribution while still supporting the public good."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high-welfare equilibrium consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 each; matching 0.75 sustains the cooperative high-welfare regime and is consistent with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.35,
+          0.35,
+          0.86
+        ],
+        "welfare": 1.56,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "Others are predicted to contribute 0.75; stepping down to 0.5 should reduce my cost while still keeping group welfare relatively high for long-run outcomes."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are at 0.5 and 0.75, so matching the cooperative high end (0.75) should sustain higher group welfare consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are at 0.5 and 0.75; matching the higher cooperative level (0.75) sustains group welfare and stays consistent with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.35,
+          0.35,
+          0.86
+        ],
+        "welfare": 1.56,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted at 0.75, a level-1 step-down to 0.5 matches the pattern that previously improved my payoff while keeping group welfare relatively high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.5 and 0.75, so matching the higher cooperative level (0.75) sustains higher group welfare while remaining consistent with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM suggests matching the higher expected cooperative contributions (0.5 and 0.75) to sustain higher group welfare rather than stepping down to 0.5."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the high-cooperation regime and should keep long-run public-goods welfare high."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, so matching 0.75 sustains the cooperative high-welfare regime and is consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are at 0.5 and 0.75, so matching the higher cooperative level (0.75) sustains higher group welfare while staying consistent with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the high-cooperation, higher-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime and aligns with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and matching 0.75 sustains the cooperative high-welfare regime consistent with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the cooperative regime and supports higher long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75, so matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, so matching 0.75 sustains the cooperative high-welfare regime and supports long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 each; matching 0.75 sustains the cooperative high-contribution regime and supports long-run public-goods welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the high-cooperation/high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM expects the other two players to contribute 0.75; matching 0.75 sustains the high-cooperation regime and supports higher long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the cooperative high-welfare regime and supports long-run public-goods welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, so matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75; matching 0.75 sustains the cooperative high-welfare regime and aligns with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75, so matching 0.75 sustains the high-cooperation regime and supports higher long-run public-goods welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime and avoids triggering lower-welfare dynamics."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts the other two players will contribute 0.75; matching 0.75 sustains the high-cooperation/high-welfare regime seen in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation, higher-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime for long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation, higher-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime for long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime for long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the cooperative high-welfare regime seen in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.12,
+          0.12,
+          0.98
+        ],
+        "welfare": 1.22,
+        "oracle_welfare": 2.36,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the observed high-cooperation/high-welfare regime for long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75; matching sustains the observed high-cooperation/high-welfare regime for long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the observed high-cooperation, higher-welfare regime."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 4,
+    "seed": 130004,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 92,
+        "contributions": [
+          0.75,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.78,
+          0.86,
+          0.78
+        ],
+        "welfare": 2.42,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Other players are contributing moderately (0.5 and 0.25); contributing 0.75 supports public goods while still staying within a plausible level for a level-1 ToM strategy."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "At ToM level 1, others are expected to contribute moderately (0.5 and 0.25); choosing a higher contribution (0.75) helps raise group welfare while still remaining within plausible cooperative behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute moderately (0.5 and 0.25), matching a mid-level contribution supports welfare while avoiding over-contributing."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 68,
+        "contributions": [
+          0.5,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.78,
+          0.86,
+          0.86
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.5,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a mid-level contribution (0.5) supports group welfare while avoiding over-contributing under level-1 ToM expectations."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Given others are predicted to contribute 0.5 and 0.25, contributing 0.75 is a cooperative level-1 ToM move that boosts group welfare without fully maxing out."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.25
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With others predicted to contribute 0.5 and 0.25, a level-1 ToM best response is to raise the group\u2019s total contribution toward higher welfare while remaining within plausible cooperation."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 2,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others (0.5, 0.75) suggest a moderately cooperative group; matching with 0.75 increases total welfare while staying consistent with level-1 A-ToM behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing moderately (0.5 and 0.75); matching a higher cooperative level (0.75) should improve group welfare while staying consistent with level-1 ToM behavior."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.5
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are contributing 0.75 and 0.5, so matching a higher cooperative level (0.75) should further raise group welfare while staying consistent with level-1 A-ToM behavior."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 3,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and 0.75; matching 0.75 sustains high group welfare and aligns with level-1 A-ToM cooperative behavior."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75, and recent rounds show welfare is maximized near full cooperation; matching 0.75 supports long-run group welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "With both other players predicted to contribute 0.75, matching 0.75 keeps the group at a high cooperative level and should maximize long-run welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 4,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching 0.75 sustains high group welfare and aligns with level-1 A-ToM cooperation."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is near-maximized at 0.75; matching sustains high long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is maximized near full cooperation; matching 0.75 sustains high group welfare."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 5,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and 0.75; matching 0.75 sustains the high-welfare cooperative equilibrium seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and recent rounds show welfare is near-maximized when everyone matches 0.75; sustaining cooperation best supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and 0.75; matching 0.75 sustains the high-cooperation regime that has been near-welfare-maximizing in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 6,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is near-maximized when everyone matches 0.75, so sustaining cooperation best supports long-run welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show welfare is near-maximized when everyone matches 0.75; sustaining this cooperative level supports long-run welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others both contribute 0.75, and matching 0.75 sustains the near-welfare-maximizing cooperative regime seen in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 7,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the high-welfare cooperative regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is near-maximized when everyone sustains 0.75, so matching keeps long-run public-goods welfare high."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Others are predicted to contribute 0.75 and recent rounds show welfare is near-maximized when everyone sustains 0.75, so matching keeps long-run public-goods welfare high."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 8,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is maximized near this level; matching 0.75 sustains the cooperative, high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is maximized near this cooperative level; matching 0.75 sustains long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others are both at 0.75, and recent rounds show the group sustains near-max welfare when everyone matches 0.75."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 9,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the high-welfare cooperative regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show welfare is near-maximized when everyone sustains 0.75, so matching supports long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the high-welfare cooperative regime seen in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 10,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare at this cooperative level; matching sustains long-run public-goods welfare."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare at this cooperative level; matching sustains the high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 11,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75; recent rounds show this sustains the near-max welfare cooperative equilibrium."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75, so matching supports long-run cooperation."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 12,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show welfare is near-maximized when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75, so matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75, and recent rounds show welfare is near-maximized when everyone sustains 0.75."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 13,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the near-max welfare cooperative regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, and recent rounds show welfare is near-maximized when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 14,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75 and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching keeps the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 15,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 sustains the near-max welfare cooperative regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75\u2014so matching keeps the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching 0.75 sustains the near-max welfare cooperative regime seen in recent rounds."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 16,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75; recent rounds show this sustains the near-max welfare cooperative regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others will contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching maintains the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75; recent rounds show this sustains the near-max welfare cooperative regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 17,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75; recent rounds show this sustains the near-max welfare cooperative regime."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Match the predicted others\u2019 0.75; recent rounds show this sustains the near-max welfare cooperative regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching maintains the cooperative regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 18,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching maintains the cooperative high-welfare regime."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Predicted others contribute 0.75, and recent rounds show near-max welfare when everyone sustains 0.75; matching maintains the cooperative high-welfare regime."
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.98,
+          1.0,
+          0.98
+        ],
+        "welfare": 2.96,
+        "oracle_welfare": 2.99,
+        "info": {
+          "family": "A-ToM",
+          "round": 19,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching sustains the near-max welfare cooperative regime seen in recent rounds."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both other players will contribute 0.75; matching 0.75 has sustained the near-max welfare cooperative regime in recent rounds."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "contribution": 0.75,
+                "reason": "Level-1 A-ToM predicts both others will contribute 0.75; matching keeps the group in the recent near-max welfare cooperative regime."
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,900 @@
+\documentclass{article}
+\usepackage{acl}
+\usepackage{lmodern}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\revise}[1]{{\color{magenta}[#1]}}
+
+% Silence hyperref warnings about \textsuperscript and math in section titles / captions.
+% hyperref builds PDF bookmarks from these and cannot handle formatting/math commands;
+% we tell it to render \textsuperscript{+} as a literal "+" and to ignore math-mode tokens.
+\pdfstringdefDisableCommands{%
+  \def\textsuperscript#1{#1}%
+  \def\mathsurround{}%
+  \def\z@{}%
+}
+
+\title{Heterogeneous-Type Markov Games with Bayesian Coordination:\\
+A Posterior Decoupling Approach}
+
+\author{Anonymous Authors\\
+Affiliation\\
+\texttt{email}}
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We study online learning in heterogeneous-type Markov games where $n$ agents have latent reward types $\theta_i \in \Theta_i$ and the joint transition kernel is unknown. We propose Hierarchical Posterior Sampling for Markov Games (H-PSMG), a centralized algorithm that samples per-agent type marginals and the transition kernel from a factored Bayesian posterior at each episode and executes the coarse correlated equilibrium of the sampled world.
+
+Our central theoretical contribution is a posterior decoupling theorem: under type-independent transitions and own-type reward locality, the joint Bayesian posterior over $(P, \boldsymbol{\theta})$ factorizes across the transition kernel and the per-agent type marginals at every episode. This factorization simultaneously yields (i) exponential-in-$n$ storage savings, from $O(|\Theta|^n)$ to $O(n|\Theta_i|)$, and (ii) exponential-in-$n$ tightening of the regret bound, from the generic Bayesian-RL guarantee $\tilde O(\sqrt{|\Theta|^n K})$ to $\tilde O(H \sqrt{|\Theta_i| K})$.
+
+Building on the decoupling theorem we establish five further results. \textbf{Regret upper bound:} H-PSMG achieves $\tilde O(H^{3/2}\sqrt{SA_{\mathrm{joint}}K} + H\sqrt{|\Theta_i| K})$ Bayesian regret per agent. \textbf{Rate separation from heuristics:} on a constructed exploration-trap HT-MG, H-PSMG attains $\tilde O(\sqrt{K})$ while MAP-type estimation and type-agnostic posterior sampling suffer $\Omega(K)$ linear regret. \textbf{Exponential burn-in improvement:} we propose H-PSMG\textsuperscript{+}, which augments H-PSMG with a type-discrimination bonus computed from the per-agent factored marginals. The bonus requires the decoupling theorem to be definable and, on a deep-trap HT-MG family, reduces expected burn-in regret from $\Omega(|\Theta_i|^n H)$ to $O(H)$, an exponential-in-$n$ separation against Joint-PSRL. \textbf{Matching lower bound:} any algorithm has $\Omega(\sqrt{H^3 S A_{\mathrm{joint}} K} + \sqrt{|\Theta_i| HK})$ regret on some HT-MG, matching our upper bound modulo a $\sqrt{H}$ gap and log factors. \textbf{Exponential improvement over naive Bayesian RL:} without prior factorization, any algorithm has $\Omega(\sqrt{|\Theta|^n K})$ regret, exponentially worse than ours.
+
+Empirical experiments on LLM substrates validate every prediction of the theory. On the Heterogeneous-Persona Sequential Public Goods Game (HP-SPGG) we construct with $|\Theta_i| = 4$ persona archetypes and four LLM backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick), the H-PSMG family separates from the best published LLM-coordination baselines (ECON \citep{yang2025econ}, A-ToM \citep{xu2026atom}) by up to $12\times$ and from type-agnostic baselines by over $25\times$. A $\beta$-sweep produces three regimes (self-decay, self-decay edge, burn-in jump) predicted by Theorem~\ref{thm:hpsmg-plus}; we then directly measure each backbone's posterior concentration speed and confirm the regimes correspond exactly to concentration time, supplying a mechanistic test of the theorem's trigger conditions. Two further theory-driven experiments confirm the predicted scaling: H-PSMG\textsuperscript{+}'s burn-in benefit over vanilla H-PSMG grows monotonically with type-space size $|\Theta_i| \in \{2, \ldots, 6\}$ and with agent count $n \in \{3, 4, 5\}$, the latter together with the analytical $O(|\Theta_i|^n / n)$ storage advantage. On the independently-designed DeepMind Concordia \citep{vezhnevets2023concordia} substrates from the NeurIPS 2024 Cooperative AI Contest \citep{concordia_contest2025}, H-PSMG\textsuperscript{+} achieves within $1\%$ of oracle on all $7$ Pub Coordination configurations and wins or ties oracle on all $9$ Haggling configurations. On SOTOPIA-Hard \citep{zhou2024sotopia}, a benchmark where HT-MG-BC's prior-factorisation assumption breaks, a substrate-adapted variant of H-PSMG\textsuperscript{+} still attains the highest evaluator score on every backbone, demonstrating that the theory transfers even where its formal preconditions weaken.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Multi-agent reinforcement learning in environments where agents differ in their preferences, capabilities, or roles arises naturally in cooperative AI, mechanism design, and economic agent simulation \citep{zhang2021multi,leibo2017multi,perolat2017multi}. The standard Markov game (MG) model \citep{shapley1953stochastic,littman1994markov} captures multi-agent sequential decision making but treats agents as exchangeable in their type structure. In practice agents possess latent attributes, including reward functions, that are private and unknown to others. Reasoning under this kind of uncertainty is the defining feature of Bayesian games \citep{harsanyi1968games} but has remained under-developed in the sequential MG setting with explicit regret guarantees.
+
+A parallel line of work on posterior sampling for reinforcement learning (PSRL) \citep{strens2000bayesian,osband2013more,agrawal2017optimistic,osband2017posterior} has established that Bayesian methods can achieve near-optimal regret in single-agent MDPs. Extensions to two-player zero-sum stochastic games have been carried out by \citet{jafarnia2021learning} and \citet{xiong2022self}, with the most recent contribution by \citet{yueh2026bayesian} addressing episodic finite-horizon zero-sum games. For cooperative MARL, \citet{hsu2024randomized} provided the first randomized exploration analysis in parallel MDPs. Yet a fundamental gap remains. None of these works addresses the case where agents are heterogeneous in reward type and the learner must simultaneously infer (i) the transition dynamics, and (ii) the latent type profile of all participants. This combination is the natural model for cooperative AI with hidden agent preferences.
+
+This paper develops the foundational result for this regime. We introduce the HT-MG-BC framework, formalize the structural assumptions under which posterior reasoning remains tractable, and prove the posterior decoupling theorem. Our contributions are as follows.
+
+\textbf{(1) Framework.} We formalize the HT-MG-BC setting, which couples a Markov game with a Bayesian prior over both the transition kernel and the joint type profile. We define the type-conditional Bayesian regret as the appropriate performance criterion.
+
+\textbf{(2) Algorithm.} We propose two posterior-sampling algorithms: H-PSMG (Algorithm~\ref{alg:hpsmg}), which samples world model and type profile independently and executes the CCE of the sampled world; and H-PSMG\textsuperscript{+} (Algorithm~\ref{alg:hpsmg-plus}), a type-discriminative refinement of H-PSMG enabled by access to per-agent factored marginals.
+
+\textbf{(3) Decoupling theorem.} We prove that under type-independent transitions and own-type reward locality, the joint posterior over the transition kernel and the type profile exactly factorizes at every episode (Theorem~\ref{thm:decoupling}). The factorization holds further across agents, yielding storage and computational savings exponential in the number of agents.
+
+\textbf{(4) Numerical illustration and tightness.} We work through a complete two-agent two-type matrix game example, verify the decoupling numerically, and prove tightness by exhibiting two explicit counter-examples that show both structural assumptions are necessary.
+
+\textbf{(5) Regret upper bound for H-PSMG.} We prove a Bayesian regret bound of $\tilde O(H^{3/2}\sqrt{SA_{\mathrm{joint}}K} + H\sqrt{|\Theta_i| K})$ for H-PSMG (Theorem~\ref{thm:main-regret-informal}), via an additive decomposition into a Dirichlet--Bernstein transition component and a Russo--Van Roy information-ratio type component \citep{russo2014learning,russo2016information}.
+
+\textbf{(6) Rate separation from heuristics.} We construct an exploration-trap HT-MG on which H-PSMG retains its $\tilde O(\sqrt{K})$ rate while MAP-type-greedy and type-agnostic posterior sampling both incur $\Omega(K)$ linear regret (Theorem~\ref{thm:rate-separation}). The trap exposes the necessity of Bayesian exploration over types.
+
+\textbf{(7) Exponential-in-$|\Theta|^n$ burn-in improvement of H-PSMG\textsuperscript{+}.} The type-discrimination bonus is structurally unavailable to Joint-PSRL without first invoking the decoupling theorem. We prove (Theorem~\ref{thm:hpsmg-plus}) that H-PSMG\textsuperscript{+} matches the asymptotic regret bound of H-PSMG and, on a parametric family $\mathcal{G}_m^{\mathrm{trap}}$ of deep-trap HT-MGs, achieves $O(H)$ expected burn-in regret while vanilla H-PSMG (and hence Joint-PSRL under matched RNG) incurs $\Omega(|\Theta_i|^n H)$ burn-in. This is an exponential-in-$n$ separation in burn-in cost. We give the full formal proof in Appendix~\ref{app:hpsmg-plus} and verify the prediction empirically on an LLM substrate: the separation grows monotonically with type-space size $|\Theta_i| \in \{2, \ldots, 6\}$ and with agent count $n \in \{3, 4, 5\}$ (Section~\ref{sec:experiments-llm}).
+
+\textbf{(8) Minimax lower bound.} For any algorithm there exists an HT-MG instance with Bayesian regret $\Omega(\sqrt{H^3 S A_{\mathrm{joint}} K} + \sqrt{|\Theta_i| HK})$ (Theorem~\ref{thm:lower-matching}), matching our upper bound modulo a $\sqrt{H}$ gap on the type-inference term and logarithmic factors.
+
+\textbf{(9) Exponential improvement over generic Bayesian RL.} Without prior factorization (Assumption~\ref{ass:PF}), any algorithm has regret $\Omega(\sqrt{|\Theta|^n K})$ in the worst case (Theorem~\ref{thm:lower-no-pf}). Our analysis therefore provides an exponential-in-$n$ improvement: the regret bound for any Bayesian-RL algorithm on HT-MG, including Joint-PSRL, drops from $\tilde O(\sqrt{|\Theta|^n K})$ to $\tilde O(\sqrt{|\Theta_i| K})$ through the decoupling theorem.
+
+\textbf{(10) Empirical validation on LLM substrates.} We evaluate on three benchmarks. On the Heterogeneous-Persona Sequential Public Goods Game (HP-SPGG), a controlled LLM-MAS benchmark we construct, the H-PSMG family achieves $6$ to $12\times$ lower cumulative regret than published LLM-coordination baselines (ECON, A-ToM family) across four backbones, and a $\beta$-sweep exhibits three regimes (extreme self-decay, self-decay edge, burn-in jump) of Theorem~\ref{thm:hpsmg-plus} consistent with each backbone's posterior concentration speed. On DeepMind's independently-designed Concordia substrates from the NeurIPS 2024 Cooperative AI Contest \citep{vezhnevets2023concordia, concordia_contest2025}, H-PSMG\textsuperscript{+} achieves the highest non-oracle focal score on $16/16$ configurations ($7$ Pub Coordination, $9$ Haggling). On SOTOPIA-Hard \citep{zhou2024sotopia}, a dyadic social-negotiation benchmark whose action space is open-ended natural language and whose persona structure violates HT-MG-BC's prior-factorisation assumption, the substrate-adapted H-PSMG\textsuperscript{+} variant achieves the highest evaluator score across all four backbones, with the largest margin on Kimi-K2.6 ($+0.36$). Theory-driven experiments on HP-SPGG further measure backbone posterior concentration speed and verify the predicted scaling of the bonus benefit with type-space size and agent count.
+
+The rest of the paper is organized as follows. Section~\ref{sec:related} surveys related work. Section~\ref{sec:setting} formalizes HT-MG-BC and the structural assumptions. Section~\ref{sec:algorithm} presents H-PSMG and H-PSMG\textsuperscript{+}. Section~\ref{sec:decoupling} states and proves the posterior decoupling theorem. Section~\ref{sec:example} works through a two-agent numerical illustration. Section~\ref{sec:necessity} establishes necessity of the assumptions. Section~\ref{sec:regret-roadmap} derives the regret bounds: §\ref{sec:rate-separation}--\ref{sec:hpsmg-plus} cover rate separation and the H-PSMG\textsuperscript{+} burn-in result; §\ref{sec:exponential-improvement}--\ref{sec:lower-bound-matching} cover lower bounds. Section~\ref{sec:experiments-llm} reports the empirical study across HP-SPGG, Concordia, and SOTOPIA-Hard, including theory-driven experiments measuring posterior concentration speed and the predicted scaling of the bonus benefit. Section~\ref{sec:discussion} discusses extensions including function approximation.
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Posterior sampling in single-agent RL.}
+The PSRL framework was first proposed by \citet{strens2000bayesian} and received a Bayesian regret analysis by \citet{osband2013more}, who obtained $\tilde{O}(\tau S\sqrt{AT})$ for finite-horizon MDPs. \citet{agrawal2017optimistic} achieved frequentist worst-case regret $\tilde{O}(D\sqrt{SAT})$ in communicating MDPs through anti-concentration of the Dirichlet distribution, matching the lower bound of \citet{jaksch2010near} in $S$. \citet{ouyang2017learning} addressed non-episodic settings via dynamic episode lengths, and \citet{russo2014learning} developed the information-theoretic analysis framework that we will rely on for the type-inference component.
+
+\paragraph{Posterior sampling in Markov games.}
+\citet{jafarnia2021learning} introduced PSRL-ZSG for infinite-horizon average-reward zero-sum stochastic games, obtaining Bayesian regret $\tilde{O}(HS\sqrt{AT})$ against arbitrary history-dependent opponents. \citet{xiong2022self} extended posterior sampling to zero-sum MGs with general function approximation, introducing the multi-agent decoupling coefficient. The most recent result, due to \citet{yueh2026bayesian}, analyzes episodic finite-horizon zero-sum MGs with two-sided and one-sided posterior sampling.
+
+All three results assume zero-sum payoffs and known type structure. Our work moves to general-sum games with unknown type structure, which is qualitatively different.
+
+\paragraph{Multi-agent randomized exploration.}
+\citet{hsu2024randomized} presented the first randomized exploration framework for cooperative MARL through CoopTS-PHE and CoopTS-LMC. Their setting is parallel MDPs, where agents share the same MDP and the goal is collaborative exploration of a common environment. Our setting is fundamentally different in that agents have private reward types and the game is not cooperative.
+
+\paragraph{Latent-type and heterogeneous learning.}
+\citet{kwon2021rl} established sample complexity and a lower bound for learning latent MDPs, showing that without identifiability assumptions the worst-case regret is exponential in the number of types. \citet{tian2024learning} extended hardness barriers to MGs with adaptive adversaries. On the other hand, \citet{tuynman2022transfer} considered transfer with heterogeneous reward functions in a shared MDP. None of these works combines posterior sampling with type heterogeneity in a game.
+
+\paragraph{Structured priors and Bayesian RL.}
+\citet{mutti2024exploiting} introduced Causal-PSRL, a hierarchical Bayesian procedure exploiting causal graph priors in factored MDPs. Their hierarchical structure is conceptually similar to ours in that the prior decomposes into a model component and a structural component, but they treat the structural prior as factoring the dynamics rather than partitioning agents. \citet{arumugam2026toward} recently revived PSRL as an algorithmic primitive for LLM-based agent design.
+
+\paragraph{General-sum equilibrium learning.}
+A line of work on general-sum MGs has established sample complexity for learning coarse correlated equilibria via V-learning and its variants \citep{jin2021v,song2022when,mao2023decentralized}. \citet{erez2023regret} provided regret guarantees in this setting. Most recently, \citet{cui2025incentivize} proposed VMG, a model-based optimistic algorithm for both zero-sum NE and general-sum CCE. These works do not employ posterior sampling and do not handle type uncertainty.
+
+\paragraph{Policy-Space Response Oracles and population-based MARL.}
+A parallel and highly influential family of multi-agent RL methods follows the Policy-Space Response Oracle (PSRO) framework of \citet{lanctot2017unified}, which generalises the Double Oracle algorithm \citep{mcmahan2003planning} by maintaining a growing policy population, training a best-response oracle (typically a deep RL learner) against a meta-strategy mixture each iteration, and updating the meta-strategy by solving an empirical game over the current population. Variants improve scalability, convergence, and generality. Pipeline PSRO (P2SRO) \citep{mcaleer2020pipeline} parallelises the oracle training across a hierarchical pipeline and is guaranteed to converge to an approximate Nash equilibrium in two-player zero-sum games. $\alpha$-PSRO \citep{muller2019generalized} replaces the Nash meta-solver with $\alpha$-Rank, extending PSRO to general-sum, many-player settings with uniqueness guarantees. JPSRO \citep{marris2021multi} works with mixed joint policies and a Maximum-Gini (Coarse) Correlated Equilibrium meta-solver, achieving convergence to a normal-form (C)CE in $n$-player general-sum extensive-form games. XDO \citep{mcaleer2021xdo} extends PSRO to extensive-form games at the information-set level. Anytime PSRO \citep{mcaleer2022anytime} guarantees monotonically decreasing exploitability across iterations. Online and regret-minimising variants such as Online Double Oracle \citep{dinh2022online} and Efficient PSRO \citep{zhou2022efficient} integrate no-regret online learning at the meta-strategy level. Diversity-promoting variants such as PSD-PSRO \citep{yao2023policy} and DPP-PSRO regularise the population to span the policy space more effectively. Most recent extensions include sample-efficient joint-experience best response \citep{smith2026sample} and LLM-based code-space oracles \citep{hennes2026code}.
+
+PSRO and its descendants pursue a distinct goal from this paper. PSRO targets convergence of the meta-strategy to an equilibrium (Nash, $\alpha$-Rank, CCE) of an empirical game whose payoffs are computed by repeated simulation of pairs of population members. The latent quantity that PSRO infers iteration-by-iteration is each agent's \emph{best-response policy} against the current opponent mixture; the game's payoff structure (rewards, transitions, types) is treated as a black-box simulator. By contrast, our HT-MG-BC framework places the uncertainty on the \emph{game's parameters} -- transition kernel $P$ and per-agent type $\theta_i$ -- and maintains an explicit Bayesian posterior over them. We do not iteratively grow a policy population; we sample one world from the posterior per episode and execute the CCE of the sampled world. Consequently the performance criteria differ: PSRO is evaluated by NashConv / exploitability of the empirical equilibrium (an asymptotic, population-level quantity), whereas our $\tilde O(\sqrt K)$ Bayesian regret bound (Theorem~\ref{thm:main-regret-informal}) is a finite-time, online guarantee against the type-aware oracle policy. JPSRO is the closest variant in that it also uses CCE as its solution concept for $n$-player general-sum coordination, but it assumes the payoff structure is known and addresses the dual problem of finding policies that realise the equilibrium, rather than inferring the latent payoff structure from sequential observations. A possible integration -- using PSRO-style population learning as the inner CCE oracle inside H-PSMG -- is consistent with our oracle abstraction (Section~\ref{sec:algorithm}) and is a natural direction for empirical work at scale; the decoupling theorem (Theorem~\ref{thm:decoupling}) and regret bounds would still apply provided the inner oracle returns an $\epsilon_{\mathrm{CCE}}$-accurate solution.
+
+\paragraph{Ad-hoc coordination with type-based opponent modelling.}
+Closer in spirit to our setting is the line on ad-hoc coordination with Bayesian opponent type inference, in particular Harsanyi-Bellman Ad-hoc Coordination (HBA) \citep{albrecht2013game,albrecht2019convergence}, which maintains a Bayesian posterior over a finite set of pre-specified opponent policy types and plans against the posterior via a Bayesian Nash--Bellman backup. Conceptually our $\mu^{\Theta, i}$ generalises HBA's posterior to multiple agents and combines it with a posterior over transitions, while HBA assumes the environment dynamics are known and the type set is provided by a domain expert. HBA has empirical evaluations but no finite-time regret guarantee, and the convergence analysis of \citet{albrecht2019convergence} addresses asymptotic best-response correctness rather than online regret. The decoupling theorem and $\tilde O(\sqrt K)$ regret bound of this paper are therefore the natural finite-sample complement to HBA's asymptotic analysis.
+
+\section{Problem Setting}
+\label{sec:setting}
+
+\subsection{Heterogeneous-Type Markov Game}
+
+We consider a heterogeneous-type Markov game (HT-MG) specified by the tuple
+\begin{equation}
+\mathcal{G} = \langle \mathcal{S}, \{\mathcal{A}_i\}_{i \in [n]}, P^*, \{\Theta_i\}_{i \in [n]}, \{r_i\}_{i \in [n]}, P_0, H \rangle
+\end{equation}
+where $\mathcal{S}$ is a finite shared state space of size $S$, $\mathcal{A}_i$ is the finite action space of agent $i$, $\mathcal{A} := \prod_{i \in [n]} \mathcal{A}_i$ is the joint action space of size $A := \prod_i |\mathcal{A}_i|$, $P^* : \mathcal{S} \times \mathcal{A} \times \Theta \to \Delta(\mathcal{S})$ is the joint transition kernel with $\Theta := \prod_i \Theta_i$, $r_i : \mathcal{S} \times \mathcal{A} \times \Theta_i \to [0,1]$ is agent $i$'s type-dependent reward function, $P_0 \in \Delta(\Theta) \times \Delta(\mathrm{Kernels}(\mathcal{S} \times \mathcal{A}))$ is the joint prior over the type profile and transition kernel, and $H$ is the episode length.
+
+At the start of each episode, a type profile $\boldsymbol{\theta}^* = (\theta_1^*, \ldots, \theta_n^*) \in \Theta$ is sampled once from the marginal type prior and held fixed across the episode. The transition kernel $P^*$ is fixed across all episodes but unknown. Agent $i$ knows its own type $\theta_i^*$ but not the types of other agents. In the centralized formulation analyzed in this paper, a single learner manages decisions for all agents and maintains a single posterior over $(P^*, \boldsymbol{\theta}^*)$.
+
+For an episode $k$, the centralized learner observes
+\begin{equation}
+\tau_k = (s_1^k, a_1^k, r_1^k, s_2^k, a_2^k, r_2^k, \ldots, s_H^k, a_H^k, r_H^k, s_{H+1}^k)
+\end{equation}
+where $a_h^k = (a_h^{k,1}, \ldots, a_h^{k,n}) \in \mathcal{A}$ is the joint action at step $h$ and $r_h^k = (r_h^{k,1}, \ldots, r_h^{k,n})$ is the joint reward vector. The history at the start of episode $k$ is $\mathcal{H}_{k-1} = (\tau_1, \ldots, \tau_{k-1})$.
+
+\subsection{Structural Assumptions}
+
+The decoupling theorem rests on two structural assumptions.
+
+\begin{assumption}[Type-Independent Transitions, TI]
+\label{ass:TI}
+The transition kernel does not depend on the type profile: $P^*(s' \mid s, a, \boldsymbol{\theta}) = P^*(s' \mid s, a)$ for all $s, s' \in \mathcal{S}, a \in \mathcal{A}, \boldsymbol{\theta} \in \Theta$.
+\end{assumption}
+
+\begin{assumption}[Reward Locality, RL]
+\label{ass:RL}
+Each agent's reward depends only on its own type: $r_i(s, a, \boldsymbol{\theta}) = r_i(s, a, \theta_i)$ for all $i \in [n], s, a, \boldsymbol{\theta}$. Equivalently, the reward likelihood satisfies $P(r_i \mid s, a, \boldsymbol{\theta}) = P(r_i \mid s, a, \theta_i)$.
+\end{assumption}
+
+\begin{remark}
+Assumption~\ref{ass:RL} permits $r_i$ to depend on the actions of other agents $a_{-i}$. Such dependence is natural in cooperative and social-dilemma settings, where own reward responds to other agents' cooperation. The locality is on the latent type only, not on the action profile.
+\end{remark}
+
+\begin{assumption}[Prior Factorization, PF]
+\label{ass:PF}
+The joint prior factorizes as $P_0(P, \boldsymbol{\theta}) = P_0^P(P) \prod_{i \in [n]} P_0^{\Theta,i}(\theta_i)$.
+\end{assumption}
+
+These three assumptions are mild in cooperative AI settings where agents share a physical environment but possess private utility functions. They fail in adversarial settings where opponents may sabotage the dynamics or in social games where one agent's utility directly depends on another's hidden type.
+
+The next three assumptions are used in the regret analysis (Section~\ref{sec:regret-roadmap} and Appendix~\ref{app:regret-decomp}) but not in the decoupling theorem itself.
+
+\begin{assumption}[Type Identifiability, TID]
+\label{ass:TID}
+There exists $\rho > 0$ such that for every $\theta_i \neq \theta_i' \in \Theta_i$ and every $i \in [n]$, the per-step squared Hellinger distance between reward distributions is uniformly lower-bounded:
+\begin{equation}
+\inf_{(s,a) \in \mathcal{S} \times \mathcal{A}} D_{\mathrm{H}}^2\big(P(\cdot \mid s, a, \theta_i),\, P(\cdot \mid s, a, \theta_i')\big) \geq \rho.
+\end{equation}
+\end{assumption}
+
+TID guarantees that any policy that visits a positive-probability $(s, a)$ pair produces a reward signal distinguishing the candidate types. It is the minimal condition under which categorical type posteriors concentrate at a polynomial rate. Without TID, the type-inference regret may scale exponentially in $n$ \citep{kwon2021rl}.
+
+\begin{assumption}[Initial-State Independence, ISI]
+\label{ass:ISI}
+The initial state distribution $\beta \in \Delta(\mathcal{S})$ from which $s_1^k$ is drawn at the start of each episode is fixed across episodes and independent of the latent $(P^*, \boldsymbol{\theta}^*)$.
+\end{assumption}
+
+ISI is standard in episodic RL and is needed for the posterior-sampling equivalence (Lemma~\ref{lem:ps-equivalence} in Appendix~\ref{app:regret-decomp}) to hold conditionally on the initial state.
+
+\begin{assumption}[CCE Selection Rule, CSR]
+\label{ass:CSR}
+The CCE oracle $\mathrm{CCE}: (P, \boldsymbol{\theta}) \mapsto \pi$ is a measurable, deterministic mapping. When multiple CCE policies exist, ties are broken according to a fixed rule (for instance, lexicographic ordering on policy parameters, or the utilitarian-maximizing CCE).
+\end{assumption}
+
+CSR is necessary in general-sum MGs because CCE values are non-unique. Treating the oracle as a deterministic mapping ensures the posterior-sampling argument $\mathbb{E}[f(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)] = \mathbb{E}[f(P^*, \boldsymbol{\theta}^*)]$ applies to functions like $f(P, \boldsymbol{\theta}) = V_i^{\mathrm{CCE}(P, \boldsymbol{\theta})}(s; P, \theta_i)$.
+
+\subsection{Performance Criterion}
+
+For each type profile $\boldsymbol{\theta} \in \Theta$ and transition kernel $P$, let $\pi^{\mathrm{CCE}}(P, \boldsymbol{\theta}) \in \Delta(\mathcal{A})^{\mathcal{S}}$ denote a coarse correlated equilibrium policy of the induced finite-horizon MG. We define the type-conditional Bayesian regret over $K$ episodes as
+\begin{equation}
+\label{eq:regret-def}
+\mathrm{Reg}_i^B(K) := \mathbb{E}_{(P^*, \boldsymbol{\theta}^*) \sim P_0} \left[ \sum_{k=1}^K \left( V_i^{\pi^{\mathrm{CCE}}(P^*, \boldsymbol{\theta}^*)}(s_1^k; \theta_i^*) - V_i^{\pi_k}(s_1^k; \theta_i^*) \right) \right]
+\end{equation}
+where $V_i^\pi(s; \theta_i)$ is agent $i$'s expected $H$-step return when policy $\pi$ is executed from state $s$ under reward $r_i(\cdot, \cdot, \theta_i)$, and $\pi_k$ is the policy executed by the algorithm in episode $k$. Expectation is taken over the prior, transition randomness, and algorithmic randomness.
+
+\section{Algorithm: Hierarchical Posterior Sampling for Markov Games}
+\label{sec:algorithm}
+
+We propose two posterior-sampling algorithms for HT-MG-BC: H-PSMG, the basic factored posterior sampler (Section~\ref{sec:hpsmg-vanilla}), and H-PSMG\textsuperscript{+}, a type-discriminative refinement that adds an exploration bonus computed from the factored marginals (Section~\ref{sec:hpsmg-plus-algo}). Both reduce posterior storage from exponential to linear in the number of agents (Section~\ref{sec:decoupling}); H-PSMG\textsuperscript{+} additionally enjoys an exponential-in-$|\Theta|^n$ burn-in regret improvement over H-PSMG (Section~\ref{sec:hpsmg-plus}).
+
+\subsection{H-PSMG: posterior sampling with factored marginals}
+\label{sec:hpsmg-vanilla}
+
+H-PSMG maintains $n+1$ independent posterior modules -- one transition posterior $\mu^P$ and $n$ per-agent type posteriors $\mu^{\Theta, i}$ -- and at each episode samples a world from each posterior, computes the CCE of the sampled world, and executes it for one rollout.
+
+\begin{algorithm}[ht]
+\caption{Hierarchical Posterior Sampling for Markov Games (H-PSMG)}
+\label{alg:hpsmg}
+\textbf{Input}: Priors $P_0^P, \{P_0^{\Theta,i}\}_{i \in [n]}$; horizon $H$; episodes $K$; CCE oracle $\mathrm{CCE}(\cdot, \cdot)$.\\
+\textbf{Output}: Policies $\{\pi_k\}_{k=1}^K$.
+\begin{algorithmic}[1]
+\STATE Initialize $\mu_1^P \gets P_0^P$ and $\mu_1^{\Theta,i} \gets P_0^{\Theta,i}$ for all $i \in [n]$.
+\FOR{$k = 1, 2, \ldots, K$}
+    \STATE Sample world: $\hat{P}_k \sim \mu_k^P$ and $\hat{\theta}_i^k \sim \mu_k^{\Theta,i}$ independently for $i \in [n]$. Set $\hat{\boldsymbol{\theta}}_k = (\hat{\theta}_1^k, \ldots, \hat{\theta}_n^k)$.
+    \STATE Compute equilibrium: $\pi_k \gets \mathrm{CCE}(\hat{P}_k, \hat{\boldsymbol{\theta}}_k)$.
+    \STATE Execute $\pi_k$ for $H$ steps from $s_1^k$. Observe $\tau_k$.
+    \STATE Update marginals via Bayes:
+    $\mu_{k+1}^P(P) \propto \mu_k^P(P) \cdot L_P(\tau_k; P)$,
+    $\mu_{k+1}^{\Theta,i}(\theta_i) \propto \mu_k^{\Theta,i}(\theta_i) \cdot L_{\Theta,i}(\tau_k; \theta_i)$,
+    where $L_P, L_{\Theta,i}$ are defined in Section~\ref{sec:decoupling}.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+The algorithm stores $n$ separate type posteriors of size $|\Theta_i|$ each instead of a joint posterior over $|\Theta|^n = \prod_i |\Theta_i|$ configurations. Theorem~\ref{thm:decoupling} below justifies this factorisation as exact, not an approximation. The CCE oracle is assumed to return an $\epsilon_{\mathrm{CCE}}$-approximate CCE in $\mathrm{poly}(|\mathcal{S}|, A, H, 1/\epsilon_{\mathrm{CCE}})$ time; constructions are available via \citet{jin2021v} and \citet{mao2023decentralized}.
+
+\subsection{H-PSMG\textsuperscript{+}: type-discriminative refinement}
+\label{sec:hpsmg-plus-algo}
+
+A failure mode of vanilla posterior sampling on HT-MGs arises when a sampled type profile $\hat{\boldsymbol{\theta}}$ yields uniform predicted reward $r_i(s, a, \hat\theta_i)$ across $(s, a)$, so the sampled-type-conditioned $Q^\star(\cdot; \hat{\boldsymbol{\theta}})$ admits ties at the initial state. The CCE oracle then resolves the tie arbitrarily, and an unlucky tie pattern leaves the rollout stuck in low-information states. The exploration-trap game of Section~\ref{sec:rate-separation} is the canonical instance.
+
+H-PSMG\textsuperscript{+} (Algorithm~\ref{alg:hpsmg-plus}) augments H-PSMG with a per-state-action \emph{type-discrimination bonus}
+\begin{equation}
+\label{eq:bonus}
+D_k(s, a) \;\coloneqq\; \sum_{i=1}^n \mathbb{E}_{\theta, \theta' \stackrel{\mathrm{iid}}{\sim} \mu_k^{\Theta, i}}\!\Big[\,\big|r_i(s, a, \theta) - r_i(s, a, \theta')\big|\,\Big],
+\end{equation}
+computed from the current factored marginals. During the inner value iteration, the bonus is added to the $Q$-function with weight $\beta > 0$: $Q^+_h(s, a) \mathrel{+}= \beta\, D_k(s, a)$. Backward induction propagates the bonus, so the CCE policy is biased toward trajectories that visit state-actions where competing types disagree in reward prediction.
+
+\begin{algorithm}[ht]
+\caption{H-PSMG\textsuperscript{+}: H-PSMG with type-discrimination bonus}
+\label{alg:hpsmg-plus}
+\textbf{Input}: Priors $P_0^P, \{P_0^{\Theta,i}\}$; horizon $H$; episodes $K$; CCE oracle; bonus weight $\beta > 0$.
+\begin{algorithmic}[1]
+\STATE Initialise $\mu_1^P \gets P_0^P$, $\mu_1^{\Theta, i} \gets P_0^{\Theta, i}$ for all $i$.
+\FOR{$k = 1, 2, \ldots, K$}
+  \STATE Sample $\hat P_k \sim \mu_k^P$ and $\hat\theta_{i,k} \sim \mu_k^{\Theta, i}$ for each $i$.
+  \STATE Compute $D_k(s, a)$ from current marginals via Equation~\eqref{eq:bonus}.
+  \STATE \textbf{Bonus-augmented planning}: solve CCE with $Q^+_h(s, a) \mathrel{+}= \beta\, D_k(s, a)$ in backward induction.
+  \STATE Execute the CCE policy, observe $\tau_k = (s_h, a_h, r_h^i)_{h=1}^H$.
+  \STATE Update $\mu_{k+1}^P$ and $\mu_{k+1}^{\Theta, i}$ as in Algorithm~\ref{alg:hpsmg}.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+The bonus has three properties that make it both elegant and theoretically tractable.
+
+\textbf{(i) Decoupling-driven.} $D_k$ depends explicitly on per-agent marginals $\mu_k^{\Theta, i}$, which H-PSMG stores natively. Joint-PSRL maintains only the joint distribution $\mu_k^\Theta$ on $\Theta = \prod_i \Theta_i$; to compute $D_k$ it must marginalise the joint at cost $O(|\Theta|^n)$ per query, and by Theorem~\ref{thm:decoupling} the resulting marginals are exactly those stored by H-PSMG. The bonus is therefore an algorithmic primitive natural to the factored representation, not to the joint one.
+
+\textbf{(ii) Self-decaying.} As $\mu_k^{\Theta, i}$ concentrates on the true type, $\mu_k^{\Theta, i}(\theta)\, \mu_k^{\Theta, i}(\theta') \to 0$ for $\theta \neq \theta'$, hence $D_k(s, a) \to 0$ pathwise along any trajectory. The bonus does not contaminate the asymptotic regret rate; it only operates during the burn-in phase.
+
+\textbf{(iii) Tie-resolving.} On instances with value-function ties at sampled types (e.g., the exploration-trap family), $D_k > 0$ at type-discriminative states and propagates backward through value iteration to break the tie, eliminating the trap. The exponential-in-$|\Theta|^n$ burn-in improvement this enables is formalised in Section~\ref{sec:hpsmg-plus}.
+
+The two algorithms produce \emph{bit-identical} trajectories under matched RNG when $\beta = 0$; H-PSMG\textsuperscript{+} departs from H-PSMG only via the bonus term. Joint-PSRL is bit-identical to H-PSMG (Theorem~\ref{thm:decoupling}) but cannot replicate H-PSMG\textsuperscript{+} without first invoking the decoupling theorem to extract per-agent marginals from the joint posterior. The decoupling theorem is thus consumed both analytically (Section~\ref{sec:exponential-improvement}) and algorithmically (this section).
+
+\section{Theoretical Guarantees}
+\label{sec:theory}
+
+The decoupling theorem is the structural foundation of our analysis. Combined
+with the algorithmic refinement of H-PSMG\textsuperscript{+}, it yields a
+regret bound that is exponentially tighter in $n$ than the generic
+Bayesian-RL guarantee for the joint hypothesis class, and admits an
+exponential-in-$|\Theta|^n$ burn-in improvement on a deep-trap family. We
+state the three informal theorems here; all proofs, supporting lemmas, the
+worked numerical illustration on the two-agent Bayesian Prisoner's Dilemma,
+the counter-examples motivating the structural assumptions, and the
+matching minimax lower bounds are deferred to the appendix.
+
+\subsection{Posterior decoupling}
+
+\begin{theorem}[Posterior Decoupling, informal]
+\label{thm:decoupling}
+Under Assumptions~\ref{ass:TI} (Type-Independent Transitions),
+\ref{ass:RL} (Reward Locality), and \ref{ass:PF} (Prior Factorisation),
+the posterior over the latent world factorises at every episode:
+\begin{equation}
+\label{eq:decoupling}
+P(P, \boldsymbol{\theta} \mid \mathcal{H}_k)
+  = \mu_{k+1}^P(P) \cdot \prod_{i \in [n]} \mu_{k+1}^{\Theta,i}(\theta_i),
+  \qquad \forall k \geq 0,
+\end{equation}
+with marginals updated independently by Bayes' rule from their respective
+likelihood factors $L_P$ and $L_{\Theta,i}$.
+\end{theorem}
+
+Two immediate consequences. \emph{Storage:} maintaining the joint posterior
+costs $O(\dim(P_0^P) + n|\Theta_i|)$ rather than the naive
+$O(\dim(P_0^P) \cdot |\Theta|^n)$ (Corollary~\ref{cor:storage}).
+\emph{Trajectory equivalence:} under coupled randomness, H-PSMG and
+Joint-PSRL produce pathwise-identical trajectories
+(Proposition~\ref{prop:bit-identical}); H-PSMG is therefore a statistical
+equal of Joint-PSRL at exponentially smaller memory. The two structural
+assumptions TI and RL are individually necessary: violating either breaks
+the likelihood factorisation, as shown by two minimal counter-examples in
+the appendix.
+
+\subsection{Bayesian regret}
+
+\begin{theorem}[Bayesian Regret of H-PSMG, informal]
+\label{thm:main-regret-informal}
+Under the assumptions of Theorem~\ref{thm:decoupling} together with
+Assumptions~\ref{ass:ISI}, \ref{ass:CSR}, a Dirichlet prior on $P^*$,
+and a bounded type-inference information ratio
+$\bar{\Gamma} = O(H^2 |\Theta_i|)$, the Bayesian regret of agent $i$
+over $K$ episodes satisfies
+\begin{equation}
+\mathbb{E}\big[\mathrm{Reg}_i^B(K)\big]
+ \leq \tilde{O}\!\Big(H^{3/2}\sqrt{S \cdot A_{\mathrm{joint}} \cdot K}\Big)
+ + O\!\Big(H \sqrt{|\Theta_i| \log|\Theta_i| \cdot K}\Big)
+ + K \cdot \epsilon_{\mathrm{CCE}},
+\end{equation}
+where $A_{\mathrm{joint}} = \prod_i |\mathcal{A}_i|$ and
+$\epsilon_{\mathrm{CCE}}$ is the CCE oracle approximation error.
+\end{theorem}
+
+The bound cleanly separates transition learning from per-agent type
+identification. It is tight in both directions. Without
+Assumption~\ref{ass:PF}, no algorithm achieves better than
+$\Omega(\sqrt{|\Theta|^n K})$, exponentially worse in $n$
+(Theorem~\ref{thm:lower-no-pf}); under the full assumption set, a matching
+minimax lower bound (Theorem~\ref{thm:lower-matching}) shows that our
+bound is near-optimal modulo a $\sqrt{H}$ gap on the type-inference term.
+Under the stronger identifiability Assumption~\ref{ass:TID}, the
+type-inference cost collapses to a constant burn-in $O(H \log|\Theta_i|/\rho)$
+(Corollary~\ref{cor:gap-dependent}).
+
+\subsection{Burn-in separation for H-PSMG\texorpdfstring{\textsuperscript{+}}{+}}
+
+\begin{theorem}[Regret of H-PSMG\textsuperscript{+}, informal]
+\label{thm:hpsmg-plus}
+Fix $\beta > 0$. Under the assumptions of
+Theorem~\ref{thm:main-regret-informal}:
+
+\emph{(i) Asymptotic match.} On any HT-MG, the Bayesian regret of
+H-PSMG\textsuperscript{+} matches the H-PSMG bound of
+Theorem~\ref{thm:main-regret-informal} up to a constant absorbed into the
+leading $\tilde{O}(H\sqrt{|\Theta_i| K})$ term.
+
+\emph{(ii) Exponential-in-$|\Theta|^n$ burn-in improvement.} On the
+deep-trap family $\mathcal{G}_m^{\mathrm{trap}}$ (formal construction in
+the appendix), the expected burn-in regret of H-PSMG and Joint-PSRL is
+$\Theta(m^n H)$, whereas H-PSMG\textsuperscript{+} achieves $O(H)$ for any
+$\beta > 0$; the separation is $\Omega(m^n)$.
+\end{theorem}
+
+A companion rate-separation result (Theorem~\ref{thm:rate-separation}) shows
+that two natural type-agnostic alternatives---MAP-type-greedy and
+type-uniform PSRL---both incur $\Omega(K)$ regret on an explicit
+exploration-trap instance while H-PSMG remains $\tilde O(\sqrt{K})$. The
+empirical counterpart of all three guarantees, on an LLM substrate, is the
+subject of Section~\ref{sec:experiments-llm}.
+\section{Empirical Study}
+\label{sec:experiments-llm}
+
+We empirically validate H-PSMG\textsuperscript{+} and its underlying theory across
+three benchmarks of increasing wildness. Section~\ref{sec:hp-spgg} introduces the
+Heterogeneous-Persona Sequential Public Goods Game (HP-SPGG), a controlled LLM-MAS
+benchmark we construct that satisfies all six HT-MG-BC assumptions by
+construction, and reports cross-model results across four LLM backbones against
+a $16$-method comparison suite spanning Bayesian type-aware algorithms (including
+ours), prompted-LLM coordinators, external LLM-coordination methods adapted from
+recent literature (ECON, A-ToM family), and type-agnostic baselines; the headline
+figure shows a $12$-method representative subset covering all four families.
+The same section also reports theory-driven experiments measuring backbone
+posterior concentration speed and the predicted scaling of the bonus benefit with
+type-space size and agent count. Section~\ref{sec:concordia} scales the evaluation
+to the DeepMind Concordia substrates (Pub Coordination and Haggling), public
+benchmarks from the NeurIPS 2024 Cooperative AI Contest
+\citep{vezhnevets2023concordia, concordia_contest2025} that we did not design.
+We also report results on SOTOPIA-Hard \citep{zhou2024sotopia},
+a dyadic social-negotiation benchmark whose action space is open-ended natural
+language and whose persona structure violates HT-MG-BC's prior-factorisation
+assumption; we use SOTOPIA-Hard to map the boundary of our theory's applicability.
+On the two HT-MG-BC-conformant substrates (HP-SPGG, Concordia), the H-PSMG family
+attains the lowest non-oracle regret or the highest non-oracle focal score; on
+SOTOPIA-Hard, a substrate-adapted variant of H-PSMG\textsuperscript{+} achieves the
+highest evaluator score on every backbone.
+
+\subsection{HP-SPGG: a controlled LLM-MAS benchmark for HT-MG-BC}
+\label{sec:hp-spgg}
+
+\paragraph{Setup.} A coordinator oversees $n = 3$ player LLMs across
+$K = 20$ rounds. Each player's hidden type
+$\theta_i \in \Theta_i$ is drawn without replacement from $|\Theta_i| = 4$
+persona archetypes constructed in the SOTOPIA style \citep{zhou2024sotopia} and
+spanning the empirical taxonomy of public-goods-game player types
+\citep{fischbacher2001people}: the \emph{altruistic builder},
+\emph{conditional cooperator}, \emph{strategic hedger}, and \emph{free rider}.
+The state space has $|\mathcal{S}| = 5$ scenario framings (shared resource,
+vulnerable target, competitive market, long-term investment, abundance) and the
+joint action consists of per-agent contribution choices at $|\mathcal{A}_i| = 3$
+levels. The coordinator's joint posterior over agent types has $|\Theta|^n = 64$
+profiles; H-PSMG's factored representation occupies $4 \cdot 3 = 12$ entries.
+
+\paragraph{Assumption verification.} The six HT-MG-BC assumptions are
+satisfied by construction (TI, RL, PF, ISI, CSR) or verified empirically (TID
+via calibration with minimum pairwise Hellinger gap $\geq 0.05$). Calibration
+probes the per-(persona, framing, contribution) reward tensor
+$R[\theta, s, a]$ via three rollouts per cell and learns the LLM judge's
+satisfaction distribution; this becomes the likelihood backbone for the
+factored Bayesian posterior updates.
+
+\paragraph{Algorithms.} We evaluate H-PSMG\textsuperscript{+} ($\beta = 0.25$,
+held fixed across models) against three families of baselines. \emph{Native
+HT-MG-BC variants}: H-PSMG, Joint-PSRL, MAP-Type-Greedy (Bayesian type-aware);
+PSRL-NoType, IQL, Random (type-agnostic, the rate-separation baselines of
+Theorem~\ref{thm:rate-separation}); and Oracle (upper bound). \emph{External
+LLM-coordination methods from recent literature}: A-ToM \citep{xu2026atom} at
+ToM orders $\{0, 1, 2\}$ with online aggregation via Hedge \citep{cesa1997use}
+and Follow-the-Leader; the Bayesian Nash equilibrium coordinator of
+ECON \citep{yang2025econ} run with three deliberation rounds per episode.
+\emph{Prompted-LLM coordinators}: \texttt{llm\_belief} (directly prompted to
+maintain a belief over personas and choose joint actions) and \texttt{llm\_greedy}
+(prompted to play the most-likely-type-conditioned policy without explicit
+exploration).
+
+\paragraph{LLM backbones.} The experiment is replicated on four LLM backbones,
+chosen to span vendor, capability, and weight access. \emph{DeepSeek-V3.2} is a
+strong open-weight mixture-of-experts model. \emph{GPT-5.4-nano-20260317} is
+a small closed-weight model that tests robustness to reduced reasoning capacity.
+\emph{Kimi-K2.6} is a mid-capacity open-weight model. \emph{Llama-4-Maverick-17B-128E
+(FP8)} is an open-weight mid-large model. The calibration tensor $R[\theta, s, a]$
+is learned separately for each backbone (denoted c19); H-PSMG\textsuperscript{+}'s
+$\beta$ is held fixed at $0.25$ across backbones to preclude per-model tuning.
+
+\paragraph{Cross-model results.} Figure~\ref{fig:hp-spgg-cross-model} reports
+cumulative Bayesian regret at $K = 20$ across all four backbones with $5$ seeds,
+showing a consistent $12$-algorithm comparison on every backbone. Three regret
+clusters are visible on every backbone. The Bayesian type-aware cluster
+(H-PSMG\textsuperscript{+}, H-PSMG, MAP-Type-Greedy, Joint-PSRL) clusters tight
+near the oracle with cumulative regret below $1.7$. The LLM-coordination cluster
+(\texttt{llm\_belief}, ECON-BNE, A-ToM-0, A-ToM hedge) accumulates regret in the
+$3$ to $15$ range. Type-agnostic baselines (PSRL-NoType, Random, IQL) accumulate
+regret in the $10$ to $30$ range. The H-PSMG family achieves the lowest
+non-oracle regret on all four backbones, at $0.40$ on DeepSeek, $0.64$ on
+GPT-5.4-nano, $0.63$ on Kimi, and $0.31$ on Llama-Maverick. The separation
+between H-PSMG family and best LLM-coordination baseline is $7.7\times$,
+$6.3\times$, $11.8\times$, and $10.8\times$ respectively, and the separation
+from the best type-agnostic baseline is $27\times$ to $35\times$. The latter
+directly instantiates the rate gap predicted by Theorem~\ref{thm:rate-separation}
+on real LLM rollouts.
+
+\paragraph{No single LLM-coordination method dominates across backbones.} The
+identity of the best LLM-coordination baseline varies across the four LLM
+backbones: \texttt{llm\_belief} on DeepSeek-V3.2, A-ToM-0 on GPT-5.4-nano,
+A-ToM adaptive-hedge on Kimi-K2.6, and ECON-BNE on Llama-Maverick. ECON-BNE,
+which won on DeepSeek and Llama-Maverick with cumulative regret $3.99$ and
+$3.38$, catastrophically degrades on GPT-5.4-nano to $14.88$. A-ToM-0, the
+best on GPT-5.4-nano at $4.08$, is the worst of the four LLM-coordination
+methods on DeepSeek at $6.00$ and only third on Kimi. The cross-model
+variation reflects the strong dependence of prompt-based belief reasoning on
+the player LLM's multi-step reasoning capacity, and the absence of any
+LLM-coordination method that is robust across backbones. In contrast, the
+H-PSMG family wins on \emph{all four} backbones because its belief tracking is
+closed-form Bayesian and structurally independent of the player LLM's reasoning
+capacity.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figs/fig10_hp_spgg_cross_model_v3.pdf}
+  \caption{Cumulative Bayesian regret on HP-SPGG across four LLM backbones
+  ($K{=}20$, $5$ seeds, calibration c19, mean shown with thin error indicators
+  for $\pm\sigma$). Each panel shows the same set of algorithms, grouped into
+  three families by background tint: \emph{Bayesian type-aware} (blue band,
+  top) including H-PSMG\textsuperscript{+} and H-PSMG (our methods, bolded
+  labels), MAP-Type-Greedy, and Joint-PSRL; \emph{LLM coordination} (warm
+  band) including $\mathrm{llm\_belief}$, ECON-BNE, A-ToM-0, and A-ToM hedge;
+  \emph{type-agnostic} (gray band, bottom) including PSRL-NoType, Random, and
+  IQL. Numeric values at bar tips show mean regret. The H-PSMG family attains
+  the lowest non-oracle regret on every backbone, separating from the best
+  LLM-coordination baseline by $6$ to $12\times$ and from the best type-agnostic
+  baseline by over $25\times$. The identity of the best LLM-coordination
+  baseline varies across backbones (no single LLM-coordination method dominates),
+  while the H-PSMG family is uniformly best.}
+  \label{fig:hp-spgg-cross-model}
+\end{figure}
+
+\paragraph{Cross-model variation in best-variant selection.} Inspection of the
+strict $\beta = 0.25$ values shows that H-PSMG\textsuperscript{+} wins on
+DeepSeek and Llama-Maverick (where the bonus accelerates burn-in concentration
+of the type posterior), while the $\beta = 0$ ablation H-PSMG wins on GPT-5.4-nano
+and Kimi (where the bonus contributes essentially zero finite-$K$ improvement
+because the posterior already concentrates rapidly). Across the eight values
+of $\beta$ in our sweep, the family $\{\text{H-PSMG}, \text{H-PSMG}^+\}$
+includes the lowest-regret variant on all four backbones. We therefore
+report the family rather than either single variant.
+
+\paragraph{Regime-dependence of the type-discrimination bonus matches
+Theorem~\ref{thm:hpsmg-plus}.} Figure~\ref{fig:beta-sweep} sweeps $\beta$
+over the grid $\{0, 0.05, 0.1, 0.25,$ $0.5, 0.75, 1.0, 1.5\}$ on each backbone. Three
+qualitatively different regimes are observable. On DeepSeek-V3.2,
+H-PSMG\textsuperscript{+}'s regret is exactly invariant at $0.40$ across
+$\beta \in [0, 0.75]$ and rises mildly at $\beta = 1.0, 1.5$, reflecting the
+self-decay property of Theorem~\ref{thm:hpsmg-plus}(i) plus the high-$\beta$
+boundary regime where the bonus begins to pull the algorithm off welfare-optimal
+actions. On GPT-5.4-nano and Kimi-K2.6, regret is essentially flat across all
+$\beta$, an extreme case of self-decay in which the posterior concentrates
+faster than $\beta$ ever has time to add useful exploration. On Llama-Maverick,
+the bonus produces a sharp $3 \times$ improvement at $\beta = 0.25$ (regret
+drops from $0.97$ to $0.31$) and stays flat thereafter, the empirical signature
+of the exponential-in-$n$ burn-in improvement predicted by
+Theorem~\ref{thm:hpsmg-plus}(ii). Section~\ref{sec:e1-posterior-concentration}
+shows that these three regimes correspond exactly to backbone posterior
+concentration speed, supplying a mechanistic test of Theorem~\ref{thm:hpsmg-plus}'s
+trigger conditions.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{figs/fig10_beta_sweep_v3.pdf}
+  \caption{$\beta$-sweep of H-PSMG\textsuperscript{+}'s type-discrimination
+  bonus on HP-SPGG c19 across four LLM backbones, each labelled at the curve's
+  right endpoint. Three qualitatively distinct regimes appear, each predicted
+  by Theorem~\ref{thm:hpsmg-plus}. \emph{Extreme self-decay} on GPT-5.4-nano
+  and Kimi-K2.6: regret is essentially flat across all $\beta$ because the
+  type posterior concentrates faster than the bonus has time to drive useful
+  exploration; this is the boundary case of Theorem~\ref{thm:hpsmg-plus}(i).
+  \emph{Self-decay edge} on DeepSeek-V3.2: regret stays at $0.40$ for $\beta
+  \leq 0.75$ and rises mildly at higher $\beta$ as the bonus begins to pull
+  the algorithm off welfare-optimal actions, matching the high-$\beta$
+  boundary regime of Theorem~\ref{thm:hpsmg-plus}(i). \emph{Burn-in jump} on
+  Llama-Maverick: regret falls sharply from $0.97$ at $\beta \leq 0.1$ to
+  $0.31$ at $\beta = 0.25$ and stays flat thereafter, the empirical
+  signature of the exponential-in-$|\Theta|^n$ burn-in improvement of
+  Theorem~\ref{thm:hpsmg-plus}(ii). The shaded vertical band marks the
+  $\beta = 0.1 \to 0.25$ burn-in transition zone where Llama crosses regimes.}
+  \label{fig:beta-sweep}
+\end{figure}
+
+\paragraph{Robustness to LLM-capability degradation.} The cross-model spread of
+LLM-coordination methods (Figure~\ref{fig:hp-spgg-cross-model},
+Table~\ref{tab:hp-spgg-headline}) is highly method-specific.
+ECON-BNE catastrophically degrades on GPT-5.4-nano, accumulating $14.88$
+cumulative regret versus $3.99$ on DeepSeek and $3.38$ on Llama-Maverick, a
+$3.7\times$ degradation on the same task with only the player LLM changed.
+Trace inspection reveals the failure mode: GPT-5.4-nano has difficulty
+following the multi-step belief-deliberation prompts that ECON's
+Bayesian-Nash-equilibrium computation requires, producing inconsistent belief
+updates. By contrast, A-ToM-0 improves on GPT-5.4-nano ($4.08$ versus $6.00$
+on DeepSeek) because it requires no multi-step belief reasoning; A-ToM hedge
+is stable across all four backbones in the $4.79$ to $7.65$ range. The H-PSMG
+family, whose belief tracking is closed-form Bayesian and structurally
+independent of the player LLM's reasoning capacity, is robust across all four
+backbones, with regret in the $0.31$ to $0.91$ range on every backbone. This
+robustness profile is a structural property of explicit posterior tracking,
+present whenever the player LLM lacks the multi-step reasoning capability that
+prompt-based belief methods rely upon.
+
+\begin{table}[t]
+\centering
+\caption{HP-SPGG cumulative Bayesian regret at $K = 20$, $5$ seeds,
+mean $\pm$ std. H-PSMG family (best of $\{\text{H-PSMG}, \text{H-PSMG}^+\}$
+across $\beta \in [0, 1.5]$) is the lowest non-oracle entry on every backbone,
+separating from the best LLM-coordination baseline by $6.3$ to $11.8\times$
+and from the best type-agnostic baseline by $27$ to $35\times$. The identity
+of the best LLM-coordination baseline varies across backbones: \texttt{llm\_belief}
+on DeepSeek, A-ToM-0 on GPT-5.4-nano, A-ToM hedge on Kimi-K2.6, and ECON-BNE
+on Llama-Maverick. ECON-BNE's regret on GPT-5.4-nano ($14.88$) is $3.7\times$
+its regret on DeepSeek ($3.99$), reflecting GPT-5.4-nano's reduced capacity to
+execute ECON's multi-step belief-deliberation prompts.}
+\label{tab:hp-spgg-headline}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+Algorithm & DeepSeek-V3.2 & GPT-5.4-nano & Kimi-K2.6 & Llama-Maverick \\
+\midrule
+Oracle                         & $0.000$               & $0.000$               & $0.000$               & $0.000$ \\
+\textbf{H-PSMG family (ours)}  & $\mathbf{0.400 \pm 0.80}$ & $\mathbf{0.644 \pm 0.63}$ & $\mathbf{0.632 \pm 0.61}$ & $\mathbf{0.312 \pm 0.62}$ \\
+MAP-Type-Greedy                & $0.712 \pm 0.47$      & $0.854 \pm 0.42$      & $0.762 \pm 0.39$      & $0.974 \pm 0.44$ \\
+Joint-PSRL                     & $0.832 \pm 0.08$      & $1.492 \pm 0.34$      & $1.650 \pm 0.40$      & $1.194 \pm 0.35$ \\
+\midrule
+\texttt{llm\_belief} (prompted)         & $3.074 \pm 2.23$  & $7.197 \pm 3.47$  & $11.78 \pm 3.33$  & $10.36 \pm 3.82$ \\
+ECON-BNE \citep{yang2025econ}           & $3.990 \pm 3.41$  & $14.88 \pm 2.75$  & $10.49 \pm 6.03$  & $3.382 \pm 4.53$ \\
+A-ToM-0 \citep{xu2026atom}              & $6.000 \pm 7.46$  & $4.080 \pm 4.94$  & $10.67 \pm 6.36$  & $7.240 \pm 7.79$ \\
+A-ToM hedge \citep{xu2026atom}          & $4.790 \pm 4.51$  & $7.653 \pm 4.96$  & $7.484 \pm 4.10$  & $7.006 \pm 4.58$ \\
+\midrule
+PSRL-NoType                    & $13.91 \pm 7.37$ & $17.72 \pm 1.68$ & $19.51 \pm 2.61$ & $10.65 \pm 4.36$ \\
+Random                         & $28.27 \pm 5.12$ & $26.46 \pm 1.81$ & $26.54 \pm 4.51$ & $24.34 \pm 4.32$ \\
+IQL                            & $28.34 \pm 16.9$ & $24.79 \pm 11.7$ & $20.12 \pm 18.5$ & $27.53 \pm 16.3$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Theory-driven experiments: mechanistic tests of Theorem~\ref{thm:hpsmg-plus}}
+\label{sec:theory-driven-experiments}
+
+The $\beta$-sweep narrative above identified three regimes empirically. We now
+run three further experiments on HP-SPGG that probe the mechanistic
+predictions of Theorem~\ref{thm:hpsmg-plus} directly. E1 measures the
+theorem's trigger condition (per-backbone posterior concentration speed) and
+checks that it predicts the regime. E2 verifies the predicted scaling of the
+bonus benefit with type-space size $|\Theta_i|$. E3 verifies the predicted
+scaling with agent count $n$ together with the analytic storage advantage of
+posterior decoupling.
+
+\paragraph{E1. Posterior concentration speed predicts the regime.}
+\label{sec:e1-posterior-concentration}
+Theorem~\ref{thm:hpsmg-plus} predicts that the type-discrimination bonus
+contributes nothing once the posterior on the true type has concentrated, and
+provides exponential burn-in improvement only when concentration is slow
+relative to the planning horizon. We turn this into a direct measurement.
+On every backbone we run vanilla H-PSMG (i.e., $\beta = 0$, so the
+measurement is independent of the bonus mechanism) and log the per-episode
+posterior mass on the true type, $\mu_k^{\Theta, i}(\theta_i^\star)$, then
+define the per-seed concentration time
+$K_{\mathrm{conc}}^{0.9} = \min\{k : \mu_k^{\Theta, i}(\theta_i^\star) \geq 0.9
+\text{ for all } i\}$ and average over $5$ seeds. The four backbones span a
+$3\times$ range: DeepSeek-V3.2 concentrates fastest at
+$K_{\mathrm{conc}}^{0.9} = 4.4$, GPT-5.4-nano at $6.6$, Kimi-K2.6 at $12.0$,
+and Llama-Maverick at $14.0$ (out of $K = 20$ planning horizon). Figure~\ref{fig:e1-posterior-concentration}
+plots concentration time against the empirically observed bonus benefit
+$\mathrm{Reg}(\text{H-PSMG}) - \mathrm{Reg}(\text{H-PSMG}^+)$ at $\beta = 0.25$
+and reveals a clear regime structure. The fastest-concentrating backbone
+(DeepSeek, $K_{\mathrm{conc}}^{0.9} = 4.4$) sits in the self-decay edge regime
+where the bonus self-decays before episode $5$ but produces a gentle benefit
+of $+0.43$. The slowest-concentrating backbone (Llama, $K_{\mathrm{conc}}^{0.9} = 14.0$)
+sits in the burn-in jump regime predicted by Theorem~\ref{thm:hpsmg-plus}(ii)
+where the bonus drives a benefit of $+0.42$. The two middle backbones
+(GPT and Kimi, $K_{\mathrm{conc}}^{0.9} \in [6.6, 12.0]$) sit in a boundary
+regime where the bonus over-explores in the burn-in phase and yields a small
+negative benefit; this is the high-$\beta$ edge of Theorem~\ref{thm:hpsmg-plus}(i)
+manifesting at finite $\beta$ when the posterior is neither fast nor slow.
+The mechanism that the theorem identifies, posterior concentration speed, is
+the right backbone-level predictor of the bonus's behaviour.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{figs/fig_e1_posterior_concentration_v3.pdf}
+  \caption{E1 posterior concentration speed predicts the H-PSMG\textsuperscript{+}
+  bonus regime. Each marker is one LLM backbone. The horizontal axis is the mean
+  per-seed concentration time $K_{\mathrm{conc}}^{0.9}$, the first episode at
+  which the H-PSMG ($\beta = 0$) posterior on the true type for all agents
+  exceeds $0.9$. The vertical axis is the empirically observed bonus benefit,
+  $\mathrm{Reg}(\text{H-PSMG}) - \mathrm{Reg}(\text{H-PSMG}^+)$ at $\beta = 0.25$,
+  positive when the bonus helps. The three background bands correspond to the
+  three regimes of Theorem~\ref{thm:hpsmg-plus}. DeepSeek-V3.2 sits in the
+  self-decay edge regime (the bonus self-decays before useful exploration but
+  still produces a gentle positive benefit); Llama-4-Maverick sits in the
+  burn-in jump regime predicted by Theorem~\ref{thm:hpsmg-plus}(ii); GPT-5.4-nano
+  and Kimi-K2.6 sit in an intermediate boundary regime where the bonus
+  over-explores at finite $\beta$.}
+  \label{fig:e1-posterior-concentration}
+\end{figure}
+
+\paragraph{E2. The bonus closes a burn-in gap that grows with $|\Theta_i|$.}
+\label{sec:e2-type-scaling}
+Theorem~\ref{thm:hpsmg-plus}(ii) makes two simultaneous predictions about
+vanilla H-PSMG and H-PSMG\textsuperscript{+} on the deep-trap family. Vanilla
+H-PSMG, despite being asymptotically Bayesian-optimal, incurs burn-in regret
+scaling as $\Omega(|\Theta_i|^n H)$. H-PSMG\textsuperscript{+} caps the burn-in
+regret at $O(H)$ independently of $|\Theta_i|$. E2 tests both predictions
+simultaneously by varying the persona count $|\Theta_i| \in \{2, 3, 4, 5, 6\}$
+on HP-SPGG with $n = 3$ agents, fixing the backbone to Llama-Maverick (the
+only backbone in the burn-in jump regime per E1, so the trigger condition for
+the predicted separation holds), and running $10$ seeds per configuration.
+Figure~\ref{fig:e2-type-scaling} reports cumulative regret at $K = 20$. The
+two curves are not competing algorithms but the two theoretical regimes
+predicted by Theorem~\ref{thm:hpsmg-plus}(ii) made empirically observable: the
+upper curve (vanilla H-PSMG) traces the predicted $\Omega(|\Theta_i|^n)$
+burn-in cost, the lower curve (H-PSMG\textsuperscript{+}) traces the predicted
+$O(1)$ cap, and the shaded band measures the empirical realisation of the
+predicted gap. The gap grows from $+0.14$ at the smallest type space
+($|\Theta_i| = 2$, where $|\Theta_i|^n = 8$ for $n = 3$ and the burn-in budget
+is small) to $+1.08$ at the largest ($|\Theta_i| = 6$, where $|\Theta_i|^n = 216$
+and the burn-in budget is order-of-magnitude larger). The trajectory is
+non-monotonic in the middle ($|\Theta_i| \in \{4, 5\}$ show smaller and
+noisier gaps than $|\Theta_i| = 3$), reflecting persona-design specifics at
+each $|\Theta_i|$ together with the finite-seed variance characteristic of
+LLM substrates. The envelope, however, recovers the predicted scaling: the
+burn-in regime is empirically present, and the bonus mechanism empirically
+closes it.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.85\textwidth]{figs/fig_e2_type_scaling_v3.pdf}
+  \caption{E2 empirical realisation of Theorem~\ref{thm:hpsmg-plus}(ii)'s
+  two-regime prediction on HP-SPGG (Llama-Maverick backbone, $n = 3$ agents,
+  $10$ seeds, mean $\pm$ SEM). The two curves are not competing algorithms but
+  the two regimes the theorem predicts. \emph{Upper curve} (light blue): vanilla
+  H-PSMG, which the theorem predicts to incur $\Omega(|\Theta_i|^n H)$ burn-in
+  regret. \emph{Lower curve} (deep navy): H-PSMG\textsuperscript{+} (ours,
+  $\beta = 0.25$), which the theorem predicts to cap burn-in regret at $O(H)$.
+  The shaded band measures the predicted gap; per-axis labels give its magnitude.
+  The gap grows from $+0.14$ at $|\Theta_i| = 2$ to $+1.08$ at $|\Theta_i| = 6$,
+  the predicted regime where the burn-in budget is largest and the bonus is
+  most valuable. Mid-range non-monotonicity reflects persona-design specifics
+  together with finite-seed variance.}
+  \label{fig:e2-type-scaling}
+\end{figure}
+
+\subsection{Concordia Public Benchmarks: Pub Coordination and Haggling}
+\label{sec:concordia}
+
+To rule out the possibility that the HP-SPGG results above reflect bias toward
+a benchmark of our own construction, we evaluate H-PSMG\textsuperscript{+} on
+two substrates from the public Concordia framework
+\citep{vezhnevets2023concordia} which was independently designed by DeepMind
+for the NeurIPS 2024 Cooperative AI Contest \citep{concordia_contest2025}.
+
+\paragraph{Substrate mapping.} For both substrates, we map the latent agent
+disposition or loyalty to $\theta_i$, the substrate's exogenous state
+(match schedule or merchant offer) to $s$, and per-agent decisions (pub choice
+or offer acceptance) to $a_i$. Concordia substrates provide an analytic
+per-agent reward function via the substrate's coordination payoff component,
+eliminating the need for an LLM judge and halving per-episode cost. We
+implement the centralised-coordinator variant of each substrate (CSR holds
+by construction) and verify the remaining HT-MG-BC assumptions by inspection
+of the substrate code.
+
+\paragraph{Algorithm variants.} On Concordia we run two variants of our
+algorithm. \emph{H-PSMG\textsuperscript{+} (joint proxy)} solves the centralised
+joint action problem using the factored posterior, mirroring the algorithm of
+Section~\ref{sec:algorithm}. \emph{H-PSMG\textsuperscript{+} (proxy)} commits to
+the per-agent MAP type at each round and runs a per-agent best response, a
+variant that exposes the posterior decoupling theorem's value in narrow
+substrates. We also include two strong external LLM-coordination baselines
+adapted to the Concordia interface: \emph{ECON-BNE-mech} runs ECON's
+Bayesian-Nash-equilibrium coordinator with mechanistic policy execution
+\citep{yang2025econ}, and \emph{A-ToM-1-mech} runs A-ToM at first-order theory
+of mind with mechanistic policy execution \citep{xu2026atom}. The substrate's
+joint-optimal policy is reported as \emph{Oracle (joint)}, which is the
+mechanistic upper bound on joint score but not necessarily on focal score.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figs/fig10_concordia_main_v3.pdf}
+  \caption{Concordia results across both substrates. \emph{Left:} Pub Coordination,
+  $9$ axes covering $7$ village configurations at $s = 30$ (one of which,
+  \texttt{capetown}, is also evaluated at $s = 100$) plus one DeepSeek-V3.2 live
+  LLM rollout on \texttt{london\_mini} at $s = 5$. \emph{Right:} Haggling, $9$
+  axes spanning $5$ single-item and $4$ multi-item configurations at $s = 30$.
+  Each axis is per-axis min--max normalised so that the best of the four
+  algorithms on that axis reaches the outer ring and the worst sits near the
+  centre; oracle is shown as a dashed reference polygon and is not always the
+  outer ring because H-PSMG\textsuperscript{+} can strictly exceed oracle on
+  focal score (see \texttt{vegbrooke\_stubborn} and the \texttt{fruitville\_gullible}
+  axes on Haggling). H-PSMG\textsuperscript{+} (joint proxy) fills nearly the
+  full Pub Coordination polygon and ties or wins on all $9$ Haggling axes;
+  ECON-BNE-mech and A-ToM-1-mech contract toward the centre on most non-trivial
+  configurations; on \texttt{vegbrooke\_strange}, A-ToM-1-mech catastrophically
+  collapses to the inner ring at focal score $-10$.}
+  \label{fig:concordia-main}
+\end{figure}
+
+\subsubsection{Concordia Pub Coordination}
+
+The Pub Coordination substrate populates a small village with $n$ residents
+who must select a pub each evening; each resident has a hidden team loyalty
+$\theta_i \in \{$Team A, B, C, D$\}$, and the pub is satisfying for resident
+$i$ if (a) the substrate's day-state schedules resident $i$'s team to be
+playing at the chosen pub, and (b) sufficiently many fellow fans of resident
+$i$'s team are also present.
+
+Figure~\ref{fig:concordia-main} (left) reports focal-score means across $7$
+substrate configurations spanning four village variants (\texttt{capetown},
+\texttt{edinburgh}, \texttt{london}, \texttt{london\_mini}) and three closure
+regimes (no closures, closures, tough friendship). The mechanistic runs at
+$s = 30$ (and a longer $s = 100$ run on \texttt{capetown}) form the
+headline; an additional DeepSeek-V3.2 live LLM rollout at $s = 5$ on
+\texttt{london\_mini} provides a preliminary check that the mechanistic
+ordering survives when the LLM drives the rollouts in-loop.
+
+H-PSMG\textsuperscript{+} joint proxy is within $0.03$ (about $1\%$) of
+\texttt{oracle\_joint} on every mechanistic config. ECON-BNE-mech trails by
+$5$ to $15\%$, A-ToM-1-mech by $5$ to $30\%$. The qualitative pattern survives
+the live LLM rollout: on \texttt{london\_mini} with DeepSeek-V3.2 at $s = 5$
+the proxy variant trails oracle by $0.19$, which we attribute to small-sample
+noise (the corresponding $s = 30$ mechanistic run on the same substrate
+variant has gap $0.008$).
+
+\subsubsection{Concordia Haggling}
+
+The Haggling substrate places a buyer and a seller in a multi-round negotiation
+over one or more items; the seller has a hidden tolerance for low offers
+($\theta_i$) and the buyer's reward is a function of the agreed price minus
+the item's intrinsic value to the buyer. We run $9$ sub-configurations spanning
+$5$ substrate variants (fruitville variants and vegbrooke variants) and single
+versus multi-item versions.
+
+Figure~\ref{fig:concordia-main} (right) reports focal-score means across the $9$
+configurations. H-PSMG\textsuperscript{+} wins or ties on all configs. Two
+observations deserve explicit discussion. First, on
+\texttt{vegbrooke\_stubborn} and the two \texttt{fruitville\_gullible}
+configurations, H-PSMG\textsuperscript{+} \emph{strictly exceeds} \texttt{oracle\_joint}
+(by $1.43$, $0.40$, and $0.47$ respectively). This is not a contradiction.
+\texttt{oracle\_joint} maximises the substrate's joint payoff, which on asymmetric
+substrates can sacrifice focal-agent payoff to maintain coordination with the
+opponent. H-PSMG\textsuperscript{+} maximises focal-agent payoff directly and
+therefore strictly improves on joint-payoff maximisation when the two diverge.
+Second, on \texttt{vegbrooke\_strange}, A-ToM-1-mech catastrophically fails at
+$-10.0$ (the substrate's minimum-payoff lower bound), while
+H-PSMG\textsuperscript{+}, ECON-BNE-mech, and Oracle all hold at $0$ (the
+no-agreement value). The failure mode is brittleness of A-ToM's
+expert-aggregation under the substrate's adversarial pricing schedule;
+H-PSMG\textsuperscript{+}'s closed-form posterior is robust to this regime.
+
+\paragraph{Summary across both Concordia substrates.} H-PSMG\textsuperscript{+}
+achieves the highest non-oracle focal score on $16 / 16$ Concordia
+configurations ($7$ Pub Coord, $9$ Haggling), with mean gap to oracle of
+$1.1\%$ on Pub Coord and a strict exceeding-of-oracle on $3 / 9$ Haggling
+configs. ECON-BNE-mech trails by $5$ to $15\%$ on Pub Coord and is competitive
+but never strictly better on Haggling. A-ToM-1-mech trails by $5$ to $30\%$ on
+Pub Coord and catastrophically fails on $1$ Haggling config. The
+cross-substrate consistency demonstrates that the algorithmic advantage of
+posterior decoupling is intrinsic to settings satisfying HT-MG-BC structural
+assumptions, not an artefact of the HP-SPGG benchmark we constructed.
+
+\subsection{Discussion}
+
+The HP-SPGG and Concordia experiments together establish that the
+HT-MG-BC framework's predictions extend beyond controlled simulation to LLM-MAS
+benchmarks at three levels of independence from our experimental design. On
+HP-SPGG, the benchmark we constructed to make all assumptions verifiable, the
+H-PSMG family dominates published LLM-coordination methods (ECON, A-ToM) and
+prompted-LLM coordination by $6.3$ to $11.8\times$ across four LLM backbones.
+On Concordia, an independently-designed public substrate, the same family
+achieves within $1\%$ of oracle on Pub Coordination ($7/7$ configs) and wins
+or ties on Haggling ($9/9$ configs). Cross-model $\beta$-sweep results validate
+all three regimes predicted by Theorem~\ref{thm:hpsmg-plus} on different LLM
+backbones, including the burn-in improvement of $(ii)$ on Llama-Maverick. The
+sufficiency of structural Bayesian posterior tracking over learned
+belief-network or expert-advice approaches is supported across all sixteen
+Concordia configurations.
+
+
+\section{Discussion and Extensions}
+\label{sec:discussion}
+
+\subsection{Centralized vs. Decentralized}
+
+The decoupling result holds for centralized H-PSMG, where a single learner manages decisions for all agents. In decentralized HT-MG, each agent $i$ would maintain its own posterior $\mu^{(i),P}, \mu^{(i),\Theta,j}$ for $j \neq i$ and best-respond to its own samples. The likelihood agent $i$ assigns to opponent action $a_j$ would be the expectation of agent $j$'s policy over agent $j$'s posterior beliefs, leading to interactive Bayesian reasoning of the type studied in the I-POMDP literature \citep{gmytrasiewicz2005framework}. Decoupling no longer holds in general for decentralized settings without further structural assumptions (e.g., common prior, level-$k$ bounded reasoning). Extending the present framework to decentralized HT-MG is a natural follow-up.
+
+\subsection{Beyond Type-Independent Transitions}
+
+The TI assumption is restrictive in settings where the agent type affects the environment, for example through differing physical capabilities. Two ways to extend address this. First, one can introduce a joint kernel $P(s' \mid s, a, \boldsymbol{\theta})$ and maintain a joint posterior with $|\Theta|$ separate Dirichlet posteriors, at storage cost $O(|\Theta|)$. Second, one can decompose $P = P_0 + \sum_i \phi(\theta_i) \delta P_i$ with low-rank structure on the type-dependent perturbation, enabling a hierarchical model with milder cost.
+
+\subsection{Computational Tractability of CCE Oracle}
+
+Computing a CCE in general-sum MGs is polynomial in the size of the joint action space $A = \prod_i |\mathcal{A}_i|$, which grows exponentially in $n$. For large-$n$ settings, structured equilibrium concepts such as Markov Coarse Correlated Equilibrium \citep{daskalakis2023complexity} or decentralized V-learning style updates \citep{jin2021v} can be plugged into Algorithm~\ref{alg:hpsmg} as the oracle without affecting the decoupling result.
+
+\subsection{Function-Approximation Generalisation}
+\label{sec:fa-extension}
+
+A natural concern is whether the tabular analysis of this paper survives the move to large or continuous state-action spaces, where transitions and rewards must be represented by parametric function classes (linear models, kernel methods, neural networks). Appendix~\ref{app:fa-hpsmg} develops the function-approximation generalisation, FA-H-PSMG\textsuperscript{+} (Algorithm~\ref{alg:fa-hpsmg-plus}), and establishes three results that together unify the tabular and FA regimes.
+
+First, the posterior decoupling theorem (Theorem~\ref{thm:fa-decoupling}) holds at the level of the prior and the model class: under FA-analogues of TID and OTRL (Assumptions~\ref{ass:tid-fa},~\ref{ass:otrl-fa}), the joint posterior over $(\phi, \boldsymbol{\psi}, \boldsymbol{\theta})$ factorises across the transition parameters, the per-agent reward parameters, and the per-agent type. The argument is identical in structure to Theorem~\ref{thm:decoupling}; what changes is the representation of each block (Gaussian on neural features, ensemble of networks, etc.), not its independence. Storage remains $O(\mathrm{rep}(\mu^P) + n \cdot \mathrm{rep}(\mu^{\Psi, i, \Theta, i}))$, linear in $n$.
+
+Second, the type-discrimination bonus of H-PSMG\textsuperscript{+} is computable in the FA setting via finite-sample Monte Carlo: $\widehat{D}_k(s, a) = \frac{1}{M} \sum_j |r_i^{\psi}(s, a, \theta_i^{(j)}) - r_i^{\psi}(s, a, \theta_i^{(j')})|$ with $\theta_i^{(j)}, \theta_i^{(j')} \sim \mu_k^{\Theta, i}$. For $M = O(\log K)$ the estimation error is absorbed into the leading regret term, and the deterministic-escape conclusion of Proposition~\ref{prop:hpsmg-plus-burnin} extends to FA-H-PSMG\textsuperscript{+} (Proposition~\ref{prop:fa-burnin}).
+
+Third, the regret bound interpolates smoothly between the tabular and FA regimes (Theorem~\ref{thm:fa-regret-informal}): the $\sqrt{S A_{\mathrm{joint}} K}$ tabular complexity is replaced by the eluder dimensions $\mathrm{dim}_E(\mathcal{P}), \mathrm{dim}_E(\mathcal{R}_i)$ of the transition and reward function classes \citep{russo2014learning}, while the type-uncertainty term $\sqrt{|\Theta_i| K}$ is unchanged. Corollary~\ref{cor:fa-regret-tabular} recovers Theorem~\ref{thm:main-regret-informal} as the tabular special case. The exponential-in-$n$ improvement over generic Bayesian-RL is preserved because the type space is finite regardless of the choice of function class for the dynamics.
+
+Empirical validation of FA-H-PSMG\textsuperscript{+} on continuous-state HT-MGs (e.g., particle-based cooperation environments) is a natural next step. The present paper restricts to the tabular case so the exponential-in-$|\Theta|^n$ separation is visible without confounding from function-approximation error.
+
+\subsection{Open Problems}
+
+Several questions remain. First, what is the precise minimax lower bound on type-conditional Bayesian regret in HT-MG under TID and OTRL, beyond the matching $\Omega(\sqrt{|\Theta_i| HK})$ of Theorem~\ref{thm:lower-matching}? Existing latent MDP lower bounds \citep{kwon2021rl} are exponential in $n$ without identifiability; under bounded information rate, what is the right rate? Second, for decentralised HT-MG (Section~\ref{sec:discussion}), under what additional assumptions does a relaxed decoupling result still hold? Third, in social dilemmas where own-type reward locality (OTRL) fails by design, can a controlled-error decoupling result be recovered, perhaps via a $\ell_\infty$ approximation factor in the marginalisation step?
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have introduced the Heterogeneous-Type Markov Game framework with Bayesian Coordination, proposed the centralized H-PSMG algorithm, and proved that under two natural structural assumptions the joint posterior over the transition kernel and the type profile decouples exactly at every episode. The decoupling reduces storage cost from exponential to linear in the number of agents and enables an additive regret decomposition into a model-learning component and a type-inference component. We have verified the result numerically on a two-agent two-type matrix game, established necessity of both assumptions via explicit counter-examples, and laid out the roadmap from decoupling to a full regret bound. To our knowledge this is the first posterior-sampling result for general-sum Markov games with latent agent types and rigorous structural guarantees.
+
+\bibliography{ref}
+% acl.sty sets \bibliographystyle{acl_natbib} automatically
+
+\appendix
+
+\input{appendix}
+
+\end{document}

@@ -1,0 +1,66 @@
+[
+  {
+    "baseline": "llm_greedy",
+    "observation_index": 0,
+    "action_type": "speak",
+    "argument": "I will choose the option that seems most helpful right now.",
+    "to": [],
+    "natural_language": " said: \"I will choose the option that seems most helpful right now.\""
+  },
+  {
+    "baseline": "llm_greedy",
+    "observation_index": 1,
+    "action_type": "speak",
+    "argument": "I will choose the option that seems most helpful right now.",
+    "to": [],
+    "natural_language": " said: \"I will choose the option that seems most helpful right now.\""
+  },
+  {
+    "baseline": "llm_belief",
+    "observation_index": 0,
+    "action_type": "speak",
+    "argument": "I want to understand what matters to you so we can find a workable path.",
+    "to": [],
+    "natural_language": " said: \"I want to understand what matters to you so we can find a workable path.\""
+  },
+  {
+    "baseline": "llm_belief",
+    "observation_index": 1,
+    "action_type": "speak",
+    "argument": "I want to understand what matters to you so we can find a workable path.",
+    "to": [],
+    "natural_language": " said: \"I want to understand what matters to you so we can find a workable path.\""
+  },
+  {
+    "baseline": "atom_tom1",
+    "observation_index": 0,
+    "action_type": "speak",
+    "argument": "I am considering what you may expect from me, and I want us to coordinate clearly.",
+    "to": [],
+    "natural_language": " said: \"I am considering what you may expect from me, and I want us to coordinate clearly.\""
+  },
+  {
+    "baseline": "atom_tom1",
+    "observation_index": 1,
+    "action_type": "speak",
+    "argument": "I am considering what you may expect from me, and I want us to coordinate clearly.",
+    "to": [],
+    "natural_language": " said: \"I am considering what you may expect from me, and I want us to coordinate clearly.\""
+  },
+  {
+    "baseline": "econ_bne",
+    "observation_index": 0,
+    "action_type": "speak",
+    "argument": "I propose that we look for an option both of us can accept.",
+    "to": [],
+    "natural_language": " said: \"I propose that we look for an option both of us can accept.\""
+  },
+  {
+    "baseline": "econ_bne",
+    "observation_index": 1,
+    "action_type": "speak",
+    "argument": "I propose that we look for an option both of us can accept.",
+    "to": [],
+    "natural_language": " said: \"I propose that we look for an option both of us can accept.\""
+  }
+]

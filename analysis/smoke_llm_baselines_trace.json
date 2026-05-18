@@ -1,0 +1,96 @@
+[
+  {
+    "algorithm": "llm_greedy",
+    "seed_index": 0,
+    "seed": 90000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.37985405931885213,
+          0.42790149445420383,
+          0.39819222862916437
+        ],
+        "welfare": 1.2059477824022204,
+        "oracle_welfare": 1.6461268476588629,
+        "parsed": {
+          "parse_error": true
+        },
+        "reply": "contribution=0.75; reason=offline smoke test"
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.37985405931885213,
+          0.42790149445420383,
+          0.39819222862916437
+        ],
+        "welfare": 1.2059477824022204,
+        "oracle_welfare": 1.6461268476588629,
+        "parsed": {
+          "parse_error": true
+        },
+        "reply": "contribution=0.75; reason=offline smoke test"
+      }
+    ]
+  },
+  {
+    "algorithm": "llm_belief",
+    "seed_index": 0,
+    "seed": 100000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.40592570673644807,
+          0.4057919382853976,
+          0.44423825149048907
+        ],
+        "welfare": 1.2559558965123347,
+        "oracle_welfare": 2.041265114661661,
+        "parsed": {
+          "parse_error": true
+        },
+        "reply": "contribution=0.75; reason=offline smoke test"
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.40592570673644807,
+          0.4057919382853976,
+          0.44423825149048907
+        ],
+        "welfare": 1.2559558965123347,
+        "oracle_welfare": 2.041265114661661,
+        "parsed": {
+          "parse_error": true
+        },
+        "reply": "contribution=0.75; reason=offline smoke test"
+      }
+    ]
+  }
+]

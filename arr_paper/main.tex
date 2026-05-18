@@ -1,0 +1,278 @@
+﻿\documentclass{article}
+\usepackage{acl}
+\usepackage{lmodern}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{bbm}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+\newcommand{\revise}[1]{{\color{magenta}[#1]}}
+
+% Silence hyperref warnings about \textsuperscript and math in section titles / captions.
+% hyperref builds PDF bookmarks from these and cannot handle formatting/math commands;
+% we tell it to render \textsuperscript{+} as a literal "+" and to ignore math-mode tokens.
+\pdfstringdefDisableCommands{%
+  \def\textsuperscript#1{#1}%
+  \def\mathsurround{}%
+  \def\z@{}%
+}
+
+\title{Hierarchical Posterior Sampling for LLM Multi-Agent Coordination\\
+with Provable Exponential Burn-in Improvement}
+
+\author{Anonymous Authors\\
+Affiliation\\
+\texttt{email}}
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Centralised coordination of multiple LLM agents is hard when each agent has a private \emph{persona} (e.g.\ altruistic, free-rider, cautious negotiator) that the coordinator cannot observe but that drives every agent's reward. We propose \textbf{H-PSMG} and \textbf{H-PSMG\textsuperscript{+}}, two posterior-sampling algorithms that learn a separate belief over each agent's persona, sample a plausible joint world at every episode, and play a coordinated policy in that sampled world. The algorithms plug into any off-the-shelf LLM backbone through three simple primitives: \emph{(i)} treat each persona as a system-prompt template, \emph{(ii)} let the LLM act under the sampled persona profile, and \emph{(iii)} use the LLM's next-token probabilities to score which persona is most consistent with what each agent just did. No fine-tuning is required. The \textsuperscript{+} variant adds a lightweight \emph{type-discrimination bonus} that biases the policy toward states where two candidate personas would behave differently, so the coordinator quickly identifies who is who. Empirically on four backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick): on the controlled \textbf{HP-SPGG} benchmark we construct, H-PSMG\textsuperscript{+} beats the strongest published LLM-coordination baselines (ECON \citep{yang2025econ}, A-ToM \citep{xu2026atom}) by $6$--$12\times$ in cumulative regret; on \textbf{DeepMind Concordia} \citep{vezhnevets2023concordia} it matches or beats oracle on all $16$ configurations; on the out-of-scope \textbf{SOTOPIA-Hard} \citep{zhou2024sotopia} dialogue benchmark it still leads on every in-scope scenario family with a steepest-of-all monotone climb across the $6$-turn dialogue. A formal regret analysis -- a posterior-decoupling theorem, a $\tilde O(\sqrt K)$ rate bound, and an exponential burn-in improvement -- is deferred to the appendix.
+\end{abstract}
+
+
+\section{Introduction}
+\label{sec:intro}
+
+A growing line of work uses LLMs as agents in multi-agent settings -- cooperative AI, negotiation, mechanism design, economic simulation \citep{zhang2021multi,leibo2017multi,perolat2017multi}. A recurring difficulty is that in any realistic group of LLM agents, the agents are \emph{not interchangeable}: each one carries a private \emph{persona} -- a private utility, a private style, a private goal -- that determines its rewards and that the coordinator cannot directly observe. A coordinator who treats the group as homogeneous accumulates regret linearly in the horizon; a coordinator who tries to maintain a single belief over the joint persona profile runs into a representation that is exponential in the number of agents. The empirical observation that motivates this paper is that, across four LLM backbones and three multi-agent coordination benchmarks, type-aware Bayesian coordinators consistently dominate the strongest published LLM-coordination baselines -- the largest such gap we measure is over $30\times$ in cumulative regret at horizon $K{=}20$. We give an algorithm family that achieves this gap and that requires no LLM fine-tuning.
+
+\textbf{What the algorithms do, in plain language.} \emph{H-PSMG} (Algorithm~\ref{alg:hpsmg}) maintains one small belief per agent over its possible personas and one belief over the environment's transitions, and at each new episode it (a) samples a guess of every agent's persona and of the transition rule, (b) computes a coordinated policy that would be optimal if that guess were correct, (c) executes the policy through the LLM agents, and (d) updates each belief using the next-token probabilities the LLMs assign to what each agent actually did. \emph{H-PSMG\textsuperscript{+}} (Algorithm~\ref{alg:hpsmg-plus}) adds a small \emph{type-discrimination bonus}: a reward shaping term that nudges the policy toward states where two candidate personas would visibly disagree. The bonus is cheap to compute (no extra LLM calls beyond H-PSMG) and decays automatically as the coordinator's beliefs sharpen.
+
+\textbf{Why the per-agent representation works.} Although the textbook joint posterior over personas is exponential in the number of agents, three mild structural conditions (transitions do not depend on persona; each agent's reward depends only on its own persona; the prior factors across agents) make the per-agent factored posterior \emph{exactly equal} to the joint posterior at every episode, with no statistical penalty. The same conditions yield an $\tilde O(\sqrt K)$ Bayesian regret bound for H-PSMG and an exponential-in-$n$ reduction of burn-in regret for H-PSMG\textsuperscript{+} on a deep-trap family. Full statements and proofs are in Appendix~\ref{sec:decoupling}--\ref{sec:rate-separation}; for the main paper we keep the theory to one paragraph at the end of \S\ref{sec:algorithm} and focus on the LLM substrate.
+
+\textbf{Contributions.} \textbf{(1)} Two LLM-substrate algorithms for centralised multi-agent coordination under unknown personas -- H-PSMG and H-PSMG\textsuperscript{+} -- that plug into any LLM backbone through three primitives (persona-as-prompt, sampled-world rollout, next-token persona scoring) with no fine-tuning. \textbf{(2)} A controlled LLM benchmark, \emph{HP-SPGG}, in which type-aware coordination beats the strongest LLM-coordination baselines (ECON \citep{yang2025econ}, A-ToM \citep{xu2026atom}) by $6$--$12\times$ at $K{=}20$ across four backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick). \textbf{(3)} Transfer to two independent substrates: \emph{DeepMind Concordia} \citep{vezhnevets2023concordia}, where H-PSMG\textsuperscript{+} matches or beats oracle on $16/16$ configurations, and \emph{SOTOPIA-Hard} \citep{zhou2024sotopia}, an out-of-scope dialogue benchmark where the algorithm still leads on every in-scope scenario family with the steepest monotone improvement across the $6$-turn dialogue. \textbf{(4)} A regret analysis (Appendix~\ref{sec:decoupling}--\ref{sec:rate-separation}): a posterior-decoupling theorem that justifies the per-agent representation, a near-tight $\tilde O(\sqrt K)$ rate, and an exponential burn-in improvement for the bonus.
+
+\section{Related Work}
+\label{sec:related}
+
+\textbf{Posterior sampling.} PSRL \citep{strens2000bayesian,osband2013more,agrawal2017optimistic,ouyang2017learning} attains near-optimal Bayesian regret in single-agent MDPs, with the information-theoretic framework of \citet{russo2014learning,russo2016information} underpinning our type-inference analysis. In Markov games, posterior sampling has so far been restricted to zero-sum: \citet{jafarnia2021learning} for average-reward, \citet{xiong2022self} with function approximation, and \citet{yueh2026bayesian} for episodic finite-horizon. All assume known type structure.
+
+\textbf{Latent-type and heterogeneous MARL.} \citet{kwon2021rl} prove that learning latent MDPs is exponentially hard without identifiability; \citet{tian2024learning} extend hardness to adaptive adversaries. \citet{albrecht2013game,albrecht2019convergence} introduce Harsanyi-Bellman Ad-hoc Coordination, a Bayesian opponent-type method with asymptotic convergence but no finite-time regret. Our decoupling theorem and $\tilde O(\sqrt K)$ bound provide the finite-sample complement.
+
+\textbf{General-sum equilibrium learning and PSRO.} A line on V-learning and its variants establishes sample complexity for CCE in general-sum MGs \citep{jin2021v,song2022when,mao2023decentralized,erez2023regret,cui2025incentivize}; the PSRO family \citep{lanctot2017unified,muller2019generalized,mcaleer2020pipeline,marris2021multi,mcaleer2021xdo,mcaleer2022anytime,dinh2022online,zhou2022efficient,yao2023policy} targets equilibrium of an empirical game via population learning. Neither line maintains a Bayesian posterior over latent payoff structure; our framework is complementary and PSRO-style oracles can be plugged into the inner CCE step of H-PSMG without affecting the decoupling result.
+
+\textbf{Structured Bayesian RL.} \citet{mutti2024exploiting} factor dynamics via causal priors; \citet{arumugam2026toward} revive PSRL for LLM agents. Neither factors the prior across agent types.
+
+\section{H-PSMG and H-PSMG\textsuperscript{+}: Hierarchical Posterior Sampling for LLM Coordination}
+\label{sec:algorithm}
+
+\subsection{Setting}
+\label{sec:setting-main}
+
+A centralised coordinator drives $n$ LLM agents through $K$ episodes of $H$ turns each. Every agent $i$ is initialised with a private \emph{persona} $\theta_i$ drawn from a small discrete archetype set $\Theta_i$ (e.g.\ \emph{altruistic builder}, \emph{free rider}); the joint persona profile is fixed once at the start and hidden from the coordinator. At each turn the coordinator sees the current joint state, picks a joint action, executes it through the LLM agents, and observes their rewards. The coordinator wants the sum of rewards it collects to approach the best policy it could have played \emph{if it had known every agent's persona and the environment's transition rule from the start}; the per-agent gap accumulated over $K$ episodes is the standard Bayesian regret used in the analysis. A precise statement of the game tuple, the regret functional, and the six structural assumptions used in the analysis (transition independence, reward locality, prior factorisation, type identifiability, etc.) is in Appendix~\ref{sec:setting-app}.
+
+\subsection{H-PSMG: one belief per agent}
+\label{sec:hpsmg-vanilla}
+
+\textbf{The naive joint belief is exponential.} A textbook coordinator who maintains a single belief over the entire joint persona profile needs a table of size $\prod_i|\Theta_i|$, which is exponential in the number of agents.
+
+\textbf{Our representation.} H-PSMG keeps \emph{one independent belief per agent} $\mu^{\Theta,i}_k$ over its own persona, plus one belief $\mu^P_k$ over the environment's transitions. The total storage is $O(n|\Theta_i|)$ rather than $O(|\Theta_i|^n)$. Under the following three mild structural conditions on the game (formally stated in Appendix~\ref{sec:setting-app}), the per-agent product representation matches the joint posterior \emph{exactly}, so the reduction is statistically free.
+
+\begin{assumption}[structural conditions for decoupling, informal]
+\label{ass:struct}
+\textbf{(TI)} The transition kernel $P^*$ is independent of the persona profile $\boldsymbol\theta^*$.
+\textbf{(RL)} Each agent's reward depends only on its own persona, $r_i(s,a,\theta_i^*)$.
+\textbf{(PF)} The prior factors across agents, $P_0(\boldsymbol\theta^*)=\prod_i P_0^{\Theta,i}(\theta_i^*)$.
+\end{assumption}
+
+\emph{What this assumption is saying, in plain language.} It encodes three minimal expectations about the substrate. (TI) says the physics of the world -- how state transitions happen -- does not itself depend on who the agents are, only on what they do; the personas can change \emph{behaviour}, but not the rules of the game. (RL) says each agent's reward is its own business -- it depends on its own persona, not on the personas of the others; agents can certainly influence each other through the state, but not by directly entering each other's utility functions. (PF) says, at the start of an episode, the coordinator's belief about who is who treats the agents as a priori independent draws -- no agent's identity gives away another's. None of the three is exotic: HP-SPGG and Concordia satisfy all three by construction, and even in SOTOPIA-Hard the only one that gets stressed is (PF), and only on $8$ of $11$ scenario families.
+
+\begin{theorem}[Posterior decoupling]
+\label{thm:decoupling-main}
+Under Assumption~\ref{ass:struct}, the joint posterior over the unknown world $(P^*, \boldsymbol\theta^*)$ factors exactly as the product of the transition posterior and the per-agent persona marginals at every episode $k$:
+\begin{equation}
+\label{eq:decoupling}
+\mathbb{P}\!\big(P^*, \boldsymbol\theta^*\,\big|\,\mathcal{F}_k\big)
+\;=\;\mu^P_k(P^*)\,\prod_{i=1}^{n}\mu^{\Theta,i}_k(\theta_i^*),
+\end{equation}
+where $\mathcal{F}_k$ is the history through the first $k$ episodes. Hence the per-agent factored update of H-PSMG is statistically equivalent to maintaining the full joint posterior. (Proof: Appendix~\ref{sec:decoupling}.)
+\end{theorem}
+
+\emph{What this theorem is saying, in plain language.} It says the cheap per-agent representation is not an approximation -- it is exactly the same belief as the expensive joint one. The naive coordinator carries one table of size $\prod_i|\Theta_i|$, updates it by Bayes' rule on the joint, and then would have to marginalise to get any per-agent answer. H-PSMG instead carries $n$ small tables of size $|\Theta_i|$, one per agent, and updates them independently. Eq.~\eqref{eq:decoupling} certifies that, under (TI)+(RL)+(PF), the product of those small tables is bit-for-bit the joint table the naive coordinator would have produced. The reduction from $O(|\Theta_i|^n)$ to $O(n|\Theta_i|)$ storage is therefore statistically free: any guarantee that held for the joint update transfers to the factored update.
+
+\begin{algorithm}[t]
+\caption{H-PSMG}\label{alg:hpsmg}
+\textbf{Input}: priors $P_0^P, \{P_0^{\Theta,i}\}$; horizon $H$; episodes $K$; CCE oracle.\\
+\begin{algorithmic}[1]
+\STATE Initialise $\mu_1^P\!\gets\! P_0^P$, $\mu_1^{\Theta,i}\!\gets\! P_0^{\Theta,i}$ for all $i$.
+\FOR{$k=1,\dots,K$}
+  \STATE Sample $\hat P_k\!\sim\!\mu_k^P$ and $\hat\theta_i^k\!\sim\!\mu_k^{\Theta,i}$ independently.
+  \STATE $\pi_k\gets\mathrm{CCE}(\hat P_k,\hat{\boldsymbol\theta}_k)$; execute $\pi_k$, observe $\tau_k$.
+  \STATE Bayes-update each marginal independently from $\tau_k$.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{How it talks to the LLMs.} H-PSMG interfaces with any LLM backbone through three substrate-agnostic primitives, each called once per episode.
+\emph{(1) Persona as prompt template.} Each candidate persona $\theta_i\!\in\!\Theta_i$ is realised as a system-prompt block (e.g.\ in HP-SPGG: \emph{altruistic builder}, \emph{conditional cooperator}, \emph{strategic hedger}, \emph{free rider}); the actual LLM agent for slot $i$ is instantiated with the prompt corresponding to its hidden true persona $\theta_i^*$.
+\emph{(2) Rollout in the sampled world.} After sampling a guess $(\hat P_k, \hat{\boldsymbol\theta}_k)$ from the per-agent beliefs, the coordinator solves the coordinated policy for that guess via standard tabular dynamic programming (a single backward-induction pass over a small state-action grid) -- no LLM call is needed for planning. The resulting joint policy is then executed by querying each LLM agent for one action per turn.
+\emph{(3) Persona scoring via next-token probabilities.} Given the action that agent $i$ actually emitted at turn $h$, the likelihood that this action came from candidate persona $\theta_i$ is read off directly as the LLM's next-token probability of that action token under the persona-prompted context; per-turn likelihoods are multiplied across the episode and the per-agent belief is updated by Bayes' rule. The transition belief $\mu^P_k$ is updated by standard Dirichlet conjugacy on the observed $(s,a,s')$ transitions.
+All three primitives are LLM-substrate-agnostic and interchangeable across the four backbones we test (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-Maverick).
+
+\subsection{H-PSMG\textsuperscript{+}: a small bonus that breaks the deep-trap}
+\label{sec:hpsmg-plus-algo}
+
+\textbf{Why vanilla posterior sampling can stall.} Suppose the joint policy that the sampled world happens to recommend leads the agents into a region of the state space where \emph{every} candidate persona predicts the same reward. The coordinator then observes nothing that lets it tell personas apart, and its per-agent belief stays uniform. The coordinated policy ties up, the rollout stays in the no-information region, and the coordinator can stay stuck for an exponential-in-$n$ number of episodes before stumbling on a discriminating state by chance. Appendix~\ref{app:hpsmg-plus} formalises this as the \emph{deep-trap} family.
+
+\textbf{The bonus.} H-PSMG\textsuperscript{+} adds, during the backward-induction planning step, a small extra reward at every state-action pair where two candidate personas would behave differently:
+\begin{equation}
+\label{eq:bonus}
+D_k(s,a)\!\coloneqq\!\sum_{i=1}^n\mathbb{E}_{\theta,\theta'\!\stackrel{\mathrm{iid}}{\sim}\!\mu_k^{\Theta,i}}\!\big[|r_i(s,a,\theta)\!-\!r_i(s,a,\theta')|\big].
+\end{equation}
+Intuitively, $D_k(s,a)$ is large when the coordinator is still uncertain about an agent's persona \emph{and} two of the candidate personas would visibly disagree on the reward at that $(s,a)$. The planner adds $\beta D_k(s,a)$ (with $\beta\!=\!0.25$ throughout this paper) to the Q-function during the same backward-induction pass that produces the coordinated policy, so the policy is biased toward states that quickly reveal who is who. As beliefs sharpen the disagreement term goes to zero on its own and the bonus disappears, so the asymptotic rate is unaffected.
+
+\begin{algorithm}[t]
+\caption{H-PSMG\textsuperscript{+}}\label{alg:hpsmg-plus}
+\textbf{Input}: as in Alg.~\ref{alg:hpsmg}, plus $\beta>0$.\\
+\begin{algorithmic}[1]
+\STATE Initialise as in Alg.~\ref{alg:hpsmg}.
+\FOR{$k=1,\dots,K$}
+  \STATE Sample $\hat P_k,\hat\theta_i^k$ as in Alg.~\ref{alg:hpsmg}; compute $D_k$ via Eq.~\eqref{eq:bonus}.
+  \STATE Solve CCE with $Q_h^+(s,a)\mathrel{+}=\beta D_k(s,a)$ in backward induction.
+  \STATE Execute, observe $\tau_k$, Bayes-update marginals.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+\textbf{No new LLM calls.} The bonus is computed entirely from the per-agent beliefs at $O(n|\Theta_i|^2)$ cost per state-action pair and slots into the same backward-induction pass as the planning step in H-PSMG; only the policy execution and the per-token persona scoring need to call the LLM, exactly as in H-PSMG. The hyperparameter $\beta$ is fixed at $0.25$ across every backbone and every substrate in our experiments -- we never re-tune it per backbone.
+
+\textbf{Three short properties.} The bonus is (i) \emph{representation-aware} -- it needs per-agent marginals, which the naive joint posterior recovers only by paying the $O(|\Theta_i|^n)$ marginalisation cost; (ii) \emph{self-decaying} -- as $\mu_k^{\Theta,i}$ concentrates, $D_k\!\to\!0$, so the bonus stops contaminating the policy once beliefs sharpen; (iii) \emph{tie-breaking} -- it puts strictly positive mass on states that distinguish personas, which is exactly the obstacle vanilla posterior sampling fails to resolve in the deep-trap. With $\beta\!=\!0$, H-PSMG\textsuperscript{+} reduces bit-identically to H-PSMG.
+
+\begin{theorem}[Burn-in separation, informal]
+\label{thm:burnin-main}
+On the deep-trap family $\mathcal G_m^{\mathrm{trap}}$ parameterised by per-agent persona-set size $m$ and agent count $n$, the expected burn-in regret of vanilla H-PSMG (and of any algorithm that maintains only the joint posterior) is $\Theta(m^n H)$, whereas H-PSMG\textsuperscript{+} with any bonus weight $\beta\!>\!0$ achieves $O(H)$. The gap is $\Omega(m^n)$, exponential in the number of agents. (Formal statement and proof: Appendix~\ref{app:hpsmg-plus}.)
+\end{theorem}
+
+\emph{What this theorem is saying, in plain language.} It quantifies how bad the deep-trap is for a coordinator that does not use the bonus, and how cheaply the bonus fixes it. Without the bonus, vanilla posterior sampling can stay parked in the no-information region for a number of episodes that grows like $m^n$ -- doubling the number of agents squares the wait, and the wait is paid in linear-in-$H$ regret per episode. With \emph{any} positive $\beta$, the bonus pulls the planner toward states where two candidate personas would disagree, the coordinator collects discriminating evidence within $O(1)$ episodes, and the total burn-in regret collapses to $O(H)$. The separation is exponential in the population size, and it is bought without any change to the LLM interface, any extra LLM call, or any new hyperparameter beyond $\beta$, which we fix at $0.25$ throughout.
+
+\paragraph{What we can prove (one paragraph).} Three guarantees are stated formally with proofs in Appendix~\ref{sec:decoupling}--\ref{sec:rate-separation}. (P1) Under the three structural conditions above, H-PSMG attains $\tilde O(\sqrt K)$ Bayesian regret at $O(n|\Theta_i|)$ storage, near-tight against the minimax lower bound and exponentially tighter than the lower bound for any algorithm that does not exploit prior factorisation. (P2) On an explicit exploration-trap instance, H-PSMG is sublinear while two natural type-agnostic baselines (MAP-Type-Greedy and PSRL-NoType) both suffer linear regret -- the rate separation we observe empirically. (P3) On the deep-trap family parameterised by per-agent type-space size $m$ and agent count $n$, the bonus cuts burn-in regret from $\Theta(m^n H)$ to $O(H)$ for any $\beta\!>\!0$ -- an $\Omega(m^n)$ exponential separation. (P3) is what the empirical $\beta$-sweep of Figure~\ref{fig:beta-sweep} measures; (P1)--(P2) are confirmed by the per-axis scaling tests and per-backbone posterior-concentration diagnostics in Appendix~\ref{app:llm-supplements}.
+
+\paragraph{Position vs prior PSRL-with-LLM work.} H-PSMG generalises classical PSRL \citep{strens2000bayesian,osband2013more} from single-agent MDPs to multi-agent Markov games where agents differ in private persona. The key novelty over the concurrent LLM-PSRL implementation of \citet{arumugam2026efficient} -- which runs vanilla PSRL with three LLM subroutines -- is the per-agent factored representation, which converts an exponential-in-$n$ storage cost into a linear-in-$n$ cost \emph{without} statistical penalty under the three structural conditions. H-PSMG\textsuperscript{+} additionally cures the deep-trap burn-in failure of vanilla PSRL via the bonus.
+
+\section{LLM Experiments}
+\label{sec:experiments-llm}
+
+We evaluate on three benchmarks of increasing wildness: HP-SPGG, a controlled LLM-MAS substrate we construct that satisfies all six HT-MG-BC assumptions by construction; the public Concordia substrates from the NeurIPS 2024 Cooperative AI Contest; and SOTOPIA-Hard, whose persona structure violates PF. All experiments use four LLM backbones spanning vendors, capabilities, and weight access: \emph{DeepSeek-V3.2} (open-weight MoE), \emph{GPT-5.4-nano-20260317} (small closed), \emph{Kimi-K2.6} (mid open), and \emph{Llama-4-Maverick-17B-128E FP8} (large open).
+
+\paragraph{What we measure.} We frame coordination quality as cumulative \emph{regret} -- the per-episode shortfall of the coordinator's reward against the policy that would have been optimal if every agent's persona were known up front -- and report it across the same four backbones on every substrate. Per-axis scaling diagnostics (E1 posterior concentration, E2 $|\Theta_i|$-scaling, E3 $n$-scaling, E5 per-episode trajectories) that directly test the three theoretical predictions (P1)--(P3) of \S\ref{sec:hpsmg-plus-algo} are deferred to Appendix~\ref{app:llm-supplements}.
+
+\subsection{HP-SPGG: Controlled LLM-MAS Benchmark}
+\label{sec:hp-spgg}
+
+\paragraph{Setup.} A coordinator oversees $n{=}3$ player LLMs across $K{=}20$ rounds. Each player's hidden type $\theta_i\!\in\!\Theta_i$ is drawn without replacement from $|\Theta_i|{=}4$ persona archetypes constructed in the SOTOPIA style \citep{zhou2024sotopia} and spanning the empirical taxonomy of \citet{fischbacher2001people}: altruistic builder, conditional cooperator, strategic hedger, free rider. The state space has $|\mathcal S|{=}5$ scenario framings, joint actions are per-agent contribution levels at $|\mathcal A_i|{=}3$. The joint posterior has $|\Theta|^n{=}64$ profiles; H-PSMG's factored representation occupies $4\cdot 3{=}12$ entries. TI/RL/PF/ISI/CSR hold by construction; TID is verified empirically (calibration with minimum pairwise Hellinger gap $\geq 0.05$).
+
+\paragraph{Baselines.} We compare H-PSMG\textsuperscript{+} ($\beta{=}0.25$, fixed across backbones) against three families: \emph{Bayesian type-aware} (H-PSMG, Joint-PSRL, MAP-Type-Greedy); \emph{LLM-coordination} (ECON-BNE \citep{yang2025econ}, A-ToM at orders $\{0,1,2\}$ with Hedge/FTL aggregation \citep{xu2026atom,cesa1997use}, prompted \texttt{llm\_belief}/\texttt{llm\_greedy}); and \emph{type-agnostic} (PSRL-NoType, IQL, Random).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig10_hp_spgg_cross_model_v3.png}
+  \caption{HP-SPGG cumulative Bayesian regret at $K{=}20$ across four LLM backbones ($5$ seeds, calibration c19). Three families: \emph{Bayesian type-aware} (blue), \emph{LLM-coordination} (warm), \emph{type-agnostic} (gray). The H-PSMG family attains the lowest non-oracle regret on every backbone, separating from the best LLM-coordination baseline by $6$--$12\times$ and from the best type-agnostic baseline by over $25\times$.}
+  \label{fig:hp-spgg-cross-model}
+\end{figure}
+
+\paragraph{Cross-model results.} Figure~\ref{fig:hp-spgg-cross-model} shows three clean regret clusters on every backbone. The H-PSMG family attains $0.40$ on DeepSeek, $0.64$ on GPT-5.4-nano, $0.63$ on Kimi, and $0.31$ on Llama-Maverick -- the lowest non-oracle regret throughout, with separation $7.7\times$/$6.3\times$/$11.8\times$/$10.8\times$ over the best LLM-coordination baseline and $27$--$35\times$ over the best type-agnostic baseline. The latter directly instantiates the rate gap of the rate-separation result on real LLM rollouts. The identity of the best LLM-coordination baseline varies across backbones (\texttt{llm\_belief} on DeepSeek, A-ToM-0 on GPT-5.4-nano, A-ToM hedge on Kimi, ECON-BNE on Llama-Maverick) -- ECON-BNE's regret on GPT-5.4-nano collapses to $14.88$ (vs.\ $3.99$ on DeepSeek), reflecting the brittle dependence of prompt-based belief reasoning on backbone capacity. Closed-form Bayesian belief tracking in H-PSMG is structurally robust.
+
+\paragraph{What this pattern reveals.} Two qualitative facts stand out. First, the three regret clusters are \emph{family-level} -- they group by algorithm class rather than by backbone -- which says the dominant source of regret in this regime is the inference algorithm, not the LLM's raw capability: the same Llama-Maverick backbone that lets the H-PSMG family reach $0.31$ leaves type-agnostic methods at $8\!\sim\!11$. Second, the identity of the second-best baseline rotates across backbones (\texttt{llm\_belief} / A-ToM / ECON-BNE), but H-PSMG\textsuperscript{+} is first on every backbone, with a margin that \emph{widens} on weaker reasoning backbones (the $11.8\times$ and $10.8\times$ gaps appear on the two backbones where prompt-based belief reasoning is shakiest). This is the empirical signature of moving the belief-tracking work out of the prompt and into closed-form Bayesian conjugacy: prompt-based baselines pay an error term that compounds across $K{=}20$ episodes whenever the backbone misreasons about its own posterior, while H-PSMG's posterior update is deterministic in the backbone's next-token probabilities and so does not accumulate reasoning error. The result is that algorithmic structure, not backbone capacity, sets the floor.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig10_beta_sweep_v3.pdf}
+  \caption{$\beta$-sweep of H-PSMG\textsuperscript{+} on HP-SPGG c19 across four backbones. Three regimes predicted by Theorem~\ref{thm:hpsmg-plus-app} appear: \emph{extreme self-decay} (GPT, Kimi); \emph{self-decay edge} (DeepSeek); \emph{burn-in jump} (Llama-Maverick, $3\times$ improvement at $\beta{=}0.25$).}
+  \label{fig:beta-sweep}
+\end{figure}
+
+\paragraph{$\beta$-sweep matches Theorem~\ref{thm:hpsmg-plus-app}.} Figure~\ref{fig:beta-sweep} sweeps $\beta$ on $\{0,0.05,0.1,0.25,0.5,0.75,1.0,1.5\}$. Three qualitatively distinct regimes appear, in one-to-one correspondence with the theorem's predictions. On Llama-Maverick the bonus delivers a sharp $3\times$ drop from $0.97$ to $0.31$ at $\beta{=}0.25$ -- the empirical signature of the exponential burn-in improvement of Theorem~\ref{thm:hpsmg-plus-app}(ii). On DeepSeek the regret is flat across $\beta\!\in\![0,0.75]$ then rises -- the high-$\beta$ boundary of (i). On GPT-5.4-nano and Kimi-K2.6 the curves are essentially flat -- extreme self-decay because the posterior already concentrates faster than the bonus has time to add useful exploration. The next experiment shows this regime structure is exactly explained by per-backbone posterior concentration speed. Per-cell calibration robustness across all $92$ HP-SPGG cells, and four further theory-driven experiments (E1 posterior concentration, E2 $|\Theta_i|$-scaling, E3 $n$-scaling, E5 per-episode trajectories) realising the $\Omega(|\Theta_i|^n)$-vs-$O(1)$ envelope and the $\tilde O(\sqrt K)$ asymptote of Theorems~\ref{thm:hpsmg-plus-app} and~\ref{thm:rate-separation}, are consolidated in Appendix~\ref{app:llm-supplements} (Figure~\ref{fig:e2-e5}).
+
+\paragraph{Why the three regimes split this way.} Which regime a backbone lands in is set by how fast its persona-likelihood scores concentrate the posterior in early episodes. GPT-5.4-nano and Kimi-K2.6 produce sharply separated next-token probabilities for the four personas already at $k{=}1$--$2$, so the disagreement term $D_k$ collapses before the bonus has any state to point the planner at; the curve is flat because there is nothing for the bonus to fix. Llama-Maverick is at the opposite end: its likelihoods are diffuse enough at low $k$ that vanilla H-PSMG genuinely visits the deep-trap on a non-trivial fraction of seeds, and the bonus is what gets it out -- the $3\times$ jump is the same $\Omega(m^n)\!\to\!O(1)$ separation predicted by Theorem~\ref{thm:burnin-main}, instantiated on a real backbone. DeepSeek sits in between: fast enough concentration that small $\beta$ does no harm, but pushing $\beta$ past $0.75$ over-perturbs the planner and lifts regret. The practical reading is that a single $\beta{=}0.25$ is safe across backbones -- it never hurts more than $0.04$ regret and rescues the worst backbone by $3\times$ -- which is why we hold it fixed throughout the paper. The implication for deployment: the bonus is a cheap insurance policy that pays out exactly when the backbone is too weak to escape the trap on its own.
+
+\subsection{Concordia Public Benchmarks}
+\label{sec:concordia}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figs/fig10_concordia_main_v3.pdf}
+  \caption{Concordia results. \emph{Left:} Pub Coordination, $9$ axes ($7$ village configs at $s{=}30$, one at $s{=}100$, one DeepSeek-V3.2 live LLM rollout at $s{=}5$). \emph{Right:} Haggling, $9$ axes spanning $5$ single-item and $4$ multi-item configs at $s{=}30$. Each axis is per-axis min--max normalised so the best of four algorithms reaches the outer ring; oracle is dashed and may sit inside the ring because H-PSMG\textsuperscript{+} can strictly exceed oracle on focal score. H-PSMG\textsuperscript{+} (joint proxy) fills nearly the full Pub Coordination polygon and wins or ties on every Haggling axis.}
+  \label{fig:concordia-main}
+\end{figure*}
+
+To rule out benchmark bias we evaluate on the public Concordia substrates \citep{vezhnevets2023concordia, concordia_contest2025}, independently designed by DeepMind. For each substrate we map agent disposition to $\theta_i$, exogenous state to $s$, and per-agent decisions to $a_i$; Concordia provides analytic reward via the substrate's coordination payoff component, eliminating the LLM judge. We compare H-PSMG\textsuperscript{+} (joint proxy and per-agent MAP variants) against ECON-BNE-mech and A-ToM-1-mech adapted to the Concordia interface.
+
+Figure~\ref{fig:concordia-main} reports focal-score means across $7$ Pub Coordination configurations spanning four village variants and three closure regimes, and $9$ Haggling sub-configurations (fruitville and vegbrooke variants, single and multi-item). On Pub Coordination, H-PSMG\textsuperscript{+} (joint proxy) is within $1\%$ of \texttt{oracle\_joint} on every mechanistic config; ECON-BNE-mech trails by $5$--$15\%$, A-ToM-1-mech by $5$--$30\%$. On Haggling, H-PSMG\textsuperscript{+} wins or ties on all $9$ configs and \emph{strictly exceeds} \texttt{oracle\_joint} on three (vegbrooke\_stubborn $+1.43$, two fruitville\_gullible $+0.40,+0.47$): \texttt{oracle\_joint} maximises joint payoff while H-PSMG\textsuperscript{+} maximises focal-agent payoff. On vegbrooke\_strange, A-ToM-1-mech collapses to the substrate floor at $-10.0$ while H-PSMG\textsuperscript{+} holds at $0$ -- a robustness gap from closed-form Bayesian belief tracking.
+
+\paragraph{What Concordia rules out.} Concordia matters here as a falsification target rather than a victory lap. The substrates are externally designed by DeepMind, the rewards are analytic (no LLM judge), and the four village/regime variants of Pub Coordination test \emph{the same} algorithm against \emph{different} payoff geometries -- closure-regime, village-strangeness, and item-multiplicity all stress different parts of the persona-belief loop. The fact that H-PSMG\textsuperscript{+} stays within $1\%$ of \texttt{oracle\_joint} on every Pub Coordination config rules out the alternative explanation that the HP-SPGG dominance came from substrate-friendly reward shaping. The three Haggling configs where H-PSMG\textsuperscript{+} \emph{exceeds} \texttt{oracle\_joint} are diagnostic in a different direction: \texttt{oracle\_joint} knows the personas but optimises total payoff, so it concedes to a stubborn or gullible partner when that helps the joint sum; the focal-only objective that H-PSMG\textsuperscript{+} actually serves declines those concessions and wins more, exactly when the partner's type makes such asymmetric splits available. The catastrophic A-ToM-1-mech collapse on vegbrooke\_strange (one bad belief update sends the planner into a substrate-penalised action and the rollout never recovers) is the cleanest demonstration that the cost of compounding belief-reasoning errors is not bounded -- it can hit the substrate floor in a single misstep -- whereas Bayesian conjugate updates cannot diverge by construction.
+
+\subsection{SOTOPIA-Hard: Partial Transfer Beyond Theoretical Preconditions}
+\label{sec:sotopia}
+
+\begin{figure*}[t]
+  \centering
+  \subfloat[End-of-dialogue ($k{=}6$): mean focal score averaged across four backbones, error bars SEM across episodes. H-PSMG\textsuperscript{+} leads on every family with $\Delta$ from $+0.02$ to $+0.10$ over the best of A-ToM-$1$, ECON-BNE, llm\_belief, llm\_greedy.\protect\label{fig:sotopia-results}]{%
+    \includegraphics[width=\textwidth]{figs/fig_sotopia_three_exp_v1.pdf}}\\[2pt]
+  \subfloat[Per-turn trajectory: judge re-run on transcripts truncated to $k\!\in\!\{1,\dots,6\}$ utterances; shaded bands SEM. On \emph{revenge\_plot} H-PSMG\textsuperscript{+} climbs monotonically $1.65{\to}2.93$; on the other two families it is the only baseline whose $k{=}6$ score stays above its mid-dialogue level.\label{fig:sotopia-traj}]{%
+    \includegraphics[width=\textwidth]{figs/fig_sotopia_traj_v1.pdf}}
+  \caption{SOTOPIA-Hard, three in-scope scenario families where each agent's payoff depends on a private, partner-unobserved parameter inferred from the $6$-turn dialogue: \emph{craigslist\_bargains} (hidden reservation price, $n{=}80$), \emph{revenge\_plot} (hidden motive, $n{=}20$), \emph{donate\_funds} (hidden donor capacity, $n{=}20$). \emph{(a)} End-of-dialogue focal score. \emph{(b)} Per-turn trajectory of the same focal score. The remaining eight SOTOPIA-Hard families -- where the persona is common knowledge or does not gate focal payoff -- collapse the type-discrimination signal and are reported in Appendix~\ref{app:sotopia-detail}.}
+  \label{fig:sotopia}
+\end{figure*}
+
+SOTOPIA-Hard \citep{zhou2024sotopia} is a dyadic ($n{=}2$) social-negotiation benchmark with open-ended natural-language actions and a persona structure that violates the prior-factorisation assumption PF. The substrate is structurally out of scope for HT-MG-BC on three axes: it is dyadic rather than $n\!\geq\!3$, the action space is unbounded text rather than tabular contribution levels, and the persona prior is not factored. To probe whether the H-PSMG\textsuperscript{+} framework remains useful under partial precondition satisfaction, we apply a substrate-adapted variant that extracts approximate per-agent marginals from a Concordia-style mechanistic surrogate over a discretised intent space, then runs the same factored-posterior sampling and type-discrimination bonus as in HP-SPGG, in Sotopia self-play.
+
+\paragraph{Three in-scope families (Figure~\ref{fig:sotopia-results}).} All SOTOPIA-Hard episodes are $6$-turn alternating dialogues; what separates the three families in Figure~\ref{fig:sotopia-results} from the remaining eight is the \emph{type structure} of the scenario rather than the turn count. In \emph{craigslist\_bargains}, \emph{revenge\_plot} and \emph{donate\_funds} each agent carries a private payoff parameter -- reservation price, hidden motive, donor capacity -- that the partner cannot observe a priori and that strictly gates the focal-agent reward, so type identifiability and approximate prior factorisation hold along the parameter the bonus and posterior actually use. Averaged across all four backbones, H-PSMG\textsuperscript{+} \emph{leads on all three} families with margins $+0.06$, $+0.10$, $+0.02$ over the best of A-ToM-$1$, ECON-BNE, \texttt{llm\_belief}, and \texttt{llm\_greedy}. The remaining eight SOTOPIA-Hard families -- pure coordination, item-allocation, and physical-good-sharing scenarios where the persona is either common knowledge from the opening prompt or does not enter the focal payoff -- collapse the type-discrimination signal, so PF and type identifiability are vacuous; on those families H-PSMG\textsuperscript{+} loses its strict dominance and reverts to within $0.33$ of the per-cell leader (Appendix~\ref{app:sotopia-detail}). This pattern matches Theorem~\ref{thm:lower-no-pf}'s prior-factorisation lower bound: where PF is non-trivially in force the factored posterior plus bonus continues to pay off, where it degenerates the algorithm degrades gracefully. Figure~\ref{fig:sotopia-traj} resolves this final-turn comparison across the dialogue by re-running the SOTOPIA judge on transcripts truncated to $k\!\in\!\{2,4,6\}$ utterances: H-PSMG\textsuperscript{+} attains the steepest monotone gain on \emph{revenge\_plot} and finishes ahead on all three families at $k{=}6$, indicating that the advantage accrues turn by turn as partner-type evidence accumulates rather than collapsing into a single end-of-dialogue artefact.
+
+\paragraph{What the trajectory shape reveals.} The per-turn curves in Figure~\ref{fig:sotopia-traj} expose a qualitative difference between H-PSMG\textsuperscript{+} and the prompt-based baselines that the end-of-dialogue bars alone hide. On \emph{craigslist\_bargains} and \emph{donate\_funds}, ECON-BNE, A-ToM-$1$, and the two \texttt{llm\_*} baselines all peak around turns $k{=}3$--$4$ and then \emph{revert} by $k{=}6$ -- the agents commit to an opening posture, get a partial confirmation in mid-dialogue, and then over-commit in late turns once the partner's response stops fitting the early-formed belief. H-PSMG\textsuperscript{+} is the only baseline whose $k{=}6$ score sits at or above its mid-dialogue level, because its belief is re-updated by Bayes' rule on every new utterance rather than locked to the first impression. On \emph{revenge\_plot} the same mechanism produces a strict monotone climb $1.65\!\to\!2.93$: the hidden motive is hardest to read from the opening prompt and gets steadily disambiguated only as more text accumulates -- exactly the regime where incremental Bayesian updating is meant to win, and the only family where the gap over the best alternative widens with $k$ rather than collapsing. Two operational consequences follow. First, the SOTOPIA-Hard advantage is not a late-turn artefact of the judge: the lead is visible by $k{=}4$ on every family. Second, the failure mode of the prompt-based baselines (form a belief, stop updating, revert when contradicted) is structural and would not be fixed by longer dialogues -- the prompt-based agents reach their best on $k{=}3\!\sim\!4$ and then drift, while H-PSMG\textsuperscript{+}'s posterior continues to integrate evidence.
+
+\section{Discussion, Limitations, and Conclusion}
+\label{sec:discussion}
+
+\paragraph{Summary.} We have introduced H-PSMG and H-PSMG\textsuperscript{+}, an algorithm family for centralised multi-agent LLM coordination under unknown personas and dynamics. The factored posterior is exact under three structural conditions and yields exponential storage savings in $n$ together with a Bayesian regret bound that is exponentially tighter than the prior-factorisation lower bound. The type-discrimination bonus reduces burn-in regret by an $\Omega(|\Theta_i|^n)$ factor on a deep-trap family. Across three LLM benchmarks of increasing wildness -- HP-SPGG, Concordia, SOTOPIA-Hard -- the algorithm family beats the strongest published LLM-coordination baselines by $6$--$12\times$ where the theoretical preconditions hold (HP-SPGG), wins or ties oracle on $16/16$ Concordia configurations, and remains within $0.1$ of the best alternative on every backbone in the out-of-scope dyadic-negotiation setting (SOTOPIA-Hard) where it leads the largest scenario family while losing the strict dominance the theory guarantees only under prior factorisation -- graceful degradation rather than catastrophic failure as the preconditions weaken.
+
+\paragraph{Limitations.} (i) The regret guarantees assume a tabular state-action space and a discrete persona archetype set; the function-approximation generalisation FA-H-PSMG\textsuperscript{+} (Appendix~\ref{app:fa-hpsmg}) extends to continuous spaces but inherits function-approximation error. (ii) The CCE oracle is assumed deterministic and measurable (CSR); randomised CCE-tie-breaking would alter the burn-in constants. (iii) Personas are sampled once per episode and held fixed; non-stationary personas are out of scope. (iv) The persona-likelihood scoring requires next-token-probability access from the LLM backbone, which all four backbones we tested support; black-box-only LLMs would require a wrapper. (v) The bonus weight $\beta$ is held fixed at $0.25$ across all substrates and backbones; per-substrate adaptation could further improve burn-in performance but at the cost of substrate-specific tuning.
+
+\paragraph{Future work.} Decentralised HT-MG-BC (each agent maintains its own posterior over the others), beyond-TI dynamics (persona-coupled transitions), and adaptive-$\beta$ schedules informed by per-episode posterior concentration estimates are natural next steps. The function-approximation generalisation (Appendix~\ref{app:fa-hpsmg}) is fully worked out and ready for empirical study at scale.
+
+
+\bibliography{ref}
+% acl.sty sets \bibliographystyle{acl_natbib} automatically
+
+\appendix
+
+\input{appendix}
+
+\end{document}

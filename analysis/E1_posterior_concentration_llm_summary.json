@@ -1,0 +1,558 @@
+{
+  "summary": [
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "input": "results\\e1_e4_llm\\E1_posterior_DeepSeek_V3_2_live.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        4,
+        4,
+        5,
+        7,
+        2
+      ],
+      "mean_concentration_time_censored": 4.4,
+      "regime": "self-decay edge",
+      "final_true_mass_mean": 0.9909788345427001
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "input": "results\\e1_e4_llm\\E1_posterior_Kimi_K2_6_live.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        3,
+        12,
+        null,
+        null,
+        3
+      ],
+      "mean_concentration_time_censored": 12.0,
+      "regime": "burn-in jump",
+      "final_true_mass_mean": 0.8566064671128423
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "input": "results\\e1_e4_llm\\E1_posterior_Llama_4_Maverick_17B_128E_Instruct_FP8_live.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        12,
+        14,
+        13,
+        16,
+        15
+      ],
+      "mean_concentration_time_censored": 14.0,
+      "regime": "burn-in jump",
+      "final_true_mass_mean": 0.9872698411734019
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "input": "results\\e1_e4_llm\\E1_posterior_gpt_5_4_nano_20260317_live.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        5,
+        null,
+        2,
+        3,
+        2
+      ],
+      "mean_concentration_time_censored": 6.6,
+      "regime": "self-decay edge",
+      "final_true_mass_mean": 0.9667684499178989
+    }
+  ],
+  "trajectories": [
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 1,
+      "mean_true_mass": 0.466784460678002,
+      "sem": 0.06397718070656458
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 2,
+      "mean_true_mass": 0.7614412283910473,
+      "sem": 0.06159018205885417
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 3,
+      "mean_true_mass": 0.8881861835211048,
+      "sem": 0.034930900314168435
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 4,
+      "mean_true_mass": 0.9381250529793234,
+      "sem": 0.025109305960683965
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 5,
+      "mean_true_mass": 0.9754602794887023,
+      "sem": 0.012817986082844242
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 6,
+      "mean_true_mass": 0.9806571440074855,
+      "sem": 0.010800369599561214
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 7,
+      "mean_true_mass": 0.9867944368537744,
+      "sem": 0.006710674741867643
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 8,
+      "mean_true_mass": 0.9888221852287379,
+      "sem": 0.006172312209333113
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 9,
+      "mean_true_mass": 0.9898246651599943,
+      "sem": 0.006089464599310074
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 10,
+      "mean_true_mass": 0.9903237077947151,
+      "sem": 0.0060934498298484165
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 11,
+      "mean_true_mass": 0.9905805306438533,
+      "sem": 0.006105798822926247
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 12,
+      "mean_true_mass": 0.9907204518803657,
+      "sem": 0.006114906118947366
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 13,
+      "mean_true_mass": 0.9908026933818724,
+      "sem": 0.0061208872198723376
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 14,
+      "mean_true_mass": 0.9908552688076672,
+      "sem": 0.006124950209503066
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 15,
+      "mean_true_mass": 0.990891613347552,
+      "sem": 0.006127898622734043
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 16,
+      "mean_true_mass": 0.990918352814079,
+      "sem": 0.006130165330890373
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 17,
+      "mean_true_mass": 0.9909389062065619,
+      "sem": 0.0061319764207840065
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 18,
+      "mean_true_mass": 0.9909551552923103,
+      "sem": 0.006133455521399402
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 19,
+      "mean_true_mass": 0.9909682220351771,
+      "sem": 0.006134676804736679
+    },
+    {
+      "backbone": "DeepSeek_V3_2_live",
+      "round": 20,
+      "mean_true_mass": 0.9909788345427001,
+      "sem": 0.0061356899534071455
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 1,
+      "mean_true_mass": 0.5940280024106889,
+      "sem": 0.07146328527399934
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 2,
+      "mean_true_mass": 0.7042137608004932,
+      "sem": 0.0625984805347307
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 3,
+      "mean_true_mass": 0.7737464012393177,
+      "sem": 0.06301877741452494
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 4,
+      "mean_true_mass": 0.7869704265813394,
+      "sem": 0.061948077629429436
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 5,
+      "mean_true_mass": 0.7947954941449754,
+      "sem": 0.060328661542092245
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 6,
+      "mean_true_mass": 0.8014293792706322,
+      "sem": 0.058849722983104875
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 7,
+      "mean_true_mass": 0.8075925020134221,
+      "sem": 0.057666524240758556
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 8,
+      "mean_true_mass": 0.8133502294710054,
+      "sem": 0.05679532255656394
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 9,
+      "mean_true_mass": 0.8186670378563387,
+      "sem": 0.05621032253580669
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 10,
+      "mean_true_mass": 0.8235088764814674,
+      "sem": 0.055867955335498286
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 11,
+      "mean_true_mass": 0.8278603603089411,
+      "sem": 0.055717887313817466
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 12,
+      "mean_true_mass": 0.8394947757057792,
+      "sem": 0.056462116734639085
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 13,
+      "mean_true_mass": 0.8428944930297348,
+      "sem": 0.056518492412354945
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 14,
+      "mean_true_mass": 0.8458561483615498,
+      "sem": 0.05664020781734019
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 15,
+      "mean_true_mass": 0.8484166669583444,
+      "sem": 0.056799139333766
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 16,
+      "mean_true_mass": 0.8506164589937715,
+      "sem": 0.05697470292967743
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 17,
+      "mean_true_mass": 0.8524966957350435,
+      "sem": 0.05715270166931462
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 18,
+      "mean_true_mass": 0.8540973432653042,
+      "sem": 0.05732398390345725
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 19,
+      "mean_true_mass": 0.8554558650762232,
+      "sem": 0.057483165206172714
+    },
+    {
+      "backbone": "Kimi_K2_6_live",
+      "round": 20,
+      "mean_true_mass": 0.8566064671128423,
+      "sem": 0.057627537050370735
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 1,
+      "mean_true_mass": 0.44739730192241045,
+      "sem": 0.06758693071860696
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 2,
+      "mean_true_mass": 0.5583440597076285,
+      "sem": 0.06926761352079401
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 3,
+      "mean_true_mass": 0.6046420738339247,
+      "sem": 0.0655061317475976
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 4,
+      "mean_true_mass": 0.7012244091962729,
+      "sem": 0.06007079856987328
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 5,
+      "mean_true_mass": 0.7588885146118789,
+      "sem": 0.04844733053827647
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 6,
+      "mean_true_mass": 0.7839118344106375,
+      "sem": 0.044618100358957094
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 7,
+      "mean_true_mass": 0.8055110188447336,
+      "sem": 0.04212089301421467
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 8,
+      "mean_true_mass": 0.8248245637573532,
+      "sem": 0.03928858907187392
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 9,
+      "mean_true_mass": 0.842127978606824,
+      "sem": 0.03706058252907376
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 10,
+      "mean_true_mass": 0.8575269717065442,
+      "sem": 0.035409816734808246
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 11,
+      "mean_true_mass": 0.871117899511664,
+      "sem": 0.03427442588969156
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 12,
+      "mean_true_mass": 0.8830095377359327,
+      "sem": 0.03356823216223674
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 13,
+      "mean_true_mass": 0.9032562960186907,
+      "sem": 0.03377321000153344
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 14,
+      "mean_true_mass": 0.9105993782007852,
+      "sem": 0.03361705947395948
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 15,
+      "mean_true_mass": 0.9678907275317209,
+      "sem": 0.010485264754670843
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 16,
+      "mean_true_mass": 0.973207355546944,
+      "sem": 0.008769710512695417
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 17,
+      "mean_true_mass": 0.9776959546347176,
+      "sem": 0.007315033095058366
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 18,
+      "mean_true_mass": 0.981469414070869,
+      "sem": 0.006087634605323042
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 19,
+      "mean_true_mass": 0.9846302415259188,
+      "sem": 0.005056341197688341
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8_live",
+      "round": 20,
+      "mean_true_mass": 0.9872698411734019,
+      "sem": 0.004192889207793911
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 1,
+      "mean_true_mass": 0.6499316318619406,
+      "sem": 0.07835485257824035
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 2,
+      "mean_true_mass": 0.8639882002545818,
+      "sem": 0.05666232069309575
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 3,
+      "mean_true_mass": 0.9406388134528021,
+      "sem": 0.032017050351597895
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 4,
+      "mean_true_mass": 0.9516868698178699,
+      "sem": 0.03005259820686736
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 5,
+      "mean_true_mass": 0.965121723881888,
+      "sem": 0.02816055973758734
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 6,
+      "mean_true_mass": 0.9654708305288283,
+      "sem": 0.028061390720280296
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 7,
+      "mean_true_mass": 0.9656749206584939,
+      "sem": 0.028044046991462054
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 8,
+      "mean_true_mass": 0.9658371335735754,
+      "sem": 0.028045041187410802
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 9,
+      "mean_true_mass": 0.9659771758366612,
+      "sem": 0.028050021764949695
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 10,
+      "mean_true_mass": 0.9661004791560914,
+      "sem": 0.02805573814467819
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 11,
+      "mean_true_mass": 0.9662095242313562,
+      "sem": 0.0280614081468781
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 12,
+      "mean_true_mass": 0.9663060355674128,
+      "sem": 0.028066813996143768
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 13,
+      "mean_true_mass": 0.9663914488972157,
+      "sem": 0.028071881195959162
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 14,
+      "mean_true_mass": 0.9664670229118542,
+      "sem": 0.02807658163773551
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 15,
+      "mean_true_mass": 0.9665338746238857,
+      "sem": 0.028080908283134483
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 16,
+      "mean_true_mass": 0.9665929974421151,
+      "sem": 0.02808486636549443
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 17,
+      "mean_true_mass": 0.9666452746487777,
+      "sem": 0.028088468971234442
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 18,
+      "mean_true_mass": 0.9666914910456611,
+      "sem": 0.028091734197870047
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 19,
+      "mean_true_mass": 0.966732343406269,
+      "sem": 0.028094683141334394
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317_live",
+      "round": 20,
+      "mean_true_mass": 0.9667684499178989,
+      "sem": 0.02809733843936407
+    }
+  ]
+}

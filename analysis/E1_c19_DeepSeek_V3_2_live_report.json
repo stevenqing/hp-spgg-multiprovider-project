@@ -1,0 +1,20 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration\\e1_e4_llm\\E1_c19_DeepSeek_V3_2_live.npy",
+  "base_calibration": "calibration_cloudgpt_multi_model_fast4_8algos_DeepSeek_V3_2_c19.npy",
+  "cache": "logs\\E1_c19_DeepSeek_V3_2_live_cache.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 19,
+  "new_live_cells": 228,
+  "cached_cells_loaded": 0,
+  "skipped_cached_cells": 0,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "workers": 2,
+  "trap": false,
+  "judge_model": "DeepSeek-V3.2",
+  "tid_min_gap": 0.13119999999999998
+}

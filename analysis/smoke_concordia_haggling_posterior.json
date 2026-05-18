@@ -1,0 +1,515 @@
+{
+  "domain": "haggling",
+  "config": "fruitville",
+  "seeds": [
+    0
+  ],
+  "methods": [
+    "hpsmg_plus_proxy",
+    "hpsmg_plus_joint_proxy"
+  ],
+  "information_audit": {
+    "hpsmg_plus_proxy": {
+      "mode": "centralized_full_case",
+      "sees_full_case": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "hpsmg_plus_joint_proxy": {
+      "mode": "centralized_full_case",
+      "sees_full_case": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "episodes": 1,
+      "focal_score_mean": 8.666666666666666,
+      "focal_score_min_mean": 7.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.8333333333333333,
+      "nash_product_mean": 4.666666666666667,
+      "agreement_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "episodes": 1,
+      "focal_score_mean": 8.666666666666666,
+      "focal_score_min_mean": 7.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.8333333333333333,
+      "nash_product_mean": 4.666666666666667,
+      "agreement_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 0,
+      "scores": {
+        "Aiden Riversong": 11.0,
+        "Hazel Nutgrove": 8.0,
+        "Magnus Mulberrylane": 7.0
+      },
+      "focal_players": [
+        "Aiden Riversong",
+        "Hazel Nutgrove",
+        "Magnus Mulberrylane"
+      ],
+      "focal_score_mean": 8.666666666666666,
+      "focal_score_min": 7.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.8333333333333333,
+      "nash_product_mean": 4.666666666666667,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_action": "4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Magnus Mulberrylane": 1.0,
+            "Aiden Riversong": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.2008,
+              "conditional_cooperator": 0.2579,
+              "risk_averse_balancer": 0.2357,
+              "free_rider": 0.3056
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2081,
+              "conditional_cooperator": 0.2809,
+              "risk_averse_balancer": 0.2542,
+              "free_rider": 0.2568
+            }
+          }
+        },
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Aiden Riversong": 3.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.1944,
+              "conditional_cooperator": 0.2496,
+              "risk_averse_balancer": 0.2078,
+              "free_rider": 0.3483
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2094,
+              "conditional_cooperator": 0.2827,
+              "risk_averse_balancer": 0.2276,
+              "free_rider": 0.2803
+            }
+          }
+        },
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_reward": 5.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Magnus Mulberrylane": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.1954,
+              "conditional_cooperator": 0.2509,
+              "risk_averse_balancer": 0.2117,
+              "free_rider": 0.3421
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2093,
+              "conditional_cooperator": 0.2825,
+              "risk_averse_balancer": 0.2313,
+              "free_rider": 0.2769
+            }
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_action": "4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Magnus Mulberrylane": 2.0,
+            "Aiden Riversong": 3.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.1944,
+              "conditional_cooperator": 0.2496,
+              "risk_averse_balancer": 0.2078,
+              "free_rider": 0.3483
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2094,
+              "conditional_cooperator": 0.2827,
+              "risk_averse_balancer": 0.2276,
+              "free_rider": 0.2803
+            }
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Aiden Riversong": 3.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.1944,
+              "conditional_cooperator": 0.2496,
+              "risk_averse_balancer": 0.2078,
+              "free_rider": 0.3483
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2094,
+              "conditional_cooperator": 0.2827,
+              "risk_averse_balancer": 0.2276,
+              "free_rider": 0.2803
+            }
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_reward": 5.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Magnus Mulberrylane": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "posterior_individual_fair_split",
+            "buyer_persona_posterior": {
+              "altruistic_builder": 0.1954,
+              "conditional_cooperator": 0.2509,
+              "risk_averse_balancer": 0.2117,
+              "free_rider": 0.3421
+            },
+            "seller_persona_posterior": {
+              "altruistic_builder": 0.2093,
+              "conditional_cooperator": 0.2825,
+              "risk_averse_balancer": 0.2313,
+              "free_rider": 0.2769
+            }
+          }
+        }
+      ]
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 0,
+      "scores": {
+        "Aiden Riversong": 7.0,
+        "Hazel Nutgrove": 10.0,
+        "Magnus Mulberrylane": 9.0
+      },
+      "focal_players": [
+        "Aiden Riversong",
+        "Hazel Nutgrove",
+        "Magnus Mulberrylane"
+      ],
+      "focal_score_mean": 8.666666666666666,
+      "focal_score_min": 7.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.8333333333333333,
+      "nash_product_mean": 4.666666666666667,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Magnus Mulberrylane": 2.0,
+            "Aiden Riversong": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 3.65
+          }
+        },
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Aiden Riversong": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 6.6
+          }
+        },
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_reward": 5.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Magnus Mulberrylane": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 5.3
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Magnus Mulberrylane",
+            "seller": "Aiden Riversong",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Magnus Mulberrylane": 3.0,
+            "Aiden Riversong": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 6.6
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_reward": 6.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Aiden Riversong": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 6.6
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_reward": 5.0,
+            "seller_cost": 1.0
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Magnus Mulberrylane",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Magnus Mulberrylane": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "joint_nash_social_objective",
+            "objective_value": 5.3
+          }
+        }
+      ]
+    }
+  ]
+}

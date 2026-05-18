@@ -1,0 +1,18 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration_cloudgpt_multi_model_fast4_8algos_Kimi_K2_6_c16.npy",
+  "base_calibration": "calibration_cloudgpt_multi_model_fast4_8algos_Kimi_K2_6_c15.npy",
+  "cache": "logs\\cloudgpt_live_cache_Kimi_K2_6.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 4,
+  "new_live_cells": 48,
+  "cached_cells_loaded": 1104,
+  "skipped_cached_cells": 0,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "workers": 12,
+  "tid_min_gap": 0.09209080459234871
+}

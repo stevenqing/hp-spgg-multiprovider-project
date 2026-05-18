@@ -1,0 +1,113 @@
+[
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 0,
+    "seed": 120000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 124,
+        "contributions": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "rewards": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "welfare": 3.0,
+        "oracle_welfare": 3.0,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 1.0,
+                "reason": "Zero-order theory of mind: maximize immediate public good with full contribution to establish cooperative precedent."
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 1.0,
+                "reason": "Zero-order theory of mind: maximize immediate public goods provision without considering others' strategies."
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "contribution": 1.0,
+                "reason": "Zero-order theory of mind: maximize immediate public good without considering others' strategies"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 0,
+    "seed": 130000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          1.0,
+          1.0,
+          0.9
+        ],
+        "welfare": 2.9,
+        "oracle_welfare": 2.9,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n  \"coordination_strategy\": \"Given the initial round with no history and hidden personas, recommend a moderate symmetric contribution of 0.5 from all players. This balances several considerations: it avoids extreme free-riding (0.0) that would harm group welfare, avoids over-commitment (1.0) that could be exploited, and provides a cooperative baseline that can be adjusted in later rounds. A 0.5 contribution is interpretable as a 'trust-building' signal that appeals to Altruistic Builder",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"Given no history, I assume uniform uncertainty about personas but expect a mix favoring moderate cooperation in initial rounds.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"No history available, so initial belief is uniform uncertainty across personas. All personas equally likely (25% each) for each player.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.6\n}\n```",
+                "```json\n{\n    \"belief\": \"Given no history, I assume equal probability among all personas. This symmetric uncertainty suggests starting with a moderate cooperative signal.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.6\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"Given no history, I assume uniform persona distribution among players. All personas are equally likely, making moderate symmetric contributions optimal for expected welfare.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"Given no history, all personas are equally likely. A symmetric moderate contribution provides the best starting point for learning and welfare.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"No history available, so initial belief is uniform distribution over personas with slight weight toward risk-averse and conditional types given typical population distributions.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,558 @@
+{
+  "summary": [
+    {
+      "backbone": "DeepSeek_V3_2",
+      "input": "results\\e1_e4\\E1_posterior_DeepSeek_V3_2.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        4,
+        8,
+        4,
+        8,
+        2
+      ],
+      "mean_concentration_time_censored": 5.2,
+      "regime": "self-decay edge",
+      "final_true_mass_mean": 0.996799845533722
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "input": "results\\e1_e4\\E1_posterior_Kimi_K2_6.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        5,
+        null,
+        4,
+        null,
+        3
+      ],
+      "mean_concentration_time_censored": 10.8,
+      "regime": "burn-in jump",
+      "final_true_mass_mean": 0.9251036021892356
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "input": "results\\e1_e4\\E1_posterior_Llama_4_Maverick_17B_128E_Instruct_FP8.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        12,
+        null,
+        16,
+        16,
+        8
+      ],
+      "mean_concentration_time_censored": 14.6,
+      "regime": "burn-in jump",
+      "final_true_mass_mean": 0.9513697242938811
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "input": "results\\e1_e4\\E1_posterior_gpt_5_4_nano_20260317.npz",
+      "threshold": 0.9,
+      "seeds": 5,
+      "agents": 3,
+      "K": 20,
+      "seed_concentration_times": [
+        5,
+        null,
+        2,
+        3,
+        2
+      ],
+      "mean_concentration_time_censored": 6.6,
+      "regime": "self-decay edge",
+      "final_true_mass_mean": 0.9586737810947947
+    }
+  ],
+  "trajectories": [
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 1,
+      "mean_true_mass": 0.46593441145841497,
+      "sem": 0.06589792907978288
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 2,
+      "mean_true_mass": 0.7393837901176543,
+      "sem": 0.07140664802963849
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 3,
+      "mean_true_mass": 0.8294125840720343,
+      "sem": 0.06077392299563585
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 4,
+      "mean_true_mass": 0.8909399628011847,
+      "sem": 0.05460151751612589
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 5,
+      "mean_true_mass": 0.9024681346573434,
+      "sem": 0.052985036274642655
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 6,
+      "mean_true_mass": 0.9083417987206857,
+      "sem": 0.05238387605634219
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 7,
+      "mean_true_mass": 0.9111875534940524,
+      "sem": 0.05215553785863042
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 8,
+      "mean_true_mass": 0.9942120632282422,
+      "sem": 0.0034727747033070316
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 9,
+      "mean_true_mass": 0.9955944716469811,
+      "sem": 0.0029135958012014443
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 10,
+      "mean_true_mass": 0.9962436415599084,
+      "sem": 0.002804530331987937
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 11,
+      "mean_true_mass": 0.9965443710167169,
+      "sem": 0.0027939189805681985
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 12,
+      "mean_true_mass": 0.9966828033718815,
+      "sem": 0.0027977865602195574
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 13,
+      "mean_true_mass": 0.9967463403239535,
+      "sem": 0.0028014077621657334
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 14,
+      "mean_true_mass": 0.9967754629387017,
+      "sem": 0.0028034544132561966
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 15,
+      "mean_true_mass": 0.9967888032752864,
+      "sem": 0.0028044729558720067
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 16,
+      "mean_true_mass": 0.9967949124396429,
+      "sem": 0.002804956369151058
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 17,
+      "mean_true_mass": 0.9967977097676602,
+      "sem": 0.002805181276734464
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 18,
+      "mean_true_mass": 0.9967989905767615,
+      "sem": 0.002805285000453793
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 19,
+      "mean_true_mass": 0.9967995770159556,
+      "sem": 0.0028053326483139344
+    },
+    {
+      "backbone": "DeepSeek_V3_2",
+      "round": 20,
+      "mean_true_mass": 0.996799845533722,
+      "sem": 0.002805354497992188
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 1,
+      "mean_true_mass": 0.642990359673509,
+      "sem": 0.07228019920174185
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 2,
+      "mean_true_mass": 0.8130581194054859,
+      "sem": 0.0570380747998391
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 3,
+      "mean_true_mass": 0.8671765394844295,
+      "sem": 0.05147244404491239
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 4,
+      "mean_true_mass": 0.8851674165158745,
+      "sem": 0.049253676306496505
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 5,
+      "mean_true_mass": 0.8953823551130168,
+      "sem": 0.048348865708340995
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 6,
+      "mean_true_mass": 0.9014674923251101,
+      "sem": 0.04774062122025495
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 7,
+      "mean_true_mass": 0.9054301919571903,
+      "sem": 0.04719217632293041
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 8,
+      "mean_true_mass": 0.9083195950348825,
+      "sem": 0.04668635891332081
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 9,
+      "mean_true_mass": 0.9106463200918465,
+      "sem": 0.046236677065800195
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 10,
+      "mean_true_mass": 0.9126502817964408,
+      "sem": 0.045850985725618104
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 11,
+      "mean_true_mass": 0.9144427361566984,
+      "sem": 0.045529709763090044
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 12,
+      "mean_true_mass": 0.9160756610967039,
+      "sem": 0.04526877103042021
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 13,
+      "mean_true_mass": 0.9175743718856262,
+      "sem": 0.04506190281829941
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 14,
+      "mean_true_mass": 0.9189525329246269,
+      "sem": 0.04490202960577458
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 15,
+      "mean_true_mass": 0.920218945160355,
+      "sem": 0.04478204235757867
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 16,
+      "mean_true_mass": 0.9213805384225446,
+      "sem": 0.044695226137833034
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 17,
+      "mean_true_mass": 0.9224436288452627,
+      "sem": 0.044635485301869525
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 18,
+      "mean_true_mass": 0.9234143935784078,
+      "sem": 0.04459744537590683
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 19,
+      "mean_true_mass": 0.9242990016037304,
+      "sem": 0.04457647725624344
+    },
+    {
+      "backbone": "Kimi_K2_6",
+      "round": 20,
+      "mean_true_mass": 0.9251036021892356,
+      "sem": 0.044568672487401394
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 1,
+      "mean_true_mass": 0.4701089781545672,
+      "sem": 0.06562431927873708
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 2,
+      "mean_true_mass": 0.5728829869364727,
+      "sem": 0.06737001517778116
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 3,
+      "mean_true_mass": 0.616593968504196,
+      "sem": 0.06364754812009528
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 4,
+      "mean_true_mass": 0.6909084989966559,
+      "sem": 0.06146571636565962
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 5,
+      "mean_true_mass": 0.7185103166567336,
+      "sem": 0.05833764398911334
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 6,
+      "mean_true_mass": 0.742048645632733,
+      "sem": 0.05578419620903956
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 7,
+      "mean_true_mass": 0.7626486332663127,
+      "sem": 0.05373960512712935
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 8,
+      "mean_true_mass": 0.8655930760666806,
+      "sem": 0.043100987732469134
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 9,
+      "mean_true_mass": 0.8789754348378995,
+      "sem": 0.04027540847469328
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 10,
+      "mean_true_mass": 0.89093508664227,
+      "sem": 0.037987899757773
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 11,
+      "mean_true_mass": 0.9015493192797943,
+      "sem": 0.03620885330415317
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 12,
+      "mean_true_mass": 0.9108930723441148,
+      "sem": 0.034884487413266954
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 13,
+      "mean_true_mass": 0.919050795627454,
+      "sem": 0.03394464442835871
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 14,
+      "mean_true_mass": 0.9261178075209183,
+      "sem": 0.03331300571812195
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 15,
+      "mean_true_mass": 0.9321970432994594,
+      "sem": 0.03291624536751688
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 16,
+      "mean_true_mass": 0.9373944253262999,
+      "sem": 0.032690157388850026
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 17,
+      "mean_true_mass": 0.9418144757374372,
+      "sem": 0.03258243918342309
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 18,
+      "mean_true_mass": 0.9455568547885599,
+      "sem": 0.03255287658386057
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 19,
+      "mean_true_mass": 0.9487139925436388,
+      "sem": 0.03257199363247592
+    },
+    {
+      "backbone": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+      "round": 20,
+      "mean_true_mass": 0.9513697242938811,
+      "sem": 0.03261906852867509
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 1,
+      "mean_true_mass": 0.6851200822003637,
+      "sem": 0.0747206708518494
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 2,
+      "mean_true_mass": 0.8575393367204084,
+      "sem": 0.05493545587839408
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 3,
+      "mean_true_mass": 0.9312671730996857,
+      "sem": 0.03473972792972282
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 4,
+      "mean_true_mass": 0.9416332827372372,
+      "sem": 0.034311530570018255
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 5,
+      "mean_true_mass": 0.9552213381949298,
+      "sem": 0.033208084371079714
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 6,
+      "mean_true_mass": 0.9558004800758966,
+      "sem": 0.0331764478471719
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 7,
+      "mean_true_mass": 0.9561950948281008,
+      "sem": 0.03317002018855417
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 8,
+      "mean_true_mass": 0.9565120586027428,
+      "sem": 0.033170798414496876
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 9,
+      "mean_true_mass": 0.9567852845120501,
+      "sem": 0.0331737133288833
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 10,
+      "mean_true_mass": 0.9570294532421785,
+      "sem": 0.03317728283532079
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 11,
+      "mean_true_mass": 0.957251913580848,
+      "sem": 0.033181013377005145
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 12,
+      "mean_true_mass": 0.9574567911320491,
+      "sem": 0.03318471493250782
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 13,
+      "mean_true_mass": 0.9576466904800983,
+      "sem": 0.03318830685909045
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 14,
+      "mean_true_mass": 0.9578234510794831,
+      "sem": 0.03319175502855637
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 15,
+      "mean_true_mass": 0.9579884952437043,
+      "sem": 0.03319504796020249
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 16,
+      "mean_true_mass": 0.9581429934765126,
+      "sem": 0.03319818623138533
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 17,
+      "mean_true_mass": 0.9582879463914125,
+      "sem": 0.033201177100987925
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 18,
+      "mean_true_mass": 0.9584242279713693,
+      "sem": 0.03320403147251394
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 19,
+      "mean_true_mass": 0.9585526105794161,
+      "sem": 0.0332067620440302
+    },
+    {
+      "backbone": "gpt_5_4_nano_20260317",
+      "round": 20,
+      "mean_true_mass": 0.9586737810947947,
+      "sem": 0.033209382129757194
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+type_count,algorithm,mean_final_cumulative_regret,sem,seeds,input
+2,hpsmg,0.022960060938787174,0.010868772603858875,5,results\e1_e4\E2_type2_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+2,hpsmg_plus,0.004566366694962021,0.0027963170952740473,5,results\e1_e4\E2_type2_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+3,hpsmg,0.1291484459334368,0.06401011510952366,5,results\e1_e4\E2_type3_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+3,hpsmg_plus,0.0,0.0,5,results\e1_e4\E2_type3_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+4,hpsmg,0.025138297733656324,0.018579328874112483,5,results\e1_e4\E2_type4_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+4,hpsmg_plus,0.0,0.0,5,results\e1_e4\E2_type4_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+5,hpsmg,0.16532123027492457,0.0932084243154468,5,results\e1_e4\E2_type5_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+5,hpsmg_plus,0.11715005159986566,0.07526811840642358,5,results\e1_e4\E2_type5_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+6,hpsmg,0.15784193520558723,0.051744343783184876,5,results\e1_e4\E2_type6_Llama-4-Maverick-17B-128E-Instruct-FP8.npz
+6,hpsmg_plus,0.03235098108625767,0.030730583910247838,5,results\e1_e4\E2_type6_Llama-4-Maverick-17B-128E-Instruct-FP8.npz

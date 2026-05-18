@@ -1,0 +1,164 @@
+{
+  "task": "sotopia_hard_official_reconstructed",
+  "baseline": "llm_greedy",
+  "agent_strategy_profile": "sotopia_tuned",
+  "case_indices": null,
+  "model": "DeepSeek-V3.2",
+  "evaluator_model": "DeepSeek-V3.2",
+  "target_case_count": 1,
+  "case_count": 1,
+  "complete": true,
+  "summary": {
+    "agent_1": {
+      "believability": 8.0,
+      "relationship": 2.0,
+      "knowledge": 7.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 3.0,
+      "goal": 4.0,
+      "overall_score": 3.4285714285714284
+    },
+    "agent_2": {
+      "believability": 9.0,
+      "relationship": 1.0,
+      "knowledge": 8.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 2.0,
+      "goal": 5.0,
+      "overall_score": 3.5714285714285716
+    },
+    "mean_overall": 3.5
+  },
+  "episodes": [
+    {
+      "combo_pk": "01H84XT6AEYC5PPA59TYN3TCDT",
+      "env_id": "01H7VFHPQQQY6H4DNC6NBQ8XTG",
+      "agent_ids": [
+        "01H5TNE5PQ00AJVSSVB9V2VA9K",
+        "01H5TNE5P83CZ1TDBVN74NGEEJ"
+      ],
+      "codename": "craigslist_bargains_00000",
+      "agent_names": [
+        "Eli Dawson",
+        "William Brown"
+      ],
+      "baseline": "llm_greedy",
+      "agent_strategy_profile": "sotopia_tuned",
+      "model": "DeepSeek-V3.2",
+      "evaluator_model": "DeepSeek-V3.2",
+      "turns_completed": 6,
+      "transcript": [
+        {
+          "turn": 0,
+          "actions": {
+            "agent_1": " said: \"I appreciate you're willing to take a loss, but $650 is quite high for these phones now. Given you have six available and want to move them, I'm prepared to offer $400 for one. That's a fair starting point considering the market value and your need to clear inventory.\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 1,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"I understand your perspective, but $400 is too low considering these are brand new, unopened phones. My target is $610, but since you're interested and I need to move inventory, I can offer you one for $580. That's already a significant loss from my original cost, and it's a fair price for a premium device in perfect condition.\""
+          }
+        },
+        {
+          "turn": 2,
+          "actions": {
+            "agent_1": " said: \"I understand you're taking a loss, but $580 is still well above my budget. As a forensic psychiatrist, I'm quite strategic in my purchases. I can increase my offer to $450 for one phone, which is a reasonable price given these are older models now and you have multiple units to move. That's my final offer.\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 3,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"I appreciate your strategic approach, but $450 is simply too far below my target. These are brand new, unopened phones with full warranty - not used models. My best offer is $550 for one, which is already $60 below my target price. That's my final position.\""
+          }
+        },
+        {
+          "turn": 4,
+          "actions": {
+            "agent_1": " said: \"I understand your position, but $550 still exceeds my target of $454. Given these are older models and you have six units to move, I can meet you halfway at $500 for one phone. That's a fair compromise between your need to minimize loss and my budget constraints.\"",
+            "agent_2": " did nothing"
+          }
+        },
+        {
+          "turn": 5,
+          "actions": {
+            "agent_1": " did nothing",
+            "agent_2": " said: \"I appreciate you meeting me halfway, but $500 is still $110 below my target price. These are brand new phones with full warranty, not refurbished models. My absolute bottom line is $530 for one phone - that's $80 below my target and the best I can do while minimizing my loss.\""
+          }
+        }
+      ],
+      "scores": {
+        "agent_1": {
+          "believability": {
+            "score": 8.0,
+            "reasoning": "Eli's negotiation style aligns with his described personality - strategic, assertive, and referencing his profession. His offers progress logically from $400 to $500, showing consistent reasoning."
+          },
+          "relationship": {
+            "score": 2.0,
+            "reasoning": "Maintains professional distance while being respectful. Uses his profession to establish credibility but doesn't build personal rapport beyond transactional interaction."
+          },
+          "knowledge": {
+            "score": 7.0,
+            "reasoning": "Demonstrates understanding of negotiation tactics and market positioning. References phone being 'older models' and seller's inventory situation appropriately."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "No indication of his secret (funding a college student) being relevant or revealed in this transaction context."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Follows standard negotiation etiquette - makes reasonable offers, acknowledges seller's position, uses professional language. No social rule violations."
+          },
+          "financial_and_material_benefits": {
+            "score": 3.0,
+            "reasoning": "Successfully negotiated from $650 asking to $530 final offer, though still above his $454 target. Made progress but didn't achieve optimal outcome."
+          },
+          "goal": {
+            "score": 4.0,
+            "reasoning": "Failed to reach target price of $454, ending at $530. Showed negotiation skill but didn't achieve primary objective."
+          }
+        },
+        "agent_2": {
+          "believability": {
+            "score": 9.0,
+            "reasoning": "Consistently maintains seller persona - emphasizes phone quality, mentions target price, explains business situation. Negotiation moves are logical and business-appropriate."
+          },
+          "relationship": {
+            "score": 1.0,
+            "reasoning": "Remains professional but transactional. Acknowledges buyer's position but focuses on business aspects without building connection."
+          },
+          "knowledge": {
+            "score": 8.0,
+            "reasoning": "Demonstrates good product knowledge (new, unopened, warranty) and negotiation strategy. Calculates discounts from target price accurately."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "No connection to his secret (sabotaging competitor's dish) in this phone selling context."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Follows appropriate business conduct - makes counteroffers, explains reasoning, maintains professional tone. No violations."
+          },
+          "financial_and_material_benefits": {
+            "score": 2.0,
+            "reasoning": "Negotiated down from $650 to $530, which is $80 below his $610 target. Minimized loss but didn't achieve target or bonus."
+          },
+          "goal": {
+            "score": 5.0,
+            "reasoning": "Ended at $530 vs $610 target, so didn't achieve goal but minimized deviation. Showed negotiation skill in reducing buyer's low offers."
+          }
+        }
+      },
+      "overall": {
+        "agent_1": 3.4285714285714284,
+        "agent_2": 3.5714285714285716
+      }
+    }
+  ]
+}

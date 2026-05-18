@@ -1,0 +1,298 @@
+[
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 0,
+    "seed": 120000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.78,
+          0.75,
+          0.75
+        ],
+        "welfare": 2.2800000000000002,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 64,
+        "contributions": [
+          0.5,
+          0.5,
+          1.0
+        ],
+        "rewards": [
+          0.78,
+          0.78,
+          0.86
+        ],
+        "welfare": 2.42,
+        "oracle_welfare": 2.96,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 1,
+    "seed": 120001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.55,
+          0.75,
+          0.75
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.5,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.55,
+          0.75,
+          0.75
+        ],
+        "welfare": 2.05,
+        "oracle_welfare": 2.5,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 0,
+    "seed": 170000,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.78,
+          0.55,
+          0.78
+        ],
+        "welfare": 2.1100000000000003,
+        "oracle_welfare": 2.58,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 0
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.78,
+          0.55,
+          0.78
+        ],
+        "welfare": 2.1100000000000003,
+        "oracle_welfare": 2.58,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 1
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 1,
+    "seed": 170001,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.55,
+          0.78,
+          0.35
+        ],
+        "welfare": 1.6800000000000002,
+        "oracle_welfare": 2.62,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 0
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.55,
+          0.78,
+          0.35
+        ],
+        "welfare": 1.6800000000000002,
+        "oracle_welfare": 2.62,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 1
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "rows": [
+    {
+      "type_count": 2,
+      "algorithm": "hpsmg",
+      "mean_final_cumulative_regret": 1.736393510345659,
+      "sem": 0.0,
+      "seeds": 1,
+      "input": "results\\e1_e4_llm_smoke\\E2_type2_live_smoke.npz"
+    },
+    {
+      "type_count": 2,
+      "algorithm": "hpsmg_plus",
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 1,
+      "input": "results\\e1_e4_llm_smoke\\E2_type2_live_smoke.npz"
+    }
+  ]
+}

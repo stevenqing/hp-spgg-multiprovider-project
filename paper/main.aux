@@ -1,0 +1,436 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{yang2025econ}
+\citation{xu2026atom}
+\citation{vezhnevets2023concordia}
+\citation{concordia_contest2025}
+\citation{zhou2024sotopia}
+\citation{zhang2021multi,leibo2017multi,perolat2017multi}
+\citation{shapley1953stochastic,littman1994markov}
+\citation{harsanyi1968games}
+\citation{strens2000bayesian,osband2013more,agrawal2017optimistic,osband2017posterior}
+\citation{jafarnia2021learning}
+\citation{xiong2022self}
+\citation{yueh2026bayesian}
+\citation{hsu2024randomized}
+\citation{russo2014learning,russo2016information}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
+\citation{vezhnevets2023concordia,concordia_contest2025}
+\citation{zhou2024sotopia}
+\citation{strens2000bayesian}
+\citation{osband2013more}
+\citation{agrawal2017optimistic}
+\citation{jaksch2010near}
+\citation{ouyang2017learning}
+\citation{russo2014learning}
+\citation{jafarnia2021learning}
+\citation{xiong2022self}
+\citation{yueh2026bayesian}
+\citation{hsu2024randomized}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{3}{section.2}\protected@file@percent }
+\newlabel{sec:related}{{2}{3}{Related Work}{section.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Posterior sampling in single-agent RL.}{3}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Posterior sampling in Markov games.}{3}{section*.2}\protected@file@percent }
+\citation{kwon2021rl}
+\citation{tian2024learning}
+\citation{tuynman2022transfer}
+\citation{mutti2024exploiting}
+\citation{arumugam2026toward}
+\citation{jin2021v,song2022when,mao2023decentralized}
+\citation{erez2023regret}
+\citation{cui2025incentivize}
+\citation{lanctot2017unified}
+\citation{mcmahan2003planning}
+\citation{mcaleer2020pipeline}
+\citation{muller2019generalized}
+\citation{marris2021multi}
+\citation{mcaleer2021xdo}
+\citation{mcaleer2022anytime}
+\citation{dinh2022online}
+\citation{zhou2022efficient}
+\citation{yao2023policy}
+\citation{smith2026sample}
+\citation{hennes2026code}
+\@writefile{toc}{\contentsline {paragraph}{Multi-agent randomized exploration.}{4}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Latent-type and heterogeneous learning.}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Structured priors and Bayesian RL.}{4}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{General-sum equilibrium learning.}{4}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Policy-Space Response Oracles and population-based MARL.}{4}{section*.7}\protected@file@percent }
+\citation{albrecht2013game,albrecht2019convergence}
+\citation{albrecht2019convergence}
+\@writefile{toc}{\contentsline {paragraph}{Ad-hoc coordination with type-based opponent modelling.}{5}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem Setting}{5}{section.3}\protected@file@percent }
+\newlabel{sec:setting}{{3}{5}{Problem Setting}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Heterogeneous-Type Markov Game}{5}{subsection.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Structural Assumptions}{5}{subsection.3.2}\protected@file@percent }
+\newlabel{ass:TI}{{3.1}{5}{Type-Independent Transitions, TI}{theorem.3.1}{}}
+\newlabel{ass:RL}{{3.2}{5}{Reward Locality, RL}{theorem.3.2}{}}
+\citation{kwon2021rl}
+\newlabel{ass:PF}{{3.4}{6}{Prior Factorization, PF}{theorem.3.4}{}}
+\newlabel{ass:TID}{{3.5}{6}{Type Identifiability, TID}{theorem.3.5}{}}
+\newlabel{ass:ISI}{{3.6}{6}{Initial-State Independence, ISI}{theorem.3.6}{}}
+\newlabel{ass:CSR}{{3.7}{6}{CCE Selection Rule, CSR}{theorem.3.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Performance Criterion}{6}{subsection.3.3}\protected@file@percent }
+\newlabel{eq:regret-def}{{4}{6}{Performance Criterion}{equation.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Algorithm: Hierarchical Posterior Sampling for Markov Games}{6}{section.4}\protected@file@percent }
+\newlabel{sec:algorithm}{{4}{6}{Algorithm: Hierarchical Posterior Sampling for Markov Games}{section.4}{}}
+\citation{jin2021v}
+\citation{mao2023decentralized}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}H-PSMG: posterior sampling with factored marginals}{7}{subsection.4.1}\protected@file@percent }
+\newlabel{sec:hpsmg-vanilla}{{4.1}{7}{H-PSMG: posterior sampling with factored marginals}{subsection.4.1}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Hierarchical Posterior Sampling for Markov Games (H-PSMG)}}{7}{algorithm.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{alg:hpsmg}{{1}{7}{Hierarchical Posterior Sampling for Markov Games (H-PSMG)}{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}H-PSMG\textsuperscript  {+}: type-discriminative refinement}{7}{subsection.4.2}\protected@file@percent }
+\newlabel{sec:hpsmg-plus-algo}{{4.2}{7}{H-PSMG\textsuperscript {+}: type-discriminative refinement}{subsection.4.2}{}}
+\newlabel{eq:bonus}{{5}{7}{H-PSMG\textsuperscript {+}: type-discriminative refinement}{equation.5}{}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces H-PSMG\textsuperscript  {+}: H-PSMG with type-discrimination bonus}}{7}{algorithm.2}\protected@file@percent }
+\newlabel{alg:hpsmg-plus}{{2}{7}{H-PSMG\textsuperscript {+}: H-PSMG with type-discrimination bonus}{algorithm.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Posterior Decoupling Theorem}{8}{section.5}\protected@file@percent }
+\newlabel{sec:decoupling}{{5}{8}{Posterior Decoupling Theorem}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Likelihood Factorization}{8}{subsection.5.1}\protected@file@percent }
+\newlabel{lem:likelihood}{{5.1}{8}{Joint Likelihood Factorization}{theorem.5.1}{}}
+\newlabel{eq:lik-factor}{{6}{8}{Joint Likelihood Factorization}{equation.6}{}}
+\newlabel{eq:ck}{{7}{8}{Joint Likelihood Factorization}{equation.7}{}}
+\newlabel{eq:lp}{{8}{8}{Joint Likelihood Factorization}{equation.8}{}}
+\newlabel{eq:ltheta}{{9}{8}{Joint Likelihood Factorization}{equation.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Main Theorem}{9}{subsection.5.2}\protected@file@percent }
+\newlabel{thm:decoupling}{{5.2}{9}{Posterior Decoupling}{theorem.5.2}{}}
+\newlabel{eq:decoupling}{{14}{9}{Posterior Decoupling}{equation.14}{}}
+\newlabel{cor:storage}{{5.3}{9}{Storage and Update Complexity}{theorem.5.3}{}}
+\newlabel{prop:bit-identical}{{5.4}{9}{Trajectory-Level Equivalence with Joint-PSRL}{theorem.5.4}{}}
+\citation{agrawal2017optimistic}
+\citation{russo2014learning}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Numerical Illustration: Two-Agent Bayesian Prisoner's Dilemma}{10}{section.6}\protected@file@percent }
+\newlabel{sec:example}{{6}{10}{Numerical Illustration: Two-Agent Bayesian Prisoner's Dilemma}{section.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Setup}{10}{subsection.6.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Episode 1}{10}{subsection.6.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Posterior update after episode 1. Joint posterior is computed by Bayes' rule, then verified against the product of marginals.}}{11}{table.caption.9}\protected@file@percent }
+\newlabel{tab:posterior-update}{{1}{11}{Posterior update after episode 1. Joint posterior is computed by Bayes' rule, then verified against the product of marginals}{table.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Noisy Observation Variant}{11}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Necessity of the Structural Assumptions}{11}{section.7}\protected@file@percent }
+\newlabel{sec:necessity}{{7}{11}{Necessity of the Structural Assumptions}{section.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Counter-Example I: Type-Dependent Transitions}{11}{subsection.7.1}\protected@file@percent }
+\citation{osband2013more}
+\citation{azar2017minimax,lu2019information}
+\citation{azar2017minimax}
+\citation{russo2016information}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}Counter-Example II: Non-Local Reward}{12}{subsection.7.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}From Decoupling to Regret: A Roadmap}{12}{section.8}\protected@file@percent }
+\newlabel{sec:regret-roadmap}{{8}{12}{From Decoupling to Regret: A Roadmap}{section.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Per-Episode Regret Decomposition}{12}{subsection.8.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Bounding the Transition Component}{12}{subsection.8.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Bounding the Type Component}{13}{subsection.8.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Main Regret Bound}{13}{subsection.8.4}\protected@file@percent }
+\newlabel{thm:main-regret-informal}{{8.1}{13}{Bayesian Regret of H-PSMG, informal}{theorem.8.1}{}}
+\newlabel{eq:main-regret-sketch}{{36}{13}{Bayesian Regret of H-PSMG, informal}{equation.36}{}}
+\newlabel{cor:gap-dependent}{{8.2}{13}{Gap-Dependent Rate under Identifiability}{theorem.8.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.5}Rate Separation from Heuristic and Type-Agnostic Baselines}{13}{subsection.8.5}\protected@file@percent }
+\newlabel{sec:rate-separation}{{8.5}{13}{Rate Separation from Heuristic and Type-Agnostic Baselines}{subsection.8.5}{}}
+\newlabel{thm:rate-separation}{{8.3}{14}{Rate Separation}{theorem.8.3}{}}
+\citation{ghosal2007convergence}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.6}Regret guarantees of H-PSMG\textsuperscript  {+}}{15}{subsection.8.6}\protected@file@percent }
+\newlabel{sec:hpsmg-plus}{{8.6}{15}{Regret guarantees of H-PSMG\textsuperscript {+}}{subsection.8.6}{}}
+\newlabel{thm:hpsmg-plus}{{8.4}{15}{Regret of H-PSMG\textsuperscript {+}}{theorem.8.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comparison with Joint-PSRL.}{15}{section*.10}\protected@file@percent }
+\citation{lattimore2020bandit}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.7}Exponential improvement over generic Bayesian RL via decoupling}{16}{subsection.8.7}\protected@file@percent }
+\newlabel{sec:exponential-improvement}{{8.7}{16}{Exponential improvement over generic Bayesian RL via decoupling}{subsection.8.7}{}}
+\newlabel{thm:lower-no-pf}{{8.5}{16}{Exponential Lower Bound Without Prior Factorisation}{theorem.8.5}{}}
+\citation{domingues2021episodic}
+\citation{lattimore2020bandit}
+\citation{vezhnevets2023concordia,concordia_contest2025}
+\citation{zhou2024sotopia}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.8}Minimax lower bound and tightness of Theorem~\ref {thm:main-regret-informal}}{17}{subsection.8.8}\protected@file@percent }
+\newlabel{sec:lower-bound-matching}{{8.8}{17}{Minimax lower bound and tightness of Theorem~\ref {thm:main-regret-informal}}{subsection.8.8}{}}
+\newlabel{thm:lower-matching}{{8.7}{17}{Minimax Bayesian Regret Lower Bound under PF}{theorem.8.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Empirical Study}{17}{section.9}\protected@file@percent }
+\newlabel{sec:experiments-llm}{{9}{17}{Empirical Study}{section.9}{}}
+\citation{zhou2024sotopia}
+\citation{fischbacher2001people}
+\citation{xu2026atom}
+\citation{cesa1997use}
+\citation{yang2025econ}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}HP-SPGG: a controlled LLM-MAS benchmark for HT-MG-BC}{18}{subsection.9.1}\protected@file@percent }
+\newlabel{sec:hp-spgg}{{9.1}{18}{HP-SPGG: a controlled LLM-MAS benchmark for HT-MG-BC}{subsection.9.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{Setup.}{18}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Assumption verification.}{18}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Algorithms.}{18}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{LLM backbones.}{18}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cross-model results.}{18}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{No single LLM-coordination method dominates across backbones.}{18}{section*.16}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cumulative Bayesian regret on HP-SPGG across four LLM backbones ($K{=}20$, $5$ seeds, calibration c19, mean shown with thin error indicators for $\pm \sigma $). Each panel shows the same set of algorithms, grouped into three families by background tint: \emph  {Bayesian type-aware} (blue band, top) including H-PSMG\textsuperscript  {+} and H-PSMG (our methods, bolded labels), MAP-Type-Greedy, and Joint-PSRL; \emph  {LLM coordination} (warm band) including $\mathrm  {llm\_belief}$, ECON-BNE, A-ToM-0, and A-ToM hedge; \emph  {type-agnostic} (gray band, bottom) including PSRL-NoType, Random, and IQL. Numeric values at bar tips show mean regret. The H-PSMG family attains the lowest non-oracle regret on every backbone, separating from the best LLM-coordination baseline by $6$ to $12\times $ and from the best type-agnostic baseline by over $25\times $. The identity of the best LLM-coordination baseline varies across backbones (no single LLM-coordination method dominates), while the H-PSMG family is uniformly best.}}{19}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:hp-spgg-cross-model}{{1}{19}{Cumulative Bayesian regret on HP-SPGG across four LLM backbones ($K{=}20$, $5$ seeds, calibration c19, mean shown with thin error indicators for $\pm \sigma $). Each panel shows the same set of algorithms, grouped into three families by background tint: \emph {Bayesian type-aware} (blue band, top) including H-PSMG\textsuperscript {+} and H-PSMG (our methods, bolded labels), MAP-Type-Greedy, and Joint-PSRL; \emph {LLM coordination} (warm band) including $\mathrm {llm\_belief}$, ECON-BNE, A-ToM-0, and A-ToM hedge; \emph {type-agnostic} (gray band, bottom) including PSRL-NoType, Random, and IQL. Numeric values at bar tips show mean regret. The H-PSMG family attains the lowest non-oracle regret on every backbone, separating from the best LLM-coordination baseline by $6$ to $12\times $ and from the best type-agnostic baseline by over $25\times $. The identity of the best LLM-coordination baseline varies across backbones (no single LLM-coordination method dominates), while the H-PSMG family is uniformly best}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{Cross-model variation in best-variant selection.}{19}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Regime-dependence of the type-discrimination bonus matches Theorem~\ref {thm:hpsmg-plus}.}{19}{section*.19}\protected@file@percent }
+\citation{yang2025econ}
+\citation{xu2026atom}
+\citation{xu2026atom}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces $\beta $-sweep of H-PSMG\textsuperscript  {+}'s type-discrimination bonus on HP-SPGG c19 across four LLM backbones, each labelled at the curve's right endpoint. Three qualitatively distinct regimes appear, each predicted by Theorem~\ref {thm:hpsmg-plus}. \emph  {Extreme self-decay} on GPT-5.4-nano and Kimi-K2.6: regret is essentially flat across all $\beta $ because the type posterior concentrates faster than the bonus has time to drive useful exploration; this is the boundary case of Theorem~\ref {thm:hpsmg-plus}(i). \emph  {Self-decay edge} on DeepSeek-V3.2: regret stays at $0.40$ for $\beta \leq 0.75$ and rises mildly at higher $\beta $ as the bonus begins to pull the algorithm off welfare-optimal actions, matching the high-$\beta $ boundary regime of Theorem~\ref {thm:hpsmg-plus}(i). \emph  {Burn-in jump} on Llama-Maverick: regret falls sharply from $0.97$ at $\beta \leq 0.1$ to $0.31$ at $\beta = 0.25$ and stays flat thereafter, the empirical signature of the exponential-in-$|\Theta |^n$ burn-in improvement of Theorem~\ref {thm:hpsmg-plus}(ii). The shaded vertical band marks the $\beta = 0.1 \to 0.25$ burn-in transition zone where Llama crosses regimes.}}{20}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:beta-sweep}{{2}{20}{$\beta $-sweep of H-PSMG\textsuperscript {+}'s type-discrimination bonus on HP-SPGG c19 across four LLM backbones, each labelled at the curve's right endpoint. Three qualitatively distinct regimes appear, each predicted by Theorem~\ref {thm:hpsmg-plus}. \emph {Extreme self-decay} on GPT-5.4-nano and Kimi-K2.6: regret is essentially flat across all $\beta $ because the type posterior concentrates faster than the bonus has time to drive useful exploration; this is the boundary case of Theorem~\ref {thm:hpsmg-plus}(i). \emph {Self-decay edge} on DeepSeek-V3.2: regret stays at $0.40$ for $\beta \leq 0.75$ and rises mildly at higher $\beta $ as the bonus begins to pull the algorithm off welfare-optimal actions, matching the high-$\beta $ boundary regime of Theorem~\ref {thm:hpsmg-plus}(i). \emph {Burn-in jump} on Llama-Maverick: regret falls sharply from $0.97$ at $\beta \leq 0.1$ to $0.31$ at $\beta = 0.25$ and stays flat thereafter, the empirical signature of the exponential-in-$|\Theta |^n$ burn-in improvement of Theorem~\ref {thm:hpsmg-plus}(ii). The shaded vertical band marks the $\beta = 0.1 \to 0.25$ burn-in transition zone where Llama crosses regimes}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{Robustness to LLM-capability degradation.}{20}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.1.1}Theory-driven experiments: mechanistic tests of Theorem~\ref {thm:hpsmg-plus}}{20}{subsubsection.9.1.1}\protected@file@percent }
+\newlabel{sec:theory-driven-experiments}{{9.1.1}{20}{Theory-driven experiments: mechanistic tests of Theorem~\ref {thm:hpsmg-plus}}{subsubsection.9.1.1}{}}
+\newlabel{sec:e1-posterior-concentration}{{9.1.1}{20}{E1. Posterior concentration speed predicts the regime}{section*.23}{}}
+\@writefile{toc}{\contentsline {paragraph}{E1. Posterior concentration speed predicts the regime.}{20}{section*.23}\protected@file@percent }
+\citation{vezhnevets2023concordia}
+\citation{concordia_contest2025}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces HP-SPGG cumulative Bayesian regret at $K = 20$, $5$ seeds, mean $\pm $ std. H-PSMG family (best of $\{\text  {H-PSMG}, \text  {H-PSMG}^+\}$ across $\beta \in [0, 1.5]$) is the lowest non-oracle entry on every backbone, separating from the best LLM-coordination baseline by $6.3$ to $11.8\times $ and from the best type-agnostic baseline by $27$ to $35\times $. The identity of the best LLM-coordination baseline varies across backbones: \texttt  {llm\_belief} on DeepSeek, A-ToM-0 on GPT-5.4-nano, A-ToM hedge on Kimi-K2.6, and ECON-BNE on Llama-Maverick. ECON-BNE's regret on GPT-5.4-nano ($14.88$) is $3.7\times $ its regret on DeepSeek ($3.99$), reflecting GPT-5.4-nano's reduced capacity to execute ECON's multi-step belief-deliberation prompts.}}{21}{table.caption.22}\protected@file@percent }
+\newlabel{tab:hp-spgg-headline}{{2}{21}{HP-SPGG cumulative Bayesian regret at $K = 20$, $5$ seeds, mean $\pm $ std. H-PSMG family (best of $\{\text {H-PSMG}, \text {H-PSMG}^+\}$ across $\beta \in [0, 1.5]$) is the lowest non-oracle entry on every backbone, separating from the best LLM-coordination baseline by $6.3$ to $11.8\times $ and from the best type-agnostic baseline by $27$ to $35\times $. The identity of the best LLM-coordination baseline varies across backbones: \texttt {llm\_belief} on DeepSeek, A-ToM-0 on GPT-5.4-nano, A-ToM hedge on Kimi-K2.6, and ECON-BNE on Llama-Maverick. ECON-BNE's regret on GPT-5.4-nano ($14.88$) is $3.7\times $ its regret on DeepSeek ($3.99$), reflecting GPT-5.4-nano's reduced capacity to execute ECON's multi-step belief-deliberation prompts}{table.caption.22}{}}
+\newlabel{sec:e2-type-scaling}{{9.1.1}{21}{E2. The bonus closes a burn-in gap that grows with $|\Theta _i|$}{section*.25}{}}
+\@writefile{toc}{\contentsline {paragraph}{E2. The bonus closes a burn-in gap that grows with $|\Theta _i|$.}{21}{section*.25}\protected@file@percent }
+\citation{yang2025econ}
+\citation{xu2026atom}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces E1 posterior concentration speed predicts the H-PSMG\textsuperscript  {+} bonus regime. Each marker is one LLM backbone. The horizontal axis is the mean per-seed concentration time $K_{\mathrm  {conc}}^{0.9}$, the first episode at which the H-PSMG ($\beta = 0$) posterior on the true type for all agents exceeds $0.9$. The vertical axis is the empirically observed bonus benefit, $\mathrm  {Reg}(\text  {H-PSMG}) - \mathrm  {Reg}(\text  {H-PSMG}^+)$ at $\beta = 0.25$, positive when the bonus helps. The three background bands correspond to the three regimes of Theorem~\ref {thm:hpsmg-plus}. DeepSeek-V3.2 sits in the self-decay edge regime (the bonus self-decays before useful exploration but still produces a gentle positive benefit); Llama-4-Maverick sits in the burn-in jump regime predicted by Theorem~\ref {thm:hpsmg-plus}(ii); GPT-5.4-nano and Kimi-K2.6 sit in an intermediate boundary regime where the bonus over-explores at finite $\beta $.}}{22}{figure.caption.24}\protected@file@percent }
+\newlabel{fig:e1-posterior-concentration}{{3}{22}{E1 posterior concentration speed predicts the H-PSMG\textsuperscript {+} bonus regime. Each marker is one LLM backbone. The horizontal axis is the mean per-seed concentration time $K_{\mathrm {conc}}^{0.9}$, the first episode at which the H-PSMG ($\beta = 0$) posterior on the true type for all agents exceeds $0.9$. The vertical axis is the empirically observed bonus benefit, $\mathrm {Reg}(\text {H-PSMG}) - \mathrm {Reg}(\text {H-PSMG}^+)$ at $\beta = 0.25$, positive when the bonus helps. The three background bands correspond to the three regimes of Theorem~\ref {thm:hpsmg-plus}. DeepSeek-V3.2 sits in the self-decay edge regime (the bonus self-decays before useful exploration but still produces a gentle positive benefit); Llama-4-Maverick sits in the burn-in jump regime predicted by Theorem~\ref {thm:hpsmg-plus}(ii); GPT-5.4-nano and Kimi-K2.6 sit in an intermediate boundary regime where the bonus over-explores at finite $\beta $}{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}Concordia Public Benchmarks: Pub Coordination and Haggling}{22}{subsection.9.2}\protected@file@percent }
+\newlabel{sec:concordia}{{9.2}{22}{Concordia Public Benchmarks: Pub Coordination and Haggling}{subsection.9.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Substrate mapping.}{22}{section*.27}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Algorithm variants.}{22}{section*.28}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces E2 empirical realisation of Theorem~\ref {thm:hpsmg-plus}(ii)'s two-regime prediction on HP-SPGG (Llama-Maverick backbone, $n = 3$ agents, $10$ seeds, mean $\pm $ SEM). The two curves are not competing algorithms but the two regimes the theorem predicts. \emph  {Upper curve} (light blue): vanilla H-PSMG, which the theorem predicts to incur $\Omega (|\Theta _i|^n H)$ burn-in regret. \emph  {Lower curve} (deep navy): H-PSMG\textsuperscript  {+} (ours, $\beta = 0.25$), which the theorem predicts to cap burn-in regret at $O(H)$. The shaded band measures the predicted gap; per-axis labels give its magnitude. The gap grows from $+0.14$ at $|\Theta _i| = 2$ to $+1.08$ at $|\Theta _i| = 6$, the predicted regime where the burn-in budget is largest and the bonus is most valuable. Mid-range non-monotonicity reflects persona-design specifics together with finite-seed variance.}}{23}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:e2-type-scaling}{{4}{23}{E2 empirical realisation of Theorem~\ref {thm:hpsmg-plus}(ii)'s two-regime prediction on HP-SPGG (Llama-Maverick backbone, $n = 3$ agents, $10$ seeds, mean $\pm $ SEM). The two curves are not competing algorithms but the two regimes the theorem predicts. \emph {Upper curve} (light blue): vanilla H-PSMG, which the theorem predicts to incur $\Omega (|\Theta _i|^n H)$ burn-in regret. \emph {Lower curve} (deep navy): H-PSMG\textsuperscript {+} (ours, $\beta = 0.25$), which the theorem predicts to cap burn-in regret at $O(H)$. The shaded band measures the predicted gap; per-axis labels give its magnitude. The gap grows from $+0.14$ at $|\Theta _i| = 2$ to $+1.08$ at $|\Theta _i| = 6$, the predicted regime where the burn-in budget is largest and the bonus is most valuable. Mid-range non-monotonicity reflects persona-design specifics together with finite-seed variance}{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.1}Concordia Pub Coordination}{23}{subsubsection.9.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {9.2.2}Concordia Haggling}{23}{subsubsection.9.2.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Concordia results across both substrates. \emph  {Left:} Pub Coordination, $9$ axes covering $7$ village configurations at $s = 30$ (one of which, \texttt  {capetown}, is also evaluated at $s = 100$) plus one DeepSeek-V3.2 live LLM rollout on \texttt  {london\_mini} at $s = 5$. \emph  {Right:} Haggling, $9$ axes spanning $5$ single-item and $4$ multi-item configurations at $s = 30$. Each axis is per-axis min--max normalised so that the best of the four algorithms on that axis reaches the outer ring and the worst sits near the centre; oracle is shown as a dashed reference polygon and is not always the outer ring because H-PSMG\textsuperscript  {+} can strictly exceed oracle on focal score (see \texttt  {vegbrooke\_stubborn} and the \texttt  {fruitville\_gullible} axes on Haggling). H-PSMG\textsuperscript  {+} (joint proxy) fills nearly the full Pub Coordination polygon and ties or wins on all $9$ Haggling axes; ECON-BNE-mech and A-ToM-1-mech contract toward the centre on most non-trivial configurations; on \texttt  {vegbrooke\_strange}, A-ToM-1-mech catastrophically collapses to the inner ring at focal score $-10$.}}{24}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:concordia-main}{{5}{24}{Concordia results across both substrates. \emph {Left:} Pub Coordination, $9$ axes covering $7$ village configurations at $s = 30$ (one of which, \texttt {capetown}, is also evaluated at $s = 100$) plus one DeepSeek-V3.2 live LLM rollout on \texttt {london\_mini} at $s = 5$. \emph {Right:} Haggling, $9$ axes spanning $5$ single-item and $4$ multi-item configurations at $s = 30$. Each axis is per-axis min--max normalised so that the best of the four algorithms on that axis reaches the outer ring and the worst sits near the centre; oracle is shown as a dashed reference polygon and is not always the outer ring because H-PSMG\textsuperscript {+} can strictly exceed oracle on focal score (see \texttt {vegbrooke\_stubborn} and the \texttt {fruitville\_gullible} axes on Haggling). H-PSMG\textsuperscript {+} (joint proxy) fills nearly the full Pub Coordination polygon and ties or wins on all $9$ Haggling axes; ECON-BNE-mech and A-ToM-1-mech contract toward the centre on most non-trivial configurations; on \texttt {vegbrooke\_strange}, A-ToM-1-mech catastrophically collapses to the inner ring at focal score $-10$}{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {paragraph}{Summary across both Concordia substrates.}{24}{section*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}Discussion}{24}{subsection.9.3}\protected@file@percent }
+\citation{gmytrasiewicz2005framework}
+\citation{daskalakis2023complexity}
+\citation{jin2021v}
+\citation{russo2014learning}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Discussion and Extensions}{25}{section.10}\protected@file@percent }
+\newlabel{sec:discussion}{{10}{25}{Discussion and Extensions}{section.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}Centralized vs. Decentralized}{25}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}Beyond Type-Independent Transitions}{25}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}Computational Tractability of CCE Oracle}{25}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}Function-Approximation Generalisation}{25}{subsection.10.4}\protected@file@percent }
+\newlabel{sec:fa-extension}{{10.4}{25}{Function-Approximation Generalisation}{subsection.10.4}{}}
+\citation{kwon2021rl}
+\bibdata{ref}
+\bibcite{agrawal2017optimistic}{{1}{2017}{{Agrawal \& Jia}}{{Agrawal and Jia}}}
+\bibcite{albrecht2013game}{{2}{2013}{{Albrecht \& Ramamoorthy}}{{Albrecht and Ramamoorthy}}}
+\bibcite{albrecht2019convergence}{{3}{2019}{{Albrecht et~al.}}{{Albrecht, Crandall, and Ramamoorthy}}}
+\bibcite{arumugam2026toward}{{4}{2026}{{Arumugam \& Griffiths}}{{Arumugam and Griffiths}}}
+\bibcite{azar2017minimax}{{5}{2017}{{Azar et~al.}}{{Azar, Osband, and Munos}}}
+\bibcite{bai2020provable}{{6}{2020}{{Bai \& Jin}}{{Bai and Jin}}}
+\bibcite{cesa1997use}{{7}{1997}{{Cesa-Bianchi et~al.}}{{Cesa-Bianchi, Freund, Haussler, Helmbold, Schapire, and Warmuth}}}
+\bibcite{cover2006elements}{{8}{2006}{{Cover \& Thomas}}{{Cover and Thomas}}}
+\bibcite{cui2025incentivize}{{9}{2025}{{Cui et~al.}}{{Cui, Yang, and Du}}}
+\bibcite{daskalakis2023complexity}{{10}{2023}{{Daskalakis et~al.}}{{Daskalakis, Golowich, and Zhang}}}
+\bibcite{dinh2022online}{{11}{2022}{{Dinh et~al.}}{{Dinh, Yang, McAleer, Tian, Perez-Nieves, Slumbers, Mguni, Bou-Ammar, and Wang}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5}Open Problems}{26}{subsection.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Conclusion}{26}{section.11}\protected@file@percent }
+\newlabel{sec:conclusion}{{11}{26}{Conclusion}{section.11}{}}
+\bibcite{domingues2021episodic}{{12}{2021}{{Domingues et~al.}}{{Domingues, M{\'e}nard, Kaufmann, and Valko}}}
+\bibcite{erez2023regret}{{13}{2023}{{Erez et~al.}}{{Erez, Lancewicki, Sherman, Koren, and Mansour}}}
+\bibcite{fischbacher2001people}{{14}{2001}{{Fischbacher et~al.}}{{Fischbacher, G{\"a}chter, and Fehr}}}
+\bibcite{gal2016dropout}{{15}{2016}{{Gal \& Ghahramani}}{{Gal and Ghahramani}}}
+\bibcite{ghosal2007convergence}{{16}{2017}{{Ghosal \& van~der Vaart}}{{Ghosal and van~der Vaart}}}
+\bibcite{gmytrasiewicz2005framework}{{17}{2005}{{Gmytrasiewicz \& Doshi}}{{Gmytrasiewicz and Doshi}}}
+\bibcite{harsanyi1968games}{{18}{1967,1968}{{Harsanyi}}{{}}}
+\bibcite{hennes2026code}{{19}{2026}{{Hennes et~al.}}{{Hennes, Li, Schultz, and Lanctot}}}
+\bibcite{hsu2024randomized}{{20}{2024}{{Hsu et~al.}}{{Hsu, Wang, Pajic, and Xu}}}
+\bibcite{jafarnia2021learning}{{21}{2021}{{Jafarnia-Jahromi et~al.}}{{Jafarnia-Jahromi, Jain, and Nayyar}}}
+\bibcite{jaksch2010near}{{22}{2010}{{Jaksch et~al.}}{{Jaksch, Ortner, and Auer}}}
+\bibcite{jin2021v}{{23}{2021}{{Jin et~al.}}{{Jin, Liu, Wang, and Yu}}}
+\bibcite{kearns2002near}{{24}{2002}{{Kearns \& Singh}}{{Kearns and Singh}}}
+\bibcite{kwon2021rl}{{25}{2021}{{Kwon et~al.}}{{Kwon, Efroni, Caramanis, and Mannor}}}
+\bibcite{lakshminarayanan2017simple}{{26}{2017}{{Lakshminarayanan et~al.}}{{Lakshminarayanan, Pritzel, and Blundell}}}
+\bibcite{lanctot2017unified}{{27}{2017}{{Lanctot et~al.}}{{Lanctot, Zambaldi, Gruslys, Lazaridou, Tuyls, P{\'e}rolat, Silver, and Graepel}}}
+\bibcite{lattimore2020bandit}{{28}{2020}{{Lattimore \& Szepesv{\'a}ri}}{{Lattimore and Szepesv{\'a}ri}}}
+\bibcite{leibo2017multi}{{29}{2017}{{Leibo et~al.}}{{Leibo, Zambaldi, Lanctot, Marecki, and Graepel}}}
+\bibcite{littman1994markov}{{30}{1994}{{Littman}}{{}}}
+\bibcite{lu2019information}{{31}{2019}{{Lu \& Van~Roy}}{{Lu and Van~Roy}}}
+\bibcite{mao2023decentralized}{{32}{2023}{{Mao \& Ba{\c {s}}ar}}{{Mao and Ba{\c {s}}ar}}}
+\bibcite{marris2021multi}{{33}{2021}{{Marris et~al.}}{{Marris, Muller, Lanctot, Tuyls, and Graepel}}}
+\bibcite{mcaleer2020pipeline}{{34}{2020}{{McAleer et~al.}}{{McAleer, Lanier, Fox, and Baldi}}}
+\bibcite{mcaleer2021xdo}{{35}{2021}{{McAleer et~al.}}{{McAleer, Lanier, Baldi, and Fox}}}
+\bibcite{mcaleer2022anytime}{{36}{2022}{{McAleer et~al.}}{{McAleer, Wang, Lanier, Lanctot, Baldi, Sandholm, and Fox}}}
+\bibcite{mcmahan2003planning}{{37}{2003}{{McMahan et~al.}}{{McMahan, Gordon, and Blum}}}
+\bibcite{muller2019generalized}{{38}{2020}{{Muller et~al.}}{{Muller, Omidshafiei, Rowland, Tuyls, P{\'e}rolat, Liu, Hennes, Marris, Lanctot, Hughes, et~al.}}}
+\bibcite{mutti2024exploiting}{{39}{2024}{{Mutti et~al.}}{{Mutti, Meo, and Pirotta}}}
+\bibcite{osband2014model}{{40}{2014}{{Osband \& Van~Roy}}{{Osband and Van~Roy}}}
+\bibcite{osband2017posterior}{{41}{2017}{{Osband \& Van~Roy}}{{Osband and Van~Roy}}}
+\bibcite{osband2013more}{{42}{2013}{{Osband et~al.}}{{Osband, Russo, and Van~Roy}}}
+\bibcite{ouyang2017learning}{{43}{2017}{{Ouyang et~al.}}{{Ouyang, Gagrani, Nayyar, and Jain}}}
+\bibcite{perolat2017multi}{{44}{2017}{{Perolat et~al.}}{{Perolat, Leibo, Zambaldi, Beattie, Tuyls, and Graepel}}}
+\bibcite{russo2014learning}{{45}{2014}{{Russo \& Van~Roy}}{{Russo and Van~Roy}}}
+\bibcite{russo2016information}{{46}{2016}{{Russo \& Van~Roy}}{{Russo and Van~Roy}}}
+\bibcite{shapley1953stochastic}{{47}{1953}{{Shapley}}{{}}}
+\bibcite{concordia_contest2025}{{48}{2025}{{Smith et~al.}}{{}}}
+\bibcite{smith2026sample}{{49}{2026}{{Smith et~al.}}{{}}}
+\bibcite{song2022when}{{50}{2022}{{Song et~al.}}{{Song, Mei, and Bai}}}
+\bibcite{strens2000bayesian}{{51}{2000}{{Strens}}{{}}}
+\bibcite{tian2024learning}{{52}{2024}{{Tian et~al.}}{{Tian, Yu, Hu, and Jin}}}
+\bibcite{tuynman2022transfer}{{53}{2022}{{Tuynman \& Ortner}}{{Tuynman and Ortner}}}
+\bibcite{vezhnevets2023concordia}{{54}{2023}{{Vezhnevets et~al.}}{{Vezhnevets, Agapiou, Aharon, Ziv, Matyas, Du{\'e}{\~n}ez-Guzm{\'a}n, Cunningham, Osindero, Karmon, and Leibo}}}
+\bibcite{weissman2003inequalities}{{55}{2003}{{Weissman et~al.}}{{Weissman, Ordentlich, Seroussi, Verd{\'u}, and Weinberger}}}
+\bibcite{welling2011bayesian}{{56}{2011}{{Welling \& Teh}}{{Welling and Teh}}}
+\bibcite{xiong2022self}{{57}{2022}{{Xiong et~al.}}{{Xiong, Zhong, Shi, Shen, and Zhang}}}
+\bibcite{xu2026atom}{{58}{2026}{{Xu et~al.}}{{}}}
+\bibcite{yang2025econ}{{59}{2025}{{Yang et~al.}}{{}}}
+\bibcite{yao2023policy}{{60}{2023}{{Yao et~al.}}{{Yao, Liu, Fu, Yang, McAleer, Fu, and Yang}}}
+\bibcite{yueh2026bayesian}{{61}{2026}{{Yueh et~al.}}{{Yueh, Zhao, Nayyar, and Jain}}}
+\bibcite{zhang2021multi}{{62}{2021}{{Zhang et~al.}}{{Zhang, Yang, and Ba{\c {s}}ar}}}
+\bibcite{zhou2022efficient}{{63}{2022}{{Zhou et~al.}}{{Zhou, Chen, Wen, Zhang, Yang, Hong, and Wang}}}
+\bibcite{zhou2024sotopia}{{64}{2024}{{Zhou et~al.}}{{Zhou, Zhu, Mathur, Zhang, Yu, Qi, Morency, Bisk, Fried, Neubig, and Sap}}}
+\bibstyle{iclr2023_conference}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Rigorous Treatment of the $n$-Player Case}{29}{appendix.A}\protected@file@percent }
+\newlabel{app:n-player}{{A}{29}{Rigorous Treatment of the \texorpdfstring {$n$}{n}-Player Case}{appendix.A}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Explicit Likelihood Factorization for $n$ Agents}{30}{subsection.A.1}\protected@file@percent }
+\newlabel{eq:n-lik-raw}{{46}{30}{Explicit Likelihood Factorization for \texorpdfstring {$n$}{n} Agents}{equation.46}{}}
+\newlabel{eq:n-lik-factor}{{49}{30}{Explicit Likelihood Factorization for \texorpdfstring {$n$}{n} Agents}{equation.49}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Full Induction Proof}{30}{subsection.A.2}\protected@file@percent }
+\newlabel{thm:n-player}{{A.1}{30}{$n$-Player Posterior Decoupling, Formal}{theorem.A.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Storage and Computational Complexity}{31}{subsection.A.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Storage and per-episode computational cost of the joint posterior over $(P, \boldsymbol  {\theta })$ in $n$-player H-PSMG. We write $|\Theta |_{\max } := \max _i |\Theta _i|$ and $A_{\max } := \max _i |\mathcal  {A}_i|$. The transition posterior $\mu ^P$ is a product of $SA$ Dirichlet distributions, each of dimension $S$.}}{31}{table.caption.32}\protected@file@percent }
+\newlabel{tab:complexity}{{3}{31}{Storage and per-episode computational cost of the joint posterior over $(P, \boldsymbol {\theta })$ in $n$-player H-PSMG. We write $|\Theta |_{\max } := \max _i |\Theta _i|$ and $A_{\max } := \max _i |\mathcal {A}_i|$. The transition posterior $\mu ^P$ is a product of $SA$ Dirichlet distributions, each of dimension $S$}{table.caption.32}{}}
+\newlabel{cor:scale}{{A.2}{31}{Tractable Inference at Large \texorpdfstring {$n$}{n}}{theorem.A.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Worked Example: Three-Agent Heterogeneous Coordination}{31}{subsection.A.4}\protected@file@percent }
+\citation{jin2021v}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Verification of $c_k(\tau _k)$ Independence of $(P, \boldsymbol  {\theta })$}{32}{appendix.B}\protected@file@percent }
+\newlabel{app:ck}{{B}{32}{Verification of \texorpdfstring {$c_k(\tau _k)$}{c\_k(tau\_k)} Independence of \texorpdfstring {$(P, \boldsymbol {\theta })$}{(P, theta)}}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Discussion of CCE Oracle Approximation}{32}{appendix.C}\protected@file@percent }
+\newlabel{app:cce}{{C}{32}{Discussion of CCE Oracle Approximation}{appendix.C}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Per-Episode Regret Decomposition: Full Derivation}{32}{appendix.D}\protected@file@percent }
+\newlabel{app:regret-decomp}{{D}{32}{Per-Episode Regret Decomposition: Full Derivation}{appendix.D}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Notation and Setup}{32}{subsection.D.1}\protected@file@percent }
+\citation{russo2014learning,osband2017posterior}
+\citation{kearns2002near,bai2020provable}
+\newlabel{eq:Delta-def}{{65}{33}{Notation and Setup}{equation.65}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Reduction to the Simulation Gap via Posterior Sampling}{33}{subsection.D.2}\protected@file@percent }
+\newlabel{lem:ps-equivalence}{{D.1}{33}{Posterior Sampling Equivalence}{theorem.D.1}{}}
+\newlabel{lem:reduction}{{D.2}{33}{Reduction to Simulation Gap}{theorem.D.2}{}}
+\newlabel{eq:reduction}{{67}{33}{Reduction to Simulation Gap}{equation.67}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Value Difference Lemma for HT-MG}{33}{subsection.D.3}\protected@file@percent }
+\newlabel{lem:value-diff}{{D.3}{33}{Value Difference for HT-MG}{theorem.D.3}{}}
+\newlabel{eq:value-diff}{{69}{33}{Value Difference for HT-MG}{equation.69}{}}
+\newlabel{eq:phi-r}{{70}{33}{Value Difference for HT-MG}{equation.70}{}}
+\newlabel{eq:phi-p}{{71}{33}{Value Difference for HT-MG}{equation.71}{}}
+\citation{russo2016information}
+\newlabel{rem:value-diff-symmetric}{{D.4}{34}{Symmetric Form with $P_2$ Rollout}{theorem.D.4}{}}
+\newlabel{eq:value-diff-symmetric}{{76}{34}{Symmetric Form with $P_2$ Rollout}{equation.76}{}}
+\newlabel{eq:central-decomp}{{78}{34}{Value Difference Lemma for HT-MG}{equation.78}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Bounding the Reward-Misspecification Term}{34}{subsection.D.4}\protected@file@percent }
+\citation{russo2016information}
+\newlabel{prop:type-bound}{{D.5}{35}{Type-Inference Regret via Information Ratio}{theorem.D.5}{}}
+\newlabel{eq:type-bound}{{81}{35}{Type-Inference Regret via Information Ratio}{equation.81}{}}
+\newlabel{lem:info-ratio}{{D.6}{35}{Information Ratio Bound for HT-MG Type Inference}{theorem.D.6}{}}
+\newlabel{eq:fk-def}{{84}{35}{Bounding the Reward-Misspecification Term}{equation.84}{}}
+\newlabel{eq:Delta-as-fk}{{85}{35}{Bounding the Reward-Misspecification Term}{equation.85}{}}
+\newlabel{eq:fk-KL-traj}{{89}{35}{Bounding the Reward-Misspecification Term}{equation.89}{}}
+\citation{russo2016information}
+\citation{lattimore2020bandit}
+\citation{cover2006elements}
+\citation{russo2016information}
+\citation{russo2016information}
+\citation{russo2014learning}
+\citation{russo2016information}
+\citation{xiong2022self}
+\newlabel{eq:Delta-squared-bound}{{93}{36}{Bounding the Reward-Misspecification Term}{equation.93}{}}
+\newlabel{eq:KL-MI-bound}{{94}{36}{Bounding the Reward-Misspecification Term}{equation.94}{}}
+\newlabel{rem:info-ratio-tight}{{D.7}{36}{Tightness of the $|\Theta _i|$ factor}{theorem.D.7}{}}
+\newlabel{rem:traj-feedback}{{D.8}{36}{Why trajectory feedback is at least as informative as scalar feedback}{theorem.D.8}{}}
+\citation{ghosal2007convergence}
+\newlabel{rem:multi-agent-cce}{{D.9}{37}{Multi-agent CCE adaptation}{theorem.D.9}{}}
+\newlabel{lem:posterior-concentration}{{D.10}{37}{Posterior Concentration under TID}{theorem.D.10}{}}
+\newlabel{cor:gap-dependent-appendix}{{D.11}{37}{Gap-Dependent Type Regret}{theorem.D.11}{}}
+\citation{lu2019information,azar2017minimax}
+\citation{weissman2003inequalities}
+\citation{lattimore2020bandit}
+\citation{russo2014learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.5}Bounding the Transition-Misspecification Term}{38}{subsection.D.5}\protected@file@percent }
+\newlabel{prop:trans-hoeffding}{{D.13}{38}{Transition-Learning Regret, Hoeffding-Level Bound}{theorem.D.13}{}}
+\newlabel{eq:trans-hoeffding}{{99}{38}{Transition-Learning Regret, Hoeffding-Level Bound}{equation.99}{}}
+\newlabel{eq:trans-symmetric}{{100}{38}{Bounding the Transition-Misspecification Term}{equation.100}{}}
+\newlabel{eq:step1-holder}{{101}{38}{Bounding the Transition-Misspecification Term}{equation.101}{}}
+\newlabel{eq:triangle-decomp}{{102}{38}{Bounding the Transition-Misspecification Term}{equation.102}{}}
+\newlabel{eq:prior-bias}{{103}{38}{Bounding the Transition-Misspecification Term}{equation.103}{}}
+\newlabel{eq:weissman}{{104}{38}{Bounding the Transition-Misspecification Term}{equation.104}{}}
+\citation{jaksch2010near}
+\newlabel{eq:dirichlet-anticonc}{{105}{39}{Bounding the Transition-Misspecification Term}{equation.105}{}}
+\newlabel{eq:trans-concentration-uniform}{{106}{39}{Bounding the Transition-Misspecification Term}{equation.106}{}}
+\newlabel{eq:pigeonhole}{{108}{39}{Bounding the Transition-Misspecification Term}{equation.108}{}}
+\citation{lu2019information}
+\citation{lu2019information}
+\citation{azar2017minimax}
+\newlabel{prop:trans-bernstein}{{D.14}{40}{Transition-Learning Regret, Bernstein-Refined Bound}{theorem.D.14}{}}
+\newlabel{eq:trans-bernstein}{{114}{40}{Transition-Learning Regret, Bernstein-Refined Bound}{equation.114}{}}
+\newlabel{eq:bayes-bernstein-1}{{117}{40}{Bounding the Transition-Misspecification Term}{equation.117}{}}
+\newlabel{eq:freq-bernstein}{{118}{40}{Bounding the Transition-Misspecification Term}{equation.118}{}}
+\newlabel{eq:bernstein-combined}{{119}{40}{Bounding the Transition-Misspecification Term}{equation.119}{}}
+\citation{lattimore2020bandit}
+\citation{lu2019information,azar2017minimax}
+\citation{osband2013more}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.6}Main Regret Theorem and Combination}{41}{subsection.D.6}\protected@file@percent }
+\newlabel{thm:main-regret}{{D.15}{41}{Main Regret Bound for H-PSMG}{theorem.D.15}{}}
+\newlabel{eq:main-regret-hoeffding}{{125}{41}{Main Regret Bound for H-PSMG}{equation.125}{}}
+\newlabel{eq:main-regret-formal}{{126}{41}{Main Regret Bound for H-PSMG}{equation.126}{}}
+\citation{jin2021v}
+\citation{jafarnia2021learning}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.7}Interpretation of the Bound}{42}{subsection.D.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Formal Proof of the Exponential-in-Theta-n Burn-in Separation Theorem}{42}{appendix.E}\protected@file@percent }
+\newlabel{app:hpsmg-plus}{{E}{42}{Formal Proof of the Exponential-in-Theta-n Burn-in Separation Theorem}{appendix.E}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.1}Setup and Notation}{42}{subsection.E.1}\protected@file@percent }
+\newlabel{app:hpsmg-plus-setup}{{E.1}{42}{Setup and Notation}{subsection.E.1}{}}
+\newlabel{ass:cce-tiebreak}{{E.1}{42}{CCE Oracle Tie-Breaking}{theorem.E.1}{}}
+\newlabel{eq:Dk-trap}{{128}{43}{Setup and Notation}{equation.128}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.2}Backward-Induction Algebra}{43}{subsection.E.2}\protected@file@percent }
+\newlabel{app:hpsmg-plus-backward}{{E.2}{43}{Backward-Induction Algebra}{subsection.E.2}{}}
+\newlabel{eq:bellman-plus}{{129}{43}{Backward-Induction Algebra}{equation.129}{}}
+\newlabel{lem:value-trajectories}{{E.2}{43}{Per-agent value under always-$a^R$ and always-$a^L$}{theorem.E.2}{}}
+\newlabel{lem:preference-bonus}{{E.3}{43}{Strict per-agent preference under bonus}{theorem.E.3}{}}
+\newlabel{lem:cce-selects-aR}{{E.4}{44}{CCE selects $a^R$ at $s_1 = 0$ under bonus}{theorem.E.4}{}}
+\newlabel{eq:welfare-gap}{{137}{44}{Backward-Induction Algebra}{equation.137}{}}
+\newlabel{lem:cce-selects-aL}{{E.5}{44}{CCE selects $a^L$ without bonus under $\alpha < 1$}{theorem.E.5}{}}
+\newlabel{lem:posterior-stuck}{{E.6}{44}{Posterior non-update under $\alpha = 0$ rollout}{theorem.E.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.3}Lower Bound for Vanilla H-PSMG}{44}{subsection.E.3}\protected@file@percent }
+\newlabel{app:hpsmg-plus-lower}{{E.3}{44}{Lower Bound for Vanilla H-PSMG}{subsection.E.3}{}}
+\newlabel{prop:vanilla-burnin}{{E.7}{44}{Geometric burn-in for vanilla H-PSMG}{theorem.E.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.4}Upper Bound for H-PSMG\textsuperscript  {+}}{45}{subsection.E.4}\protected@file@percent }
+\newlabel{app:hpsmg-plus-upper}{{E.4}{45}{Upper Bound for H-PSMG\textsuperscript {+}}{subsection.E.4}{}}
+\newlabel{prop:hpsmg-plus-burnin}{{E.8}{45}{Constant burn-in for H-PSMG\textsuperscript {+}}{theorem.E.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.5}Combining the Two Bounds}{45}{subsection.E.5}\protected@file@percent }
+\newlabel{app:hpsmg-plus-combine}{{E.5}{45}{Combining the Two Bounds}{subsection.E.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.6}Remark on Randomised CCE Tie-Breaking}{45}{subsection.E.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.7}Empirical Sub-$m^n$ Scaling at Finite $K$}{45}{subsection.E.7}\protected@file@percent }
+\citation{ghosal2007convergence}
+\@writefile{toc}{\contentsline {subsection}{\numberline {E.8}Proof of Theorem~\ref {thm:hpsmg-plus}(i): Asymptotic Match}{46}{subsection.E.8}\protected@file@percent }
+\newlabel{app:hpsmg-plus-asymptotic-proof}{{E.8}{46}{Proof of Theorem~\ref {thm:hpsmg-plus}(i): Asymptotic Match}{subsection.E.8}{}}
+\newlabel{lem:bonus-decomp}{{E.9}{46}{Bonus-Regret Decomposition}{theorem.E.9}{}}
+\newlabel{lem:collision-bound}{{E.10}{46}{Collision-Probability Bound on $D_k$}{theorem.E.10}{}}
+\newlabel{lem:tid-concentration}{{E.11}{46}{Posterior Concentration under TID}{theorem.E.11}{}}
+\newlabel{prop:hpsmg-plus-asymptotic}{{E.12}{47}{Asymptotic Match}{theorem.E.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Function-Approximation H-PSMG\textsuperscript  {+}: Beyond the Tabular Setting}{47}{appendix.F}\protected@file@percent }
+\newlabel{app:fa-hpsmg}{{F}{47}{Function-Approximation H-PSMG\textsuperscript {+}: Beyond the Tabular Setting}{appendix.F}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.1}Setup}{47}{subsection.F.1}\protected@file@percent }
+\newlabel{app:fa-setup}{{F.1}{47}{Setup}{subsection.F.1}{}}
+\newlabel{ass:tid-fa}{{F.1}{47}{Function-Approximation TID}{theorem.F.1}{}}
+\citation{lakshminarayanan2017simple}
+\citation{welling2011bayesian}
+\citation{gal2016dropout}
+\citation{russo2014learning}
+\newlabel{ass:otrl-fa}{{F.2}{48}{Function-Approximation OTRL}{theorem.F.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.2}Posterior Decoupling under Function Approximation}{48}{subsection.F.2}\protected@file@percent }
+\newlabel{app:fa-decoupling}{{F.2}{48}{Posterior Decoupling under Function Approximation}{subsection.F.2}{}}
+\newlabel{thm:fa-decoupling}{{F.3}{48}{FA Decoupling}{theorem.F.3}{}}
+\newlabel{cor:fa-storage}{{F.4}{48}{FA Storage}{theorem.F.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.3}FA-H-PSMG\textsuperscript  {+} Algorithm}{48}{subsection.F.3}\protected@file@percent }
+\newlabel{app:fa-algorithm}{{F.3}{48}{FA-H-PSMG\textsuperscript {+} Algorithm}{subsection.F.3}{}}
+\citation{osband2014model,russo2014learning}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {3}{\ignorespaces FA-H-PSMG\textsuperscript  {+}: function-approximation H-PSMG\textsuperscript  {+}}}{49}{algorithm.3}\protected@file@percent }
+\newlabel{alg:fa-hpsmg-plus}{{3}{49}{FA-H-PSMG\textsuperscript {+}: function-approximation H-PSMG\textsuperscript {+}}{algorithm.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.4}Unified Regret Bound}{49}{subsection.F.4}\protected@file@percent }
+\newlabel{app:fa-regret}{{F.4}{49}{Unified Regret Bound}{subsection.F.4}{}}
+\newlabel{thm:fa-regret-informal}{{F.5}{49}{FA-H-PSMG\textsuperscript {+} Regret Bound; informal}{theorem.F.5}{}}
+\newlabel{eq:fa-regret}{{155}{49}{FA-H-PSMG\textsuperscript {+} Regret Bound; informal}{equation.155}{}}
+\newlabel{cor:fa-regret-tabular}{{F.6}{49}{Tabular Specialisation}{theorem.F.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.5}FA Burn-in Separation}{50}{subsection.F.5}\protected@file@percent }
+\newlabel{app:fa-burnin}{{F.5}{50}{FA Burn-in Separation}{subsection.F.5}{}}
+\newlabel{prop:fa-burnin}{{F.7}{50}{FA Burn-in Separation; informal}{theorem.F.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {F.6}Discussion: What the Function-Approximation Generalisation Buys}{50}{subsection.F.6}\protected@file@percent }
+\gdef \@abspage@last{50}

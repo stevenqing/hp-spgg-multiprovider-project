@@ -1,0 +1,112 @@
+{
+  "rows": [
+    {
+      "n": 2,
+      "algorithm": "hpsmg",
+      "storage_entries": 8,
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n2_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 2,
+      "algorithm": "hpsmg_plus",
+      "storage_entries": 8,
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n2_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 2,
+      "algorithm": "joint_psrl",
+      "storage_entries": 16,
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n2_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 3,
+      "algorithm": "hpsmg",
+      "storage_entries": 12,
+      "mean_final_cumulative_regret": 0.025138297733656324,
+      "sem": 0.018579328874112483,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n3_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 3,
+      "algorithm": "hpsmg_plus",
+      "storage_entries": 12,
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n3_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 3,
+      "algorithm": "joint_psrl",
+      "storage_entries": 64,
+      "mean_final_cumulative_regret": 0.006231741924843171,
+      "sem": 0.0038209333572810367,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n3_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 4,
+      "algorithm": "hpsmg",
+      "storage_entries": 16,
+      "mean_final_cumulative_regret": 0.022546780132210918,
+      "sem": 0.021997282870342017,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n4_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 4,
+      "algorithm": "hpsmg_plus",
+      "storage_entries": 16,
+      "mean_final_cumulative_regret": 0.0,
+      "sem": 0.0,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n4_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 4,
+      "algorithm": "joint_psrl",
+      "storage_entries": 256,
+      "mean_final_cumulative_regret": 0.0008858856611510646,
+      "sem": 0.0008858856611510644,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n4_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 5,
+      "algorithm": "hpsmg",
+      "storage_entries": 20,
+      "mean_final_cumulative_regret": 0.12486243972565152,
+      "sem": 0.04207239811189316,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n5_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 5,
+      "algorithm": "hpsmg_plus",
+      "storage_entries": 20,
+      "mean_final_cumulative_regret": 0.022305780372294935,
+      "sem": 0.022305780372294932,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n5_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    },
+    {
+      "n": 5,
+      "algorithm": "joint_psrl",
+      "storage_entries": 1024,
+      "mean_final_cumulative_regret": 0.034906868426476036,
+      "sem": 0.01564643684826753,
+      "seeds": 5,
+      "input": "results\\e1_e4\\E3_n5_Llama-4-Maverick-17B-128E-Instruct-FP8.npz"
+    }
+  ]
+}

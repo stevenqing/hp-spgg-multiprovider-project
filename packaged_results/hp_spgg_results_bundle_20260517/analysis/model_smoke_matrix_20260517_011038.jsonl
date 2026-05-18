@@ -1,0 +1,5 @@
+{"backend":"cloudgpt","player_model":"gpt-5.4-mini-20260317","judge_model":"gpt-5.4-mini-20260317","out":"logs/smoke_cloudgpt_20260517_011038.json","status":"ok","error":null}
+{"backend":"deepseek","player_model":"deepseek-ai/DeepSeek-V3.2","judge_model":"deepseek-ai/DeepSeek-V3.2","out":"logs/smoke_deepseek_20260517_011038.json","status":"skipped_missing_credentials","error":null}
+{"backend":"anthropic","player_model":"claude-haiku-4-5-20251001","judge_model":"claude-sonnet-4-6-20251101","out":"logs/smoke_anthropic_20260517_011038.json","status":"skipped_missing_credentials","error":null}
+{"backend":"google","player_model":"gemini-2.5-flash","judge_model":"gemini-2.5-pro","out":"logs/smoke_google_20260517_011038.json","status":"skipped_missing_credentials","error":null}
+{"backend":"qwen3","player_model":"Qwen/Qwen3-32B","judge_model":"Qwen/Qwen3-235B-A22B","out":"logs/smoke_qwen3_20260517_011038.json","status":"skipped_missing_credentials","error":null}

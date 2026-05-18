@@ -1,0 +1,95 @@
+﻿{
+    "value":  [
+                  {
+                      "type":  "file",
+                      "oid":  "c9efeecfe10d554d4f4a19162274c58f1324f91e",
+                      "size":  2585,
+                      "path":  ".gitattributes"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "a745cab83375dce76be061e240c3f8cf8a159c56",
+                      "size":  49593505,
+                      "lfs":  {
+                                  "oid":  "6aa9e513b66c914988870970f5b2bd23ba7620db19944332c92574a464790112",
+                                  "size":  49593505,
+                                  "pointerSize":  133
+                              },
+                      "xetHash":  "8a989460f410503b451c20368ab36ad33e0437388cd5a449377a4eab38162bd1",
+                      "path":  "NormBank.csv"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "3a3afe3092590d737f725ee213194360cdc6449a",
+                      "size":  2252,
+                      "path":  "README.md"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "9cb279932adcd312deb8f560ac691b7ca7e65e0b",
+                      "size":  256347456,
+                      "lfs":  {
+                                  "oid":  "324c037f4ac3ca6605c800bfe74eb1c11b05ed8c96c26df48c7560a7dac90da2",
+                                  "size":  256347456,
+                                  "pointerSize":  134
+                              },
+                      "xetHash":  "b7acee3eb8428e0a132956ed52082572bf8000050c5a34ecb1df7559cfc64c2e",
+                      "path":  "dump.rdb"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "fc6b80439057f3a79ce157eda7cc41a07843dff1",
+                      "size":  10637121,
+                      "lfs":  {
+                                  "oid":  "4d7dfddc37c619fcfa744007d677f717948e42bf4d79021517e8b7dfedf5bce6",
+                                  "size":  10637121,
+                                  "pointerSize":  133
+                              },
+                      "xetHash":  "c53399c3a1ad31332f6c7ee1ae5bd70a300bdf3add6ac13273cd2d86efb4ed6f",
+                      "path":  "experiment_episodes.json"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "7e5254a3b43807628c38046251566ae9a1c0b817",
+                      "size":  10147087,
+                      "path":  "inspirational_prompt.csv"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "b0c80ac9c9ebb1bc00e8dff5a6e4d21b61011b13",
+                      "size":  147421453,
+                      "lfs":  {
+                                  "oid":  "6a289ec5f814ec975deacc244ed7b5758911611847c0834bf6b2f32817722aea",
+                                  "size":  147421453,
+                                  "pointerSize":  134
+                              },
+                      "xetHash":  "865f3965144c65e76e150cfc92dc2f746e51389272b29af70443d52bcc0932b5",
+                      "path":  "social-chem-101.v1.0.tsv"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "adf00b00251ea9d39e7309930023987abda9bdc4",
+                      "size":  8065079,
+                      "path":  "social_iqa_train.jsonl"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "6d072069731dc8e912501fdba021c6cde4f9c6bc",
+                      "size":  75332881,
+                      "lfs":  {
+                                  "oid":  "1f3f9dc5d7809bbbbfbaa47179a558826ff0e45c703b449b435acb2c84e5ecd4",
+                                  "size":  75332881,
+                                  "pointerSize":  133
+                              },
+                      "xetHash":  "d63d29721bf6948a7e0d7413459d92c12ecac6bb9f83ff5571b4fc8c384cbdf8",
+                      "path":  "sotopia_pi_episodes.jsonl"
+                  },
+                  {
+                      "type":  "file",
+                      "oid":  "3ce4228ef5574c10165495d7ac2d64e0858973fd",
+                      "size":  81690,
+                      "path":  "used_prompt.csv"
+                  }
+              ],
+    "Count":  10
+}

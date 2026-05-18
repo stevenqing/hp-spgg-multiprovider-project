@@ -1,0 +1,22 @@
+{
+  "focal_scores": {
+    "Alice": 0.5,
+    "Bob": 1.0,
+    "Charlie": 1.0
+  },
+  "background_scores": {},
+  "joint_action": {
+    "Alice": "Pub A",
+    "Bob": "Pub B",
+    "Charlie": "Pub B"
+  },
+  "focal_players": [
+    "Alice",
+    "Bob",
+    "Charlie"
+  ],
+  "background_players": [],
+  "config": "puppet",
+  "model": "offline",
+  "captured_log_tail": "if the alfalfa is ready to harvest\", or Townsfolk -- \"Good morning\".\\n', output_type=<OutputType.FREE: 'free'>, options=(), tag=None)\".\nEntity Charlie chose action: Charlie: Pub B\nThe suggested action or event to resolve was: Charlie: Pub B\nThe resolved event was: Event: Charlie: Pub B\n\nTerminate? No\nGame master: conversation rules\nEntity Alice observed: Event: Charlie: Pub B\n\n\n\n\nEntity Bob observed: Event: Charlie: Pub B\n\n\n\n\nEntity Charlie observed: Event: Charlie: Pub B\n\n\n\n\nEntity Alice is next to act. They must respond  in the format: \"ActionSpec(call_to_action='Given the above, what is {name} likely to say next? Respond in the format `{name} -- \"...\"` For example, Cristina -- \"Hello! Mighty fine weather today, right?\", Ichabod -- \"I wonder if the alfalfa is ready to harvest\", or Townsfolk -- \"Good morning\".\\n', output_type=<OutputType.FREE: 'free'>, options=(), tag=None)\".\nEntity Alice chose action: Alice: Pub A\nThe suggested action or event to resolve was: Alice: Pub A\nThe resolved event was: Event: Alice: Pub A\n\nTerminate? No\nGame master: conversation rules\nEntity Alice observed: Event: Alice: Pub A\n\n\n\n\nEntity Bob observed: Event: Alice: Pub A\n\n\n\n\nEntity Charlie observed: Event: Alice: Pub A\n\n\n\n\nEntity Bob is next to act. They must respond  in the format: \"ActionSpec(call_to_action='Given the above, what is {name} likely to say next? Respond in the format `{name} -- \"...\"` For example, Cristina -- \"Hello! Mighty fine weather today, right?\", Ichabod -- \"I wonder if the alfalfa is ready to harvest\", or Townsfolk -- \"Good morning\".\\n', output_type=<OutputType.FREE: 'free'>, options=(), tag=None)\".\nEntity Bob chose action: Bob: Pub B\nThe suggested action or event to resolve was: Bob: Pub B\nThe resolved event was: Event: Bob: Pub B\n\nTerminate? No\nGame master: conversation rules\nEntity Alice observed: Event: Bob: Pub B\n\n\n\n\nEntity Bob observed: Event: Bob: Pub B\n\n\n\n\nEntity Charlie observed: Event: Bob: Pub B\n\n\n\n\nEntity Charlie is next to act. They must respond  in the format: \"ActionSpec(call_to_action='Given the above, what is {name} likely to say next? Respond in the format `{name} -- \"...\"` For example, Cristina -- \"Hello! Mighty fine weather today, right?\", Ichabod -- \"I wonder if the alfalfa is ready to harvest\", or Townsfolk -- \"Good morning\".\\n', output_type=<OutputType.FREE: 'free'>, options=(), tag=None)\".\nEntity Charlie chose action: Charlie: Pub B\nThe suggested action or event to resolve was: Charlie: Pub B\nThe resolved event was: Event: Charlie: Pub B\n\nTerminate? No\nGame master: decision rules\nEntity Alice is next to act. They must respond  in the format: \"ActionSpec(call_to_action='To which pub would {name} go to watch the game?', output_type=<OutputType.CHOICE: 'choice'>, options=('Pub B', 'Pub A'), tag='decision')\".\nEntity Alice chose action: Alice: Pub A\nThe suggested action or event to resolve was: Alice: Pub A\nThe resolved event was: Event: Putative event to resolve:  Alice: Pub A\n\nTerminate? No\nGame master: decision rules\nEntity Bob is next to act. They must respond  in the format: \"ActionSpec(call_to_action='To which pub would {name} go to watch the game?', output_type=<OutputType.CHOICE: 'choice'>, options=('Pub B', 'Pub A'), tag='decision')\".\nEntity Bob chose action: Bob: Pub B\nThe suggested action or event to resolve was: Bob: Pub B\nThe resolved event was: Event: Putative event to resolve:  Bob: Pub B\n\nTerminate? No\nGame master: decision rules\nEntity Charlie is next to act. They must respond  in the format: \"ActionSpec(call_to_action='To which pub would {name} go to watch the game?', output_type=<OutputType.CHOICE: 'choice'>, options=('Pub B', 'Pub A'), tag='decision')\".\nEntity Charlie chose action: Charlie: Pub B\nThe suggested action or event to resolve was: Charlie: Pub B\nJoint action is complete: {'Alice': 'Pub A', 'Bob': 'Pub B', 'Charlie': 'Pub B'}\n{'Alice': 0.5, 'Bob': 1.0, 'Charlie': 1.0}\nStage 1 is complete.\nThe resolved event was: Event: Putative event to resolve:  Charlie: Pub B\n\nTerminate? Yes\n"
+}

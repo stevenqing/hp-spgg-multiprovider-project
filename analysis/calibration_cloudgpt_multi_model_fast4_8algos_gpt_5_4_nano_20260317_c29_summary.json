@@ -1,0 +1,156 @@
+{
+  "calibration": "calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c29.npy",
+  "report": "analysis/calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c29_report.json",
+  "audit": "logs/E5_audit_calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_4_nano_20260317_c29.txt",
+  "tid_min_gap": 0.09216000000000002,
+  "new_live_cells": 24,
+  "cached_cells_loaded": 1344,
+  "skipped_cached_cells": 0,
+  "parse_failure_count": 0,
+  "results": [
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0.npz",
+      "beta": 0.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0p05.npz",
+      "beta": 0.05,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0p1.npz",
+      "beta": 0.1,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0p25.npz",
+      "beta": 0.25,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0p5.npz",
+      "beta": 0.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0p75.npz",
+      "beta": 0.75,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta1.npz",
+      "beta": 1.0,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    },
+    {
+      "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta1p5.npz",
+      "beta": 1.5,
+      "K": 20,
+      "seeds": 5,
+      "final_regret": {
+        "hpsmg_plus": 0.398,
+        "hpsmg": 0.558,
+        "joint_psrl": 1.36,
+        "map_greedy": 0.314,
+        "psrl_notype": 10.772,
+        "iql": 30.472,
+        "random": 23.566,
+        "oracle": 0.0
+      }
+    }
+  ],
+  "best_result": {
+    "path": "results\\cloudgpt\\E2_gpt_5_4_nano_20260317_c29_beta0.npz",
+    "beta": 0.0,
+    "K": 20,
+    "seeds": 5,
+    "final_regret": {
+      "hpsmg_plus": 0.398,
+      "hpsmg": 0.558,
+      "joint_psrl": 1.36,
+      "map_greedy": 0.314,
+      "psrl_notype": 10.772,
+      "iql": 30.472,
+      "random": 23.566,
+      "oracle": 0.0
+    }
+  }
+}

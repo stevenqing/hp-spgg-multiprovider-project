@@ -1,0 +1,969 @@
+[
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 3,
+    "seed": 170003,
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n  \"coordination_strategy\": \"Given the initial round with no history and hidden personas, propose a moderate symmetric contribution of 0.5 from all players. This serves multiple purposes: 1) It signals willingness to cooperate without extreme risk, 2) It provides a baseline for observing responses in subsequent rounds, 3) It balances between appealing to Conditional Cooperators (who need positive signals) and Risk-Averse Balancers (who prefer medium contributions), while being tolerable",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"No history available, so initial belief is uniform uncertainty across all persona types. All players could be any of the four types with equal probability.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.25\n}\n```",
+                "```json\n{\n    \"belief\": \"Without history, personas are equally likely. A symmetric moderate proposal balances uncertainty while establishing cooperative baseline.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"No history exists, so personas are equally likely. A moderate symmetric proposal balances initial uncertainty while establishing cooperative baseline.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"No behavioral history exists, so initial persona distribution is assumed uniform across types. All players are equally likely to be any persona, with slight uncertainty favoring moderate behaviors in first interactions.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"No history available, so initial belief assumes uniform distribution over personas with slight weighting toward Conditional Cooperators and Risk-Averse Balancers as most common in public goods games.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.6\n}\n```",
+                "```json\n{\n    \"belief\": \"No historical data available, so initial belief is uniform distribution across personas. All personas equally likely (25% each).\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.25\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given the symmetric moderate outcome from round 0 (all contributed 0.5), maintain this equilibrium while using the observed rewards to refine persona beliefs. The rewards (0.9, 0.8, 0.8) suggest slight asymmetries possibly due to hidden persona differences, but the symmetric contributions were welfare-positive (2.5 vs oracle 2.65). Propose continuing with 0.5 contributions for all players to: 1) Reinforce cooperative norms established in round 0, 2) Provid",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric contributions (0.5 each) but asymmetric rewards (0.9, 0.8, 0.8), suggesting possible hidden persona differences despite identical actions. The welfare (2.5) was close to oracle (2.65), indicating the symmetric moderate strategy works well. I now suspect players may have different personas but are currently cooperating at the moderate equilibrium.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```",
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric contributions (0.5 each) with slightly asymmetric rewards (0.9, 0.8, 0.8), suggesting possible hidden persona variations. The moderate symmetric approach worked well (welfare 2.5 vs oracle 2.65). I now assign higher probability to Conditional Cooperators (40%) and Risk-Averse Balancers (35%) since they responded positively to the moderate proposal, with lower probability for Altruistic Builders (15%) and Free Riders (10%).\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.75\n}\n```",
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric contributions (0.5 each) with slightly asymmetric rewards (0.9, 0.8, 0.8). This suggests potential hidden persona differences, but the symmetric outcome was welfare-positive (2.5 vs 2.65 oracle). Maintaining 0.5 for all reinforces cooperation, provides consistent signals for Conditional Cooperators, and suits Risk-Averse Balancers' stability preference.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.7\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric contributions (0.5 each) with slightly asymmetric rewards (0.9, 0.8, 0.8). This suggests possible hidden persona differences, but the equilibrium was welfare-positive (2.5 vs oracle 2.65). I now believe: Player 0 (me) could be any type, Player 1 may lean toward Conditional Cooperator or Risk-Averse Balancer (reward 0.8), Player 2 similar to Player 1. The symmetric outcome suggests no strong Free Rider signals yet.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.75\n}\n```",
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric moderate contributions (0.5 each) with slight reward variations (0.9, 0.8, 0.8). This suggests players may have different hidden personas but all responded positively to the initial moderate proposal. The welfare (2.5) was close to oracle (2.65), indicating good coordination. I now suspect: Player 0 (highest reward) might be Altruistic Builder or highly cooperative Conditional Cooperator; Players 1 & 2 appear as Conditional Cooperators or Risk-Averse Balancers responding to the moderate signal. Free Rider probability reduced due to cooperative first-round behavior.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.75\n}\n```",
+                "```json\n{\n    \"belief\": \"Round 0 showed symmetric contributions (0.5 each) with slightly asymmetric rewards (0.9, 0.8, 0.8), suggesting possible hidden persona variations. However, the high welfare (2.5 vs oracle 2.65) indicates the symmetric 0.5 profile works well across persona types. I now believe players are likely Conditional Cooperators or Risk-Averse Balancers (who prefer moderate contributions), with possibly one Altruistic Builder (explaining the 0.9 reward). Free Rider probability is low given the cooperative first round.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.75\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 2,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given two consecutive rounds of symmetric 0.5 contributions with stable welfare outcomes (2.5 vs oracle 2.65), maintain this equilibrium while using the slight reward asymmetries to refine persona beliefs. The strategy for round 2 is to propose continuing with 0.5 contributions for all players, as this: 1) Reinforces the established cooperative norm, which is crucial for Conditional Cooperators who require consistent signals; 2) Satisfies Risk-Averse Balan",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After two rounds of symmetric 0.5 contributions with stable welfare outcomes, I believe players are likely Conditional Cooperators (40%) or Risk-Averse Balancers (35%), with one possible Altruistic Builder (15%) and low Free Rider probability (10%). The slight reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 may be more cooperative, but all have consistently chosen moderate contributions.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```",
+                "```json\n{\n    \"belief\": \"Based on two rounds of symmetric 0.5 contributions with slight reward asymmetries (0.9, 0.8, 0.8), I believe: Player 0 (highest reward) may be Altruistic Builder or highly cooperative Conditional Cooperator; Players 1 & 2 appear as Conditional Cooperators or Risk-Averse Balancers responding positively to moderate signals. Free Rider probability remains low due to consistent cooperative behavior. The established 0.5 equilibrium works well across persona types.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```",
+                "```json\n{\n    \"belief\": \"After two rounds of symmetric 0.5 contributions with stable welfare outcomes (2.5 vs oracle 2.65), I believe: Player 0 likely shows Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each). Free Rider probability remains low due to consistent cooperative behavior. The moderate equilibrium successfully coordinates across these persona types.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After two rounds of symmetric 0.5 contributions with stable welfare (2.5 vs oracle 2.65), I believe players are likely Conditional Cooperators or Risk-Averse Balancers who respond well to moderate, consistent signals. The slight reward asymmetry (0.9, 0.8, 0.8) suggests possible hidden persona variations, but no strong Free Rider signals yet. Maintaining 0.5 reinforces cooperation while balancing uncertainty.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```",
+                "```json\n{\n    \"belief\": \"After two rounds of symmetric 0.5 contributions with stable welfare (2.5 vs oracle 2.65), I believe players are likely Conditional Cooperators or Risk-Averse Balancers who respond well to consistent moderate signals. Player 0's slightly higher reward (0.9) suggests possible Altruistic Builder tendencies, while Players 1 and 2 appear as stable cooperators. Free Rider probability remains low given cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```",
+                "```json\n{\n    \"belief\": \"Based on two rounds of symmetric 0.5 contributions with welfare close to oracle (2.5 vs 2.65), I believe we likely have a mix of Conditional Cooperators and Risk-Averse Balancers. The slight reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 may be more cooperative (possibly Altruistic Builder), while Players 1 and 2 appear responsive to the moderate equilibrium. Free Rider probability remains low given consistent cooperation.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.8\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 3,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given three consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the established equilibrium is robust and effective. The slight but persistent reward asymmetry (0.9, 0.8, 0.8) suggests hidden persona diversity\u2014likely one Altruistic Builder (Player 0) and two Conditional Cooperators or Risk-Averse Balancers (Players 1 & 2)\u2014but all types are cooperating well at the moderate level. For round 3, mai",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After three rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) shows Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 are likely Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each). Free Rider probability remains low due to sustained cooperation. The moderate equilibrium effectively coordinates across these personas.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```",
+                "```json\n{\n    \"belief\": \"After three rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 is likely an Altruistic Builder (highest reward 0.9), while Players 1 and 2 are Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each). Free Rider probability remains low due to sustained cooperation. The moderate equilibrium effectively coordinates across these persona types.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```",
+                "```json\n{\n    \"belief\": \"After three rounds of symmetric 0.5 contributions with stable welfare near oracle, I believe Player 0 likely has Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each). All personas are cooperating effectively at the moderate equilibrium, with Free Rider probability minimal given consistent cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After three rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 are Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains low due to sustained cooperation.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```",
+                "```json\n{\n    \"belief\": \"After three rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely has Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each). All personas are cooperating effectively at the moderate equilibrium, with low Free Rider probability given the cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```",
+                "```json\n{\n    \"belief\": \"After three rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 shows Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 are likely Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains low given cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.85\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 4,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given four consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 likely exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 4, maintain th",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains negligible given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely has Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains minimal given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains very low given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains minimal given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 5,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given five consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 likely exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 5, maintain th",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains minimal given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After four rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. Free Rider probability remains minimal given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 6,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given five consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 likely exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 6, maintain th",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle, I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```",
+                "```json\n{\n    \"belief\": \"After five rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.9\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 7,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given six consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) suggests Player 0 likely exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 7, maintain the",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After six consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After six rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After six consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After six consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After six rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After six rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 likely exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 8,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given seven consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 8, maintain",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits strong Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 9,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given eight consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 9, maintain",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eight consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 10,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given nine consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 10, maintain",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After nine consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 11,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given ten consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 11, maintain ",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After ten consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 12,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given eleven consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 12, mainta",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eleven consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 13,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given twelve consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 13, mainta",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After twelve consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 14,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given thirteen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 14, main",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After thirteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 15,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given fourteen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 15, main",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fourteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 16,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given fifteen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 16, maint",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After fifteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 17,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given sixteen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 17, maint",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After sixteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 18,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given seventeen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 18, mai",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After seventeen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "round": 19,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.9,
+          0.8,
+          0.8
+        ],
+        "welfare": 2.5,
+        "oracle_welfare": 2.65,
+        "info": {
+          "family": "ECON",
+          "strategy": "```json\n{\n    \"coordination_strategy\": \"Given eighteen consecutive rounds of stable symmetric 0.5 contributions with welfare consistently near the oracle (2.5 vs 2.65), the moderate equilibrium has proven robust and effective across hidden personas. The persistent reward asymmetry (0.9, 0.8, 0.8) strongly suggests Player 0 exhibits Altruistic Builder tendencies, while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers\u2014all cooperating well at this level. For round 19, main",
+          "iterations": [
+            {
+              "iteration": 0,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            },
+            {
+              "iteration": 1,
+              "commitment": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "executors": [
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 (me) exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including me as Player 1) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```",
+                "```json\n{\n    \"belief\": \"After eighteen consecutive rounds of stable symmetric 0.5 contributions with consistent welfare near oracle (2.5 vs 2.65), I believe Player 0 exhibits clear Altruistic Builder tendencies (consistent highest reward 0.9), while Players 1 and 2 (including myself as Player 2) appear as Conditional Cooperators or Risk-Averse Balancers (rewards 0.8 each) who respond well to consistent moderate signals. All personas are cooperating effectively at this equilibrium, with minimal Free Rider probability given the sustained cooperative history.\",\n    \"contributions\": [0.5, 0.5, 0.5],\n    \"confidence\": 0.95\n}\n```"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

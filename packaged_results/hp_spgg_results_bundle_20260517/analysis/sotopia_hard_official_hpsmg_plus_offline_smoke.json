@@ -1,0 +1,126 @@
+{
+  "task": "sotopia_hard_official_reconstructed",
+  "baseline": "hpsmg_plus",
+  "model": "offline",
+  "evaluator_model": "offline",
+  "target_case_count": 1,
+  "case_count": 1,
+  "complete": true,
+  "summary": {
+    "agent_1": {
+      "believability": 7.0,
+      "relationship": 1.0,
+      "knowledge": 3.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 1.0,
+      "goal": 5.0,
+      "overall_score": 2.4285714285714284
+    },
+    "agent_2": {
+      "believability": 7.0,
+      "relationship": 1.0,
+      "knowledge": 3.0,
+      "secret": 0.0,
+      "social_rules": 0.0,
+      "financial_and_material_benefits": 1.0,
+      "goal": 5.0,
+      "overall_score": 2.4285714285714284
+    },
+    "mean_overall": 2.4285714285714284
+  },
+  "episodes": [
+    {
+      "combo_pk": "01H84XT6AEYC5PPA59TYN3TCDT",
+      "env_id": "01H7VFHPQQQY6H4DNC6NBQ8XTG",
+      "agent_ids": [
+        "01H5TNE5PQ00AJVSSVB9V2VA9K",
+        "01H5TNE5P83CZ1TDBVN74NGEEJ"
+      ],
+      "codename": "craigslist_bargains_00000",
+      "agent_names": [
+        "Eli Dawson",
+        "William Brown"
+      ],
+      "baseline": "hpsmg_plus",
+      "model": "offline",
+      "evaluator_model": "offline",
+      "turns_completed": 1,
+      "transcript": [
+        {
+          "turn": 0,
+          "actions": {
+            "agent_1": " said: \"I want to make a constructive move while learning what matters most to you.\"",
+            "agent_2": " did nothing"
+          }
+        }
+      ],
+      "scores": {
+        "agent_1": {
+          "believability": {
+            "score": 7,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "relationship": {
+            "score": 1,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "knowledge": {
+            "score": 3,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "financial_and_material_benefits": {
+            "score": 1,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "goal": {
+            "score": 5,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          }
+        },
+        "agent_2": {
+          "believability": {
+            "score": 7,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "relationship": {
+            "score": 1,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "knowledge": {
+            "score": 3,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "secret": {
+            "score": 0,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "social_rules": {
+            "score": 0,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "financial_and_material_benefits": {
+            "score": 1,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          },
+          "goal": {
+            "score": 5,
+            "reasoning": "Offline deterministic smoke score for craigslist_bargains_00000."
+          }
+        }
+      },
+      "overall": {
+        "agent_1": 2.4285714285714284,
+        "agent_2": 2.4285714285714284
+      }
+    }
+  ]
+}

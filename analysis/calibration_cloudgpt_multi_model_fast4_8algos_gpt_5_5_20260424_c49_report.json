@@ -1,0 +1,59 @@
+{
+  "backend": "cloudgpt",
+  "out": "calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_5_20260424_c49.npy",
+  "base_calibration": "calibration_cloudgpt_multi_model_fast4_8algos_gpt_5_5_20260424_c48.npy",
+  "cache": "logs\\cloudgpt_live_cache_gpt_5_5_20260424.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 4,
+  "new_live_cells": 0,
+  "cached_cells_loaded": 295,
+  "skipped_cached_cells": 43,
+  "total_cells": 1500,
+  "parse_failure_count": 5,
+  "parse_failures": [
+    {
+      "profile_index": 10,
+      "player_index": 1,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 76,
+      "player_index": 1,
+      "persona": "conditional_cooperator",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 9,
+      "player_index": 0,
+      "persona": "conditional_cooperator",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 10,
+      "player_index": 0,
+      "persona": "conditional_cooperator",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    },
+    {
+      "profile_index": 123,
+      "player_index": 0,
+      "persona": "free_rider",
+      "sample_index": 0,
+      "error": "Could not parse score from reply: ''",
+      "reply": ""
+    }
+  ],
+  "workers": 4,
+  "tid_min_gap": 0.08692860634938164
+}

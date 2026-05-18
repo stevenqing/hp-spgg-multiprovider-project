@@ -1,0 +1,13 @@
+{"model": "DeepSeek-V3.2", "status": "ok", "reply": "OK"}
+{"model": "gpt-5.4-nano-20260317", "status": "ok", "reply": "OK"}
+{"model": "gpt-5.4-mini-20260317", "status": "ok", "reply": "OK"}
+{"model": "gpt-5.4-pro-20260305", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'message': 'The requested operation is unsupported.'}}"}
+{"model": "gpt-5.5-20260424", "status": "ok", "reply": ""}
+{"model": "gpt-5.3-chat-20260303", "status": "ok", "reply": ""}
+{"model": "gpt-5.2-chat-20260210", "status": "ok", "reply": ""}
+{"model": "gpt-4.1-mini-20250414", "status": "ok", "reply": "OK"}
+{"model": "Kimi-K2.6", "status": "ok", "reply": ""}
+{"model": "Kimi-K2.5", "status": "ok", "reply": ""}
+{"model": "Kimi-K2-Thinking", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'code': 'unknown_model', 'message': 'Unknown model: Kimi-K2-Thinking', 'details': 'Unknown model: Kimi-K2-Thinking'}}"}
+{"model": "Llama-4-Maverick-17B-128E-Instruct-FP8", "status": "ok", "reply": "OK"}
+{"model": "Llama-3.3-70B-Instruct", "status": "ok", "reply": "OK"}
