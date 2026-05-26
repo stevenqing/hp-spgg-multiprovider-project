@@ -22,7 +22,6 @@ llm_hpgg_sotopia/     SOTOPIA-Hard agents and official-case runner
 scripts/              Experiment launchers, summarizers, and plotting utilities
 config/               Provider routing configuration
 prompts/              Prompt templates and persona text
-docs/                 Data provenance and repository notes
 ```
 
 Generated or paper-facing directories may exist in a working copy, but are not
@@ -85,16 +84,26 @@ SOTOPIA-Hard reconstructed official runner:
 uv run python -m llm_hpgg_sotopia.run_sotopia_hard_official --help
 ```
 
-## Recently Added Baselines and Utilities
+## Baselines
 
-The source tree includes code for the following additional comparisons:
+The experiment runners expose the following baseline families:
 
-- `llm_psrl_verbal`: a natural-language posterior tracking baseline.
-- SOTOPIA `hpsmg` / `hpsmg_plus` beta handling, including beta-sweep support.
-- Concordia beta-zero PACT aliases such as `hpsmg_proxy` and
-	`hpsmg_joint_proxy` for compact posterior-guided objectives.
-- Full Concordia verbal-baseline sweep launch/check scripts.
-- Data-only SOTOPIA revenge-plot production with per-turn JSONL dumps.
+| ID | Description | Reference |
+| --- | --- | --- |
+| `random` | Uniform random action selection. | Standard control baseline. |
+| `llm_greedy` | Prompted LLM policy that optimizes the visible local objective. | Direct-prompt LLM-agent baseline. |
+| `llm_belief` / `surrogate_only` | Prompted LLM policy using a fixed or shared surrogate persona menu. | Direct-prompt LLM-agent baseline. |
+| `naive_belief` | Natural-language partner-type guess without numeric Bayesian updates. | Direct-prompt belief baseline. |
+| `llm_psrl_verbal` | Natural-language posterior-sampling style belief tracking. | Arumugam and Griffiths, 2026, LLM-PSRL ([arXiv:2504.20997](https://arxiv.org/abs/2504.20997)). |
+| `atom_tom1` / `atom_tom2` | First- and second-order theory-of-mind prompting. | Li et al., 2023, Theory of Mind for Multi-Agent Collaboration ([arXiv:2310.10701](https://arxiv.org/abs/2310.10701)). |
+| `econ_bne` | Economic best-response / Bayes-Nash-style baseline. | Harsanyi, 1967-1968, games with incomplete information. |
+| `hpsmg` | Posterior-guided method without the exploration bonus. | This paper's method ablation. |
+| `hpsmg_plus` | Posterior-guided method with the exploration bonus. | This paper's main method. |
+| `oracle_joint` / `oracle_policy` | Oracle-information upper-reference policies. | Oracle reference baseline. |
+
+Substrate integrations also include SOTOPIA beta-sweep support, Concordia
+beta-zero aliases such as `hpsmg_proxy` and `hpsmg_joint_proxy`, Concordia
+verbal-baseline sweep scripts, and SOTOPIA data-production utilities.
 
 Representative scripts:
 
