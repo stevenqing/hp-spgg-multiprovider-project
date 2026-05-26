@@ -10,3 +10,12 @@ logs/
 analysis/exports/master_rollouts.jsonl
 external/sotopia_data_probe/sotopia_episodes_v1_hf.jsonl
 *.npy
+
+# Paper / LaTeX project outputs are kept out of the anonymized code repo
+arr_paper/
+arr_paper_overleaf/
+overleaf_bundle/
+htmg_arr_v5_overleaf/
+paper/
+tables/*.tex
+packaged_results/*/tables/*.tex
