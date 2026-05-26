@@ -1,7 +1,0 @@
-prior_mode,algorithm,mean_final_cumulative_regret,sem_final,seeds,K,input
-adversarial,hpsmg,1.492,0.20399509798031895,5,20,results\e1_e4\E4_prior_adversarial_DeepSeek_V3_2.npz
-adversarial,map_greedy,1.1700000000000002,0.27504545078950127,5,20,results\e1_e4\E4_prior_adversarial_DeepSeek_V3_2.npz
-correct,hpsmg,0.9480000000000001,0.15991872935963447,5,20,results\e1_e4\E4_prior_correct_DeepSeek_V3_2.npz
-correct,map_greedy,0.0,0.0,5,20,results\e1_e4\E4_prior_correct_DeepSeek_V3_2.npz
-uniform,hpsmg,1.3360000000000003,0.21500232556881796,5,20,results\e1_e4\E4_prior_uniform_DeepSeek_V3_2.npz
-uniform,map_greedy,0.9,0.19798989873223324,5,20,results\e1_e4\E4_prior_uniform_DeepSeek_V3_2.npz

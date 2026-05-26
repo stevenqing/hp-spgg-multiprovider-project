@@ -1,7 +1,0 @@
-prior_mode,algorithm,mean_final_cumulative_regret,sem_final,seeds,K,input
-uniform,hpsmg,1.8399999999999999,0.0,1,3,results\e1_e4_smoke\E4_prior_uniform_smoke.npz
-uniform,map_greedy,1.2199999999999998,0.0,1,3,results\e1_e4_smoke\E4_prior_uniform_smoke.npz
-correct,hpsmg,0.8599999999999999,0.0,1,3,results\e1_e4_smoke\E4_prior_correct_smoke.npz
-correct,map_greedy,0.0,0.0,1,3,results\e1_e4_smoke\E4_prior_correct_smoke.npz
-adversarial,hpsmg,1.8399999999999999,0.0,1,3,results\e1_e4_smoke\E4_prior_adversarial_smoke.npz
-adversarial,map_greedy,0.0,0.0,1,3,results\e1_e4_smoke\E4_prior_adversarial_smoke.npz

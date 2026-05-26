@@ -1,3 +1,0 @@
-type_count,algorithm,mean_final_cumulative_regret,sem,seeds,input
-2,hpsmg,1.736393510345659,0.0,1,results\e1_e4_llm_smoke\E2_type2_live_smoke.npz
-2,hpsmg_plus,0.0,0.0,1,results\e1_e4_llm_smoke\E2_type2_live_smoke.npz
