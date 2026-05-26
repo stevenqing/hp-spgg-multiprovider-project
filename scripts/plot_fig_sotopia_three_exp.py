@@ -1,5 +1,5 @@
 """Fig 7 (SOTOPIA-Hard): report only the 3 in-scope scenario families,
-each as a Fig-1-style horizontal bar chart comparing H-PSMG+ vs the four
+each as a Fig-1-style horizontal bar chart comparing PACT$^+$ vs the four
 alternative baselines, averaged across all 4 backbones.
 
 Output: arr_paper/figs/fig_sotopia_three_exp_v1.{pdf,png}
@@ -15,7 +15,7 @@ mpl.rcParams.update({"font.family": "serif", "font.size": 11, "pdf.fonttype": 42
 
 BASES = ["hpsmg_plus", "atom_tom1", "econ_bne", "llm_belief", "llm_greedy"]
 LABELS = {
-    "hpsmg_plus": "H-PSMG$^{+}$ (ours)",
+    "hpsmg_plus": "PACT$^{+}$ (ours)",
     "atom_tom1": "A-ToM-1",
     "econ_bne": "ECON-BNE",
     "llm_belief": "llm_belief",

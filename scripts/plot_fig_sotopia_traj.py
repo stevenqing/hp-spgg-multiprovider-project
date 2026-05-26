@@ -4,7 +4,7 @@ x-axis: turn checkpoint k in {2, 4, 6}.
 y-axis: focal score (mean of agent_1 and agent_2 of the partial-judge overall),
        averaged over all four backbones and over episodes within the family.
 Three panels: craigslist_bargains, revenge_plot, donate_funds.
-One line per baseline (5 baselines), HPSMG+ bolded.
+One line per baseline (5 baselines), PACT+ bolded.
 
 The k=6 point uses the existing source JSONs (full-episode score).
 The k=2 and k=4 points use ``analysis/sotopia_partial_judge_cache.json`` produced
@@ -17,6 +17,7 @@ from __future__ import annotations
 import glob
 import json
 import re
+import shutil
 from collections import defaultdict
 from pathlib import Path
 
@@ -33,13 +34,15 @@ FAMILIES = [
     ("donate_funds", "Donate funds", 20),
 ]
 
-# Baseline display order + colours. HPSMG+ uses our signature deep navy.
+# Baseline display order + colours. PACT+ uses our signature deep navy.
+# oracle_policy is shown as a dark-red upper bound (best-of-K + one-hot persona).
 BASELINES = [
     ("llm_greedy", "llm_greedy", "#b8bcc2", "--", 1.0, "normal"),
     ("llm_belief", "llm_belief", "#a99c84", "--", 1.0, "normal"),
     ("econ_bne",   "ECON-BNE",   "#d68a76", "-.", 1.1, "normal"),
     ("atom_tom1",  "A-ToM-1",    "#7fbf9c", "-.", 1.1, "normal"),
-    ("hpsmg_plus", "H-PSMG$^{+}$", "#0b3a8c", "-", 2.6, "bold"),
+    ("hpsmg_plus", "PACT$^{+}$", "#0b3a8c", "-", 2.6, "bold"),
+    ("oracle_policy", "Oracle-policy (best-of-$K{=}5$)", "#b00020", (0, (4, 2)), 2.0, "bold"),
 ]
 
 BACKBONES = [
@@ -51,6 +54,16 @@ BACKBONES = [
 
 FILE_RE = re.compile(
     r"^sotopia_hard_official_(?P<bb>" + "|".join(map(re.escape, BACKBONES)) + r")_(?P<baseline>[a-z0-9_]+)_sotopia_tuned_all70\.json$"
+)
+# Some rerun files use dash/dot notation in the backbone token; map back.
+DASH_TO_UNDERSCORE = {
+    "DeepSeek-V3.2": "DeepSeek_V3_2",
+    "gpt-5.4-nano-20260317": "gpt_5_4_nano_20260317",
+    "Kimi-K2.6": "Kimi_K2_6",
+    "Llama-4-Maverick-17B-128E-Instruct-FP8": "Llama_4_Maverick_17B_128E_Instruct_FP8",
+}
+FILE_DASH_RE = re.compile(
+    r"^sotopia_hard_official_(?P<bb>" + "|".join(map(re.escape, DASH_TO_UNDERSCORE)) + r")_(?P<baseline>[a-z0-9_]+)_sotopia_tuned_all70\.json$"
 )
 
 
@@ -65,11 +78,22 @@ def load_k6() -> dict[tuple[str, str, str], list[float]]:
     """Read existing full-episode scores from analysis/sotopia_hard_official_*.json.
     Returns dict[(backbone, baseline, family)] -> list of per-episode focal scores."""
     out: dict[tuple[str, str, str], list[float]] = defaultdict(list)
-    for path in sorted((ROOT / "analysis").glob("sotopia_hard_official_*_sotopia_tuned_all70.json")):
+    paths = sorted(
+        list((ROOT / "analysis").glob("sotopia_hard_official_*_sotopia_tuned_all70.json"))
+        + list((ROOT / "analysis" / "rerun_20260518").glob("sotopia_hard_official_*_sotopia_tuned_all70.json"))
+        # The oracle_policy full-episode rerun artifacts live in the archive;
+        # partial-judge cache has k=1..5, so these files provide the missing k=6 endpoint.
+        + list((ROOT / "_archive" / "analysis_intermediate" / "rerun_20260518").glob("sotopia_hard_official_*_oracle_policy_sotopia_tuned_all70.json"))
+    )
+    for path in paths:
         m = FILE_RE.match(path.name)
-        if not m:
-            continue
-        bb, baseline = m["bb"], m["baseline"]
+        if m:
+            bb, baseline = m["bb"], m["baseline"]
+        else:
+            m = FILE_DASH_RE.match(path.name)
+            if not m:
+                continue
+            bb, baseline = DASH_TO_UNDERSCORE[m["bb"]], m["baseline"]
         data = json.loads(path.read_text(encoding="utf-8"))
         for ep in data.get("episodes", []):
             fam = family_of(ep.get("codename", ""))
@@ -177,7 +201,7 @@ def main() -> None:
                          handlelength=1.6, fontsize=7.6)
     leg.get_frame().set_linewidth(0.5)
     for text in leg.get_texts():
-        if "H-PSMG" in text.get_text():
+        if "PACT" in text.get_text():
             text.set_fontweight("bold")
 
     fig.subplots_adjust(left=0.13, right=0.99, top=0.90, bottom=0.18, wspace=0.18)
@@ -185,6 +209,10 @@ def main() -> None:
     out_png = ROOT / "arr_paper" / "figs" / "fig_sotopia_traj_v1.png"
     fig.savefig(out_pdf)
     fig.savefig(out_png, dpi=240)
+    overleaf_dir = ROOT / "arr_paper_overleaf" / "figs"
+    if overleaf_dir.exists():
+        shutil.copy2(out_pdf, overleaf_dir / out_pdf.name)
+        shutil.copy2(out_png, overleaf_dir / out_png.name)
     print(f"wrote {out_pdf}")
     print(f"wrote {out_png}")
 

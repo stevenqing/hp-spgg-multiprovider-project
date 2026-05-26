@@ -19,7 +19,7 @@ from sotopia.messages import AgentAction, Message
 
 from llm_hpgg.llm_agent import call_judge
 
-from .agents import HPGGSotopiaAgent
+from .agents import HPGGSotopiaAgent, oracle_one_hot_from_profile
 from .official_hard_data import HardCase, load_hard_cases, make_agent_profiles, make_environment_profile
 
 
@@ -79,9 +79,15 @@ class CloudGPTEpisodeEvaluator:
         return _normalise_scores(json.loads(_extract_json(reply)), case)
 
 
-async def run_case(case: HardCase, baseline: str, model: str | None, evaluator_model: str | None, turns: int) -> dict[str, Any]:
+async def _run_case_once(case: HardCase, baseline: str, model: str | None, evaluator_model: str | None, turns: int) -> dict[str, Any]:
     env_profile = make_environment_profile(case)
     agent_profiles = make_agent_profiles(case)
+    oracle_for_agent_1: dict[str, float] | None = None
+    oracle_for_agent_2: dict[str, float] | None = None
+    if baseline in {"oracle_joint", "oracle_policy"}:
+        # Each agent gets privileged one-hot access to the opponent's full profile-derived type.
+        oracle_for_agent_1 = oracle_one_hot_from_profile(agent_profiles[1])
+        oracle_for_agent_2 = oracle_one_hot_from_profile(agent_profiles[0])
     env = ParallelSotopiaEnv(
         env_profile=env_profile,
         action_order="round-robin",
@@ -93,6 +99,7 @@ async def run_case(case: HardCase, baseline: str, model: str | None, evaluator_m
             baseline=baseline,
             model=model,
             agent_profile=agent_profiles[0],
+            oracle_opponent_posterior=oracle_for_agent_1,
             strategy_profile=os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"),
         ),
         "agent_2": HPGGSotopiaAgent(
@@ -100,6 +107,7 @@ async def run_case(case: HardCase, baseline: str, model: str | None, evaluator_m
             baseline=baseline,
             model=model,
             agent_profile=agent_profiles[1],
+            oracle_opponent_posterior=oracle_for_agent_2,
             strategy_profile=os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"),
         ),
     }
@@ -145,6 +153,35 @@ async def run_case(case: HardCase, baseline: str, model: str | None, evaluator_m
     }
 
 
+def _episode_mean_overall(episode: dict[str, Any]) -> float:
+    overall = episode.get("overall", {}) or {}
+    a1 = overall.get("agent_1")
+    a2 = overall.get("agent_2")
+    vals = [v for v in (a1, a2) if isinstance(v, (int, float))]
+    if not vals:
+        return float("-inf")
+    return sum(vals) / len(vals)
+
+
+async def run_case(
+    case: HardCase,
+    baseline: str,
+    model: str | None,
+    evaluator_model: str | None,
+    turns: int,
+    best_of_k: int = 1,
+) -> dict[str, Any]:
+    if best_of_k <= 1:
+        return await _run_case_once(case, baseline, model, evaluator_model, turns)
+    samples = await asyncio.gather(
+        *[_run_case_once(case, baseline, model, evaluator_model, turns) for _ in range(best_of_k)]
+    )
+    best = max(samples, key=_episode_mean_overall)
+    best["best_of_k"] = best_of_k
+    best["best_of_k_all_mean_overall"] = [_episode_mean_overall(ep) for ep in samples]
+    return best
+
+
 async def run(args: argparse.Namespace) -> dict[str, Any]:
     cases = load_hard_cases(
         Path(args.benchmark_agents),
@@ -164,12 +201,50 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
     pending_cases = [case for case in cases if case.combo_pk not in completed_combo_pks]
     if episodes:
         print(f"resume_completed={len(episodes)} pending={len(pending_cases)}")
-    for index, case in enumerate(cases, start=1):
-        if case.combo_pk in completed_combo_pks:
-            continue
-        print(f"[{index}/{len(cases)}] {case.codename} {case.combo_pk}")
-        episodes.append(await run_case(case, args.baseline, args.model, args.evaluator_model, args.turns))
-        _write_result(out_path, args, episodes, target_case_count=len(cases))
+    concurrency = max(1, int(getattr(args, "concurrency", 1)))
+    best_of_k = max(1, int(getattr(args, "best_of_k", 1)))
+    if concurrency <= 1:
+        for index, case in enumerate(cases, start=1):
+            if case.combo_pk in completed_combo_pks:
+                continue
+            print(f"[{index}/{len(cases)}] {case.codename} {case.combo_pk}")
+            episodes.append(await run_case(case, args.baseline, args.model, args.evaluator_model, args.turns, best_of_k))
+            completed_combo_pks.add(case.combo_pk)
+            _write_result(out_path, args, episodes, target_case_count=len(cases))
+    else:
+        pending_indexed_cases = [
+            (index, case)
+            for index, case in enumerate(cases, start=1)
+            if case.combo_pk not in completed_combo_pks
+        ]
+        queue: asyncio.Queue[tuple[int, HardCase] | None] = asyncio.Queue()
+        for item in pending_indexed_cases:
+            queue.put_nowait(item)
+        for _ in range(concurrency):
+            queue.put_nowait(None)
+        lock = asyncio.Lock()
+
+        async def worker(worker_id: int) -> None:
+            while True:
+                item = await queue.get()
+                if item is None:
+                    return
+                index, case = item
+                print(f"[worker {worker_id}] [{index}/{len(cases)}] {case.codename} {case.combo_pk}")
+                while True:
+                    try:
+                        episode = await run_case(case, args.baseline, args.model, args.evaluator_model, args.turns, best_of_k)
+                        break
+                    except Exception as exc:
+                        print(f"[worker {worker_id}] failed {case.combo_pk}: {exc}; retrying same case")
+                        await asyncio.sleep(float(getattr(args, "retry_sleep", 5.0)))
+                async with lock:
+                    if case.combo_pk not in completed_combo_pks:
+                        episodes.append(episode)
+                        completed_combo_pks.add(case.combo_pk)
+                        _write_result(out_path, args, episodes, target_case_count=len(cases))
+
+        await asyncio.gather(*(worker(worker_id) for worker_id in range(1, concurrency + 1)))
 
     return {
         "task": "sotopia_hard_official_reconstructed",
@@ -188,11 +263,20 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--baseline", default="llm_belief", choices=["llm_greedy", "llm_belief", "atom_tom1", "econ_bne", "hpsmg_plus"])
+    parser.add_argument("--baseline", default="llm_belief", choices=[
+        "llm_greedy", "llm_belief", "atom_tom1", "econ_bne",
+        "surrogate_only", "surrogate-only", "naive_belief", "naive-belief",
+        "llm_psrl_verbal", "llm-psrl-verbal",
+        "hpsmg", "hpsmg_plus", "oracle_joint", "oracle_policy",
+    ])
     parser.add_argument("--model", default="offline")
     parser.add_argument("--evaluator-model", default="offline")
     parser.add_argument("--agent-strategy-profile", default=os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"), choices=["legacy", "sotopia_tuned"])
     parser.add_argument("--turns", type=int, default=6)
+    parser.add_argument("--concurrency", type=int, default=1, help="Number of SOTOPIA cases to run concurrently within this process.")
+    parser.add_argument("--best-of-k", type=int, default=1, help="For each case, run K independent episodes in parallel and keep the one with the highest mean overall judge score (policy-oracle upper bound).")
+    parser.add_argument("--beta", type=float, default=None, help="Exploration beta for hpsmg_plus; beta=0 recovers PACT-style no-bonus prompting.")
+    parser.add_argument("--retry-sleep", type=float, default=5.0, help="Seconds to wait before retrying a failed concurrent case.")
     parser.add_argument("--limit", type=int, default=1)
     parser.add_argument("--case-indices", nargs="*", help="Optional zero-based SOTOPIA-Hard case indices to run before applying --limit.")
     parser.add_argument("--benchmark-agents", default="external/sotopia_data_probe/benchmark_agents.json")
@@ -202,7 +286,10 @@ def main() -> None:
     parser.add_argument("--resume", action="store_true", help="Resume from an existing output JSON by combo_pk.")
     parser.add_argument("--out", default="analysis/sotopia_hard_official_smoke.json")
     args = parser.parse_args()
+    args.baseline = args.baseline.replace("-", "_")
     os.environ["SOTOPIA_AGENT_STRATEGY_PROFILE"] = args.agent_strategy_profile
+    if args.beta is not None:
+        os.environ["SOTOPIA_HPSMG_BETA"] = str(args.beta)
 
     result = asyncio.run(run(args))
     out_path = Path(args.out)

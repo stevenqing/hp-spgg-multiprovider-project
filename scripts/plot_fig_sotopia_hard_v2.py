@@ -15,8 +15,9 @@ import numpy as np
 mpl.rcParams.update({"font.family": "serif", "font.size": 11, "pdf.fonttype": 42, "ps.fonttype": 42})
 
 BASELINES = ["hpsmg_plus", "atom_tom1", "econ_bne", "llm_belief", "llm_greedy"]
+ALL_BASELINES = BASELINES + ["oracle_joint", "oracle_policy"]
 LABELS = {
-    "hpsmg_plus": "H-PSMG$^{+}$ (ours)",
+    "hpsmg_plus": "PACT$^{+}$ (ours)",
     "atom_tom1": "A-ToM-1",
     "econ_bne": "ECON-BNE",
     "llm_belief": "llm_belief",
@@ -40,9 +41,13 @@ MODEL_ORDER = ["DeepSeek_V3_2", "gpt_5_4_nano_20260317", "Kimi_K2_6", "Llama_4_M
 
 def parse_filename(path: str) -> tuple[str, str]:
     name = os.path.basename(path).replace("sotopia_hard_official_", "").replace("_sotopia_tuned_all70.json", "")
-    for bl in BASELINES:
+    for bl in ALL_BASELINES:
         if name.endswith("_" + bl):
-            return name[: -(len(bl) + 1)], bl
+            model = name[: -(len(bl) + 1)]
+            # Normalise model name: dashes/dots -> underscores so that runs
+            # written with either convention map to the same MODEL_ORDER key.
+            model = model.replace("-", "_").replace(".", "_")
+            return model, bl
     raise ValueError(path)
 
 
@@ -65,7 +70,11 @@ def load_data():
     data: dict[str, dict[str, dict[str, float]]] = defaultdict(lambda: defaultdict(dict))
     aggregate: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     fam_of: dict[str, str] = {}
-    for path in sorted(glob.glob("analysis/sotopia_hard_official_*_sotopia_tuned_all70.json")):
+    paths = sorted(set(
+        glob.glob("analysis/sotopia_hard_official_*_sotopia_tuned_all70.json")
+        + glob.glob("analysis/rerun_20260518/sotopia_hard_official_*_sotopia_tuned_all70.json")
+    ))
+    for path in paths:
         model, baseline = parse_filename(path)
         d = json.load(open(path, encoding="utf-8"))
         for ep in d.get("episodes", []):
@@ -95,7 +104,7 @@ def pretty_family(name: str) -> str:
 
 
 def plot_main(data, fam_of, out_pdf: str):
-    """Main fig: top-N (backbone, scenario) cells where H-PSMG+ beats the best alternative.
+    """Main fig: top-N (backbone, scenario) cells where PACT$^+$ beats the best alternative.
 
     Horizontal bars sorted by margin; colour by backbone.
     """
@@ -125,8 +134,8 @@ def plot_main(data, fam_of, out_pdf: str):
         ax.text(v + 0.02, yi, f"+{v:.2f}", va="center", fontsize=9, fontweight="bold")
     ax.set_yticks(y)
     ax.set_yticklabels(labels, fontsize=9)
-    ax.set_xlabel("Focal-score advantage of H-PSMG$^{+}$ over best alternative baseline")
-    ax.set_title("SOTOPIA-Hard: top 10 (backbone, scenario) cells where H-PSMG$^{+}$ wins",
+    ax.set_xlabel("Focal-score advantage of PACT$^{+}$ over best alternative baseline")
+    ax.set_title("SOTOPIA-Hard: top 10 (backbone, scenario) cells where PACT$^{+}$ wins",
                  fontsize=11)
     ax.set_xlim(0, max(vals) * 1.18)
     ax.axvline(0, color="black", linewidth=0.6)
@@ -162,11 +171,67 @@ def plot_appendix(aggregate, out_pdf: str):
     ax.set_xticks(x)
     ax.set_xticklabels([MODEL_LABELS[m] for m in MODEL_ORDER], fontsize=10)
     ax.set_ylabel("Mean focal score (70 episodes / cell)")
-    ax.set_title("SOTOPIA-Hard aggregate: H-PSMG$^{+}$ within $0.1$ of leader on every backbone",
+    ax.set_title("SOTOPIA-Hard aggregate: PACT$^{+}$ within $0.1$ of leader on every backbone",
                  fontsize=11, pad=22)
     all_means = [v for m in MODEL_ORDER for b in BASELINES
                  for v in [statistics.fmean(aggregate[m].get(b, [float("nan")]) or [float("nan")])]
                  if v == v]
+    oracle_belief_per_model = [
+        statistics.fmean(aggregate[m].get("oracle_joint", [float("nan")]) or [float("nan")])
+        for m in MODEL_ORDER
+    ]
+    oracle_policy_per_model = [
+        statistics.fmean(aggregate[m].get("oracle_policy", [float("nan")]) or [float("nan")])
+        for m in MODEL_ORDER
+    ]
+    cluster_half = (len(BASELINES) - 1) / 2 * width + width / 2
+    belief_label_added = False
+    policy_label_added = False
+    for xi, ob, op in zip(x, oracle_belief_per_model, oracle_policy_per_model):
+        if ob == ob:  # not nan
+            ax.hlines(
+                y=ob,
+                xmin=xi - cluster_half,
+                xmax=xi + cluster_half,
+                color="#d97a7a",
+                linestyle="--",
+                linewidth=1.4,
+                label="Oracle-belief (one-hot persona)" if not belief_label_added else None,
+                zorder=5,
+            )
+            belief_label_added = True
+            ax.text(
+                xi - cluster_half,
+                ob + 0.005,
+                f"{ob:.2f}",
+                color="#d97a7a",
+                fontsize=7.5,
+                ha="left",
+                va="bottom",
+            )
+        if op == op:
+            ax.hlines(
+                y=op,
+                xmin=xi - cluster_half,
+                xmax=xi + cluster_half,
+                color="#b00020",
+                linestyle=(0, (4, 2)),
+                linewidth=1.8,
+                label="Oracle-policy (one-hot persona + best-of-K)" if not policy_label_added else None,
+                zorder=6,
+            )
+            policy_label_added = True
+            ax.text(
+                xi + cluster_half,
+                op + 0.005,
+                f"{op:.2f}",
+                color="#b00020",
+                fontsize=8,
+                fontweight="bold",
+                ha="right",
+                va="bottom",
+            )
+    all_means.extend([v for v in oracle_belief_per_model + oracle_policy_per_model if v == v])
     ax.set_ylim(min(all_means) - 0.1, max(all_means) + 0.15)
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)

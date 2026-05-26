@@ -22,12 +22,17 @@ from llm_hpgg.personas import PERSONAS
 DEFAULT_METHODS = [
     "llm_greedy",
     "llm_belief",
+    "random",
     "atom_tom1",
     "econ_bne",
+    "llm_psrl_verbal",
     "atom_tom1_mech",
+    "atom_tom2_mech",
     "econ_bne_mech",
     "hpsmg_plus_proxy",
+    "hpsmg_proxy",
     "hpsmg_plus_joint_proxy",
+    "hpsmg_joint_proxy",
     "oracle_joint",
 ]
 
@@ -127,14 +132,32 @@ def payoff_for_case(case: dict[str, Any]):
 def run_method(case: dict[str, Any], method: str, model_name: str | None) -> dict[str, Any]:
     if method == "oracle_joint":
         joint_action, info = choose_oracle_joint(case)
-    elif method == "hpsmg_plus_proxy":
+    elif method == "random":
+        joint_action, info = choose_random(case)
+    elif method in {"hpsmg_plus_proxy", "hpsmg_proxy"}:
         joint_action, info = choose_hpsmg_plus_proxy(case)
-    elif method == "hpsmg_plus_joint_proxy":
+        if method == "hpsmg_proxy":
+            info = dict(info)
+            info["beta"] = 0.0
+            info["policy"] = "posterior_expected_social_score_beta0"
+    elif method in {"hpsmg_plus_joint_proxy", "hpsmg_joint_proxy"}:
         joint_action, info = choose_hpsmg_plus_joint_proxy(case)
+        if method == "hpsmg_joint_proxy":
+            info = dict(info)
+            info["beta"] = 0.0
+            info["policy"] = "posterior_guided_joint_social_objective_beta0"
     elif method == "atom_tom1_mech":
         joint_action, info = choose_atom_tom1_mech(case)
+    elif method == "atom_tom2_mech":
+        joint_action, info = choose_atom_tom2_mech(case)
     elif method == "econ_bne_mech":
         joint_action, info = choose_econ_bne_mech(case)
+    elif method == "llm_psrl_verbal":
+        joint_action, info = choose_llm_psrl_verbal(case, model_name)
+    elif method == "centralized_planner_llm":
+        joint_action, info = choose_centralized_planner_llm(case, model_name)
+    elif method == "chat_agent_llm":
+        joint_action, info = choose_chat_agent_llm(case, model_name)
     else:
         joint_action, info = choose_llm_actions(case, method, model_name)
 
@@ -171,12 +194,48 @@ def information_scope_for_method(method: str) -> dict[str, Any]:
             "uses_privileged_oracle_objective": True,
             "comparable_as_baseline": False,
         }
-    if method in {"hpsmg_plus_proxy", "hpsmg_plus_joint_proxy", "atom_tom1_mech", "econ_bne_mech"}:
+    if method in {"hpsmg_plus_proxy", "hpsmg_proxy", "hpsmg_plus_joint_proxy", "hpsmg_joint_proxy", "atom_tom1_mech", "atom_tom2_mech", "econ_bne_mech"}:
         return {
             "mode": "centralized_full_case",
             "sees_all_person_preferences": True,
             "sees_full_relationship_matrix": True,
             "uses_known_payoff_model": True,
+            "uses_privileged_oracle_objective": False,
+            "comparable_as_baseline": True,
+        }
+    if method == "llm_psrl_verbal":
+        return {
+            "mode": "centralized_verbal_posterior",
+            "sees_all_person_preferences": False,
+            "sees_full_relationship_matrix": True,
+            "uses_known_payoff_model": True,
+            "uses_privileged_oracle_objective": False,
+            "comparable_as_baseline": True,
+        }
+    if method == "random":
+        return {
+            "mode": "uninformed_random",
+            "sees_all_person_preferences": False,
+            "sees_full_relationship_matrix": False,
+            "uses_known_payoff_model": False,
+            "uses_privileged_oracle_objective": False,
+            "comparable_as_baseline": True,
+        }
+    if method == "centralized_planner_llm":
+        return {
+            "mode": "centralized_llm_type_guess",
+            "sees_all_person_preferences": False,
+            "sees_full_relationship_matrix": True,
+            "uses_known_payoff_model": False,
+            "uses_privileged_oracle_objective": False,
+            "comparable_as_baseline": True,
+        }
+    if method == "chat_agent_llm":
+        return {
+            "mode": "decentralized_llm_type_guess",
+            "sees_all_person_preferences": False,
+            "sees_full_relationship_matrix": False,
+            "uses_known_payoff_model": False,
             "uses_privileged_oracle_objective": False,
             "comparable_as_baseline": True,
         }
@@ -279,6 +338,66 @@ def choose_hpsmg_plus_joint_proxy(case: dict[str, Any]) -> tuple[dict[str, str],
     }
 
 
+def choose_llm_psrl_verbal(case: dict[str, Any], model_name: str | None) -> tuple[dict[str, str], dict[str, Any]]:
+    model = HPGGConcordiaLanguageModel(
+        model=model_name,
+        system_prompt="You are a careful coordinator maintaining verbal beliefs about hidden pub preferences. Return valid JSON only.",
+    )
+    prompt = json.dumps(
+        {
+            "task": "Sample a verbal posterior hypothesis for Pub Coordination.",
+            "location": case.get("location", ""),
+            "event": case.get("event", ""),
+            "people": case["people"],
+            "focal_players": case["focal_players"],
+            "available_venues": case["venues"],
+            "closed_venues": case["closed_venues"],
+            "relationship_statements": case["relationship_statements"],
+            "instruction": (
+                "For each person, infer their most likely favorite venue from the public relationship/context only. "
+                "Then output JSON with key favorite_by_player mapping each person exactly to one available venue."
+            ),
+            "response_schema": {"favorite_by_player": {name: "one available venue" for name in case["people"]}},
+        },
+        indent=2,
+    )
+    try:
+        reply = model.sample_text(prompt, max_tokens=900, temperature=0.0)
+        parsed = _extract_json_object(reply).get("favorite_by_player", {})
+        guessed_preferences = {}
+        for name in case["people"]:
+            venue = str(parsed.get(name, "")).strip()
+            if venue not in case["venues"]:
+                raise ValueError(f"invalid venue for {name}: {venue}")
+            guessed_preferences[name] = venue
+        sample_ok = True
+    except Exception as exc:
+        guessed_preferences = {name: zero_order_favorite_choice(case, name) for name in case["people"]}
+        reply = f"fallback: {exc}"
+        sample_ok = False
+
+    hypothetical_case = dict(case)
+    hypothetical_case["person_preferences"] = guessed_preferences
+    payoff = payoff_for_case(hypothetical_case)
+    best_action: dict[str, str] | None = None
+    best_value = float("-inf")
+    people = case["people"]
+    for assignment in itertools.product(case["venues"], repeat=len(people)):
+        joint_action = dict(zip(people, assignment, strict=True))
+        scores = payoff.action_to_scores(joint_action)
+        value = sum(float(scores.get(name, 0.0)) for name in case["focal_players"]) / max(1, len(case["focal_players"]))
+        if value > best_value:
+            best_value = value
+            best_action = joint_action
+    return best_action or {}, {
+        "policy": "llm_psrl_verbal_sampled_preference_exact_focal_planner",
+        "sample_ok": sample_ok,
+        "guessed_preferences": guessed_preferences,
+        "reply_preview": str(reply)[:1000],
+        "hypothesis_value": best_value,
+    }
+
+
 def posterior_joint_objective(
     case: dict[str, Any],
     scores: dict[str, float],
@@ -322,6 +441,31 @@ def choose_atom_tom1_mech(case: dict[str, Any]) -> tuple[dict[str, str], dict[st
         joint_action[player] = best_venue
         per_player[player] = {"predicted_others": predicted_others, "selected": best_venue}
     return joint_action, {"family": "A-ToM", "tom_level": 1, "players": per_player}
+
+
+def choose_atom_tom2_mech(case: dict[str, Any]) -> tuple[dict[str, str], dict[str, Any]]:
+    # Second-order: each player first runs A-ToM-1 to predict others' choices,
+    # then best-responds to that predicted distribution.
+    first_order, _ = choose_atom_tom1_mech(case)
+    joint_action: dict[str, str] = {}
+    per_player: dict[str, Any] = {}
+    for player in case["people"]:
+        predicted_others = {other: first_order[other] for other in case["people"] if other != player}
+        best_venue = max(
+            case["venues"],
+            key=lambda venue: best_response_score(case, player, venue, predicted_others),
+        )
+        joint_action[player] = best_venue
+        per_player[player] = {"predicted_others": predicted_others, "selected": best_venue}
+    return joint_action, {"family": "A-ToM", "tom_level": 2, "players": per_player}
+
+
+def choose_random(case: dict[str, Any]) -> tuple[dict[str, str], dict[str, Any]]:
+    import random as _random
+    rng = _random.Random(f"random|{case.get('seed', 0)}|{case.get('location', '')}")
+    open_venues = [v for v in case["venues"] if v not in case["closed_venues"]] or list(case["venues"])
+    joint_action = {player: rng.choice(open_venues) for player in case["people"]}
+    return joint_action, {"family": "random", "policy": "uniform_over_open_venues"}
 
 
 def choose_econ_bne_mech(case: dict[str, Any], rounds: int = 6) -> tuple[dict[str, str], dict[str, Any]]:
@@ -452,6 +596,236 @@ def choose_oracle_joint(case: dict[str, Any]) -> tuple[dict[str, str], dict[str,
             best_value = value
             best_action = joint_action
     return best_action or {}, {"policy": "best_focal_mean", "best_value": best_value}
+
+
+# ---------------------------------------------------------------------------
+# LLM-native type-guess baselines (mirror MindAgent's gpt_agent / chat_agent
+# but the task is "guess each player's favourite venue", not "pick an
+# action"). They emit a per-player posterior over venues; their joint_action
+# is the argmax of that posterior.
+# ---------------------------------------------------------------------------
+
+
+def _normalise_venue_distribution(
+    raw: dict[str, Any], venues: list[str]
+) -> dict[str, float]:
+    out: dict[str, float] = {v: 0.0 for v in venues}
+    if not isinstance(raw, dict):
+        return {v: 1.0 / len(venues) for v in venues}
+    for key, value in raw.items():
+        if key not in out:
+            continue
+        try:
+            out[key] = max(0.0, float(value))
+        except (TypeError, ValueError):
+            out[key] = 0.0
+    total = sum(out.values())
+    if total <= 0.0:
+        return {v: 1.0 / len(venues) for v in venues}
+    return {v: out[v] / total for v in venues}
+
+
+def _extract_json_object(reply: str) -> dict[str, Any]:
+    import re as _re
+    match = _re.search(r"\{.*\}", reply, flags=_re.S)
+    if not match:
+        return {}
+    try:
+        return json.loads(match.group(0))
+    except Exception:
+        return {}
+
+
+def choose_centralized_planner_llm(
+    case: dict[str, Any], model_name: str | None
+) -> tuple[dict[str, str], dict[str, Any]]:
+    venues = list(case["venues"])
+    people = list(case["people"])
+    statements_block = "\n".join(
+        f"- {player}: {' '.join(case['relationship_statements'].get(player, []))}"
+        for player in people
+    )
+    closed = ", ".join(case["closed_venues"]) or "none"
+    prompt = (
+        "You observe a group preparing for a night out. Each person has a "
+        "private favourite pub from the venue list. Using the social "
+        "relationship statements, output a probability distribution over "
+        "each person's favourite pub. Return JSON only.\n\n"
+        f"Venues: {venues}\nClosed venues: {closed}\n\n"
+        f"Relationship statements:\n{statements_block}\n\n"
+        "Return JSON of the form\n"
+        '{"posteriors": {"<player>": {"<venue>": <prob>, ...}, ...}}\n'
+        "Probabilities for each player must sum to 1."
+    )
+    model = HPGGConcordiaLanguageModel(
+        model=model_name,
+        system_prompt=(
+            "You are a social-inference assistant. Output a calibrated "
+            "probability distribution per player. Return valid JSON only."
+        ),
+    )
+    reply = model.sample_text(prompt, max_tokens=600, temperature=0.0)
+    parsed = _extract_json_object(reply).get("posteriors", {})
+    venue_posteriors: dict[str, dict[str, float]] = {}
+    joint_action: dict[str, str] = {}
+    for player in people:
+        venue_posteriors[player] = _normalise_venue_distribution(
+            parsed.get(player, {}), venues
+        )
+        joint_action[player] = max(venues, key=lambda v: venue_posteriors[player][v])
+    return joint_action, {
+        "policy": "llm_centralized_type_guess",
+        "venue_posteriors": venue_posteriors,
+        "reply_preview": reply[:600],
+    }
+
+
+def choose_chat_agent_llm(
+    case: dict[str, Any], model_name: str | None
+) -> tuple[dict[str, str], dict[str, Any]]:
+    venues = list(case["venues"])
+    people = list(case["people"])
+    closed = ", ".join(case["closed_venues"]) or "none"
+    model = HPGGConcordiaLanguageModel(
+        model=model_name,
+        system_prompt=(
+            "You are a social-inference assistant guessing one person's "
+            "favourite pub from limited social context. Return valid JSON only."
+        ),
+    )
+    venue_posteriors: dict[str, dict[str, float]] = {}
+    joint_action: dict[str, str] = {}
+    reply_previews: dict[str, str] = {}
+    for player in people:
+        own_statements = " ".join(case["relationship_statements"].get(player, []))
+        prompt = (
+            f"Person under analysis: {player}\n"
+            f"Venues: {venues}\nClosed venues: {closed}\n"
+            f"Social context about {player}: {own_statements}\n\n"
+            "Return a JSON distribution over venues for this person's favourite, "
+            'of the form {"posterior": {"<venue>": <prob>, ...}}. '
+            "Probabilities must sum to 1."
+        )
+        reply = model.sample_text(prompt, max_tokens=200, temperature=0.0)
+        parsed = _extract_json_object(reply).get("posterior", {})
+        venue_posteriors[player] = _normalise_venue_distribution(parsed, venues)
+        joint_action[player] = max(venues, key=lambda v: venue_posteriors[player][v])
+        reply_previews[player] = reply[:300]
+    return joint_action, {
+        "policy": "llm_decentralized_type_guess",
+        "venue_posteriors": venue_posteriors,
+        "reply_previews": reply_previews,
+    }
+
+
+# ---------------------------------------------------------------------------
+# Type-recovery support: map any method's output to a per-player posterior
+# over the hidden type = ``person_preferences[player]`` (i.e. favourite venue).
+# ---------------------------------------------------------------------------
+
+
+def _softmax(scores: dict[str, float], temperature: float = 1.0) -> dict[str, float]:
+    if not scores:
+        return {}
+    if temperature <= 0.0:
+        temperature = 1.0
+    logits = {k: v / temperature for k, v in scores.items()}
+    m = max(logits.values())
+    exps = {k: math.exp(v - m) for k, v in logits.items()}
+    total = sum(exps.values())
+    if total <= 0.0 or not math.isfinite(total):
+        u = 1.0 / len(scores)
+        return {k: u for k in scores}
+    return {k: v / total for k, v in exps.items()}
+
+
+def venue_posterior_from_method(
+    case: dict[str, Any],
+    method: str,
+    joint_action: dict[str, str],
+    info: dict[str, Any],
+) -> dict[str, dict[str, float]]:
+    """Return ``{player: {venue: prob}}`` summarising what the method believes
+    about each player's hidden favourite venue.
+
+    Conventions:
+    * ``oracle_joint`` returns a delta on the true favourite (upper bound).
+    * Methods that maintain an explicit persona posterior
+      (``hpsmg_plus_*``) map it to a venue softmax through
+      ``persona_weighted_venue_score``.
+    * ToM / BNE / single-step LLM methods return a sharp delta on the
+      venue they picked for that player.
+    * LLM-native posterior methods (``centralized_planner_llm``,
+      ``chat_agent_llm``) pass through ``info['venue_posteriors']``.
+    """
+    venues = list(case["venues"])
+    eps = 1e-3  # leave a little mass for unobserved venues for NLL stability
+
+    def _smooth(p: dict[str, float]) -> dict[str, float]:
+        out = {v: p.get(v, 0.0) for v in venues}
+        for v in venues:
+            out[v] = (1.0 - eps) * out[v] + eps * (1.0 / len(venues))
+        s = sum(out.values())
+        return {v: out[v] / s for v in venues}
+
+    if method == "oracle_joint":
+        return {
+            player: _smooth({case["person_preferences"][player]: 1.0})
+            for player in case["people"]
+        }
+
+    if method in {"hpsmg_plus_proxy", "hpsmg_proxy", "hpsmg_plus_joint_proxy", "hpsmg_joint_proxy"}:
+        persona_posteriors = info.get("persona_posteriors", {})
+        out: dict[str, dict[str, float]] = {}
+        for player in case["people"]:
+            posterior = persona_posteriors.get(player) or infer_pub_persona_posterior(case, player)
+            scores = {
+                venue: persona_weighted_venue_score(case, player, venue, posterior)
+                for venue in venues
+            }
+            out[player] = _smooth(_softmax(scores, temperature=0.5))
+        return out
+
+    if method in {"centralized_planner_llm", "chat_agent_llm"}:
+        venue_posteriors = info.get("venue_posteriors", {})
+        return {
+            player: _smooth(venue_posteriors.get(player, {v: 1.0 / len(venues) for v in venues}))
+            for player in case["people"]
+        }
+
+    # Default: collapse the method's chosen venue to a sharp delta.
+    return {
+        player: _smooth({joint_action.get(player, venues[0]): 1.0})
+        for player in case["people"]
+    }
+
+
+def type_recovery_metrics(
+    case: dict[str, Any], venue_posterior: dict[str, dict[str, float]]
+) -> dict[str, float]:
+    truths = case["person_preferences"]
+    venues = list(case["venues"])
+    nll = 0.0
+    brier = 0.0
+    top1 = 0
+    n = 0
+    for player in case["people"]:
+        true_venue = truths[player]
+        p = venue_posterior.get(player) or {v: 1.0 / len(venues) for v in venues}
+        prob_true = max(p.get(true_venue, 0.0), 1e-9)
+        nll += -math.log(prob_true)
+        brier += sum((p.get(v, 0.0) - (1.0 if v == true_venue else 0.0)) ** 2 for v in venues)
+        argmax = max(venues, key=lambda v: p.get(v, 0.0))
+        if argmax == true_venue:
+            top1 += 1
+        n += 1
+    n = max(1, n)
+    return {
+        "top1_accuracy": top1 / n,
+        "nll": nll / n,
+        "brier": brier / n,
+        "uniform_baseline_nll": math.log(len(venues)),
+    }
 
 
 def summarize(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:

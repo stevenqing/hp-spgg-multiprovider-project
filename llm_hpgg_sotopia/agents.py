@@ -19,7 +19,11 @@ from llm_hpgg.llm_agent import call_player
 from llm_hpgg.personas import PERSONAS
 
 
-BaselineName = Literal["llm_greedy", "llm_belief", "atom_tom1", "econ_bne", "hpsmg_plus"]
+BaselineName = Literal[
+    "llm_greedy", "llm_belief", "atom_tom1", "econ_bne",
+    "surrogate_only", "naive_belief", "llm_psrl_verbal", "hpsmg", "hpsmg_plus",
+    "oracle_joint", "oracle_policy",
+]
 StrategyProfile = Literal["legacy", "sotopia_tuned"]
 
 
@@ -32,6 +36,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         baseline: BaselineName = "llm_greedy",
         model: str | None = None,
         agent_profile: AgentProfile | None = None,
+        oracle_opponent_posterior: dict[str, float] | None = None,
         strategy_profile: StrategyProfile = "legacy",
     ) -> None:
         super().__init__(agent_name=agent_name, agent_profile=agent_profile)
@@ -40,6 +45,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         self.model = model
         self.strategy_profile = strategy_profile
         self._hpgg_agent_profile = agent_profile
+        self._oracle_opponent_posterior = oracle_opponent_posterior
         self._opponent_log_posterior = {
             persona.key: math.log(1.0 / len(PERSONAS)) for persona in PERSONAS
         }
@@ -83,14 +89,28 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
     def _build_prompt(self, obs: Observation) -> str:
         history_window = 6 if self.strategy_profile == "sotopia_tuned" else 8
         history = "\n".join(_clip(message.to_natural_language(), 500) for _, message in self.inbox[-history_window:])
-        self._update_opponent_posterior_from_inbox()
-        opponent_posterior = _posterior_from_log_scores(self._opponent_log_posterior)
+        if self.baseline in {"oracle_joint", "oracle_policy"} and self._oracle_opponent_posterior:
+            opponent_posterior = self._oracle_opponent_posterior
+        elif self.baseline == "surrogate_only":
+            uniform = 1.0 / len(PERSONAS)
+            opponent_posterior = {persona.key: uniform for persona in PERSONAS}
+        elif self.baseline in {"naive_belief", "llm_psrl_verbal"}:
+            opponent_posterior = None
+        else:
+            self._update_opponent_posterior_from_inbox()
+            opponent_posterior = _posterior_from_log_scores(self._opponent_log_posterior)
         baseline_instruction = {
             "llm_greedy": "Choose the action that best advances your own stated goal while keeping the interaction coherent.",
             "llm_belief": "Infer the other participant's likely goal and private incentives, then choose a cooperative but robust action.",
             "atom_tom1": "Use first-order theory of mind: predict what the other participant expects you to do, then respond strategically.",
             "econ_bne": "Act as if proposing a stable mutually acceptable strategy under hidden preferences; avoid commitments that the other side would reject.",
+            "surrogate_only": "Use the shared intent/persona menu only as a fixed uniform surrogate prior. Do not infer or update the opponent type from dialogue; choose a robust action under the uniform menu.",
+            "naive_belief": "Use the shared intent/persona menu, but track belief only by writing a fresh natural-language guess about the partner's likely type from the latest dialogue. Do not use Bayes' rule or numeric posterior updates.",
+            "llm_psrl_verbal": "Use the shared intent/persona menu, but perform posterior sampling and belief tracking through natural-language hypotheses. Write a fresh verbal guess about the partner's likely type from the latest dialogue, then choose a robust action under that verbal hypothesis. Do not use Bayes' rule or numeric posterior updates.",
+            "hpsmg": "Maintain a posterior belief over the other participant's hidden goal, likely type, and willingness to cooperate. Use the provided numeric persona posterior as your belief state before selecting a robust joint-value action. Do not add an exploration bonus and do not ask clarifying probes solely to reduce uncertainty; choose the best action under the current posterior.",
             "hpsmg_plus": "Maintain a posterior belief over the other participant's hidden goal, likely type, and willingness to cooperate. Use the provided numeric persona posterior as your prior belief and update it with the latest turn evidence before selecting a robust joint-value action. Add a small exploration bonus only when a clarifying probe can reduce uncertainty without sacrificing your own goal.",
+            "oracle_joint": "Use the provided one-hot opponent persona posterior as privileged full-information type access and pick the best robust joint-value action under that known type.",
+            "oracle_policy": "Use the provided one-hot opponent persona posterior as privileged full-information type access; produce your strongest single candidate utterance (the controller will select the best of multiple samples).",
         }[self.baseline]
         payload: dict[str, Any] = {
                 "task": "SOTOPIA social interaction action selection",
@@ -112,16 +132,44 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
                 },
                 "instruction": "Return only JSON. Use an action_type from available_actions.",
         }
-        if self.baseline in {"llm_belief", "hpsmg_plus"}:
+        if self.baseline in {"surrogate_only", "llm_belief", "hpsmg", "hpsmg_plus", "oracle_joint", "oracle_policy"}:
             payload["opponent_persona_posterior"] = opponent_posterior
             payload["opponent_persona_labels"] = {persona.key: persona.label for persona in PERSONAS}
-            payload["posterior_usage"] = (
-                "Use this posterior as quantitative belief over opponent persona types. "
-                "Prefer actions that are robust under the high-probability personas."
+            if self.baseline in {"oracle_joint", "oracle_policy"}:
+                payload["posterior_usage"] = (
+                    "This is privileged full-information (one-hot) opponent type access for oracle upper-bound evaluation. "
+                    "Choose actions optimized for this known type."
+                )
+            elif self.baseline == "surrogate_only":
+                payload["posterior_usage"] = (
+                    "This is a fixed uniform surrogate prior over the shared intent/persona menu. "
+                    "Do not update it from dialogue; use it only to choose a robust action."
+                )
+            else:
+                payload["posterior_usage"] = (
+                    "Use this posterior as quantitative belief over opponent persona types. "
+                    "Prefer actions that are robust under the high-probability personas."
+                )
+        elif self.baseline in {"naive_belief", "llm_psrl_verbal"}:
+            payload["opponent_persona_labels"] = {persona.key: persona.label for persona in PERSONAS}
+            payload["belief_tracking"] = (
+                "Before choosing, write a brief private natural-language guess over the menu labels using only the current dialogue. "
+                "Do not maintain or compute numeric Bayesian posteriors across turns."
             )
         if self.strategy_profile == "sotopia_tuned":
             payload.update(_sotopia_tuned_policy(self.baseline))
             payload["scenario_tactic"] = _scenario_tactic(obs, self._goal)
+            if self.baseline == "hpsmg_plus":
+                beta = float(os.getenv("SOTOPIA_HPSMG_BETA", "0.25"))
+                payload["exploration_beta"] = beta
+                payload["beta_policy"] = _beta_policy(beta)
+            if self.baseline == "hpsmg_plus" and "llama" in self.model_name.lower():
+                payload["backbone_adaptation"] = (
+                    "For this backbone, keep the utterance short and character-natural. In revenge/grievance scenarios, "
+                    "do not repeat generic cautions such as 'talk to someone', 'constructive way', 'cool off', or 'violence is not the answer' unless paired with a concrete plan. "
+                    "Every utterance should name one specific next step with an actor and target: meet the person in a public place, ask for an apology, request restitution, document one concrete incident, invite a mediator/manager by role, or set a boundary. "
+                    "Advance the focal agent's legitimate grievance while refusing harm."
+                )
         return json.dumps(payload, indent=2)
 
     def _update_opponent_posterior_from_inbox(self) -> None:
@@ -176,20 +224,46 @@ def _profile_context(agent_profile: AgentProfile | None) -> dict[str, str]:
     return {field: _clip(str(getattr(agent_profile, field, "") or ""), 500) for field in fields}
 
 
+def oracle_one_hot_from_profile(agent_profile: AgentProfile | None) -> dict[str, float]:
+    if agent_profile is None:
+        uniform = 1.0 / len(PERSONAS)
+        return {persona.key: uniform for persona in PERSONAS}
+    text = "\n".join(
+        [
+            str(getattr(agent_profile, "public_info", "") or ""),
+            str(getattr(agent_profile, "personality_and_values", "") or ""),
+            str(getattr(agent_profile, "occupation", "") or ""),
+            str(getattr(agent_profile, "secret", "") or ""),
+        ]
+    )
+    log_scores = {persona.key: math.log(1.0 / len(PERSONAS)) for persona in PERSONAS}
+    for key, increment in _persona_log_likelihood_increment(text).items():
+        log_scores[key] += increment
+    posterior = _posterior_from_log_scores(log_scores)
+    best_key = max(posterior.items(), key=lambda item: item[1])[0]
+    return {key: (1.0 if key == best_key else 0.0) for key in posterior}
+
+
 def _sotopia_tuned_policy(baseline: str) -> dict[str, Any]:
     baseline_policy = {
         "llm_greedy": "Use the same greedy objective as the baseline: advance your own stated goal directly, while expressing it as a concrete SOTOPIA-compatible action.",
         "llm_belief": "Use the same belief baseline objective: infer the other participant's likely goal and constraints, then choose a cooperative but robust concrete action.",
         "atom_tom1": "Use the same first-order theory-of-mind objective: predict what the other participant expects, then respond strategically with a concrete action.",
         "econ_bne": "Use the same economic equilibrium objective: propose stable mutually acceptable terms under hidden preferences, avoiding commitments the other side would reject.",
-        "hpsmg_plus": "Use the same HPSMG+ objective: maintain a posterior over hidden goals, constraints, and cooperation type; choose the robust joint-value utterance, using clarifying probes when they reduce uncertainty without sacrificing your goal.",
+        "surrogate_only": "Use the shared intent/persona menu as a fixed uniform surrogate. Do not update beliefs from the dialogue; choose a robust concrete action under that uniform menu.",
+        "naive_belief": "Use the shared intent/persona menu only for a fresh natural-language partner-type guess each turn. Do not use Bayes' rule or numeric posterior updates.",
+        "llm_psrl_verbal": "Use the shared intent/persona menu for a natural-language posterior-sampling style guess each turn. Do not use Bayes' rule or numeric posterior updates.",
+        "hpsmg": "Use the same PACT objective without the plus bonus: maintain a posterior over hidden goals, constraints, and cooperation type; choose the robust joint-value utterance under the current posterior. Do not add exploration bonus behavior and do not choose clarifying probes solely for information gain.",
+        "hpsmg_plus": "Use the same HPSMG+ objective: maintain a posterior over hidden goals, constraints, and cooperation type; choose the robust joint-value utterance. In revenge or grievance scenarios, do not collapse into passive cooling-off, evidence collection, or formal-channel deferral unless the partner asks for that. Convert the anger into a concrete nonviolent accountability step: a mediated conversation, apology request, restitution plan, public-but-safe meeting, or documented boundary with a clear time/place/next action.",
+        "oracle_joint": "Use privileged full-information opponent type access (one-hot posterior) and choose the best robust joint-value utterance as an oracle upper bound.",
+        "oracle_policy": "Use privileged full-information opponent type access (one-hot posterior); produce a single high-quality candidate utterance because the controller will pick the best across K independent samples.",
     }.get(baseline, "Preserve the baseline's decision objective while expressing it through concrete SOTOPIA-compatible actions.")
     return {
         "sotopia_scoring_guardrails": "Maximize goal, believability, relationship, knowledge, and material benefit. Do not reveal private secrets. Do not violate social rules.",
         "baseline_sotopia_policy": baseline_policy,
         "sotopia_tactics": [
             "If speak is available, do not leave or stay silent unless the other participant has already ended the interaction.",
-            "If a literal goal would cause harm, deception, theft, or social-rule violations, pursue the nearest non-harmful goal-compatible alternative and de-escalate.",
+            "If a literal goal would cause harm, deception, theft, or social-rule violations, pursue the nearest non-harmful goal-compatible alternative and de-escalate while still advancing a concrete legitimate version of the goal.",
             "In bargaining, include a concrete price, quantity, condition, or deadline in every utterance after the first offer.",
             "When ownership, consent, or safety is disputed, propose a verification step rather than doubling down.",
             "Do not repeat a generic sentence from an earlier turn; each utterance must respond to the latest concrete content.",
@@ -204,10 +278,33 @@ def _sotopia_tuned_policy(baseline: str) -> dict[str, Any]:
     }
 
 
+def _beta_policy(beta: float) -> str:
+    if beta <= 0.0:
+        return (
+            "Beta is 0: behave as beta=0 PACT. Do not choose utterances for information gain alone, "
+            "and do not ask clarifying probes solely to reduce uncertainty. Choose the best robust action under the current posterior."
+        )
+    if beta < 0.1:
+        return (
+            "Use a very small exploration bonus. Ask a clarifying question only when it is almost costless and naturally advances the current goal; otherwise act under the current posterior."
+        )
+    if beta < 0.5:
+        return (
+            "Use a moderate exploration bonus. Prefer a concrete action that also reveals the partner's hidden constraints when that does not sacrifice the immediate goal."
+        )
+    if beta <= 1.0:
+        return (
+            "Use a strong exploration bonus. When uncertainty is decision-relevant, include one concrete probe or test proposal that can reveal the partner type while preserving relationship and goal progress."
+        )
+    return (
+        "Use a very strong exploration bonus. Actively seek disambiguating evidence about the partner's hidden type, but keep the utterance safe, concrete, and goal-compatible."
+    )
+
+
 def _scenario_tactic(obs: Observation, goal: str | None) -> str:
     text = f"{goal or ''}\n{obs.to_natural_language()}".lower()
     if any(token in text for token in ["injure", "physical harm", "hurt", "revenge", "violent", "attack"]):
-        return "Use a non-violent de-escalation plan: acknowledge anger, refuse physical harm, redirect toward accountability, apology, documentation, or leaving the situation safely. Keep speaking; do not leave immediately."
+        return "Use non-violent accountability, not passive avoidance: acknowledge anger, refuse physical harm, and propose a concrete safe action such as a mediated conversation in a public place, an apology or restitution request, a boundary-setting message, or a documented complaint with a clear next step. Keep speaking, preserve the relationship, and do not merely tell the partner to cool off, gather evidence, or use proper channels."
     if any(token in text for token in ["price", "$", "buy", "sell", "offer", "craigslist", "bargain"]):
         return "Use transaction discipline: name a concrete counteroffer, justify briefly, ask for acceptance or a specific counter, and close before the turn limit."
     if any(token in text for token in ["belong", "owner", "ownership", "stolen", "borrow", "permission"]):
@@ -231,6 +328,13 @@ def _clean_sotopia_argument(argument: str, obs: Observation, goal: str | None, b
         "robust joint value",
         "SOTOPIA",
     ]
+    if baseline in {"hpsmg", "hpsmg_plus"}:
+        banned_fragments.extend([
+            "constructive way",
+            "talk to someone about it",
+            "take a moment to calm down",
+            "need a moment to cool off",
+        ])
     if any(fragment.lower() in argument.lower() for fragment in banned_fragments):
         return _fallback_utterance(baseline, obs, goal, "sotopia_tuned")
     if argument.strip().lower() in {"", "none", "leave", "i leave", "i left the conversation"}:
@@ -346,6 +450,6 @@ def _fallback_utterance(
         return "I am considering what you may expect from me, and I want us to coordinate clearly."
     if baseline.startswith("econ"):
         return "I propose that we look for an option both of us can accept."
-    if baseline == "hpsmg_plus":
+    if baseline in {"surrogate_only", "naive_belief", "llm_psrl_verbal", "hpsmg", "hpsmg_plus", "oracle_joint", "oracle_policy"}:
         return "I want to make a constructive move while learning what matters most to you."
     return "I will choose the option that seems most helpful right now."

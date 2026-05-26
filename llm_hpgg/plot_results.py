@@ -9,6 +9,22 @@ from pathlib import Path
 import numpy as np
 
 
+ALGO_DISPLAY: dict[str, str] = {
+    "hpsmg_plus": r"PACT$^+$",
+    "hpsmg": "PACT",
+    "joint_psrl": "Joint-PSRL",
+    "map_greedy": "MAP-Type-Greedy",
+    "psrl_notype": "PSRL-NoType",
+    "random": "Random",
+    "oracle": "Oracle",
+    "iql": "IQL",
+}
+
+
+def display_label(provider: str, algorithm: str) -> str:
+    return f"{provider} / {ALGO_DISPLAY.get(algorithm, algorithm)}"
+
+
 def sem(values: np.ndarray) -> float:
     if len(values) <= 1:
         return 0.0
@@ -45,7 +61,8 @@ def main() -> None:
         for algo_index, algorithm in enumerate(algorithms):
             mean_curve = cumulative[algo_index].mean(axis=0)
             if algorithm in {"hpsmg_plus", "hpsmg", "random", "oracle"}:
-                axis.plot(np.arange(1, len(mean_curve) + 1), mean_curve, label=f"{provider}/{algorithm}", linewidth=1.8)
+                axis.plot(np.arange(1, len(mean_curve) + 1), mean_curve,
+                          label=display_label(provider, algorithm), linewidth=1.8)
             final_values = cumulative[algo_index, :, -1]
             final_mean = float(np.mean(final_values))
             final_sem = sem(final_values)

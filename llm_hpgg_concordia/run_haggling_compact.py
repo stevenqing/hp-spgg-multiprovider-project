@@ -15,15 +15,24 @@ from pathlib import Path
 import sys
 from typing import Any, Iterable
 
+from llm_hpgg_concordia.cloudgpt_model import HPGGConcordiaLanguageModel
 from llm_hpgg.personas import PERSONAS
 
 
 DEFAULT_METHODS = [
+    "random",
     "atom_tom1_mech",
+    "atom_tom2_mech",
     "econ_bne_mech",
+    "llm_psrl_verbal",
     "hpsmg_plus_proxy",
+    "hpsmg_proxy",
     "hpsmg_plus_joint_proxy",
+    "hpsmg_joint_proxy",
+    "hpsmg_plus_focal_proxy",
+    "hpsmg_focal_proxy",
     "oracle_joint",
+    "oracle_focal",
 ]
 
 
@@ -142,11 +151,11 @@ def build_pairs(simulation: Any, focal_players: list[str], supporting_players: l
     return simulation.create_player_pairs(list(focal_players) + list(supporting_players), rng)
 
 
-def run_method(case: dict[str, Any], method: str) -> dict[str, Any]:
+def run_method(case: dict[str, Any], method: str, model_name: str | None = None) -> dict[str, Any]:
     totals = {name: 0.0 for name in case["people"]}
     deal_rows = []
     for deal in case["deals"]:
-        action, info = choose_action(case, deal, method)
+        action, info = choose_action(case, deal, method, model_name=model_name)
         scores = score_deal(case, deal, action)
         for name, score in scores.items():
             totals[name] = totals.get(name, 0.0) + float(score)
@@ -184,63 +193,118 @@ def run_method(case: dict[str, Any], method: str) -> dict[str, Any]:
     }
 
 
-def choose_action(case: dict[str, Any], deal: dict[str, Any], method: str) -> tuple[dict[str, str], dict[str, Any]]:
+def choose_action(case: dict[str, Any], deal: dict[str, Any], method: str, model_name: str | None = None) -> tuple[dict[str, str], dict[str, Any]]:
     if case["domain"] == "haggling_multi_item":
-        return choose_multi_action(case, deal, method)
-    return choose_single_action(case, deal, method)
+        return choose_multi_action(case, deal, method, model_name=model_name)
+    return choose_single_action(case, deal, method, model_name=model_name)
 
 
-def choose_single_action(case: dict[str, Any], deal: dict[str, Any], method: str) -> tuple[dict[str, str], dict[str, Any]]:
+def choose_single_action(case: dict[str, Any], deal: dict[str, Any], method: str, model_name: str | None = None) -> tuple[dict[str, str], dict[str, Any]]:
     prices = [price_value(option) for option in case["price_options"]]
     buyer_reward = float(deal["buyer_reward"])
     seller_cost = float(deal["seller_cost"])
     feasible = [price for price in prices if seller_cost <= price <= buyer_reward]
-    if method == "atom_tom1_mech":
+    if method == "random":
+        import random as _random
+        rng = _random.Random(f"{case.get('seed', 0)}|{deal.get('buyer', '')}|{deal.get('seller', '')}|single")
+        price = rng.choice(prices)
+        accept = bool(rng.random() < 0.5)
+        policy = "uniform_random_action"
+    elif method == "atom_tom1_mech":
         price = min((candidate for candidate in prices if candidate >= seller_cost), default=min(prices))
         accept = price <= buyer_reward
         policy = "buyer_lowball_first_order_acceptance"
+    elif method == "atom_tom2_mech":
+        # Second-order ToM: anticipate that seller anticipates lowballing, bump up to median feasible
+        if feasible:
+            sorted_feas = sorted(feasible)
+            price = sorted_feas[len(sorted_feas) // 2]
+        else:
+            price = min(prices, key=lambda c: abs(c - seller_cost))
+        accept = bool(feasible)
+        policy = "second_order_median_feasible"
     elif method == "econ_bne_mech":
         price = min(prices, key=lambda candidate: (abs(candidate - 3.0), candidate))
         accept = seller_cost <= price <= buyer_reward
         policy = "market_anchor_equilibrium"
-    elif method == "hpsmg_plus_proxy":
+    elif method == "llm_psrl_verbal":
+        action, info = choose_llm_psrl_verbal_single(case, deal, model_name)
+        return action, info
+    elif method in {"hpsmg_plus_proxy", "hpsmg_proxy"}:
         buyer_posterior = infer_haggling_persona_posterior(deal, role="buyer", domain="haggling")
         seller_posterior = infer_haggling_persona_posterior(deal, role="seller", domain="haggling")
         target_share = seller_target_share(seller_posterior)
         target_price = seller_cost + target_share * max(0.0, buyer_reward - seller_cost)
         price = closest_price(prices, target_price, feasible)
         accept = bool(feasible)
-        policy = "posterior_individual_fair_split"
+        policy = "posterior_individual_fair_split_beta0" if method == "hpsmg_proxy" else "posterior_individual_fair_split"
         return make_single_action(deal, price, accept), {
             "policy": policy,
+            "beta": 0.0 if method == "hpsmg_proxy" else None,
             "buyer_persona_posterior": buyer_posterior,
             "seller_persona_posterior": seller_posterior,
         }
-    elif method in {"hpsmg_plus_joint_proxy", "oracle_joint"}:
-        price, accept, value = best_single_joint_action(prices, buyer_reward, seller_cost, method)
-        policy = "joint_nash_social_objective" if method == "hpsmg_plus_joint_proxy" else "oracle_best_surplus"
-        return make_single_action(deal, price, accept), {"policy": policy, "objective_value": value}
+    elif method in {"hpsmg_plus_joint_proxy", "hpsmg_joint_proxy", "oracle_joint", "oracle_focal", "hpsmg_plus_focal_proxy", "hpsmg_focal_proxy"} or method.startswith("hpsmg_plus_blend_a"):
+        fw = focal_weights_for_deal(case, deal)
+        # hpsmg_plus_focal_proxy: maximize focal payoff (like oracle_focal)
+        m = "oracle_focal" if method in {"hpsmg_plus_focal_proxy", "hpsmg_focal_proxy"} else method
+        price, accept, value = best_single_joint_action(prices, buyer_reward, seller_cost, m, fw)
+        policy = {
+            "hpsmg_plus_joint_proxy": "joint_nash_social_objective",
+            "hpsmg_joint_proxy": "joint_nash_social_objective_beta0",
+            "oracle_joint": "oracle_best_surplus",
+            "oracle_focal": "oracle_focal_payoff",
+            "hpsmg_plus_focal_proxy": "focal_payoff_proxy",
+            "hpsmg_focal_proxy": "focal_payoff_proxy_beta0",
+        }.get(method, f"blend_focal_joint_{method}")
+        return make_single_action(deal, price, accept), {"policy": policy, "objective_value": value, "focal_weights": fw, "beta": 0.0 if method.startswith("hpsmg_") else None}
     else:
         raise ValueError(f"unsupported method: {method}")
     return make_single_action(deal, price, accept), {"policy": policy}
 
 
-def choose_multi_action(case: dict[str, Any], deal: dict[str, Any], method: str) -> tuple[dict[str, str], dict[str, Any]]:
+def focal_weights_for_deal(case: dict[str, Any], deal: dict[str, Any]) -> tuple[float, float]:
+    fp = set(case.get("focal_players", []))
+    return (1.0 if deal.get("buyer") in fp else 0.0,
+            1.0 if deal.get("seller") in fp else 0.0)
+
+
+def choose_multi_action(case: dict[str, Any], deal: dict[str, Any], method: str, model_name: str | None = None) -> tuple[dict[str, str], dict[str, Any]]:
     prices = [float(price) for price in case["prices"]]
     items = list(case["items"])
     buyer_rewards = deal["buyer_rewards"]
     seller_costs = deal["seller_costs"]
-    if method == "atom_tom1_mech":
+    if method == "random":
+        import random as _random
+        rng = _random.Random(f"{case.get('seed', 0)}|{deal.get('buyer', '')}|{deal.get('seller', '')}|multi")
+        item = rng.choice(items)
+        price = rng.choice(prices)
+        accept = bool(rng.random() < 0.5)
+        policy = "uniform_random_action"
+    elif method == "atom_tom1_mech":
         item = items[0]
         price = min((candidate for candidate in prices if candidate >= seller_costs[item]), default=min(prices))
         accept = price <= buyer_rewards[item]
         policy = "first_item_lowball_first_order_acceptance"
+    elif method == "atom_tom2_mech":
+        item = max(items, key=lambda candidate: buyer_rewards[candidate] - seller_costs[candidate])
+        feasible = [p for p in prices if seller_costs[item] <= p <= buyer_rewards[item]]
+        if feasible:
+            sorted_feas = sorted(feasible)
+            price = sorted_feas[len(sorted_feas) // 2]
+        else:
+            price = min(prices, key=lambda c: abs(c - seller_costs[item]))
+        accept = bool(feasible)
+        policy = "second_order_best_item_median_feasible"
     elif method == "econ_bne_mech":
         item = max(items, key=lambda candidate: buyer_rewards[candidate] - seller_costs[candidate])
         price = min(prices, key=lambda candidate: (abs(candidate - 3.0), candidate))
         accept = seller_costs[item] <= price <= buyer_rewards[item]
         policy = "best_item_market_anchor_equilibrium"
-    elif method == "hpsmg_plus_proxy":
+    elif method == "llm_psrl_verbal":
+        action, info = choose_llm_psrl_verbal_multi(case, deal, model_name)
+        return action, info
+    elif method in {"hpsmg_plus_proxy", "hpsmg_proxy"}:
         buyer_posterior = infer_haggling_persona_posterior(deal, role="buyer", domain="haggling_multi_item")
         seller_posterior = infer_haggling_persona_posterior(deal, role="seller", domain="haggling_multi_item")
         item = max(
@@ -257,47 +321,152 @@ def choose_multi_action(case: dict[str, Any], deal: dict[str, Any], method: str)
         target_price = seller_costs[item] + target_share * max(0.0, buyer_rewards[item] - seller_costs[item])
         price = closest_price(prices, target_price, feasible)
         accept = bool(feasible)
-        policy = "posterior_best_item_fair_split"
+        policy = "posterior_best_item_fair_split_beta0" if method == "hpsmg_proxy" else "posterior_best_item_fair_split"
         return make_multi_action(deal, item, price, accept), {
             "policy": policy,
+            "beta": 0.0 if method == "hpsmg_proxy" else None,
             "buyer_persona_posterior": buyer_posterior,
             "seller_persona_posterior": seller_posterior,
         }
-    elif method in {"hpsmg_plus_joint_proxy", "oracle_joint"}:
-        item, price, accept, value = best_multi_joint_action(items, prices, buyer_rewards, seller_costs, method)
-        policy = "joint_item_price_nash_social_objective" if method == "hpsmg_plus_joint_proxy" else "oracle_best_surplus"
-        return make_multi_action(deal, item, price, accept), {"policy": policy, "objective_value": value}
+    elif method in {"hpsmg_plus_joint_proxy", "hpsmg_joint_proxy", "oracle_joint", "oracle_focal", "hpsmg_plus_focal_proxy", "hpsmg_focal_proxy"} or method.startswith("hpsmg_plus_blend_a"):
+        fw = focal_weights_for_deal(case, deal)
+        m = "oracle_focal" if method in {"hpsmg_plus_focal_proxy", "hpsmg_focal_proxy"} else method
+        item, price, accept, value = best_multi_joint_action(items, prices, buyer_rewards, seller_costs, m, fw)
+        policy = {
+            "hpsmg_plus_joint_proxy": "joint_item_price_nash_social_objective",
+            "hpsmg_joint_proxy": "joint_item_price_nash_social_objective_beta0",
+            "oracle_joint": "oracle_best_surplus",
+            "oracle_focal": "oracle_focal_payoff",
+            "hpsmg_plus_focal_proxy": "focal_payoff_proxy",
+            "hpsmg_focal_proxy": "focal_payoff_proxy_beta0",
+        }.get(method, f"blend_focal_joint_{method}")
+        return make_multi_action(deal, item, price, accept), {"policy": policy, "objective_value": value, "focal_weights": fw, "beta": 0.0 if method.startswith("hpsmg_") else None}
     else:
         raise ValueError(f"unsupported method: {method}")
     return make_multi_action(deal, item, price, accept), {"policy": policy}
 
 
-def best_single_joint_action(prices: list[float], buyer_reward: float, seller_cost: float, method: str) -> tuple[float, bool, float]:
+def best_single_joint_action(prices: list[float], buyer_reward: float, seller_cost: float, method: str, focal_weights: tuple[float, float] = (1.0, 1.0)) -> tuple[float, bool, float]:
     best = (prices[0], False, float("-inf"))
     for price in prices:
         for accept in (False, True):
             buyer_score, seller_score = single_scores(buyer_reward, seller_cost, price, accept)
-            value = bargaining_objective(buyer_score, seller_score, method)
+            value = bargaining_objective(buyer_score, seller_score, method, focal_weights)
             if value > best[2]:
                 best = (price, accept, value)
     return best
 
 
-def best_multi_joint_action(items: list[str], prices: list[float], buyer_rewards: dict[str, float], seller_costs: dict[str, float], method: str) -> tuple[str, float, bool, float]:
+def choose_llm_psrl_verbal_single(case: dict[str, Any], deal: dict[str, Any], model_name: str | None) -> tuple[dict[str, str], dict[str, Any]]:
+    model = HPGGConcordiaLanguageModel(
+        model=model_name,
+        system_prompt="You are a careful bargaining coordinator using verbal posterior sampling. Return valid JSON only.",
+    )
+    prices = list(case["price_options"])
+    prompt = json.dumps(
+        {
+            "task": "Sample a verbal hypothesis and choose a compact haggling action.",
+            "buyer": deal["buyer"],
+            "seller": deal["seller"],
+            "buyer_reward": deal["buyer_reward"],
+            "seller_cost": deal["seller_cost"],
+            "price_options": prices,
+            "instruction": "Choose one buyer_action from price_options and seller_action as accept or reject. Output JSON only.",
+            "response_schema": {"buyer_action": "one price option", "seller_action": "accept or reject", "belief": "brief verbal hypothesis"},
+        },
+        indent=2,
+    )
+    try:
+        reply = model.sample_text(prompt, max_tokens=700, temperature=0.0)
+        parsed = _extract_json_object(reply)
+        buyer_action = str(parsed.get("buyer_action", "")).strip()
+        seller_action = str(parsed.get("seller_action", "")).strip().lower()
+        if buyer_action not in prices or seller_action not in {"accept", "reject"}:
+            raise ValueError(f"invalid action {buyer_action!r}/{seller_action!r}")
+        return {
+            "buyer": deal["buyer"],
+            "seller": deal["seller"],
+            "buyer_action": buyer_action,
+            "seller_action": seller_action,
+        }, {"policy": "llm_psrl_verbal_direct_haggling", "sample_ok": True, "reply_preview": reply[:1000]}
+    except Exception as exc:
+        price = min((price_value(option) for option in prices), key=lambda candidate: (abs(candidate - 3.0), candidate))
+        accept = float(deal["seller_cost"]) <= price <= float(deal["buyer_reward"])
+        return make_single_action(deal, price, accept), {"policy": "llm_psrl_verbal_fallback_market_anchor", "sample_ok": False, "error": str(exc)[:300]}
+
+
+def choose_llm_psrl_verbal_multi(case: dict[str, Any], deal: dict[str, Any], model_name: str | None) -> tuple[dict[str, str], dict[str, Any]]:
+    model = HPGGConcordiaLanguageModel(
+        model=model_name,
+        system_prompt="You are a careful multi-item bargaining coordinator using verbal posterior sampling. Return valid JSON only.",
+    )
+    prompt = json.dumps(
+        {
+            "task": "Sample a verbal hypothesis and choose a compact multi-item haggling action.",
+            "buyer": deal["buyer"],
+            "seller": deal["seller"],
+            "buyer_rewards": deal["buyer_rewards"],
+            "seller_costs": deal["seller_costs"],
+            "price_options": case["price_options"],
+            "instruction": "Choose one buyer_action exactly from price_options and seller_action as accept or reject. Output JSON only.",
+            "response_schema": {"buyer_action": "one price option", "seller_action": "accept or reject", "belief": "brief verbal hypothesis"},
+        },
+        indent=2,
+    )
+    try:
+        reply = model.sample_text(prompt, max_tokens=800, temperature=0.0)
+        parsed = _extract_json_object(reply)
+        buyer_action = str(parsed.get("buyer_action", "")).strip()
+        seller_action = str(parsed.get("seller_action", "")).strip().lower()
+        if buyer_action not in case["price_options"] or seller_action not in {"accept", "reject"}:
+            raise ValueError(f"invalid action {buyer_action!r}/{seller_action!r}")
+        return {
+            "buyer": deal["buyer"],
+            "seller": deal["seller"],
+            "buyer_action": buyer_action,
+            "seller_action": seller_action,
+        }, {"policy": "llm_psrl_verbal_direct_multi_haggling", "sample_ok": True, "reply_preview": reply[:1000]}
+    except Exception as exc:
+        item = max(case["items"], key=lambda candidate: deal["buyer_rewards"][candidate] - deal["seller_costs"][candidate])
+        prices = [float(price) for price in case["prices"]]
+        price = min(prices, key=lambda candidate: (abs(candidate - 3.0), candidate))
+        accept = deal["seller_costs"][item] <= price <= deal["buyer_rewards"][item]
+        return make_multi_action(deal, item, price, accept), {"policy": "llm_psrl_verbal_fallback_multi_market_anchor", "sample_ok": False, "error": str(exc)[:300]}
+
+
+def best_multi_joint_action(items: list[str], prices: list[float], buyer_rewards: dict[str, float], seller_costs: dict[str, float], method: str, focal_weights: tuple[float, float] = (1.0, 1.0)) -> tuple[str, float, bool, float]:
     best = (items[0], prices[0], False, float("-inf"))
     for item in items:
         for price in prices:
             for accept in (False, True):
                 buyer_score, seller_score = single_scores(buyer_rewards[item], seller_costs[item], price, accept)
-                value = bargaining_objective(buyer_score, seller_score, method)
+                value = bargaining_objective(buyer_score, seller_score, method, focal_weights)
                 if value > best[3]:
                     best = (item, price, accept, value)
     return best
 
 
-def bargaining_objective(buyer_score: float, seller_score: float, method: str) -> float:
+def bargaining_objective(buyer_score: float, seller_score: float, method: str, focal_weights: tuple[float, float] = (1.0, 1.0)) -> float:
     if method == "oracle_joint":
         return buyer_score + seller_score
+    if method == "oracle_focal":
+        wb, ws = focal_weights
+        if wb + ws <= 0:
+            return buyer_score + seller_score
+        return wb * buyer_score + ws * seller_score
+    # Blend variants: hpsmg_plus_blend_aXX where XX/100 = alpha in [0, 1].
+    # alpha=0 -> pure joint (Nash-fair), alpha=1 -> pure focal payoff.
+    if method.startswith("hpsmg_plus_blend_a"):
+        try:
+            alpha = int(method.split("hpsmg_plus_blend_a", 1)[1]) / 100.0
+        except ValueError:
+            alpha = 0.0
+        alpha = max(0.0, min(1.0, alpha))
+        wb, ws = focal_weights
+        focal_term = (wb * buyer_score + ws * seller_score) if (wb + ws > 0) else (buyer_score + seller_score)
+        nash = max(0.0, buyer_score) * max(0.0, seller_score)
+        joint_term = buyer_score + seller_score + 0.35 * min(buyer_score, seller_score) + 0.15 * nash
+        return alpha * focal_term + (1.0 - alpha) * joint_term
     nash = max(0.0, buyer_score) * max(0.0, seller_score)
     return buyer_score + seller_score + 0.35 * min(buyer_score, seller_score) + 0.15 * nash
 
@@ -406,8 +575,12 @@ def persona_weighted_item_value(
 
 
 def information_scope_for_method(method: str) -> dict[str, Any]:
-    if method == "oracle_joint":
+    if method in {"oracle_joint", "oracle_focal"}:
         return {"mode": "privileged_upper_bound", "sees_full_case": True, "uses_known_payoff_model": True, "uses_privileged_oracle_objective": True, "comparable_as_baseline": False}
+    if method == "random":
+        return {"mode": "uninformed_random", "sees_full_case": False, "uses_known_payoff_model": False, "uses_privileged_oracle_objective": False, "comparable_as_baseline": True}
+    if method == "llm_psrl_verbal":
+        return {"mode": "centralized_verbal_posterior", "sees_full_case": True, "uses_known_payoff_model": True, "uses_privileged_oracle_objective": False, "comparable_as_baseline": True}
     return {"mode": "centralized_full_case", "sees_full_case": True, "uses_known_payoff_model": True, "uses_privileged_oracle_objective": False, "comparable_as_baseline": True}
 
 
@@ -464,6 +637,7 @@ def main() -> None:
     parser.add_argument("--domain", choices=["haggling", "haggling_multi_item"], default="haggling")
     parser.add_argument("--config", default="fruitville")
     parser.add_argument("--methods", nargs="+", default=DEFAULT_METHODS)
+    parser.add_argument("--model", default=None)
     parser.add_argument("--seeds", type=int, default=30)
     parser.add_argument("--seed-offset", type=int, default=0)
     parser.add_argument("--out", default="analysis/concordia_haggling_compact.json")
@@ -477,7 +651,7 @@ def main() -> None:
     for seed in seeds:
         case = build_case(args.domain, config, seed)
         for method in args.methods:
-            row = run_method(case, method)
+            row = run_method(case, method, model_name=args.model)
             rows.append(row)
             print(f"seed={seed} method={method} focal_mean={row['focal_score_mean']:.3f} min={row['focal_score_min']:.3f} nash={row['nash_product_mean']:.3f}", flush=True)
 
@@ -486,6 +660,7 @@ def main() -> None:
         "config": args.config,
         "seeds": seeds,
         "methods": args.methods,
+        "model": args.model or "",
         "information_audit": {method: information_scope_for_method(method) for method in args.methods},
         "summary": summarize(rows),
         "episodes": rows,
