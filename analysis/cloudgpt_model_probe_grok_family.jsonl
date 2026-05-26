@@ -1,5 +1,0 @@
-{"model": "grok-3", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'code': 'unknown_model', 'message': 'Unknown model: grok-3', 'details': 'Unknown model: grok-3'}}"}
-{"model": "grok-3-mini", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'code': 'unknown_model', 'message': 'Unknown model: grok-3-mini', 'details': 'Unknown model: grok-3-mini'}}"}
-{"model": "grok-4", "status": "ok", "reply": "OK"}
-{"model": "grok-4-fast-reasoning", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'code': 'unknown_model', 'message': 'Unknown model: grok-4-fast-reasoning', 'details': 'Unknown model: grok-4-fast-reasoning'}}"}
-{"model": "grok-4-fast-non-reasoning", "status": "failed", "error_type": "BadRequestError", "error": "Error code: 400 - {'error': {'code': 'unknown_model', 'message': 'Unknown model: grok-4-fast-non-reasoning', 'details': 'Unknown model: grok-4-fast-non-reasoning'}}"}

@@ -50,11 +50,13 @@ $env:LLM_HPGG_OFFLINE = "1"
 ```
 
 Some external substrate runners require their local source trees on
-`PYTHONPATH`. For example:
+`PYTHONPATH`. These third-party checkouts are not vendored in the anonymized
+artifact; install them separately or place local copies under `external/`.
+For example:
 
 ```powershell
-$env:PYTHONPATH = "$PWD;$PWD\_archive\external\concordia"
-$env:PYTHONPATH = "$PWD;$PWD\_archive\external\sotopia"
+$env:PYTHONPATH = "$PWD;$PWD\external\concordia"
+$env:PYTHONPATH = "$PWD;$PWD\external\sotopia"
 ```
 
 ## Main Experiment Entrypoints
@@ -105,8 +107,8 @@ uv run python scripts\combine_sotopia_figure4.py
 ## Artifact Hygiene
 
 The repository ignores generated arrays and run outputs by default. In
-particular, `*.npy` files are excluded because they are generated calibration or
-experiment artifacts rather than source code.
+particular, `*.npy` and `*.npz` files are excluded because they are generated
+calibration or experiment artifacts rather than source code.
 
 If a reproduction run creates files under `analysis/`, `results/`,
 `results_phase2/`, `figs/`, or `logs/`, treat them as local outputs unless a
