@@ -94,7 +94,7 @@ The experiment runners expose the following baseline families:
 | `llm_greedy` | Prompted LLM policy that optimizes the visible local objective. | Direct-prompt LLM-agent baseline. |
 | `llm_belief` / `surrogate_only` | Prompted LLM policy using a fixed or shared surrogate persona menu. | Direct-prompt LLM-agent baseline. |
 | `naive_belief` | Natural-language partner-type guess without numeric Bayesian updates. | Direct-prompt belief baseline. |
-| `llm_psrl_verbal` | Natural-language posterior-sampling style belief tracking. | Arumugam and Griffiths, 2026, LLM-PSRL ([arXiv:2504.20997](https://arxiv.org/abs/2504.20997)). |
+| `llm_psrl_verbal` | Natural-language posterior-sampling style belief tracking. | Arumugam and Griffiths, 2026, Toward Efficient Exploration by Large Language Model Agents. |
 | `atom_tom1` / `atom_tom2` | First- and second-order theory-of-mind prompting. | Mu et al., 2026, Adaptive Theory of Mind for LLM-Based Multi-Agent Coordination. |
 | `econ_bne` | Economic best-response / Bayes-Nash-style baseline. | Xie et al., 2025, From Debate to Equilibrium: Belief-Driven Multi-Agent LLM Reasoning via Bayesian Nash Equilibrium. |
 | PACT | Posterior-guided method without the exploration bonus. | This paper's method ablation. |
