@@ -9,3 +9,4 @@ logs/
 # Large dataset/artifact files (exceed GitHub file limits)
 analysis/exports/master_rollouts.jsonl
 external/sotopia_data_probe/sotopia_episodes_v1_hf.jsonl
+*.npy
