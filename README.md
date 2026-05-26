@@ -1,7 +1,7 @@
-# Anonymous Artifact: Hidden-Persona Multi-Agent Coordination
+# Anonymous Artifact: PACT: Prior-Aware Coordination via Type-inference for LLM Multi-Agent Systems
 
 This repository contains the anonymized code artifact for a submission on
-posterior-sharing coordination in hidden-persona multi-agent games. The code
+PACT: Prior-Aware Coordination via Type-inference for LLM Multi-Agent Systems. The code
 covers three evaluation substrates:
 
 - **HP-SPGG**: a controlled Hidden-Persona Sequential Public-Goods Game.
