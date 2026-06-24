@@ -79,27 +79,29 @@ def run_runtime_probe() -> list[dict]:
     for n in [2, 3, 4, 5, 6]:
         model = make_model(n=n, type_count=2, identifiability=0.35, comm_cost=0.15, coupling=1.0)
         policy = named_policies(model)["PACT_LOCAL"]
-        if n <= 4:
-            rec = runtime_pair(model, policy)
-            rec["exact_skipped"] = False
-        else:
-            start = perf_counter()
-            value = evaluate_closed_form(model, policy)
-            closed_seconds = perf_counter() - start
-            rec = {
-                "n": n,
-                "type_count": model.type_count,
-                "closed_value": value,
-                "exact_value": None,
-                "abs_error": None,
-                "closed_seconds": closed_seconds,
-                "exact_seconds": None,
-                "speedup": None,
-                "exact_skipped": True,
-                "joint_type_states": int(model.type_count ** model.n),
-                "joint_type_signal_histories": int(model.type_count ** (model.n + model.n * (model.n - 1))),
-            }
-        out.append(rec)
+        for normalize_pairs in [True, False]:
+            if n <= 4:
+                rec = runtime_pair(model, policy, normalize_pairs=normalize_pairs)
+                rec["exact_skipped"] = False
+            else:
+                start = perf_counter()
+                value = evaluate_closed_form(model, policy, normalize_pairs=normalize_pairs)
+                closed_seconds = perf_counter() - start
+                rec = {
+                    "n": n,
+                    "type_count": model.type_count,
+                    "closed_value": value,
+                    "exact_value": None,
+                    "abs_error": None,
+                    "closed_seconds": closed_seconds,
+                    "exact_seconds": None,
+                    "speedup": None,
+                    "exact_skipped": True,
+                    "normalize_pairs": normalize_pairs,
+                    "joint_type_states": int(model.type_count ** model.n),
+                    "joint_type_signal_histories": int(model.type_count ** (model.n + model.n * (model.n - 1))),
+                }
+            out.append(rec)
     return out
 
 

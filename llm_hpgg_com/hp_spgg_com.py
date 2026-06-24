@@ -187,7 +187,11 @@ def expected_reveals(model: HPSPGGComModel, policy: MessagePolicy) -> float:
     return float(total)
 
 
-def evaluate_closed_form(model: HPSPGGComModel, policy: MessagePolicy) -> float:
+def _pair_normalizer(model: HPSPGGComModel, normalize_pairs: bool) -> float:
+    return float(model.pair_count) if normalize_pairs else 1.0
+
+
+def evaluate_closed_form(model: HPSPGGComModel, policy: MessagePolicy, *, normalize_pairs: bool = True) -> float:
     """Evaluate expected cooperative value using factorized type marginals."""
 
     pair_value = 0.0
@@ -202,7 +206,7 @@ def evaluate_closed_form(model: HPSPGGComModel, policy: MessagePolicy) -> float:
                 else:
                     value = expected_no_reveal_value(model, target, theta)
                 pair_value += p_theta * value
-    reward = model.coupling * pair_value / model.pair_count
+    reward = model.coupling * pair_value / _pair_normalizer(model, normalize_pairs)
     cost = model.comm_cost * expected_reveals(model, policy)
     return float(reward - cost)
 
@@ -231,7 +235,7 @@ def signal_profile_prob(model: HPSPGGComModel, theta_profile: tuple[int, ...], s
     return p
 
 
-def evaluate_exact_enumeration(model: HPSPGGComModel, policy: MessagePolicy) -> float:
+def evaluate_exact_enumeration(model: HPSPGGComModel, policy: MessagePolicy, *, normalize_pairs: bool = True) -> float:
     """Evaluate by enumerating joint types and all pairwise signal histories."""
 
     total = 0.0
@@ -255,7 +259,7 @@ def evaluate_exact_enumeration(model: HPSPGGComModel, policy: MessagePolicy) -> 
                         guess = best_target_estimate(model, target, belief)
                     if guess == true_type:
                         pair_value += model.type_weights[true_type]
-            reward = model.coupling * pair_value / model.pair_count
+                reward = model.coupling * pair_value / _pair_normalizer(model, normalize_pairs)
             total += p_theta * p_signal * (reward - model.comm_cost * reveal_count)
     return float(total)
 
@@ -288,16 +292,19 @@ def named_policies(model: HPSPGGComModel) -> dict[str, MessagePolicy]:
     }
 
 
-def validate_closed_form(model: HPSPGGComModel, policy: MessagePolicy) -> float:
-    return abs(evaluate_closed_form(model, policy) - evaluate_exact_enumeration(model, policy))
+def validate_closed_form(model: HPSPGGComModel, policy: MessagePolicy, *, normalize_pairs: bool = True) -> float:
+    return abs(
+        evaluate_closed_form(model, policy, normalize_pairs=normalize_pairs)
+        - evaluate_exact_enumeration(model, policy, normalize_pairs=normalize_pairs)
+    )
 
 
-def runtime_pair(model: HPSPGGComModel, policy: MessagePolicy) -> dict[str, float]:
+def runtime_pair(model: HPSPGGComModel, policy: MessagePolicy, *, normalize_pairs: bool = True) -> dict[str, float]:
     start = perf_counter()
-    closed_value = evaluate_closed_form(model, policy)
+    closed_value = evaluate_closed_form(model, policy, normalize_pairs=normalize_pairs)
     closed_seconds = perf_counter() - start
     start = perf_counter()
-    exact_value = evaluate_exact_enumeration(model, policy)
+    exact_value = evaluate_exact_enumeration(model, policy, normalize_pairs=normalize_pairs)
     exact_seconds = perf_counter() - start
     return {
         "n": model.n,
@@ -308,4 +315,87 @@ def runtime_pair(model: HPSPGGComModel, policy: MessagePolicy) -> dict[str, floa
         "closed_seconds": closed_seconds,
         "exact_seconds": exact_seconds,
         "speedup": exact_seconds / max(closed_seconds, 1e-12),
+        "normalize_pairs": normalize_pairs,
     }
+
+
+def mode2_binary_myopic_voi(prob_type1: float, reward_gap: float) -> float:
+    """Mode-2 T=1 value of a perfect action-space type cue.
+
+    In the binary symmetric case, knowing the type before choosing the matched
+    coordination response improves value by min(p, 1-p) times the action's
+    type-separation gap.
+    """
+
+    p = min(max(float(prob_type1), 0.0), 1.0)
+    return min(p, 1.0 - p) * abs(float(reward_gap))
+
+
+def pact_plus_binary_disagreement_bonus(prob_type1: float, reward_gap: float) -> float:
+    """PACT+ pairwise type-disagreement bonus in the same binary case.
+
+    For reward signatures that differ by ``reward_gap`` across two candidate
+    personas, E_{theta,theta' iid mu}|r(theta)-r(theta')| equals
+    2 p (1-p) |reward_gap|.
+    """
+
+    p = min(max(float(prob_type1), 0.0), 1.0)
+    return 2.0 * p * (1.0 - p) * abs(float(reward_gap))
+
+
+def pact_plus_mode2_scale(prob_type1: float) -> float:
+    """Scale factor connecting PACT+ disagreement to Mode-2 myopic VoI.
+
+    For binary types and fixed current posterior,
+    PACT+_bonus(a) = 2 max(p,1-p) * Mode2_VoI(a). The factor is constant
+    across candidate actions, so both criteria rank actions identically. It is
+    exactly 1 at the uniform prior p=0.5.
+    """
+
+    p = min(max(float(prob_type1), 0.0), 1.0)
+    return 2.0 * max(p, 1.0 - p)
+
+
+def value_for_realized_policy(
+    model: HPSPGGComModel,
+    theta_profile: tuple[int, ...],
+    reveal: tuple[bool, ...],
+    *,
+    normalize_pairs: bool = True,
+) -> float:
+    """Realized one-shot team value for a type profile and reveal decisions.
+
+    This is used by the live LLM probe. If a target agent reveals, every partner
+    coordinates against the true type. Otherwise the partner uses the same noisy
+    action-derived signal model as the analytic layer, in expectation.
+    """
+
+    if len(theta_profile) != model.n or len(reveal) != model.n:
+        raise ValueError("theta_profile and reveal must have length model.n")
+    pair_value = 0.0
+    for observer in range(model.n):
+        for target in range(model.n):
+            if observer == target:
+                continue
+            true_type = int(theta_profile[target])
+            if reveal[target]:
+                pair_value += model.type_weights[true_type]
+            else:
+                pair_value += expected_no_reveal_value(model, target, true_type)
+    reward = model.coupling * pair_value / _pair_normalizer(model, normalize_pairs)
+    cost = model.comm_cost * sum(1 for flag in reveal if flag)
+    return float(reward - cost)
+
+
+def optimal_reveal_for_profile(model: HPSPGGComModel, theta_profile: tuple[int, ...]) -> tuple[bool, ...]:
+    """Best realized reveal decision for a known type profile."""
+
+    best_value = -float("inf")
+    best_reveal: tuple[bool, ...] | None = None
+    for reveal in product([False, True], repeat=model.n):
+        value = value_for_realized_policy(model, theta_profile, reveal)
+        if value > best_value + 1e-12:
+            best_value = value
+            best_reveal = tuple(bool(x) for x in reveal)
+    assert best_reveal is not None
+    return best_reveal
