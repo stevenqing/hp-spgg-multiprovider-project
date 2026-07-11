@@ -1,10 +1,22 @@
 # Python caches
 __pycache__/
 *.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
 
 # Local environment and logs
 .venv/
+.venvs/
 logs/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
 
 # Large dataset/artifact files (exceed GitHub file limits)
 analysis/exports/master_rollouts.jsonl
@@ -26,6 +38,14 @@ arr_paper_overleaf/
 overleaf_bundle/
 htmg_arr_v5_overleaf/
 paper/
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
 tables/*.tex
 packaged_results/*/tables/*.tex
 

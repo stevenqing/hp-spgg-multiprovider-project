@@ -1,0 +1,233 @@
+# File Index — HP-SPGG Multi-Provider
+
+This index lists every file/folder kept in the repo after the May 2026 sweep, with one-line purpose notes. Anything not listed here was moved to `_archive/` and is recoverable from there.
+
+## Top-level layout
+
+| Path | Purpose |
+| --- | --- |
+| `arr_paper/` | Canonical ARR submission (LaTeX source, figs, bib, compiled `main.pdf`). |
+| `arr_paper_overleaf/` | Mirror copy synced to Overleaf project. |
+| `llm_hpgg/` | Core HP-SPGG / H-PSMG\textsuperscript{+} simulator + LLM agent adapters. |
+| `llm_hpgg_concordia/` | Concordia Pub Coordination / Haggling integration. |
+| `llm_hpgg_sotopia/` | SOTOPIA-Hard integration. |
+| `scripts/` | Plot scripts producing each ARR figure (one file per figure). |
+| `figs/` | Generated working-copy output of plot scripts; not kept in the cleaned workspace. Canonical paper copies live in `arr_paper/figs/`. |
+| `analysis/` | JSON / Markdown summaries consumed by the plot scripts (the "data layer"). |
+| `prompts/` | LLM system prompts used by judge + persona modules. |
+| `config/` | Provider configuration (`providers.yaml`). |
+| `docs/` | This index + design / setup notes. |
+| `_archive/` | Files moved out by the sweep (reversible). Not used by any compile path. |
+| `pyproject.toml`, `uv.lock`, `requirements.txt` | Python dependencies (managed via `uv`). |
+| `.gitignore` | Git exclusion list. |
+| `.venv/`, `.venvs/` | Local virtual envs (gitignored). |
+
+---
+
+## `arr_paper/` — canonical ARR submission
+
+| File | Purpose |
+| --- | --- |
+| `main.tex` | Main body of the ARR paper. |
+| `appendix.tex` | Appendix (theory proofs + E1–E5 experiments + decentralisation ablation). |
+| `math_commands.tex` | Shared LaTeX macros. |
+| `ref.bib` | BibTeX database. |
+| `acl.sty`, `acl_natbib.bst` | ACL-style class + bib style. |
+| `main.pdf` | Compiled 33-page PDF. |
+| `main.bbl` | Bib bytecode produced by bibtex (kept so pdflatex can run without bibtex). |
+| `figs/` | All paper-included figures (canonical copies). |
+
+`arr_paper_overleaf/` is byte-identical mirror; sync via `Copy-Item arr_paper\* arr_paper_overleaf\ -Recurse -Force`.
+
+### Figures referenced by `arr_paper/main.tex`
+
+| Fig | Filename (under `arr_paper/figs/`) | Producer (under `scripts/`) |
+| --- | --- | --- |
+| `fig:hp-spgg-cross-model` | `fig10_hp_spgg_cross_model_v3.png` | (offline; preserved) |
+| `fig:beta-sweep` | `fig10_beta_sweep_v3.pdf` | (offline; preserved) |
+| `fig:concordia-main` | `fig10_concordia_main_v7.pdf` | `plot_fig_concordia_main_v4.py` |
+| `fig:haggling-pareto` | `fig11_haggling_pareto.pdf` | `plot_fig_haggling_pareto.py` |
+| `fig:concordia-supp-eps` | `fig_concordia_supp_eps_sensitivity_v1.pdf` | `llm_hpgg_concordia/plot_type_recovery_eps_sensitivity.py` |
+| `fig:sotopia` (a) | `fig_sotopia_three_exp_v1.pdf` | `plot_fig_sotopia_three_exp.py` |
+| `fig:sotopia` (b) | `fig_sotopia_traj_v1.pdf` | `plot_fig_sotopia_traj.py` |
+
+### Figures referenced by `arr_paper/appendix.tex`
+
+| Fig label | Filename | Producer |
+| --- | --- | --- |
+| (regret-trap)        | `regret_trap.pdf` | (offline; preserved) |
+| (regret-curves)      | `regret_curves.pdf` | (offline; preserved) |
+| (hpsmg-plus)         | `hpsmg_plus_results.pdf` | (offline; preserved) |
+| `fig:e1`             | `fig_e1_posterior_concentration_v3.pdf` | (offline; preserved) |
+| `fig:e2`             | `fig_e2_type_scaling_v3.pdf` | (offline; preserved) |
+| `fig:e3`             | `fig_e3_n_agent_scaling_v3.pdf` | (offline; preserved) |
+| `fig:e5`             | `fig_e5_cumulative_regret_trajectories_v3.pdf` | (offline; preserved) |
+| (E4 prior recovery)  | `E4_prior_recovery_llm.png` | `scripts/analyze_e4_prior_recovery.py` (archived) |
+| (E2 native vs llm)   | `E2_native_vs_llm_baselines_main.pdf` | (offline; preserved) |
+| (E3 cross provider)  | `E3_cross_provider.pdf` | (offline; preserved) |
+| `fig:sotopia-traj` (appendix) | `fig_sotopia_hard_appendix_v2.pdf` | `plot_fig_sotopia_hard_v2.py` |
+| `fig:decentralized-price` | `fig12_decentralized_price.pdf` | `plot_fig_decentralized_price.py` |
+
+*"offline; preserved"* = the PDF/PNG is checked in, but the producing script is not in the kept tree (was archived). The figure is final; no need to re-render.
+
+---
+
+## `scripts/` — plot drivers (one per kept figure)
+
+| Script | Output figure | Reads from |
+| --- | --- | --- |
+| `plot_fig_concordia_main_v4.py` | `fig10_concordia_main_v7.{pdf,png}` | `analysis/concordia_pub_coordination_compact_*mechanistic_joint*_v2.json`, `analysis/concordia_haggling_compact_*_s30_v3.json`, `analysis/concordia_haggling_multi_item_compact_*_s30_v3.json` |
+| `plot_fig_decentralized_price.py` | `fig12_decentralized_price.{pdf,png}` | `analysis/concordia_pub_coordination_compact_L3_{slug}_s5.json` for 4 backbones |
+| `plot_fig_haggling_pareto.py` | `fig11_haggling_pareto.{pdf,png}` | `analysis/concordia_haggling_*_s30_v3.json` |
+| `plot_fig_sotopia_three_exp.py` | `arr_paper/figs/fig_sotopia_three_exp_v1.{pdf,png}` | `analysis/sotopia_hard_official_*_all70.json` |
+| `plot_fig_sotopia_traj.py` | `arr_paper/figs/fig_sotopia_traj_v1.{pdf,png}` | `analysis/sotopia_hard_official_*_all70.json` |
+| `plot_fig_sotopia_hard_v2.py` | `arr_paper/figs/fig_sotopia_hard_appendix_v2.{pdf,png}` | `analysis/sotopia_hard_official_*_all70.json` |
+| `compile_arr_paper.ps1` | (helper) | `arr_paper/main.tex` |
+
+Each script can be run with `uv run python scripts\<name>.py` from the repo root.
+
+To recompile the paper after re-rendering a figure:
+```powershell
+Copy-Item figs\<fig>.pdf arr_paper\figs\ -Force
+Copy-Item figs\<fig>.pdf arr_paper_overleaf\figs\ -Force
+cd arr_paper
+& "C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode main.tex
+& "C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode main.tex
+Copy-Item main.pdf ..\arr_paper_overleaf\main.pdf -Force
+cd ..
+```
+
+---
+
+## `llm_hpgg/` — core simulator + agent adapters
+
+| File | Purpose |
+| --- | --- |
+| `__init__.py` | Module marker. |
+| `environment.py` | HP-SPGG game environment (provider–demand–payoff loop). |
+| `coordinator.py` | H-PSMG\textsuperscript{+} centralised Bayesian coordinator. |
+| `decentralized.py` | Decentralised free-choice baselines (greedy + ToM). |
+| `personas.py` | Persona / type definitions used in HP-SPGG. |
+| `llm_agent.py` | Abstract LLM agent interface. |
+| `llm_agent_cloudgpt.py` | Internal CloudGPT (Azure) backbone (gpt-5.x, Kimi, Llama, DeepSeek). |
+| `llm_agent_openai.py` / `_anthropic.py` / `_google.py` / `_deepinfra.py` | External provider adapters. |
+| `run_llm_baselines.py` | Driver for E2/E3 LLM-baseline experiments. |
+| `run_external_llm_baselines.py` | Driver for cross-provider sweep. |
+
+---
+
+## `llm_hpgg_concordia/` — Concordia integration
+
+| File | Purpose |
+| --- | --- |
+| `__init__.py` | Module marker. |
+| `cloudgpt_model.py` | Concordia model adapter for the CloudGPT clients. |
+| `embedder.py` | Sentence embedder used by Concordia memory. |
+| `run_pub_coordination.py` | Original Concordia Pub Coordination driver. |
+| `run_pub_coordination_compact.py` | Compact (faster) variant used for all ARR Concordia data. |
+| `run_pub_coordination_type_recovery.py` | Type-recovery sweep (eps sensitivity figure). |
+| `run_pub_coordination_type_recovery_v2.py` | V2 of the type-recovery driver (kept for figure reproducibility). |
+| `run_pub_coordination_type_recovery_v2_multi_model.py` | Cross-backbone variant of v2. |
+| `run_haggling_compact.py` | Concordia Haggling driver. |
+| `run_concordia_baselines.py` | Baseline (Random, A-ToM, ECON-BNE) Concordia driver. |
+| `analyze_type_recovery_regimes.py` | Post-hoc analysis of type-recovery regimes. |
+| `plot_type_recovery_v2.py` | Auxiliary plotter (kept; produces some appendix figs). |
+| `plot_type_recovery_eps_sensitivity.py` | Producer of `fig_concordia_supp_eps_sensitivity_v1.pdf`. |
+
+---
+
+## `llm_hpgg_sotopia/` — SOTOPIA integration
+
+| File | Purpose |
+| --- | --- |
+| `__init__.py` | Module marker. |
+| `agents.py` | Wrappers turning HP-SPGG agents into SOTOPIA-Hard players. |
+| `official_hard_data.py` | Loader for the SOTOPIA-Hard 70-case dataset. |
+| `run_sotopia_baselines.py` | Random / A-ToM / ECON-BNE baselines on SOTOPIA. |
+| `run_sotopia_hard_official.py` | H-PSMG\textsuperscript{+} driver on SOTOPIA-Hard. |
+| `run_episode_smoke.py` | Single-episode smoke test for development. |
+
+---
+
+## `analysis/` — paper-figure data layer
+
+Kept files fall into four families. All are JSON or Markdown; nothing binary. The plot scripts consume them by glob patterns.
+
+| Family | File pattern | Consumed by |
+| --- | --- | --- |
+| Concordia Pub Coordination main | `concordia_pub_coordination_compact_*mechanistic_joint*_v2.json` (+ `.md` siblings) | `plot_fig_concordia_main_v4.py` |
+| Concordia Pub Coordination decentralisation | `concordia_pub_coordination_compact_L3_<backbone>_s5.json` | `plot_fig_decentralized_price.py` |
+| Concordia Pub Coordination per-backbone live runs | `concordia_pub_coordination_compact_<backbone>_live_s*.json` | reference / sanity |
+| Concordia Haggling | `concordia_haggling_compact_*_s30_v3.json`, `concordia_haggling_multi_item_compact_*_s30_v3.json` (+ v2 fallbacks, `.md` siblings) | `plot_fig_concordia_main_v4.py`, `plot_fig_haggling_pareto.py` |
+| SOTOPIA-Hard 70-case | `sotopia_hard_official_<backbone>_<method>_all70.json` (+ `_sotopia_tuned_all70.json` variants) | `plot_fig_sotopia_*.py` |
+| E1–E5 LLM evidence | `E1_*`, `E2_*`, `E3_*`, `E4_*`, `E5_*` JSON/MD | (offline figures; preserved as reference) |
+| Markdown reports | `*_summary.md`, `*_report.json`, etc. | reference documentation for the paper |
+
+Intermediate calibration shards (`calibration_cloudgpt_multi_model_*_c*` per-cluster files), smoke tests, and the `rerun_*` / `exports/` / `shards/` subfolders were archived to `_archive/analysis_intermediate/`.
+
+---
+
+## `prompts/` — LLM prompts
+
+| File | Purpose |
+| --- | --- |
+| `personas_v1.md` | Persona descriptions used as system prompts by `llm_hpgg/personas.py`. |
+| `judge_v1.md` | Judge prompt used by `scripts/sotopia_partial_judge.py` (archived; prompt kept as reference). |
+
+---
+
+## `figs/` — generated working-copy figures
+
+`figs/` is intentionally absent in the cleaned workspace. Plot scripts recreate it when needed. Canonical paper copies live under `arr_paper/figs/`, so deleting the generated working copy does not remove paper assets. When regenerated, expected working-copy outputs include:
+
+```
+fig10_concordia_main_v7.{pdf,png}
+fig10_hp_spgg_cross_model_v3.{pdf,png}
+fig10_beta_sweep_v3.pdf
+fig11_haggling_pareto.{pdf,png}
+fig12_decentralized_price.{pdf,png}
+fig_e{1,2,3,5}_*.pdf
+E2_native_vs_llm_baselines_main.pdf
+E3_cross_provider.pdf
+E4_prior_recovery_llm.png
+regret_{trap,curves}.pdf
+hpsmg_plus_results.pdf
+```
+
+Other generated figs (per-env, scatter, smoke variants, older `_v3`-`_v6` versions of `fig10_concordia_main`) should remain out of the cleaned workspace unless actively being regenerated for inspection.
+
+---
+
+## `config/` — runtime configuration
+
+| File | Purpose |
+| --- | --- |
+| `providers.yaml` | LLM provider routing: CloudGPT (Azure) primary, OpenAI / Anthropic / Google / DeepInfra fallbacks. |
+
+---
+
+## `_archive/` — files moved out (reversible)
+
+| Subfolder | Contents |
+| --- | --- |
+| `root_calibration_npy/` | 200+ scattered `calibration_*.npy` (per-cluster intermediate results). |
+| `root_loose_py/` | Top-level duplicate `.py` scripts (originals live in `llm_hpgg/`). |
+| `root_docs/` | `HP-SPGG_Multi_Provider_Research_Plan.md`, `CLOUDGPT_USAGE.md`. |
+| `results/`, `results_phase2/`, `results_cuisineworld/` | Old result dumps not referenced by ARR paper. |
+| `external/`, `packaged_results/`, `paper/`, `llm_hpgg_mindagent/`, `calibration/` | Unused top-level folders. |
+| `logs/` | Run logs. |
+| `pycache_*/` | `__pycache__` snapshots per src tree. |
+| `figs_unused/` | Figs in `figs/` not referenced by the paper. |
+| `tables/` | `tables/` folder; no `\input{tables/...}` in paper. |
+| `scripts_unused/` | All scripts not producing a paper-referenced figure. |
+| `analysis_intermediate/` | Per-cluster calibration shards, smoke tests, eps-sweep variants, `rerun_*/`, `exports/`, `shards/`. |
+| `arr_paper_intermediate/` | `*.bak*`, `*.log`, `*.aux`, `*.out`, `_body_new.tex`, `legacy.tex`, `_backup_pre_v5_*`. |
+
+Total archive size: ~670 MB.
+
+To restore a single archived file: `Move-Item _archive\<sub>\<file> <original-location>`.
+
+To completely remove the archive (final, irreversible):
+```powershell
+Remove-Item -Recurse -Force _archive\
+```

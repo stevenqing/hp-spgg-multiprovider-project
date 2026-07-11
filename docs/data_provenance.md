@@ -1,0 +1,304 @@
+# Data Provenance — HP-SPGG / H-PSMG$^+$ ARR Paper
+
+Every numeric value, table cell, and figure data point in the ARR paper traces back to one JSON/CSV file under `analysis/` produced by exactly one experiment driver in the source tree. This document is the single source of truth for those mappings.
+
+**Scope.** Only the data referenced by `arr_paper/main.tex` and `arr_paper/appendix.tex` is listed. Smoke tests, intermediate calibration shards, and exploratory variants live in `_archive/analysis_intermediate/` and are not part of the publication record.
+
+**Backbones.** All "live" runs use the same four CloudGPT backbones unless noted:
+
+| Short name | CloudGPT slug |
+| --- | --- |
+| GPT-5.4-nano | `gpt_5_4_nano_20260317` |
+| DeepSeek-V3.2 | `DeepSeek_V3_2` |
+| Kimi-K2.6 | `Kimi_K2_6` |
+| Llama-4-Maverick | `Llama_4_Maverick_17B_128E_Instruct_FP8` |
+
+**Concordia dependency caveat.** Concordia drivers import the upstream Concordia examples from `external/concordia/`. That folder was moved to `_archive/external/` by the May 2026 sweep; re-running any Concordia experiment requires restoring it:
+
+```powershell
+Move-Item _archive\external\concordia external\
+```
+
+The result JSONs themselves are unaffected and remain in `analysis/`.
+
+---
+
+## Common environment
+
+```powershell
+# Required for every live (non-offline) run
+$env:LLM_HPGG_BACKEND = "cloudgpt"
+$env:LLM_HPGG_MODEL   = "<slug from table above>"
+```
+
+Provider routing is read from [config/providers.yaml](../config/providers.yaml) by `llm_hpgg/llm_agent_cloudgpt.py`.
+
+---
+
+## Figure-by-figure provenance
+
+### Main paper
+
+#### `fig:hp-spgg-cross-model` — HP-SPGG cross-model headline (Fig. 1)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig10_hp_spgg_cross_model_v3.png` |
+| Data source | `analysis/cross_model_full_sweep_run_20260517.md` + per-model `E*_summary.json` aggregates |
+| Method | HP-SPGG simulator sweep over four backbones $\times$ {greedy, A-ToM, ECON-BNE, H-PSMG$^+$} |
+| Driver | `llm_hpgg/run_llm_baselines.py` |
+| Producer of figure | offline (rendering script archived; PDF/PNG canonical) |
+
+Reference command (single backbone slice):
+
+```powershell
+uv run python -m llm_hpgg.run_llm_baselines `
+  --K 20 --n 3 --seeds 5 `
+  --calibration analysis/calibration_cloudgpt_<slug>_c19.npy `
+  --out analysis/E2_llm_baselines_<slug>_c19_K20_s5_trace.json `
+  --algos greedy atom_tom1 econ_bne hpsmg_plus
+```
+
+#### `fig:beta-sweep` — $g$-trap $\beta$ sweep (Fig. 2)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig10_beta_sweep_v3.pdf` |
+| Data source | `analysis/g_trap_beta_sweep_hpsmg_plus.csv` |
+| Method | Deterministic simulation tier; see `analysis/g_trap_beta_sweep_simulation_tier.md` |
+| Producer | offline (rendering script archived) |
+
+#### `fig:concordia-main` — Concordia main bar/line panel (Fig. 3)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig10_concordia_main_v7.pdf` |
+| Data sources | `analysis/concordia_pub_coordination_compact_{london,london_mini,edinburgh,edinburgh_closures,edinburgh_tough_friendship,capetown,london_closures}_s30_mechanistic_joint_v2.json` (+ `_v1` siblings) and `analysis/concordia_haggling_compact_*_s30_v3.json`, `analysis/concordia_haggling_multi_item_compact_*_s30_v3.json` |
+| Producer | `scripts/plot_fig_concordia_main_v4.py` |
+
+Reference commands:
+
+```powershell
+# Pub coordination (one config per command; loops over methods + 30 seeds offline)
+uv run python -m llm_hpgg_concordia.run_pub_coordination_compact `
+  --config london --seeds 30 `
+  --methods atom_tom1_mech atom_tom2_mech econ_bne_mech `
+            hpsmg_plus_proxy hpsmg_plus_joint_proxy oracle_joint `
+  --out analysis/concordia_pub_coordination_compact_london_s30_mechanistic_joint_v2.json
+
+# Haggling (single-item)
+uv run python -m llm_hpgg_concordia.run_haggling_compact `
+  --domain haggling --config fruitville --seeds 30 `
+  --out analysis/concordia_haggling_compact_fruitville_s30_v3.json
+
+# Haggling (multi-item)
+uv run python -m llm_hpgg_concordia.run_haggling_compact `
+  --domain haggling_multi_item --config fruitville_multi --seeds 30 `
+  --out analysis/concordia_haggling_multi_item_compact_fruitville_multi_s30_v3.json
+```
+
+Default method set for pub coordination (`DEFAULT_METHODS` in [llm_hpgg_concordia/run_pub_coordination_compact.py](../llm_hpgg_concordia/run_pub_coordination_compact.py)):
+
+```
+llm_greedy, llm_belief, random, atom_tom1, econ_bne,
+atom_tom1_mech, atom_tom2_mech, econ_bne_mech,
+hpsmg_plus_proxy, hpsmg_plus_joint_proxy, oracle_joint
+```
+
+#### `fig:haggling-pareto` — Haggling Pareto frontier (Fig. 4)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig11_haggling_pareto.pdf` |
+| Data sources | Same `analysis/concordia_haggling_compact_*_s30_v3.json` + `concordia_haggling_multi_item_compact_*_s30_v3.json` as Fig. 3 |
+| Producer | `scripts/plot_fig_haggling_pareto.py` |
+| Aggregated summary | `analysis/concordia_haggling_margin_summary.md` |
+
+#### `fig:concordia-supp-eps` — Concordia $\varepsilon$-sensitivity (Fig. 5)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig_concordia_supp_eps_sensitivity_v1.pdf` |
+| Data sources | per-backbone `analysis/concordia_pub_coordination_compact_<slug>_live_s{2,3,5}.json` and `concordia_pub_coordination_compact_<slug>_live_s3_seed2_4.json` |
+| Driver | `llm_hpgg_concordia/run_pub_coordination_type_recovery_v2_multi_model.py` |
+| Producer | `llm_hpgg_concordia/plot_type_recovery_eps_sensitivity.py` |
+
+Reference command (one backbone, live judge):
+
+```powershell
+$env:LLM_HPGG_BACKEND = "cloudgpt"
+$env:LLM_HPGG_MODEL   = "DeepSeek_V3_2"
+uv run python -m llm_hpgg_concordia.run_pub_coordination_compact `
+  --config london --seeds 5 --model $env:LLM_HPGG_MODEL `
+  --out analysis/concordia_pub_coordination_compact_DeepSeek_V3_2_live_s5.json
+```
+
+#### `fig:sotopia` (a)+(b) — SOTOPIA three-experiment panel + trajectory (Fig. 6)
+
+| Item | Value |
+| --- | --- |
+| Figure files | `arr_paper/figs/fig_sotopia_three_exp_v1.pdf`, `fig_sotopia_traj_v1.pdf` |
+| Data sources | `analysis/sotopia_hard_official_<slug>_<method>_all70.json` for every (slug, method) where `method ∈ {llm_greedy, llm_belief, atom_tom1, econ_bne, hpsmg_plus}`; plus the `_sotopia_tuned_all70.json` variant for the fair-rerun panel |
+| Aggregate summary | `analysis/sotopia_hard_official_all_models_summary.md`, `analysis/sotopia_tuned_all70_full_report.md` |
+| Producers | `scripts/plot_fig_sotopia_three_exp.py`, `scripts/plot_fig_sotopia_traj.py` |
+
+Reference command (one backbone × one method × all 70 cases):
+
+```powershell
+$env:LLM_HPGG_BACKEND = "cloudgpt"
+uv run python -m llm_hpgg_sotopia.run_sotopia_hard_official `
+  --baseline hpsmg_plus `
+  --model gpt_5_4_nano_20260317 --evaluator-model gpt_5_4_nano_20260317 `
+  --turns 6 --limit 70 --concurrency 4 `
+  --out analysis/sotopia_hard_official_gpt_5_4_nano_20260317_hpsmg_plus_all70.json
+```
+
+The `_sotopia_tuned_all70.json` variants use `--agent-strategy-profile sotopia_tuned` (or set `SOTOPIA_AGENT_STRATEGY_PROFILE=sotopia_tuned`). All 70 SOTOPIA-Hard cases are loaded by `llm_hpgg_sotopia/official_hard_data.py`.
+
+Baseline choices from `run_sotopia_hard_official.py --baseline`:
+
+```
+llm_greedy, llm_belief, atom_tom1, econ_bne, hpsmg_plus,
+oracle_joint, oracle_policy
+```
+
+---
+
+### Appendix
+
+#### Theory illustrations (regret trap, regret curves, H-PSMG$^+$ illustration)
+
+| Figure | File | Source |
+| --- | --- | --- |
+| `regret_trap.pdf`     | `arr_paper/figs/regret_trap.pdf` | analytical (no data file) |
+| `regret_curves.pdf`   | `arr_paper/figs/regret_curves.pdf` | analytical (no data file) |
+| `hpsmg_plus_results.pdf` | `arr_paper/figs/hpsmg_plus_results.pdf` | preserved offline figure |
+
+#### E1 — posterior concentration (`fig:e1`)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig_e1_posterior_concentration_v3.pdf` |
+| Live LLM data | `analysis/E1_c19_<slug>_live_report.json` (4 backbones) |
+| Aggregate | `analysis/E1_posterior_concentration_llm_summary.json` (live) and `E1_posterior_concentration_summary.json` (deterministic tier) |
+| Method | Refresh of c19 calibration with live CloudGPT judge calls, then posterior concentration scoring. See `analysis/e1_e4_llm_evidence_runbook_20260518.md`. |
+| Driver (archived) | `scripts/run_e1_e4_llm_evidence_overnight.ps1` (in `_archive/scripts_unused/`) |
+
+#### E2 — $|\Theta_i|$ scaling (`fig:e2`) and Native-vs-LLM (sub-figure)
+
+| Item | Value |
+| --- | --- |
+| Figure files | `arr_paper/figs/fig_e2_type_scaling_v3.pdf`, `arr_paper/figs/E2_native_vs_llm_baselines_main.pdf` |
+| Live per-type data | `analysis/E2_type{2,3,4,5,6}_live_report.json` |
+| Internal-backbone baselines | `analysis/E2_llm_baselines_<slug>_c19_K20_s{3,5}_trace.json` |
+| External-backbone baselines | `analysis/E2_external_llm_baselines_<slug>_c19_K20_s{3,5}_{trace.json,summary.md}` |
+| Aggregates | `analysis/E2_summary.json`, `E2_type_scaling_summary.json`, `E2_type_scaling_llm_summary.json`, `E2_type_scaling_llm_s10_summary.json`, `E2_native_vs_llm_baselines_stats.md` |
+| Drivers | `llm_hpgg/run_llm_baselines.py` (internal) + `llm_hpgg/run_external_llm_baselines.py` (external providers) |
+
+Reference command (external backbones; `s5` = 5 seeds):
+
+```powershell
+uv run python -m llm_hpgg.run_external_llm_baselines `
+  --K 20 --n 3 --seeds 5 `
+  --calibration analysis/calibration_cloudgpt_<slug>_c19.npy `
+  --algos greedy atom_tom1 econ_bne hpsmg_plus `
+  --out analysis/E2_external_llm_baselines_<slug>_c19_K20_s5_trace.json `
+  --model <slug>
+```
+
+#### E3 — $n$-agent scaling (`fig:e3`) and Cross-provider (sub-figure)
+
+| Item | Value |
+| --- | --- |
+| Figure files | `arr_paper/figs/fig_e3_n_agent_scaling_v3.pdf`, `arr_paper/figs/E3_cross_provider.pdf` |
+| Live per-$n$ data | `analysis/E3_n{2,3,4,5}_live_report.json` |
+| Aggregates | `analysis/E3_summary.json`, `E3_n_agent_scaling_summary.json`, `E3_n_agent_scaling_llm_summary.json`, `E3_n_agent_scaling_llm_s10_summary.json` |
+| Driver | same as E1 overnight (live-judge calibration sweeps over $n$) |
+
+#### E4 — prior recovery (sub-figure)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/E4_prior_recovery_llm.png` |
+| Data | `analysis/E4_prior_recovery_llm_summary.json` (live), `E4_prior_recovery_summary.json` (deterministic), `E4_summary.json` |
+
+#### E5 — per-episode cumulative regret (`fig:e5`)
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig_e5_cumulative_regret_trajectories_v3.pdf` |
+| Data inventory | `analysis/E5_cross_model_per_episode_cumulative_regret_data_20260518.md` (points at the per-model `E2_llm_baselines_<slug>_c19_K20_s5_trace.json` traces) |
+
+#### `fig:sotopia-traj` (appendix) — SOTOPIA per-case trajectory
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig_sotopia_hard_appendix_v2.pdf` |
+| Data | same `analysis/sotopia_hard_official_*_all70.json` family as `fig:sotopia` |
+| Producer | `scripts/plot_fig_sotopia_hard_v2.py` |
+
+#### `fig:decentralized-price` — Decentralisation ablation
+
+| Item | Value |
+| --- | --- |
+| Figure file | `arr_paper/figs/fig12_decentralized_price.pdf` |
+| Data | `analysis/concordia_pub_coordination_compact_L3_<slug>_s5.json` (4 backbones) |
+| Producer | `scripts/plot_fig_decentralized_price.py` |
+| Method | Decentralised (free-choice) coordination loop in `llm_hpgg/decentralized.py`, run from the compact pub-coordination driver with the `L3` (level-3 decentralised) preset. |
+
+Reference command:
+
+```powershell
+foreach ($slug in @('gpt_5_4_nano_20260317','DeepSeek_V3_2','Kimi_K2_6','Llama_4_Maverick_17B_128E_Instruct_FP8')) {
+  $env:LLM_HPGG_MODEL = $slug
+  uv run python -m llm_hpgg_concordia.run_pub_coordination_compact `
+    --config london --seeds 5 --model $slug `
+    --methods atom_tom1 atom_tom1_mech hpsmg_plus_joint_proxy oracle_joint `
+    --out "analysis/concordia_pub_coordination_compact_L3_${slug}_s5.json"
+}
+```
+
+---
+
+## Cross-cutting reports and audits
+
+These Markdown files are not figures but document the experimental methodology and integrity checks referenced throughout the paper:
+
+| File | Purpose |
+| --- | --- |
+| `analysis/all_numeric_results.md` | Single-file dump of every numeric value that ends up in tables/captions. |
+| `analysis/baseline_implementation_audit.md` | Algorithmic audit of each baseline (greedy, A-ToM, ECON-BNE, H-PSMG$^+$). |
+| `analysis/scientific_integrity_audit_20260517.md` | Fair-comparison audit of the cross-model sweep. |
+| `analysis/proposed_vs_baselines_guardrail_20260517.md` | Guardrail check that the proposed method is not over-claimed. |
+| `analysis/model_sweep_coverage_audit.md` | Coverage of (backbone × method × env) cells. |
+| `analysis/sotopia_fairness_audit_20260518.md` | SOTOPIA fairness audit (legacy vs. tuned strategy profile). |
+| `analysis/sotopia_tuned_variant_transparency_20260518.md` | Disclosure of the `sotopia_tuned` agent-strategy profile. |
+| `analysis/sotopia_tuned_overnight_plan_20260518.md` | Plan for the overnight tuned rerun. |
+| `analysis/sotopia_tuned_all_baselines_fair_rerun_20260518.md` | Outcome of the tuned fair rerun. |
+| `analysis/concordia_validation_notes_20260517.md` | Validation notes for the Concordia integration. |
+| `analysis/concordia_compact_action_diagnostics.md`, `analysis/concordia_compact_margin_summary.md` | Action-level diagnostics on the compact runner. |
+| `analysis/phase2_concordia_sotopia_environment_notes.md` | Environment notes shared by Concordia + SOTOPIA. |
+| `analysis/results_integration_memo.md`, `analysis/results_index.md`, `analysis/overall_results_summary.md` | Top-level indices of all results. |
+| `analysis/experiment_data_status_inventory_20260518.md` | Inventory of which (backbone × method × env) cells have which evidence tier. |
+| `analysis/e1_e4_llm_evidence_runbook_20260518.md` | Runbook for E1-E4 live-judge evidence. |
+| `analysis/e1_e3_llm_evidence_paper_report_20260518.md`, `analysis/e1_e4_llm_evidence_results_20260518.md` | Result reports for E1-E4. |
+| `analysis/cross_model_sweep_plan.md`, `analysis/cross_model_full_sweep_run_20260517.md` | Plan and execution log of the cross-model sweep (Fig. 1 + E5). |
+| `analysis/model_performance_available_20260517.md` | What models had results available as of the cutoff. |
+| `analysis/llm_baseline_summary.md` | Summary of LLM-baseline performance. |
+| `analysis/related_work_candidate_baselines.md` | Notes used to choose the comparison baselines. |
+| `analysis/e2_e3_outlier_confirmation_20260518.md` | Confirmation of outliers in E2/E3 scaling. |
+
+---
+
+## Reproducibility checklist
+
+To regenerate any single figure end-to-end:
+
+1. Restore `external/concordia/` if the figure is a Concordia figure: `Move-Item _archive\external\concordia external\`.
+2. Set `LLM_HPGG_BACKEND` and (if a live run) `LLM_HPGG_MODEL`.
+3. Run the driver command(s) listed in the figure's row above, writing JSON to `analysis/`.
+4. Run the producer script (`uv run python scripts\plot_fig_<name>.py`).
+5. Copy the resulting PDF to `arr_paper/figs/` and `arr_paper_overleaf/figs/`.
+6. Recompile the paper (see [../README.md](../README.md#recompiling-the-paper)).
+
+If a row says *offline*, the producing script was archived because the figure is final; the PDF/PNG in `arr_paper/figs/` is canonical and does not need to be rebuilt.

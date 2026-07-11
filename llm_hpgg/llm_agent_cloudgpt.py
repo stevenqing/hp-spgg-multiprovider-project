@@ -30,7 +30,8 @@ def _call_llm(system_prompt: str, user_message: str, model: str, max_tokens: int
         max_retries=int(os.getenv("CLOUDGPT_MAX_RETRIES", "0")),
     )
     last_error: Exception | None = None
-    for attempt in range(4):
+    attempts = max(1, int(os.getenv("CLOUDGPT_ATTEMPTS", "4")))
+    for attempt in range(attempts):
         try:
             request = {
                 "model": model,
@@ -54,7 +55,7 @@ def _call_llm(system_prompt: str, user_message: str, model: str, max_tokens: int
         except Exception as exc:
             last_error = exc
             time.sleep(min(2**attempt, 8))
-    raise RuntimeError(f"CloudGPT call failed after retries: {last_error}")
+    raise RuntimeError(f"CloudGPT call failed after {attempts} attempts: {last_error}")
 
 
 def _supports_custom_temperature(model: str) -> bool:

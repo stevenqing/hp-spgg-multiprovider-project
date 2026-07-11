@@ -48,42 +48,51 @@ def main() -> None:
     parse_failures: list[dict[str, object]] = []
     new_live_cells = 0
     skipped_cached_cells = 0
-    pending_tasks: list[tuple[int, int, int, np.ndarray, str]] = []
+    partial_cached_cells = 0
+    pending_tasks: list[tuple[int, int, int, np.ndarray, str, dict[str, object] | None]] = []
 
     for profile_index in live_profile_indices:
         profile = base.action_profiles[profile_index]
         for player_index in range(args.n):
             for persona_index, persona in enumerate(PERSONAS):
                 cache_key = make_cache_key(profile_index, player_index, persona_index, args.samples)
-                if cache_key in cache:
+                cached_entry = cache.get(cache_key)
+                if cached_entry is not None and cache_entry_complete(cached_entry, args.samples):
                     skipped_cached_cells += 1
                     continue
+                if cached_entry is not None:
+                    partial_cached_cells += 1
                 if args.cell_budget and len(pending_tasks) >= args.cell_budget:
                     break
-                pending_tasks.append((int(profile_index), int(player_index), int(persona_index), np.array(profile, copy=True), cache_key))
+                pending_tasks.append((int(profile_index), int(player_index), int(persona_index), np.array(profile, copy=True), cache_key, cached_entry))
             if args.cell_budget and len(pending_tasks) >= args.cell_budget:
                 break
         if args.cell_budget and len(pending_tasks) >= args.cell_budget:
             break
 
     if args.workers <= 1:
-        for profile_index, player_index, persona_index, profile, cache_key in pending_tasks:
-            result = score_live_cell(profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model)
+        for profile_index, player_index, persona_index, profile, cache_key, cached_entry in pending_tasks:
+            result = score_live_cell(profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model, cached_entry)
             if result["scores"]:
                 apply_live_cell_result(result, reward_tensor, cache_path, cache)
                 new_live_cells += 1
                 if args.save_every > 0 and new_live_cells % args.save_every == 0:
                     save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
+                if len(result["scores"]) < args.samples:
+                    parse_failures.extend(result["parse_failures"])
             else:
                 parse_failures.extend(result["parse_failures"])
                 if args.no_synthetic_fallback:
                     persona = PERSONAS[persona_index]
-                    raise RuntimeError(f"No live score for profile={profile_index} player={player_index} persona={persona.key}")
+                    raise RuntimeError(
+                        f"Only {len(result['scores'])}/{args.samples} live scores for "
+                        f"profile={profile_index} player={player_index} persona={persona.key}"
+                    )
     else:
         with ThreadPoolExecutor(max_workers=args.workers) as executor:
             futures = [
-                executor.submit(score_live_cell, profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model)
-                for profile_index, player_index, persona_index, profile, cache_key in pending_tasks
+                executor.submit(score_live_cell, profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model, cached_entry)
+                for profile_index, player_index, persona_index, profile, cache_key, cached_entry in pending_tasks
             ]
             for future in as_completed(futures):
                 result = future.result()
@@ -92,11 +101,14 @@ def main() -> None:
                     new_live_cells += 1
                     if args.save_every > 0 and new_live_cells % args.save_every == 0:
                         save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
+                    if len(result["scores"]) < args.samples:
+                        parse_failures.extend(result["parse_failures"])
                 else:
                     parse_failures.extend(result["parse_failures"])
                     if args.no_synthetic_fallback:
                         raise RuntimeError(
-                            f"No live score for profile={result['profile_index']} player={result['player_index']} persona={result['persona']}"
+                            f"Only {len(result['scores'])}/{args.samples} live scores for "
+                            f"profile={result['profile_index']} player={result['player_index']} persona={result['persona']}"
                         )
 
     save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
@@ -112,6 +124,7 @@ def main() -> None:
         "new_live_cells": new_live_cells,
         "cached_cells_loaded": cached_cells,
         "skipped_cached_cells": skipped_cached_cells,
+        "partial_cached_cells_rescored": partial_cached_cells,
         "total_cells": int(np.prod(reward_tensor.shape)),
         "parse_failure_count": len(parse_failures),
         "parse_failures": parse_failures[:50],
@@ -149,15 +162,16 @@ def score_live_cell(
     cache_key: str,
     samples: int,
     judge_model: str | None,
+    cached_entry: dict[str, object] | None = None,
 ) -> dict[str, object]:
     persona = PERSONAS[persona_index]
-    scores: list[float] = []
-    replies: list[str] = []
+    scores = cached_score_values(cached_entry)[:samples]
+    replies = cached_reply_values(cached_entry)
     parse_failures: list[dict[str, object]] = []
-    for sample_index in range(samples):
+    for sample_index in range(len(scores), samples):
         prompt = build_judge_message(persona_index, player_index, profile, sample_index)
         try:
-            reply = call_judge(judge_system_prompt(), prompt, model=judge_model, max_tokens=192, temperature=0.0)
+            reply = call_judge(judge_system_prompt(), prompt, model=judge_model, max_tokens=64, temperature=0.0)
             replies.append(reply)
             scores.append(parse_score(reply))
         except Exception as exc:
@@ -236,6 +250,34 @@ def save_current_calibration(base: CalibrationBundle, reward_tensor: np.ndarray,
 
 def make_cache_key(profile_index: int, player_index: int, persona_index: int, samples: int) -> str:
     return f"p{profile_index}:a{player_index}:t{persona_index}:s{samples}"
+
+
+def cache_entry_complete(entry: dict[str, object], samples: int) -> bool:
+    return len(cached_score_values(entry)) >= samples
+
+
+def cached_score_values(entry: dict[str, object] | None) -> list[float]:
+    if entry is None:
+        return []
+    scores = entry.get("scores", [])
+    if not isinstance(scores, list):
+        return []
+    values: list[float] = []
+    for score in scores:
+        try:
+            values.append(float(score))
+        except (TypeError, ValueError):
+            continue
+    return values
+
+
+def cached_reply_values(entry: dict[str, object] | None) -> list[str]:
+    if entry is None:
+        return []
+    replies = entry.get("replies", [])
+    if not isinstance(replies, list):
+        return []
+    return [str(reply) for reply in replies]
 
 
 def load_cache(path: Path) -> dict[str, dict[str, object]]:
