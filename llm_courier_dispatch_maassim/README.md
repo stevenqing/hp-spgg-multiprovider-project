@@ -2,6 +2,8 @@
 
 This folder is the new work area for connecting CourierDispatch-Rules to a real mobility-platform simulator.
 
+> **Canonical results audit:** See [RESULTS_REVIEW.md](RESULTS_REVIEW.md) for the consolidated, source-checked review of all retained MaaSSim results. It separates primary evidence from smoke tests, identifies superseded variants, and documents the current claim boundaries. The historical notes below preserve the development sequence.
+
 ## Simulator Choice
 
 MaaSSim is the best first target. It is explicitly a two-sided mobility-platform simulator with microscopic travellers, drivers, and a platform that matches demand and supply. The key integration hook is friendly: the platform matching logic is an external user-defined function `f_match(platform=platform)`. Driver opt-out, driver decline, and repositioning are also user-defined functions.

@@ -167,6 +167,7 @@ def metadata_paths() -> list[Path]:
         "uv.lock",
         "docs/data_provenance.md",
         "docs/file_index.md",
+        "llm_courier_dispatch_maassim/RESULTS_REVIEW.md",
         "scripts/package_project_figures_data.py",
     )
     return [ROOT / name for name in names if (ROOT / name).exists()]
