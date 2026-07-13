@@ -2,10 +2,10 @@
 
 The bundle keeps:
 - figures actually referenced by ``arr_paper/main.tex`` and ``appendix.tex``;
-- current CourierDispatch, HP-SPGG-COM, scaling, and MaaSSim figure families,
-  deduplicated by preferring PDF for static figures and retaining GIF animations;
+- every other canonical PDF, PNG, and GIF in ``arr_paper/figs``;
 - the current ``analysis/`` and ``tables/`` data layers, excluding caches;
-- paper sources, provenance documentation, and plotting/analysis scripts.
+- paper sources, provenance documentation, every detected figure renderer, and
+    the plotting/analysis helper scripts.
 """
 
 from __future__ import annotations
@@ -33,10 +33,8 @@ PLOT_SCRIPT_PREFIXES = (
     "plot_",
     "summarize_",
 )
-EXTENDED_FIGURE_RE = re.compile(
-    r"^(?:fig_(?:courier|maassim|hp_spgg_com|real_hp_spgg_com|lambda_couple|"
-    r"scaling_hidden_complexity|nonadditivity|judge_variance)|fig\d+_courier)",
-    flags=re.IGNORECASE,
+PLOT_RENDER_RE = re.compile(
+    r"\bsavefig\s*\(|\bmimsave\s*\(|\b(?:anim|animation)\.save\s*\(|\bwrite_image\s*\("
 )
 INCLUDEGRAPHICS_RE = re.compile(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}")
 
@@ -78,32 +76,15 @@ def paper_figure_paths() -> list[Path]:
     return paths
 
 
-def preferred_extended_figures(paper_figures: set[Path]) -> list[Path]:
-    grouped: dict[str, list[Path]] = defaultdict(list)
+def other_canonical_figures(paper_figures: set[Path]) -> list[Path]:
     figure_root = ROOT / "arr_paper" / "figs"
-    for path in figure_root.iterdir():
-        if not path.is_file() or path.suffix.lower() not in FIGURE_EXTENSIONS:
-            continue
-        if not EXTENDED_FIGURE_RE.match(path.name):
-            continue
-        grouped[path.stem].append(path)
-
-    selected: list[Path] = []
-    for stem in sorted(grouped):
-        candidates = grouped[stem]
-        by_suffix = {path.suffix.lower(): path for path in candidates}
-        static = (
-            by_suffix.get(".pdf")
-            or by_suffix.get(".png")
-            or by_suffix.get(".jpg")
-            or by_suffix.get(".jpeg")
-        )
-        if static is not None and static not in paper_figures:
-            selected.append(static)
-        animation = by_suffix.get(".gif")
-        if animation is not None and animation not in paper_figures:
-            selected.append(animation)
-    return selected
+    return sorted(
+        path
+        for path in figure_root.rglob("*")
+        if path.is_file()
+        and path.suffix.lower() in FIGURE_EXTENSIONS
+        and path not in paper_figures
+    )
 
 
 def include_data_file(path: Path) -> bool:
@@ -131,18 +112,17 @@ def data_paths() -> list[Path]:
 
 
 def plot_script_paths() -> list[Path]:
-    paths = [
+    paths = {
         path
         for path in (ROOT / "scripts").glob("*.py")
         if path.name.startswith(PLOT_SCRIPT_PREFIXES)
-    ]
-    for path in (
-        ROOT / "llm_hpgg_concordia" / "plot_type_recovery_v2.py",
-        ROOT / "llm_hpgg_concordia" / "plot_type_recovery_eps_sensitivity.py",
-    ):
-        if path.exists():
-            paths.append(path)
-    return sorted(set(paths))
+    }
+    search_roots = [ROOT / "scripts", *(path for path in ROOT.glob("llm_*") if path.is_dir())]
+    for search_root in search_roots:
+        for path in search_root.rglob("*.py"):
+            if PLOT_RENDER_RE.search(path.read_text(encoding="utf-8")):
+                paths.add(path)
+    return sorted(paths)
 
 
 def paper_source_paths() -> list[Path]:
@@ -214,8 +194,9 @@ def build_bundle(name: str, force: bool) -> tuple[Path, Path, list[dict[str, obj
     paper_figure_set = set(paper_figures)
     for source in paper_figures:
         copy(source, Path("figures/paper_referenced") / source.name, "paper_referenced_figure")
-    for source in preferred_extended_figures(paper_figure_set):
-        copy(source, Path("figures/extended_results") / source.name, "extended_result_figure")
+    for source in other_canonical_figures(paper_figure_set):
+        relative = source.relative_to(ROOT / "arr_paper" / "figs")
+        copy(source, Path("figures/all_other_canonical") / relative, "other_canonical_figure")
     for source in data_paths():
         copy(source, Path("data") / source.relative_to(ROOT), "data")
     for source in paper_source_paths():
@@ -263,17 +244,17 @@ def build_bundle(name: str, force: bool) -> tuple[Path, Path, list[dict[str, obj
             "## Layout",
             "",
             "- `figures/paper_referenced/`: every figure currently referenced by `arr_paper/main.tex` or `appendix.tex`.",
-            "- `figures/extended_results/`: CourierDispatch, HP-SPGG-COM, scaling, and MaaSSim result families. Static duplicates are removed by preferring PDF; GIF animations are retained.",
+            "- `figures/all_other_canonical/`: every remaining PDF, PNG, and GIF from `arr_paper/figs`; together the two figure directories reproduce the complete canonical figure archive.",
             "- `data/analysis/` and `data/tables/`: current result data and reports. Cache files and temporary replay files are excluded.",
             "- `paper/`: paper source, bibliography/style files, and compiled PDF.",
-            "- `plotting_code/`: plotting, aggregation, analysis, animation, and summarization scripts.",
+            "- `plotting_code/`: every Python file detected as a figure renderer, plus plotting, aggregation, analysis, animation, and summarization helper scripts.",
             "- `provenance/`: project metadata and figure/data provenance documentation.",
             "",
             "## Validation",
             "",
             "`MANIFEST.csv` maps each packaged file back to its repository source. `SHA256SUMS.txt` contains checksums for integrity verification.",
             "",
-            "Third-party checkouts, virtual environments, caches, raw model credentials, and duplicate PNG previews are intentionally excluded.",
+            "Third-party checkouts, virtual environments, caches, and raw model credentials are intentionally excluded.",
         ]
     )
     (package_root / "README.md").write_text("\n".join(readme_lines) + "\n", encoding="utf-8")
