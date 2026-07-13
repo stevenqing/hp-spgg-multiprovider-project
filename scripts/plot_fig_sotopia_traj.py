@@ -133,7 +133,7 @@ def main() -> None:
     mpl.rcParams.update(
         {
             "font.family": "serif",
-            "font.size": 9,
+            "font.size": 13,
             "axes.labelsize": 9.5,
             "axes.titlesize": 10,
             "legend.fontsize": 7.6,

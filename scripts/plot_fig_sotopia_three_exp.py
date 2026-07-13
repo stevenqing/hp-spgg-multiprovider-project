@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
 
-mpl.rcParams.update({"font.family": "serif", "font.size": 11, "pdf.fonttype": 42, "ps.fonttype": 42})
+mpl.rcParams.update({"font.family": "serif", "font.size": 13, "pdf.fonttype": 42, "ps.fonttype": 42})
 
 BASES = ["hpsmg_plus", "atom_tom1", "econ_bne", "llm_belief", "llm_greedy"]
 LABELS = {
