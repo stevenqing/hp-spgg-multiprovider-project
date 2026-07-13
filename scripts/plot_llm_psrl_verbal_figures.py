@@ -84,7 +84,7 @@ def plot_hp_spgg() -> None:
     }
     label = {
         "oracle": "Oracle", "hpsmg_plus": r"PACT$^+$", "hpsmg": "PACT", "map_greedy": "MAP-Type", "joint_psrl": "Joint-PSRL",
-        "llm_psrl_verbal": "LLM-PSRL-verbal", "llm_belief": "LLM-Belief", "econ_bne": "ECON-BNE", "atom_tom0": "A-ToM-0",
+        "llm_psrl_verbal": "LLM-PSRL", "llm_belief": "LLM-Belief", "econ_bne": "ECON-BNE", "atom_tom0": "A-ToM-0",
         "atom_adaptive_hedge": "A-ToM hedge", "psrl_notype": "PSRL-NoType", "random": "Random", "iql": "IQL",
     }
     family = {
@@ -128,7 +128,7 @@ def plot_hp_spgg() -> None:
 
 def plot_sotopia_three_exp() -> None:
     bases = ["hpsmg_plus", "llm_psrl_verbal", "atom_tom1", "econ_bne", "llm_belief", "llm_greedy"]
-    labels = {"hpsmg_plus": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL-verbal", "atom_tom1": "A-ToM-1", "econ_bne": "ECON-BNE", "llm_belief": "llm_belief", "llm_greedy": "llm_greedy"}
+    labels = {"hpsmg_plus": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL", "atom_tom1": "A-ToM-1", "econ_bne": "ECON-BNE", "llm_belief": "llm_belief", "llm_greedy": "llm_greedy"}
     colors = {"hpsmg_plus": "#1f2d5c", "llm_psrl_verbal": "#2e7d32", "atom_tom1": "#d8a04b", "econ_bne": "#a63a3a", "llm_belief": "#7a8aa6", "llm_greedy": "#bdbdbd"}
     scenarios = [("craigslist_bargains", "Craigslist bargains"), ("revenge_plot", "Revenge plot"), ("donate_funds", "Donate funds")]
     buckets: dict[tuple[str, str], list[float]] = defaultdict(list)
@@ -192,7 +192,7 @@ def family_of(code: str) -> str:
 
 def plot_sotopia_appendix() -> None:
     baselines = ["hpsmg_plus", "llm_psrl_verbal", "atom_tom1", "econ_bne", "llm_belief", "llm_greedy"]
-    labels = {"hpsmg_plus": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL-verbal", "atom_tom1": "A-ToM-1", "econ_bne": "ECON-BNE", "llm_belief": "llm_belief", "llm_greedy": "llm_greedy"}
+    labels = {"hpsmg_plus": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL", "atom_tom1": "A-ToM-1", "econ_bne": "ECON-BNE", "llm_belief": "llm_belief", "llm_greedy": "llm_greedy"}
     colors = {"hpsmg_plus": "#1f2d5c", "llm_psrl_verbal": "#2e7d32", "atom_tom1": "#d8a04b", "econ_bne": "#a63a3a", "llm_belief": "#7a8aa6", "llm_greedy": "#bdbdbd"}
     aggregate: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     model_map = {"DeepSeek_V3_2": "deepseek", "gpt_5_4_nano_20260317": "gpt5_nano", "Kimi_K2_6": "kimi_k2", "Llama_4_Maverick_17B_128E_Instruct_FP8": "llama_maverick"}
@@ -238,7 +238,7 @@ def plot_concordia_verbal_summary() -> None:
         "concordia_pub_london_mini": ["oracle_joint", "hpsmg_plus_joint_proxy", "llm_psrl_verbal"],
         "concordia_haggling_fruitville": ["oracle_focal", "oracle_joint", "hpsmg_plus_joint_proxy", "llm_psrl_verbal"],
     }
-    labels = {"oracle_focal": "Oracle focal", "oracle_joint": "Oracle joint", "hpsmg_plus_joint_proxy": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL-verbal"}
+    labels = {"oracle_focal": "Oracle focal", "oracle_joint": "Oracle joint", "hpsmg_plus_joint_proxy": r"PACT$^+$", "llm_psrl_verbal": "LLM-PSRL"}
     colors = {"oracle_focal": "#2f2f2f", "oracle_joint": "#9aa0a6", "hpsmg_plus_joint_proxy": "#1f4e79", "llm_psrl_verbal": "#2e7d32"}
     fig, axes = plt.subplots(1, 2, figsize=(10.5, 3.6))
     for ax, substrate in zip(axes, substrates):
