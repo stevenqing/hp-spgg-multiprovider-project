@@ -21,6 +21,8 @@ Move-Item _archive\external\concordia external\
 
 The result JSONs themselves are unaffected and remain in `analysis/`.
 
+**Concordia structural caveat.** The paper's headline panel uses the compact one-shot evaluators, not the full dialogue simulator. Official gullible/stubborn configs contain fixed supporting-player responses, but the compact Haggling runner does not execute those fields. See [concordia_structural_mapping.md](concordia_structural_mapping.md) for the TI/RL/PF and known-model audit.
+
 ---
 
 ## Common environment

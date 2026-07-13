@@ -166,6 +166,7 @@ def metadata_paths() -> list[Path]:
         "requirements.txt",
         "uv.lock",
         "docs/data_provenance.md",
+        "docs/concordia_structural_mapping.md",
         "docs/file_index.md",
         "llm_courier_dispatch_maassim/RESULTS_REVIEW.md",
         "scripts/package_project_figures_data.py",
