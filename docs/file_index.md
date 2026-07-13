@@ -16,7 +16,7 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `analysis/` | JSON / Markdown summaries consumed by the plot scripts (the "data layer"). |
 | `prompts/` | LLM system prompts used by judge + persona modules. |
 | `config/` | Provider configuration (`providers.yaml`). |
-| `docs/` | This index, data provenance, and structural mapping audits (including the compact-vs-full Concordia distinction). |
+| `docs/` | This index, data provenance, and structural mapping audits for Concordia and SOTOPIA-Hard. |
 | `_archive/` | Files moved out by the sweep (reversible). Not used by any compile path. |
 | `pyproject.toml`, `uv.lock`, `requirements.txt` | Python dependencies (managed via `uv`). |
 | `.gitignore` | Git exclusion list. |

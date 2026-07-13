@@ -23,6 +23,8 @@ The result JSONs themselves are unaffected and remain in `analysis/`.
 
 **Concordia structural caveat.** The paper's headline panel uses the compact one-shot evaluators, not the full dialogue simulator. Official gullible/stubborn configs contain fixed supporting-player responses, but the compact Haggling runner does not execute those fields. See [concordia_structural_mapping.md](concordia_structural_mapping.md) for the TI/RL/PF and known-model audit.
 
+**SOTOPIA structural caveat.** The SOTOPIA adapter is a broad out-of-model transfer, not a PF-only stress test. Cases are curated dyads, reward is a joint-goal LLM evaluator, actions are open text, and the four-class posterior uses keyword log-score increments rather than persona-conditioned next-token likelihoods. See [sotopia_structural_mapping.md](sotopia_structural_mapping.md) for the full assumption and oracle audit.
+
 ---
 
 ## Common environment

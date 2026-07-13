@@ -168,6 +168,7 @@ def metadata_paths() -> list[Path]:
         "docs/data_provenance.md",
         "docs/concordia_structural_mapping.md",
         "docs/file_index.md",
+        "docs/sotopia_structural_mapping.md",
         "llm_courier_dispatch_maassim/RESULTS_REVIEW.md",
         "scripts/package_project_figures_data.py",
     )
