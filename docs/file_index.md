@@ -17,7 +17,7 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `analysis/` | JSON / Markdown summaries consumed by the plot scripts (the "data layer"). |
 | `prompts/` | LLM system prompts used by judge + persona modules. |
 | `config/` | Provider configuration (`providers.yaml`). |
-| `docs/` | This index, data provenance, and structural mapping audits for Concordia and SOTOPIA-Hard. |
+| `docs/` | This index, data provenance, structural mapping audits, and reviewer-response memos. |
 | `_archive/` | Files moved out by the sweep (reversible). Not used by any compile path. |
 | `pyproject.toml`, `uv.lock`, `requirements.txt` | Python dependencies (managed via `uv`). |
 | `.gitignore` | Git exclusion list. |
@@ -34,7 +34,7 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `math_commands.tex` | Shared LaTeX macros. |
 | `ref.bib` | BibTeX database. |
 | `acl.sty`, `acl_natbib.bst` | ACL-style class + bib style. |
-| `main.pdf` | Compiled 34-page PDF. |
+| `main.pdf` | Compiled 37-page PDF. |
 | `main.bbl` | Bib bytecode produced by bibtex (kept so pdflatex can run without bibtex). |
 | `figs/` | All paper-included figures (canonical copies). |
 
@@ -85,6 +85,7 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `plot_fig_sotopia_hard_v2.py` | `arr_paper/figs/fig_sotopia_hard_appendix_v2.{pdf,png}` | `analysis/sotopia_hard_official_*_all70.json` |
 | `compile_arr_paper.ps1` | (helper) | `arr_paper/main.tex` |
 | `package_project_figures_data.py` | `packaged_results/pact_figures_data_20260711.zip` | All 282 canonical figures, all detected renderers, analysis/tables data, paper sources, and provenance metadata. |
+| `run_hp_spgg_deployment_robustness.py` | `analysis/hp_spgg_deployment_robustness.{json,csv,md}` | Zero-call, 500-seed likelihood/calibration/persona/planner robustness sweep used in the main text and appendix. |
 
 Each script can be run with `uv run python scripts\<name>.py` from the repo root.
 

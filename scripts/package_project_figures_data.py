@@ -117,6 +117,9 @@ def plot_script_paths() -> list[Path]:
         for path in (ROOT / "scripts").glob("*.py")
         if path.name.startswith(PLOT_SCRIPT_PREFIXES)
     }
+    robustness_runner = ROOT / "scripts" / "run_hp_spgg_deployment_robustness.py"
+    if robustness_runner.exists():
+        paths.add(robustness_runner)
     search_roots = [ROOT / "scripts", *(path for path in ROOT.glob("llm_*") if path.is_dir())]
     for search_root in search_roots:
         for path in search_root.rglob("*.py"):
@@ -148,6 +151,7 @@ def metadata_paths() -> list[Path]:
         "docs/data_provenance.md",
         "docs/concordia_structural_mapping.md",
         "docs/file_index.md",
+        "docs/reviewer_response_validity_applicability.md",
         "docs/sotopia_structural_mapping.md",
         "llm_courier_dispatch_maassim/RESULTS_REVIEW.md",
         "scripts/package_project_figures_data.py",
