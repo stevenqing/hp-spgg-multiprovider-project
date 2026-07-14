@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 import math
 import os
+import random
 import re
 from typing import Any, Literal
 
@@ -38,8 +40,12 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         agent_profile: AgentProfile | None = None,
         oracle_opponent_posterior: dict[str, float] | None = None,
         strategy_profile: StrategyProfile = "legacy",
+        menu_corruption_p: float = 0.0,
+        menu_corruption_seed: int = 0,
+        menu_corruption_context: str = "",
     ) -> None:
         super().__init__(agent_name=agent_name, agent_profile=agent_profile)
+        self._slot_name = agent_name
         self.baseline = baseline
         self.model_name = model or baseline
         self.model = model
@@ -49,13 +55,25 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         self._opponent_log_posterior = {
             persona.key: math.log(1.0 / len(PERSONAS)) for persona in PERSONAS
         }
-        self._processed_other_message_count = 0
+        self._processed_observation_keys: set[tuple[int, str]] = set()
+        if not 0.0 <= menu_corruption_p <= 1.0:
+            raise ValueError(f"menu_corruption_p must be in [0, 1], got {menu_corruption_p}")
+        self.menu_corruption_p = float(menu_corruption_p)
+        seed_material = f"{menu_corruption_seed}|{menu_corruption_context}|{agent_name}".encode("utf-8")
+        stable_seed = int.from_bytes(hashlib.sha256(seed_material).digest()[:8], "big")
+        self._menu_corruption_rng = random.Random(stable_seed)
+        self.menu_corruption_updates = 0
+        self.menu_corruption_events = 0
+        self.generation_calls = 0
+        self.generation_failures = 0
 
     def act(self, obs: Observation) -> AgentAction:
         return asyncio.run(self.aact(obs))
 
     async def aact(self, obs: Observation) -> AgentAction:
         self.recv_message("Environment", obs)
+        if self.baseline not in {"surrogate_only", "naive_belief", "llm_psrl_verbal", "oracle_joint", "oracle_policy"}:
+            self._update_opponent_posterior_from_observation(obs)
         if obs.available_actions == ["none"]:
             return AgentAction(action_type="none", argument="", to=[])
 
@@ -69,6 +87,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
 
         prompt = self._build_prompt(obs)
         try:
+            self.generation_calls += 1
             reply = await asyncio.to_thread(
                 call_player,
                 "You are a social-interaction agent. Return one valid JSON object only.",
@@ -78,6 +97,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
                 0.0 if self.strategy_profile == "sotopia_tuned" else 0.2,
             )
         except Exception:
+            self.generation_failures += 1
             action_type = "speak" if "speak" in obs.available_actions else obs.available_actions[0]
             return AgentAction(
                 action_type=action_type,
@@ -97,7 +117,6 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         elif self.baseline in {"naive_belief", "llm_psrl_verbal"}:
             opponent_posterior = None
         else:
-            self._update_opponent_posterior_from_inbox()
             opponent_posterior = _posterior_from_log_scores(self._opponent_log_posterior)
         baseline_instruction = {
             "llm_greedy": "Choose the action that best advances your own stated goal while keeping the interaction coherent.",
@@ -172,19 +191,35 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
                 )
         return json.dumps(payload, indent=2)
 
-    def _update_opponent_posterior_from_inbox(self) -> None:
-        other_messages: list[str] = []
-        for speaker, message in self.inbox:
-            if speaker in {"Environment", self.agent_name}:
-                continue
-            other_messages.append(message.to_natural_language())
+    def _update_opponent_posterior_from_observation(self, obs: Observation) -> None:
+        if obs.turn_number <= 0 or not obs.last_turn.strip():
+            return
+        observation_key = (obs.turn_number, obs.last_turn)
+        if observation_key in self._processed_observation_keys:
+            return
+        self._processed_observation_keys.add(observation_key)
 
-        new_messages = other_messages[self._processed_other_message_count :]
-        for text in new_messages:
-            for key, increment in _persona_log_likelihood_increment(text).items():
-                self._opponent_log_posterior[key] += increment
+        speaker_match = re.match(r"^\s*(agent_\d+)\s+", obs.last_turn)
+        if speaker_match is None or speaker_match.group(1) == self._slot_name:
+            return
+        utterance_match = re.search(r"said:\s*\"(.*)\"\s*$", obs.last_turn, flags=re.DOTALL)
+        text = utterance_match.group(1) if utterance_match else obs.last_turn
+        increments = _persona_log_likelihood_increment(text)
+        self.menu_corruption_updates += 1
+        if self.menu_corruption_p > 0.0 and self._menu_corruption_rng.random() < self.menu_corruption_p:
+            keys = list(increments)
+            original_values = [increments[key] for key in keys]
+            permuted_values = list(original_values)
+            self._menu_corruption_rng.shuffle(permuted_values)
+            if permuted_values == original_values and len(permuted_values) > 1:
+                permuted_values = permuted_values[1:] + permuted_values[:1]
+            increments = dict(zip(keys, permuted_values))
+            self.menu_corruption_events += 1
+        for key, increment in increments.items():
+            self._opponent_log_posterior[key] += increment
 
-        self._processed_other_message_count = len(other_messages)
+    def opponent_persona_posterior(self) -> dict[str, float]:
+        return _posterior_from_log_scores(self._opponent_log_posterior)
 
     def _parse_action(self, reply: str, obs: Observation) -> AgentAction:
         try:

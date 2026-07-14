@@ -79,7 +79,15 @@ class CloudGPTEpisodeEvaluator:
         return _normalise_scores(json.loads(_extract_json(reply)), case)
 
 
-async def _run_case_once(case: HardCase, baseline: str, model: str | None, evaluator_model: str | None, turns: int) -> dict[str, Any]:
+async def _run_case_once(
+    case: HardCase,
+    baseline: str,
+    model: str | None,
+    evaluator_model: str | None,
+    turns: int,
+    menu_corruption_p: float = 0.0,
+    menu_corruption_seed: int = 0,
+) -> dict[str, Any]:
     env_profile = make_environment_profile(case)
     agent_profiles = make_agent_profiles(case)
     oracle_for_agent_1: dict[str, float] | None = None
@@ -101,6 +109,9 @@ async def _run_case_once(case: HardCase, baseline: str, model: str | None, evalu
             agent_profile=agent_profiles[0],
             oracle_opponent_posterior=oracle_for_agent_1,
             strategy_profile=os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"),
+            menu_corruption_p=menu_corruption_p,
+            menu_corruption_seed=menu_corruption_seed,
+            menu_corruption_context=case.combo_pk,
         ),
         "agent_2": HPGGSotopiaAgent(
             "agent_2",
@@ -109,6 +120,9 @@ async def _run_case_once(case: HardCase, baseline: str, model: str | None, evalu
             agent_profile=agent_profiles[1],
             oracle_opponent_posterior=oracle_for_agent_2,
             strategy_profile=os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"),
+            menu_corruption_p=menu_corruption_p,
+            menu_corruption_seed=menu_corruption_seed,
+            menu_corruption_context=case.combo_pk,
         ),
     }
     agents = Agents(agent_map)
@@ -119,9 +133,10 @@ async def _run_case_once(case: HardCase, baseline: str, model: str | None, evalu
     transcript: list[dict[str, Any]] = []
     terminated = {agent_name: False for agent_name in env.agents}
     while not all(terminated.values()):
-        actions: dict[str, AgentAction] = {}
-        for agent_name in env.agents:
-            actions[agent_name] = await agents[agent_name].aact(observations[agent_name])
+        action_values = await asyncio.gather(
+            *(agents[agent_name].aact(observations[agent_name]) for agent_name in env.agents)
+        )
+        actions: dict[str, AgentAction] = dict(zip(env.agents, action_values, strict=True))
         transcript.append(
             {
                 "turn": len(transcript),
@@ -144,6 +159,23 @@ async def _run_case_once(case: HardCase, baseline: str, model: str | None, evalu
         "model": model or "",
         "evaluator_model": evaluator_model or "",
         "turns_completed": len(transcript),
+        "menu_corruption_p": menu_corruption_p,
+        "menu_corruption_seed": menu_corruption_seed,
+        "menu_corruption": {
+            agent_name: {
+                "updates": agents[agent_name].menu_corruption_updates,
+                "events": agents[agent_name].menu_corruption_events,
+                "final_opponent_posterior": agents[agent_name].opponent_persona_posterior(),
+            }
+            for agent_name in env.agents
+        },
+        "generation_audit": {
+            agent_name: {
+                "calls": agents[agent_name].generation_calls,
+                "failures": agents[agent_name].generation_failures,
+            }
+            for agent_name in env.agents
+        },
         "transcript": transcript,
         "scores": scores,
         "overall": {
@@ -170,11 +202,26 @@ async def run_case(
     evaluator_model: str | None,
     turns: int,
     best_of_k: int = 1,
+    menu_corruption_p: float = 0.0,
+    menu_corruption_seed: int = 0,
 ) -> dict[str, Any]:
     if best_of_k <= 1:
-        return await _run_case_once(case, baseline, model, evaluator_model, turns)
+        return await _run_case_once(
+            case, baseline, model, evaluator_model, turns, menu_corruption_p, menu_corruption_seed
+        )
     samples = await asyncio.gather(
-        *[_run_case_once(case, baseline, model, evaluator_model, turns) for _ in range(best_of_k)]
+        *[
+            _run_case_once(
+                case,
+                baseline,
+                model,
+                evaluator_model,
+                turns,
+                menu_corruption_p,
+                menu_corruption_seed + sample_index,
+            )
+            for sample_index in range(best_of_k)
+        ]
     )
     best = max(samples, key=_episode_mean_overall)
     best["best_of_k"] = best_of_k
@@ -208,7 +255,18 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
             if case.combo_pk in completed_combo_pks:
                 continue
             print(f"[{index}/{len(cases)}] {case.codename} {case.combo_pk}")
-            episodes.append(await run_case(case, args.baseline, args.model, args.evaluator_model, args.turns, best_of_k))
+            episodes.append(
+                await run_case(
+                    case,
+                    args.baseline,
+                    args.model,
+                    args.evaluator_model,
+                    args.turns,
+                    best_of_k,
+                    args.menu_corruption_p,
+                    args.menu_corruption_seed,
+                )
+            )
             completed_combo_pks.add(case.combo_pk)
             _write_result(out_path, args, episodes, target_case_count=len(cases))
     else:
@@ -233,7 +291,16 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
                 print(f"[worker {worker_id}] [{index}/{len(cases)}] {case.codename} {case.combo_pk}")
                 while True:
                     try:
-                        episode = await run_case(case, args.baseline, args.model, args.evaluator_model, args.turns, best_of_k)
+                        episode = await run_case(
+                            case,
+                            args.baseline,
+                            args.model,
+                            args.evaluator_model,
+                            args.turns,
+                            best_of_k,
+                            args.menu_corruption_p,
+                            args.menu_corruption_seed,
+                        )
                         break
                     except Exception as exc:
                         print(f"[worker {worker_id}] failed {case.combo_pk}: {exc}; retrying same case")
@@ -253,6 +320,8 @@ async def run(args: argparse.Namespace) -> dict[str, Any]:
         "case_indices": [int(item) for item in args.case_indices] if args.case_indices else None,
         "model": args.model or "",
         "evaluator_model": args.evaluator_model or "",
+        "menu_corruption_p": args.menu_corruption_p,
+        "menu_corruption_seed": args.menu_corruption_seed,
         "target_case_count": len(cases),
         "case_count": len(episodes),
         "complete": len(episodes) == len(cases),
@@ -276,6 +345,8 @@ def main() -> None:
     parser.add_argument("--concurrency", type=int, default=1, help="Number of SOTOPIA cases to run concurrently within this process.")
     parser.add_argument("--best-of-k", type=int, default=1, help="For each case, run K independent episodes in parallel and keep the one with the highest mean overall judge score (policy-oracle upper bound).")
     parser.add_argument("--beta", type=float, default=None, help="Exploration beta for hpsmg_plus; beta=0 recovers PACT-style no-bonus prompting.")
+    parser.add_argument("--menu-corruption-p", type=float, default=0.0, help="Per-opponent-utterance probability of randomly permuting the four surrogate score increments.")
+    parser.add_argument("--menu-corruption-seed", type=int, default=0, help="Base seed for deterministic menu-score corruption; mixed with case and agent IDs.")
     parser.add_argument("--retry-sleep", type=float, default=5.0, help="Seconds to wait before retrying a failed concurrent case.")
     parser.add_argument("--limit", type=int, default=1)
     parser.add_argument("--case-indices", nargs="*", help="Optional zero-based SOTOPIA-Hard case indices to run before applying --limit.")
@@ -319,6 +390,8 @@ def _write_result(out_path: Path, args: argparse.Namespace, episodes: list[dict[
         "case_indices": [int(item) for item in args.case_indices] if args.case_indices else None,
         "model": args.model or "",
         "evaluator_model": args.evaluator_model or "",
+        "menu_corruption_p": args.menu_corruption_p,
+        "menu_corruption_seed": args.menu_corruption_seed,
         "target_case_count": target_case_count,
         "case_count": len(episodes),
         "complete": len(episodes) == target_case_count,

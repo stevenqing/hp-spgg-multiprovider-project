@@ -117,9 +117,16 @@ def plot_script_paths() -> list[Path]:
         for path in (ROOT / "scripts").glob("*.py")
         if path.name.startswith(PLOT_SCRIPT_PREFIXES)
     }
-    robustness_runner = ROOT / "scripts" / "run_hp_spgg_deployment_robustness.py"
-    if robustness_runner.exists():
-        paths.add(robustness_runner)
+    for extra_script in (
+        "run_hp_spgg_deployment_robustness.py",
+        "run_aaai27_reviewer_experiments.py",
+        "run_sotopia_menu_corruption_suite.py",
+        "summarize_aaai27_reviewer_experiments.py",
+        "validate_aaai27_reviewer_experiments.py",
+    ):
+        extra_path = ROOT / "scripts" / extra_script
+        if extra_path.exists():
+            paths.add(extra_path)
     search_roots = [ROOT / "scripts", *(path for path in ROOT.glob("llm_*") if path.is_dir())]
     for search_root in search_roots:
         for path in search_root.rglob("*.py"):

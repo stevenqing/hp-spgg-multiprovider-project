@@ -1,6 +1,6 @@
 # SOTOPIA-Hard Structural Mapping Audit
 
-Audit date: 2026-07-13
+Audit date: 2026-07-13; implementation-path recheck: 2026-07-14
 
 ## Bottom line
 
@@ -48,15 +48,18 @@ The private profile and goal therefore affect the agent's action policy. This do
 
 ## The surrogate posterior is not next-token Bayes
 
-For `hpsmg` and `hpsmg_plus`, the implementation starts from a uniform distribution over the four HP-SPGG persona labels and updates log scores using `_persona_log_likelihood_increment()`.
+For `hpsmg` and `hpsmg_plus`, the intended implementation starts from a uniform distribution over the four HP-SPGG persona labels and updates log scores using `_persona_log_likelihood_increment()`.
 
 That function counts hand-selected words and phrases associated with cooperation, conditionality, risk aversion, and selfishness. The increments are added to the log scores and softmax-normalized. It does not call the backbone for persona-conditioned next-token probabilities, and it is not calibrated against the native SOTOPIA profile distribution.
 
+The 2026-07-14 execution audit found an additional implementation issue in the runs underlying the retained headline figures. The adapter attempted to read partner messages from the agent inbox, but SOTOPIA 0.1.5 supplies the previous action through `Observation.last_turn`; profile construction also replaces the slot name (`agent_1`) with the character name. As a result, the historical path recorded zero numeric-posterior updates and the table remained uniform. The E-R3 reviewer experiment corrects this by storing the slot ID, parsing the partner action from `Observation.last_turn`, and recording update/corruption counts per episode. Its corrected reruns must be distinguished from the retained pre-fix figure data.
+
 Therefore:
 
-- the update is a recurrent numeric heuristic and may be described as a pseudo-Bayesian surrogate;
+- the corrected E-R3 update is a recurrent numeric heuristic and may be described as a pseudo-Bayesian surrogate;
 - it should not be described as the closed-form next-token Bayes update used by PACT on HP-SPGG;
-- the plotted dialogue trajectories cannot establish that Bayes' rule caused late-turn improvement.
+- the retained plotted dialogue trajectories cannot establish that recurrent numeric updating caused late-turn improvement because their historical update count was zero;
+- only reruns with nonzero audited update counts may support a menu-corruption sensitivity statement, and even those do not establish native projection accuracy.
 
 ## Oracle semantics
 
@@ -142,7 +145,7 @@ The aggregate all-70 result is the most defensible headline:
 - the profile-derived one-hot reference provides little benefit;
 - best-of-5 judge selection provides much larger gains, showing that open-action search and evaluator variance dominate the retained surrogate-belief effect.
 
-The selected-family and trajectory figures are exploratory diagnostics. They should not be used as a theorem-precondition validation without additional structural and ablation experiments.
+The selected-family and trajectory figures are exploratory diagnostics. The historical trajectory figure additionally predates the `Observation.last_turn` update-path fix and cannot be interpreted as evidence for recurrent posterior revision. It should not be used as a theorem-precondition or mechanism validation; the corrected E-R3 rerun is the relevant sensitivity evidence.
 
 ## Experiments needed for a stronger structural claim
 

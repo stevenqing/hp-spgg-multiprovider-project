@@ -86,6 +86,10 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `compile_arr_paper.ps1` | (helper) | `arr_paper/main.tex` |
 | `package_project_figures_data.py` | `packaged_results/pact_figures_data_20260711.zip` | All 282 canonical figures, all detected renderers, analysis/tables data, paper sources, and provenance metadata. |
 | `run_hp_spgg_deployment_robustness.py` | `analysis/hp_spgg_deployment_robustness.{json,csv,md}` | Zero-call, 500-seed likelihood/calibration/persona/planner robustness sweep used in the main text and appendix. |
+| `run_aaai27_reviewer_experiments.py` | `analysis/aaai27_review/e_r{0,1,2,4}_*.csv` | Zero-/cached-call E-R0/E-R1/E-R2/E-R4 experiment driver for the AAAI-27 review response. |
+| `run_sotopia_menu_corruption_suite.py` | `analysis/aaai27_review/e_r3_menu_corruption.csv` + raw checkpoints | Checkpointed GPT-5.4-nano SOTOPIA menu-corruption sensitivity suite. |
+| `summarize_aaai27_reviewer_experiments.py` | `analysis/aaai27_review/PACT_AAAI27_REVIEWER_EXPERIMENTS.md` | Regenerates the single reviewer-experiment execution report. |
+| `validate_aaai27_reviewer_experiments.py` | validation only | Fails unless all required reviewer CSV grids and the consolidated MD are complete. |
 
 Each script can be run with `uv run python scripts\<name>.py` from the repo root.
 
