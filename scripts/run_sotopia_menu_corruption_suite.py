@@ -12,7 +12,9 @@ from __future__ import annotations
 import argparse
 import asyncio
 import csv
+import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -35,6 +37,7 @@ from llm_hpgg_sotopia.run_sotopia_hard_official import run_case
 OUT_DIR = ROOT / "analysis" / "aaai27_review"
 RAW_DIR = OUT_DIR / "e_r3_raw"
 TARGET_FAMILIES = {"craigslist_bargains", "revenge_plot", "donate_funds"}
+CHECKPOINT_SCHEMA_VERSION = 2
 
 
 def family_of(codename: str) -> str:
@@ -50,6 +53,14 @@ def p_slug(value: float) -> str:
 
 def raw_path(p: float, replicate: int) -> Path:
     return RAW_DIR / f"p{p_slug(p)}_r{replicate}.json"
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def load_raw(path: Path) -> dict[str, Any]:
@@ -71,6 +82,8 @@ def write_raw(
     evaluator_model: str,
     episodes: list[dict[str, Any]],
     failures: list[dict[str, Any]],
+    attempt_history: list[dict[str, Any]],
+    run_signature: dict[str, Any],
     target_count: int,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -80,15 +93,29 @@ def write_raw(
         "replicate": replicate,
         "model": model,
         "evaluator_model": evaluator_model,
+        "checkpoint_schema_version": CHECKPOINT_SCHEMA_VERSION,
+        "run_signature": run_signature,
         "target_count": target_count,
         "case_count": len(episodes),
         "complete": len(episodes) == target_count and not failures,
         "failures": failures,
+        "attempt_history": attempt_history,
         "episodes": episodes,
     }
     temp = path.with_suffix(".tmp")
     temp.write_text(json.dumps(payload, indent=2), encoding="utf-8")
     temp.replace(path)
+
+
+def generation_failure_count(episode: dict[str, Any]) -> int:
+    audit = episode.get("generation_audit", {})
+    if not isinstance(audit, dict) or len(audit) != 2:
+        return 1
+    return sum(
+        int(item.get("failures", 0) or 0)
+        for item in audit.values()
+        if isinstance(item, dict)
+    )
 
 
 async def run_cell(
@@ -102,14 +129,72 @@ async def run_cell(
     concurrency: int,
     base_seed: int,
     retries: int,
+    input_hashes: dict[str, str],
 ) -> None:
     path = raw_path(p, replicate)
     prior = load_raw(path)
-    episodes = list(prior.get("episodes", []))
+    prior_episodes = list(prior.get("episodes", []))
+    target_combo_ids = sorted(case.combo_pk for case in cases)
+    run_signature = {
+        "schema_version": CHECKPOINT_SCHEMA_VERSION,
+        "baseline": "hpsmg_plus",
+        "p": p,
+        "replicate": replicate,
+        "model": model,
+        "evaluator_model": evaluator_model,
+        "turns": turns,
+        "menu_corruption_seed": base_seed + replicate,
+        "strategy_profile": os.getenv("SOTOPIA_AGENT_STRATEGY_PROFILE", "legacy"),
+        "target_combo_ids": target_combo_ids,
+        "input_sha256": input_hashes,
+    }
+    prior_signature = prior.get("run_signature")
+    if prior_signature is not None and prior_signature != run_signature:
+        raise RuntimeError(f"checkpoint signature mismatch for {path}")
+    if prior_signature is None and prior_episodes:
+        legacy_ok = (
+            math.isclose(float(prior.get("p", -1.0)), p, rel_tol=0.0, abs_tol=1e-12)
+            and int(prior.get("replicate", -1)) == replicate
+            and prior.get("model") == model
+            and prior.get("evaluator_model") == evaluator_model
+            and int(prior.get("target_count", -1)) == len(cases)
+            and {str(episode.get("combo_pk", "")) for episode in prior_episodes}.issubset(set(target_combo_ids))
+            and all(
+                episode.get("baseline") == "hpsmg_plus"
+                and episode.get("model") == model
+                and episode.get("evaluator_model") == evaluator_model
+                and episode.get("agent_strategy_profile") == run_signature["strategy_profile"]
+                and math.isclose(float(episode.get("menu_corruption_p", -1.0)), p, rel_tol=0.0, abs_tol=1e-12)
+                and int(episode.get("menu_corruption_seed", -1)) == base_seed + replicate
+                for episode in prior_episodes
+            )
+        )
+        if not legacy_ok:
+            raise RuntimeError(f"legacy checkpoint metadata mismatch for {path}")
+    episodes = [episode for episode in prior_episodes if generation_failure_count(episode) == 0]
+    discarded = len(prior_episodes) - len(episodes)
     failures: list[dict[str, Any]] = []
+    attempt_history = list(prior.get("attempt_history", []))
     completed = {str(episode.get("combo_pk", "")) for episode in episodes}
     pending = [case for case in cases if case.combo_pk not in completed]
-    print(f"cell p={p} replicate={replicate} completed={len(episodes)} pending={len(pending)}", flush=True)
+    print(
+        f"cell p={p} replicate={replicate} completed={len(episodes)} "
+        f"discarded_fallback={discarded} pending={len(pending)}",
+        flush=True,
+    )
+    if discarded:
+        write_raw(
+            path,
+            p=p,
+            replicate=replicate,
+            model=model,
+            evaluator_model=evaluator_model,
+            episodes=episodes,
+            failures=failures,
+            attempt_history=attempt_history,
+            run_signature=run_signature,
+            target_count=len(cases),
+        )
     queue: asyncio.Queue[HardCase | None] = asyncio.Queue()
     for case in pending:
         queue.put_nowait(case)
@@ -125,6 +210,7 @@ async def run_cell(
                 return
             last_error = ""
             episode: dict[str, Any] | None = None
+            case_attempts: list[dict[str, Any]] = []
             for attempt in range(retries + 1):
                 try:
                     episode = await run_case(
@@ -137,9 +223,26 @@ async def run_cell(
                         p,
                         base_seed + replicate,
                     )
+                    generation_failures = generation_failure_count(episode)
+                    if generation_failures:
+                        raise RuntimeError(
+                            f"episode used {generation_failures} agent generation fallback(s)"
+                        )
+                    case_attempts.append(
+                        {"combo_pk": case.combo_pk, "attempt": attempt + 1, "status": "accepted"}
+                    )
                     break
                 except Exception as exc:  # provider/evaluator failures are persisted
+                    episode = None
                     last_error = f"{type(exc).__name__}: {exc}"
+                    case_attempts.append(
+                        {
+                            "combo_pk": case.combo_pk,
+                            "attempt": attempt + 1,
+                            "status": "rejected",
+                            "error": last_error,
+                        }
+                    )
                     print(
                         f"worker={worker_id} p={p} r={replicate} case={case.combo_pk} "
                         f"attempt={attempt + 1}/{retries + 1} error={last_error[:240]}",
@@ -148,6 +251,7 @@ async def run_cell(
                     if attempt < retries:
                         await asyncio.sleep(min(2 ** attempt, 8))
             async with lock:
+                attempt_history.extend(case_attempts)
                 if episode is not None and case.combo_pk not in completed:
                     episode["replicate"] = replicate
                     episode["episode_id"] = f"{case.combo_pk}_r{replicate}"
@@ -174,6 +278,8 @@ async def run_cell(
                     evaluator_model=evaluator_model,
                     episodes=episodes,
                     failures=failures,
+                    attempt_history=attempt_history,
+                    run_signature=run_signature,
                     target_count=len(cases),
                 )
 
@@ -187,6 +293,8 @@ async def run_cell(
         evaluator_model=evaluator_model,
         episodes=episodes,
         failures=failures,
+        attempt_history=attempt_history,
+        run_signature=run_signature,
         target_count=len(cases),
     )
 
@@ -232,11 +340,19 @@ def aggregate_csv(p_values: list[float], replicates: int) -> Path:
 
 
 async def async_main(args: argparse.Namespace) -> None:
+    benchmark_path = Path(args.benchmark_agents).resolve()
+    episodes_path = Path(args.episodes_jsonl).resolve()
+    cache_path = Path(args.cache).resolve()
     cases = load_hard_cases(
-        Path(args.benchmark_agents),
-        Path(args.episodes_jsonl),
-        Path(args.cache),
+        benchmark_path,
+        episodes_path,
+        cache_path,
     )
+    input_hashes = {
+        "benchmark_agents.json": sha256_file(benchmark_path),
+        "sotopia_episodes_v1_hf.jsonl": sha256_file(episodes_path),
+        "sotopia_hard_cases_cache.json": sha256_file(cache_path),
+    }
     target_cases = [case for case in cases if family_of(case.codename) in TARGET_FAMILIES]
     if len(target_cases) != 30:
         raise RuntimeError(f"Expected 30 target cases, found {len(target_cases)}")
@@ -257,6 +373,7 @@ async def async_main(args: argparse.Namespace) -> None:
                 concurrency=args.concurrency,
                 base_seed=args.seed,
                 retries=args.retries,
+                input_hashes=input_hashes,
             )
             aggregate_csv(p_values, args.replicates)
     output = aggregate_csv(p_values, args.replicates)

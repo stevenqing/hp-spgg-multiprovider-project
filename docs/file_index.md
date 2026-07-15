@@ -90,6 +90,7 @@ This index lists every file/folder kept in the repo after the May 2026 sweep, wi
 | `run_sotopia_menu_corruption_suite.py` | `analysis/aaai27_review/e_r3_menu_corruption.csv` + raw checkpoints | Checkpointed GPT-5.4-nano SOTOPIA menu-corruption sensitivity suite. |
 | `summarize_aaai27_reviewer_experiments.py` | `analysis/aaai27_review/PACT_AAAI27_REVIEWER_EXPERIMENTS.md` | Regenerates the single reviewer-experiment execution report. |
 | `validate_aaai27_reviewer_experiments.py` | validation only | Fails unless all required reviewer CSV grids and the consolidated MD are complete. |
+| `package_aaai27_reviewer_experiments.py` | `packaged_results/pact_aaai27_reviewer_experiments_20260714.zip` | Reviewer-only data/raw-checkpoint/reproduction bundle with manifest and SHA-256 sums; mutable provider caches are excluded. |
 
 Each script can be run with `uv run python scripts\<name>.py` from the repo root.
 

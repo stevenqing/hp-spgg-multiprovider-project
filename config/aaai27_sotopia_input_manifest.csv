@@ -1,0 +1,4 @@
+name,relative_path,bytes,sha256,url
+benchmark_agents.json,external/sotopia_data_probe/benchmark_agents.json,15472,341cc03ec8e02a890beedb2d20f85e8a134d9f2a62a9198054965c2651c55f13,https://huggingface.co/datasets/cmu-lti/sotopia/resolve/main/benchmark_agents.json
+sotopia_episodes_v1_hf.jsonl,external/sotopia_data_probe/sotopia_episodes_v1_hf.jsonl,180178928,3a282406c85f5d3c2b6a955c15e758573ef1b7d2a219d50cde29a9b7976611b7,https://huggingface.co/datasets/cmu-lti/sotopia/resolve/main/sotopia_episodes_v1_hf.jsonl
+sotopia_hard_cases_cache.json,external/sotopia_data_probe/sotopia_hard_cases_cache.json,130347,17b08ac995a8c3d8e126ff8525c358743f75550d32622982175a230575e2e482,generated from the two public inputs by llm_hpgg_sotopia.official_hard_data

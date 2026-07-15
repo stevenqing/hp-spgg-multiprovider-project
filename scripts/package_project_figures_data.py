@@ -123,6 +123,7 @@ def plot_script_paths() -> list[Path]:
         "run_sotopia_menu_corruption_suite.py",
         "summarize_aaai27_reviewer_experiments.py",
         "validate_aaai27_reviewer_experiments.py",
+        "package_aaai27_reviewer_experiments.py",
     ):
         extra_path = ROOT / "scripts" / extra_script
         if extra_path.exists():
@@ -155,6 +156,8 @@ def metadata_paths() -> list[Path]:
         "pyproject.toml",
         "requirements.txt",
         "uv.lock",
+        "config/aaai27_sotopia_historical_comparators.csv",
+        "config/aaai27_sotopia_input_manifest.csv",
         "docs/data_provenance.md",
         "docs/concordia_structural_mapping.md",
         "docs/file_index.md",
