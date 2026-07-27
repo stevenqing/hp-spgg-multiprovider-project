@@ -262,7 +262,7 @@ Full smaller A-ToM smoke table: [../analysis/courier_dispatch_maassim/maassim_ll
 
 LLM readout: the legal-assignment menu prompt reaches `1.000` parse rate with `0.000` repair and fallback rates across LLM-PACT, LLM-belief, LLM-PSRL, A-ToM, and ECON-BNE. Under persona stress, LLM-PACT is higher than every pure LLM prompt baseline: `18.37` vs `13.77` for LLM-PSRL, `13.47` for LLM-belief, and `12.48-12.77` for A-ToM/ECON-BNE. This is the fair LLM-vs-LLM comparison; PACT itself remains a mechanism/reference policy.
 
-Scenario-suite readout: the LLM-PACT advantage grows as the environment makes persona mistakes more consequential. The utility gap over the best pure prompt baseline is `+1.47` in the normal replay, `+4.60` under reject-cost stress, and `+39.69` under conflict-offer stress, where low-wait offers are made persona-risky.
+Scenario-suite readout: with driver-reject penalty fixed at `5.0`, the LLM-PACT advantage grows as conflict strength increases: `+4.60` at `lambda=0`, `+31.75` at `lambda=0.5`, and `+39.69` at `lambda=1`. The middle point is a measured replay, not an interpolation of outcomes.
 
 ## Visualizations
 
@@ -284,7 +284,7 @@ Two smoke visualizations are generated from the controlled synthetic run:
 | [../figs/fig_maassim_llm_atom_baselines_s2_m12.png](../figs/fig_maassim_llm_atom_baselines_s2_m12.png) | CloudGPT LLM-scored vs A-ToM and ECON-BNE common-state smoke |
 | [../figs/fig_maassim_llm_atom_core_s5_m20.png](../figs/fig_maassim_llm_atom_core_s5_m20.png) | Scaled CloudGPT LLM+PACT-score vs A-ToM and ECON-BNE core comparison |
 | [../figs/fig_maassim_llm_prompt_stress_s5_m20.png](../figs/fig_maassim_llm_prompt_stress_s5_m20.png) | Persona-stress LLM-PACT vs LLM-belief, LLM-PSRL, A-ToM, and ECON-BNE comparison |
-| [../figs/fig_maassim_llm_scenario_suite.png](../figs/fig_maassim_llm_scenario_suite.png) | Scenario suite showing LLM-PACT gap growth from normal to reject-stress to conflict-offer environments |
+| [../figs/fig_maassim_llm_scenario_suite.png](../figs/fig_maassim_llm_scenario_suite.png) | Conflict-strength sweep showing LLM-PACT gap growth at `lambda={0,0.5,1}` with fixed rejection penalty |
 | [../figs/fig_maassim_llm_prompt_stress_comparison.gif](../figs/fig_maassim_llm_prompt_stress_comparison.gif) | Animated persona-stress LLM-PACT vs prompt-baseline comparison for README/GitHub presentation |
 | [../figs/fig_maassim_fig5_policy_trace_comparison.gif](../figs/fig_maassim_fig5_policy_trace_comparison.gif) | Focused Fig5-style route trace window where LLM-PACT has fewer rejected pickup attempts than LLM-PSRL, A-ToM-1, and ECON-BNE |
 | [../figs/fig_maassim_conflict_people_cars_llm_pact_vs_prompts.gif](../figs/fig_maassim_conflict_people_cars_llm_pact_vs_prompts.gif) | Conflict-offer full-episode people-and-cars replay in the MaaSSim README style: LLM-PACT vs LLM-PSRL, A-ToM-1, and ECON-BNE |

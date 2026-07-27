@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import os
 from pathlib import Path
 import numpy as np
@@ -15,7 +16,7 @@ from .decentralized import (
     update_decentralized,
 )
 from .environment import load_calibration, rewards_for_types, welfare_for_types
-from .verbal_belief import make_initial_belief, sample_personas_verbal, update_belief_verbal
+from .verbal_belief import load_response_cache, make_initial_belief, sample_personas_verbal, save_response_cache, update_belief_verbal
 
 
 def action_value_lookup(action_profiles: np.ndarray) -> tuple[np.ndarray, dict[tuple[float, ...], int]]:
@@ -102,6 +103,8 @@ def run_seed(
     joint_prior_alpha: float | None = None,
     true_type_mode: str = "iid",
     verbal_model: str | None = None,
+    verbal_cache: dict[str, str] | None = None,
+    verbal_cache_path: Path | None = None,
 ) -> tuple[np.ndarray, np.ndarray, np.ndarray | None, np.ndarray, dict[str, int]]:
     algorithm = algorithm.lower()
     rng = np.random.default_rng(seed)
@@ -161,6 +164,8 @@ def run_seed(
                 rng=rng,
                 type_count=type_count,
                 log_callback=print,
+                response_cache=verbal_cache,
+                cache_path=verbal_cache_path,
             )
             verbal_stats["sample_ok" if sample_ok else "sample_fallback"] += 1
             chosen = int(np.argmax(expected_profile_scores(state, sampled_types, uncertainty_bonus=False)))
@@ -192,7 +197,7 @@ def run_seed(
                 independent_iql_q[player_index, action_index] += iql_alpha * (observed_rewards[player_index] - independent_iql_q[player_index, action_index])
         elif algorithm != "oracle" and algorithm != "llm_psrl_verbal":
             update_posterior(state, chosen, observed_rewards)
-        if algorithm == "llm_psrl_verbal":
+        if algorithm == "llm_psrl_verbal" and round_index + 1 < k_rounds:
             assert state.belief_text is not None
             state.belief_text, update_ok = update_belief_verbal(
                 belief_text=state.belief_text,
@@ -201,6 +206,8 @@ def run_seed(
                 n=n,
                 model=str(verbal_model),
                 log_callback=print,
+                response_cache=verbal_cache,
+                cache_path=verbal_cache_path,
             )
             verbal_stats["update_ok" if update_ok else "update_failed"] += 1
         if is_decentralized and algorithm != "decent_oracle":
@@ -234,6 +241,8 @@ def main() -> None:
     parser.add_argument("--judge-model")
     parser.add_argument("--verbal-model", type=str, default=None,
                         help="Backbone model identifier for llm_psrl_verbal; falls back to LLM_PSRL_VERBAL_MODEL.")
+    parser.add_argument("--verbal-cache", type=Path, default=None,
+                        help="Persistent JSON response cache for llm_psrl_verbal.")
     parser.add_argument("--record-posterior", action="store_true", help="Save posterior_history and true_types arrays in the NPZ output.")
     parser.add_argument("--prior-mode", choices=["uniform", "correct", "adversarial", "joint_dirichlet", "shared_type"], default="uniform")
     parser.add_argument("--prior-mass", type=float, default=0.7)
@@ -242,9 +251,11 @@ def main() -> None:
     parser.add_argument("--true-type-mode", choices=["iid", "shared_type"], default="iid")
     parser.add_argument("--matched-seeds", action="store_true", help="Use the same random seeds across algorithms.")
     parser.add_argument("--seed-offset", type=int, default=0)
+    parser.add_argument("--seed-workers", type=int, default=1, help="Independent seed trajectories run concurrently.")
     args = parser.parse_args()
     if args.verbal_model:
         os.environ["LLM_PSRL_VERBAL_MODEL"] = args.verbal_model
+    verbal_cache = load_response_cache(args.verbal_cache)
 
     calibration = load_calibration(args.calibration)
     reward_tensor = np.asarray(calibration["reward_tensor"], dtype=float)
@@ -265,7 +276,7 @@ def main() -> None:
     for algo_index, algorithm in enumerate(args.algos):
         action_values, _ = action_value_lookup(action_profiles)
         storage[algo_index] = profile_count_for_storage(algorithm, n, type_count, len(action_profiles), len(action_values))
-        for seed_index in range(args.seeds):
+        def run_one_seed(seed_index: int) -> tuple[int, np.ndarray, np.ndarray, np.ndarray | None, np.ndarray, dict[str, int]]:
             seed = args.seed_offset + seed_index if args.matched_seeds else args.seed_offset + 10_000 * algo_index + seed_index
             seed_regrets, seed_welfare, seed_posterior, seed_true_types, seed_verbal_stats = run_seed(
                 algorithm,
@@ -280,7 +291,14 @@ def main() -> None:
                 joint_prior_alpha=args.joint_prior_alpha,
                 true_type_mode=args.true_type_mode,
                 verbal_model=args.verbal_model,
+                verbal_cache=verbal_cache,
+                verbal_cache_path=args.verbal_cache,
             )
+            return seed_index, seed_regrets, seed_welfare, seed_posterior, seed_true_types, seed_verbal_stats
+
+        with ThreadPoolExecutor(max_workers=max(1, args.seed_workers)) as executor:
+            seed_results = list(executor.map(run_one_seed, range(args.seeds)))
+        for seed_index, seed_regrets, seed_welfare, seed_posterior, seed_true_types, seed_verbal_stats in seed_results:
             regrets[algo_index, seed_index] = seed_regrets
             welfare[algo_index, seed_index] = seed_welfare
             if posterior_history is not None and true_types is not None and seed_posterior is not None:
@@ -290,6 +308,8 @@ def main() -> None:
             verbal_sample_fallback[algo_index, seed_index] = seed_verbal_stats.get("sample_fallback", 0)
             verbal_update_ok[algo_index, seed_index] = seed_verbal_stats.get("update_ok", 0)
             verbal_update_failed[algo_index, seed_index] = seed_verbal_stats.get("update_failed", 0)
+    if args.verbal_cache is not None:
+        save_response_cache(args.verbal_cache, verbal_cache)
 
     cumulative_regret = np.cumsum(regrets, axis=2)
     output_path = Path(args.out)
@@ -313,6 +333,10 @@ def main() -> None:
         "player_model": args.player_model or "",
         "judge_model": args.judge_model or "",
         "verbal_model": args.verbal_model or os.environ.get("LLM_PSRL_VERBAL_MODEL", ""),
+        "verbal_cache": str(args.verbal_cache) if args.verbal_cache else "",
+        "verbal_cache_entries": len(verbal_cache),
+        "initial_state_id": "fixed_hp_spgg_initial_state",
+        "seed_workers": int(args.seed_workers),
         "verbal_sample_ok": verbal_sample_ok,
         "verbal_sample_fallback": verbal_sample_fallback,
         "verbal_update_ok": verbal_update_ok,

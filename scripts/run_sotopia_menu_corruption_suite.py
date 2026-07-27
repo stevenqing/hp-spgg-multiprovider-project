@@ -18,6 +18,8 @@ import math
 import os
 import re
 import sys
+import time
+import uuid
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Any
@@ -51,8 +53,9 @@ def p_slug(value: float) -> str:
     return str(value).replace(".", "p")
 
 
-def raw_path(p: float, replicate: int) -> Path:
-    return RAW_DIR / f"p{p_slug(p)}_r{replicate}.json"
+def raw_path(p: float, replicate: int, baseline: str = "hpsmg_plus") -> Path:
+    prefix = "" if baseline == "hpsmg_plus" else f"component_{baseline}_"
+    return RAW_DIR / f"{prefix}p{p_slug(p)}_r{replicate}.json"
 
 
 def sha256_file(path: Path) -> str:
@@ -78,6 +81,7 @@ def write_raw(
     *,
     p: float,
     replicate: int,
+    baseline: str,
     model: str,
     evaluator_model: str,
     episodes: list[dict[str, Any]],
@@ -88,7 +92,8 @@ def write_raw(
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
-        "experiment": "AAAI27 E-R3 SOTOPIA intent-menu corruption",
+        "experiment": "AAAI27 E-C SOTOPIA corrected tracker/component suite",
+        "baseline": baseline,
         "p": p,
         "replicate": replicate,
         "model": model,
@@ -102,9 +107,19 @@ def write_raw(
         "attempt_history": attempt_history,
         "episodes": episodes,
     }
-    temp = path.with_suffix(".tmp")
+    temp = path.with_suffix(f"{path.suffix}.{uuid.uuid4().hex}.tmp")
     temp.write_text(json.dumps(payload, indent=2), encoding="utf-8")
-    temp.replace(path)
+    try:
+        for attempt in range(5):
+            try:
+                temp.replace(path)
+                break
+            except PermissionError:
+                if attempt == 4:
+                    raise
+                time.sleep(0.05 * (attempt + 1))
+    finally:
+        temp.unlink(missing_ok=True)
 
 
 def generation_failure_count(episode: dict[str, Any]) -> int:
@@ -123,6 +138,7 @@ async def run_cell(
     *,
     p: float,
     replicate: int,
+    baseline: str,
     model: str,
     evaluator_model: str,
     turns: int,
@@ -131,13 +147,13 @@ async def run_cell(
     retries: int,
     input_hashes: dict[str, str],
 ) -> None:
-    path = raw_path(p, replicate)
+    path = raw_path(p, replicate, baseline)
     prior = load_raw(path)
     prior_episodes = list(prior.get("episodes", []))
     target_combo_ids = sorted(case.combo_pk for case in cases)
     run_signature = {
         "schema_version": CHECKPOINT_SCHEMA_VERSION,
-        "baseline": "hpsmg_plus",
+        "baseline": baseline,
         "p": p,
         "replicate": replicate,
         "model": model,
@@ -160,7 +176,7 @@ async def run_cell(
             and int(prior.get("target_count", -1)) == len(cases)
             and {str(episode.get("combo_pk", "")) for episode in prior_episodes}.issubset(set(target_combo_ids))
             and all(
-                episode.get("baseline") == "hpsmg_plus"
+                episode.get("baseline") == baseline
                 and episode.get("model") == model
                 and episode.get("evaluator_model") == evaluator_model
                 and episode.get("agent_strategy_profile") == run_signature["strategy_profile"]
@@ -187,6 +203,7 @@ async def run_cell(
             path,
             p=p,
             replicate=replicate,
+            baseline=baseline,
             model=model,
             evaluator_model=evaluator_model,
             episodes=episodes,
@@ -215,7 +232,7 @@ async def run_cell(
                 try:
                     episode = await run_case(
                         case,
-                        "hpsmg_plus",
+                        baseline,
                         model,
                         evaluator_model,
                         turns,
@@ -274,6 +291,7 @@ async def run_cell(
                     path,
                     p=p,
                     replicate=replicate,
+                    baseline=baseline,
                     model=model,
                     evaluator_model=evaluator_model,
                     episodes=episodes,
@@ -289,6 +307,7 @@ async def run_cell(
         path,
         p=p,
         replicate=replicate,
+        baseline=baseline,
         model=model,
         evaluator_model=evaluator_model,
         episodes=episodes,
@@ -299,11 +318,11 @@ async def run_cell(
     )
 
 
-def aggregate_csv(p_values: list[float], replicates: int) -> Path:
+def aggregate_csv(p_values: list[float], replicates: int, baseline: str = "hpsmg_plus") -> Path:
     rows: list[dict[str, Any]] = []
     for p in p_values:
         for replicate in range(replicates):
-            data = load_raw(raw_path(p, replicate))
+            data = load_raw(raw_path(p, replicate, baseline))
             for episode in data.get("episodes", []):
                 overall = episode.get("overall", {}) or {}
                 scores = [
@@ -315,6 +334,7 @@ def aggregate_csv(p_values: list[float], replicates: int) -> Path:
                 generation = episode.get("generation_audit", {}) or {}
                 rows.append(
                     {
+                        "baseline": baseline,
                         "family": family_of(str(episode.get("codename", ""))),
                         "p": p,
                         "episode_id": episode.get("episode_id", f"{episode.get('combo_pk', '')}_r{replicate}"),
@@ -330,7 +350,11 @@ def aggregate_csv(p_values: list[float], replicates: int) -> Path:
                     }
                 )
     rows.sort(key=lambda row: (float(row["p"]), str(row["family"]), str(row["episode_id"])))
-    path = OUT_DIR / "e_r3_menu_corruption.csv"
+    path = OUT_DIR / (
+        "e_r3_menu_corruption.csv"
+        if baseline == "hpsmg_plus"
+        else f"e_c_component_{baseline}.csv"
+    )
     if rows:
         with path.open("w", newline="", encoding="utf-8") as handle:
             writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
@@ -367,6 +391,7 @@ async def async_main(args: argparse.Namespace) -> None:
                 target_cases,
                 p=p,
                 replicate=replicate,
+                baseline=args.baseline,
                 model=args.model,
                 evaluator_model=args.evaluator_model,
                 turns=args.turns,
@@ -375,14 +400,15 @@ async def async_main(args: argparse.Namespace) -> None:
                 retries=args.retries,
                 input_hashes=input_hashes,
             )
-            aggregate_csv(p_values, args.replicates)
-    output = aggregate_csv(p_values, args.replicates)
+            aggregate_csv(p_values, args.replicates, args.baseline)
+    output = aggregate_csv(p_values, args.replicates, args.baseline)
     print(f"saved={output}", flush=True)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--p-values", default="0,0.1,0.2,0.3")
+    parser.add_argument("--baseline", default="hpsmg_plus", choices=["hpsmg_plus", "surrogate_only", "naive_belief"])
     parser.add_argument("--replicates", type=int, default=4)
     parser.add_argument("--model", default="gpt-5.4-nano-20260317")
     parser.add_argument("--evaluator-model", default="gpt-5.4-nano-20260317")

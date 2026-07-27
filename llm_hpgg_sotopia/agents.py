@@ -64,6 +64,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         self._menu_corruption_rng = random.Random(stable_seed)
         self.menu_corruption_updates = 0
         self.menu_corruption_events = 0
+        self.posterior_history: list[dict[str, Any]] = []
         self.generation_calls = 0
         self.generation_failures = 0
 
@@ -206,6 +207,7 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
         text = utterance_match.group(1) if utterance_match else obs.last_turn
         increments = _persona_log_likelihood_increment(text)
         self.menu_corruption_updates += 1
+        corrupted = False
         if self.menu_corruption_p > 0.0 and self._menu_corruption_rng.random() < self.menu_corruption_p:
             keys = list(increments)
             original_values = [increments[key] for key in keys]
@@ -215,8 +217,17 @@ class HPGGSotopiaAgent(BaseAgent[Observation, AgentAction]):
                 permuted_values = permuted_values[1:] + permuted_values[:1]
             increments = dict(zip(keys, permuted_values))
             self.menu_corruption_events += 1
+            corrupted = True
         for key, increment in increments.items():
             self._opponent_log_posterior[key] += increment
+        self.posterior_history.append(
+            {
+                "turn": int(obs.turn_number),
+                "evidence": text,
+                "posterior": self.opponent_persona_posterior(),
+                "corrupted": corrupted,
+            }
+        )
 
     def opponent_persona_posterior(self) -> dict[str, float]:
         return _posterior_from_log_scores(self._opponent_log_posterior)

@@ -15,21 +15,21 @@ FIG_DIRS = [ROOT / "figs", ROOT / "arr_paper" / "figs"]
 
 SCENARIOS = [
     {
-        "scenario_id": "normal_p2",
-        "label": "Normal",
-        "description": "Original common-state replay, driver reject penalty 2.0",
-        "files": ["maassim_llm_scenario_normal_p2_noecon_s5_m20.csv", "maassim_llm_scenario_normal_p2_econ_s5_m20.csv"],
-    },
-    {
         "scenario_id": "stress_p5",
         "label": "Reject-stress",
-        "description": "Original common-state replay, driver reject penalty 5.0",
+        "description": "Driver reject penalty 5.0; conflict strength lambda=0",
         "files": ["maassim_llm_prompt_stress_s5_m20.csv"],
     },
     {
+        "scenario_id": "conflict_mid_p5",
+        "label": "Mid-conflict",
+        "description": "Driver reject penalty 5.0; conflict strength lambda=0.5",
+        "files": ["maassim_llm_scenario_conflict_mid_s5_m20.csv"],
+    },
+    {
         "scenario_id": "conflict_p5",
-        "label": "Conflict-offer",
-        "description": "Low-wait offers are made persona-risky; driver reject penalty 5.0",
+        "label": "Full-conflict",
+        "description": "Driver reject penalty 5.0; conflict strength lambda=1",
         "files": ["maassim_llm_scenario_conflict_noecon_s5_m20.csv", "maassim_llm_scenario_conflict_econ_s5_m20.csv"],
     },
 ]
@@ -47,13 +47,28 @@ POLICY_LABELS = {
 PURE_PROMPT = ["llm_belief", "llm_psrl", "atom_tom1", "econ_bne"]
 
 
-def read_scenario(files: list[str]) -> dict[str, dict[str, str]]:
+def read_scenario(files: list[str], scenario_id: str) -> dict[str, dict[str, str]]:
     rows: dict[str, dict[str, str]] = {}
     for file_name in files:
         path = ANALYSIS / file_name
+        if not path.exists():
+            continue
         with path.open(newline="", encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
                 rows[str(row["policy"])] = row
+    if rows:
+        return rows
+    retained = ANALYSIS / "maassim_llm_scenario_suite_detail.csv"
+    with retained.open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            if row.get("scenario_id") != scenario_id:
+                continue
+            normalized = dict(row)
+            normalized["realized_utility"] = row["utility"]
+            normalized["realized_utility_sem"] = row["utility_sem"]
+            rows[str(row["policy"])] = normalized
+    if not rows:
+        raise FileNotFoundError(f"no source rows for scenario {scenario_id}: {files}")
     return rows
 
 
@@ -75,7 +90,7 @@ def summarize() -> tuple[list[dict[str, object]], list[dict[str, object]]]:
     summary_rows = []
     detail_rows = []
     for spec in SCENARIOS:
-        rows = read_scenario(spec["files"])
+        rows = read_scenario(spec["files"], str(spec["scenario_id"]))
         for policy, row in rows.items():
             detail_rows.append(
                 {
@@ -125,7 +140,7 @@ def write_md(summary_rows: list[dict[str, object]], detail_rows: list[dict[str, 
     lines = [
         "# MaaSSim LLM Scenario Suite",
         "",
-        "This suite implements the first three environment-design knobs: normal replay, reject-penalty stress, and conflict-offer stress. The comparison is LLM-PACT against pure LLM prompt baselines under the same legal-action interface.",
+        "This suite holds the rejection penalty fixed at 5.0 and varies conflict strength lambda in {0, 0.5, 1}. The comparison is LLM-PACT against pure LLM prompt baselines under the same legal-action interface.",
         "",
         "| Scenario | LLM-PACT utility | Best prompt baseline | Prompt utility | Utility gap | Driver reject gap | Oracle utility |",
         "|---|---:|---|---:|---:|---:|---:|",
@@ -147,7 +162,7 @@ def write_md(summary_rows: list[dict[str, object]], detail_rows: list[dict[str, 
     lines.extend(
         [
             "",
-            "Readout: the LLM-PACT advantage grows as the environment makes persona mistakes more consequential. The gap is small in the normal setting, larger under rejection-cost stress, and largest when low-wait offers are made persona-risky.",
+            "Readout: the LLM-PACT advantage grows as conflict strength makes low-wait offers increasingly persona-risky.",
             "",
             "## Detail Rows",
             "",

@@ -54,6 +54,18 @@ PUB_METHODS = ["random", "atom_tom1_mech", "atom_tom2_mech", "econ_bne_mech",
 HAG_METHODS = ["random", "atom_tom1_mech", "atom_tom2_mech", "econ_bne_mech",
                "llm_psrl_verbal", "hpsmg_plus_joint_proxy", "oracle_focal"]
 
+TRUE_HAG_ORACLE_FOCAL = {
+    ("haggling", "fruitville"): 7.822222222222222,
+    ("haggling", "fruitville_gullible"): 13.4,
+    ("haggling", "vegbrooke"): 1.9833333333333334,
+    ("haggling", "vegbrooke_stubborn"): 9.266666666666667,
+    ("haggling", "vegbrooke_strange_game"): 0.0,
+    ("haggling_multi_item", "fruitville_multi"): 4.4,
+    ("haggling_multi_item", "fruitville_gullible"): 14.6,
+    ("haggling_multi_item", "vegbrooke"): 4.55,
+    ("haggling_multi_item", "cumulative_score"): 12.0,
+}
+
 # Per-method style. Oracle is dashed; ours is bold blue with fill; others thin.
 STYLE = {
     "random":               {"color": "#6a9a3a", "lw": 1.3, "ls": (0, (1, 1.5)), "label": "Random",          "alpha": 0.9, "fill": False},
@@ -110,13 +122,23 @@ def collect_pub() -> list[tuple[str, dict]]:
         ("london_closures_s30", "london\nclosures"),
         ("london_mini_s30", "london mini\n(s=30)"),
     ]
+    legacy_tags = {
+        "capetown_s100": "capetown_mechanistic_joint_s100",
+        "capetown_s30": "capetown_mechanistic_joint_s30",
+        "edinburgh_s30": "edinburgh_mechanistic_joint_s30",
+        "edinburgh_closures_s30": "edinburgh_closures_mechanistic_joint_s30",
+        "edinburgh_tough_friendship_s30": "edinburgh_tough_friendship_mechanistic_joint_s30",
+        "london_s30": "london_mechanistic_joint_s30",
+        "london_closures_s30": "london_closures_mechanistic_joint_s30",
+        "london_mini_s30": "london_mini_mechanistic_joint_s30",
+    }
     items: list[tuple[str, dict]] = []
     for key, label in order:
         # match keys that contain the prefix (configs may vary in tag)
         match = None
         for k, v in runs.items():
             tag = v["path"].replace("\\", "/").split("/")[-1]
-            if key in tag:
+            if key in tag or legacy_tags[key] in tag:
                 match = v
                 break
         if match is not None:
@@ -163,13 +185,26 @@ def collect_hag() -> list[tuple[str, dict]]:
         if key in runs_single:
             summary = dict(runs_single[key]["summary"])
             maybe_add_verbal_summary(summary, "haggling", key)
+            maybe_add_hag_oracle_focal(summary, "haggling", key)
             items.append((label, summary))
     for key, label in order_multi:
         if key in runs_multi:
             summary = dict(runs_multi[key]["summary"])
             maybe_add_verbal_summary(summary, "haggling_multi_item", key)
+            maybe_add_hag_oracle_focal(summary, "haggling_multi_item", key)
             items.append((label, summary))
     return items
+
+
+def maybe_add_hag_oracle_focal(summary: dict, domain: str, config_key: str) -> None:
+    value = TRUE_HAG_ORACLE_FOCAL.get((domain, config_key))
+    if value is None:
+        return
+    summary["oracle_focal"] = {
+        "method": "oracle_focal",
+        "episodes": 30,
+        "focal_score_mean": value,
+    }
 
 
 def maybe_add_verbal_summary(summary: dict, domain: str, config_key: str) -> None:
@@ -204,14 +239,14 @@ def per_axis_norm(values: list[float]) -> list[float]:
     return [((v - lo) / span) if (v is not None and not np.isnan(v)) else 0.0 for v in values]
 
 
-def gather_metric(axes_data: list[tuple[str, dict]], methods: list[str], metric: str) -> tuple[list[str], np.ndarray]:
+def gather_metric(axes_data: list[tuple[str, dict]], methods: list[str], metric: str, *, pub_oracle_fallback: bool = False) -> tuple[list[str], np.ndarray]:
     """Returns axis labels and a (num_methods, num_axes) matrix of normalised values."""
     labels = [lbl for lbl, _ in axes_data]
     raw = np.full((len(methods), len(axes_data)), np.nan)
     for j, (_, summ) in enumerate(axes_data):
         for i, m in enumerate(methods):
             row = summ.get(m)
-            if row is None and m == "oracle_focal":
+            if row is None and m == "oracle_focal" and pub_oracle_fallback:
                 # Pub Coordination legacy files use the method name
                 # `oracle_joint`, but the policy is `best_focal_mean`.
                 row = summ.get("oracle_joint")
@@ -277,7 +312,7 @@ def main():
     if not pub or not hag:
         raise SystemExit(f"missing data: pub={len(pub)} hag={len(hag)}")
 
-    pub_labels, pub_norm = gather_metric(pub, PUB_METHODS, "focal_score_mean")
+    pub_labels, pub_norm = gather_metric(pub, PUB_METHODS, "focal_score_mean", pub_oracle_fallback=True)
     # Haggling: use focal payoff with `oracle_focal` as the true upper bound
     # of that metric. This recovers a visible gradient (random < atom_tom1 <
     # joint-coalition baselines < focal-greedy oracle), mirroring the Pub

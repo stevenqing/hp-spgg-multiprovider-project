@@ -21,9 +21,9 @@ providers:
     player_model: gpt-5.4-mini-20260317
     judge_model: gpt-5.4-mini-20260317
     auth: azure_ad
-    tenant_id: 72f988bf-86f1-41af-91ab-2d7cd011db47
-    scope: api://feb7b661-cac7-44a8-8dc1-163b63c23df2/.default
-    base_url: https://cloudgpt-openai.azure-api.net/openai/
+    tenant_id_env: CLOUDGPT_TENANT_ID
+    scope_env: CLOUDGPT_SCOPE
+    base_url_env: CLOUDGPT_BASE_URL
     api_version: 2025-04-01-preview
   google:
     player_model: gemini-2.5-flash

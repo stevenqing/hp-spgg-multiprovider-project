@@ -166,6 +166,7 @@ async def _run_case_once(
                 "updates": agents[agent_name].menu_corruption_updates,
                 "events": agents[agent_name].menu_corruption_events,
                 "final_opponent_posterior": agents[agent_name].opponent_persona_posterior(),
+                "posterior_history": agents[agent_name].posterior_history,
             }
             for agent_name in env.agents
         },

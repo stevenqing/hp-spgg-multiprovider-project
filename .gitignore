@@ -52,4 +52,5 @@ packaged_results/*/tables/*.tex
 # Local external checkouts and archival copies are not part of the artifact
 external/
 _archive/
+arr_paper_before_*/
 *.zip

@@ -84,6 +84,65 @@ SOTOPIA-Hard reconstructed official runner:
 uv run python -m llm_hpgg_sotopia.run_sotopia_hard_official --help
 ```
 
+MaaSSim RQ2/RQ3 supplements:
+
+```powershell
+uv run python scripts\run_e_e_maassim_tracker_parity.py --help
+uv run python scripts\validate_e_e_maassim_tracker_parity.py --require-figure
+uv run python scripts\run_e_f_maassim_bonus.py
+uv run python scripts\validate_e_f_maassim_bonus.py
+```
+
+E-E uses closed-loop MaaSSim regeneration by fleet size followed by zero-provider
+factored-versus-explicit-joint replay. E-F is a zero-provider frozen-$\beta$
+bonus ablation on retained states.
+
+HP-SPGG analytic RQ3 component ladder:
+
+```powershell
+uv run python scripts\run_e_g_hp_spgg_component_ladder.py
+uv run python scripts\plot_e_g_hp_spgg_component_ladder.py
+uv run python scripts\validate_e_g_hp_spgg_component_ladder.py
+```
+
+E-G is a deterministic zero-provider run over ten common environment seeds and
+writes the complete five-variant, 1,000-row cumulative-regret long table.
+
+Additive analytic population/library scaling:
+
+```powershell
+uv run python scripts\run_hp_spgg_analytic_scaling.py --stage all
+uv run python scripts\render_scaling_v1.py
+uv run python scripts\validate_hp_spgg_analytic_scaling.py
+```
+
+The S1/S2/S3 scaling suite makes zero provider calls and writes only under
+`analysis/hp_spgg_analytic_scaling/` and generated `figs/`; it does not modify
+paper sources or existing experiment outputs.
+
+Claim-A consolidation and theory-aligned Claim-B pilot:
+
+```powershell
+uv run python scripts\summarize_hp_spgg_scaling_claim_a.py
+uv run python scripts\validate_hp_spgg_scaling_claim_a_md.py
+uv run python scripts\run_hp_spgg_burn_in_v2_pilot.py
+uv run python scripts\render_hp_spgg_burn_in_v2_pilot.py
+uv run python scripts\validate_hp_spgg_burn_in_v2_pilot.py
+uv run python scripts\run_hp_spgg_burn_in_v3_confirmatory.py
+uv run python scripts\validate_hp_spgg_burn_in_v3_confirmatory.py
+uv run python scripts\render_hp_spgg_burn_in_v3_confirmatory.py
+uv run python scripts\summarize_hp_spgg_claim_b_all_data.py
+uv run python scripts\validate_hp_spgg_claim_b_all_data_md.py
+```
+
+The Claim-B pilot samples the Gaussian outcome channel and tests per-agent
+contraction, inverse-H scaling, and the all-agent log-n maximum separately.
+The v3 confirmatory study is hash-locked before execution, uses independent
+cells and seed-cluster bootstrap uncertainty, and retains the original
+linear-n experiment as a null rather than retuning it.
+The final two commands consolidate the original null, v2 pilot, locked v3
+study, and all 120,836 embedded CSV rows into one strictly validated Markdown.
+
 ## Baselines
 
 The experiment runners expose the following baseline families:

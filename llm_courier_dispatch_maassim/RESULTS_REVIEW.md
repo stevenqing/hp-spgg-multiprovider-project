@@ -35,7 +35,7 @@ The CloudGPT cache is not an experimental result and is excluded from evidence c
 2. **Learned driver-specific beliefs have measurable value on fixed states.** In the persona-mechanism replay, PACT reaches utility `27.61`, versus `11.11` with a uniform prior and `6.87` when learned posteriors are attached to the wrong drivers.
 3. **Correct identity attachment is essential.** PACT exceeds the shuffled-posterior variant by `20.73` utility.
 4. **The legal-assignment LLM interface is reliable.** The final normal and stress runs have parse rate `1.000`, repair rate `0.000`, and fallback rate `0.000` for the reported LLM methods.
-5. **Persona-aware score assistance matters more as rejection mistakes become costly.** The LLM-PACT hybrid's utility advantage over the best pure prompt baseline grows from `+1.47` in the normal replay to `+4.60` under rejection-cost stress and `+39.69` in the extreme conflict-offer stress test.
+5. **Persona-aware score assistance matters more as offer conflict increases.** With rejection penalty fixed at `5.0`, the LLM-PACT hybrid's utility advantage over the best pure prompt baseline grows from `+4.60` at `lambda=0` to `+31.75` at `lambda=0.5` and `+39.69` at `lambda=1`.
 
 ### 2.2 What the retained results do not support
 
@@ -343,18 +343,18 @@ Configuration: five seeds, 20 active snapshots, driver-reject penalty `5.0`, pas
 
 The hybrid exceeds the best pure prompt baseline by `+4.60` utility and avoids `0.8` driver rejects on average. Large SEM still prevents a strong significance claim.
 
-## 12. Three-scenario suite
+## 12. Conflict-strength scenario suite
 
 Sources:
 
 - [maassim_llm_scenario_suite_summary.csv](../analysis/courier_dispatch_maassim/maassim_llm_scenario_suite_summary.csv)
 - [maassim_llm_scenario_suite_detail.csv](../analysis/courier_dispatch_maassim/maassim_llm_scenario_suite_detail.csv)
 
-| Scenario | Reject penalty | LLM-PACT utility | Best pure prompt | Best prompt utility | Utility gap | Reject gap | Oracle utility |
-|---|---:|---:|---|---:|---:|---:|---:|
-| Normal | 2.0 | 31.29 +/- 7.76 | LLM-PSRL | 29.81 +/- 7.80 | +1.47 | 0.6 | 37.64 |
-| Rejection stress | 5.0 | 18.37 +/- 10.12 | LLM-PSRL | 13.77 +/- 11.14 | +4.60 | 0.8 | 36.44 |
-| Conflict offer | 5.0 | 8.79 +/- 4.84 | LLM-belief | -30.90 +/- 4.20 | +39.69 | 7.6 | 22.44 |
+| Scenario | Conflict strength | Reject penalty | LLM-PACT utility | Best pure prompt | Best prompt utility | Utility gap | Reject gap | Oracle utility |
+|---|---:|---:|---:|---|---:|---:|---:|---:|
+| Reject stress | 0 | 5.0 | 18.37 +/- 10.12 | LLM-PSRL | 13.77 +/- 11.14 | +4.60 | 0.8 | 36.44 |
+| Mid conflict | 0.5 | 5.0 | 8.96 +/- 5.47 | LLM-belief | -22.80 +/- 10.17 | +31.75 | 6.8 | 30.70 |
+| Full conflict | 1 | 5.0 | 8.79 +/- 4.84 | LLM-belief | -30.90 +/- 4.20 | +39.69 | 7.6 | 22.44 |
 
 ### 12.1 Conflict-offer detail
 

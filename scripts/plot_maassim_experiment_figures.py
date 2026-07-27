@@ -477,7 +477,7 @@ def plot_readme_fig5_vehicle_trace(graph: nx.Graph, pos: dict[str, tuple[float, 
 
 def plot_scenario_dashboard() -> None:
     rows = read_csv_rows(ANALYSIS / "maassim_llm_scenario_suite_detail.csv")
-    scenarios = ["Normal", "Reject-stress", "Conflict-offer"]
+    scenarios = ["Reject-stress", "Mid-conflict", "Full-conflict"]
     by_key = {(row["scenario"], row["policy"]): row for row in rows}
     x = np.arange(len(scenarios))
     width = 0.12
@@ -785,7 +785,7 @@ def write_index() -> None:
         "",
         "| Figure | Files | Purpose |",
         "|---|---|---|",
-        "| Scenario dashboard | `fig_maassim_experiment_scenario_dashboard.{png,pdf}` | Normal, reject-stress, and conflict-offer KPI comparison for LLM-PACT versus prompt baselines and Oracle. |",
+        "| Scenario dashboard | `fig_maassim_experiment_scenario_dashboard.{png,pdf}` | Conflict-strength KPI comparison at lambda={0,0.5,1} for LLM-PACT versus prompt baselines and Oracle. |",
         "| Demand/supply overview | `fig_maassim_experiment_demand_supply.{png,pdf}` | MaaSSim-style road-network market snapshot with origins, destinations, vehicles, trip-time/fare distributions, and legal-action menu size. |",
         "| Conflict episode dynamics | `fig_maassim_experiment_conflict_episode_dynamics.{png,pdf}` | Route traces plus cumulative utility/served/reject curves for LLM-PACT, LLM-PSRL, A-ToM-1, and ECON-BNE under the conflict-offer scenario. |",
         "| Persona mechanism | `fig_maassim_experiment_persona_mechanism.{png,pdf}` | Shows that learned driver-persona beliefs, not just the assignment solver, account for PACT's gain. |",

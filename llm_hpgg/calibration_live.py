@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
+import hashlib
 import json
 import os
 import re
@@ -12,7 +14,7 @@ from pathlib import Path
 import numpy as np
 
 from .environment import CalibrationBundle, build_reward_tensor, load_calibration, save_calibration, tid_min_gap
-from .llm_agent import call_judge
+from .llm_agent import call_judge, model_for
 from .personas import PERSONAS, judge_system_prompt
 
 
@@ -31,17 +33,21 @@ def main() -> None:
     parser.add_argument("--save-every", type=int, default=12, help="Save checkpoint after this many new live cells.")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--judge-model", default=None)
+    parser.add_argument("--snapshot-id", default=None, help="Stable experiment snapshot identifier recorded in the tensor, cache, and report.")
     parser.add_argument("--trap", action="store_true", help="Use the G_trap reward surface for synthetic fallback and metadata.")
     parser.add_argument("--no-synthetic-fallback", action="store_true")
     parser.add_argument("--workers", type=int, default=1, help="Concurrent live judge calls. Use 1 for serial execution.")
     args = parser.parse_args()
 
     os.environ["LLM_HPGG_BACKEND"] = args.backend
+    judge_model = args.judge_model or model_for("judge", args.backend)
+    generated_at_utc = datetime.now(timezone.utc).isoformat()
+    snapshot_id = args.snapshot_id or f"{judge_model}:{generated_at_utc}"
     base = build_reward_tensor(args.n, args.backend, samples=3, seed=args.seed, trap=args.trap)
     reward_tensor = load_base_reward_tensor(args.base_calibration, base)
     cache_path = Path(args.cache) if args.cache else Path(args.out).with_suffix(".cache.jsonl")
     cache = load_cache(cache_path)
-    cached_cells = apply_cache(reward_tensor, cache)
+    cached_cells = apply_cache(reward_tensor, cache, args.samples)
     live_profile_indices = parse_profile_indices(args.profile_indices, len(base.action_profiles))
     if live_profile_indices is None:
         live_profile_indices = select_profiles(len(base.action_profiles), args.max_profiles)
@@ -72,26 +78,32 @@ def main() -> None:
 
     if args.workers <= 1:
         for profile_index, player_index, persona_index, profile, cache_key, cached_entry in pending_tasks:
-            result = score_live_cell(profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model, cached_entry)
+            result = score_live_cell(
+                profile_index, player_index, persona_index, profile, cache_key,
+                args.samples, judge_model, cached_entry, args.backend,
+                snapshot_id, generated_at_utc,
+            )
             if result["scores"]:
                 apply_live_cell_result(result, reward_tensor, cache_path, cache)
                 new_live_cells += 1
                 if args.save_every > 0 and new_live_cells % args.save_every == 0:
-                    save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
+                    save_current_calibration(
+                        base, reward_tensor, args.backend, args.out, args.trap,
+                        judge_model, args.samples, live_profile_indices,
+                        cache_path, snapshot_id, generated_at_utc,
+                    )
                 if len(result["scores"]) < args.samples:
                     parse_failures.extend(result["parse_failures"])
             else:
                 parse_failures.extend(result["parse_failures"])
-                if args.no_synthetic_fallback:
-                    persona = PERSONAS[persona_index]
-                    raise RuntimeError(
-                        f"Only {len(result['scores'])}/{args.samples} live scores for "
-                        f"profile={profile_index} player={player_index} persona={persona.key}"
-                    )
     else:
         with ThreadPoolExecutor(max_workers=args.workers) as executor:
             futures = [
-                executor.submit(score_live_cell, profile_index, player_index, persona_index, profile, cache_key, args.samples, args.judge_model, cached_entry)
+                executor.submit(
+                    score_live_cell, profile_index, player_index, persona_index,
+                    profile, cache_key, args.samples, judge_model, cached_entry,
+                    args.backend, snapshot_id, generated_at_utc,
+                )
                 for profile_index, player_index, persona_index, profile, cache_key, cached_entry in pending_tasks
             ]
             for future in as_completed(futures):
@@ -100,18 +112,29 @@ def main() -> None:
                     apply_live_cell_result(result, reward_tensor, cache_path, cache)
                     new_live_cells += 1
                     if args.save_every > 0 and new_live_cells % args.save_every == 0:
-                        save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
+                        save_current_calibration(
+                            base, reward_tensor, args.backend, args.out, args.trap,
+                            judge_model, args.samples, live_profile_indices,
+                            cache_path, snapshot_id, generated_at_utc,
+                        )
                     if len(result["scores"]) < args.samples:
                         parse_failures.extend(result["parse_failures"])
                 else:
                     parse_failures.extend(result["parse_failures"])
-                    if args.no_synthetic_fallback:
-                        raise RuntimeError(
-                            f"Only {len(result['scores'])}/{args.samples} live scores for "
-                            f"profile={result['profile_index']} player={result['player_index']} persona={result['persona']}"
-                        )
 
-    save_current_calibration(base, reward_tensor, args.backend, args.out, args.trap, args.judge_model)
+    save_current_calibration(
+        base, reward_tensor, args.backend, args.out, args.trap, judge_model,
+        args.samples, live_profile_indices, cache_path, snapshot_id,
+        generated_at_utc,
+    )
+    tensor_sha256 = hashlib.sha256(Path(args.out).read_bytes()).hexdigest()
+    incomplete_required_cells = 0
+    for profile_index in live_profile_indices:
+        for player_index in range(args.n):
+            for persona_index in range(len(PERSONAS)):
+                key = make_cache_key(int(profile_index), player_index, persona_index, args.samples)
+                if not cache_entry_complete(cache.get(key, {}), args.samples):
+                    incomplete_required_cells += 1
     report = {
         "backend": args.backend,
         "out": args.out,
@@ -127,16 +150,26 @@ def main() -> None:
         "partial_cached_cells_rescored": partial_cached_cells,
         "total_cells": int(np.prod(reward_tensor.shape)),
         "parse_failure_count": len(parse_failures),
+        "incomplete_required_cells": incomplete_required_cells,
         "parse_failures": parse_failures[:50],
         "workers": args.workers,
         "trap": bool(args.trap),
-        "judge_model": args.judge_model or "",
+        "judge_model": judge_model,
+        "judge_temperature_requested": 0.0,
+        "judge_temperature_effective": 1.0 if judge_model.lower().startswith(("gpt-5.5", "kimi-")) else 0.0,
+        "snapshot_id": snapshot_id,
+        "generated_at_utc": generated_at_utc,
+        "tensor_sha256": tensor_sha256,
         "tid_min_gap": tid_min_gap(reward_tensor),
     }
     report_path = Path(args.report) if args.report else Path(args.out).with_suffix(".report.json")
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({key: value for key, value in report.items() if key != "parse_failures"}, indent=2))
+    if args.no_synthetic_fallback and incomplete_required_cells:
+        raise RuntimeError(
+            f"Live calibration incomplete: {incomplete_required_cells} required cells lack {args.samples} score(s); rerun to resume from cache."
+        )
 
 
 def select_profiles(profile_count: int, max_profiles: int) -> np.ndarray:
@@ -163,6 +196,9 @@ def score_live_cell(
     samples: int,
     judge_model: str | None,
     cached_entry: dict[str, object] | None = None,
+    backend: str = "",
+    snapshot_id: str = "",
+    generated_at_utc: str = "",
 ) -> dict[str, object]:
     persona = PERSONAS[persona_index]
     scores = cached_score_values(cached_entry)[:samples]
@@ -197,6 +233,10 @@ def score_live_cell(
         "score": score,
         "replies": replies,
         "parse_failures": parse_failures,
+        "backend": backend,
+        "judge_model": judge_model or "",
+        "snapshot_id": snapshot_id,
+        "generated_at_utc": generated_at_utc,
     }
 
 
@@ -216,6 +256,10 @@ def apply_live_cell_result(result: dict[str, object], reward_tensor: np.ndarray,
         "scores": result["scores"],
         "score": score,
         "replies": result["replies"],
+        "backend": result.get("backend", ""),
+        "judge_model": result.get("judge_model", ""),
+        "snapshot_id": result.get("snapshot_id", ""),
+        "generated_at_utc": result.get("generated_at_utc", ""),
     }
     append_cache(cache_path, entry)
     cache[str(result["key"])] = entry
@@ -231,7 +275,19 @@ def load_base_reward_tensor(base_calibration: str | None, synthetic_base: Calibr
     return np.array(reward_tensor, copy=True)
 
 
-def save_current_calibration(base: CalibrationBundle, reward_tensor: np.ndarray, backend: str, out: str, trap: bool, judge_model: str | None) -> None:
+def save_current_calibration(
+    base: CalibrationBundle,
+    reward_tensor: np.ndarray,
+    backend: str,
+    out: str,
+    trap: bool,
+    judge_model: str,
+    samples: int,
+    live_profile_indices: np.ndarray,
+    cache_path: Path,
+    snapshot_id: str,
+    generated_at_utc: str,
+) -> None:
     bundle = CalibrationBundle(
         reward_tensor=reward_tensor,
         action_profiles=base.action_profiles,
@@ -242,8 +298,14 @@ def save_current_calibration(base: CalibrationBundle, reward_tensor: np.ndarray,
         trap=trap,
     )
     payload = bundle.to_dict()
-    payload["judge_model"] = judge_model or ""
-    payload["player_model"] = judge_model or ""
+    payload["judge_model"] = judge_model
+    payload["player_model"] = judge_model
+    payload["samples_per_cell"] = int(samples)
+    payload["live_profile_indices"] = np.asarray(live_profile_indices, dtype=int)
+    payload["live_profile_count"] = int(len(live_profile_indices))
+    payload["cache_path"] = str(cache_path)
+    payload["snapshot_id"] = snapshot_id
+    payload["generated_at_utc"] = generated_at_utc
     Path(out).parent.mkdir(parents=True, exist_ok=True)
     np.save(out, payload, allow_pickle=True)
 
@@ -298,9 +360,11 @@ def append_cache(path: Path, entry: dict[str, object]) -> None:
         handle.write(json.dumps(entry) + "\n")
 
 
-def apply_cache(reward_tensor: np.ndarray, cache: dict[str, dict[str, object]]) -> int:
+def apply_cache(reward_tensor: np.ndarray, cache: dict[str, dict[str, object]], required_samples: int) -> int:
     applied = 0
     for entry in cache.values():
+        if not cache_entry_complete(entry, required_samples):
+            continue
         reward_tensor[int(entry["player_index"]), int(entry["persona_index"]), int(entry["profile_index"])] = float(entry["score"])
         applied += 1
     return applied

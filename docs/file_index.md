@@ -99,8 +99,8 @@ To recompile the paper after re-rendering a figure:
 Copy-Item figs\<fig>.pdf arr_paper\figs\ -Force
 Copy-Item figs\<fig>.pdf arr_paper_overleaf\figs\ -Force
 cd arr_paper
-& "C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode main.tex
-& "C:\Users\v-shuqingshi\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.exe" -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
 Copy-Item main.pdf ..\arr_paper_overleaf\main.pdf -Force
 cd ..
 ```

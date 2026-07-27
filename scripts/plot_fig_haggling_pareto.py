@@ -4,12 +4,14 @@ Per-config 2x2 panel. Each panel:
 - x-axis: blend dial beta in [0, 1]
 - left y-axis (solid blue, circles): focal payoff F  (more = more greedy)
 - right y-axis (dashed red, squares): min surplus M  (more = more fair)
-- vertical guide lines at beta=0 (Oracle_joint) and beta=1 (Oracle_focal)
+- vertical guide lines at beta=0 (joint-shaped endpoint) and beta=1 (Oracle_focal)
+- light red horizontal band: focal-payoff interval over all total-surplus
+    joint-optimal actions
 - thin horizontal dotted reference: A-ToM-2 baseline on F (if available)
 
-The visual story: as beta increases, focal payoff F monotonically rises
-and fairness M monotonically falls; both endpoints coincide with the
-respective oracles.
+The visual story: Haggling has a flat total-surplus optimum over transfer
+prices. A single Oracle_joint focal value is therefore tie-break dependent;
+the interval band is the honest joint-optimal allocation diagnostic.
 """
 from __future__ import annotations
 import json
@@ -17,6 +19,7 @@ from pathlib import Path
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 
 mpl.rcParams.update({
     "font.family": "serif", "font.size": 8,
@@ -45,6 +48,12 @@ CONFIGS = [
 BETAS = [0, 10, 20, 30, 40, 60, 80, 100]
 F_COLOR = "#1f4e79"   # focal payoff (left axis)
 M_COLOR = "#c44536"   # min surplus  (right axis)
+JOINT_OPT_FOCAL_INTERVALS = {
+    "Fruitville: gullible buyer": (1.4, 13.4),
+    "Vegbrooke: stubborn seller": (-5.1, 7.3),
+    "Multi-item: cumulative": (0.0, 12.0),
+    "Multi-item: gullible": (-0.966666666667, 14.6),
+}
 
 
 def load_points(path: Path):
@@ -75,6 +84,10 @@ def main() -> None:
             fs.append(merged[key][0]); ms.append(merged[key][1])
 
         # Left y-axis: F
+        interval = JOINT_OPT_FOCAL_INTERVALS.get(title)
+        if interval is not None:
+            ax.axhspan(interval[0], interval[1], color=M_COLOR, alpha=0.12,
+                   linewidth=0.0, zorder=1)
         ax.plot(beta_x, fs, "-o", color=F_COLOR, lw=1.5, ms=4,
                 mec="white", mew=0.6, zorder=4)
         ax.set_ylabel(r"$F$", color=F_COLOR, fontsize=8, labelpad=2)
@@ -110,7 +123,7 @@ def main() -> None:
 
     # Shared x-axis label
     fig.text(0.49, 0.105, r"blend dial $\beta$  "
-             r"($\beta{=}0$: Oracle$_{\mathrm{joint}}$, $\beta{=}1$: Oracle$_{\mathrm{focal}}$)",
+             r"($\beta{=}0$: shaped joint end, $\beta{=}1$: Oracle$_{\mathrm{focal}}$)",
              ha="center", fontsize=7.5)
 
     # Bottom legend
@@ -119,6 +132,8 @@ def main() -> None:
                label=r"focal payoff $F$ (greedy $\uparrow$)"),
         Line2D([0], [0], color=M_COLOR, lw=1.3, ls="--", marker="s", ms=3.5,
                mec="white", label=r"min surplus $M$ (fair $\uparrow$)"),
+          Patch(facecolor=M_COLOR, alpha=0.12, edgecolor="none",
+              label=r"joint-optimal focal interval"),
     ]
     fig.legend(handles=handles, loc="lower center",
                bbox_to_anchor=(0.49, 0.005),

@@ -54,6 +54,7 @@ CACHE_PATH = ANALYSIS / "maassim_llm_replay_cache.json"
 METHOD_VERSION = "maassim-llm-direct-v7-scenarios"
 SCENARIO = "normal"
 CONFLICT_FAST_COUNT = 1
+CONFLICT_STRENGTH = 1.0
 CONFLICT_RISKY_TRAVEL = 420.0
 CONFLICT_SAFE_TRAVEL = 150.0
 CONFLICT_SAFE_FARE_PER_SECOND = 0.012
@@ -235,6 +236,7 @@ class MaaSSimLLMPolicy:
         return {
             "time": round(float(snapshot.time), 3),
             "scenario": SCENARIO,
+            "conflict_strength": CONFLICT_STRENGTH,
             "baseline": self.baseline,
             "prompt_variant": self.prompt_variant,
             "baseline_instruction": BASELINE_INSTRUCTIONS[self.baseline],
@@ -406,6 +408,7 @@ def legal_assignment_options(snapshot: MaaSSimQueueSnapshot, tracker: SyntheticR
 
 
 def conflict_transform_snapshot(snapshot: MaaSSimQueueSnapshot) -> MaaSSimQueueSnapshot:
+    strength = min(1.0, max(0.0, float(CONFLICT_STRENGTH)))
     risky_pairs: set[tuple[int, int]] = set()
     by_request: dict[int, list[MaaSSimCandidateOffer]] = {}
     for offer in snapshot.candidates:
@@ -416,11 +419,13 @@ def conflict_transform_snapshot(snapshot: MaaSSimQueueSnapshot) -> MaaSSimQueueS
     transformed = []
     for offer in snapshot.candidates:
         if (int(offer.driver_id), int(offer.request_id)) in risky_pairs:
-            travel_time = max(float(offer.travel_time), CONFLICT_RISKY_TRAVEL)
-            fare = min(float(offer.fare), travel_time * CONFLICT_RISKY_FARE_PER_SECOND)
+            target_travel = max(float(offer.travel_time), CONFLICT_RISKY_TRAVEL)
+            target_fare = min(float(offer.fare), target_travel * CONFLICT_RISKY_FARE_PER_SECOND)
         else:
-            travel_time = min(float(offer.travel_time), CONFLICT_SAFE_TRAVEL)
-            fare = max(float(offer.fare), travel_time * CONFLICT_SAFE_FARE_PER_SECOND)
+            target_travel = min(float(offer.travel_time), CONFLICT_SAFE_TRAVEL)
+            target_fare = max(float(offer.fare), target_travel * CONFLICT_SAFE_FARE_PER_SECOND)
+        travel_time = float(offer.travel_time) + strength * (target_travel - float(offer.travel_time))
+        fare = float(offer.fare) + strength * (target_fare - float(offer.fare))
         transformed.append(replace(offer, travel_time=travel_time, fare=fare))
     return MaaSSimQueueSnapshot(
         time=snapshot.time,
@@ -764,7 +769,7 @@ def plot_summary(summary: list[dict[str, object]], out_prefix: str) -> None:
 
 
 def main() -> None:
-    global DRIVER_REJECT_PENALTY, PASSENGER_REJECT_PENALTY, SCENARIO, CONFLICT_FAST_COUNT
+    global DRIVER_REJECT_PENALTY, PASSENGER_REJECT_PENALTY, SCENARIO, CONFLICT_FAST_COUNT, CONFLICT_STRENGTH
     parser = argparse.ArgumentParser()
     parser.add_argument("--seeds", type=int, default=1)
     parser.add_argument("--max-snapshots", type=int, default=12)
@@ -775,6 +780,7 @@ def main() -> None:
     parser.add_argument("--policies", default=",".join(DEFAULT_POLICIES))
     parser.add_argument("--scenario", choices=["normal", "conflict_offer"], default="normal")
     parser.add_argument("--conflict-fast-count", type=int, default=CONFLICT_FAST_COUNT)
+    parser.add_argument("--conflict-strength", type=float, default=CONFLICT_STRENGTH)
     parser.add_argument("--driver-reject-penalty", type=float, default=DRIVER_REJECT_PENALTY)
     parser.add_argument("--passenger-reject-penalty", type=float, default=PASSENGER_REJECT_PENALTY)
     parser.add_argument("--out-prefix", default="maassim_llm_replay_smoke")
@@ -782,6 +788,7 @@ def main() -> None:
 
     SCENARIO = args.scenario
     CONFLICT_FAST_COUNT = int(args.conflict_fast_count)
+    CONFLICT_STRENGTH = min(1.0, max(0.0, float(args.conflict_strength)))
     DRIVER_REJECT_PENALTY = float(args.driver_reject_penalty)
     PASSENGER_REJECT_PENALTY = float(args.passenger_reject_penalty)
 
@@ -802,6 +809,7 @@ def main() -> None:
                 "summary_rows": len(summary),
                 "model": model,
                 "scenario": SCENARIO,
+                "conflict_strength": CONFLICT_STRENGTH,
                 "prompt_variant": args.prompt_variant,
                 "driver_reject_penalty": DRIVER_REJECT_PENALTY,
                 "passenger_reject_penalty": PASSENGER_REJECT_PENALTY,

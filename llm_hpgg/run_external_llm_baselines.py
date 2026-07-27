@@ -8,6 +8,7 @@ Implemented families:
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
 import math
@@ -16,6 +17,8 @@ from pathlib import Path
 import re
 import time
 from typing import Any
+import threading
+import uuid
 
 import numpy as np
 
@@ -35,6 +38,9 @@ ALGORITHMS = (
 )
 
 ACTIVE_CACHE_PATH: Path | None = None
+CACHE_LOCK = threading.Lock()
+CACHE_NEW_SINCE_SAVE = 0
+PARSE_REPAIR_COUNT = 0
 
 
 def run_seed(
@@ -47,7 +53,7 @@ def run_seed(
     cache: dict[str, str],
     econ_rounds: int,
     offline: bool,
-) -> tuple[np.ndarray, np.ndarray, list[dict[str, Any]]]:
+) -> tuple[np.ndarray, np.ndarray, list[dict[str, Any]], np.ndarray]:
     rng = np.random.default_rng(seed)
     n, type_count, _ = reward_tensor.shape
     true_types = rng.integers(0, type_count, size=n)
@@ -109,7 +115,7 @@ def run_seed(
         update_atom_losses(atom_states, info, event["contributions"])
         regrets[round_index] = max(0.0, oracle_welfare - chosen_welfare)
         welfare[round_index] = chosen_welfare
-    return regrets, welfare, traces
+    return regrets, welfare, traces, true_types
 
 
 class AdaptiveToMState:
@@ -133,24 +139,25 @@ def choose_atom_profile(
     offline: bool,
 ) -> tuple[int, dict[str, Any]]:
     n = action_profiles.shape[1]
-    chosen_actions: list[float] = []
-    per_player: list[dict[str, Any]] = []
-    for player_index in range(n):
+    player_rng_seeds = rng.integers(0, np.iinfo(np.int64).max, size=n, dtype=np.int64)
+
+    def choose_for_player(player_index: int) -> tuple[float, dict[str, Any]]:
+        player_rng = np.random.default_rng(int(player_rng_seeds[player_index]))
         if algorithm == "atom_tom0":
             prediction = []
             selected_level = 0
         elif algorithm == "atom_tom1":
-            prediction = predict_other_actions(0, player_index, action_values, history, model, cache, rng, offline)
+            prediction = predict_other_actions(0, player_index, action_values, history, model, cache, player_rng, offline)
             selected_level = 1
         elif algorithm == "atom_tom2":
-            prediction = predict_other_actions(1, player_index, action_values, history, model, cache, rng, offline)
+            prediction = predict_other_actions(1, player_index, action_values, history, model, cache, player_rng, offline)
             selected_level = 2
         else:
             candidates = [
-                predict_other_actions(level, player_index, action_values, history, model, cache, rng, offline)
+                predict_other_actions(level, player_index, action_values, history, model, cache, player_rng, offline)
                 for level in range(3)
             ]
-            selected_level, probabilities = select_tom_level(atom_states[player_index], algorithm, rng)
+            selected_level, probabilities = select_tom_level(atom_states[player_index], algorithm, player_rng)
             atom_states[player_index].prob_history.append(probabilities)
             prediction = candidates[selected_level]
         action, parsed = choose_atom_action(
@@ -161,11 +168,16 @@ def choose_atom_profile(
             history,
             model,
             cache,
-            rng,
+            player_rng,
             offline,
         )
-        chosen_actions.append(action)
-        per_player.append({"player": player_index, "tom_level": selected_level, "predicted_others": prediction, "parsed": parsed})
+        return action, {"player": player_index, "tom_level": selected_level, "predicted_others": prediction, "parsed": parsed}
+
+    agent_workers = external_agent_workers(n, model)
+    with ThreadPoolExecutor(max_workers=agent_workers) as executor:
+        player_results = list(executor.map(choose_for_player, range(n)))
+    chosen_actions = [result[0] for result in player_results]
+    per_player = [result[1] for result in player_results]
     profile = tuple(float(value) for value in chosen_actions)
     return profile_lookup[profile], {"family": "A-ToM", "round": round_index, "players": per_player}
 
@@ -208,8 +220,20 @@ def predict_other_actions(
     try:
         parsed = json.loads(extract_json(reply))
         values = [nearest_action(float(value), action_values) for value in parsed.get("other_contributions", [])]
-    except Exception:
-        values = []
+    except Exception as exc:
+        if os.getenv("EXTERNAL_STRICT_PARSING", "0") == "1":
+            repair_prompt = strict_repair_prompt(json.dumps(prompt, indent=2), reply, '{"other_contributions": [0.5, 0.5]}')
+            repaired = cached_llm_call("atom_predict_repair", repair_prompt, model, cache, max_tokens=512, temperature=0.0)
+            try:
+                parsed = json.loads(extract_json(repaired))
+                values = [nearest_action(float(value), action_values) for value in parsed.get("other_contributions", [])]
+            except Exception as repair_exc:
+                invalidate_cached_llm_call("atom_predict_repair", repair_prompt, model, cache, temperature=0.0)
+                raise ValueError(f"A-ToM prediction repair failed: {repaired[:300]!r}") from repair_exc
+            parsed["_repaired"] = True
+            record_parse_repair()
+        else:
+            values = []
     needed = max(0, inferred_player_count(history, default=3) - 1)
     while len(values) < needed:
         values.append(heuristic_default_action(action_values, history))
@@ -243,7 +267,19 @@ def choose_atom_action(
     try:
         parsed = json.loads(extract_json(reply))
         return nearest_action(float(parsed.get("contribution", 0.5)), action_values), parsed
-    except Exception:
+    except Exception as exc:
+        if os.getenv("EXTERNAL_STRICT_PARSING", "0") == "1":
+            original_prompt = json.dumps(prompt, indent=2)
+            repair_prompt = strict_repair_prompt(original_prompt, reply, '{"contribution": 0.5, "reason": "short"}')
+            repaired = cached_llm_call("atom_act_repair", repair_prompt, model, cache, max_tokens=512, temperature=0.0)
+            try:
+                parsed = json.loads(extract_json(repaired))
+                parsed["_repaired"] = True
+                record_parse_repair()
+                return nearest_action(float(parsed.get("contribution", 0.5)), action_values), parsed
+            except Exception as repair_exc:
+                invalidate_cached_llm_call("atom_act_repair", repair_prompt, model, cache, temperature=0.0)
+                raise ValueError(f"A-ToM action repair failed: {repaired[:300]!r}") from repair_exc
         return heuristic_action(action_values, history, player_index, predicted_others, rng), {"parse_error": True, "reply": reply[:300]}
 
 
@@ -286,18 +322,22 @@ def choose_econ_profile(
     temperature_schedule = np.linspace(0.2, 0.6, n).tolist()
 
     for iteration in range(max(1, econ_rounds)):
-        executor_outputs = []
-        for agent_index in range(n):
-            output = econ_executor_response(
-                observation,
-                strategy,
-                agent_index,
-                commitment,
-                temperature_schedule[agent_index],
-                model,
-                cache,
+        agent_workers = external_agent_workers(n, model)
+        with ThreadPoolExecutor(max_workers=agent_workers) as executor:
+            executor_outputs = list(
+                executor.map(
+                    lambda agent_index: econ_executor_response(
+                        observation,
+                        strategy,
+                        agent_index,
+                        commitment,
+                        temperature_schedule[agent_index],
+                        model,
+                        cache,
+                    ),
+                    range(n),
+                )
             )
-            executor_outputs.append(output)
         new_commitment, parsed = econ_commitment(observation, strategy, executor_outputs, action_values, model, cache)
         iteration_history.append({"iteration": iteration, "commitment": new_commitment, "executors": executor_outputs})
         if commitment is not None and all(math.isclose(a, b, abs_tol=1e-9) for a, b in zip(commitment, new_commitment)):
@@ -374,9 +414,21 @@ def econ_commitment(
     try:
         parsed = json.loads(extract_json(reply))
         contributions = [nearest_action(float(value), action_values) for value in parsed.get("contributions", [])]
-    except Exception:
-        parsed = {"parse_error": True, "reply": reply[:300]}
-        contributions = []
+    except Exception as exc:
+        if os.getenv("EXTERNAL_STRICT_PARSING", "0") == "1":
+            repair_prompt = strict_repair_prompt(prompt, reply, '{"contributions": [0.5, 0.5, 0.5], "confidence": 0.5, "reason": "short"}')
+            repaired = cached_llm_call("econ_commitment_repair", repair_prompt, model, cache, max_tokens=512, temperature=0.0)
+            try:
+                parsed = json.loads(extract_json(repaired))
+                parsed["_repaired"] = True
+                record_parse_repair()
+                contributions = [nearest_action(float(value), action_values) for value in parsed.get("contributions", [])]
+            except Exception as repair_exc:
+                invalidate_cached_llm_call("econ_commitment_repair", repair_prompt, model, cache, temperature=0.0)
+                raise ValueError(f"ECON commitment repair failed: {repaired[:300]!r}") from repair_exc
+        else:
+            parsed = {"parse_error": True, "reply": reply[:300]}
+            contributions = []
     n = int(json.loads(observation).get("players", 3))
     while len(contributions) < n:
         contributions.append(heuristic_default_action(action_values, []))
@@ -384,20 +436,33 @@ def econ_commitment(
 
 
 def cached_llm_call(kind: str, prompt: str, model: str | None, cache: dict[str, str], max_tokens: int, temperature: float) -> str:
+    global CACHE_NEW_SINCE_SAVE
     key = hashlib.sha256(f"{kind}\n{model or ''}\n{temperature}\n{prompt}".encode("utf-8")).hexdigest()
-    if key not in cache:
+    with CACHE_LOCK:
+        cached = cache.get(key)
+    if cached is None:
+        if os.getenv("EXTERNAL_CACHE_ONLY", "0") == "1":
+            raise KeyError(f"External response cache miss for {kind}: {key}")
         system = "You are a careful multi-agent public-goods-game coordinator. Return valid JSON when requested."
         retries = int(os.getenv("EXTERNAL_LLM_CALL_RETRIES", "8"))
         base_delay = float(os.getenv("EXTERNAL_LLM_RETRY_BASE_SECONDS", "5"))
         last_error: Exception | None = None
         for attempt in range(retries):
             try:
-                cache[key] = call_player(system, prompt, model=model, max_tokens=max_tokens, temperature=temperature)
-                if ACTIVE_CACHE_PATH is not None:
-                    save_cache(ACTIVE_CACHE_PATH, cache)
+                reply = call_player(system, prompt, model=model, max_tokens=max_tokens, temperature=temperature)
+                with CACHE_LOCK:
+                    if key not in cache:
+                        cache[key] = reply
+                        CACHE_NEW_SINCE_SAVE += 1
+                    save_every = max(1, int(os.getenv("EXTERNAL_CACHE_SAVE_EVERY", "10")))
+                    if ACTIVE_CACHE_PATH is not None and CACHE_NEW_SINCE_SAVE >= save_every:
+                        save_cache(ACTIVE_CACHE_PATH, cache)
+                        CACHE_NEW_SINCE_SAVE = 0
                 break
             except Exception as exc:
                 last_error = exc
+                if "401" in str(exc) or "Unauthorized" in str(exc):
+                    raise RuntimeError("CloudGPT access token expired or is invalid") from exc
                 delay = min(base_delay * (2**attempt), 120.0)
                 print(
                     f"CloudGPT call failed for {kind}; retry {attempt + 1}/{retries} after {delay:.1f}s: {exc}",
@@ -406,7 +471,22 @@ def cached_llm_call(kind: str, prompt: str, model: str | None, cache: dict[str, 
                 time.sleep(delay)
         else:
             raise RuntimeError(f"External LLM call failed after {retries} runner retries: {last_error}")
-    return cache[key]
+    with CACHE_LOCK:
+        return cache[key]
+
+
+def invalidate_cached_llm_call(
+    kind: str,
+    prompt: str,
+    model: str | None,
+    cache: dict[str, str],
+    temperature: float,
+) -> None:
+    key = hashlib.sha256(f"{kind}\n{model or ''}\n{temperature}\n{prompt}".encode("utf-8")).hexdigest()
+    with CACHE_LOCK:
+        cache.pop(key, None)
+        if ACTIVE_CACHE_PATH is not None:
+            save_cache(ACTIVE_CACHE_PATH, cache)
 
 
 def extract_json(text: str) -> str:
@@ -417,6 +497,31 @@ def extract_json(text: str) -> str:
     if not match:
         raise ValueError("No JSON object found")
     return match.group(0)
+
+
+def strict_repair_prompt(original_prompt: str, invalid_reply: str, schema_example: str) -> str:
+    return (
+        "Reformat the previous reply without changing its selected action or prediction. "
+        "Copy the required numeric decision fields, but do not repeat any explanation. "
+        "If a reason field is required, set it to exactly 'format repair'. "
+        "Return one compact JSON object only, with no markdown or prose.\n"
+        f"Required schema example: {schema_example}\n"
+        f"Original request:\n{original_prompt}\n"
+        f"Previous invalid reply:\n{invalid_reply}"
+    )
+
+
+def external_agent_workers(n: int, model: str | None) -> int:
+    model_name = (model or "").lower()
+    variable = "EXTERNAL_KIMI_AGENT_WORKERS" if model_name.startswith("kimi-") else "EXTERNAL_AGENT_WORKERS"
+    default = os.getenv("EXTERNAL_AGENT_WORKERS", "1")
+    return min(n, max(1, int(os.getenv(variable, default))))
+
+
+def record_parse_repair() -> None:
+    global PARSE_REPAIR_COUNT
+    with CACHE_LOCK:
+        PARSE_REPAIR_COUNT += 1
 
 
 def nearest_action(value: float, action_values: list[float]) -> float:
@@ -480,7 +585,19 @@ def load_cache(path: Path) -> dict[str, str]:
 
 def save_cache(path: Path, cache: dict[str, str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    temporary = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
+    temporary.write_text(json.dumps(cache, indent=2), encoding="utf-8")
+    last_error: PermissionError | None = None
+    for _ in range(20):
+        try:
+            temporary.replace(path)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            time.sleep(0.1)
+    temporary.unlink(missing_ok=True)
+    if last_error is not None:
+        raise last_error
 
 
 def main() -> None:
@@ -498,6 +615,9 @@ def main() -> None:
     parser.add_argument("--model")
     parser.add_argument("--econ-rounds", type=int, default=3)
     parser.add_argument("--seed-indices", nargs="+", type=int, help="Run only these zero-based seed indices.")
+    parser.add_argument("--seed-workers", type=int, default=1, help="Independent seed trajectories run concurrently.")
+    parser.add_argument("--matched-seeds", action="store_true", help="Use --seed-offset + seed_index for every algorithm.")
+    parser.add_argument("--seed-offset", type=int, default=0)
     parser.add_argument("--offline", action="store_true", help="Use deterministic offline heuristics for smoke tests.")
     args = parser.parse_args()
 
@@ -518,15 +638,22 @@ def main() -> None:
         raise ValueError(f"Seed indices must be in [0, {args.seeds}).")
     regrets = np.zeros((len(args.algos), len(seed_indices), args.K), dtype=float)
     welfare = np.zeros_like(regrets)
+    true_types = np.zeros((len(args.algos), len(seed_indices), n), dtype=int)
+    rng_seeds = np.zeros((len(args.algos), len(seed_indices)), dtype=int)
     all_traces: list[dict[str, Any]] = []
 
     for algo_index, algorithm in enumerate(args.algos):
         if algorithm not in ALGORITHMS:
             raise ValueError(f"Unknown external LLM baseline: {algorithm}")
         canonical_algo_index = ALGORITHMS.index(algorithm)
-        for seed_position, seed_index in enumerate(seed_indices):
-            seed = 120_000 + 10_000 * canonical_algo_index + seed_index
-            regrets[algo_index, seed_position], welfare[algo_index, seed_position], traces = run_seed(
+        def run_one_seed(seed_position_and_index: tuple[int, int]) -> tuple[int, int, np.ndarray, np.ndarray, list[dict[str, Any]], np.ndarray]:
+            seed_position, seed_index = seed_position_and_index
+            seed = (
+                args.seed_offset + seed_index
+                if args.matched_seeds
+                else 120_000 + 10_000 * canonical_algo_index + seed_index
+            )
+            seed_regrets, seed_welfare, traces, seed_true_types = run_seed(
                 algorithm,
                 reward_tensor,
                 action_profiles,
@@ -537,7 +664,26 @@ def main() -> None:
                 args.econ_rounds,
                 args.offline,
             )
-            all_traces.append({"algorithm": algorithm, "seed_index": seed_index, "seed": seed, "trace": traces})
+            return seed_position, seed, seed_regrets, seed_welfare, traces, seed_true_types
+
+        with ThreadPoolExecutor(max_workers=max(1, args.seed_workers)) as executor:
+            seed_results = list(executor.map(run_one_seed, enumerate(seed_indices)))
+        for seed_position, seed, seed_regrets, seed_welfare, traces, seed_true_types in seed_results:
+            seed_index = seed_indices[seed_position]
+            regrets[algo_index, seed_position] = seed_regrets
+            welfare[algo_index, seed_position] = seed_welfare
+            true_types[algo_index, seed_position] = seed_true_types
+            rng_seeds[algo_index, seed_position] = seed
+            all_traces.append(
+                {
+                    "algorithm": algorithm,
+                    "seed_index": seed_index,
+                    "seed": seed,
+                    "true_types": seed_true_types.astype(int).tolist(),
+                    "initial_state_id": "fixed_hp_spgg_initial_state",
+                    "trace": traces,
+                }
+            )
             save_cache(cache_path, cache)
 
     cumulative_regret = np.cumsum(regrets, axis=2)
@@ -555,6 +701,15 @@ def main() -> None:
         seed_indices=np.array(seed_indices, dtype=int),
         model=args.model or "",
         econ_rounds=args.econ_rounds,
+        matched_seeds=bool(args.matched_seeds),
+        seed_offset=int(args.seed_offset),
+        rng_seeds=rng_seeds,
+        true_types=true_types,
+        initial_state_id="fixed_hp_spgg_initial_state",
+        response_cache=str(cache_path),
+        response_cache_entries=len(cache),
+        seed_workers=int(args.seed_workers),
+        parse_repair_count=int(PARSE_REPAIR_COUNT),
     )
     if args.trace_out:
         trace_path = Path(args.trace_out)

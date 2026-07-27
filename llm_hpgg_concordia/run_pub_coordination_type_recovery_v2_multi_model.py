@@ -1,4 +1,4 @@
-"""Multi-model driver for pub_coordination type-recovery v2.
+r"""Multi-model driver for pub_coordination type-recovery v2.
 
 Loops over the four paper-aligned CloudGPT model deployments and produces a
 per-model JSON + an aggregate JSON / Markdown summary suitable for the
