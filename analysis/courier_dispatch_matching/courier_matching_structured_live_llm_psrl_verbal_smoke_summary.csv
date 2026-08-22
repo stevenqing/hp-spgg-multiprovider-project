@@ -1,0 +1,2 @@
+model,method,episodes,final_mean_cumulative_reward,final_mean_cumulative_regret,final_mean_cumulative_exploration_cost,final_mean_true_tuple_posterior,final_mean_rule_marginal_accuracy,final_mean_nll_true,live_score_parse_ok_rate,type_readout_parse_rate,type_estimate_flag,mean_llm_assignment_score,mean_structured_assignment_score
+gpt-5.4-mini-20260317,live_llm_psrl_verbal,1,1.7058166666666665,0.4242823139580125,0.23317042143043332,0.0,0.5,2.772588722239781,1.0,1.0,verbal_point_estimate,0.0,0.0

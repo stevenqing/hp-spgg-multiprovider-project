@@ -1,0 +1,47 @@
+{
+  "source_rows": 4800,
+  "normalized_rows": 4800,
+  "configs": 6,
+  "seeds": [
+    1000,
+    1001,
+    1002,
+    1003,
+    1004
+  ],
+  "episodes": 20,
+  "panel_a": {
+    "band": "two-sided Student-t 95% CI over five seed-level paired differences (df=4)",
+    "all_episodes_cover_zero": true,
+    "y_limit": [
+      -0.17,
+      0.17
+    ],
+    "k20_mean": -0.016807856201604826,
+    "k20_sem": 0.04364455895488382,
+    "k20_ci95": [
+      -0.13798457828040878,
+      0.10436886587719911
+    ],
+    "max_abs_mean": 0.05058180569848566
+  },
+  "panel_b": {
+    "bands": "seed-level SEM after within-seed averaging over six configurations",
+    "pact_plus_k20_mean": 0.35175255338512024,
+    "pact_plus_k20_sem": 0.03488963408443206,
+    "psrl_notype_k20_mean": 1.3609199841994644,
+    "psrl_notype_k20_sem": 0.17219304125061963,
+    "pact_k20_mean": 0.3117477918497059,
+    "pact_k20_sem": 0.026016880315184874,
+    "pact_plus_late_rate": 0.001984569469402637,
+    "pact_plus_late_rate_sem": 0.0016776513816204237,
+    "psrl_notype_late_rate": 0.07642943375547162,
+    "psrl_notype_late_rate_sem": 0.013872455771906279,
+    "mean_crossover_episode": 6
+  },
+  "figure_source_inches": [
+    4.75,
+    2.05
+  ],
+  "asset": "arr_paper/figs/fig_e_b_iterated_concordia_v2.pdf"
+}

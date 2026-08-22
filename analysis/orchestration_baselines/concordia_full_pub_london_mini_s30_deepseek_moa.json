@@ -1,0 +1,1864 @@
+{
+  "substrate": "pub",
+  "domain": "pub_coordination",
+  "config": "london_mini",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "moa"
+  ],
+  "model": "DeepSeek-V3.2",
+  "orchestration_budget": 4,
+  "information_audit": {
+    "moa": {
+      "mode": "centralized_public_orchestration",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "moa",
+      "episodes": 30,
+      "focal_score_mean": 0.9569444444444444,
+      "focal_score_min_mean": 0.7277777777777777,
+      "coordination_rate_mean": 0.7333333333333333,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "moa",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Red Lion",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 0.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Noah Smith\": \"The Red Lion\",\n        \"Sophie Martin\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Golden Fleece\",\n        \"Molly Clark\": \"The Golden Fleece\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Noah Smith\": \"The Red Lion\",\n        \"Sophie Martin\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Golden Fleece\",\n        \"Molly Clark\": \"The Golden Fleece\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Noah Smith\": \"The Red Lion\",\n        \"Sophie Martin\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Golden Fleece\",\n        \"Molly Clark\": \"The Golden Fleece\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Noah Smith\": \"The Red Lion\",\n        \"Sophie Martin\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Golden Fleece\",\n        \"Molly Clark\": \"The Golden Fleece\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Crooked Billet",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Crooked Billet",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.0,
+        "Jack Taylor": 0.5,
+        "Alexander White": 0.3333333333333333,
+        "William Jones": 0.5,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Evie Green\": \"The Clapton Hart\",\n        \"Jack Taylor\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Clapton Hart\",\n        \"William Jones\": \"The Crooked Billet\",\n        \"Thomas Wilson\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Evie Green\": \"The Crooked Billet\",\n        \"Jack Taylor\": \"The Clapton Hart\",\n        \"Alexander White\": \"The Crooked Billet\",\n        \"William Jones\": \"The Clapton Hart\",\n        \"Thomas Wilson\": \"The Crooked Billet\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Evie Green\": \"The Crooked Billet\",\n        \"Jack Taylor\": \"The Clapton Hart\",\n        \"Alexander White\": \"The Crooked Billet\",\n        \"William Jones\": \"The Clapton Hart\",\n        \"Thomas Wilson\": \"The Clapton Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Evie Green\": \"The Clapton Hart\",\n        \"Jack Taylor\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Clapton Hart\",\n        \"William Jones\": \"The Crooked Billet\",\n        \"Thomas Wilson\": \"The Clapton Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.25,
+        "Phoebe Young": 0.5,
+        "Jacob Walker": 0.75,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.125,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Harry Davies\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Princess of Wales\",\n        \"Jacob Walker\": \"The Crooked Billet\",\n        \"Lily Walker\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Harry Davies\": \"The Princess of Wales\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Jacob Walker\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Harry Davies\": \"The Princess of Wales\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Jacob Walker\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Harry Davies\": \"The Princess of Wales\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Jacob Walker\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The King's Head",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.0,
+        "William Jones": 0.6666666666666666,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Henry Green\": \"The King's Head\",\n        \"Ruby White\": \"The Black Swan\",\n        \"William Jones\": \"The King's Head\",\n        \"Evie Green\": \"The Black Swan\",\n        \"Logan Brown\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Henry Green\": \"The King's Head\",\n        \"Ruby White\": \"The Black Swan\",\n        \"William Jones\": \"The King's Head\",\n        \"Evie Green\": \"The Black Swan\",\n        \"Logan Brown\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Henry Green\": \"The King's Head\",\n        \"Ruby White\": \"The Black Swan\",\n        \"William Jones\": \"The King's Head\",\n        \"Evie Green\": \"The Black Swan\",\n        \"Logan Brown\": \"The King's Head\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Henry Green\": \"The King's Head\",\n        \"Ruby White\": \"The Black Swan\",\n        \"William Jones\": \"The King's Head\",\n        \"Evie Green\": \"The Black Swan\",\n        \"Logan Brown\": \"The King's Head\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The Queen's Arms",
+        "Jessica Davies": "The Queen's Arms",
+        "Michael Wood": "The Queen's Arms",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 0.0,
+        "Poppy Evans": 0.6666666666666666,
+        "Jessica Davies": 1.0,
+        "Michael Wood": 0.6666666666666666,
+        "Emily Wilson": 0.0
+      },
+      "focal_score_mean": 0.3333333333333333,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lily Walker\": \"The King's Head\",\n        \"Poppy Evans\": \"The Queen's Arms\",\n        \"Jessica Davies\": \"The Queen's Arms\",\n        \"Michael Wood\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lily Walker\": \"The King's Head\",\n        \"Poppy Evans\": \"The Queen's Arms\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Michael Wood\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lily Walker\": \"The King's Head\",\n        \"Poppy Evans\": \"The Queen's Arms\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Michael Wood\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The King's Head\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Lily Walker\": \"The King's Head\",\n        \"Poppy Evans\": \"The Queen's Arms\",\n        \"Jessica Davies\": \"The Queen's Arms\",\n        \"Michael Wood\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The King's Head\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 5,
+      "venues": [
+        "The Golden Fleece",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Isabella Johnson",
+        "Emily Wilson"
+      ],
+      "joint_action": {
+        "Isabella Johnson": "The Queen's Arms",
+        "Emily Wilson": "The Golden Fleece",
+        "Thomas Wilson": "The Queen's Arms",
+        "Amelia Jones": "The Queen's Arms",
+        "Millie Wood": "The Golden Fleece"
+      },
+      "scores": {
+        "Isabella Johnson": 1.0,
+        "Emily Wilson": 0.5,
+        "Thomas Wilson": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Millie Wood": 0.0
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The Golden Fleece\",\n        \"Thomas Wilson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Queen's Arms\",\n        \"Millie Wood\": \"The Golden Fleece\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Golden Fleece\",\n        \"Emily Wilson\": \"The Queen's Arms\",\n        \"Thomas Wilson\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Golden Fleece\",\n        \"Millie Wood\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The Golden Fleece\",\n        \"Thomas Wilson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Queen's Arms\",\n        \"Millie Wood\": \"The Golden Fleece\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Queen's Arms\",\n        \"Emily Wilson\": \"The Golden Fleece\",\n        \"Thomas Wilson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Queen's Arms\",\n        \"Millie Wood\": \"The Golden Fleece\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 6,
+      "venues": [
+        "The Golden Fleece",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Phoebe Young"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The Golden Fleece",
+        "Phoebe Young": "The Crooked Billet",
+        "Florence Hall": "The Golden Fleece",
+        "Poppy Evans": "The Crooked Billet",
+        "Alexander White": "The Crooked Billet"
+      },
+      "scores": {
+        "Alice Lewis": 1.0,
+        "Phoebe Young": 1.5,
+        "Florence Hall": 0.3333333333333333,
+        "Poppy Evans": 1.0,
+        "Alexander White": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Florence Hall\": \"The Golden Fleece\",\n        \"Poppy Evans\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Crooked Billet\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Florence Hall\": \"The Golden Fleece\",\n        \"Poppy Evans\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Crooked Billet\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Florence Hall\": \"The Golden Fleece\",\n        \"Poppy Evans\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Golden Fleece\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Florence Hall\": \"The Golden Fleece\",\n        \"Poppy Evans\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Crooked Billet\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 7,
+      "venues": [
+        "The Duke of York",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Daniel Hall",
+        "Oscar Johnson"
+      ],
+      "joint_action": {
+        "Daniel Hall": "The Duke of York",
+        "Oscar Johnson": "The Duke of York",
+        "Ava Brown": "The Clapton Hart",
+        "Amelia Jones": "The Clapton Hart",
+        "Jacob Walker": "The Clapton Hart"
+      },
+      "scores": {
+        "Daniel Hall": 1.5,
+        "Oscar Johnson": 0.3333333333333333,
+        "Ava Brown": 1.5,
+        "Amelia Jones": 1.1666666666666665,
+        "Jacob Walker": 1.1666666666666665
+      },
+      "focal_score_mean": 0.9166666666666666,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Duke of York\",\n        \"Oscar Johnson\": \"The Duke of York\",\n        \"Ava Brown\": \"The Clapton Hart\",\n        \"Amelia Jones\": \"The Clapton Hart\",\n        \"Jacob Walker\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Duke of York\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Ava Brown\": \"The Duke of York\",\n        \"Amelia Jones\": \"The Clapton Hart\",\n        \"Jacob Walker\": \"The Duke of York\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Duke of York\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Ava Brown\": \"The Duke of York\",\n        \"Amelia Jones\": \"The Clapton Hart\",\n        \"Jacob Walker\": \"The Duke of York\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Duke of York\",\n        \"Oscar Johnson\": \"The Duke of York\",\n        \"Ava Brown\": \"The Clapton Hart\",\n        \"Amelia Jones\": \"The Clapton Hart\",\n        \"Jacob Walker\": \"The Clapton Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 8,
+      "venues": [
+        "The King's Head",
+        "The Duke of York"
+      ],
+      "focal_players": [
+        "Sophie Martin",
+        "Florence Hall"
+      ],
+      "joint_action": {
+        "Sophie Martin": "The King's Head",
+        "Florence Hall": "The King's Head",
+        "Olivia Smith": "The Duke of York",
+        "Joshua Clark": "The Duke of York",
+        "Alexander White": "The Duke of York"
+      },
+      "scores": {
+        "Sophie Martin": 1.0,
+        "Florence Hall": 1.0,
+        "Olivia Smith": 1.5,
+        "Joshua Clark": 0.0,
+        "Alexander White": 0.5
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Sophie Martin\": \"The King's Head\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Olivia Smith\": \"The Duke of York\",\n        \"Joshua Clark\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Sophie Martin\": \"The King's Head\",\n        \"Florence Hall\": \"The Duke of York\",\n        \"Olivia Smith\": \"The King's Head\",\n        \"Joshua Clark\": \"The Duke of York\",\n        \"Alexander White\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Sophie Martin\": \"The King's Head\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Olivia Smith\": \"The Duke of York\",\n        \"Joshua Clark\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Sophie Martin\": \"The King's Head\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Olivia Smith\": \"The Duke of York\",\n        \"Joshua Clark\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 9,
+      "venues": [
+        "The White Hart",
+        "The Duke of York"
+      ],
+      "focal_players": [
+        "Florence Hall",
+        "Amelia Jones"
+      ],
+      "joint_action": {
+        "Florence Hall": "The White Hart",
+        "Amelia Jones": "The White Hart",
+        "Grace Thompson": "The White Hart",
+        "Millie Wood": "The Duke of York",
+        "Evie Green": "The Duke of York"
+      },
+      "scores": {
+        "Florence Hall": 0.6666666666666666,
+        "Amelia Jones": 1.0,
+        "Grace Thompson": 0.5,
+        "Millie Wood": 0.5,
+        "Evie Green": 0.3333333333333333
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.6666666666666666,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Florence Hall\": \"The White Hart\",\n        \"Amelia Jones\": \"The White Hart\",\n        \"Grace Thompson\": \"The White Hart\",\n        \"Millie Wood\": \"The White Hart\",\n        \"Evie Green\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Florence Hall\": \"The White Hart\",\n        \"Amelia Jones\": \"The White Hart\",\n        \"Grace Thompson\": \"The White Hart\",\n        \"Millie Wood\": \"The White Hart\",\n        \"Evie Green\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Florence Hall\": \"The White Hart\",\n        \"Amelia Jones\": \"The White Hart\",\n        \"Grace Thompson\": \"The White Hart\",\n        \"Millie Wood\": \"The Duke of York\",\n        \"Evie Green\": \"The Duke of York\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Florence Hall\": \"The White Hart\",\n        \"Amelia Jones\": \"The White Hart\",\n        \"Grace Thompson\": \"The White Hart\",\n        \"Millie Wood\": \"The Duke of York\",\n        \"Evie Green\": \"The Duke of York\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 10,
+      "venues": [
+        "The Golden Fleece",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Millie Wood",
+        "Ethan Evans"
+      ],
+      "joint_action": {
+        "Millie Wood": "The Golden Fleece",
+        "Ethan Evans": "The Princess of Wales",
+        "Jacob Walker": "The Golden Fleece",
+        "Jessica Davies": "The Princess of Wales",
+        "Lucas Williams": "The Princess of Wales"
+      },
+      "scores": {
+        "Millie Wood": 0.0,
+        "Ethan Evans": 1.0,
+        "Jacob Walker": 0.5,
+        "Jessica Davies": 1.0,
+        "Lucas Williams": 1.1666666666666665
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Millie Wood\": \"The Golden Fleece\",\n        \"Ethan Evans\": \"The Princess of Wales\",\n        \"Jacob Walker\": \"The Golden Fleece\",\n        \"Jessica Davies\": \"The Princess of Wales\",\n        \"Lucas Williams\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Millie Wood\": \"The Golden Fleece\",\n        \"Ethan Evans\": \"The Princess of Wales\",\n        \"Jacob Walker\": \"The Golden Fleece\",\n        \"Jessica Davies\": \"The Princess of Wales\",\n        \"Lucas Williams\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Millie Wood\": \"The Golden Fleece\",\n        \"Ethan Evans\": \"The Princess of Wales\",\n        \"Jacob Walker\": \"The Princess of Wales\",\n        \"Jessica Davies\": \"The Golden Fleece\",\n        \"Lucas Williams\": \"The Princess of Wales\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Millie Wood\": \"The Golden Fleece\",\n        \"Ethan Evans\": \"The Princess of Wales\",\n        \"Jacob Walker\": \"The Golden Fleece\",\n        \"Jessica Davies\": \"The Princess of Wales\",\n        \"Lucas Williams\": \"The Princess of Wales\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 11,
+      "venues": [
+        "The White Hart",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Lucas Williams"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The White Hart",
+        "Lucas Williams": "The White Hart",
+        "Michael Wood": "The White Hart",
+        "Ethan Evans": "The White Hart",
+        "Isabella Johnson": "The White Hart"
+      },
+      "scores": {
+        "Matthew Thompson": 1.5,
+        "Lucas Williams": 1.0,
+        "Michael Wood": 1.0,
+        "Ethan Evans": 1.5,
+        "Isabella Johnson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The White Hart\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Michael Wood\": \"The Black Swan\",\n        \"Ethan Evans\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The White Hart\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Michael Wood\": \"The White Hart\",\n        \"Ethan Evans\": \"The White Hart\",\n        \"Isabella Johnson\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The White Hart\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Michael Wood\": \"The Black Swan\",\n        \"Ethan Evans\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The White Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The White Hart\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Michael Wood\": \"The White Hart\",\n        \"Ethan Evans\": \"The White Hart\",\n        \"Isabella Johnson\": \"The White Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 12,
+      "venues": [
+        "The White Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Jack Taylor",
+        "Benjamin Roberts"
+      ],
+      "joint_action": {
+        "Jack Taylor": "The White Hart",
+        "Benjamin Roberts": "The White Hart",
+        "Henry Green": "The White Hart",
+        "Sophie Martin": "The White Hart",
+        "Ella Roberts": "The White Hart"
+      },
+      "scores": {
+        "Jack Taylor": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Henry Green": 1.5,
+        "Sophie Martin": 1.0,
+        "Ella Roberts": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jack Taylor\": \"The White Hart\",\n        \"Benjamin Roberts\": \"The White Hart\",\n        \"Henry Green\": \"The White Hart\",\n        \"Sophie Martin\": \"The White Hart\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jack Taylor\": \"The White Hart\",\n        \"Benjamin Roberts\": \"The White Hart\",\n        \"Henry Green\": \"The White Hart\",\n        \"Sophie Martin\": \"The White Hart\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jack Taylor\": \"The White Hart\",\n        \"Benjamin Roberts\": \"The White Hart\",\n        \"Henry Green\": \"The White Hart\",\n        \"Sophie Martin\": \"The White Hart\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Jack Taylor\": \"The White Hart\",\n        \"Benjamin Roberts\": \"The White Hart\",\n        \"Henry Green\": \"The White Hart\",\n        \"Sophie Martin\": \"The White Hart\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 13,
+      "venues": [
+        "The Queen's Arms",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Joshua Clark"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The Queen's Arms",
+        "Joshua Clark": "The Golden Fleece",
+        "William Jones": "The Queen's Arms",
+        "Grace Thompson": "The Queen's Arms",
+        "Amelia Jones": "The Queen's Arms"
+      },
+      "scores": {
+        "Matthew Thompson": 1.1666666666666665,
+        "Joshua Clark": 0.0,
+        "William Jones": 1.5,
+        "Grace Thompson": 0.6666666666666666,
+        "Amelia Jones": 1.0
+      },
+      "focal_score_mean": 0.5833333333333333,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Golden Fleece\",\n        \"William Jones\": \"The Golden Fleece\",\n        \"Grace Thompson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Golden Fleece\",\n        \"William Jones\": \"The Queen's Arms\",\n        \"Grace Thompson\": \"The Golden Fleece\",\n        \"Amelia Jones\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Golden Fleece\",\n        \"William Jones\": \"The Queen's Arms\",\n        \"Grace Thompson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Golden Fleece\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Golden Fleece\",\n        \"William Jones\": \"The Queen's Arms\",\n        \"Grace Thompson\": \"The Queen's Arms\",\n        \"Amelia Jones\": \"The Queen's Arms\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 14,
+      "venues": [
+        "The Crooked Billet",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Lucas Williams",
+        "Phoebe Young"
+      ],
+      "joint_action": {
+        "Lucas Williams": "The Crooked Billet",
+        "Phoebe Young": "The Black Swan",
+        "Alice Lewis": "The Crooked Billet",
+        "Mia Williams": "The Crooked Billet",
+        "Ruby White": "The Black Swan"
+      },
+      "scores": {
+        "Lucas Williams": 1.0,
+        "Phoebe Young": 0.5,
+        "Alice Lewis": 0.5,
+        "Mia Williams": 0.6666666666666666,
+        "Ruby White": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lucas Williams\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Alice Lewis\": \"The Black Swan\",\n        \"Mia Williams\": \"The Black Swan\",\n        \"Ruby White\": \"The Black Swan\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lucas Williams\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Black Swan\",\n        \"Alice Lewis\": \"The Crooked Billet\",\n        \"Mia Williams\": \"The Crooked Billet\",\n        \"Ruby White\": \"The Black Swan\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Lucas Williams\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Black Swan\",\n        \"Alice Lewis\": \"The Crooked Billet\",\n        \"Mia Williams\": \"The Crooked Billet\",\n        \"Ruby White\": \"The Black Swan\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Lucas Williams\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Black Swan\",\n        \"Alice Lewis\": \"The Crooked Billet\",\n        \"Mia Williams\": \"The Crooked Billet\",\n        \"Ruby White\": \"The Black Swan\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 15,
+      "venues": [
+        "The King's Head",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Oscar Johnson",
+        "Thomas Wilson"
+      ],
+      "joint_action": {
+        "Oscar Johnson": "The King's Head",
+        "Thomas Wilson": "The Princess of Wales",
+        "Florence Hall": "The King's Head",
+        "Alice Lewis": "The Princess of Wales",
+        "Ruby White": "The King's Head"
+      },
+      "scores": {
+        "Oscar Johnson": 1.1666666666666665,
+        "Thomas Wilson": 0.5,
+        "Florence Hall": 1.0,
+        "Alice Lewis": 0.5,
+        "Ruby White": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Oscar Johnson\": \"The King's Head\",\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Alice Lewis\": \"The Princess of Wales\",\n        \"Ruby White\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Oscar Johnson\": \"The King's Head\",\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Alice Lewis\": \"The Princess of Wales\",\n        \"Ruby White\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Oscar Johnson\": \"The King's Head\",\n        \"Thomas Wilson\": \"The King's Head\",\n        \"Florence Hall\": \"The Princess of Wales\",\n        \"Alice Lewis\": \"The Princess of Wales\",\n        \"Ruby White\": \"The King's Head\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Oscar Johnson\": \"The King's Head\",\n        \"Thomas Wilson\": \"The Princess of Wales\",\n        \"Florence Hall\": \"The King's Head\",\n        \"Alice Lewis\": \"The Princess of Wales\",\n        \"Ruby White\": \"The King's Head\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 16,
+      "venues": [
+        "The Duke of York",
+        "The White Hart"
+      ],
+      "focal_players": [
+        "Logan Brown",
+        "Alexander White"
+      ],
+      "joint_action": {
+        "Logan Brown": "The Duke of York",
+        "Alexander White": "The Duke of York",
+        "Lucas Williams": "The Duke of York",
+        "Elijah Lewis": "The White Hart",
+        "Oscar Johnson": "The White Hart"
+      },
+      "scores": {
+        "Logan Brown": 0.6666666666666666,
+        "Alexander White": 1.1666666666666665,
+        "Lucas Williams": 1.5,
+        "Elijah Lewis": 0.5,
+        "Oscar Johnson": 1.0
+      },
+      "focal_score_mean": 0.9166666666666665,
+      "focal_score_min": 0.6666666666666666,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Logan Brown\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\",\n        \"Lucas Williams\": \"The Duke of York\",\n        \"Elijah Lewis\": \"The White Hart\",\n        \"Oscar Johnson\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Logan Brown\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\",\n        \"Lucas Williams\": \"The Duke of York\",\n        \"Elijah Lewis\": \"The White Hart\",\n        \"Oscar Johnson\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Logan Brown\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\",\n        \"Lucas Williams\": \"The Duke of York\",\n        \"Elijah Lewis\": \"The White Hart\",\n        \"Oscar Johnson\": \"The White Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Logan Brown\": \"The Duke of York\",\n        \"Alexander White\": \"The Duke of York\",\n        \"Lucas Williams\": \"The Duke of York\",\n        \"Elijah Lewis\": \"The White Hart\",\n        \"Oscar Johnson\": \"The White Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 17,
+      "venues": [
+        "The Black Swan",
+        "The Red Lion"
+      ],
+      "focal_players": [
+        "Jacob Walker",
+        "Isabella Johnson"
+      ],
+      "joint_action": {
+        "Jacob Walker": "The Black Swan",
+        "Isabella Johnson": "The Black Swan",
+        "Grace Thompson": "The Red Lion",
+        "Daniel Hall": "The Black Swan",
+        "Noah Smith": "The Red Lion"
+      },
+      "scores": {
+        "Jacob Walker": 0.6666666666666666,
+        "Isabella Johnson": 1.1666666666666665,
+        "Grace Thompson": 1.5,
+        "Daniel Hall": 1.5,
+        "Noah Smith": 0.8333333333333333
+      },
+      "focal_score_mean": 0.9166666666666665,
+      "focal_score_min": 0.6666666666666666,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Red Lion\",\n        \"Daniel Hall\": \"The Black Swan\",\n        \"Noah Smith\": \"The Red Lion\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Red Lion\",\n        \"Daniel Hall\": \"The Black Swan\",\n        \"Noah Smith\": \"The Red Lion\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The Red Lion\",\n        \"Grace Thompson\": \"The Black Swan\",\n        \"Daniel Hall\": \"The Red Lion\",\n        \"Noah Smith\": \"The Black Swan\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Black Swan\",\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Red Lion\",\n        \"Daniel Hall\": \"The Black Swan\",\n        \"Noah Smith\": \"The Red Lion\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 18,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Molly Clark"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The Clapton Hart",
+        "Molly Clark": "The Clapton Hart",
+        "Jackson Young": "The Crooked Billet",
+        "William Jones": "The Crooked Billet",
+        "Sophie Martin": "The Clapton Hart"
+      },
+      "scores": {
+        "Alice Lewis": 1.0,
+        "Molly Clark": 1.1666666666666665,
+        "Jackson Young": 0.5,
+        "William Jones": 0.0,
+        "Sophie Martin": 0.6666666666666666
+      },
+      "focal_score_mean": 1.0833333333333333,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Clapton Hart\",\n        \"Jackson Young\": \"The Clapton Hart\",\n        \"William Jones\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Clapton Hart\",\n        \"Jackson Young\": \"The Clapton Hart\",\n        \"William Jones\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Clapton Hart\",\n        \"Jackson Young\": \"The Crooked Billet\",\n        \"William Jones\": \"The Crooked Billet\",\n        \"Sophie Martin\": \"The Clapton Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Clapton Hart\",\n        \"Jackson Young\": \"The Crooked Billet\",\n        \"William Jones\": \"The Crooked Billet\",\n        \"Sophie Martin\": \"The Clapton Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 19,
+      "venues": [
+        "The Princess of Wales",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Daniel Hall",
+        "Elijah Lewis"
+      ],
+      "joint_action": {
+        "Daniel Hall": "The Princess of Wales",
+        "Elijah Lewis": "The Black Swan",
+        "Isla Taylor": "The Princess of Wales",
+        "Oscar Johnson": "The Black Swan",
+        "Michael Wood": "The Princess of Wales"
+      },
+      "scores": {
+        "Daniel Hall": 1.0,
+        "Elijah Lewis": 1.0,
+        "Isla Taylor": 1.0,
+        "Oscar Johnson": 0.5,
+        "Michael Wood": 0.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Princess of Wales\",\n        \"Elijah Lewis\": \"The Black Swan\",\n        \"Isla Taylor\": \"The Princess of Wales\",\n        \"Oscar Johnson\": \"The Black Swan\",\n        \"Michael Wood\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Princess of Wales\",\n        \"Elijah Lewis\": \"The Black Swan\",\n        \"Isla Taylor\": \"The Princess of Wales\",\n        \"Oscar Johnson\": \"The Black Swan\",\n        \"Michael Wood\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Princess of Wales\",\n        \"Elijah Lewis\": \"The Black Swan\",\n        \"Isla Taylor\": \"The Princess of Wales\",\n        \"Oscar Johnson\": \"The Black Swan\",\n        \"Michael Wood\": \"The Princess of Wales\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Daniel Hall\": \"The Princess of Wales\",\n        \"Elijah Lewis\": \"The Black Swan\",\n        \"Isla Taylor\": \"The Princess of Wales\",\n        \"Oscar Johnson\": \"The Black Swan\",\n        \"Michael Wood\": \"The Princess of Wales\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 20,
+      "venues": [
+        "The Clapton Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Mia Williams",
+        "Ethan Evans"
+      ],
+      "joint_action": {
+        "Mia Williams": "The Queen's Arms",
+        "Ethan Evans": "The Clapton Hart",
+        "Oscar Johnson": "The Clapton Hart",
+        "Sophie Martin": "The Queen's Arms",
+        "Joshua Clark": "The Queen's Arms"
+      },
+      "scores": {
+        "Mia Williams": 1.0,
+        "Ethan Evans": 0.5,
+        "Oscar Johnson": 0.0,
+        "Sophie Martin": 1.0,
+        "Joshua Clark": 1.0
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Mia Williams\": \"The Queen's Arms\",\n        \"Ethan Evans\": \"The Clapton Hart\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Mia Williams\": \"The Clapton Hart\",\n        \"Ethan Evans\": \"The Queen's Arms\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Mia Williams\": \"The Queen's Arms\",\n        \"Ethan Evans\": \"The Clapton Hart\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Queen's Arms\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Mia Williams\": \"The Queen's Arms\",\n        \"Ethan Evans\": \"The Clapton Hart\",\n        \"Oscar Johnson\": \"The Clapton Hart\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Joshua Clark\": \"The Queen's Arms\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 21,
+      "venues": [
+        "The Clapton Hart",
+        "The Red Lion"
+      ],
+      "focal_players": [
+        "Phoebe Young",
+        "Logan Brown"
+      ],
+      "joint_action": {
+        "Phoebe Young": "The Clapton Hart",
+        "Logan Brown": "The Red Lion",
+        "Benjamin Roberts": "The Clapton Hart",
+        "Emily Wilson": "The Clapton Hart",
+        "Lucas Williams": "The Red Lion"
+      },
+      "scores": {
+        "Phoebe Young": 0.6666666666666666,
+        "Logan Brown": 0.5,
+        "Benjamin Roberts": 1.5,
+        "Emily Wilson": 1.5,
+        "Lucas Williams": 1.5
+      },
+      "focal_score_mean": 0.5833333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Phoebe Young\": \"The Clapton Hart\",\n        \"Logan Brown\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Clapton Hart\",\n        \"Emily Wilson\": \"The Clapton Hart\",\n        \"Lucas Williams\": \"The Red Lion\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Phoebe Young\": \"The Clapton Hart\",\n        \"Logan Brown\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Clapton Hart\",\n        \"Emily Wilson\": \"The Clapton Hart\",\n        \"Lucas Williams\": \"The Red Lion\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Phoebe Young\": \"The Clapton Hart\",\n        \"Logan Brown\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Clapton Hart\",\n        \"Emily Wilson\": \"The Clapton Hart\",\n        \"Lucas Williams\": \"The Red Lion\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Phoebe Young\": \"The Clapton Hart\",\n        \"Logan Brown\": \"The Red Lion\",\n        \"Benjamin Roberts\": \"The Clapton Hart\",\n        \"Emily Wilson\": \"The Clapton Hart\",\n        \"Lucas Williams\": \"The Red Lion\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 22,
+      "venues": [
+        "The Clapton Hart",
+        "The King's Head"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Lucas Williams"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The King's Head",
+        "Lucas Williams": "The Clapton Hart",
+        "Ella Roberts": "The Clapton Hart",
+        "Benjamin Roberts": "The King's Head",
+        "Millie Wood": "The Clapton Hart"
+      },
+      "scores": {
+        "Alice Lewis": 0.5,
+        "Lucas Williams": 1.5,
+        "Ella Roberts": 1.1666666666666665,
+        "Benjamin Roberts": 1.0,
+        "Millie Wood": 1.1666666666666665
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The King's Head\",\n        \"Lucas Williams\": \"The Clapton Hart\",\n        \"Ella Roberts\": \"The Clapton Hart\",\n        \"Benjamin Roberts\": \"The King's Head\",\n        \"Millie Wood\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The King's Head\",\n        \"Lucas Williams\": \"The Clapton Hart\",\n        \"Ella Roberts\": \"The King's Head\",\n        \"Benjamin Roberts\": \"The King's Head\",\n        \"Millie Wood\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The King's Head\",\n        \"Lucas Williams\": \"The Clapton Hart\",\n        \"Ella Roberts\": \"The King's Head\",\n        \"Benjamin Roberts\": \"The King's Head\",\n        \"Millie Wood\": \"The Clapton Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Alice Lewis\": \"The King's Head\",\n        \"Lucas Williams\": \"The Clapton Hart\",\n        \"Ella Roberts\": \"The Clapton Hart\",\n        \"Benjamin Roberts\": \"The King's Head\",\n        \"Millie Wood\": \"The Clapton Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 23,
+      "venues": [
+        "The Queen's Arms",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Lily Walker"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The Queen's Arms",
+        "Lily Walker": "The Queen's Arms",
+        "Alexander White": "The Queen's Arms",
+        "Sophie Martin": "The Queen's Arms",
+        "Mia Williams": "The Queen's Arms"
+      },
+      "scores": {
+        "Matthew Thompson": 1.5,
+        "Lily Walker": 1.5,
+        "Alexander White": 1.5,
+        "Sophie Martin": 1.0,
+        "Mia Williams": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Lily Walker\": \"The Queen's Arms\",\n        \"Alexander White\": \"The Queen's Arms\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Mia Williams\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Lily Walker\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Crooked Billet\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Mia Williams\": \"The Queen's Arms\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Lily Walker\": \"The Crooked Billet\",\n        \"Alexander White\": \"The Queen's Arms\",\n        \"Sophie Martin\": \"The Crooked Billet\",\n        \"Mia Williams\": \"The Queen's Arms\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Matthew Thompson\": \"The Queen's Arms\",\n        \"Lily Walker\": \"The Queen's Arms\",\n        \"Alexander White\": \"The Queen's Arms\",\n        \"Sophie Martin\": \"The Queen's Arms\",\n        \"Mia Williams\": \"The Queen's Arms\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 24,
+      "venues": [
+        "The Red Lion",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Alexander White",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Alexander White": "The Red Lion",
+        "Harry Davies": "The Clapton Hart",
+        "Molly Clark": "The Red Lion",
+        "Olivia Smith": "The Red Lion",
+        "Jessica Davies": "The Clapton Hart"
+      },
+      "scores": {
+        "Alexander White": 0.6666666666666666,
+        "Harry Davies": 0.5,
+        "Molly Clark": 0.6666666666666666,
+        "Olivia Smith": 1.0,
+        "Jessica Davies": 0.0
+      },
+      "focal_score_mean": 0.5833333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The Red Lion\",\n        \"Harry Davies\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Red Lion\",\n        \"Olivia Smith\": \"The Red Lion\",\n        \"Jessica Davies\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The Red Lion\",\n        \"Harry Davies\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Red Lion\",\n        \"Olivia Smith\": \"The Red Lion\",\n        \"Jessica Davies\": \"The Clapton Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The Red Lion\",\n        \"Harry Davies\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Red Lion\",\n        \"Olivia Smith\": \"The Red Lion\",\n        \"Jessica Davies\": \"The Clapton Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The Red Lion\",\n        \"Harry Davies\": \"The Clapton Hart\",\n        \"Molly Clark\": \"The Red Lion\",\n        \"Olivia Smith\": \"The Red Lion\",\n        \"Jessica Davies\": \"The Clapton Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 25,
+      "venues": [
+        "The Red Lion",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Red Lion",
+        "Harry Davies": "The Red Lion",
+        "Noah Smith": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales",
+        "Daniel Hall": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.5,
+        "Harry Davies": 1.5,
+        "Noah Smith": 1.0,
+        "Lily Walker": 1.0,
+        "Daniel Hall": 1.0
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Red Lion\",\n        \"Harry Davies\": \"The Red Lion\",\n        \"Noah Smith\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\",\n        \"Daniel Hall\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Red Lion\",\n        \"Harry Davies\": \"The Red Lion\",\n        \"Noah Smith\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\",\n        \"Daniel Hall\": \"The Princess of Wales\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Red Lion\",\n        \"Harry Davies\": \"The Red Lion\",\n        \"Noah Smith\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\",\n        \"Daniel Hall\": \"The Princess of Wales\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Thomas Wilson\": \"The Red Lion\",\n        \"Harry Davies\": \"The Red Lion\",\n        \"Noah Smith\": \"The Princess of Wales\",\n        \"Lily Walker\": \"The Princess of Wales\",\n        \"Daniel Hall\": \"The Princess of Wales\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 26,
+      "venues": [
+        "The King's Head",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Elijah Lewis",
+        "Alice Lewis"
+      ],
+      "joint_action": {
+        "Elijah Lewis": "The King's Head",
+        "Alice Lewis": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Daniel Hall": "The King's Head"
+      },
+      "scores": {
+        "Elijah Lewis": 1.0,
+        "Alice Lewis": 1.5,
+        "Evie Green": 1.5,
+        "Jessica Davies": 1.5,
+        "Daniel Hall": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Elijah Lewis\": \"The King's Head\",\n        \"Alice Lewis\": \"The King's Head\",\n        \"Evie Green\": \"The King's Head\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Daniel Hall\": \"The King's Head\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Elijah Lewis\": \"The King's Head\",\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Evie Green\": \"The King's Head\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Daniel Hall\": \"The Golden Fleece\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Elijah Lewis\": \"The King's Head\",\n        \"Alice Lewis\": \"The Golden Fleece\",\n        \"Evie Green\": \"The King's Head\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Daniel Hall\": \"The Golden Fleece\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Elijah Lewis\": \"The King's Head\",\n        \"Alice Lewis\": \"The King's Head\",\n        \"Evie Green\": \"The King's Head\",\n        \"Jessica Davies\": \"The King's Head\",\n        \"Daniel Hall\": \"The King's Head\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 27,
+      "venues": [
+        "The White Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Alexander White",
+        "Jacob Walker"
+      ],
+      "joint_action": {
+        "Alexander White": "The White Hart",
+        "Jacob Walker": "The Queen's Arms",
+        "Lucas Williams": "The White Hart",
+        "Elijah Lewis": "The Queen's Arms",
+        "Ella Roberts": "The White Hart"
+      },
+      "scores": {
+        "Alexander White": 1.5,
+        "Jacob Walker": 1.5,
+        "Lucas Williams": 0.5,
+        "Elijah Lewis": 1.0,
+        "Ella Roberts": 0.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The White Hart\",\n        \"Jacob Walker\": \"The Queen's Arms\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Elijah Lewis\": \"The Queen's Arms\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The White Hart\",\n        \"Jacob Walker\": \"The Queen's Arms\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Elijah Lewis\": \"The Queen's Arms\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The White Hart\",\n        \"Jacob Walker\": \"The Queen's Arms\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Elijah Lewis\": \"The Queen's Arms\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Alexander White\": \"The White Hart\",\n        \"Jacob Walker\": \"The Queen's Arms\",\n        \"Lucas Williams\": \"The White Hart\",\n        \"Elijah Lewis\": \"The Queen's Arms\",\n        \"Ella Roberts\": \"The White Hart\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 28,
+      "venues": [
+        "The Crooked Billet",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Jacob Walker",
+        "Lily Walker"
+      ],
+      "joint_action": {
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Clapton Hart",
+        "Phoebe Young": "The Crooked Billet",
+        "Molly Clark": "The Clapton Hart",
+        "Ava Brown": "The Crooked Billet"
+      },
+      "scores": {
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.5,
+        "Phoebe Young": 1.5,
+        "Molly Clark": 0.5,
+        "Ava Brown": 0.8333333333333333
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Crooked Billet\",\n        \"Lily Walker\": \"The Clapped Hart\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Molly Clark\": \"The Clapped Hart\",\n        \"Ava Brown\": \"The Crooked Billet\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Crooked Billet\",\n        \"Lily Walker\": \"The Crooked Billet\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Molly Clark\": \"The Crooked Billet\",\n        \"Ava Brown\": \"The Crooked Billet\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Crooked Billet\",\n        \"Lily Walker\": \"The Clapped Hart\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Molly Clark\": \"The Clapped Hart\",\n        \"Ava Brown\": \"The Crooked Billet\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Jacob Walker\": \"The Crooked Billet\",\n        \"Lily Walker\": \"The Clapton Hart\",\n        \"Phoebe Young\": \"The Crooked Billet\",\n        \"Molly Clark\": \"The Clapton Hart\",\n        \"Ava Brown\": \"The Crooked Billet\"\n    }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 29,
+      "venues": [
+        "The Black Swan",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Isabella Johnson",
+        "Noah Smith"
+      ],
+      "joint_action": {
+        "Isabella Johnson": "The Black Swan",
+        "Noah Smith": "The Black Swan",
+        "Grace Thompson": "The Black Swan",
+        "Emily Wilson": "The Black Swan",
+        "Evie Green": "The Black Swan"
+      },
+      "scores": {
+        "Isabella Johnson": 1.5,
+        "Noah Smith": 1.0,
+        "Grace Thompson": 1.5,
+        "Emily Wilson": 1.0,
+        "Evie Green": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Noah Smith\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Black Swan\",\n        \"Emily Wilson\": \"The Black Swan\",\n        \"Evie Green\": \"The Black Swan\"\n    }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Noah Smith\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Black Swan\",\n        \"Emily Wilson\": \"The Black Swan\",\n        \"Evie Green\": \"The Black Swan\"\n    }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Noah Smith\": \"The Crooked Billet\",\n        \"Grace Thompson\": \"The Black Swan\",\n        \"Emily Wilson\": \"The Crooked Billet\",\n        \"Evie Green\": \"The Black Swan\"\n    }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n    \"joint_action\": {\n        \"Isabella Johnson\": \"The Black Swan\",\n        \"Noah Smith\": \"The Black Swan\",\n        \"Grace Thompson\": \"The Black Swan\",\n        \"Emily Wilson\": \"The Black Swan\",\n        \"Evie Green\": \"The Black Swan\"\n    }\n}\n```"
+      }
+    }
+  ]
+}

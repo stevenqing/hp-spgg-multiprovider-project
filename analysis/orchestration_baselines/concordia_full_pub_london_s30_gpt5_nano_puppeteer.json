@@ -1,0 +1,2044 @@
+{
+  "substrate": "pub",
+  "domain": "pub_coordination",
+  "config": "london",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "puppeteer"
+  ],
+  "model": "gpt-5.4-nano-20260317",
+  "orchestration_budget": 4,
+  "information_audit": {
+    "puppeteer": {
+      "mode": "centralized_public_orchestration",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "puppeteer",
+      "episodes": 30,
+      "focal_score_mean": 0.8151388888888889,
+      "focal_score_min_mean": 0.43222222222222223,
+      "coordination_rate_mean": 0.6333333333333333,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "puppeteer",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin",
+        "Benjamin Roberts",
+        "Amelia Jones"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Red Lion",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Red Lion",
+        "Molly Clark": "The Golden Fleece",
+        "Michael Wood": "The Red Lion",
+        "Poppy Evans": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 0.3333333333333333,
+        "Sophie Martin": 0.5,
+        "Benjamin Roberts": 0.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0,
+        "Michael Wood": 1.0,
+        "Poppy Evans": 0.75
+      },
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Red Lion or The Golden Fleece) according to the coordination task.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"With only two available venues (The Red Lion, The Golden Fleece) and no closed venues, assign each person to one of these venues. Public relationship statements suggest clustering could be beneficial (e.g., Noah Smith with Sophie Martin; Sophie Martin with Amelia Jones; Molly Clark with Poppy Evans; Michael Wood with Amelia Jones; Poppy Evans with Michael Wood), but the schema requires only a single venue per person and does not encode capacity or conflicts. Therefore, choose a simple, evidence-aligned split that keeps commonly paired people together where possible: place Noah Smith and Sophie Martin at the same venue; place Amelia Jones with Sophie Martin and Michael Wood at the same venue; place Molly Clark with Poppy Evans at the same venue; and assign Benjamin Roberts "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\",\n  \"joint_action\": {\n    \"Noah Smith\": \"The Red Lion\",\n    \"Sophie Martin\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Red Lion\",\n    \"Molly Clark\": \"The Golden Fleece\",\n    \"Michael Wood\": \"The Red Lion\",\n    \"Poppy Evans\": \"The Golden Fleece\"\n  }\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Noah Smith\": \"The Red Lion\",\n    \"Sophie Martin\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Red Lion\",\n    \"Molly Clark\": \"The Golden Fleece\",\n    \"Michael Wood\": \"The Red Lion\",\n    \"Poppy Evans\": \"The Golden Fleece\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Noah Smith\": \"The Red Lion\",\n    \"Sophie Martin\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Red Lion\",\n    \"Molly Clark\": \"The Golden Fleece\",\n    \"Michael Wood\": \"The Red Lion\",\n    \"Poppy Evans\": \"The Golden Fleece\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor",
+        "Alexander White",
+        "William Jones"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Crooked Billet",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Crooked Billet",
+        "Thomas Wilson": "The Clapton Hart",
+        "Poppy Evans": "The Crooked Billet",
+        "Oscar Johnson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 0.6666666666666666,
+        "Jack Taylor": 1.0,
+        "Alexander White": 1.1666666666666665,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.3333333333333333,
+        "Poppy Evans": 0.7,
+        "Oscar Johnson": 0.25
+      },
+      "focal_score_mean": 0.9583333333333333,
+      "focal_score_min": 0.6666666666666666,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Clapton Hart or The Crooked Billet) according to the required joint_action schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"joint_action\": {\n    \"Evie Green\": \"The Clapton Hart\",\n    \"Jack Taylor\": \"The Crooked Billet\",\n    \"Alexander White\": \"The Clapton Hart\",\n    \"William Jones\": \"The Crooked Billet\",\n    \"Thomas Wilson\": \"The Clapton Hart\",\n    \"Poppy Evans\": \"The Crooked Billet\",\n    \"Oscar Johnson\": \"The Clapton Hart\"\n  },\n  \"analysis\": \"Using only the public context, both available venues (The Clapton Hart, The Crooked Billet) are open. Assigning each person to one non-closed venue satisfies the required schema while distributing attendees across the two venues.\"\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Evie Green\": \"The Clapton Hart\",\n    \"Jack Taylor\": \"The Crooked Billet\",\n    \"Alexander White\": \"The Clapton Hart\",\n    \"William Jones\": \"The Crooked Billet\",\n    \"Thomas Wilson\": \"The Clapton Hart\",\n    \"Poppy Evans\": \"The Crooked Billet\",\n    \"Oscar Johnson\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Evie Green\": \"The Clapton Hart\",\n    \"Jack Taylor\": \"The Crooked Billet\",\n    \"Alexander White\": \"The Clapton Hart\",\n    \"William Jones\": \"The Crooked Billet\",\n    \"Thomas Wilson\": \"The Clapton Hart\",\n    \"Poppy Evans\": \"The Crooked Billet\",\n    \"Oscar Johnson\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies",
+        "Phoebe Young",
+        "Jacob Walker"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Crooked Billet",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales",
+        "Jackson Young": "The Crooked Billet",
+        "Millie Wood": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.4,
+        "Harry Davies": 0.9,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 0.4,
+        "Lily Walker": 1.1,
+        "Jackson Young": 0.3333333333333333,
+        "Millie Wood": 0.5
+      },
+      "focal_score_mean": 0.675,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all required public inputs (people, available venues, and the required per-person venue assignment schema); next step is to plan the joint venue assignments for each person.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Princess of Wales\",\n      \"The Crooked Billet\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_applied\": \"Private favorite venues are hidden; only the provided public context (available venues) is used.\",\n    \"assignment_plan\": {\n      \"Thomas Wilson\": \"The Princess of Wales\",\n      \"Harry Davies\": \"The Crooked Billet\",\n      \"Phoebe Young\": \"The Princess of Wales\",\n      \"Jacob Walker\": \"The Crooked Billet\",\n      \"Lily Walker\": \"The Princess of Wales\",\n      \"Jackson Young\": \"The Crooked Billet\",\n      \"Millie Wood\": \"The Princess of Wales\"\n    },\n    \"rationale\": \"Each person is assigned exactly one venue fro"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Thomas Wilson\": \"The Princess of Wales\",\n    \"Harry Davies\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Princess of Wales\",\n    \"Jacob Walker\": \"The Crooked Billet\",\n    \"Lily Walker\": \"The Princess of Wales\",\n    \"Jackson Young\": \"The Crooked Billet\",\n    \"Millie Wood\": \"The Princess of Wales\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Thomas Wilson\": \"The Princess of Wales\",\n    \"Harry Davies\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Princess of Wales\",\n    \"Jacob Walker\": \"The Crooked Billet\",\n    \"Lily Walker\": \"The Princess of Wales\",\n    \"Jackson Young\": \"The Crooked Billet\",\n    \"Millie Wood\": \"The Princess of Wales\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White",
+        "William Jones",
+        "Evie Green"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The King's Head",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head",
+        "Oscar Johnson": "The Black Swan",
+        "Phoebe Young": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.0,
+        "William Jones": 0.5,
+        "Evie Green": 0.75,
+        "Logan Brown": 0.5,
+        "Oscar Johnson": 0.5,
+        "Phoebe Young": 0.5
+      },
+      "focal_score_mean": 0.9375,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The King's Head or The Black Swan) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"Only two venues are publicly available in London: The King's Head and The Black Swan. No venues are marked closed, and no private/favorite venues may be used. Therefore, assign each person to one of the two available venues (ensuring the assignment is based solely on availability, not private preferences).\",\n  \"joint_action\": {\n    \"Henry Green\": \"The King's Head\",\n    \"Ruby White\": \"The Black Swan\",\n    \"William Jones\": \"The King's Head\",\n    \"Evie Green\": \"The Black Swan\",\n    \"Logan Brown\": \"The King's Head\",\n    \"Oscar Johnson\": \"The Black Swan\",\n    \"Phoebe Young\": \"The King's Head\"\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Henry Green\": \"The King's Head\",\n    \"Ruby White\": \"The Black Swan\",\n    \"William Jones\": \"The King's Head\",\n    \"Evie Green\": \"The Black Swan\",\n    \"Logan Brown\": \"The King's Head\",\n    \"Oscar Johnson\": \"The Black Swan\",\n    \"Phoebe Young\": \"The King's Head\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Henry Green\": \"The King's Head\",\n    \"Ruby White\": \"The Black Swan\",\n    \"William Jones\": \"The King's Head\",\n    \"Evie Green\": \"The Black Swan\",\n    \"Logan Brown\": \"The King's Head\",\n    \"Oscar Johnson\": \"The Black Swan\",\n    \"Phoebe Young\": \"The King's Head\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans",
+        "Jessica Davies",
+        "Michael Wood"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The Queen's Arms",
+        "Michael Wood": "The Queen's Arms",
+        "Emily Wilson": "The Queen's Arms",
+        "Olivia Smith": "The King's Head",
+        "Ava Brown": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.25,
+        "Jessica Davies": 0.8333333333333333,
+        "Michael Wood": 0.3333333333333333,
+        "Emily Wilson": 1.1666666666666665,
+        "Olivia Smith": 1.1,
+        "Ava Brown": 0.6
+      },
+      "focal_score_mean": 0.8541666666666666,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The King's Head or The Queen's Arms) to form the joint action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The King's Head\",\n      \"The Queen's Arms\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_applied\": \"Private favorite venues are hidden; only the provided public context is used.\",\n    \"relationship_driven_notes\": [\n      {\n        \"pair\": [\n          \"Lily Walker\",\n          \"Poppy Evans\"\n        ],\n        \"public_statement\": \"Lily Walker and Poppy Evans have a very close bond / strong sense of loyalty to each other.\"\n      },\n      {\n        \"pair\": [\n          \"Jessica Davies\",\n          \"Emily Wilson\"\n        ],\n        \"public_statement\": \"Jessica Davies and Emily Wilson always look out for each other.\"\n     "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Lily Walker\": \"The King's Head\",\n    \"Poppy Evans\": \"The King's Head\",\n    \"Jessica Davies\": \"The Queen's Arms\",\n    \"Michael Wood\": \"The Queen's Arms\",\n    \"Emily Wilson\": \"The Queen's Arms\",\n    \"Olivia Smith\": \"The King's Head\",\n    \"Ava Brown\": \"The King's Head\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Lily Walker\": \"The King's Head\",\n    \"Poppy Evans\": \"The King's Head\",\n    \"Jessica Davies\": \"The Queen's Arms\",\n    \"Michael Wood\": \"The Queen's Arms\",\n    \"Emily Wilson\": \"The Queen's Arms\",\n    \"Olivia Smith\": \"The King's Head\",\n    \"Ava Brown\": \"The King's Head\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 5,
+      "venues": [
+        "The Golden Fleece",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Isabella Johnson",
+        "Emily Wilson",
+        "Thomas Wilson",
+        "Amelia Jones"
+      ],
+      "joint_action": {
+        "Isabella Johnson": "The Golden Fleece",
+        "Emily Wilson": "The Queen's Arms",
+        "Thomas Wilson": "The Golden Fleece",
+        "Amelia Jones": "The Queen's Arms",
+        "Millie Wood": "The Golden Fleece",
+        "Isla Taylor": "The Queen's Arms",
+        "Olivia Smith": "The Golden Fleece"
+      },
+      "scores": {
+        "Isabella Johnson": 0.5,
+        "Emily Wilson": 0.3333333333333333,
+        "Thomas Wilson": 0.6666666666666666,
+        "Amelia Jones": 0.9,
+        "Millie Wood": 1.0,
+        "Isla Taylor": 1.5,
+        "Olivia Smith": 0.5
+      },
+      "focal_score_mean": 0.6,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Golden Fleece or The Queen's Arms) in a way that best fits the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Golden Fleece\",\n      \"The Queen's Arms\"\n    ],\n    \"closed_venues\": [],\n    \"key_constraint\": \"Private favorite venues are hidden; only use the provided public context.\",\n    \"assignment_logic\": {\n      \"venue_selection_rule\": \"Because no public evidence differentiates venues by person, assign any available non-closed venue to each person without claiming preferences.\",\n      \"evidence_used\": \"Only the existence of two available venues and the requirement to choose one non-closed venue per person.\"\n    },\n    \"joint_action\": {\n      \"Isabella Johnson\": \"The Golden Fleece\",\n      \"Emily Wilson\": \"The Queen's Arm"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Isabella Johnson\": \"The Golden Fleece\",\n    \"Emily Wilson\": \"The Queen's Arms\",\n    \"Thomas Wilson\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Queen's Arms\",\n    \"Millie Wood\": \"The Golden Fleece\",\n    \"Isla Taylor\": \"The Queen's Arms\",\n    \"Olivia Smith\": \"The Golden Fleece\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Isabella Johnson\": \"The Golden Fleece\",\n    \"Emily Wilson\": \"The Queen's Arms\",\n    \"Thomas Wilson\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Queen's Arms\",\n    \"Millie Wood\": \"The Golden Fleece\",\n    \"Isla Taylor\": \"The Queen's Arms\",\n    \"Olivia Smith\": \"The Golden Fleece\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 6,
+      "venues": [
+        "The Golden Fleece",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Phoebe Young",
+        "Florence Hall",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The Golden Fleece",
+        "Phoebe Young": "The Crooked Billet",
+        "Florence Hall": "The Golden Fleece",
+        "Poppy Evans": "The Golden Fleece",
+        "Alexander White": "The Crooked Billet",
+        "Sophie Martin": "The Crooked Billet",
+        "Matthew Thompson": "The Golden Fleece"
+      },
+      "scores": {
+        "Alice Lewis": 1.5,
+        "Phoebe Young": 0.6666666666666666,
+        "Florence Hall": 1.5,
+        "Poppy Evans": 0.5,
+        "Alexander White": 1.1666666666666665,
+        "Sophie Martin": 1.0,
+        "Matthew Thompson": 1.0
+      },
+      "focal_score_mean": 1.0416666666666667,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the provided list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Golden Fleece\",\n      \"The Crooked Billet\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_used\": \"Private favorite venues are hidden; only public context used.\",\n    \"key_relationship_signals\": [\n      \"Alice Lewis and Poppy Evans are best friends and trust each other completely.\",\n      \"Alice Lewis and Matthew Thompson are best friends and trust each other completely.\",\n      \"Florence Hall and Matthew Thompson have a very close bond.\",\n      \"Phoebe Young and Sophie Martin have a very relaxed and easy-going relationship.\",\n      \"Phoebe Young and Alexander White have a deep understanding of each other.\",\n   "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Golden Fleece\",\n    \"Phoebe Young\": \"The Crooked Billet\",\n    \"Florence Hall\": \"The Golden Fleece\",\n    \"Poppy Evans\": \"The Golden Fleece\",\n    \"Alexander White\": \"The Crooked Billet\",\n    \"Sophie Martin\": \"The Crooked Billet\",\n    \"Matthew Thompson\": \"The Golden Fleece\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Golden Fleece\",\n    \"Phoebe Young\": \"The Crooked Billet\",\n    \"Florence Hall\": \"The Golden Fleece\",\n    \"Poppy Evans\": \"The Golden Fleece\",\n    \"Alexander White\": \"The Crooked Billet\",\n    \"Sophie Martin\": \"The Crooked Billet\",\n    \"Matthew Thompson\": \"The Golden Fleece\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 7,
+      "venues": [
+        "The Duke of York",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Daniel Hall",
+        "Oscar Johnson",
+        "Ava Brown",
+        "Amelia Jones"
+      ],
+      "joint_action": {
+        "Daniel Hall": "The Duke of York",
+        "Oscar Johnson": "The Duke of York",
+        "Ava Brown": "The Duke of York",
+        "Amelia Jones": "The Duke of York",
+        "Jacob Walker": "The Duke of York",
+        "Joshua Clark": "The Duke of York",
+        "Matthew Thompson": "The Duke of York"
+      },
+      "scores": {
+        "Daniel Hall": 1.0,
+        "Oscar Johnson": 1.5,
+        "Ava Brown": 1.5,
+        "Amelia Jones": 1.0,
+        "Jacob Walker": 1.0,
+        "Joshua Clark": 1.0,
+        "Matthew Thompson": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Duke of York or The Clapton Hart) to satisfy the joint_action response schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Duke of York\",\n      \"The Clapton Hart\"\n    ],\n    \"constraint\": \"Private favorite venues are hidden; only use the provided public context.\",\n    \"venue_assignment_rationale\": \"No public relationship statements mention either venue, so any assignment using only the two available non-closed venues is consistent with the provided evidence. To keep coordination simple and feasible for all seven people, assign the same available venue to everyone.\",\n    \"joint_action\": {\n      \"Daniel Hall\": \"The Duke of York\",\n      \"Oscar Johnson\": \"The Duke of York\",\n      \"Ava Brown\": \"The Duke of York\",\n      \"Amelia Jones\": \"T"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Daniel Hall\": \"The Duke of York\",\n    \"Oscar Johnson\": \"The Duke of York\",\n    \"Ava Brown\": \"The Duke of York\",\n    \"Amelia Jones\": \"The Duke of York\",\n    \"Jacob Walker\": \"The Duke of York\",\n    \"Joshua Clark\": \"The Duke of York\",\n    \"Matthew Thompson\": \"The Duke of York\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Daniel Hall\": \"The Duke of York\",\n    \"Oscar Johnson\": \"The Duke of York\",\n    \"Ava Brown\": \"The Duke of York\",\n    \"Amelia Jones\": \"The Duke of York\",\n    \"Jacob Walker\": \"The Duke of York\",\n    \"Joshua Clark\": \"The Duke of York\",\n    \"Matthew Thompson\": \"The Duke of York\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 8,
+      "venues": [
+        "The King's Head",
+        "The Duke of York"
+      ],
+      "focal_players": [
+        "Sophie Martin",
+        "Florence Hall",
+        "Olivia Smith",
+        "Joshua Clark"
+      ],
+      "joint_action": {
+        "Sophie Martin": "The King's Head",
+        "Florence Hall": "The Duke of York",
+        "Olivia Smith": "The King's Head",
+        "Joshua Clark": "The Duke of York",
+        "Alexander White": "The King's Head",
+        "Jacob Walker": "The Duke of York",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Sophie Martin": 1.0,
+        "Florence Hall": 0.5,
+        "Olivia Smith": 0.5,
+        "Joshua Clark": 0.5,
+        "Alexander White": 0.6,
+        "Jacob Walker": 0.0,
+        "Logan Brown": 1.1666666666666665
+      },
+      "focal_score_mean": 0.625,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The King's Head or The Duke of York) in a way that best supports the Concordia Pub Coordination task.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"joint_action\": {\n    \"Sophie Martin\": \"The King's Head\",\n    \"Florence Hall\": \"The Duke of York\",\n    \"Olivia Smith\": \"The King's Head\",\n    \"Joshua Clark\": \"The Duke of York\",\n    \"Alexander White\": \"The King's Head\",\n    \"Jacob Walker\": \"The Duke of York\",\n    \"Logan Brown\": \"The King's Head\"\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Sophie Martin\": \"The King's Head\",\n    \"Florence Hall\": \"The Duke of York\",\n    \"Olivia Smith\": \"The King's Head\",\n    \"Joshua Clark\": \"The Duke of York\",\n    \"Alexander White\": \"The King's Head\",\n    \"Jacob Walker\": \"The Duke of York\",\n    \"Logan Brown\": \"The King's Head\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Sophie Martin\": \"The King's Head\",\n    \"Florence Hall\": \"The Duke of York\",\n    \"Olivia Smith\": \"The King's Head\",\n    \"Joshua Clark\": \"The Duke of York\",\n    \"Alexander White\": \"The King's Head\",\n    \"Jacob Walker\": \"The Duke of York\",\n    \"Logan Brown\": \"The King's Head\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 9,
+      "venues": [
+        "The White Hart",
+        "The Duke of York"
+      ],
+      "focal_players": [
+        "Florence Hall",
+        "Amelia Jones",
+        "Grace Thompson",
+        "Millie Wood"
+      ],
+      "joint_action": {
+        "Florence Hall": "The White Hart",
+        "Amelia Jones": "The White Hart",
+        "Grace Thompson": "The White Hart",
+        "Millie Wood": "The White Hart",
+        "Evie Green": "The Duke of York",
+        "Isabella Johnson": "The Duke of York",
+        "Jackson Young": "The Duke of York"
+      },
+      "scores": {
+        "Florence Hall": 1.5,
+        "Amelia Jones": 0.5,
+        "Grace Thompson": 1.1666666666666665,
+        "Millie Wood": 1.5,
+        "Evie Green": 1.0,
+        "Isabella Johnson": 0.5,
+        "Jackson Young": 1.0
+      },
+      "focal_score_mean": 1.1666666666666665,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to an available non-closed venue in London for the European football cup, using only the provided public context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"All seven people must be assigned to one of the two available (non-closed) venues: The White Hart or The Duke of York. No venue preferences are provided in the public context, so the only evidence available is social relationship compatibility between people. To maximize comfort and cohesion, group people with strong/close ties together: Florence Hall with Amelia Jones (very comfortable / lot of fun) and with Grace Thompson (always there for each other) and with Millie Wood (best of friends). Also keep Amelia Jones with Grace Thompson (history of great times) and with Isabella Johnson (relaxed/easy-going). Place Evie Green with Amelia Jones (very close bond) and with Jackson Young (strong mutual respect). Remaining cross-links are mostly cordial/distant/neutral, so splitti"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Florence Hall\": \"The White Hart\",\n    \"Amelia Jones\": \"The White Hart\",\n    \"Grace Thompson\": \"The White Hart\",\n    \"Millie Wood\": \"The White Hart\",\n    \"Evie Green\": \"The Duke of York\",\n    \"Isabella Johnson\": \"The Duke of York\",\n    \"Jackson Young\": \"The Duke of York\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Florence Hall\": \"The White Hart\",\n    \"Amelia Jones\": \"The White Hart\",\n    \"Grace Thompson\": \"The White Hart\",\n    \"Millie Wood\": \"The White Hart\",\n    \"Evie Green\": \"The Duke of York\",\n    \"Isabella Johnson\": \"The Duke of York\",\n    \"Jackson Young\": \"The Duke of York\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 10,
+      "venues": [
+        "The Golden Fleece",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Millie Wood",
+        "Ethan Evans",
+        "Jacob Walker",
+        "Jessica Davies"
+      ],
+      "joint_action": {
+        "Millie Wood": "The Golden Fleece",
+        "Ethan Evans": "The Princess of Wales",
+        "Jacob Walker": "The Golden Fleece",
+        "Jessica Davies": "The Princess of Wales",
+        "Lucas Williams": "The Golden Fleece",
+        "Logan Brown": "The Princess of Wales",
+        "Alice Lewis": "The Golden Fleece"
+      },
+      "scores": {
+        "Millie Wood": 1.0,
+        "Ethan Evans": 0.25,
+        "Jacob Walker": 0.5,
+        "Jessica Davies": 1.0,
+        "Lucas Williams": 0.0,
+        "Logan Brown": 1.0,
+        "Alice Lewis": 0.8333333333333333
+      },
+      "focal_score_mean": 0.6875,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Golden Fleece or The Princess of Wales) in a way that best fits the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"available_venues\": [\n      \"The Golden Fleece\",\n      \"The Princess of Wales\"\n    ],\n    \"venue_selection_logic\": \"Each person must be assigned one available non-closed venue. No venue preferences are provided in the public context, so assignments can only be based on the shared availability list.\",\n    \"joint_action_assignments\": {\n      \"Millie Wood\": \"The Golden Fleece\",\n      \"Ethan Evans\": \"The Princess of Wales\",\n      \"Jacob Walker\": \"The Golden Fleece\",\n      \"Jessica Davies\": \"The Princess of Wales\",\n      \"Lucas Williams\": \"The Golden Fleece\",\n      \"Logan Brown\": \"The Princess of Wales\",\n      \"Alice Lewis\": \"The Golden Fleece\"\n    }\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Millie Wood\": \"The Golden Fleece\",\n    \"Ethan Evans\": \"The Princess of Wales\",\n    \"Jacob Walker\": \"The Golden Fleece\",\n    \"Jessica Davies\": \"The Princess of Wales\",\n    \"Lucas Williams\": \"The Golden Fleece\",\n    \"Logan Brown\": \"The Princess of Wales\",\n    \"Alice Lewis\": \"The Golden Fleece\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Millie Wood\": \"The Golden Fleece\",\n    \"Ethan Evans\": \"The Princess of Wales\",\n    \"Jacob Walker\": \"The Golden Fleece\",\n    \"Jessica Davies\": \"The Princess of Wales\",\n    \"Lucas Williams\": \"The Golden Fleece\",\n    \"Logan Brown\": \"The Princess of Wales\",\n    \"Alice Lewis\": \"The Golden Fleece\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 11,
+      "venues": [
+        "The White Hart",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Lucas Williams",
+        "Michael Wood",
+        "Ethan Evans"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The White Hart",
+        "Lucas Williams": "The Black Swan",
+        "Michael Wood": "The White Hart",
+        "Ethan Evans": "The Black Swan",
+        "Isabella Johnson": "The White Hart",
+        "Poppy Evans": "The Black Swan",
+        "Ruby White": "The White Hart"
+      },
+      "scores": {
+        "Matthew Thompson": 1.0,
+        "Lucas Williams": 0.75,
+        "Michael Wood": 1.5,
+        "Ethan Evans": 0.6666666666666666,
+        "Isabella Johnson": 1.0,
+        "Poppy Evans": 0.5,
+        "Ruby White": 0.5
+      },
+      "focal_score_mean": 0.9791666666666666,
+      "focal_score_min": 0.6666666666666666,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The White Hart or The Black Swan) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The White Hart\",\n      \"The Black Swan\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_used\": \"Private favorite venues are hidden; only the provided public context is used.\",\n    \"venue_assignment_rationale\": [\n      \"Only two venues are available and none are closed, so each person can be assigned any one of these venues without violating constraints.\",\n      \"The response schema requires exactly one available non-closed venue per person; no additional venue-specific constraints are provided in the public context.\"\n    ],\n    \"joint_action\": {\n      \"Matthew Thompson\": \"The White Hart\",\n      \"Lucas Williams\": \"Th"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The White Hart\",\n    \"Lucas Williams\": \"The Black Swan\",\n    \"Michael Wood\": \"The White Hart\",\n    \"Ethan Evans\": \"The Black Swan\",\n    \"Isabella Johnson\": \"The White Hart\",\n    \"Poppy Evans\": \"The Black Swan\",\n    \"Ruby White\": \"The White Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The White Hart\",\n    \"Lucas Williams\": \"The Black Swan\",\n    \"Michael Wood\": \"The White Hart\",\n    \"Ethan Evans\": \"The Black Swan\",\n    \"Isabella Johnson\": \"The White Hart\",\n    \"Poppy Evans\": \"The Black Swan\",\n    \"Ruby White\": \"The White Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 12,
+      "venues": [
+        "The White Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Jack Taylor",
+        "Benjamin Roberts",
+        "Henry Green",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Jack Taylor": "The White Hart",
+        "Benjamin Roberts": "The Queen's Arms",
+        "Henry Green": "The White Hart",
+        "Sophie Martin": "The White Hart",
+        "Ella Roberts": "The Queen's Arms",
+        "Joshua Clark": "The Queen's Arms",
+        "Poppy Evans": "The Queen's Arms"
+      },
+      "scores": {
+        "Jack Taylor": 0.3333333333333333,
+        "Benjamin Roberts": 0.6666666666666666,
+        "Henry Green": 0.8333333333333333,
+        "Sophie Martin": 0.6666666666666666,
+        "Ella Roberts": 1.1666666666666665,
+        "Joshua Clark": 0.6,
+        "Poppy Evans": 0.75
+      },
+      "focal_score_mean": 0.625,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The White Hart or The Queen's Arms) according to the public coordination constraints.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"Only two non-closed venues are available in the public context: The White Hart and The Queen's Arms. Therefore, each person\u2019s assigned venue must be one of these two. No private favorite venues are provided, so assignments should be based solely on the public relationship statements and the need to coordinate for 'The European football cup' in London. A balanced plan is to split the group across both venues while keeping closely connected pairs together where possible (e.g., Jack Taylor with Sophie Martin; Benjamin Roberts with Poppy Evans; Henry Green with Sophie Martin; Ella Roberts with Joshua Clark; Joshua Clark with Ella Roberts; Poppy Evans with Sophie Martin).\",\n  \"joint_action\": {\n    \"Jack Taylor\": \"The White Hart\",\n    \"Benjamin Roberts\": \"The Queen's Arms\",\n    "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Jack Taylor\": \"The White Hart\",\n    \"Benjamin Roberts\": \"The Queen's Arms\",\n    \"Henry Green\": \"The White Hart\",\n    \"Sophie Martin\": \"The White Hart\",\n    \"Ella Roberts\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Queen's Arms\",\n    \"Poppy Evans\": \"The Queen's Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Jack Taylor\": \"The White Hart\",\n    \"Benjamin Roberts\": \"The Queen's Arms\",\n    \"Henry Green\": \"The White Hart\",\n    \"Sophie Martin\": \"The White Hart\",\n    \"Ella Roberts\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Queen's Arms\",\n    \"Poppy Evans\": \"The Queen's Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 13,
+      "venues": [
+        "The Queen's Arms",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Joshua Clark",
+        "William Jones",
+        "Grace Thompson"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The Queen's Arms",
+        "Joshua Clark": "The Golden Fleece",
+        "William Jones": "The Queen's Arms",
+        "Grace Thompson": "The Golden Fleece",
+        "Amelia Jones": "The Queen's Arms",
+        "Florence Hall": "The Golden Fleece",
+        "Benjamin Roberts": "The Queen's Arms"
+      },
+      "scores": {
+        "Matthew Thompson": 0.5,
+        "Joshua Clark": 0.25,
+        "William Jones": 0.5,
+        "Grace Thompson": 0.8333333333333333,
+        "Amelia Jones": 1.1666666666666665,
+        "Florence Hall": 0.5,
+        "Benjamin Roberts": 1.0
+      },
+      "focal_score_mean": 0.5208333333333333,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Queen's Arms or The Golden Fleece) in a way that best fits the provided relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Queen's Arms\",\n      \"The Golden Fleece\"\n    ],\n    \"constraint_applied\": \"Private favorite venues are hidden; only the provided public context is used.\",\n    \"venue_assignment_rationale\": \"No public relationship statements mention either venue, so any assignment must be based solely on availability. Therefore, each person is assigned one of the two available non-closed venues without claiming venue-specific preferences.\",\n    \"joint_action\": {\n      \"Matthew Thompson\": \"The Queen's Arms\",\n      \"Joshua Clark\": \"The Golden Fleece\",\n      \"William Jones\": \"The Queen's Arms\",\n      \"Grace Thompson\": \"The Golden Fl"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Golden Fleece\",\n    \"William Jones\": \"The Queen's Arms\",\n    \"Grace Thompson\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Queen's Arms\",\n    \"Florence Hall\": \"The Golden Fleece\",\n    \"Benjamin Roberts\": \"The Queen's Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Golden Fleece\",\n    \"William Jones\": \"The Queen's Arms\",\n    \"Grace Thompson\": \"The Golden Fleece\",\n    \"Amelia Jones\": \"The Queen's Arms\",\n    \"Florence Hall\": \"The Golden Fleece\",\n    \"Benjamin Roberts\": \"The Queen's Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 14,
+      "venues": [
+        "The Crooked Billet",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Lucas Williams",
+        "Phoebe Young",
+        "Alice Lewis",
+        "Mia Williams"
+      ],
+      "joint_action": {
+        "Lucas Williams": "The Crooked Billet",
+        "Phoebe Young": "The Black Swan",
+        "Alice Lewis": "The Crooked Billet",
+        "Mia Williams": "The Black Swan",
+        "Ruby White": "The Crooked Billet",
+        "Daniel Hall": "The Black Swan",
+        "Emily Wilson": "The Crooked Billet"
+      },
+      "scores": {
+        "Lucas Williams": 0.5,
+        "Phoebe Young": 0.3333333333333333,
+        "Alice Lewis": 1.0,
+        "Mia Williams": 0.4,
+        "Ruby White": 0.5,
+        "Daniel Hall": 1.0,
+        "Emily Wilson": 0.8333333333333333
+      },
+      "focal_score_mean": 0.5583333333333333,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"goal\": \"Assign each person one available (non-closed) venue in London for 'The European football cup' coordination.\",\n    \"available_venues\": [\n      \"The Crooked Billet\",\n      \"The Black Swan\"\n    ],\n    \"constraint_handling\": [\n      \"Only use the provided public context.\",\n      \"Do not infer or use any hidden/private favorite venues.\",\n      \"Both venues are available (no closed venues listed), so any assignment using these two is valid.\"\n    ],\n    \"relationship_signal_summary\": {\n      \"Lucas Williams\": {\n        \"relevant_ties\": [\n          \"Comfortable with Mia Williams\",\n          \"Strong mutual respect with Emily Wilson\",\n          \"Functional with Daniel Hall\",\n          \"Neutral with Alice Lewis\",\n          \"Not much in common with Phoebe"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Lucas Williams\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Black Swan\",\n    \"Alice Lewis\": \"The Crooked Billet\",\n    \"Mia Williams\": \"The Black Swan\",\n    \"Ruby White\": \"The Crooked Billet\",\n    \"Daniel Hall\": \"The Black Swan\",\n    \"Emily Wilson\": \"The Crooked Billet\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Lucas Williams\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Black Swan\",\n    \"Alice Lewis\": \"The Crooked Billet\",\n    \"Mia Williams\": \"The Black Swan\",\n    \"Ruby White\": \"The Crooked Billet\",\n    \"Daniel Hall\": \"The Black Swan\",\n    \"Emily Wilson\": \"The Crooked Billet\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 15,
+      "venues": [
+        "The King's Head",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Oscar Johnson",
+        "Thomas Wilson",
+        "Florence Hall",
+        "Alice Lewis"
+      ],
+      "joint_action": {
+        "Oscar Johnson": "The King's Head",
+        "Thomas Wilson": "The Princess of Wales",
+        "Florence Hall": "The King's Head",
+        "Alice Lewis": "The Princess of Wales",
+        "Ruby White": "The King's Head",
+        "Noah Smith": "The Princess of Wales",
+        "Elijah Lewis": "The King's Head"
+      },
+      "scores": {
+        "Oscar Johnson": 0.6666666666666666,
+        "Thomas Wilson": 0.8333333333333333,
+        "Florence Hall": 1.5,
+        "Alice Lewis": 0.0,
+        "Ruby White": 1.1666666666666665,
+        "Noah Smith": 1.0,
+        "Elijah Lewis": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The King's Head or The Princess of Wales) consistent with the public context before validating closure constraints.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The King's Head\",\n      \"The Princess of Wales\"\n    ],\n    \"closed_venues\": [],\n    \"venue_assignment_rationale\": \"Only public context is used: two non-closed venues are available. No public statements link any specific person to a particular venue, so assignments are selected without implying private preferences.\",\n    \"joint_action\": {\n      \"Oscar Johnson\": \"The King's Head\",\n      \"Thomas Wilson\": \"The Princess of Wales\",\n      \"Florence Hall\": \"The King's Head\",\n      \"Alice Lewis\": \"The Princess of Wales\",\n      \"Ruby White\": \"The King's Head\",\n      \"Noah Smith\": \"The Princess of Wales\",\n      \"Elijah Lewis\":"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Oscar Johnson\": \"The King's Head\",\n    \"Thomas Wilson\": \"The Princess of Wales\",\n    \"Florence Hall\": \"The King's Head\",\n    \"Alice Lewis\": \"The Princess of Wales\",\n    \"Ruby White\": \"The King's Head\",\n    \"Noah Smith\": \"The Princess of Wales\",\n    \"Elijah Lewis\": \"The King's Head\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Oscar Johnson\": \"The King's Head\",\n    \"Thomas Wilson\": \"The Princess of Wales\",\n    \"Florence Hall\": \"The King's Head\",\n    \"Alice Lewis\": \"The Princess of Wales\",\n    \"Ruby White\": \"The King's Head\",\n    \"Noah Smith\": \"The Princess of Wales\",\n    \"Elijah Lewis\": \"The King's Head\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 16,
+      "venues": [
+        "The Duke of York",
+        "The White Hart"
+      ],
+      "focal_players": [
+        "Logan Brown",
+        "Alexander White",
+        "Lucas Williams",
+        "Elijah Lewis"
+      ],
+      "joint_action": {
+        "Logan Brown": "The Duke of York",
+        "Alexander White": "The Duke of York",
+        "Lucas Williams": "The White Hart",
+        "Elijah Lewis": "The White Hart",
+        "Oscar Johnson": "The Duke of York",
+        "Jack Taylor": "The White Hart",
+        "William Jones": "The Duke of York"
+      },
+      "scores": {
+        "Logan Brown": 0.75,
+        "Alexander White": 0.8333333333333333,
+        "Lucas Williams": 0.4,
+        "Elijah Lewis": 0.9,
+        "Oscar Johnson": 0.0,
+        "Jack Taylor": 0.9,
+        "William Jones": 0.5
+      },
+      "focal_score_mean": 0.7208333333333333,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Duke of York or The White Hart) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Duke of York\",\n      \"The White Hart\"\n    ],\n    \"closed_venues\": [],\n    \"key_constraint\": \"Private favorite venues are hidden; only use the provided public context.\",\n    \"coordination_goal\": \"Assign each person one available non-closed venue (no additional assumptions).\",\n    \"relationship_evidence_used\": \"Relationship statements are available between people, but no public venue preferences are provided per person; therefore venue assignments cannot be justified by relationship evidence and must be based solely on availability.\",\n    \"joint_action\": {\n      \"Logan Brown\": \"The Duke of York\",\n      \"Alexander "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Logan Brown\": \"The Duke of York\",\n    \"Alexander White\": \"The Duke of York\",\n    \"Lucas Williams\": \"The White Hart\",\n    \"Elijah Lewis\": \"The White Hart\",\n    \"Oscar Johnson\": \"The Duke of York\",\n    \"Jack Taylor\": \"The White Hart\",\n    \"William Jones\": \"The Duke of York\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Logan Brown\": \"The Duke of York\",\n    \"Alexander White\": \"The Duke of York\",\n    \"Lucas Williams\": \"The White Hart\",\n    \"Elijah Lewis\": \"The White Hart\",\n    \"Oscar Johnson\": \"The Duke of York\",\n    \"Jack Taylor\": \"The White Hart\",\n    \"William Jones\": \"The Duke of York\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 17,
+      "venues": [
+        "The Black Swan",
+        "The Red Lion"
+      ],
+      "focal_players": [
+        "Jacob Walker",
+        "Isabella Johnson",
+        "Grace Thompson",
+        "Daniel Hall"
+      ],
+      "joint_action": {
+        "Jacob Walker": "The Black Swan",
+        "Isabella Johnson": "The Red Lion",
+        "Grace Thompson": "The Black Swan",
+        "Daniel Hall": "The Red Lion",
+        "Noah Smith": "The Black Swan",
+        "Michael Wood": "The Red Lion",
+        "Lily Walker": "The Black Swan"
+      },
+      "scores": {
+        "Jacob Walker": 0.5,
+        "Isabella Johnson": 0.5,
+        "Grace Thompson": 0.5,
+        "Daniel Hall": 0.0,
+        "Noah Smith": 0.3333333333333333,
+        "Michael Wood": 0.0,
+        "Lily Walker": 0.3333333333333333
+      },
+      "focal_score_mean": 0.375,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available open venues (The Black Swan or The Red Lion) using only the provided public context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"available_venues\": [\n      \"The Black Swan\",\n      \"The Red Lion\"\n    ],\n    \"closed_venues\": [],\n    \"venue_assignment_rationale\": \"Only two venues are available and none are closed. The public context provides relationship dynamics between people but does not specify any venue preferences or constraints. Therefore, any assignment of an available venue to each person is consistent with the provided public evidence.\",\n    \"joint_action\": {\n      \"Jacob Walker\": \"The Black Swan\",\n      \"Isabella Johnson\": \"The Red Lion\",\n      \"Grace Thompson\": \"The Black Swan\",\n      \"Daniel Hall\": \"The Red Lion\",\n      \"Noah Smith\": \"The Black Swan\",\n      \"Michael Wood\": \"The Red Lion\",\n      \"Lily Walker\": \"The Black Swan\"\n    }\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Jacob Walker\": \"The Black Swan\",\n    \"Isabella Johnson\": \"The Red Lion\",\n    \"Grace Thompson\": \"The Black Swan\",\n    \"Daniel Hall\": \"The Red Lion\",\n    \"Noah Smith\": \"The Black Swan\",\n    \"Michael Wood\": \"The Red Lion\",\n    \"Lily Walker\": \"The Black Swan\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Jacob Walker\": \"The Black Swan\",\n    \"Isabella Johnson\": \"The Red Lion\",\n    \"Grace Thompson\": \"The Black Swan\",\n    \"Daniel Hall\": \"The Red Lion\",\n    \"Noah Smith\": \"The Black Swan\",\n    \"Michael Wood\": \"The Red Lion\",\n    \"Lily Walker\": \"The Black Swan\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 18,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Molly Clark",
+        "Jackson Young",
+        "William Jones"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The Clapton Hart",
+        "Molly Clark": "The Clapton Hart",
+        "Jackson Young": "The Clapton Hart",
+        "William Jones": "The Crooked Billet",
+        "Sophie Martin": "The Clapton Hart",
+        "Jack Taylor": "The Crooked Billet",
+        "Noah Smith": "The Clapton Hart"
+      },
+      "scores": {
+        "Alice Lewis": 0.8,
+        "Molly Clark": 1.5,
+        "Jackson Young": 1.5,
+        "William Jones": 0.5,
+        "Sophie Martin": 0.6666666666666666,
+        "Jack Taylor": 0.5,
+        "Noah Smith": 0.75
+      },
+      "focal_score_mean": 1.075,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available venues (The Clapton Hart or The Crooked Billet) to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Clapton Hart\",\n      \"The Crooked Billet\"\n    ],\n    \"constraint\": \"Private favorite venues are hidden; assign only from available non-closed venues.\",\n    \"relationship_driven_notes\": [\n      \"Alice Lewis has strong positive ties with Molly Clark, Jackson Young, William Jones, Sophie Martin, and Noah Smith; weaker with Jack Taylor.\",\n      \"Molly Clark is comfortable with Alice Lewis and Sophie Martin; she is distant with William Jones and respectful/distant with Jack Taylor.\",\n      \"Jackson Young is best friends with Sophie Martin and comfortable with Noah Smith; not close with Jack Taylor.\",\n      \"William J"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Clapton Hart\",\n    \"Molly Clark\": \"The Clapton Hart\",\n    \"Jackson Young\": \"The Clapton Hart\",\n    \"William Jones\": \"The Crooked Billet\",\n    \"Sophie Martin\": \"The Clapton Hart\",\n    \"Jack Taylor\": \"The Crooked Billet\",\n    \"Noah Smith\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Clapton Hart\",\n    \"Molly Clark\": \"The Clapton Hart\",\n    \"Jackson Young\": \"The Clapton Hart\",\n    \"William Jones\": \"The Crooked Billet\",\n    \"Sophie Martin\": \"The Clapton Hart\",\n    \"Jack Taylor\": \"The Crooked Billet\",\n    \"Noah Smith\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 19,
+      "venues": [
+        "The Princess of Wales",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Daniel Hall",
+        "Elijah Lewis",
+        "Isla Taylor",
+        "Oscar Johnson"
+      ],
+      "joint_action": {
+        "Daniel Hall": "The Princess of Wales",
+        "Elijah Lewis": "The Black Swan",
+        "Isla Taylor": "The Princess of Wales",
+        "Oscar Johnson": "The Black Swan",
+        "Michael Wood": "The Princess of Wales",
+        "Thomas Wilson": "The Black Swan",
+        "Jessica Davies": "The Princess of Wales"
+      },
+      "scores": {
+        "Daniel Hall": 1.0,
+        "Elijah Lewis": 1.5,
+        "Isla Taylor": 1.0,
+        "Oscar Johnson": 0.3333333333333333,
+        "Michael Wood": 0.5,
+        "Thomas Wilson": 0.5,
+        "Jessica Davies": 0.75
+      },
+      "focal_score_mean": 0.9583333333333334,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Princess of Wales or The Black Swan) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"summary\": \"With only two available venues (The Princess of Wales, The Black Swan) and no closed venues, any assignment is valid under the public constraints. Relationship statements provide no venue-specific evidence, so a balanced split across both venues is the most defensible public-only coordination choice.\",\n    \"venue_assignment_rationale\": [\n      \"No public context links any person to a specific venue.\",\n      \"Using both venues avoids over-concentration and remains consistent with all public relationship information (which is not venue-dependent).\"\n    ],\n    \"joint_action\": {\n      \"Daniel Hall\": \"The Princess of Wales\",\n      \"Elijah Lewis\": \"The Black Swan\",\n      \"Isla Taylor\": \"The Princess of Wales\",\n      \"Oscar Johnson\": \"The Black Sw"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Daniel Hall\": \"The Princess of Wales\",\n    \"Elijah Lewis\": \"The Black Swan\",\n    \"Isla Taylor\": \"The Princess of Wales\",\n    \"Oscar Johnson\": \"The Black Swan\",\n    \"Michael Wood\": \"The Princess of Wales\",\n    \"Thomas Wilson\": \"The Black Swan\",\n    \"Jessica Davies\": \"The Princess of Wales\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Daniel Hall\": \"The Princess of Wales\",\n    \"Elijah Lewis\": \"The Black Swan\",\n    \"Isla Taylor\": \"The Princess of Wales\",\n    \"Oscar Johnson\": \"The Black Swan\",\n    \"Michael Wood\": \"The Princess of Wales\",\n    \"Thomas Wilson\": \"The Black Swan\",\n    \"Jessica Davies\": \"The Princess of Wales\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 20,
+      "venues": [
+        "The Clapton Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Mia Williams",
+        "Ethan Evans",
+        "Oscar Johnson",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Mia Williams": "The Clapton Hart",
+        "Ethan Evans": "The Queen's Arms",
+        "Oscar Johnson": "The Clapton Hart",
+        "Sophie Martin": "The Queen's Arms",
+        "Joshua Clark": "The Clapton Hart",
+        "Harry Davies": "The Queen's Arms",
+        "Alexander White": "The Clapton Hart"
+      },
+      "scores": {
+        "Mia Williams": 1.5,
+        "Ethan Evans": 0.5,
+        "Oscar Johnson": 1.0,
+        "Sophie Martin": 0.5,
+        "Joshua Clark": 1.25,
+        "Harry Davies": 1.1666666666666665,
+        "Alexander White": 1.0
+      },
+      "focal_score_mean": 0.875,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Clapton Hart or The Queen's Arms) according to the coordination task.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Clapton Hart\",\n      \"The Queen's Arms\"\n    ],\n    \"constraint_used\": \"Private favorite venues are hidden; only the provided public context (available venues) is used.\",\n    \"relationship_notes_used\": [\n      \"Relationships are provided but do not restrict venue choice because no venue-specific preferences are given in the public context.\"\n    ],\n    \"venue_assignment_logic\": \"Each person must be assigned exactly one available non-closed venue; since both venues are available and no public evidence links specific people to specific venues, assignments can be distributed arbitrarily across the two venues.\"\n  },\n  \"joint_action\":"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Mia Williams\": \"The Clapton Hart\",\n    \"Ethan Evans\": \"The Queen's Arms\",\n    \"Oscar Johnson\": \"The Clapton Hart\",\n    \"Sophie Martin\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Clapton Hart\",\n    \"Harry Davies\": \"The Queen's Arms\",\n    \"Alexander White\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Mia Williams\": \"The Clapton Hart\",\n    \"Ethan Evans\": \"The Queen's Arms\",\n    \"Oscar Johnson\": \"The Clapton Hart\",\n    \"Sophie Martin\": \"The Queen's Arms\",\n    \"Joshua Clark\": \"The Clapton Hart\",\n    \"Harry Davies\": \"The Queen's Arms\",\n    \"Alexander White\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 21,
+      "venues": [
+        "The Clapton Hart",
+        "The Red Lion"
+      ],
+      "focal_players": [
+        "Phoebe Young",
+        "Logan Brown",
+        "Benjamin Roberts",
+        "Emily Wilson"
+      ],
+      "joint_action": {
+        "Phoebe Young": "The Clapton Hart",
+        "Logan Brown": "The Red Lion",
+        "Benjamin Roberts": "The Clapton Hart",
+        "Emily Wilson": "The Red Lion",
+        "Lucas Williams": "The Clapton Hart",
+        "Elijah Lewis": "The Red Lion",
+        "Jacob Walker": "The Clapton Hart"
+      },
+      "scores": {
+        "Phoebe Young": 0.3333333333333333,
+        "Logan Brown": 0.5,
+        "Benjamin Roberts": 0.5,
+        "Emily Wilson": 0.5,
+        "Lucas Williams": 1.0,
+        "Elijah Lewis": 0.25,
+        "Jacob Walker": 1.1666666666666665
+      },
+      "focal_score_mean": 0.4583333333333333,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue using only the public context, so coordination_planning is the most useful next step.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"All seven people must be assigned to one of the two available (non-closed) venues in London: The Clapton Hart or The Red Lion. The provided public relationship statements do not specify any venue preferences or constraints, and the information constraint explicitly hides private favorite venues. Therefore, any assignment that uses only the available venues is consistent with the public context; no relationship-based venue differentiation can be justified from the given data.\",\n  \"joint_action\": {\n    \"Phoebe Young\": \"The Clapton Hart\",\n    \"Logan Brown\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Emily Wilson\": \"The Red Lion\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Elijah Lewis\": \"The Red Lion\",\n    \"Jacob Walker\": \"The Clapton Hart\"\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Phoebe Young\": \"The Clapton Hart\",\n    \"Logan Brown\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Emily Wilson\": \"The Red Lion\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Elijah Lewis\": \"The Red Lion\",\n    \"Jacob Walker\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Phoebe Young\": \"The Clapton Hart\",\n    \"Logan Brown\": \"The Red Lion\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Emily Wilson\": \"The Red Lion\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Elijah Lewis\": \"The Red Lion\",\n    \"Jacob Walker\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 22,
+      "venues": [
+        "The Clapton Hart",
+        "The King's Head"
+      ],
+      "focal_players": [
+        "Alice Lewis",
+        "Lucas Williams",
+        "Ella Roberts",
+        "Benjamin Roberts"
+      ],
+      "joint_action": {
+        "Alice Lewis": "The Clapton Hart",
+        "Lucas Williams": "The Clapton Hart",
+        "Ella Roberts": "The Clapton Hart",
+        "Benjamin Roberts": "The Clapton Hart",
+        "Millie Wood": "The Clapton Hart",
+        "Michael Wood": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Alice Lewis": 1.0,
+        "Lucas Williams": 1.5,
+        "Ella Roberts": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Millie Wood": 1.0,
+        "Michael Wood": 1.5,
+        "Thomas Wilson": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available venues (The Clapton Hart or The King's Head) in a way that supports the joint coordination task.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Clapton Hart\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Ella Roberts\": \"The Clapton Hart\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Millie Wood\": \"The Clapton Hart\",\n    \"Michael Wood\": \"The Clapton Hart\",\n    \"Thomas Wilson\": \"The Clapton Hart\"\n  },\n  \"analysis\": \"All seven people are assigned to a single available non-closed venue (The Clapton Hart). This satisfies the schema requirement to choose only from the public list of available venues and avoids any reliance on hidden/private favorite-venue information.\"\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Clapton Hart\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Ella Roberts\": \"The Clapton Hart\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Millie Wood\": \"The Clapton Hart\",\n    \"Michael Wood\": \"The Clapton Hart\",\n    \"Thomas Wilson\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Alice Lewis\": \"The Clapton Hart\",\n    \"Lucas Williams\": \"The Clapton Hart\",\n    \"Ella Roberts\": \"The Clapton Hart\",\n    \"Benjamin Roberts\": \"The Clapton Hart\",\n    \"Millie Wood\": \"The Clapton Hart\",\n    \"Michael Wood\": \"The Clapton Hart\",\n    \"Thomas Wilson\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 23,
+      "venues": [
+        "The Queen's Arms",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Matthew Thompson",
+        "Lily Walker",
+        "Alexander White",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Matthew Thompson": "The Queen's Arms",
+        "Lily Walker": "The Crooked Billet",
+        "Alexander White": "The Queen's Arms",
+        "Sophie Martin": "The Crooked Billet",
+        "Mia Williams": "The Queen's Arms",
+        "Phoebe Young": "The Crooked Billet",
+        "Thomas Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Matthew Thompson": 0.75,
+        "Lily Walker": 1.0,
+        "Alexander White": 1.0,
+        "Sophie Martin": 0.3333333333333333,
+        "Mia Williams": 0.5,
+        "Phoebe Young": 0.4,
+        "Thomas Wilson": 1.0
+      },
+      "focal_score_mean": 0.7708333333333334,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all required public context (people and available venues) and need to assign one non-closed venue per person per the joint_action schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Queen's Arms\",\n      \"The Crooked Billet\"\n    ],\n    \"closed_venues\": [],\n    \"constraint\": \"Private favorite venues are hidden; only use the provided public context.\",\n    \"coordination_recommendation\": {\n      \"venue_assignment_rule\": \"Each person should be assigned exactly one venue chosen from the available non-closed venues.\",\n      \"evidence_basis\": \"The only public venue options provided are 'The Queen's Arms' and 'The Crooked Billet'; no venue closures exist.\"\n    },\n    \"joint_action\": {\n      \"Matthew Thompson\": \"The Queen's Arms\",\n      \"Lily Walker\": \"The Crooked Billet\",\n      \"Alexander White\": \"Th"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The Queen's Arms\",\n    \"Lily Walker\": \"The Crooked Billet\",\n    \"Alexander White\": \"The Queen's Arms\",\n    \"Sophie Martin\": \"The Crooked Billet\",\n    \"Mia Williams\": \"The Queen's Arms\",\n    \"Phoebe Young\": \"The Crooked Billet\",\n    \"Thomas Wilson\": \"The Queen's Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Matthew Thompson\": \"The Queen's Arms\",\n    \"Lily Walker\": \"The Crooked Billet\",\n    \"Alexander White\": \"The Queen's Arms\",\n    \"Sophie Martin\": \"The Crooked Billet\",\n    \"Mia Williams\": \"The Queen's Arms\",\n    \"Phoebe Young\": \"The Crooked Billet\",\n    \"Thomas Wilson\": \"The Queen's Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 24,
+      "venues": [
+        "The Red Lion",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Alexander White",
+        "Harry Davies",
+        "Molly Clark",
+        "Olivia Smith"
+      ],
+      "joint_action": {
+        "Alexander White": "The Red Lion",
+        "Harry Davies": "The Red Lion",
+        "Molly Clark": "The Red Lion",
+        "Olivia Smith": "The Red Lion",
+        "Jessica Davies": "The Red Lion",
+        "Lucas Williams": "The Red Lion",
+        "Elijah Lewis": "The Red Lion"
+      },
+      "scores": {
+        "Alexander White": 1.0,
+        "Harry Davies": 1.5,
+        "Molly Clark": 1.0,
+        "Olivia Smith": 1.0,
+        "Jessica Davies": 1.0,
+        "Lucas Williams": 1.0,
+        "Elijah Lewis": 1.0
+      },
+      "focal_score_mean": 1.125,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Red Lion or The Clapton Hart) according to the provided public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_options\": [\n      \"The Red Lion\",\n      \"The Clapton Hart\"\n    ],\n    \"constraints_applied\": {\n      \"closed_venues\": \"none\",\n      \"information_constraint\": \"Private favorite venues are hidden; only public context used.\"\n    },\n    \"coordination_rationale\": \"With only two available non-closed venues and no public venue-specific preferences or restrictions, assign each person to any one available venue. To keep coordination simple and consistent for the group attending 'The European football cup' in London, use a single venue for all participants.\"\n  },\n  \"joint_action\": {\n    \"Alexander White\": \"The Red Lion\",\n    \"Harry Davies\": \"The Red Lion\",\n    \"Molly Clark\": \"The Red Lion\",\n    \"Olivia Smith\": \"The Red Lion\",\n    \"Jessica Davies\": \"The Re"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Alexander White\": \"The Red Lion\",\n    \"Harry Davies\": \"The Red Lion\",\n    \"Molly Clark\": \"The Red Lion\",\n    \"Olivia Smith\": \"The Red Lion\",\n    \"Jessica Davies\": \"The Red Lion\",\n    \"Lucas Williams\": \"The Red Lion\",\n    \"Elijah Lewis\": \"The Red Lion\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Alexander White\": \"The Red Lion\",\n    \"Harry Davies\": \"The Red Lion\",\n    \"Molly Clark\": \"The Red Lion\",\n    \"Olivia Smith\": \"The Red Lion\",\n    \"Jessica Davies\": \"The Red Lion\",\n    \"Lucas Williams\": \"The Red Lion\",\n    \"Elijah Lewis\": \"The Red Lion\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 25,
+      "venues": [
+        "The Red Lion",
+        "The Princess of Wales"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies",
+        "Noah Smith",
+        "Lily Walker"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Red Lion",
+        "Harry Davies": "The Princess of Wales",
+        "Noah Smith": "The Red Lion",
+        "Lily Walker": "The Princess of Wales",
+        "Daniel Hall": "The Red Lion",
+        "Jessica Davies": "The Princess of Wales",
+        "Evie Green": "The Red Lion"
+      },
+      "scores": {
+        "Thomas Wilson": 0.0,
+        "Harry Davies": 0.4,
+        "Noah Smith": 0.6666666666666666,
+        "Lily Walker": 0.3333333333333333,
+        "Daniel Hall": 0.9,
+        "Jessica Davies": 0.3333333333333333,
+        "Evie Green": 1.0
+      },
+      "focal_score_mean": 0.35,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The Red Lion or The Princess of Wales) to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Red Lion\",\n      \"The Princess of Wales\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_applied\": \"Private favorite venues are hidden; only public context used.\",\n    \"venue_assignment_rationale\": {\n      \"evidence_basis\": \"No public relationship statements mention either venue, and no venue-specific constraints are provided. Therefore, any assignment using only the two available non-closed venues is consistent with the public evidence.\",\n      \"selection_rule\": \"Assign each person one of the two available venues; since no differentiating evidence exists, use a simple split to cover both venues.\"\n    },\n    \"jo"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Thomas Wilson\": \"The Red Lion\",\n    \"Harry Davies\": \"The Princess of Wales\",\n    \"Noah Smith\": \"The Red Lion\",\n    \"Lily Walker\": \"The Princess of Wales\",\n    \"Daniel Hall\": \"The Red Lion\",\n    \"Jessica Davies\": \"The Princess of Wales\",\n    \"Evie Green\": \"The Red Lion\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Thomas Wilson\": \"The Red Lion\",\n    \"Harry Davies\": \"The Princess of Wales\",\n    \"Noah Smith\": \"The Red Lion\",\n    \"Lily Walker\": \"The Princess of Wales\",\n    \"Daniel Hall\": \"The Red Lion\",\n    \"Jessica Davies\": \"The Princess of Wales\",\n    \"Evie Green\": \"The Red Lion\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 26,
+      "venues": [
+        "The King's Head",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Elijah Lewis",
+        "Alice Lewis",
+        "Evie Green",
+        "Jessica Davies"
+      ],
+      "joint_action": {
+        "Elijah Lewis": "The King's Head",
+        "Alice Lewis": "The Golden Fleece",
+        "Evie Green": "The King's Head",
+        "Jessica Davies": "The Golden Fleece",
+        "Daniel Hall": "The King's Head",
+        "Ruby White": "The Golden Fleece",
+        "Joshua Clark": "The King's Head"
+      },
+      "scores": {
+        "Elijah Lewis": 1.0,
+        "Alice Lewis": 0.3333333333333333,
+        "Evie Green": 1.5,
+        "Jessica Davies": 0.6666666666666666,
+        "Daniel Hall": 0.0,
+        "Ruby White": 0.3333333333333333,
+        "Joshua Clark": 0.5
+      },
+      "focal_score_mean": 0.875,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The King's Head or The Golden Fleece) in a way that best fits the provided relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues_used\": [\n      \"The King's Head\",\n      \"The Golden Fleece\"\n    ],\n    \"venue_assignment_rationale\": [\n      \"Only public context is used: two available venues are listed and none are closed.\",\n      \"No public statements specify venue preferences, so assignments must be based on availability only (no private favorite-venue data).\",\n      \"To keep the group coordinated for the event, venues are distributed across the two options while ensuring each person is assigned exactly one available non-closed venue.\"\n    ],\n    \"joint_action\": {\n      \"Elijah Lewis\": \"The King's Head\",\n      \"Alice Lewis\": \"The Golden Fleece\",\n      \"Ev"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Elijah Lewis\": \"The King's Head\",\n    \"Alice Lewis\": \"The Golden Fleece\",\n    \"Evie Green\": \"The King's Head\",\n    \"Jessica Davies\": \"The Golden Fleece\",\n    \"Daniel Hall\": \"The King's Head\",\n    \"Ruby White\": \"The Golden Fleece\",\n    \"Joshua Clark\": \"The King's Head\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Elijah Lewis\": \"The King's Head\",\n    \"Alice Lewis\": \"The Golden Fleece\",\n    \"Evie Green\": \"The King's Head\",\n    \"Jessica Davies\": \"The Golden Fleece\",\n    \"Daniel Hall\": \"The King's Head\",\n    \"Ruby White\": \"The Golden Fleece\",\n    \"Joshua Clark\": \"The King's Head\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 27,
+      "venues": [
+        "The White Hart",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Alexander White",
+        "Jacob Walker",
+        "Lucas Williams",
+        "Elijah Lewis"
+      ],
+      "joint_action": {
+        "Alexander White": "The White Hart",
+        "Jacob Walker": "The White Hart",
+        "Lucas Williams": "The White Hart",
+        "Elijah Lewis": "The White Hart",
+        "Ella Roberts": "The White Hart",
+        "Lily Walker": "The White Hart",
+        "Ethan Evans": "The White Hart"
+      },
+      "scores": {
+        "Alexander White": 1.0,
+        "Jacob Walker": 1.0,
+        "Lucas Williams": 1.0,
+        "Elijah Lewis": 1.5,
+        "Ella Roberts": 1.5,
+        "Lily Walker": 1.0,
+        "Ethan Evans": 1.5
+      },
+      "focal_score_mean": 1.125,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one of the available non-closed venues (The White Hart or The Queen's Arms) to form the joint action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The White Hart\",\n      \"The Queen's Arms\"\n    ],\n    \"closed_venues\": [],\n    \"key_constraint\": \"Private favorite venues are hidden; only use the provided public context (available venues + relationship statements).\",\n    \"coordination_rationale\": [\n      \"All seven people must be assigned to one of the two non-closed venues.\",\n      \"Relationship statements provide social compatibility signals but do not restrict venue choice; therefore, any assignment using only non-closed venues satisfies the public constraint.\",\n      \"To maximize group cohesion without additional venue-specific info, assign the whole group to a"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Alexander White\": \"The White Hart\",\n    \"Jacob Walker\": \"The White Hart\",\n    \"Lucas Williams\": \"The White Hart\",\n    \"Elijah Lewis\": \"The White Hart\",\n    \"Ella Roberts\": \"The White Hart\",\n    \"Lily Walker\": \"The White Hart\",\n    \"Ethan Evans\": \"The White Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Alexander White\": \"The White Hart\",\n    \"Jacob Walker\": \"The White Hart\",\n    \"Lucas Williams\": \"The White Hart\",\n    \"Elijah Lewis\": \"The White Hart\",\n    \"Ella Roberts\": \"The White Hart\",\n    \"Lily Walker\": \"The White Hart\",\n    \"Ethan Evans\": \"The White Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 28,
+      "venues": [
+        "The Crooked Billet",
+        "The Clapton Hart"
+      ],
+      "focal_players": [
+        "Jacob Walker",
+        "Lily Walker",
+        "Phoebe Young",
+        "Molly Clark"
+      ],
+      "joint_action": {
+        "Jacob Walker": "The Clapton Hart",
+        "Lily Walker": "The Crooked Billet",
+        "Phoebe Young": "The Clapton Hart",
+        "Molly Clark": "The Clapton Hart",
+        "Ava Brown": "The Clapton Hart",
+        "Emily Wilson": "The Crooked Billet",
+        "William Jones": "The Clapton Hart"
+      },
+      "scores": {
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.3333333333333333,
+        "Phoebe Young": 0.6,
+        "Molly Clark": 1.0,
+        "Ava Brown": 1.0,
+        "Emily Wilson": 1.0,
+        "William Jones": 1.1666666666666665
+      },
+      "focal_score_mean": 0.7333333333333333,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Crooked Billet or The Clapton Hart) in a way that best fits the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Crooked Billet\",\n      \"The Clapton Hart\"\n    ],\n    \"closed_venues\": [],\n    \"constraint_used\": \"Private favorite venues are hidden; only the provided public context is used.\",\n    \"key_public_relationship_evidence\": [\n      \"Jacob Walker has a strong connection and chemistry with Phoebe Young.\",\n      \"Phoebe Young has a strong connection and chemistry with William Jones.\",\n      \"Ava Brown has a very close bond with Molly Clark.\",\n      \"Lily Walker and Emily Wilson are often seen together, sharing jokes and secrets.\",\n      \"William Jones and Lily Walker are the best of friends and trust each other completel"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Jacob Walker\": \"The Clapton Hart\",\n    \"Lily Walker\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Clapton Hart\",\n    \"Molly Clark\": \"The Clapton Hart\",\n    \"Ava Brown\": \"The Clapton Hart\",\n    \"Emily Wilson\": \"The Crooked Billet\",\n    \"William Jones\": \"The Clapton Hart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Jacob Walker\": \"The Clapton Hart\",\n    \"Lily Walker\": \"The Crooked Billet\",\n    \"Phoebe Young\": \"The Clapton Hart\",\n    \"Molly Clark\": \"The Clapton Hart\",\n    \"Ava Brown\": \"The Clapton Hart\",\n    \"Emily Wilson\": \"The Crooked Billet\",\n    \"William Jones\": \"The Clapton Hart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 29,
+      "venues": [
+        "The Black Swan",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Isabella Johnson",
+        "Noah Smith",
+        "Grace Thompson",
+        "Emily Wilson"
+      ],
+      "joint_action": {
+        "Isabella Johnson": "The Black Swan",
+        "Noah Smith": "The Black Swan",
+        "Grace Thompson": "The Black Swan",
+        "Emily Wilson": "The Crooked Billet",
+        "Evie Green": "The Crooked Billet",
+        "Florence Hall": "The Black Swan",
+        "Thomas Wilson": "The Black Swan"
+      },
+      "scores": {
+        "Isabella Johnson": 0.8,
+        "Noah Smith": 1.25,
+        "Grace Thompson": 1.25,
+        "Emily Wilson": 0.0,
+        "Evie Green": 0.0,
+        "Florence Hall": 0.3333333333333333,
+        "Thomas Wilson": 1.1
+      },
+      "focal_score_mean": 0.825,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.75,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one of the available non-closed venues (The Black Swan or The Crooked Billet) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"London\",\n    \"event\": \"The European football cup\",\n    \"available_venues\": [\n      \"The Black Swan\",\n      \"The Crooked Billet\"\n    ],\n    \"constraint_applied\": \"Private favorite venues are hidden; only the provided public context is used.\",\n    \"relationship_evidence_summary\": {\n      \"Isabella Johnson\": [\n        \"Strong loyalty with Noah Smith\",\n        \"History of great times with Grace Thompson\",\n        \"Distant with Emily Wilson\",\n        \"Always look out for each other with Evie Green\",\n        \"Best friends with Florence Hall\",\n        \"Best friends with Thomas Wilson\"\n      ],\n      \"Noah Smith\": [\n        \"Relaxed/easy-going with Isabella Johnson\",\n        \"Strong connection/chemistry wi"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Isabella Johnson\": \"The Black Swan\",\n    \"Noah Smith\": \"The Black Swan\",\n    \"Grace Thompson\": \"The Black Swan\",\n    \"Emily Wilson\": \"The Crooked Billet\",\n    \"Evie Green\": \"The Crooked Billet\",\n    \"Florence Hall\": \"The Black Swan\",\n    \"Thomas Wilson\": \"The Black Swan\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Isabella Johnson\": \"The Black Swan\",\n    \"Noah Smith\": \"The Black Swan\",\n    \"Grace Thompson\": \"The Black Swan\",\n    \"Emily Wilson\": \"The Crooked Billet\",\n    \"Evie Green\": \"The Crooked Billet\",\n    \"Florence Hall\": \"The Black Swan\",\n    \"Thomas Wilson\": \"The Black Swan\"\n  }\n}"
+      }
+    }
+  ]
+}

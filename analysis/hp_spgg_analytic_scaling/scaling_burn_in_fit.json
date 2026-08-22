@@ -1,0 +1,142 @@
+{
+  "x_definition": "(n+1)*log(m)",
+  "method": "pact",
+  "response": "median all-agent posterior true-mass > 0.9 first-passage episode",
+  "censoring": "cells with fewer than five observed passages are plotted open at K+1 and excluded from OLS",
+  "slope": -0.24778382996700402,
+  "intercept": 13.64323607427056,
+  "r_squared": 0.006498673740053196,
+  "observations": 11,
+  "rho_hat_per_m": {
+    "4": 9.419005153610271e-08,
+    "8": 0.005359387236888669,
+    "16": 0.0011696097542561734
+  },
+  "inverse_rho_H_per_m": {
+    "4": 10616832.496547721,
+    "8": 186.58849525128522,
+    "16": 854.9860296231552
+  },
+  "points": [
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 2,
+      "m": 4,
+      "x": 4.1588830833596715,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 3,
+      "m": 4,
+      "x": 5.545177444479562,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 4,
+      "m": 4,
+      "x": 6.931471805599453,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 5,
+      "m": 4,
+      "x": 8.317766166719343,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 6,
+      "m": 4,
+      "x": 9.704060527839234,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 7,
+      "m": 4,
+      "x": 11.090354888959125,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 8,
+      "m": 4,
+      "x": 12.476649250079015,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 9,
+      "m": 4,
+      "x": 13.862943611198906,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s1_population_m4",
+      "method": "pact",
+      "n": 10,
+      "m": 4,
+      "x": 15.249237972318797,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s2_library_n3",
+      "method": "pact",
+      "n": 3,
+      "m": 4,
+      "x": 5.545177444479562,
+      "median_burn_in": 8.0,
+      "plotted_y": 8.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s2_library_n3",
+      "method": "pact",
+      "n": 3,
+      "m": 8,
+      "x": 8.317766166719343,
+      "median_burn_in": 45.0,
+      "plotted_y": 45.0,
+      "censored_seeds": 0
+    },
+    {
+      "sweep": "s2_library_n3",
+      "method": "pact",
+      "n": 3,
+      "m": 16,
+      "x": 11.090354888959125,
+      "median_burn_in": NaN,
+      "plotted_y": 51.0,
+      "censored_seeds": 9
+    }
+  ]
+}

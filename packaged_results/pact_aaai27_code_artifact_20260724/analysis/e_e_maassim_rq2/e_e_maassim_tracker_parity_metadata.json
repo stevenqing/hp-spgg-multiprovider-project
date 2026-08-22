@@ -1,0 +1,1055 @@
+{
+  "experiment": "E-E MaaSSim factored-vs-explicit-joint tracker parity",
+  "status": "complete",
+  "source_scheme": "scheme i: closed-loop regeneration by fleet size",
+  "fleet_sizes": [
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "lambdas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "seeds": 10,
+  "common_environment_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "environment_matching": "common environment indices within each n; tracker sampling RNG streams are independent",
+  "provider_calls": 0,
+  "n_passengers": 40,
+  "batch_time_seconds": 120,
+  "type_count_per_driver": 16,
+  "joint_required_through_n": 4,
+  "include_n6_joint": false,
+  "joint_n8": "not run; theoretical 16^8 float64 table is infeasible for the experiment budget",
+  "evidence_stream": "saved nearest-policy assignment events from each regenerated closed-loop cell",
+  "likelihood": "per-driver binary accept/reject analytic likelihood; identical stream/order for both trackers",
+  "sampling": "independent deterministic RNG streams for factored and joint profile draws",
+  "planner": "identical exhaustive maximum-cardinality assignment objective with lexicographic tie-breaking",
+  "utility": {
+    "serve_value": 3.0,
+    "pickup_wait_per_second": 0.01,
+    "travel_weight": 0.0,
+    "fare_weight": 0.0,
+    "driver_reject_penalty": 2.0,
+    "passenger_reject_penalty": 0.5
+  },
+  "lambda_scope": "offer payoff geometry only; evidence stream and likelihood are unchanged",
+  "peak_mem_definition": "exact maximum persistent float64 belief-array bytes",
+  "update_timing_definition": "Bayesian log update plus normalization; excludes TV marginal diagnostic and planner",
+  "artifacts": [
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s0_queue_snapshots.jsonl",
+      "bytes": 41445,
+      "sha256": "3aed2d05341df746d08c980fdbff66ec1fdc6b61041b4d5dd3df08d45016bc16"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s0_driver_events.csv",
+      "bytes": 5013,
+      "sha256": "e91c5de50c8fba736ebe09fa31458f50c36ca5694e804726c9a9df473f2ed0c6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s0_personas.json",
+      "bytes": 813,
+      "sha256": "bcf3caa14fb0caa6734257a298bbf9700ff219d166a9cdd4dec3f948c0cdb0a4"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s0_summary.json",
+      "bytes": 2682,
+      "sha256": "1582f2675ed0e6244b1df1eab7d910edcb5e2636a779af536bddb1b9c921f762"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s1_queue_snapshots.jsonl",
+      "bytes": 46426,
+      "sha256": "5b8b51a4aefa56df848663af5230b37c285420d0b63b48cd999ca81a5843d3e0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s1_driver_events.csv",
+      "bytes": 5235,
+      "sha256": "fc5c22d1ea181f1ca9ae63fe1e2340d38696fcdb60999142f9195332765f2465"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s1_personas.json",
+      "bytes": 794,
+      "sha256": "a3af016e348e75dab7cbea947ab3b7b4f6684b9e111375db733f7ce09b7f986a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s1_summary.json",
+      "bytes": 2678,
+      "sha256": "a0af4a6505ea6213e0710b76ff20e3fc212f0ef8c2fad817853ebd2cb24b8669"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s2_queue_snapshots.jsonl",
+      "bytes": 31210,
+      "sha256": "cd4feaeead0d82bfef48386dc20447e7ac05b489b66548cfe2505836188a814e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s2_driver_events.csv",
+      "bytes": 3260,
+      "sha256": "e1a0d082a5c9d841ea1906e4809e7a48f34bd6450019d10eada979c2da8b9a28"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s2_personas.json",
+      "bytes": 855,
+      "sha256": "c687d4f1d9c3a449627742bd1416c0e99554f3c21ee1522d2f181b5e5e7ffa03"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s2_summary.json",
+      "bytes": 2685,
+      "sha256": "0b65415e67ad2084963e5ca6e57f748fe840df7e90bfa83623f494ad9da378a8"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s3_queue_snapshots.jsonl",
+      "bytes": 41940,
+      "sha256": "57dce0045ea91369523c8811353000ef3c1dc6754014fafc8a70668785664659"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s3_driver_events.csv",
+      "bytes": 5026,
+      "sha256": "83567827705d46e3ed99234deb53c0b3f98e58d37e0a15eaf2aa87a040180219"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s3_personas.json",
+      "bytes": 707,
+      "sha256": "5e52089d913d17427c7f84c80f6afc8ebac38c129a4c66fadfc4b5757161b047"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s3_summary.json",
+      "bytes": 2679,
+      "sha256": "3eab4a8588240b764ca137fcba4f380f14a0a48cd34a124d52fabaac9ea2fee6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s4_queue_snapshots.jsonl",
+      "bytes": 40985,
+      "sha256": "281f63a9a1466f8dbb222d15538896b9b2f8b23f8a4c1f998f1eac5743749263"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s4_driver_events.csv",
+      "bytes": 5001,
+      "sha256": "b7475b24eb5219ecd487ff9e01cbe60f36561c51992d344349d357a512ccf64e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s4_personas.json",
+      "bytes": 708,
+      "sha256": "e062aa3be1667474c1b4d79b3e756e9fabe8044f4c31cf28612df942276d478f"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s4_summary.json",
+      "bytes": 2681,
+      "sha256": "8d96353473f493b963df48d86fb7707d571529c72c5ce21b1b35766c4f47f6cb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s5_queue_snapshots.jsonl",
+      "bytes": 38130,
+      "sha256": "e467f3ad939cba42c4ff48d3da0800104b6ae600a950b454c3b51fad653bf9dc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s5_driver_events.csv",
+      "bytes": 4400,
+      "sha256": "7d7a64b6e14d8e07b2516aed850fb994ff49c830fd916afc9a6b4e2402d31927"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s5_personas.json",
+      "bytes": 772,
+      "sha256": "f16068916a4f9d575a9526b4d27d8983de8450047fb3bba5397294c948c05b8b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s5_summary.json",
+      "bytes": 2675,
+      "sha256": "21412d13ebb8da37280c99a840405e69a0193444df7b953b8b867c96d9fa84fd"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s6_queue_snapshots.jsonl",
+      "bytes": 40052,
+      "sha256": "5c5057363ae800175e42ea62ca508c4c7f6138c406dd2dbbbc951447e9650ab2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s6_driver_events.csv",
+      "bytes": 4380,
+      "sha256": "a0d566459ca2566fb4cf3677bdfd7677aa2a28d1599759d7c217fed3b97ea6f6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s6_personas.json",
+      "bytes": 836,
+      "sha256": "be9a35d0f4916bef91f1ac2a60a0d8fa23b10ef6b884457227f102391a4ff566"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s6_summary.json",
+      "bytes": 2666,
+      "sha256": "97d23cb9f194a83c74c209fa1b19c52fc6f470b45b87564a2e5a8731510b8e53"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s7_queue_snapshots.jsonl",
+      "bytes": 48019,
+      "sha256": "a868ea7067eb8be5bd041a6df9260afb41c4865001957a20ac8a55f512c5d571"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s7_driver_events.csv",
+      "bytes": 5671,
+      "sha256": "c26a0e4804022e5769d647017f019fb34d867b8a7240e7bedd6b0fa26dd5828b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s7_personas.json",
+      "bytes": 728,
+      "sha256": "4fbf3071530d3e42447ee20ea13b7f5486bf29bb3240f3e2f32243c7e90f175d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s7_summary.json",
+      "bytes": 2649,
+      "sha256": "2394a16a63f9f54ea5d44e98bc34a548c5d7a0dc94bec3382d0ce5189a4550bc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s8_queue_snapshots.jsonl",
+      "bytes": 40095,
+      "sha256": "bfbe5601dc3e11e26501b6f9e2f8e735d954fb83afeac1465c54dd18f2883fe7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s8_driver_events.csv",
+      "bytes": 4275,
+      "sha256": "e9472b1be23874315a8acfa5b5310b1aefb62b91060d26b93146f08d9e26c4a2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s8_personas.json",
+      "bytes": 728,
+      "sha256": "14bfbd680a3af6244f04bc7694b2bfc5f07071e53322606c4f90e21a4dfb59f5"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s8_summary.json",
+      "bytes": 2662,
+      "sha256": "63491e26d0fc67d265e869a66588c90f4a88c6efcb352439b8af5aa9cd5dea91"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s9_queue_snapshots.jsonl",
+      "bytes": 44923,
+      "sha256": "1fbadc47f94ed3a30d05e6788888b32d9c36f004164ba15d12030611ccb92e9e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s9_driver_events.csv",
+      "bytes": 5941,
+      "sha256": "48c32297b9dd987f68a26880d306fda9a376e8f3a5319a3861a53c04021d9cb3"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s9_personas.json",
+      "bytes": 728,
+      "sha256": "5fea572a9c5fca03609f77221d5da8185a06080434cae7361358551950610e67"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n2/nearest_n2_s9_summary.json",
+      "bytes": 2635,
+      "sha256": "553442843cd9a953c130e659bc75e60b0b94cf200d847f27b50665ec50b29569"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s0_queue_snapshots.jsonl",
+      "bytes": 52852,
+      "sha256": "ff7d4d58f06aa877a3a037543b3e4cc6ddf4e0ec38ed7aab715ddd31e3c6b7cc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s0_driver_events.csv",
+      "bytes": 6935,
+      "sha256": "65ede428228a57bca261e90696bbebc4fae304c7780306fa6090878fdd858c42"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s0_personas.json",
+      "bytes": 958,
+      "sha256": "8adf6fcd84bda7afab0f88ffa2f720d925b3a30ddfc72616c4e4a7248313b160"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s0_summary.json",
+      "bytes": 2714,
+      "sha256": "cb50528ce248ded07b5e612019259dfeb29599162af98907ede797b9d2eeca24"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s1_queue_snapshots.jsonl",
+      "bytes": 48135,
+      "sha256": "08b3edc30b3ec376d8e2ca2ac2459776fe27e2fabafa0d1414155a6b34b42ff0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s1_driver_events.csv",
+      "bytes": 6946,
+      "sha256": "358e94bed05cd2db4dc004018b4841db9ffc167db032830f49d90f6ce031e20b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s1_personas.json",
+      "bytes": 957,
+      "sha256": "db56a9ee80fa50ae3c15921fba320fdcdd2d22165a15ae073d14335e2e566385"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s1_summary.json",
+      "bytes": 2745,
+      "sha256": "f14f3203782d94efa15ec5a9985d21269d3a8b295c1c66d66af1239539c746c7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s2_queue_snapshots.jsonl",
+      "bytes": 43513,
+      "sha256": "14c16970ece69eff2cb160f626063ca27ffc121ae9f57a217e6140402d9e1c09"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s2_driver_events.csv",
+      "bytes": 4976,
+      "sha256": "4adac25223ae214cf2de3204ab11e7dc75552bd4e1559abb4e60d30a670fee54"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s2_personas.json",
+      "bytes": 1020,
+      "sha256": "10a417f9b8475a48583443335ec4fcb271435b2eb6123df6ee4d0204370cf8a9"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s2_summary.json",
+      "bytes": 2749,
+      "sha256": "c9dc7267237a4f1d3b718783ac615cd5ccc645652f9fcd949a549515442c9526"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s3_queue_snapshots.jsonl",
+      "bytes": 50658,
+      "sha256": "f61d08b3147efc8def50170bb31f06c0487c627df404f4661cb033661028cb10"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s3_driver_events.csv",
+      "bytes": 6201,
+      "sha256": "230fe999a12b69a84fa8eae1d2379e3320b4a75296aa898f8420fda39baf4acc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s3_personas.json",
+      "bytes": 915,
+      "sha256": "fad8c56becb56a6db2f87572ff704d3d81cf39203b19f11b6c8a7a8f7bce4820"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s3_summary.json",
+      "bytes": 2752,
+      "sha256": "f214d8228f986e09911a7a22d42b8bf9f91e2b77185cc5dfd187171ef2d4f1ee"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s4_queue_snapshots.jsonl",
+      "bytes": 52450,
+      "sha256": "fd5d68a38a1271e78a6723a8459ed5344482f48bb0a3b4a53eedf5fda7478a2a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s4_driver_events.csv",
+      "bytes": 7214,
+      "sha256": "0c801c0e9be088e4bcd492324df94111e0cc07c1934e64fd45ec966f40ca72eb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s4_personas.json",
+      "bytes": 875,
+      "sha256": "43fb61be5655443b4b3f07e3dfbcd92995fd19b955ab6f10da9d069306215edd"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s4_summary.json",
+      "bytes": 2736,
+      "sha256": "346c7067274b2ab4978a23afb02f939bd37b4f915f27e0d6f4a6dcd7eb857463"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s5_queue_snapshots.jsonl",
+      "bytes": 47282,
+      "sha256": "870043ed96b5284a5e4b5b469109c3df2bcfc61bce66a006e23a9e4699f89c2d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s5_driver_events.csv",
+      "bytes": 6094,
+      "sha256": "7977a03fa5a719ab14c5f7c02bfb023e4c02043b1c55f213ee9fdf3056d01ddc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s5_personas.json",
+      "bytes": 1020,
+      "sha256": "5dc68d07a3571d9cb07cf786f946bc76fa238bd164ca3e7e70238c0f6633a8f6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s5_summary.json",
+      "bytes": 2694,
+      "sha256": "2a9261eb824f6c8e9b778ec20e3ae3135a44d47c8e2717ea9ee85b8e75619a55"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s6_queue_snapshots.jsonl",
+      "bytes": 43501,
+      "sha256": "edbd42495522d99fc32895bf0dd6f8fa62d7d08d7537ec5f4d972a6d92e24dc0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s6_driver_events.csv",
+      "bytes": 5172,
+      "sha256": "5c29edd5c8c6bc3b1f037caed9e3fd98d8d2cc5a762e7ce3147f18db3bffab6a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s6_personas.json",
+      "bytes": 1042,
+      "sha256": "2a04d6aec6e98da97f613cfd7593f3d79786f284f7aaacb1cb884d45e9211035"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s6_summary.json",
+      "bytes": 2732,
+      "sha256": "120af0daff7ba5aee5e3125d6d9893235a76f083dcdd42689afc90fd300895f8"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s7_queue_snapshots.jsonl",
+      "bytes": 50062,
+      "sha256": "d5da11f3d62b0b5c7665a1d6108d9b3ceb6a5f370d234009e5a2e62344ace7d4"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s7_driver_events.csv",
+      "bytes": 7496,
+      "sha256": "b7650d11bd18e9a2ac996c6211fb04262b9331f73d7e19e53bb6f241caea442d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s7_personas.json",
+      "bytes": 894,
+      "sha256": "bcd5f55d075d2a56272301aee366b424a5d0f6a90ce598866b1c20f6ea263643"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s7_summary.json",
+      "bytes": 2698,
+      "sha256": "703865342a63c08dfe7116d991ba21a037c4fe87d415c8700ea44d9cddfb2d41"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s8_queue_snapshots.jsonl",
+      "bytes": 51079,
+      "sha256": "57f1bea3797af0f4c85fa3ae1916936007fa21308481499f1e80f05e66479f7c"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s8_driver_events.csv",
+      "bytes": 6328,
+      "sha256": "f86a8f978fdfaf27a3b17625839c4c3a7d4cfea797800a3f7ea1753e4f6d970b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s8_personas.json",
+      "bytes": 872,
+      "sha256": "6b4e44c07a29beb91b4190b479876e49377630152632b502162b11843d8912b9"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s8_summary.json",
+      "bytes": 2742,
+      "sha256": "fdfc708c527a32c0365e726c588a3e6272b1d34df32eff6b4e536151f6d6fba0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s9_queue_snapshots.jsonl",
+      "bytes": 48551,
+      "sha256": "d3548c5bd5e672b5183140620c0152987bfc22d1c03989180d2a4fb85e0df4e1"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s9_driver_events.csv",
+      "bytes": 6487,
+      "sha256": "e1573685fbc6f249d0ee3e219f7a088fff5bd5bab4f87229311528598bacc568"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s9_personas.json",
+      "bytes": 935,
+      "sha256": "099921aff7a3eb575ee9b473f8e7bfe7c5aecccdf0b0b37ca8e2422ab610105d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n3/nearest_n3_s9_summary.json",
+      "bytes": 2722,
+      "sha256": "cdcaf7ec0a68e63bbc149700ccf4bc5dd6e425bb5a30667fe9eced99f05accd6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s0_queue_snapshots.jsonl",
+      "bytes": 48544,
+      "sha256": "8e012d969a8b94cc949ed8dfc84fa7da8e6a57d51a5d6723f34621226d198897"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s0_driver_events.csv",
+      "bytes": 6790,
+      "sha256": "fa17207faf79c272b6a20d510cdd6cd5e9b726290acac095afd9936ac1585390"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s0_personas.json",
+      "bytes": 1165,
+      "sha256": "2610dfec863c122e1869255e1a4fdefdce0ad1527bc2ba56315c8116ed25cb8a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s0_summary.json",
+      "bytes": 2683,
+      "sha256": "91ab35a92f2293c34b2cdaf935ac4e4dd898a726e385de54e5975e69c057f6de"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s1_queue_snapshots.jsonl",
+      "bytes": 50850,
+      "sha256": "5a75899360e547b42166c38d21704e2112aa0653a7381aaf68e2971144fd6aba"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s1_driver_events.csv",
+      "bytes": 7394,
+      "sha256": "65d5f71f2c063b15c9f6b1043b20e7691ff674ac0791ff5833a01241b387f05e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s1_personas.json",
+      "bytes": 1186,
+      "sha256": "6d6ecdb2f6f8c3ef6347a9e4f1360efb3083dbeaafd30d174dc5c7fae505c34c"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s1_summary.json",
+      "bytes": 2679,
+      "sha256": "5461bf3e5a7e2995294edcdf453b8793e4970b41fed47a463199e65d36591989"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s2_queue_snapshots.jsonl",
+      "bytes": 42636,
+      "sha256": "9465004b5788e68ab02fd9d62bd6aff872efa77f85d8c9f839fe375f6167e422"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s2_driver_events.csv",
+      "bytes": 6147,
+      "sha256": "c4322ea2bad54e38fd5e9707c3d13fa252b2b9ca0701fe381a3f3af79c4b90f6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s2_personas.json",
+      "bytes": 1145,
+      "sha256": "bca699e3964f2a877f7415e3a276ec641a01161c8a70b56d4ed92ecaaaf34136"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s2_summary.json",
+      "bytes": 2681,
+      "sha256": "f172e39e91a721aff359d1a7d53ea0e85a5c86b671883a9774872d26ac85cbe8"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s3_queue_snapshots.jsonl",
+      "bytes": 60301,
+      "sha256": "aec9d3bc50137c1b45a7a59d345563b73fd570457d30ee7db80ec29e9aa0edb6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s3_driver_events.csv",
+      "bytes": 7748,
+      "sha256": "b873a6e9a0f99d913c3545c180ebcc5bc20118f22aa6805c57f3d2ba188e9e69"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s3_personas.json",
+      "bytes": 1040,
+      "sha256": "47a7deac3fb79daea78e9a4ee4c0db78f873ddfbfb10d853abd776357ece444a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s3_summary.json",
+      "bytes": 2670,
+      "sha256": "ce01a2c9a75fd9019355cdeeed20f8263bfd6078412cf68b48002bdcf5eb756f"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s4_queue_snapshots.jsonl",
+      "bytes": 60042,
+      "sha256": "3a6ed73ceeef557e99bfd1813eb14cfc7feb7fec074daa7828dd11a82a1b6d61"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s4_driver_events.csv",
+      "bytes": 8808,
+      "sha256": "387c7ef3559c7788b2ada971960bd9b3d803958cdcd71262411c585dec19f1a4"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s4_personas.json",
+      "bytes": 935,
+      "sha256": "c0dc318f01889f60c16265d20e18328b55bca065c7e2ffab5293644c9314a5ae"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s4_summary.json",
+      "bytes": 2679,
+      "sha256": "6cd1f280ca76fb8033406383066481ddf86e0531095136ffb5933e9bdef3f19e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s5_queue_snapshots.jsonl",
+      "bytes": 51081,
+      "sha256": "d2b12d04bc62d60ac19f53491a5d3278f1a310f254a41eae93a5b7f8f5b21926"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s5_driver_events.csv",
+      "bytes": 7400,
+      "sha256": "c23dbf66e5bd28e97a901278a1de9d7da8fcff1ee33a77d6a1a79350c294ffaf"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s5_personas.json",
+      "bytes": 1060,
+      "sha256": "7ac48ebc484f79819cf043299d02858cf7a60dbf54add45b3de04449c0fee642"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s5_summary.json",
+      "bytes": 2694,
+      "sha256": "70c09c6c66842d3a2f3cffe6978bc4843b64ef20d7c59f692a5ed7d25dbeeeab"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s6_queue_snapshots.jsonl",
+      "bytes": 45936,
+      "sha256": "fd14f1cf1529fea1c462a8a432c59682c399f73f52192d9ee0ce2e15dc7e9408"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s6_driver_events.csv",
+      "bytes": 5968,
+      "sha256": "5ceb9939c90ef2fe290ae9be497dad642c56399f67adb8ca0a43f3a981c476bd"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s6_personas.json",
+      "bytes": 1144,
+      "sha256": "48ae237d399e7c712508fb7706dcf0c3e161dc0af390cc4e28186d8d9858a32a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s6_summary.json",
+      "bytes": 2683,
+      "sha256": "7c3e61a9c247c18447df54c5754d24478b03b2eb91b371cf110c23ba26208888"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s7_queue_snapshots.jsonl",
+      "bytes": 52273,
+      "sha256": "cabae7c7ae315a8a932eb3275b5971423f856c27043ac6b1f2fb5e7d209a522d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s7_driver_events.csv",
+      "bytes": 7699,
+      "sha256": "e6daf11e4ca95b52d14a28fbc0beac96d20cd8045f8de01198686d9e7f65aa85"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s7_personas.json",
+      "bytes": 998,
+      "sha256": "e390c99a8536018add03c95e93122fd749834450215a44e8433200d8a2cced35"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s7_summary.json",
+      "bytes": 2694,
+      "sha256": "4025f654590e55371d4b7f94d66aef3fcc97864b5dea4f87e2eedf7a634a0b3e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s8_queue_snapshots.jsonl",
+      "bytes": 57169,
+      "sha256": "a5cd35edf97cbf3295f5c792e90487d5b2b180ade688e62dd62d0657a2ba2675"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s8_driver_events.csv",
+      "bytes": 7682,
+      "sha256": "0bb9898c77f46896ae208c4e72d14894bbab48845eb3209868320852b4e98ba4"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s8_personas.json",
+      "bytes": 997,
+      "sha256": "0796532498225a576fea8174b21e79a7768372d5b9b8a22d229d09d44384f192"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s8_summary.json",
+      "bytes": 2683,
+      "sha256": "ffa30e1523e740f97e34acd6de014c9940c332628978541a463f83cc9052e44b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s9_queue_snapshots.jsonl",
+      "bytes": 46644,
+      "sha256": "72fc6c9383bed4fb1331a206dd0b52ff4a22fbb7fbe94942270da986f4120849"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s9_driver_events.csv",
+      "bytes": 6451,
+      "sha256": "55c417e291ac0362aa488dbdfc603a0e7289f892b18381b27a1adaa80c1de64d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s9_personas.json",
+      "bytes": 1102,
+      "sha256": "1721effd1a3003a5211c9ab0e5e8a25cd4a4c02673404b6271b4867a171d32d1"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n4/nearest_n4_s9_summary.json",
+      "bytes": 2687,
+      "sha256": "6871a493f309b0af716bbc761e181dd448b76296da80e1a0152baa5f6721af57"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s0_queue_snapshots.jsonl",
+      "bytes": 54726,
+      "sha256": "c11ccd3bec13ce3f72fcc66c8ff845963488c11920a1e17389aed643fa75691b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s0_driver_events.csv",
+      "bytes": 5851,
+      "sha256": "ab8bd8c64c22bc404d27de89d8badb03d9203697ea77266ade032a6df82cf0e2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s0_personas.json",
+      "bytes": 1226,
+      "sha256": "c4c8afe79682857565bcef2be421979923d8d0071610679a1448c5361b66ca3d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s0_summary.json",
+      "bytes": 2678,
+      "sha256": "f94ee0fa5b3fca8b9496c4933ff5f0b839d437bffc24e969f45a8bae622797e7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s1_queue_snapshots.jsonl",
+      "bytes": 65590,
+      "sha256": "0ef3675c10fde55cc4a3bf6a497a2f4d040165660b5e022282e3db21c926f095"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s1_driver_events.csv",
+      "bytes": 7142,
+      "sha256": "e47f406da684c03f24a55a85c98276dae4ef5f1891a9b820466faf40c6bd507e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s1_personas.json",
+      "bytes": 1226,
+      "sha256": "07ca5637cff337fa70f5ba1da8c472ebe6c9b07b24eee0f50b46a9d96b7b02d6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s1_summary.json",
+      "bytes": 2699,
+      "sha256": "b37d660409cfa7481df3a3159740a1becaecc2e544c6f3f25eeec099df1ea492"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s2_queue_snapshots.jsonl",
+      "bytes": 50362,
+      "sha256": "4b32c54e84a60a42e58af91b8053afa7a3b8a87a2d5fe98a13ab9c049e17e2f6"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s2_driver_events.csv",
+      "bytes": 5886,
+      "sha256": "caf0dd0e1a4c54cc01a0c2e534538441605e5c73377a03d47dca620c3c7a6cdc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s2_personas.json",
+      "bytes": 1226,
+      "sha256": "a2d9d278a09e0c768b761d35bda4760b2ba09f6d9a71722663f3c97dfa13abb3"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s2_summary.json",
+      "bytes": 2681,
+      "sha256": "ca342e503f543440b1134b4af13c280626f9479289e6068494aa02c1c8cfcbd9"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s3_queue_snapshots.jsonl",
+      "bytes": 52506,
+      "sha256": "dcba7957b555d030357943f0f39f009816aed5f2f00924220a36bd894de510c5"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s3_driver_events.csv",
+      "bytes": 6224,
+      "sha256": "2aa9c6e2aa45c2ba5521510e286e975e95513f26c52f000f94dd5c9ebf7e6108"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s3_personas.json",
+      "bytes": 1205,
+      "sha256": "fc69181382ae2a43e97cfb41be541f5653dd968aff032d0000aac3df750ab410"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s3_summary.json",
+      "bytes": 2726,
+      "sha256": "2c0e77f0f6509b676a9350da922842d1484cee7a2e883dc00d9c142438a567ab"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s4_queue_snapshots.jsonl",
+      "bytes": 75700,
+      "sha256": "3a1455d809a21167e0959bf5fa577f7289baaebc55997b628814093359e33ad1"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s4_driver_events.csv",
+      "bytes": 8683,
+      "sha256": "928ef65f9b1c85f4dc6fd2a97623aa5e7b54120613883f8e7772de7e9d8a3a72"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s4_personas.json",
+      "bytes": 1121,
+      "sha256": "01aca881757b1b1dff1b992a837acddd79c54cc6bd11fd0078a0606adb130702"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s4_summary.json",
+      "bytes": 2715,
+      "sha256": "257470f12156cd091bbedd167890ea745724fdac2d612d321f9c9047f11a18fd"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s5_queue_snapshots.jsonl",
+      "bytes": 61073,
+      "sha256": "947c73d437bc7d038f11b3b5068c0e2b893b985761306961695ddb744cf3250e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s5_driver_events.csv",
+      "bytes": 7390,
+      "sha256": "1f290d285afe08a6b2aad1e9b52f2734d959c0c39cdd06764281b2bd195e6a7e"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s5_personas.json",
+      "bytes": 1205,
+      "sha256": "171866cf6d95dc85e6da63232e50d9f4bce4d5b0f27cdb9004ebea13ff8955e3"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s5_summary.json",
+      "bytes": 2749,
+      "sha256": "019ec8807cdbc302823594cb66c1783f34ebac385789571608cddfc48776ade9"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s6_queue_snapshots.jsonl",
+      "bytes": 70695,
+      "sha256": "2821e162fc09c465e11c87c2f6f4ac5e4731d41ade3c05d26b9c48f1622f0653"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s6_driver_events.csv",
+      "bytes": 8151,
+      "sha256": "0f512fd7901dd42053ee47dd6bf3aa1e1525df9903be081ff6bec00237c2dc12"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s6_personas.json",
+      "bytes": 1205,
+      "sha256": "b34afaab2764f72258c594b9f4c48b5df9b0a58a44d2aff690a1e69b3cc36510"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s6_summary.json",
+      "bytes": 2704,
+      "sha256": "b547245978f1b5cb2d3419cbfd5d395b0d2a0d3127c35f8f431f0a316365bdb0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s7_queue_snapshots.jsonl",
+      "bytes": 68410,
+      "sha256": "52210972dd727bc023b402e80892e8ddced4c3de275fe7daaa20c812424b5f6d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s7_driver_events.csv",
+      "bytes": 8127,
+      "sha256": "846f201c1e35237f3036c405e4ae5b8ee9a5471affd6964422651d4fb201efb2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s7_personas.json",
+      "bytes": 1163,
+      "sha256": "ecd0e50fbf43093468f268b7dda0e3c8ecd7145c5fdd81fb83c099b59f394b3c"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s7_summary.json",
+      "bytes": 2729,
+      "sha256": "f6137cb5557991b7be73eccc4ab973889e0d4d212e96959d2d6bdbd3825775eb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s8_queue_snapshots.jsonl",
+      "bytes": 92816,
+      "sha256": "650b384165ed61d1529b445936513524f78b255fed2e1e0f3bc527239c887189"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s8_driver_events.csv",
+      "bytes": 10525,
+      "sha256": "390a9526551df23af6eebf83972b35ac59446ed960520b2a73eb2a214eeb34aa"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s8_personas.json",
+      "bytes": 1037,
+      "sha256": "d1e171158daf791a3d722a9d4a5afa2a393d307be56946835f996ab74974fe23"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s8_summary.json",
+      "bytes": 2713,
+      "sha256": "b97af71a5be34166447dc930958c960738312bdf9e28f608c9c884453f85a4b7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s9_queue_snapshots.jsonl",
+      "bytes": 51960,
+      "sha256": "a9c250d1b1274307c8b3440ba35a7104c3b41d237c140df0ac376bc156863cca"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s9_driver_events.csv",
+      "bytes": 5657,
+      "sha256": "e89db7499ebc666764792df97e518e5363686f0e1f698616b5952c6ef74109a7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s9_personas.json",
+      "bytes": 1226,
+      "sha256": "3c35d7d760c4ff2b371b70290b863c8974cb053cadc7c6c609b3a91bc65b010b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n6/nearest_n6_s9_summary.json",
+      "bytes": 2697,
+      "sha256": "e9cb161a2a10fe1c69578527a5d991713912dc82f4fd348a24d5a67b4609e5ba"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s0_queue_snapshots.jsonl",
+      "bytes": 79256,
+      "sha256": "25dabbbdbcab902a275502df796b11433117dadacb6598a8ab4658da33093b84"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s0_driver_events.csv",
+      "bytes": 6553,
+      "sha256": "5555f70d1968a2c5ea8959e0463a43a5f70875341d411d8d9ad83083a9f1aeb2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s0_personas.json",
+      "bytes": 1266,
+      "sha256": "2890485f92669338eb77676a17e0e39e180d0474391e676c752e51261e959ffb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s0_summary.json",
+      "bytes": 2683,
+      "sha256": "a7eeada7587fe0e2d3fe0d832f5d31a4c790e16c8de5ec3ba48af17669e3143a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s1_queue_snapshots.jsonl",
+      "bytes": 89961,
+      "sha256": "9c592f1d70d69cc2084feb742e9db766a07dad29a97367365ea7beb2690ce70c"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s1_driver_events.csv",
+      "bytes": 7260,
+      "sha256": "fe0e3989ad4363b69bc60abd3876581fce742eeeb47846c3ea542a99c1b0e093"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s1_personas.json",
+      "bytes": 1266,
+      "sha256": "94465f9a6b24dde9526e205537a5de1a89f0a457979d1ec7aafdf2c48c5b74fb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s1_summary.json",
+      "bytes": 2677,
+      "sha256": "8e8d053b610d1eae77614be9cda92b345441520a2dd99a03041019ef5948d880"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s2_queue_snapshots.jsonl",
+      "bytes": 66550,
+      "sha256": "945f7a0aed9378fd050bd71e457947cdb2e1ffbc715ccbbab6a283569f587578"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s2_driver_events.csv",
+      "bytes": 5762,
+      "sha256": "9f9ab803d2afaa74747a485cee0f382ed0e370da854ca7abfa7fe163dada1aeb"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s2_personas.json",
+      "bytes": 1266,
+      "sha256": "16cf6c345704991b0740f4d6a7e7f11c37d1f9a1e85984ed837b3abbd8d2ced3"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s2_summary.json",
+      "bytes": 2656,
+      "sha256": "905395037c68d3b3f9e9ff3a5de724c9b926ef5d4249049889de488861fdc361"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s3_queue_snapshots.jsonl",
+      "bytes": 73039,
+      "sha256": "517e53137add31e89131c494fc5d1758a630b4f91d07d5c41a64b0888a09ec7a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s3_driver_events.csv",
+      "bytes": 6370,
+      "sha256": "86af3c1648662500185ac9e22d69e43f900c3a17cdce66940f63662614427846"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s3_personas.json",
+      "bytes": 1266,
+      "sha256": "4353d9ce1180436d2e6dbb41a7ed411ee15bc41bcbb06252d5b0d5ecd92714ee"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s3_summary.json",
+      "bytes": 2683,
+      "sha256": "a5ff10bec0fd64f5e4878c0adabb300529cdfa542db69bb1fbe7e2045b92f852"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s4_queue_snapshots.jsonl",
+      "bytes": 100798,
+      "sha256": "52c5cc834498c214dc9a4f35fd406d33c0c9116ea54dcaf75a70b157eaa4a655"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s4_driver_events.csv",
+      "bytes": 9725,
+      "sha256": "00e43e4027ddfd690353baba7cf739e0910bb004c0abae983e5d44ca897f7016"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s4_personas.json",
+      "bytes": 1224,
+      "sha256": "2047cc8bf35ddb12aae7e37b1c332aa53cc5bab3e9dd20ac4f575286e9ac5c3d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s4_summary.json",
+      "bytes": 2702,
+      "sha256": "03a60c37195ecf485824068f11d23dcd48c09bc06a9c600fd18e627ac96e97be"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s5_queue_snapshots.jsonl",
+      "bytes": 93978,
+      "sha256": "3799ec914abba789eb4badf62479c0b6ada6ff0a4edc624b0d787b2a1919c04f"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s5_driver_events.csv",
+      "bytes": 8760,
+      "sha256": "14aaf438502fb94036258d2539dee3973f99930568bceadf4cb395d24c708cd4"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s5_personas.json",
+      "bytes": 1245,
+      "sha256": "4b37766705a0521eafd7ba35715abfa8afbe3b152420f980f9a68aa4b72f1716"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s5_summary.json",
+      "bytes": 2657,
+      "sha256": "e9c69d198a55f2a08b1a8f18ff7fb02bf6a7498314749cd0cd3f8c98458b2e76"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s6_queue_snapshots.jsonl",
+      "bytes": 74482,
+      "sha256": "0c04f38690fe2a675081f86aa9673b1b4e1fe4a70e79b6da2f23b0ce065e11a2"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s6_driver_events.csv",
+      "bytes": 6995,
+      "sha256": "0907be90289eae8eda75209d4cb86342c92c50cacb0d3d35a10fcab44340c0e7"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s6_personas.json",
+      "bytes": 1266,
+      "sha256": "42c7daecaa40921d8b08fb59621f12b51f9395a9fd2f88cdc2d97963c08dd517"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s6_summary.json",
+      "bytes": 2684,
+      "sha256": "bb7271cdb3629f4260c99a6b6196e18e41a3e47bc14248dc454e08b5e34b77af"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s7_queue_snapshots.jsonl",
+      "bytes": 80861,
+      "sha256": "2db1ba2b6e711931013068b82d24f1b9a29398421b6e6a567da6248751e75b6d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s7_driver_events.csv",
+      "bytes": 7661,
+      "sha256": "31b015473e800bb9ae3e92b7ef619451b5ed6a2d4516deaf65417c882f47f25b"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s7_personas.json",
+      "bytes": 1266,
+      "sha256": "9418e9759b9a6b4f498742dfd8e296c9644cb7633cffa8b6f9ece06d2141cdd0"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s7_summary.json",
+      "bytes": 2669,
+      "sha256": "c2e8194164172fad5f8f1eccc80155fb8531747434e6daf6e89c176f9fc961fc"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s8_queue_snapshots.jsonl",
+      "bytes": 126485,
+      "sha256": "4843a2525e3532eae460a990c0580efa85d18f2f42d916bc876b8da2b8b84729"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s8_driver_events.csv",
+      "bytes": 11459,
+      "sha256": "d6ec0ed647dd941fb6a8fb3014ed1e1d0b45952b41321052baef63d6307ebb0d"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s8_personas.json",
+      "bytes": 1224,
+      "sha256": "40ce5164eddb4411ff0ef647b264979e8726475a91704e12c86a25cd3396b01a"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s8_summary.json",
+      "bytes": 2688,
+      "sha256": "c7ac511958ff058d3a440f15bc65fd5411aa2b770a8f65571ef9e82bc11a30cd"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s9_queue_snapshots.jsonl",
+      "bytes": 75768,
+      "sha256": "d7309cf9a8c9fb9dc77e4f52711a768d58a54227aa8211c3349babad704c9e21"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s9_driver_events.csv",
+      "bytes": 6096,
+      "sha256": "66c77524a0fcf185d100e2f5337775211cde542f906c6a83841c983f50801436"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s9_personas.json",
+      "bytes": 1266,
+      "sha256": "d5947e899426ec3d41e213a350efdd518ab26049d0a132ca4004efbfa171ab28"
+    },
+    {
+      "path": "analysis/e_e_maassim_rq2/subfleets/n8/nearest_n8_s9_summary.json",
+      "bytes": 2666,
+      "sha256": "eeac2697ba0b5dd1b3b76880833d958cbea20727b481c478dc086336cc15fb04"
+    }
+  ]
+}

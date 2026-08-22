@@ -1,0 +1,346 @@
+%File: main.tex
+%  HARP paper formatted for AAAI-27 using the official AuthorKit27 style files
+%  (aaai2027.sty + aaai2027.bst). Anonymous submission mode.
+%
+%  Notes on the AAAI-27 style:
+%   - aaai2027.sty loads the fonts (newtxtext, helvet, courier), [T1]{fontenc},
+%     and the page geometry itself. Do NOT load times/helvet/courier/fontenc or
+%     set \pdfpagewidth/\pdfpageheight by hand.
+%   - With T1 fontenc active, straight quotes in listings render natively, so the
+%     earlier OT1 \textquotedbl problem no longer applies.
+%   - Forbidden here and removed from the original ARR source: hyperref, bbm, ulem.
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage[submission]{aaai2027}    % DO NOT CHANGE THIS
+% Fonts (newtxtext/helvet/courier) are loaded by aaai2027.sty. DO NOT add
+% \usepackage{times}, \usepackage{helvet}, \usepackage{courier}, or fontenc.
+\usepackage[hyphens]{url}            % DO NOT CHANGE THIS
+\usepackage{graphicx}                % DO NOT CHANGE THIS
+\urlstyle{rm}                        % DO NOT CHANGE THIS
+\def\UrlFont{\rm}                    % DO NOT CHANGE THIS
+\usepackage{natbib}                  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption}                 % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing                       % DO NOT CHANGE THIS
+
+% --- Math and formatting packages used by the paper ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{subfig}
+\usepackage{nicefrac}
+\usepackage{microtype}
+
+% --- Listings (used for prompt templates in the appendix) ---
+\usepackage{listings}
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% --- Theorem environments ---
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% --- AAAI required metadata ---
+\setcounter{secnumdepth}{2}
+\pdfinfo{
+/TemplateVersion (2027.1)
+}
+
+\title{LLM Orchestration under Heterogeneous Preferences\\
+via Explicit Persona Inference}
+
+% Anonymous submission: the aaai2027 [submission] option typesets
+% "Anonymous submission" and suppresses the author / affiliation block below.
+\author{}
+\affiliations{}
+
+\begin{document}
+% Float placement parameters (LaTeX defaults let floats queue and drift to the
+% end of the document; these relax the limits without touching page geometry).
+\renewcommand{\topfraction}{0.92}
+\renewcommand{\bottomfraction}{0.7}
+\renewcommand{\dbltopfraction}{0.92}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+\renewcommand{\dblfloatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{dbltopnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+
+\setlength{\textfloatsep}{9pt plus 2pt minus 4pt}
+\setlength{\dbltextfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{3pt}
+
+\maketitle
+
+\begin{abstract}
+Coordinating multiple Large Language Model (LLM) agents requires a belief about goals and preferences the coordinator does not observe. Existing LLM-agent methods keep that belief inside the prompt, where it consumes context on every turn and drifts as the model rewrites it. Moving the belief out of the prompt avoids this, but an exact posterior over the joint persona profile is exponential in the number of agents. In this work, we propose \textbf{HARP} (Heterogeneous-preference Agent oRchestration via Personas), a novel framework that tracks personas numerically and plans for all agents centrally. Specifically, HARP keeps one posterior per agent over a discrete persona library and updates each in closed form, so the language model supplies likelihoods rather than storing the belief itself. HARP therefore represents the joint posterior exactly at $O(n|\Theta_i|)$ storage rather than $O(|\Theta_i|^n)$, and incurs the same $\tilde O(\sqrt K)$ Bayesian regret as the explicit joint tracker it replaces. HARP\textsuperscript{+} adds a planning bonus for actions that distinguish personas, which removes the remaining loss from early uncertainty. We evaluate HARP on four substrates spanning a controlled public-goods game, externally authored bargaining payoffs, a ride-hailing dispatch replay, and open-ended dialogue. Across the class our theory identifies, HARP\textsuperscript{+} is the strongest non-oracle method, and it still runs at scales where the explicit joint tracker cannot.
+\end{abstract}
+
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[width=1\textwidth]{figs/main.pdf}
+\caption{\textbf{Overview of HARP.} \textbf{Top:} A coordinator interacts with LLM agents in a public environment; each agent has a private persona (e.g., altruistic builder, free rider, strategic hedger) hidden from the coordinator. \textbf{Bottom:} (1) per-agent persona prior; (2) sample a joint profile from per-agent posteriors; (3) plan and execute (HARP\textsuperscript{+} adds a type-discrimination bonus); (4) score each observed outcome under every persona's calibrated outcome scorer; (5) Bayes-update each posterior.}
+  \label{fig:main}
+\end{figure*}
+
+\section{Introduction}
+\label{sec:intro}
+
+Large language models are increasingly deployed as autonomous agents in settings that negotiate, bargain, allocate resources, and provide public goods~\citep{wu2023autogen,li2023camel,hong2024metagpt,park2023generative,meta2022human}. Each agent typically carries a private \emph{persona}, meaning a hidden goal, preference, or constraint that determines how it values outcomes, and these are rarely visible to a coordinator or to the other agents~\citep{zhou2024sotopia,abdulhai2023lmrl}. Consider a ride-hailing platform dispatching orders to independent drivers. A driver may avoid long trips, stay within a familiar zone, or work only under surge pricing, and such preferences surface only through which orders that driver accepts, declines, or reroutes. A coordinator that recovers these preferences routes requests to drivers who will accept them, while one that treats drivers as interchangeable makes avoidable assignment errors~\citep{mu2026adaptive,yi2025debate}. Because the best joint assignment depends on the realized profile rather than on any driver alone, the platform has to maintain and update a belief over each persona as the interaction unfolds.
+
+Existing LLM-agent methods maintain this belief inside the prompt, re-encoding what has been inferred about each agent as natural-language text at every decision step~\citep{yi2025debate,mu2026adaptive}. In-prompt representation is flexible, but the belief has no persistent state, so inference errors propagate across steps and tracking quality depends on the reasoning ability of the backbone~\citep{park2024llm}. Storing the belief numerically outside the prompt removes that failure mode, at an apparent cost in representation size. With $n$ agents each drawing a persona from a library of $|\Theta_i|$ personas, an exact posterior over the joint profile has $|\Theta_i|^n$ entries, and tracking drivers separately does not avoid this, since the best assignment depends on the full profile. The question is therefore whether a numeric belief can be kept small without losing what the joint posterior contributes to the decision.
+
+In this work, we propose \textbf{HARP} (\textbf{H}eterogeneous-preference \textbf{A}gent o\textbf{R}chestration via \textbf{P}ersonas), which represents the belief numerically at a size linear in the number of agents. Specifically, HARP keeps one posterior per agent over a discrete library of persona prompt templates. Each turn it samples a persona profile, plans a joint policy under it, and dispatches the resulting action to each agent. Every agent therefore emits an action token, and the coordinator asks the LLM for the probability of that token under each persona template. These probabilities are the likelihoods in a closed-form Bayes update applied to each posterior independently, so the LLM enters only as a likelihood model over observed actions. The belief is therefore carried forward rather than re-derived at each step, and under three structural conditions the $n$ per-agent posteriors reconstruct the joint one exactly. When those conditions hold only approximately, the reconstruction degrades in proportion to the violation rather than breaking down. The posterior is also a quantity the coordinator can sample from and plan against directly, which is not possible when the belief exists only as a description in the prompt. Because the model is asked only to score actions rather than to remember what it has inferred, tracking quality no longer depends on its ability to maintain a belief in text.
+
+Our contributions can be summarized as follows. Firstly, we introduce HARP, a novel framework that replaces in-prompt belief reasoning with a closed-form Bayesian update and plans centrally in the joint action space. HARP\textsuperscript{+} adds a planning bonus for actions that distinguish personas, which bounds the early loss by a constant even when the personas are hardest to separate. Secondly, we state three structural conditions under which the per-agent posteriors reconstruct the joint one exactly, so storage and update work drop from $O(|\Theta_i|^n)$ to $O(n|\Theta_i|)$. The Bayesian regret is unchanged, since HARP reproduces the explicit joint tracker pathwise under matched seeds. Finally, we evaluate HARP on four substrates spanning a controlled public-goods game, a bargaining benchmark with externally fixed payoffs, a ride-hailing dispatch replay, and open-ended dialogue. Under a control that fixes the persona profile, prior, payoffs, and exact optimum across methods, HARP\textsuperscript{+} attains the lowest regret of any non-oracle method on all four backbones. Its cumulative regret remains bounded on both the public-goods and bargaining substrates, whereas sampling personas without updating them incurs regret that grows linearly in the number of episodes. Permuting the posteriors across agents returns regret to the level of not updating at all, which locates the advantage in the identity of the inferred personas rather than in the presence of a belief. On the dispatch substrate the margin over the strongest in-prompt baseline widens as competition for the same orders increases, and it is obtained at agent counts for which an explicit joint table is infeasible.
+
+\section{Related Work}
+\label{sec:related}
+
+\paragraph{Bayesian and latent-type reinforcement learning.} Posterior sampling attains near-optimal Bayesian regret for a single agent by drawing one model from the posterior each episode and planning as if it were correct~\citep{strens2000bayesian,osband2013more,agrawal2017optimistic,ouyang2017learning,russo2014learning,russo2016information,dasgupta2025bayesian}. Extensions to Markov games largely assume known types or zero-sum structure~\citep{jahromi2024bayesian,xiong2022self}, and learning in latent Markov decision processes is exponentially hard without an identifiability condition~\citep{kwon2021rl,nguyen2024learning}, which is the role our structural conditions play. Type-based ad hoc teamwork already keeps a separate belief per teammate~\citep{albrecht2015game,albrecht2019convergence,barrett2011empirical,albrecht2018autonomous}, so our contribution is not that representation but the conditions under which it is exact and the finite-time regret it attains at linear storage. Structured Bayesian priors~\citep{mutti2024exploiting} and language-model posterior sampling~\citep{arumugam2025toward} do not factor the belief across agents, while general-sum Markov-game learning~\citep{jin2024v,song2021can,mao2023provably,erez2023regret,yang2025incentivize} and population-based training~\citep{lanctot2017unified,muller2019generalized,marris2021multi} address equilibrium selection rather than inference over partner types.
+
+\paragraph{Structural decomposition.} Avoiding a joint object by exploiting structure is long established. Networked distributed POMDPs decompose the value function along an interaction graph~\citep{nair2005networked,oliehoek2008exploiting}, restless-bandit formulations decouple joint allocation into per-arm indices by Lagrangian relaxation~\citep{mate2020collapsing}, and Bayesian Stackelberg solvers avoid expanding the game over the joint type space of an unknown follower~\citep{paruchuri2008playing}. We instead factor the posterior over partner personas, the factorization introduces no approximation, and the personas are inferred online rather than supplied as a fixed prior.
+
+\paragraph{Language-model agents and coordination.} Recent language-model agents reason explicitly about their partners but differ in what the belief is made of. ECON learns a belief representation over co-agent strategies and drives the group toward a Bayesian Nash equilibrium~\citep{yi2025debate}, Hypothetical Minds keeps a natural-language hypothesis per partner and rewrites it when it fails~\citep{cross2025hypothetical,li2023theory}, and A-ToM selects among reasoners of different theory-of-mind order by expert advice~\citep{mu2026adaptive,cesa1997use}. All are interactive-POMDP formulations~\citep{gmytrasiewicz2005framework} whose belief is generated as text or learned end to end, so the coordinator cannot condition on it directly. Orchestration frameworks~\citep{wu2023autogen,li2023camel,hong2024metagpt,park2023generative,chen2023autoagents} and negotiation systems~\citep{meta2022human,abdulhai2023lmrl} treat partner modeling as a by-product of role prompting or a learned reward~\citep{agashe2025llm}. HARP keeps an explicit posterior over a fixed persona library and updates it in closed form, without training a belief model of its own.
+
+\section{Methodology}
+\label{sec:algorithm}
+
+\subsection{Preliminaries and Definitions}
+\label{sec:setting-main}
+
+We formulate LLM multi-agent coordination as a Bayesian inference problem. A coordinator interacts with $n$ LLM agents over $K$ episodes of $H$ turns. Each agent $i$ carries a private persona $\theta_i^\star \in \Theta_i$ supplied through its system prompt, and the joint profile $\boldsymbol\theta^\star \in \boldsymbol\Theta = \prod_i \Theta_i$ is drawn once from a prior $P_0^\Theta$ and then held fixed. The environment evolves under an unknown transition kernel $P^\star$, and each agent receives a reward $r_i(s,a,\theta_i^\star)\in[0,1]$ that depends on its own persona. Neither $\boldsymbol\theta^\star$ nor $P^\star$ is revealed, so both are inferred from the trajectories the interaction produces.
+
+At each turn the coordinator plans from its current posterior and the public state, using a fixed deterministic map $\mathcal P$ that takes a sampled world $(P,\boldsymbol\theta)$ to a joint policy. Every agent then acts, and the coordinator records the actions taken, the rewards received, and the next state. Performance is measured by cumulative Bayesian regret against the policy the same map $\mathcal P$ returns under full knowledge of $(P^\star,\boldsymbol\theta^\star)$, so the comparison isolates what is lost to uncertainty about the world rather than to the quality of the planner. In the finite substrates we evaluate, $\mathcal P$ is an exhaustive joint-action argmax with deterministic tie-breaking, while the open-ended dialogue substrate generates text directly and admits no finite planner. Full notation and formal definitions are in Appendix~\ref{sec:setting-app}.
+
+\subsection{HARP}
+\label{sec:pact-vanilla}
+
+HARP keeps one numeric posterior $\mu_k^{\Theta,i}$ per agent over the persona library, together with a model posterior $\mu_k^P$, and couples both to the centralized planner $\mathcal P$ (Algorithm~\ref{alg:pact}). Each episode it samples a world $(\hat P_k, \hat{\boldsymbol\theta}_k)$ from these posteriors and calls $\mathcal P$ for a joint policy. After the episode, each agent's belief updates independently as
+\begin{equation}
+\label{eq:likelihood}
+\resizebox{0.90\linewidth}{!}{$\displaystyle
+\mu_{k+1}^{\Theta,i}(\theta_i) \;\propto\; \mu_k^{\Theta,i}(\theta_i)\prod_{h=1}^{H} q_\phi(o_{i,h}^k\mid x_{i,h}^k,\theta_i)
+$}
+\end{equation}
+where $x_{i,h}^k$ is the public context and $o_{i,h}^k$ the observed action and reward. The likelihood $q_\phi$ scores what was observed against what each persona in the library would predict, so the update requires no gradient step and no belief model of its own.
+
+\begin{algorithm}[t]
+\caption{HARP (and HARP\textsuperscript{+} with $\beta>0$)}\label{alg:pact}
+\textbf{Input}: priors $P_0^P, \{P_0^{\Theta,i}\}$; horizon $H$; episodes $K$; deterministic centralized planner $\mathcal P$; bonus coefficient $\beta\geq 0$.\\
+\begin{algorithmic}[1]
+\STATE Initialize $\mu_1^P\!\gets\! P_0^P$, $\mu_1^{\Theta,i}\!\gets\! P_0^{\Theta,i}$ for all $i$.
+\FOR{$k=1,\dots,K$}
+  \STATE Sample $\hat P_k\!\sim\!\mu_k^P$ and $\hat\theta_i^k\!\sim\!\mu_k^{\Theta,i}$ independently.
+  \STATE If $\beta>0$: compute $D_k(s,a)$ via Eq.~\eqref{eq:bonus} and add $\beta D_k$ to $Q$ in backward induction.
+  \STATE $\pi_k\gets\mathcal P(\hat P_k,\hat{\boldsymbol\theta}_k)$; execute $\pi_k$, observe $\tau_k$.
+  \STATE Bayes-update each marginal independently from $\tau_k$.
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+The factored belief stores $O(n|\Theta_i|)$ entries, whereas the naive joint posterior $\mu_k(\boldsymbol\theta^\star)$ has $|\boldsymbol\Theta| = \prod_i |\Theta_i|$, exponential in $n$. The two agree exactly only on a restricted class of coordination problems, which we now describe. Three structural conditions are jointly sufficient, and (TI) and (RL) are each necessary for the likelihood to split across agents (Appendix~\ref{app:necessity}).
+
+\begin{assumption}[Structural conditions]
+\label{ass:struct}
+\textbf{(TI) Transition independence.} Environment dynamics do not depend on the persona profile: $P^\star(s' \mid s, a, \boldsymbol\theta) = P^\star(s' \mid s, a)$.
+\textbf{(RL) Reward locality.} Each agent's reward depends only on its own persona: $r_i(s, a, \boldsymbol\theta) = r_i(s, a, \theta_i)$.
+\textbf{(PF) Prior factorization.} The coordinator's prior over personas factors across agents: $P_0(\boldsymbol\theta^\star) = \prod_i P_0^{\Theta,i}(\theta_i^\star)$.
+\end{assumption}
+
+Each condition is checkable on a given problem rather than assumed of social interaction in general. (TI) holds when the transition rule is persona-blind. (RL) holds when an agent's payoff does not depend on the personas of others, and so excludes cross-agent utilities such as envy or spite, $r_1 = r_1^{\theta_1} - \alpha r_2^{\theta_2}$, which break the factored update (Appendix~\ref{sec:necessity}). (PF) holds when slots are filled independently from a persona library. Together they define the class on which posterior decoupling is exact, and bounded violations degrade it gracefully (Appendix~\ref{app:approx-decoupling}).
+
+\begin{theorem}[Posterior Decoupling]
+\label{thm:decoupling-main}
+Under Assumption~\ref{ass:struct}, the joint posterior over $(P^\star, \boldsymbol\theta^\star)$ at every episode $k$ factors exactly into
+\[
+P(P, \boldsymbol\theta \mid \mathcal{H}_k) \;=\; \mu_k^P(P) \cdot \prod_{i=1}^n \mu_k^{\Theta,i}(\theta_i),
+\]
+where each persona marginal $\mu_k^{\Theta,i}$ follows the per-agent Bayes update in Eq.~\eqref{eq:likelihood}. Posterior storage is $O(n|\Theta_i|)$ rather than $O(|\Theta_i|^n)$.
+\end{theorem}
+
+The proof factors the trajectory likelihood across agents using (TI) and (RL) and closes by induction on $k$ under (PF). The full argument is in Appendix~\ref{app:decoupling-proof}. The cost of representing and updating the persona belief is therefore linear in the number of agents.
+
+\paragraph{Complexity.} Per episode, HARP performs one planner call over the joint action menu and $nH|\Theta_i|$ closed-form likelihood evaluations, and it stores $O(n|\Theta_i|)$ persona parameters beside the model posterior. In the finite substrates the planner is backward induction with exhaustive joint-action argmax, reducing to one-step enumeration where the horizon is one. Where the outcome scorer is calibrated offline the likelihood reduces to a Gaussian reward factor with an uninformative action factor, so the tracker issues no model queries online. Appendix~\ref{app:cost-accounting} reports measured call and token costs.
+
+\subsection{HARP\textsuperscript{+}: Type-Discrimination Bonus}
+\label{sec:pact-plus-algo}
+
+A coordinator that plans only for reward has no reason to prefer actions that reveal who it is coordinating with. When the reward-maximizing action also separates the personas in the library, HARP identifies them at no extra cost. When it does not, the same action is optimal under every persona, the observations carry no information about type, and the posterior stays near the prior however many episodes pass. Appendix~\ref{app:pact-plus} makes this worst case precise as the \emph{deep-trap} family. HARP\textsuperscript{+} supplies the missing incentive with a small planning bonus at each $(s,a)$ where personas differ under the planner's outcome scorer,
+\begin{equation}
+\label{eq:bonus}
+D_k(s,a) \;\coloneqq\; \sum_{i=1}^n \mathbb{E}_{\theta, \theta' \sim \mu_k^{\Theta,i}}\!\big[|r_i(s,a,\theta) - r_i(s,a,\theta')|\big],
+\end{equation}
+where $\theta$ and $\theta'$ are drawn independently from $\mu_k^{\Theta,i}$, recomputed once per episode, and held fixed within its backward induction. The coefficient $\beta=0.25$ is selected once and then frozen across every substrate and backbone. The bonus costs $O(n|\Theta_i|^2)$ per state-action pair inside the same backward-induction pass (Algorithm~\ref{alg:pact}, line 4), biases planning toward type-revealing actions, and vanishes as the posterior concentrates. Setting $\beta=0$ recovers HARP.
+
+\paragraph{Theoretical guarantees.}
+
+The factored posterior compresses the belief, and the discrimination bonus gives the planner a reason to sharpen it. Under the three structural conditions neither is paid for asymptotically, since the compression is exact and the resulting regret matches that of an explicit joint tracker at storage linear in the number of agents. Theorem~\ref{thm:decoupling-main} establishes the first half, and the theorem below establishes the second.
+
+\begin{theorem}[Per-agent Bayesian regret of HARP]
+\label{thm:regret-main}
+Let initial states be drawn independently of the model and of the sampling randomness, let the coordinator use an $\epsilon_{\mathrm{plan}}$-approximation of a fixed measurable deterministic planner $\mathcal P$, and place a Dirichlet prior on $P^\star$. Under Assumption~\ref{ass:struct}, for every agent $i$,
+\begin{equation}\label{eq:regret-main}\resizebox{0.9\linewidth}{!}{$\displaystyle
+\mathbb E\big[\mathrm{Reg}_i^B(K)\big] \;\le\; \tilde O\big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K}\big) + O\big(H\sqrt{|\Theta_i|\,\mathcal H(P_0^{\Theta,i})\,K}\big) + K\epsilon_{\mathrm{plan}}, $}
+\end{equation}
+where $A_{\mathrm{joint}}=\prod_i|\mathcal A_i|$ and $\mathcal H(P_0^{\Theta,i})$ is the entropy of agent $i$'s persona prior. The full statement and proof are in Appendix~\ref{app:theory}.
+\end{theorem}
+
+Where the planner enumerates its action menu exactly, $\epsilon_{\mathrm{plan}}=0$, which covers every finite substrate we evaluate. The bound is not claimed for the open-ended dialogue substrate, which admits no finite planner. The rate matches single-agent posterior sampling while storing $O(n|\Theta_i|)$ persona parameters. The persona term depends only on the per-agent library and prior entropy, never on the joint space $\prod_j|\Theta_j|$, so prior knowledge about one agent reduces regret directly, while a confidently wrong prior inflates a $K$-independent constant instead of changing the rate. When personas are separated by a margin $\rho$ in the observation channel, that term collapses to a constant. On the deep-trap family, HARP\textsuperscript{+} bounds the early loss by a constant for any $\beta>0$. Under matched seeds HARP is pathwise identical to the explicit joint tracker, and removing reward locality alone forces the exponential rate back. Appendix~\ref{app:theory} collects these results, together with the extension to misspecified scorers and a preregistered study that measures the predicted contraction at slope one.
+
+\section{Numerical Evaluation}
+\label{sec:experiments-llm}
+
+The guarantees above hold wherever the three structural conditions do, but they do not settle whether the predicted advantage survives contact with language models that generate their own actions. We therefore evaluate HARP on four substrates and four backbones under a control that equalizes everything except how the belief is maintained, and find that a numeric posterior coordinates better than in-prompt tracking while remaining affordable at scales where explicit joint inference cannot run. Three questions organize the evaluation.
+\begin{itemize}[leftmargin=1.5em, itemsep=0.2em, topsep=0.2em, parsep=0pt]
+\item \textbf{RQ1 (representation):} Does a numeric out-of-prompt posterior improve coordination over in-prompt textual belief maintenance?
+\item \textbf{RQ2 (computation):} Does the factored posterior match explicit joint inference in regret while cutting persona storage and update work to $O(n|\Theta_i|)$?
+\item \textbf{RQ3 (attribution):} How do the closed-form update, identity attachment, the discrimination bonus, and centralized dispatch each contribute to the gains?
+\end{itemize}
+
+
+
+The substrates form successive layers of evidence. HP-SPGG (Section~\ref{sec:hp-spgg}) imposes the three conditions by construction, so it is where the size of the gain is measured (RQ1), where the factored and joint posteriors are compared on the same realizations (RQ2), and where each component is removed in isolation under a matched control (RQ3). Concordia (Section~\ref{sec:concordia}) contributes externally fixed payoffs and tests whether the gain survives them (RQ1), whether the factorization holds across configurations (RQ2), and when each component matters (RQ3). MaaSSim (Section~\ref{sec:maassim}) replays a ride-hailing dispatcher and tests how the margin grows as personas become decision-relevant (RQ1), whether inference stays feasible at the agent counts involved (RQ2), and whether the gain traces to correct identity attachment (RQ3). Open-ended dialogue, where the conditions can be neither imposed nor checked, is reported separately in Appendix~\ref{app:sotopia-detail}. The benchmarks use four LLM backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick-17B-128E-Instruct-FP8), the case study a single pinned backbone.
+
+
+
+
+\subsection{HP-SPGG: Controlled Diagnostic Benchmark}
+\label{sec:hp-spgg}
+
+
+\paragraph{Setup.} In HP-SPGG (heterogeneous-persona public-goods game), a coordinator oversees $n{=}3$ player LLMs over $K{=}20$ episodes. Each player's hidden type is drawn once, uniformly and independently, from $|\Theta_i|{=}4$ persona archetypes spanning the taxonomy of \citet{fischbacher2001people}, so (TI), (RL), and (PF) all hold by construction. The outcome scorer is calibrated once offline from the same backbone, which makes the likelihood a Gaussian reward factor with $\sigma{=}0.08$. The full specification is in Appendix~\ref{app:llm-supplements}, and the PF prior and DGP probes are in Appendix~\ref{app:structural-boundary}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e_a_hp_spgg_matched.pdf}
+  \caption{Cumulative Bayesian regret on HP-SPGG at $K{=}20$ for four LLM backbones. Within each backbone every method is given the same type profiles, the same uniform prior, the same payoff tensor, and the same exact oracle, and each draws its own realized rewards from that tensor. Values are means over $10$ common seeds and error bars are the standard error of the mean.}
+  \label{fig:hp-spgg-cross-model}
+\end{figure}
+
+
+\paragraph{Baselines.} Baselines are Oracle, HARP\textsuperscript{+}, HARP, Joint-PSRL, LLM-PSRL, PSRL-NoType, A-ToM-1, and ECON-BNE, defined in Appendix~\ref{app:llm-supplements}.
+
+\paragraph{RQ1: numeric versus in-prompt beliefs.} To isolate the effect of where the belief is kept, every method within a backbone is given the same hidden type profile, the same uniform prior, the same payoff tensor, and the same exact optimum, so the only difference between them is how the persona belief is represented and updated. We run ten common seeds per backbone and report cumulative Bayesian regret at $K{=}20$. As Figure~\ref{fig:hp-spgg-cross-model} shows, HARP\textsuperscript{+} attains the lowest non-oracle mean regret on every backbone, at $0.360\pm0.142$ on DeepSeek, $0.159\pm0.038$ on GPT-5.4-nano, $0.325\pm0.088$ on Kimi, and $0.430\pm0.217$ on Llama. The strongest comparator that keeps its belief inside the prompt incurs between $1.63$ and $43.77$ times that regret, and LLM-PSRL between $13.8$ and $50.8$ times. Moving the belief out of the prompt therefore improves coordination under a control that holds everything else fixed.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e3_n_agent_scaling_v3.pdf}\\[1pt]
+  \includegraphics[width=\columnwidth]{figs/fig_e_g_ladder_v1.pdf}
+  \caption{\emph{Top}: cumulative regret on HP-SPGG by agent count (Llama-4-Maverick, $|\Theta_i|{=}4$, $K{=}20$). The aligned storage strip compares factored and joint persona states on a log scale and annotates their ratio; the shaded column marks $n{=}2$, where the joint table is still small. \emph{Bottom}: cumulative regret for HARP\textsuperscript{+} with one belief component removed, and for decentralized execution, on a log scale with the oracle at zero. Values are means over $10$ common seeds and whiskers are the standard error of the mean.}
+  \label{fig:storage-vs-regret}\label{fig:component-ladder}
+\end{figure}
+
+\paragraph{RQ2: factored versus explicit joint inference.} To test whether the factored posterior gives anything up, we run it and an explicit joint tracker on the same realizations under the same control, so that any difference between them is attributable to the representation alone. The two agree within seed-level standard error on every backbone, differing by $0.030$, $0.153$, $0.095$, and $0.074$ in absolute regret, while the factored representation uses $5.3\times$ fewer persona parameters at $n{=}3$ and $51\times$ fewer at $n{=}5$ (Figure~\ref{fig:storage-vs-regret}). This is the finite-sample counterpart of Theorem~\ref{thm:decoupling-main}. Repeating the comparison analytically, where the two can be run to larger populations, they remain identical to $n{=}8$, past the point at which the joint tracker exhausts memory (Appendix~\ref{app:scaling}). We also test outside the class by drawing personas from a coupled data-generating process that violates prior factorization, where HARP stays within $1.52\times$ of the correctly supported joint baseline (Appendix~\ref{app:structural-boundary}). The compression is therefore free inside the class and degrades gracefully outside it.
+
+\begin{figure*}[t!]
+  \centering
+  \includegraphics[width=0.78\textwidth]{figs/fig_maassim_combined_v21.pdf}
+  \caption{MaaSSim dispatch. \emph{(a)} Realized utility across conflict strength $\lambda\in\{0,0.5,1\}$ at reject penalty $5$. \emph{(b)} Oracle regret in reject-penalty units, a scale that tracks excess driver rejects, with residual deviations reflecting lost served rides. \emph{(c)} Realized utility for each source of the belief the dispatcher acts on. Error bars are seed-level standard errors in (a) and (c), and oracle and policy standard errors propagated in quadrature in (b).}
+  \label{fig:maassim-main}
+\end{figure*}
+
+\paragraph{RQ3: component attribution.} To determine which parts of the design produce the gain, we remove one belief component at a time under the same matched control and compare each variant against the full method on shared seeds (Figure~\ref{fig:component-ladder}). Removing the closed-form update, so that personas are sampled from the prior and never revised, costs $+0.66$ paired regret. Permuting the posteriors across agents, which leaves the beliefs equally sharp but attaches each to the wrong agent, raises mean regret to the no-update level, although the effect is heavy-tailed and six of ten seeds are unaffected. The discrimination bonus is load-bearing under live LLM likelihoods on every backbone, most sharply on DeepSeek where regret falls from $0.985$ to $0.360$ with $\beta{=}0.25$ frozen once from disjoint seeds (Appendix Figure~\ref{fig:beta-sweep}), and it stays inactive on the analytic tier, where exact likelihoods leave nothing to disambiguate. The gain therefore requires the belief to be updated and to be attached to the agent it describes.
+
+Architecture is a separate comparison. Against decentralized execution, in which each actor samples its own profile and best responds to its own utility, regret rises by $+6.31$, the largest resolved effect, because independent best responses miscoordinate persistently. The Concordia mode comparison reproduces this ordering while holding the objective fixed (Appendix~\ref{app:mechanism}), and MaaSSim reproduces it under replay. PSRL-NoType shows the same linear growth live, an $11$--$30\times$ gap (Appendix Figure~\ref{fig:e2-e5}(a)).
+
+\subsection{Concordia Benchmarks}
+\label{sec:concordia}
+
+HP-SPGG establishes the effect where we control the payoffs. To check that the effect does not depend on that control, we next evaluate on two public Concordia substrates whose payoffs are fixed by their authors~\citep{vezhnevets2023generative,smith2026evaluating}. \emph{Pub Coordination} rewards agents for converging on the same venue, and \emph{Haggling} models a buyer and a seller negotiating over price and bundles. We evaluate nine configurations per substrate and report focal-agent payoff rather than social welfare, since an LLM coordinator typically represents one party. Each scene is scored by evaluating the official case parameters through the analytic \texttt{payoff\_for\_case} function rather than by executing the scripted non-player policies, which makes every decision a one-shot enumeration over a fixed payoff table. Prior factorization is imposed by this construction rather than tested (Appendix~\ref{app:oracles}).
+
+\paragraph{RQ1: one-shot decision quality.} To test whether the advantage survives externally fixed payoffs, we compare every method on the same nine configurations per substrate against the exact optimum computed from the same payoff table. On Pub Coordination, HARP\textsuperscript{+} stays within $1\%$ of \texttt{oracle\_joint}, while ECON-BNE and A-ToM-1 fall short by $5$--$15\%$ and $5$--$30\%$. On Haggling it wins or ties every non-oracle method on all nine configurations and reaches the exact focal ceiling \texttt{oracle\_focal} on five of them. Figure~\ref{fig:concordia-main} shows the largest decision-relevant margins, and the remaining configurations are in Appendix Figure~\ref{fig:concordia-full}. The advantage therefore does not depend on our having designed the environment.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig2_concordia_select_v15.pdf}
+  \caption{Focal-agent payoff on the Concordia substrates. \emph{(a)} Pub Coordination, with \texttt{oracle\_joint} as the reference. \emph{(b)} Haggling, with the exact \texttt{oracle\_focal} as the reference and a broken vertical axis. Whiskers are standard errors over seeds; LLM-PSRL pools the four backbone--seed cells ($n{=}120$, or $400$ for Cape Town), while the mechanistic methods use the common $30$ seeds ($100$ for Cape Town).}
+  \label{fig:concordia-main}
+\end{figure}
+
+
+\paragraph{RQ2 and RQ3: iterated diagnostic.} The one-shot format cannot show whether updating helps, because a single decision leaves nothing to update from. We therefore run a fixed-persona variant that updates across $K{=}20$ scenes on six held-out configurations, keeping the payoffs external and the geometries heterogeneous so that the resulting signatures reflect the inference machinery rather than our design. The paired difference between HARP and an explicit joint tracker covers zero within every geometry (Figure~\ref{fig:iterated-concordia}(a)), reproducing the parity of RQ2 on payoffs we do not control. The value of updating scales with how much the persona actually decides, from nothing on Pub Coordination to $1.1$--$1.7$ regret units on Haggling (b), and HARP\textsuperscript{+} reaches $0.352\pm0.035$ regret at a late rate of $0.0020$ against $1.361\pm0.172$ and $0.0764$ for PSRL-NoType. On the native one-shot format HARP and HARP\textsuperscript{+} coincide exactly, since a single decision leaves the bonus nothing to sharpen (Appendix Table~\ref{tab:bonus-ablation}). Updating is therefore the component that repetition rewards, and its value tracks how decision-relevant the persona is.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.92\columnwidth]{figs/fig_e_b_iterated_concordia_v5.pdf}
+  \caption{Iterated Concordia over $K{=}20$ scenes on six held-out configurations, $5$ common seeds, under backbone-invariant exact-payoff replay. \emph{(a)} Paired HARP minus Joint-PSRL regret for each geometry and pooled, where negative values favor HARP. Whiskers are $t$-based $95\%$ intervals with $4$ degrees of freedom. \emph{(b)} Update value, the paired excess of PSRL-NoType over HARP\textsuperscript{+}, compared directly across configurations. Bars are the standard error of the mean.}
+  \label{fig:iterated-concordia}
+\end{figure}
+
+
+
+
+\subsection{Case Study: Ride-Hailing Dispatch on MaaSSim}
+\label{sec:maassim}
+
+The first two substrates abstract coordination to a payoff table. To test the method in a setting closer to deployment, we replay MaaSSim, an agent-based ride-hailing simulator~\citep{kucharski2022simulating} with request queues, routing, and drivers who decline work they do not want. A dispatcher routes ride requests to independent drivers and each driver decides whether to accept, so the coordinator of Section~\ref{sec:algorithm} becomes the dispatcher and the LLM agents become the drivers. A driver's persona is a combination of four binary acceptance rules, giving $|\Theta_i|{=}16$ personas per driver, and the dispatcher never sees these rules. It observes only which offers each driver accepts or declines, so evidence about a persona arrives only for the offers that driver is actually routed, and a driver who is routed nothing reveals nothing. We replay from saved queue snapshots and persona maps rather than resimulating, which holds request arrivals and routing dynamics fixed across methods, so any difference in realized utility is attributable to belief quality alone. All runs use a single pinned backbone (Appendix~\ref{app:maassim}).
+
+\paragraph{RQ1: margin under conflict.} Personas matter more when drivers disagree about which offers are acceptable, so we interpolate between the original replay and a transformation that makes acceptance rules maximally divergent, at $\lambda\in\{0,0.5,1\}$ and reject penalty $5$. The advantage of HARP over the strongest in-prompt baseline grows by roughly an order of magnitude across this sweep (Figure~\ref{fig:maassim-main}(a), with per-cell values in Appendix~\ref{app:maassim}). HARP stays within $2.7$--$4.4$ oracle-regret units throughout, while the strongest in-prompt baseline rises from $4.5$ to about $10.7$ (b). The gain therefore widens precisely where the persona carries more of the decision.
+
+\paragraph{RQ2: parity at deployment scale.} Here the evidence is endogenous and censored, since a driver reveals its rule only through the offers it is routed, and the persona library has $|\Theta_i|{=}16$ rule combinations rather than four. We run an explicit joint tracker over the same event streams at $n\in\{2,3,4\}$ and compare it against the factored tracker directly. The two match to $2.5{\times}10^{-14}$ in marginal total variation, and their paired utility gap covers zero on five of six cells (Figure~\ref{fig:maassim-rq2}(a)). Coupling the prior across agents makes the joint posterior worth about a fifth of the regret, and pooling the same per-agent marginals within the coupled block recovers all of it at unchanged storage (Appendix~\ref{app:why-joint}). Update work here is measured rather than counted, at $497\,\mu$s per event for the joint tracker against a flat $7\,\mu$s for the factored one by $n{=}4$ (b), and the joint table becomes unrepresentable before the full population is reached, since $16$ rules across the deployed number of drivers exceeds any feasible table. Parity therefore holds where the explicit alternative stops being an option.
+
+\paragraph{RQ3: identity, update, and dispatch.} To locate the source of the gain we vary where the dispatcher's belief comes from, holding the replay fixed. Realized utility rises with the accuracy of that belief (Figure~\ref{fig:maassim-rq2}(c)), and the learned posterior adds $+16.5$ utility over the prior, whereas equally sharp beliefs attached to the wrong drivers fall below it. The Concordia mode comparison agrees, with centralized dispatch accumulating regret $3$--$4\times$ more slowly than independent prompting (Appendix~\ref{app:decent-extended}). As on one-shot Concordia and the analytic ablation, rejections reveal type quickly enough that the bonus has nothing to sharpen, so it stays inactive as predicted, changing $4$ of $406$ assignments with a paired gap covering zero ($-0.25$, $95\%$ CI $[-0.81,0.31]$, Appendix Table~\ref{tab:bonus-ablation}). The belief itself forms from ordinary operational signal, concentrating well above chance within a handful of observations per driver (Appendix Figure~\ref{fig:maassim-concentration}), and rejections carry $1.7\times$ the per-event posterior gain of acceptances (Figure~\ref{fig:maassim-rq2}(d)), since all four hidden rules act as rejection triggers. What the dispatcher gains therefore comes from knowing which driver holds which rule, not from holding a belief at all.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_maassim_rq23_v9.pdf}
+  \caption{MaaSSim parity and mechanism. \emph{(a)} Relative reduction in oracle regret from tracking the joint persona posterior, as a percentage of the factored tracker's regret, with HARP\textsuperscript{+} coinciding pointwise. The left block keeps the persona prior independent across drivers ($10$ common environment seeds); the right block replaces it with shift groups of size $g$ sharing a persona, holding queue snapshots, routing, likelihood, and oracle fixed ($40$ seeds, common random numbers). \emph{(b)} Per-event update time, where the joint cost grows with the $16^{n}$ table and is not run beyond $n{=}4$. \emph{(c)} Realized utility against the accuracy of the belief the dispatcher acts on, over the belief sources of Figure~\ref{fig:maassim-main}(c), with the red dashed line marking the oracle on the true personas. The variants share common saved states, so paired contrasts are tighter than the marginal error bars shown. \emph{(d)} Per-event posterior gain by event type, over $279$ rejections and $388$ acceptances. Error bars are standard errors of the mean.}
+  \label{fig:maassim-rq2}
+\end{figure}
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+This paper introduces HARP, a novel framework that orchestrates heterogeneous LLM agents from an explicit persona posterior kept outside the prompt. A coordinator holds one numeric posterior per agent, samples a joint profile, plans centrally, and updates each marginal in closed form, so the language model supplies likelihoods and actions but never stores the belief. Under three structural conditions the per-agent posteriors reconstruct the joint one exactly, which reduces storage and update work from $O(|\Theta_i|^n)$ to $O(n|\Theta_i|)$ at unchanged regret, and bounded violations degrade the guarantee rather than void it.
+
+The case is empirical. Under a control that fixes the persona profile, prior, payoffs, and exact optimum across methods, HARP\textsuperscript{+} attains the lowest regret of any non-oracle method on all four backbones, and the factored tracker matches explicit joint inference within seed-level error at up to $51\times$ smaller storage. The two remain identical to $n{=}8$ analytically, past the point at which the joint table exhausts memory, while the update stays flat at a few microseconds. Concordia reproduces the same separation on externally fixed payoffs and ties the value of updating to how much the persona actually decides, from nothing on venue coordination to over a regret unit on bargaining. MaaSSim carries the result into a dispatch replay, where the margin widens as competition for the same orders increases, at agent counts for which an explicit joint table is infeasible. Across substrates the gain requires the belief to be updated, to be attached to the agent it describes, and to be acted on by a single planner, and the discrimination bonus contributes wherever personas are slow to separate. Since the tracker is analytic and issues no online model calls, the advantage comes from where the belief is kept rather than from spending more of the backbone on it.
+
+\section*{Limitations}
+HARP assumes a fixed discrete persona library, a finite action space, and an outcome scorer calibrated offline, so continuous actions and personas that drift during an interaction remain open. The factorization compresses the belief but leaves the planner untouched, so centralized planning over the joint action space still bounds scale. Our substrates also impose the three structural conditions by construction, so the guarantees are claimed within that class rather than for social interaction in general, and open-ended dialogue is reported separately (Appendix~\ref{app:sotopia-detail}).
+
+% Acknowledgments: add for camera-ready / non-anonymous venue.
+% \section*{Acknowledgments}
+% We thank ... for ... . This work was supported by ... .
+
+
+% aaai2027.sty sets \bibliographystyle{aaai2027} automatically when natbib is
+% loaded; declaring it again here causes bibtex's "Illegal, another \bibstyle".
+\clearpage % references start after the seven-page main text
+\bibliography{ref}
+
+% Toggle: \withappendixtrue builds the submission PDF (7pp content + references
+% + reproducibility checklist); \withappendixtrue additionally bundles the
+% technical appendix (for the supplementary upload, split as required by AAAI-27).
+\newif\ifwithappendix
+\withappendixtrue
+
+\ifwithappendix
+\clearpage % page-exact boundary for extracting the supplementary PDF; this branch is excluded from the submission build
+\appendix
+\input{appendix}
+\clearpage % keep the checklist page-separable from the appendix in the full build
+\fi
+
+% Reproducibility checklist, appended after references per AAAI-27 instructions.
+\def\isChecklistMainFile{1}
+\input{ReproducibilityChecklist}
+
+\end{document}

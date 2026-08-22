@@ -7,10 +7,11 @@ __pycache__/
 .ruff_cache/
 .ipynb_checkpoints/
 
-# Local environment and logs
+# Local environment, logs, and sensitive audit output
 .venv/
 .venvs/
 logs/
+keys_found.txt
 
 # OS / editor clutter
 .DS_Store
@@ -21,23 +22,31 @@ Thumbs.db
 # Large dataset/artifact files (exceed GitHub file limits)
 analysis/exports/master_rollouts.jsonl
 external/sotopia_data_probe/sotopia_episodes_v1_hf.jsonl
-*.npy
-*.npz
 
-# Generated experiment outputs and figures
-analysis/
-results/
-results_phase2/
-figs/
-calibration/
-packaged_results/
+# Experiment outputs, figures, and numerical arrays are published.
 
-# Paper / LaTeX project outputs are kept out of the anonymized code repo
-arr_paper/
+# Track the canonical HARP paper while excluding LaTeX outputs and figure drafts.
+arr_paper/*
+!arr_paper/aaai2027.bst
+!arr_paper/aaai2027.sty
+!arr_paper/appendix.tex
+!arr_paper/HARP_FIGURE_REDRAW_MANIFEST.json
+!arr_paper/HARP_AAAI27.pdf
+!arr_paper/*.pdf
+!arr_paper/*.png
+!arr_paper/main.bbl
+!arr_paper/main.pdf
+!arr_paper/main.tex
+!arr_paper/ref.bib
+!arr_paper/ReproducibilityChecklist.tex
+!arr_paper/data/
+!arr_paper/data/**
+!arr_paper/figs/
+!arr_paper/figs/**
 arr_paper_overleaf/
 overleaf_bundle/
 htmg_arr_v5_overleaf/
-paper/
+/paper/
 *.aux
 *.blg
 *.fdb_latexmk
@@ -46,11 +55,11 @@ paper/
 *.out
 *.synctex.gz
 *.toc
-tables/*.tex
-packaged_results/*/tables/*.tex
 
 # Local external checkouts and archival copies are not part of the artifact
-external/
+/external/
 _archive/
 arr_paper_before_*/
 *.zip
+!/*.zip
+!packaged_results/**/*.zip

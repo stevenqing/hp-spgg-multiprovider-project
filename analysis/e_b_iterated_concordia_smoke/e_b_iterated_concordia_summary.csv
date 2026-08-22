@@ -1,0 +1,9 @@
+config_id,config_label,domain,method,seeds,episodes,cumulative_regret_mean,cumulative_regret_sem,late_instant_regret_mean,late_instant_regret_sem,posterior_true_mass_mean,posterior_true_mass_sem,n_agents,factored_storage,joint_storage
+pub/london_mini,Pub: london_mini,pub,atom_tom1,1,5,0.0,0.0,0.0,0.0,0.0625,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,econ_bne,1,5,0.0,0.0,0.0,0.0,0.0625,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,joint_psrl_uniform,1,5,0.0,0.0,0.0,0.0,0.29808469534942905,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,map_type_greedy,1,5,0.0,0.0,0.0,0.0,0.6430478098730418,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,pact,1,5,0.0,0.0,0.0,0.0,0.6430478098730418,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,pact_plus,1,5,0.0,0.0,0.0,0.0,0.6430478098730418,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,psrl_notype,1,5,0.0,0.0,0.0,0.0,0.0625,0.0,2,8,16
+pub/london_mini,Pub: london_mini,pub,random,1,5,3.808333333333332,0.0,0.7388888888888885,0.0,0.0625,0.0,2,8,16

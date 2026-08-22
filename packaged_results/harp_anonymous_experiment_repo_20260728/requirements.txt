@@ -1,0 +1,13 @@
+# Offline validation and plotting
+numpy>=1.24
+matplotlib>=3.7
+networkx>=3.2
+Pillow>=10.0
+PyMuPDF>=1.24
+PyYAML>=6.0
+scipy>=1.11
+
+# Optional live-provider adapters
+openai>=1.0
+anthropic>=0.39
+google-genai>=0.3

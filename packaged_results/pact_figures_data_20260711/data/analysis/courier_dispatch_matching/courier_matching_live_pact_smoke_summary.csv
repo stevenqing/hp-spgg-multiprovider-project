@@ -1,0 +1,4 @@
+model,method,episodes,final_mean_cumulative_reward,final_mean_cumulative_regret,final_mean_cumulative_exploration_cost,final_mean_true_tuple_posterior,final_mean_rule_marginal_accuracy,live_parse_ok_rate
+gpt-5.4-mini-20260317,live_llm_belief,1,0.7149666666666666,1.2582810157097963,0.7417054033677816,0.0625,0.5,1.0
+gpt-5.4-mini-20260317,live_pact,1,0.7309666666666667,1.2212392885524996,0.7833446976582554,0.3464047632969624,0.781731902583903,1.0
+gpt-5.4-mini-20260317,live_pact_plus,1,0.7309666666666667,1.2212392885524996,0.7833446976582554,0.3464047632969624,0.781731902583903,1.0

@@ -1,0 +1,27 @@
+# Python and test state
+.venv/
+.venvs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Credentials and local provider configuration
+.env
+.env.*
+!config/providers.example.yaml
+*.pem
+*.key
+
+# Local scratch outputs; released analysis/artifacts remain tracked
+analysis/_scratch/
+artifacts/_generated/
+logs/
+results/
+
+# Third-party checkouts and editor state
+external/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

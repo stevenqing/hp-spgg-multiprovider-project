@@ -1,0 +1,1062 @@
+\section{Claim-Organized Empirical Supplement}
+\label{app:experiment-supplement}
+\setcounter{subsection}{-1}
+
+\subsection{Reading Guide}
+\label{app:inventory}
+
+This subsection certifies no standalone result; it maps each of the six paper claims to its complete evidence bundle and location. Every empirical figure and table retained below appears in one of these rows, with the single exception of Appendix~\ref{app:oracles}, whose figures and table document the oracle references and the one-shot decision-quality comparison as shared evaluation infrastructure rather than certifying a claim of their own.
+
+\begin{table}[h!]
+\centering\scriptsize
+\caption{Claim-to-evidence reading guide. The appendix is organized by claim rather than substrate or experiment identifier.}
+\label{tab:appendix-inventory}
+\setlength{\tabcolsep}{1pt}
+\begin{tabular}{@{}p{0.14\columnwidth}>{\raggedright\arraybackslash}p{0.58\columnwidth}p{0.22\columnwidth}@{}}
+\toprule
+Claim & Evidence & Location \\
+\midrule
+\textbf{C1} Exactness/storage & Table~\ref{tab:hp-spgg-matched}; Figures~\ref{fig:e1-1-analytic},~\ref{fig:e1-1-llm},~\ref{fig:storage-vs-regret},~\ref{fig:maassim-rq2}; Tables~\ref{tab:storage-comparison},~\ref{tab:maassim-rq2}. & \S\ref{app:hp-spgg-diagnostics} \\[2pt]
+\textbf{C2} Rate separation & Figures~\ref{fig:e2-e5}(a),~\ref{fig:app-e2-native},~\ref{fig:iterated-concordia}; Table~\ref{tab:iterated-concordia}. & \S\ref{app:rate-burnin} \\[2pt]
+\textbf{C3} Idealized burn-in / proxy behavior & Theorem~\ref{thm:pact-plus-app}; Figure~\ref{fig:e2-e5}(b); Figures~\ref{fig:n-scaling},~\ref{fig:beta-sweep},~\ref{fig:hp-spgg-component-ladder}; Tables~\ref{tab:bonus-ablation},~\ref{tab:hp-spgg-component-ladder}. & \S\ref{app:pact-plus}; \S\ref{app:rate-burnin}; \S\ref{app:mechanism} \\[2pt]
+\textbf{C4} Structural class & Figure~\ref{fig:rl-violation}; Table~\ref{tab:rl-violation}; Figure~\ref{fig:e1-3-pf}; Table~\ref{tab:true-shared-dgp}. & \S\ref{app:structural-boundary} \\[2pt]
+\textbf{C5} Open-text boundary & Tables~\ref{tab:sotopia-pf-families},~\ref{tab:sotopia-aggregate}; Figures~\ref{fig:sotopia-corrected},~\ref{fig:sotopia-component-corrected}; Table~\ref{tab:sotopia-corrected}. & \S\ref{app:sotopia-detail} \\[2pt]
+\textbf{C6} Mechanism & Figures~\ref{fig:hp-spgg-component-ladder},~\ref{fig:hp-spgg-component-trajectories},~\ref{fig:decentralized-price},~\ref{fig:maassim-concentration},~\ref{fig:maassim-mechanism}; Tables~\ref{tab:hp-spgg-component-ladder},~\ref{tab:rq3-components},~\ref{tab:maassim-mechanism},~\ref{tab:maassim-scenarios}. & \S\ref{app:mechanism} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exactness and Storage (C1)}
+\label{app:hp-spgg-diagnostics}
+\label{app:llm-supplements}
+
+This subsection certifies C1: under TI/RL/PF, the factored persona posterior matches the joint representation while reducing persona storage from $O(|\Theta_i|^n)$ to $O(n|\Theta_i|)$. The fresh matched control anchors the comparison on common environments and pinned tensors; the scaling figures and storage table isolate representation size from planning and likelihood differences.
+
+\paragraph{Matched-likelihood source audit.}
+\label{app:matched-likelihood-audit}
+The historical source audit found algorithm-specific seeds ($120000+10000j+s$) and no retained c19 tensors or response caches, so those unmatched rows are provenance only and are excluded from Figure~\ref{fig:hp-spgg-cross-model} and Table~\ref{tab:hp-spgg-matched}. The anonymous release records this source under an anonymized provenance identifier.
+
+\paragraph{Fresh environment-matched control.}
+For each backbone we generated and pinned a complete $125$-profile ${\times}\,3$-player ${\times}\,4$-persona live outcome-score tensor (1,500 judge cells), then ran all methods over the same ten environment seeds, type profiles, uniform prior, and exact exhaustive tensor oracle with $K{=}20$, $\beta{=}0.25$, and Gaussian observation scale $0.08$. There is no additional stochastic board state. Each method receives its own realized-reward history generated from the shared tensor. The strongest fixed LLM-coordination comparator is selected by minimum mean regret within ECON-BNE and A-ToM-0/1/2. Ratios divide per-backbone means; paired gaps use common seed indices. Provider sampling seeds are unavailable, so this is environment matching rather than pathwise provider-RNG matching; every accepted raw response is content-hash cache-pinned. The same pinned tensor defines the HP-SPGG reward surface and the PACT-family likelihood means, so this control tests posterior representation and planning under a correctly specified model by construction; it does not validate scorer accuracy under model misspecification. Prompted comparators see realized histories but do not receive the complete scorer or exhaustive planner, so cross-family ratios are system-level rather than tracker-only effects. The C1 claim is certified by the matched PACT--Joint comparison and the representation-only storage diagnostics below.
+
+\begin{table*}[t]
+\centering\scriptsize
+\caption{Environment-matched HP-SPGG control ($K{=}20$, $10$ common seeds). Values are cumulative regret, mean $\pm$ SEM. ``Best coordination'' is selected post hoc by lowest mean among A-ToM-0/1/2 and ECON-BNE; its ratio to the lower-mean PACT-family row is descriptive and not a significance statistic.}
+\label{tab:hp-spgg-matched}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrlr}
+\toprule
+Backbone & PACT\textsuperscript{+} & PACT & Joint-PSRL & LLM-PSRL & Best coordination & Coord./best PACT \\
+\midrule
+DeepSeek-V3.2 & $0.360\pm0.142$ & $0.985\pm0.298$ & $0.955\pm0.203$ & $18.270\pm5.141$ & ECON-BNE $2.550\pm1.049$ & $7.08\times$ \\
+GPT-5.4-nano & $0.159\pm0.038$ & $0.544\pm0.150$ & $0.391\pm0.100$ & $2.193\pm0.714$ & ECON-BNE $6.960\pm1.376$ & $43.77\times$ \\
+Kimi-K2.6 & $0.325\pm0.088$ & $0.547\pm0.116$ & $0.642\pm0.159$ & $6.701\pm1.325$ & ECON-BNE $2.957\pm1.366$ & $9.10\times$ \\
+Llama-4-Maverick & $0.430\pm0.217$ & $1.202\pm0.212$ & $1.276\pm0.228$ & $13.510\pm3.431$ & A-ToM-0 $0.700\pm0.396$ & $1.63\times$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{PACT--Joint agreement.}
+The paired PACT-minus-Joint-PSRL gaps are $0.030\pm0.294$, $0.153\pm0.175$, $-0.095\pm0.180$, and $-0.074\pm0.346$ across DeepSeek, GPT, Kimi, and Llama (mean $\pm$ SEM over common environment indices). None is resolved with ten seeds. This is consistent with, but does not prove, Proposition~\ref{prop:bit-identical}: algorithm draws were not pathwise coupled, and provider-sampled calibration exposes no replayable sampling seed, instead pinning one realized tensor by cache.
+
+\paragraph{HP-SPGG state, action, and calibration specification.}
+The public state at each turn records the round index and the previous turn's realized contribution profile. Each agent's action menu is the discrete contribution grid $\mathcal A_i$ with five levels, so the joint menu contains $5^3{=}125$ profiles that the backward-induction planner and the oracle both enumerate exactly ($\epsilon_{\mathrm{plan}}{=}0$). Persona-conditioned rewards are calibrated offline once per backbone by scoring every (persona, player index, contribution profile) cell with the judge prompt of Section~\ref{app:prompt-hp-spgg-scoring}, yielding the $125\times3\times4$ tensor that serves as both the planner's outcome scorer and the mean of the tracker's likelihood. The observation likelihood is the calibrated Gaussian factor with scale $\sigma{=}0.08$ given below Eq.~\eqref{eq:likelihood}, and the action factor is uninformative, so the online tracker issues no model calls. All reported cells use $K{=}20$ episodes, $n{=}3$ agents, $|\Theta_i|{=}4$ personas, and $\beta{=}0.25$.
+
+\paragraph{Baseline definitions.}
+\emph{Oracle} receives the true persona profile and applies the same exhaustive joint-action argmax, providing the regret reference. Historical \emph{PACT} samples one profile from the factored marginals, whereas the practical \emph{PACT\textsuperscript{+}} proxy plans from posterior-mean welfare plus the proxy bonus; those matched-control rows therefore differ in planner statistic as well as $\beta$. E-G supplies the clean bonus knock-out by holding the PACT\textsuperscript{+} posterior-mean objective fixed and toggling only its bonus. \emph{Joint-PSRL} replaces the factored persona posterior with an explicit table over all $|\Theta_i|^n$ joint profiles while sharing the likelihood, planner, and environments. \emph{LLM-PSRL} retains a posterior-sampling loop but represents hypotheses and updates in natural language. \emph{PSRL-NoType} samples personas without updating. \emph{A-ToM-0/1/2} and \emph{ECON-BNE} are our task-specific prompt adaptations of the cited methods \citep{mu2026adaptive,yi2025debate}, not executions of the original authors' code. They receive realized histories but not the complete outcome tensor or exhaustive planner available to the model-based PACT family. Prompt, parser, cache, and repair implementations are supplied in the code artifact; the cross-family rows should be read as system comparisons. Only PACT versus Joint-PSRL isolates posterior representation.
+
+\paragraph{Representation-only comparison.}
+Figures~\ref{fig:e1-1-analytic} and~\ref{fig:e1-1-llm} broaden the agent-count sweep to nine baselines. Table~\ref{tab:storage-comparison} is the clean representation-only comparison: it holds the likelihood, planner, environments, and seed count fixed, and PACT and Joint-PSRL remain unresolved while the storage ratio grows from $5.3\times$ to $51\times$ over $n=3$--$5$. Figure~\ref{fig:storage-vs-regret} is a separate $K=20$ single-backbone diagnostic with mixed seed counts. In that figure PACT and Joint-PSRL overlap within their reported uncertainty for $n=3,4,5$, but PACT\textsuperscript{+} fails at $n=2$ ($2.962\pm0.545$ versus $0.070\pm0.037$ for PACT). It therefore illustrates storage growth and a small-population failure of the practical bonus proxy, not uniform regret invariance across methods.
+
+\paragraph{E-E: MaaSSim tracker realization.}
+To test C1 on a deployment-shaped substrate without reusing the eight-vehicle state distribution at every scale, we use the preferred sub-fleet scheme (i): the closed-loop Nootdorp generator independently regenerates a self-consistent market for each $n\in\{2,3,4,6,8\}$ with $40$ passengers, $120$-second batches, and ten common environment indices. Each driver has one of $16$ four-bit hidden-rule combinations. For every $(n,\text{environment})$ cell, factored and explicit-joint trackers consume the same saved nearest-policy accept/reject event stream in the same order, use the same product-uniform prior and analytic per-driver likelihood, and call the same exhaustive assignment objective with lexicographic tie-breaking. Their profile-sampling RNGs are intentionally independent. Conflict strength $\lambda\in\{0,0.5,1\}$ changes only offer travel-time/fare geometry; it does not enter the evidence stream or likelihood.
+
+The explicit tracker is run through $n=4$; factored tracking is run through $n=8$. Maximum total variation between any explicit-joint marginal and its factored counterpart after any event is $2.55\times10^{-14}$. Eight of nine nominal paired utility CIs cover zero, including all three $\lambda=0.5$ cells. The retained exception is $n=2,\lambda=0$, where joint-minus-factored utility is $+1.849$ with 95\% CI $[0.192,3.506]$. Since the posterior marginals, likelihood, event order, objective, and deterministic tie-breaking are identical, the designed source of this finite-sample difference is the independent posterior-sampling path; the cell is reported rather than averaged away. At $n=4$, the representation is $64$ versus $65{,}536$ float64 entries, persistent belief memory is $512$ bytes versus $512$ KiB, and mean update time is $9.03\,\mu$s versus $0.55$ ms. Factored update time remains $6.92$--$9.53\,\mu$s/event through $n=8$. The optional $n=6$ joint run is omitted; its theoretical table is $128$ MiB, while $n=8$ would require $32$ GiB.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}ccrrr@{}}
+\toprule
+$n$ & $\lambda$ & Joint$-$factored utility [95\% CI] & Max TV & Storage ratio \\
+\midrule
+$2$ & $0$ & $+1.849\ [0.192,\ 3.506]$ & $7.81{\times}10^{-16}$ & $8\times$ \\
+$2$ & $.5$ & $-0.383\ [-3.104,\ 2.338]$ & $7.81{\times}10^{-16}$ & $8\times$ \\
+$2$ & $1$ & $+0.114\ [-2.870,\ 3.098]$ & $7.81{\times}10^{-16}$ & $8\times$ \\
+$3$ & $0$ & $+1.331\ [-0.708,\ 3.370]$ & $2.47{\times}10^{-15}$ & $85.3\times$ \\
+$3$ & $.5$ & $-3.039\ [-7.237,\ 1.159]$ & $2.47{\times}10^{-15}$ & $85.3\times$ \\
+$3$ & $1$ & $-1.589\ [-5.126,\ 1.948]$ & $2.47{\times}10^{-15}$ & $85.3\times$ \\
+$4$ & $0$ & $-1.375\ [-3.901,\ 1.151]$ & $2.55{\times}10^{-14}$ & $1{,}024\times$ \\
+$4$ & $.5$ & $+2.629\ [-2.687,\ 7.945]$ & $2.55{\times}10^{-14}$ & $1{,}024\times$ \\
+$4$ & $1$ & $-0.372\ [-4.081,\ 3.337]$ & $2.55{\times}10^{-14}$ & $1{,}024\times$ \\
+\bottomrule
+\end{tabular}
+\caption{E-E MaaSSim factored-versus-explicit-joint tracker parity (mean difference and two-sided Student-$t$ 95\% CI over ten common environment indices). Maximum TV is over every driver marginal after every event. Storage ratios are $16^n/(16n)$. The central claim is posterior identity; utility includes independent tracker sampling and has one retained nominal non-parity.}
+\label{tab:maassim-rq2}
+\end{table}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.97\textwidth]{figs/fig_maassim_rq2_parity.pdf}
+  \caption{E-E MaaSSim RQ2 diagnostic. \emph{(a)} Replay utility under base, mid-conflict, and full-conflict offer geometry ($\lambda\in\{0,0.5,1\}$); joint and factored trackers use independent samples from numerically identical posteriors. \emph{(b)} Timed Bayesian update and normalization only; the TV diagnostic and planner are excluded. \emph{(c)} Persistent float64 belief-array storage. The $n=6$ joint point is theoretical and optional; $n=8$ is marked infeasible and was not allocated.}
+  \label{fig:maassim-rq2}
+\end{figure*}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e3_n_agent_scaling_v3.pdf}
+  \caption{HP-SPGG storage-versus-regret diagnostic on the live Llama-4-Maverick tier ($|\Theta_i|{=}4$, $K{=}20$). The annotation gives $n|\Theta_i|$ factored entries versus $|\Theta_i|^n$ joint entries. PACT and Joint-PSRL have no bonus; the practical PACT\textsuperscript{+} proxy uses $\beta=0.25$. Seed counts are mixed: $n=2$ uses $10$ seeds and $n=3,4,5$ use $5$. PACT and Joint-PSRL are unresolved at $n=3,4,5$, whereas PACT\textsuperscript{+} has a clear $n=2$ failure. Table~\ref{tab:storage-comparison}, not this mixed-seed panel, is the representation-only comparison.}
+  \label{fig:storage-vs-regret}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e1_1_n_scaling.pdf}
+  \caption{C1 analytic-tier nine-baseline $n$-scaling on HP-SPGG ($n\in\{3,4,5,6\}$, $K{=}20$, $5$ seeds, $\beta{=}0.25$). The PACT family stays under $1.0$ cumulative regret across the sweep while type-agnostic IQL and Random grow with $n$. Persona-storage savings are $5.3\times$, $16\times$, $51\times$, and $171\times$ at $n=3,4,5,6$.}
+  \label{fig:e1-1-analytic}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e1_1_n_scaling_llm.pdf}
+  \caption{C1 live-LLM nine-baseline $n$-scaling on HP-SPGG c19 ($K{=}20$, $5$ common environment seeds, $\beta{=}0.25$). Left: DeepSeek-V3.2. Right: Llama-4-Maverick. The PACT family remains separated from type-agnostic baselines on both backbones; external A-ToM-0/1/2 and ECON-BNE references are shown at $n{=}3$.}
+  \label{fig:e1-1-llm}
+\end{figure}
+
+\begin{table}[t]
+\centering\scriptsize
+\caption{Factored-vs-joint storage comparison on HP-SPGG ($m{=}|\Theta_i|{=}4$, $K{=}100$, $10$ common environment seeds, $\beta{=}0.25$). PACT and Joint-PSRL-Uniform share likelihood, exhaustive planner, and seeds; only the posterior representation differs. Values are cumulative regret.}
+\label{tab:storage-comparison}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+   & Storage & \multicolumn{2}{c}{analytic kernel} & \multicolumn{2}{c}{DeepSeek-V3.2} \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+$n$ & savings & PACT & J-PSRL-U & PACT & J-PSRL-U \\
+\midrule
+3 & 5.3$\times$ & 0.12 & 0.17 & 0.57 & 0.38 \\
+4 & 16$\times$  & 0.05 & 0.11 & 0.80 & 0.51 \\
+5 & 51$\times$  & 0.60 & 0.63 & 1.02 & 0.85 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Rate and Burn-in (C2, C3)}
+\label{app:rate-burnin}
+
+This subsection supports C2 and evaluates C3: PACT exhibits a plateau-versus-linear separation from type-agnostic sampling on the controlled finite protocol, while the practical PACT\textsuperscript{+} proxy helps the matched $n=3$ cells but is not uniformly beneficial under scaling.
+
+\begin{figure*}[t]
+  \centering
+  \subfloat[C2: per-episode trajectory.\label{fig:e5}]{\includegraphics[width=\textwidth]{figs/fig_e5_cumulative_regret_trajectories_v3.pdf}}\hfill
+  \subfloat[C3: concentration speed and bonus benefit.\label{fig:e1}]{\includegraphics[width=0.48\textwidth]{figs/fig_e1_posterior_concentration_v3.pdf}}
+  \caption{Rate and practical-proxy evidence at $n=3$. (a) PACT and PACT\textsuperscript{+} plateau at $<0.05$ regret per episode within $K{\approx}5$ on four HP-SPGG backbones, while PSRL-NoType grows linearly and reaches an $11$--$30\times$ cumulative gap at $K{=}20$. (b) Vanilla-PACT concentration time $K_{\mathrm{conc}}^{0.9}$ predicts the observed benefit of the $\beta=0.25$ proxy in these four cells; this is not a test of the idealized bonus theorem.}
+  \label{fig:e2-e5}
+\end{figure*}
+
+\paragraph{HP-SPGG rate and concentration.}
+Figure~\ref{fig:e2-e5}(a) is consistent with the rate-separation construction of Theorem~\ref{thm:rate-separation}. Panel (b) is descriptive evidence about the practical proxy, whose formula differs from the idealized bonus in Theorem~\ref{thm:pact-plus-app}. Concentration times are DeepSeek $4.4$, GPT $6.6$, Kimi $12.0$, and Llama $14.0$ episodes out of $K=20$. The privileged analytic-kernel cross-check in Figure~\ref{fig:app-e2-native} places the proxy within $0.05$ regret of the noise-free reference on every backbone in this protocol.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/E2_native_vs_llm_baselines_main.pdf}
+  \caption{C2 analytic-kernel cross-check: PACT\textsuperscript{+} on HP-SPGG c19 remains within $0.05$ regret of the privileged analytic-kernel reference across all four backbones.}
+  \label{fig:app-e2-native}
+\end{figure}
+
+\paragraph{Iterated Concordia-derived diagnostic.}
+The native compact Concordia evaluation is one-shot. We therefore construct a fixed-persona $K{=}20$ diagnostic from six configurations selected on seeds $0$--$4$ and report on disjoint seeds $1000$--$1004$. It retains the upstream sampler, exact payoff, and finite menu, imposes PF, and uses the same Gaussian update after reward normalization. It is Concordia-derived rather than native, and exact-payoff replay is backbone-invariant. Figure~\ref{fig:iterated-concordia}(a) isolates RQ2: after first averaging the six configurations within each seed, every two-sided Student-$t$ 95\% interval for PACT minus Joint-PSRL contains zero; the $K=20$ gap is $-0.017\pm0.044$ (SEM). Panel (b) isolates RQ3: PACT\textsuperscript{+} reaches $0.352\pm0.035$ cumulative and $0.0020\pm0.0017$ late regret, versus $1.361\pm0.172$ and $0.0764\pm0.0139$ for PSRL-NoType; the thin PACT reference remains near PACT\textsuperscript{+}.
+
+The two-panel trajectory appears as Figure~\ref{fig:iterated-concordia} in the main paper; Table~\ref{tab:iterated-concordia} records its endpoint values.
+
+\begin{table}[t]
+\centering\small
+\caption{Iterated Concordia-derived aggregate at $K{=}20$. Late is mean instant regret over episodes $11$--$20$.}
+\label{tab:iterated-concordia}
+\begin{tabular}{lcc}
+\toprule
+Method & Cumulative regret & Late regret \\
+\midrule
+PACT & $0.312\pm0.026$ & $0.0041\pm0.0012$ \\
+PACT\textsuperscript{+} & $0.352\pm0.035$ & $0.0020\pm0.0017$ \\
+Joint-PSRL & $0.329\pm0.030$ & $0.0049\pm0.0012$ \\
+PSRL-NoType & $1.361\pm0.172$ & $0.0764\pm0.0139$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Bonus scaling and frozen coefficient.}
+Figure~\ref{fig:n-scaling} shows the bonus under type- and agent-space growth. Figure~\ref{fig:beta-sweep} selects $\beta=0.25$ as the smallest value in the no-degradation interval, cutting slowest-backbone regret from $0.97$ to $0.31$. Table~\ref{tab:bonus-ablation} holds likelihood, posterior, sampling, and policy interface fixed and changes only $\beta$ on downstream substrates.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_scaling_hidden_complexity_v5.pdf}
+  \caption{C3 scaling of PACT and the practical PACT\textsuperscript{+} proxy on HP-SPGG at $K=20$ using the Llama-4-Maverick profile. Left varies $|\Theta_i|\in\{2,3,4,5,6\}$ at $n=3$: type counts $2,3,4,6$ use $5$ seeds and type count $5$ uses $10$. Right varies $n\in\{2,3,4,5\}$ at $|\Theta_i|=4$: $n=2$ uses $10$ seeds and $n=3,4,5$ use $5$. The proxy uses $\beta=0.25$.}
+  \label{fig:n-scaling}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\columnwidth]{figs/fig10_beta_sweep_v3.pdf}
+  \caption{C3 HP-SPGG $\beta$-sweep at $K=20$. The frozen value $\beta=0.25$ is the smallest point in the no-degradation interval $[0.25,0.75]$; it leaves three saturated backbones unchanged and reduces Llama-Maverick regret from $0.97$ to $0.31$.}
+  \label{fig:beta-sweep}
+\end{figure}
+
+\begin{table}[t]
+\centering\scriptsize
+\caption{C3 bonus ablations. E-G is the clean HP-SPGG knock-out: posterior-mean planner and update are fixed and only the frozen $\beta$ term changes. Concordia is single-shot; historical SOTOPIA rows are descriptive because its tracker remained at the prior. MaaSSim E-F uses a separately disclosed one-step pairwise utility-disagreement bonus with $\beta=0.25$, frozen without MaaSSim tuning.}
+\label{tab:bonus-ablation}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+ & PACT & PACT\textsuperscript{+} & $\Delta$ \\
+\midrule
+\multicolumn{4}{l}{\emph{HP-SPGG E-G (analytic, $10$ environments)}} \\
+Component ladder                  & $.016\pm.007$ & $.015\pm.007$ & $-0.001$ \\
+\midrule
+\multicolumn{4}{l}{\emph{Concordia (single-shot)}} \\
+Pub Coordination               & $1.264$ & $1.264$ & $+0.000$ \\
+Haggling (single-item)         & $3.661$ & $3.661$ & $+0.000$ \\
+Haggling (multi-item)          & $5.429$ & $5.429$ & $+0.000$ \\
+\midrule
+\multicolumn{4}{l}{\emph{SOTOPIA-Hard ($6$-turn, $n{=}70$/cell)}} \\
+DeepSeek-V3.2                  & $3.242$ & $3.248$ & $+0.006$ \\
+GPT-5.4-nano                   & $2.873$ & $2.981$ & $+0.107$ \\
+Kimi-K2.6                      & $2.789$ & $2.807$ & $+0.018$ \\
+Llama-Maverick                 & $3.308$ & $3.308$ & $+0.000$ \\
+\emph{Mean (SOTOPIA-Hard)}     & $3.053$ & $3.086$ & $+0.033$ \\
+\midrule
+\multicolumn{4}{l}{\emph{MaaSSim E-F (fixed-state utility, $10$ environments)}} \\
+MaaSSim                         & $27.61\pm11.65$ & $27.36\pm11.56$ & $-0.25$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Only HP-SPGG supports interpreting the bonus as accelerated concentration. The downstream table establishes activity and scope: no effect in one-shot Concordia, a small descriptive SOTOPIA difference that is not update evidence, and no resolved MaaSSim gain. In E-F, PACT\textsuperscript{+} changes $4$ of $406$ assignments; paired utility difference is $-0.247\pm0.247$ (SEM), with 95\% CI $[-0.806,0.312]$. Thus the frozen bonus is active but nearly inert on these offer-revealing replay states.
+
+
+\subsection{Structural Boundary (C4)}
+\label{app:structural-boundary}
+
+This subsection certifies C4: TI and RL are necessary for exact likelihood factorization, while the retained PF interventions delimit robustness without presenting a misspecified-prior ratio as a lower-bound realization.
+
+\paragraph{Why TI and RL are necessary.}
+If TI fails, the transition factor depends jointly on $(P,\boldsymbol\theta)$ and couples the transition model to the persona profile. If RL fails, for example under $r_1=r_1^{\theta_1}-\alpha r_2^{\theta_2}$, agent 1's likelihood contains $\theta_2$ and couples persona coordinates at every update. Both conditions are therefore individually necessary for the factorization used by Theorem~\ref{thm:decoupling-app}.
+
+\paragraph{Controlled RL-violation diagnostic.}
+We instantiate the bounded cross-reward $r_0=(r_0^{\theta_0}-\alpha r_1^{\theta_1}+\alpha)/(1+\alpha)$ while other rewards remain local. PACT knows the coupled planning objective but projects its likelihood onto marginals; a shadow Joint-PSRL posterior uses the exact joint likelihood on the same trajectory. With exact enumeration, $K=100$, and $10$ common environment seeds, the methods are pathwise identical at $\alpha=0$. As $\alpha$ reaches $4$, marginal posterior TV rises to $0.0071\pm0.0025$ analytically and $0.0171\pm0.0047$ on a complete $324$-cell live DeepSeek grid. Every paired regret gap still includes zero. Thus RL violation breaks posterior decoupling as predicted, but this geometry does not establish a monotone regret penalty.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.90\textwidth]{figs/fig_e_d_reward_locality_violation.pdf}
+  \caption{C4 reward-locality violation ($K{=}100$, $10$ common environment seeds). Left: PACT and correctly specified Joint-PSRL regret trajectories at $\alpha=4$. Right: marginal TV between PACT's factored posterior and a shadow exact-joint posterior on the same trajectory. Top is analytic; bottom uses all $324$ live DeepSeek persona/player/action cells. Posterior coupling increases, but no regret disadvantage is detectable on this geometry.}
+  \label{fig:rl-violation}
+\end{figure*}
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{C4 RL-violation cumulative regret at $K=100$; Gap is the common-environment-seed PACT-minus-Joint difference.}
+\label{tab:rl-violation}
+\begin{tabular}{llrrr}
+\toprule
+Tier & $\alpha$ & PACT & Joint & Gap \\
+\midrule
+Analytic & 0 & $.001\pm.001$ & $.001\pm.001$ & $.000\pm.000$ \\
+Analytic & 1 & $.155\pm.065$ & $.206\pm.087$ & $-.051\pm.051$ \\
+Analytic & 4 & $.199\pm.057$ & $.213\pm.057$ & $-.013\pm.013$ \\
+DeepSeek live & 0 & $1.130\pm.154$ & $1.130\pm.154$ & $.000\pm.000$ \\
+DeepSeek live & 1 & $.583\pm.115$ & $.575\pm.116$ & $.008\pm.008$ \\
+DeepSeek live & 4 & $.517\pm.131$ & $.466\pm.108$ & $.051\pm.107$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{PF prior intervention.}
+Figure~\ref{fig:e1-3-pf} replaces the factored prior with correlated joint priors on the $|\Theta|^n=64$ simplex while holding $n=3$ and $K=20$ fixed. A symmetric Dirichlet sweep interpolates between sparse and uniform priors; a shared-type cell is uniform over the four same-type profiles and maximally couples otherwise uniform marginals. The PACT family stays below $0.6$ cumulative regret on every retained cell. Table~\ref{tab:storage-comparison} supplies the well-specified Joint-PSRL-Uniform reference; this coupled-prior result is a local finite-horizon robustness probe, not a lower-bound implementation.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e1_3_pf_isolation.pdf}
+  \caption{C4 prior swap on HP-SPGG ($n{=}3$, $|\Theta|{=}4$, $|\Theta|^n{=}64$ joint profiles, $K{=}20$, $10$ common environment seeds, $\beta{=}0.25$, analytic calibration). \emph{Left:} symmetric Dirichlet sweep on the $64$-simplex; each seed draws $p\!\sim\!\mathrm{Dir}(\alpha\mathbf{1}_{64})$ and PACT inherits the induced marginals while the explicit joint baseline uses $p$. \emph{Right:} a shared-type prior, uniform over the four same-type profiles, leaves marginals uniform while maximally coupling them. The PACT family stays within $0.6$ cumulative regret on every retained cell.}
+  \label{fig:e1-3-pf}
+\end{figure}
+
+\paragraph{True shared-type DGP.}
+The dual intervention makes the data-generating process itself fully coupled. Joint-PSRL-Aware's same-type prior is then well-specified while PACT's independent marginal prior is misspecified relative to the truth.
+
+\paragraph{Setup.} At the start of each episode a single type $t \sim \mathrm{Uniform}(\Theta)$ is drawn and assigned to every agent, so $\theta_i^\star = t$ for all $i$. PACT (uniform marginals, factored representation), Joint-PSRL-Uniform (uniform Dirichlet over the $|\Theta_i|^n$ joint profiles), and Joint-PSRL-Aware (strict prior on the $m$ same-type profiles) share the same likelihood model, backward-induction joint-action planner, and common environment seeds. We sweep $n\!\in\!\{3,4,5\}$ and $K\!\in\!\{50,100\}$ on one analytic kernel and four live LLM backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick) with $10$ common environment seeds per cell and $\beta{=}0.25$. Posterior storage at $n{=}5$ is $20$ parameters for PACT, $1024$ for Joint-PSRL-Uniform, and $4$ for Joint-PSRL-Aware.
+
+\begin{table*}[h]
+\centering\small
+\caption{True shared-type DGP robustness on HP-SPGG across one analytic kernel and four live LLM backbones ($m{=}|\Theta_i|{=}4$, $K{=}100$, $10$ common environment seeds, $\beta{=}0.25$). True types are drawn from the $m$ same-type joint profiles, so Joint-PSRL-Aware's strict prior is well-specified and PACT's factored prior is mis-specified relative to the coupled truth. PACT remains within $1.5\times$ of Aware on $14$ of $15$ cells (Kimi-K2.6 $n{=}4$ at $1.52\times$); the GPT-5.4-nano $n{=}4$ cell where Aware reaches $0$ is marked with a dash. PACT is lower-regret than Aware on $9$ of $15$ cells.}
+\label{tab:true-shared-dgp}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Substrate & $n$ & PACT & J-PSRL-A & PACT $/$ Aware \\
+\midrule
+analytic kernel       & 3 & 0.28 & 0.22 & 1.29$\times$ \\
+                      & 4 & 0.00 & 0.32 & 0.00$\times$ \\
+                      & 5 & 0.31 & 0.39 & 0.79$\times$ \\
+\midrule
+DeepSeek-V3.2         & 3 & 1.79 & 1.23 & 1.46$\times$ \\
+                      & 4 & 1.31 & 1.84 & 0.71$\times$ \\
+                      & 5 & 2.11 & 2.61 & 0.81$\times$ \\
+\midrule
+GPT-5.4-nano          & 3 & 0.64 & 0.74 & 0.86$\times$ \\
+                      & 4 & 0.22 & 0.00 & --           \\
+                      & 5 & 1.64 & 2.36 & 0.69$\times$ \\
+\midrule
+Kimi-K2.6             & 3 & 1.14 & 0.86 & 1.32$\times$ \\
+                      & 4 & 1.49 & 0.99 & \textbf{1.52$\times$} \\
+                      & 5 & 1.15 & 1.47 & 0.78$\times$ \\
+\midrule
+Llama-4-Maverick      & 3 & 1.72 & 1.49 & 1.16$\times$ \\
+                      & 4 & 1.59 & 1.07 & 1.49$\times$ \\
+                      & 5 & 1.76 & 1.38 & 1.27$\times$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Reading.} Under the coupled DGP, PACT remains within $1.52\times$ of the correctly supported Joint-PSRL-Aware on every reported cell and is lower-regret on $9$ of $15$. This is robustness under PF violation, not exact decoupling: C1's equality claim remains restricted to TI/RL/PF, while Table~\ref{tab:storage-comparison} provides the representation-only comparison under the well-specified iid DGP.
+
+\subsection{Transfer Boundary (C5)}
+\label{app:sotopia-detail}
+
+This subsection certifies C5: once actions are open-ended and TI/RL/PF cannot be verified, the exact finite-model guarantees no longer transfer, and correcting the recurrent evidence path produces no focal-score gain.
+
+\paragraph{Setup recap.} SOTOPIA-Hard \citep{zhou2024sotopia} is dyadic, open-text, judge-scored, and built from curated profile--goal pairs rather than a tested factored prior; TI/RL/PF are therefore unverified. The adapter maps utterances to a keyword-weighted intent menu and obtains proxy persona labels by applying the same mapping to full profiles. In the historical four-backbone runs, a wiring error read the inbox instead of \texttt{Observation.last\_turn}, so the numeric posterior never updated; those results describe prior sampling, the surrogate, and the practical bonus proxy only. Each backbone--baseline cell contains 70 fixed hard-case episodes (14 codenames with five case instances), not 70 RNG-seeded replications, and the provider exposes no pathwise seed control. Both self-play agents use the same baseline, and focal score is the mean of their two overall judge scores. Corrected recurrent controls are reported below.
+
+\paragraph{Historical descriptive results.} Table~\ref{tab:sotopia-pf-families} reports the three private-goal families referenced in Section~\ref{sec:sotopia}. Because the retained tracker did not update, the $+0.02$--$+0.10$ margins describe the intent surrogate, prior sampling, and bonus configuration rather than recurrent Bayesian inference.
+
+\begin{table}[h]
+\centering\small
+\caption{SOTOPIA-Hard private-goal families: PACT\textsuperscript{+} vs.\ strongest LLM-coordination baseline per family, averaged across four backbones. Best baseline per family: A-ToM-1 for \emph{craigslist\_bargains} and \emph{donate\_funds}; ECON-BNE for \emph{revenge\_plot}.}
+\label{tab:sotopia-pf-families}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Family & Episodes & PACT\textsuperscript{+} & Best & $\Delta$ \\
+\midrule
+craigslist\_bargains & 80  & 3.04 & 2.98 & +0.06 \\
+revenge\_plot        & 20 & 2.93 & 2.83 & +0.10 \\
+donate\_funds        & 20  & 3.26 & 3.24 & +0.02 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Aggregate scores and interpretation.} Table~\ref{tab:sotopia-aggregate} reports mean focal score by backbone. PACT\textsuperscript{+} ranks 2nd/3rd/3rd/4th on GPT/DeepSeek/Kimi/Llama and remains within $0.10$ of the best alternative; all five non-oracle methods fit inside a $0.12$ envelope. The one-hot \texttt{oracle\_belief} row also lies within that envelope on average, whereas best-of-five \texttt{oracle\_policy} reaches $3.540$. Thus open action search and judge variance dominate the value of the surrogate persona belief. Because TI/RL/PF are unverified and the tracker was static, these historical rows certify a transfer boundary, not a rate or concentration claim.
+
+\begin{table*}[h]
+\centering\small
+\caption{SOTOPIA-Hard aggregate mean focal score per (backbone $\times$ baseline), $70$ episodes per cell. \textbf{Bold} marks the highest non-oracle score per backbone; PACT\textsuperscript{+} rank and gap to best alternative are in the last two columns. The two oracle rows (Appendix~\ref{app:oracle-construction}) receive the privileged one-hot opponent persona; \texttt{oracle\_policy} additionally selects the best of $K{=}5$ independent episodes by the same seven-dimensional judge.}
+\label{tab:sotopia-aggregate}
+\begin{tabular}{lccccccc}
+\toprule
+Backbone & PACT\textsuperscript{+} & A-ToM-1 & ECON-BNE & llm\_belief & llm\_greedy & Rank & $\Delta$ \\
+\midrule
+DeepSeek-V3.2 & 3.248 & 3.261 & \textbf{3.313} & 3.195 & 3.193 & 3 & $-0.065$ \\
+GPT-5.4-nano & 2.981 & 2.918 & 2.843 & \textbf{3.000} & 2.842 & 2 & $-0.019$ \\
+Kimi-K2.6 & 2.807 & 2.733 & 2.876 & \textbf{2.906} & 2.761 & 3 & $-0.099$ \\
+Llama-Maverick & 3.308 & \textbf{3.359} & 3.319 & 3.340 & 3.165 & 4 & $-0.051$ \\
+\midrule
+\emph{Average} & 3.086 & 3.068 & 3.088 & \textbf{3.110} & 2.990 & --- & $-0.024$ \\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+\begin{tabular}{lcc}
+\toprule
+Backbone & \texttt{oracle\_belief} (one-hot persona) & \texttt{oracle\_policy} (one-hot + best-of-$K{=}5$) \\
+\midrule
+DeepSeek-V3.2 & 3.294 & 3.712 \\
+GPT-5.4-nano  & 2.920 & 3.467 \\
+Kimi-K2.6     & 2.916 & 3.364 \\
+Llama-Maverick & 3.282 & 3.618 \\
+\midrule
+\emph{Average} & 3.103 & 3.540 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\paragraph{Corrected recurrent tracker.}
+\label{app:sotopia-corrected}
+
+We repaired the adapter to read partner evidence from SOTOPIA 0.1.5's \texttt{Observation.last\_turn}. A corrected GPT-5.4-nano run covers the same three private-goal families with $120$ episodes at each corruption level; every accepted episode records eligible recurrent updates and zero provider-exception generation fallbacks. This run is separate from the historical four-backbone results above.
+
+SOTOPIA provides no native labels for the project's four persona classes. Figure~\ref{fig:sotopia-corrected}(a) therefore evaluates concentration only against the existing \emph{profile-derived proxy} used by the oracle adapter. Proxy mass rises from $0.25$ to $0.304\pm0.012$ on \emph{revenge\_plot}, but falls to $0.233\pm0.005$ on \emph{craigslist\_bargains} and changes only to $0.261\pm0.013$ on \emph{donate\_funds}. The corrected tracker is recurrent and nontrivial, but concentration is family-dependent and is not native type-recovery accuracy.
+
+The corrected $p{=}0$ focal means are $2.665\pm0.074$, $3.229\pm0.121$, and $2.743\pm0.102$ on \emph{craigslist\_bargains}, \emph{donate\_funds}, and \emph{revenge\_plot}. They trail the retained GPT-nano best-baseline means by $0.095$, $0.157$, and $0.457$, respectively. We therefore select the clean-boundary branch: fixing the evidence path removes the implementation liability but does not produce a score advantage. Figure~\ref{fig:sotopia-corrected}(b) reports the completed measured grid $p\in\{0,0.1,0.2,0.25,0.3,0.5\}$; no point is interpolated. At $p{=}0.5$, changes from $p{=}0$ are $-0.053$, $+0.161$, and $+0.146$ across the three families. The curve is non-monotone and changes are comparable to episode-row SEM, so it supports sensitivity bounds rather than a causal degradation law.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.84\textwidth]{figs/fig_e_c_sotopia_corrected.pdf}
+  \caption{Corrected SOTOPIA tracker diagnostic on GPT-5.4-nano. \emph{(a)} Recurrent mass on the profile-derived proxy persona (not a native SOTOPIA truth label); error bars are episode-row SEM. \emph{(b)} Focal score under deterministic intent-menu corruption; provider and judge generations are not pathwise seed-controlled, so this is a sensitivity bound rather than a paired causal dose response.}
+  \label{fig:sotopia-corrected}
+\end{figure*}
+
+\begin{table}[h]
+\centering\small
+\caption{Corrected $p{=}0$ SOTOPIA branch decision. Historical best is the retained GPT-nano comparator, not a contemporaneous paired rerun.}
+\label{tab:sotopia-corrected}
+\begin{tabular}{lrr}
+\toprule
+Family & Corrected score & $\Delta$ vs best \\
+\midrule
+Craigslist & $2.665\pm0.074$ & $-0.095$ \\
+Donate & $3.229\pm0.121$ & $-0.157$ \\
+Revenge & $2.743\pm0.102$ & $-0.457$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Corrected component controls.} We rerun surrogate-only, naive-belief, and PACT\textsuperscript{+} on the same $30$ cases and four replicate IDs. The endpoint exposes no sampling-seed control, so pairing controls case composition but not provider or judge randomness. PACT-minus-naive paired differences are $+0.044\pm0.096$, $+0.093\pm0.182$, and $-0.043\pm0.150$ on Craigslist, Donate, and Revenge; PACT-minus-surrogate differences are $+0.063\pm0.077$, $-0.079\pm0.090$, and $-0.107\pm0.166$. No lower confidence bound is positive. Together with the corrected recurrent updates, this selects the clean-boundary branch: the tracker functions, but no focal-score gain can be attributed to its numeric update on these families.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.95\columnwidth]{figs/fig_e_c_sotopia_component_corrected.pdf}
+  \caption{Corrected SOTOPIA component variants on GPT-5.4-nano (same $30$ cases, four replicates; episode-row SEM). PACT\textsuperscript{+} does not significantly exceed either corrected control on any family. Provider generations are not pathwise seed-controlled.}
+  \label{fig:sotopia-component-corrected}
+\end{figure}
+
+\subsection{Mechanism: Posterior Identity and Centralized Dispatch (C6)}
+\label{app:mechanism}
+\label{app:decent-extended}
+
+This subsection evaluates C6. E-G places the four RQ3 components on one analytic HP-SPGG substrate and metric; Concordia and MaaSSim then provide substrate-specific directional checks. In E-G, update and centralized dispatch have resolved paired effects, the identity mean moves in the expected direction but remains unresolved, and the bonus knock-out is null on this kernel.
+
+\paragraph{E-G analytic component knock-out ladder.}
+E-G uses the same deterministic analytic kernel family as Figure~\ref{fig:e1-1-analytic}: \texttt{build\_reward\_tensor} with $n=3$, backend \texttt{mixed}, three calibration samples, tensor seed $0$, and no trap. The resulting calibrated tensor is the ground-truth reward surface and likelihood mean. All five variants share $|\Theta_i|=4$, $K=20$, $\sigma=0.08$, a product-uniform prior, ten common iid-type environment seeds, and the exact centralized oracle; each variant generates its own trajectory. There are zero provider calls.
+
+The operational knock-outs are intentionally explicit. \emph{Full} is the practical PACT\textsuperscript{+} posterior-mean centralized objective at $\beta=0.25$. \emph{$-$bonus} keeps that planner and update fixed and disables only the bonus. \emph{$-$update} draws a uniform profile every episode and never updates. \emph{$-$identity} updates from each agent's correct evidence, but at planning time attaches posterior rows through $(2,3,1)$ on even seeds or $(3,1,2)$ on odd seeds (one-based notation). \emph{$-$dispatch} gives every actor an identical copy of the posterior updated from the same public action/reward history; actors independently sample profiles and independently maximize own utility, marginalizing the other simultaneous actions uniformly. Its own-agent disagreement bonus is retained, while the global joint-action-spread term is undefined because no actor selects a joint profile and is therefore omitted. This is the finite analogue of removing shared sampling and the joint argmax, not a claim that every decentralized architecture must use this action model.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\begin{tabular}{@{}lrrrl@{}}
+\toprule
+Variant & Regret & Paired $\Delta$ & Ratio & 95\% CI for $\Delta$ \\
+\midrule
+Full PACT\textsuperscript{+} & $.015\pm.007$ & $.000$ & $1.00\times$ & $[.000,.000]$ \\
+$-$ bonus & $.016\pm.007$ & $+.001$ & $1.05\times$ & $[-.002,.003]$ \\
+$-$ update & $.675\pm.114$ & $+.660$ & $45.61\times$ & $[.406,.915]$ \\
+$-$ identity & $.700\pm.368$ & $+.685$ & $47.29\times$ & $[-.141,1.512]$ \\
+$-$ dispatch & $6.324\pm.439$ & $+6.309$ & $427.17\times$ & $[5.310,7.307]$ \\
+\bottomrule
+\end{tabular}
+\caption{E-G endpoint decomposition at $K=20$ (mean $\pm$ SEM over ten common environment seeds). $\Delta$ is variant minus Full; intervals are paired two-sided Student-$t$ 95\% CIs with df $9$. The bonus and identity intervals cover zero. Identity minus no-update is also unresolved: $+0.025$ with CI $[-0.767,0.817]$. Ratios are descriptive ratios of means and are large because Full regret is near zero.}
+\label{tab:hp-spgg-component-ladder}
+\end{table}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_e_g_hp_spgg_component_trajectories.pdf}
+  \caption{E-G cumulative-regret trajectories from the same $1{,}000$-row long table as Figure~\ref{fig:hp-spgg-component-ladder}; lines are seed means and bands are SEM. The decentralized trajectory grows almost linearly, no-update and shuffled identity remain in the same unresolved band, and Full/$-$bonus stay near zero.}
+  \label{fig:hp-spgg-component-trajectories}
+\end{figure}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figs/fig12_decentralized_price.pdf}
+  \caption{Price of decentralization on Concordia \texttt{london\_mini} Pub Coordination ($5$ players, $2$ focal, $5$ scenes per cell). Centralized (planner LLM, per-agent type-guess) vs.\ decentralized (ToM-prompted, greedy), same LLM. \emph{(a)} Focal payoff. \emph{(b)} Coordination. \emph{(c)} Social welfare. \emph{(d)} Cumulative regret over $K{=}5$ scenes (bands: SE over backbones). Centralized modes cluster near \texttt{oracle\_joint}; decentralized modes: $-0.2$--$0.3$ payoff, $-0.2$--$0.4$ coordination, $-1$--$2$ welfare units, $3$--$4\times$ cumulative regret.}
+  \label{fig:decentralized-price}
+\end{figure*}
+
+E-G is the common-substrate decomposition. The remainder of this subsection supplies the older cross-substrate carriers: Concordia isolates centralized versus independent action selection, while MaaSSim probes posterior concentration and driver-identity attachment. Historical SOTOPIA-Hard is descriptive because its tracker did not update; corrected recurrent evidence is reported separately in Section~\ref{app:sotopia-corrected}.
+
+\begin{table}[t]
+\centering\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}p{0.24\columnwidth}p{0.31\columnwidth}p{0.36\columnwidth}@{}}
+\toprule
+RQ3 component & Control & Evidence \\
+\midrule
+Identity attachment & fixed derangement; MaaSSim shuffled driver & Figure~\ref{fig:hp-spgg-component-ladder}; Figure~\ref{fig:maassim-mechanism} \\
+Closed-form update & frozen uniform sampler; event decomposition & Figure~\ref{fig:hp-spgg-component-ladder}; Figure~\ref{fig:maassim-concentration} \\
+Centralized dispatch & independent best responses; prompting ablation & Figure~\ref{fig:hp-spgg-component-ladder}; Figure~\ref{fig:decentralized-price} \\
+$\beta$ bonus & same posterior-mean planner, $\beta=.25$ vs. $0$ & Figure~\ref{fig:hp-spgg-component-ladder}; Table~\ref{tab:bonus-ablation} \\
+\bottomrule
+\end{tabular}
+\caption{RQ3 component map. E-G supplies one common-substrate control for every row; MaaSSim and Concordia are corroborating, substrate-specific carriers. Only E-G's update and dispatch paired effects are resolved; identity is a mean-direction result and the direct bonus effect is null on this kernel.}
+\label{tab:rq3-components}
+\end{table}
+
+We compare four dispatch modes sharing the same LLM on \texttt{london\_mini} Pub Coordination ($5$ players, $2$ focal, $5$ seeds per backbone), two centralized (planner LLM emitting the joint action, per-agent type-guess producing $n$ independent posteriors) and two decentralized (greedy, ToM-prompted). Within-cluster differences isolate planning-vs-belief and cluster differences isolate dispatch, with \texttt{oracle\_joint} as the ceiling and full mode definitions below.
+
+Two clusters emerge on every backbone and every metric (Figure~\ref{fig:decentralized-price}). Within-cluster planning-vs-belief differences stay below $0.05$ on focal payoff, while the centralized-to-decentralized gap produces a $3$--$4\times$ cumulative-regret slope difference. Joint exploration requires one planner to commit all agents to the same sampled profile; independently prompted agents miscoordinate on the states the posterior is meant to resolve. Corrected recurrent tracker controls are reported in Section~\ref{app:sotopia-corrected}, so the dispatch and belief-identity mechanisms are documented separately rather than inferred from the deleted static-tracker ablation.
+
+The remainder of this part gives the full per-backbone breakdown, the per-metric definitions, and the additional analysis.
+
+\paragraph{Per-mode definitions.} The four dispatch modes evaluated are:
+\begin{itemize}\itemsep -1pt \topsep -2pt
+  \item \emph{Centralized planner LLM}, one LLM call sees the full relationship-statement matrix for all $5$ players and outputs a joint posterior over every player's favorite pub, and argmax yields the joint action.
+  \item \emph{Per-agent type-guess LLM}, $n$ independent LLM calls, each restricted to a single player's own social context, each outputting a posterior over that one player's favorite pub.
+  \item \emph{Decentralized LLM (ToM)}, $n$ independent LLM calls, each agent is prompted to balance own preference with theory-of-mind reasoning and pick \emph{one} pub.
+  \item \emph{Decentralized LLM (greedy)}, $n$ independent LLM calls, each agent picks the pub maximizing its own expected enjoyment with no partner inference.
+\end{itemize}
+
+\paragraph{Within-cluster ordering.} The relative ordering inside the centralized cluster is informative for the underlying mechanism. On GPT-5.4-nano and Llama-4-Maverick the global-view planner edges the per-agent type-guess variant ($+0.10$ payoff), as expected if joint observation is the load-bearing factor. On DeepSeek-V3.2 and Kimi-K2.6 the order flips by $+0.05$. The per-agent variant slightly beats the planner because the planner occasionally splits the $2$ focal players across the $2$ pubs (coordination $0.80$/$0.90$ vs.\ $1.00$ for the per-agent variant), while the per-agent variant defaults to the more popular pub. The structural conclusion is the same in both directions. The lift comes from the \emph{probabilistic-reasoning prompt over a posterior on the partner's persona}, irrespective of whether that posterior is computed once jointly or $n$ times in parallel.
+
+\paragraph{Welfare-over-all-players check.} Panel (c) of Figure~\ref{fig:decentralized-price} reports the welfare sum over all $5$ players (not just focal), matching the theoretical objective $W = \sum_i r_i$ used in Section~\ref{sec:algorithm}. The centralized cluster still leads the decentralized cluster by $1$--$2$ units on every backbone, so the main-text gap is not produced by NPC-side noise aligned with the focal players.
+
+\paragraph{Cumulative compounding.} Panel (d) shows the per-episode gap compounds. By the end of $5$ episodes, decentralized modes accumulate $1.9$--$2.0$ units of focal regret while centralized modes stay at $0.6$--$0.75$, the $3$--$4\times$ slope ratio reported in the main text. This linear-in-$K$ accumulation is the price-of-decentralization analogue of the HP-SPGG cumulative-regret divergence in Figure~\ref{fig:hp-spgg-cross-model}, but within a single LLM backbone. The slope difference is structural to the dispatch mode rather than to the model's individual social-inference quality.
+
+\paragraph{MaaSSim fixed-state mechanism replay.}
+\label{app:maassim}
+
+This part expands Section~\ref{sec:maassim} only to certify C6: it isolates posterior concentration and driver-identity attachment on common saved decision states, then reports a directional single-backbone dispatch suite.
+
+\paragraph{Substrate and replay protocol.}
+Runs use the Nootdorp road-network scenario with $40$ passengers, $8$ vehicles, and $120$-second dispatch batches. Each driver carries a four-bit hidden operational type over \{\texttt{avoid\_long}, \texttt{zone\_loyal}, \texttt{home\_pull}, \texttt{surge\_sensitive}\}, giving $16$ possible rule combinations. The type is applied inside the simulator as accept/reject behavior, and the coordinator observes only which offers each driver accepts or rejects. Evaluation uses fixed-state replay. Queue snapshots and realized persona maps are saved from closed-loop runs, and every method is evaluated on the identical states, which removes the state-distribution feedback that otherwise confounds closed-loop dispatch comparisons. Realized utility combines a serve value of $3.0$ per served ride, a pickup-wait cost of $0.01$ per second, a driver-reject penalty of $2.0$ ($5.0$ under stress), and a passenger-reject penalty of $0.5$.
+
+\paragraph{Persona-mechanism ablation.}
+Table~\ref{tab:maassim-mechanism} and Figure~\ref{fig:maassim-mechanism} report the mechanism ablation over $10$ seeds. All PACT variants share one assignment objective and the same states, and only the driver-belief source changes, so the fixed-state comparison probes the value of the learned posterior. \emph{PACT-prior} is MaaSSim's substrate-specific analogue of HP-SPGG's PSRL-NoType on the no-update axis: both freeze the uniform persona prior, although PACT-prior plans with its expectation while PSRL-NoType samples from it. The learned posterior improves realized utility over a uniform prior by $+16.50$ ($27.61$ vs.\ $11.11$), closing $59.3\%$ of the prior-to-oracle gap. The shuffled control attaches each learned posterior to the wrong driver and falls to $6.87$, below the uniform prior. These are directional mean differences with large seed-level SEMs, not a paired significance claim. PACT's reported $16.25$ seconds of \emph{extra wait per snapshot} is relative to the immediate minimum-wait assignment reference; it is distinct from mean wait among served rides. Decomposing the tracker's per-observation belief gain, rejections contribute a mean marginal rule-accuracy gain of $0.038$ per event ($n{=}279$) against $0.022$ for accepts ($n{=}388$). Figure~\ref{fig:maassim-concentration} traces the associated concentration: marginal rule accuracy rises from chance $0.53$ to $0.73$ and exact-type posterior mass from $1/16$ to $0.26$ within eight observations, consistently across seeds.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_maassim_concentration_v1.pdf}
+  \caption{PACT driver-belief concentration on MaaSSim ($10$ seeds, thin lines are per-seed means, bands are SEM over (seed, driver) pairs). From accept/reject observations alone, marginal rule accuracy and exact-type posterior mass rise well above their chance references within a handful of observations of each driver.}
+  \label{fig:maassim-concentration}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{llrrrr}
+\toprule
+Variant & Belief source & Utility & Rejects & Accept & Rule acc. \\
+\midrule
+Nearest & none & $11.03$ & $26.0$ & $0.634$ & --- \\
+Random & none & $-33.94$ & $30.6$ & $0.563$ & --- \\
+PACT-prior & uniform & $11.11$ & $25.1$ & $0.635$ & $0.500$ \\
+PACT-shuffled & wrong driver & $6.87$ & $26.5$ & $0.609$ & $0.521$ \\
+PACT & learned & $\mathbf{27.61}$ & $\mathbf{18.5}$ & $\mathbf{0.740}$ & $0.720$ \\
+Oracle & true persona & $38.92$ & $13.2$ & $0.822$ & $1.000$ \\
+\bottomrule
+\end{tabular}
+\caption{MaaSSim persona-mechanism replay ($10$ seeds, fixed queue snapshots and persona maps, shared assignment objective). Utility is the realized dispatch utility defined above (seed-level SEM $9.6$--$11.7$); Rejects is mean driver rejects; Accept is the driver acceptance rate; Rule acc.\ is the marginal accuracy of the belief on the true driver rule.}
+\label{tab:maassim-mechanism}
+\end{table}
+
+Relative to the uniform-prior variant, PACT trades $8.1$ seconds of additional mean wait among served rides ($86.7$ vs.\ $78.7$) for $6.6$ fewer driver rejections ($18.5$ vs.\ $25.1$). The separately reported $16.25$-second quantity uses the immediate minimum-wait assignment as its denominator.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig_maassim_pact_persona_mechanism.pdf}
+  \caption{MaaSSim persona-mechanism replay. All variants share the same fixed queue snapshots, persona maps, and assignment objective, and only the driver-belief source changes. The learned posterior (PACT) closes $59.3\%$ of the prior-to-oracle utility gap, while the shuffled-posterior control falls below the uniform prior, showing that correct driver-identity attachment is necessary for the gain.}
+  \label{fig:maassim-mechanism}
+\end{figure}
+
+\paragraph{LLM dispatch replay.}
+The LLM experiments use \texttt{gpt-5.4-mini} (pinned snapshot \texttt{20260317}) over $5$ seeds with the first $20$ active snapshots per seed. Each LLM policy receives a legal one-to-one assignment menu plus method-specific context and returns JSON containing an \texttt{assignment\_id}; across all reported LLM methods the parse rate is $1.000$ with no repairs and no fallbacks, so the action interface itself is not a confound. The prompt baselines mirror the main-text families, namely \texttt{llm\_belief}, LLM-PSRL, A-ToM, and ECON-BNE. PACT is a score-assisted hybrid that receives PACT assignment scores in context, not a pure prompt method. Table~\ref{tab:maassim-scenarios} reports a controlled conflict-strength sweep. All cells use driver-reject penalty $5.0$ and common snapshots. For each candidate offer, $\lambda\in\{0,0.5,1\}$ interpolates travel time and fare between the retained reject-stress offer and the full persona-risky conflict transformation; policies are rerun at every level rather than interpolating outcomes. The hybrid's advantage over the best pure prompt baseline grows monotonically from $+4.60$ to $+31.75$ and $+39.69$. At $\lambda=1$, every pure prompt baseline has negative utility (best $-30.90$) while the hybrid remains positive at $8.79$ against an oracle at $22.44$. The full-conflict endpoint is a designed stress test, not an estimate of normal operations.
+
+\begin{table}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrlrr@{}}
+\toprule
+Scenario & PACT & Best prompt & Gap & Oracle \\
+\midrule
+Reject ($\lambda=0$) & $18.37$ & PSRL: $13.77$ & $+4.60$ & $36.44$ \\
+Mid ($\lambda=.5$) & $8.96$ & belief: $-22.80$ & $+31.75$ & $30.70$ \\
+Full ($\lambda=1$) & $\mathbf{8.79}$ & belief: $-30.90$ & $+39.69$ & $22.44$ \\
+\bottomrule
+\end{tabular}
+\caption{MaaSSim LLM dispatch conflict-strength sweep (\texttt{gpt-5.4-mini}, $5$ seeds $\times$ $20$ snapshots, driver-reject penalty $5.0$, parse rate $1.000$). Best prompt is the strongest pure prompt baseline per level; Gap is PACT minus best prompt. Outcomes are measured reruns at $\lambda\in\{0,0.5,1\}$, not interpolated results.}
+\label{tab:maassim-scenarios}
+\end{table}
+
+\paragraph{Scope and limitations.}
+Hidden types are synthetic rules rather than learned human driver preferences, and all results use one road network. The performance suite uses one LLM backbone and aggregates five seeds without retained per-seed outcomes, so no paired significance test is possible there; E-E and E-F are separate zero-provider diagnostics with retained per-environment rows. Passenger-side inference is weak because most riders are observed once (rule accuracy $\approx 0.53$ against a $0.5$ chance level). E-F's bonus changes only $4/406$ assignments and has an unresolved utility gap, so we claim activity and a null gain rather than a MaaSSim bonus benefit.
+
+\subsection{Oracle Constructions (Shared Infrastructure)}
+\label{app:oracles}
+\label{app:oracle-construction}
+
+This subsection supports C1--C6 by certifying what each oracle reference knows and optimizes; it is shared evaluation infrastructure, not an additional empirical claim.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig2_concordia_strip_v11c.pdf}
+  \caption{Full Concordia comparison across all $18$ configurations. Pub Coordination uses \texttt{oracle\_joint}; Haggling uses the exact full-information focal ceiling \texttt{oracle\_focal}. Rows are sorted by PACT\textsuperscript{+}'s margin over the strongest baseline.}
+  \label{fig:concordia-full}
+\end{figure}
+
+The three LLM benchmarks differ along two axes: whether payoff is closed-form and whether the action space is finite and enumerable. In every case the privileged signal is the true opponent type; the payoff or judge is part of the environment and is available to all methods.
+
+\paragraph{HP-SPGG.}
+The oracle exhaustively enumerates the finite joint contribution grid and applies a deterministic argmax to the same pinned tensor used by every method. It is therefore an exact pointwise reference for the regret calculation.
+
+\paragraph{Concordia.}
+The compact Pub and Haggling evaluators expose a finite menu and analytic \texttt{payoff\_for\_case}. \texttt{oracle\_joint} exactly maximizes joint welfare. Because Haggling price is a transfer, that objective is not a focal ceiling; \texttt{oracle\_focal} reruns the same exhaustive search on focal payoff and is never exceeded. Figure~\ref{fig:haggling-pareto} displays the objective trade-off.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\columnwidth]{figs/fig11_haggling_pareto.png}
+  \caption{Focal-vs-joint Haggling frontier. $\beta_{\mathrm{obj}}=0$ is \texttt{oracle\_joint} (J); $\beta_{\mathrm{obj}}=1$ is \texttt{oracle\_focal} (F). Increasing focal payoff can reduce minimum participant surplus, explaining why a focal policy may exceed the joint oracle's focal score without violating an upper bound.}
+  \label{fig:haggling-pareto}
+\end{figure}
+
+\paragraph{SOTOPIA-Hard.}
+Open-ended utterances and a seven-dimensional LLM judge preclude exact enumeration. \texttt{oracle\_belief} supplies the one-hot opponent persona but retains single-shot generation; it is not a strict upper bound. \texttt{oracle\_policy} draws five independent episodes and retains the one with highest mean judge score. The second block of Table~\ref{tab:sotopia-aggregate} reports both rows. Their gap measures action-search and judge-variance headroom rather than persona-information value alone.
+
+\begin{table*}[t]
+\centering\small
+\caption{Oracle construction across the three LLM benchmarks.}
+\label{tab:oracle-summary}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llll}
+\toprule
+Benchmark & Payoff form & Action space & Oracle type \\
+\midrule
+HP-SPGG & analytic/pinned tensor & finite, $125$ joint profiles & strict exhaustive argmax \\
+Concordia & analytic, closed-form & finite menu & strict joint/focal argmax \\
+SOTOPIA-Hard & 7-dimensional LLM judge & open-ended utterance & non-strict belief reference $+$ best-of-$K$ heuristic \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{Theoretical Supplement}
+\label{app:theory}
+
+\subsection{Overview and Claim-to-Theorem Map}
+\label{app:theory-overview}
+
+This appendix gives the formal setting, assumptions, and proofs supporting the theoretical statements in Section~\ref{sec:pact-vanilla}--\ref{sec:pact-plus-algo}. Table~\ref{tab:theorem-map} keys each main-text claim to the formal statement and proof location. The remainder is organized as: formal setting (Section~\ref{sec:setting-app}), posterior decoupling (Section~\ref{app:decoupling-proof}), necessity of TI and RL (Section~\ref{app:necessity}), regret bound (Section~\ref{app:regret-bound}), rate separation (Section~\ref{app:rate-separation}), idealized-bonus burn-in improvement (Section~\ref{app:pact-plus}), a worst-case counterexample without RL (Section~\ref{app:lower-no-rl}), and empirical validation (Section~\ref{app:theory-empirical}).
+
+\begin{table}[h]
+\centering\small
+\caption{Claim-to-theorem map. Each main-text statement is keyed to the formal theorem and the appendix subsection containing the proof.}
+\label{tab:theorem-map}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.30\columnwidth}p{0.28\columnwidth}p{0.30\columnwidth}@{}}
+\toprule
+Main-text claim & Formal statement & Proof location \\
+\midrule
+Exact factorization and persona-belief complexity & Thm.~\ref{thm:decoupling-app}, Cor.~\ref{cor:storage} & \S\ref{app:decoupling-proof} \\
+TI and RL are both necessary & Factorization argument $+$ controlled diagnostic & \S\ref{app:structural-boundary}; theory pointer \S\ref{app:necessity} \\
+$\tilde O(\sqrt{K})$ regret bound for PACT & Thm.~\ref{thm:main-regret-app} & \S\ref{app:regret-bound} \\
+Rate separation vs PSRL-NoType & Thm.~\ref{thm:rate-separation} & \S\ref{app:rate-separation} \\
+Idealized-bonus burn-in improvement & Thm.~\ref{thm:pact-plus-app} & \S\ref{app:pact-plus} \\
+Worst-case burn-in without RL & Thm.~\ref{thm:lower-no-rl} & \S\ref{app:lower-no-rl} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{HT-MG Formal Setting}
+\label{sec:setting-app}
+
+An HT-MG is a tuple $\mathcal{G} = \langle \mathcal{S}, \{\mathcal{A}_i\}, P^*, \{\Theta_i\}, \{r_i\}, P_0, H \rangle$ with finite state space $|\mathcal S|=S$, joint action space $\mathcal A=\prod_i \mathcal A_i$ of size $A_{\mathrm{joint}}$, type space $\Theta=\prod_i \Theta_i$, transition kernel $P^*\!:\!\mathcal S\!\times\!\mathcal A\!\times\!\Theta\to\Delta(\mathcal S)$, per-agent reward $r_i\!:\!\mathcal S\!\times\!\mathcal A\!\times\!\Theta_i\!\to\![0,1]$, joint prior $P_0$, and horizon $H$. At each episode a type profile $\boldsymbol\theta^* \in \Theta$ is sampled once and held fixed. $P^*$ is fixed but unknown. A centralized learner observes the trajectory $\tau_k$ and updates a posterior over $(P^*, \boldsymbol\theta^*)$.
+
+\begin{assumption}[TI]\label{ass:TI}$P^*(s'\!\mid\! s,a,\boldsymbol\theta)=P^*(s'\!\mid\! s,a)$.\end{assumption}
+\begin{assumption}[RL]\label{ass:RL}$r_i(s,a,\boldsymbol\theta)=r_i(s,a,\theta_i)$.\end{assumption}
+\begin{assumption}[PF]\label{ass:PF}$P_0(P,\boldsymbol\theta)=P_0^P(P)\prod_i P_0^{\Theta,i}(\theta_i)$.\end{assumption}
+\begin{assumption}[TID]\label{ass:TID}For the per-agent outcome channel $q_{\theta_i}(\cdot\mid s,a)$, $\inf_{s,a}D_H^2(q_{\theta_i}(\cdot\mid s,a),q_{\theta_i'}(\cdot\mid s,a))\geq\rho>0$ for all $\theta_i\neq\theta_i'$.\end{assumption}
+\begin{assumption}[ISI]\label{ass:ISI}Each $s_1^k$ is drawn from a fixed distribution $\nu_0$ independently of $(P^*,\boldsymbol\theta^*)$ and of the episode-$k$ sampling randomness.\end{assumption}
+\begin{assumption}[DP]\label{ass:DP}$\mathcal P$ is a measurable deterministic mapping from a model to a centralized joint policy.\end{assumption}
+
+The type-conditional Bayesian regret of agent $i$ over $K$ episodes is
+\begin{equation}\label{eq:regret-def}\resizebox{0.9\linewidth}{!}{$\displaystyle \mathrm{Reg}_i^B(K) \!\coloneqq\! \mathbb{E}_{(P^*,\boldsymbol\theta^*)\sim P_0}\!\sum_{k=1}^K\!\Big(V_i^{\mathcal P(P^*,\boldsymbol\theta^*)}\!(s_1^k;\theta_i^*) - V_i^{\pi_k}(s_1^k;\theta_i^*)\Big). $}\end{equation}
+
+\subsection{Posterior Decoupling}
+\label{app:decoupling-proof}
+\label{sec:decoupling}
+
+\begin{theorem}[Posterior Decoupling]
+\label{thm:decoupling-app}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, the posterior factorizes at every episode:
+\begin{equation}\label{eq:decoupling-app}\resizebox{0.9\linewidth}{!}{$\displaystyle P(P, \boldsymbol{\theta} \mid \mathcal{H}_k) = \mu_k^P(P) \cdot \prod_{i \in [n]} \mu_k^{\Theta,i}(\theta_i), $}\end{equation}
+where $\mathcal H_k$ is the history before episode $k$; observing episode $k$ produces the update to $\mu_{k+1}$.
+\end{theorem}
+
+\begin{proof}[Proof]
+Conditional on $\pi_k$, the trajectory likelihood is a product of per-step transition, action, and reward factors. TI drops $\boldsymbol\theta$ from the transition factor. RL localizes each action and reward factor to $\theta_i$, giving $L_{\Theta,i}(\tau_k;\theta_i) = \prod_h \ell^{a}_{i,h}(\theta_i) P(r_h^{k,i}\mid s_h^k,a_h,\theta_i)$. Equation~\eqref{eq:likelihood} applies Bayes' rule separately to these local factors, and induction from PF yields the stated posterior. In HP-SPGG the action factor is uninformative and the reward factor is Gaussian. Open-text SOTOPIA-Hard does not satisfy the finite calibrated-outcome assumptions; its intent-space surrogate is an empirical adapter and is not covered by this theorem.
+\end{proof}
+
+\begin{corollary}[Persona-posterior complexity]\label{cor:storage} Excluding the transition-posterior term common to both representations, PACT requires $O(\sum_i|\Theta_i|)$ persona-posterior storage and candidate-likelihood evaluations per update, whereas an explicit joint table requires $O(\prod_i|\Theta_i|)$. For uniform persona libraries this is $O(n|\Theta_i|)$ versus $O(|\Theta_i|^n)$. \end{corollary}
+
+\begin{proposition}[Pathwise equivalence with Joint-PSRL]\label{prop:bit-identical} Under matched RNG and the assumptions of Theorem~\ref{thm:decoupling-app}, PACT and Joint-PSRL produce pathwise-identical trajectories almost surely. In particular $\mathrm{Reg}_i^B[\textnormal{PACT}](K) = \mathrm{Reg}_i^B[\textnormal{Joint-PSRL}](K)$ for every $i, K$. \end{proposition}
+
+\subsection{Necessity of (TI) and (RL)}
+\label{app:necessity}
+\label{sec:necessity}
+
+The necessity argument and controlled RL-violation diagnostic have been moved to the claim-organized structural-boundary evidence in Section~\ref{app:structural-boundary}; this label is retained as the theory-side pointer.
+
+\subsection{Regret Bound}
+\label{app:regret-bound}
+\label{sec:regret-bound-app}
+
+This subsection proves the regret bound of PACT. The argument has three components. First, posterior decoupling (Theorem~\ref{thm:decoupling-app}) implies that sampling the transition posterior and the $n$ persona marginals independently constitutes an exact draw from the joint posterior, so PACT inherits the posterior-matching property of posterior-sampling RL while storing only $O(n|\Theta_i|)$ persona entries (Lemma~\ref{lem:exact-sampling}). Second, the per-episode regret decomposes into a planner-approximation term, a transition channel, and a per-agent reward channel (Lemma~\ref{lem:decomp}). Third, the two channels are bounded separately. The transition channel is bounded by Dirichlet posterior concentration (Lemma~\ref{lem:transition}) and the reward channel by a self-contained information-ratio argument on the finite type space $\Theta_i$ (Lemma~\ref{lem:reward}), which is where the per-agent rate $O(H\sqrt{|\Theta_i|\,\mathcal H(P_0^{\Theta,i})\,K})$ is obtained. The rate depends on the library size $|\Theta_i|$ and the entropy $\mathcal H(P_0^{\Theta,i})$ of agent $i$'s persona prior rather than on the joint space $|\Theta_i|^n$, so an informative prior provably reduces regret.
+
+\paragraph{Notation.} For a kernel $P$, a policy $\pi$, and a reward parameter $\theta_i \in \Theta_i$, the stage value of agent $i$ is $V_{i,h}^{\pi}(s; P, \theta_i) \coloneqq \mathbb{E}^{P,\pi}\big[\sum_{h'=h}^{H} r_i(s_{h'}, a_{h'}, \theta_i) \mid s_h = s\big]$ and $V_i^{\pi} \coloneqq V_{i,1}^{\pi}$. In Eq.~\eqref{eq:regret-def}, $V_i^{\pi}(s;\theta_i^*)$ abbreviates $V_i^{\pi}(s; P^*, \theta_i^*)$. Write $M^* \coloneqq (P^*, \boldsymbol\theta^*)$ for the true world, $\hat M_k \coloneqq (\hat P_k, \hat{\boldsymbol\theta}_k)$ for the episode-$k$ sample of Algorithm~\ref{alg:pact} with $\beta=0$, $\mathcal H_k$ for the history before episode $k$, and $\mathbb{E}_k[\cdot] \coloneqq \mathbb{E}[\,\cdot \mid \mathcal H_k]$. Let $N_k(s,a)$ count the visits to $(s,a)$ before episode $k$ and let $\bar P_k(\cdot \mid s,a) \coloneqq \mathbb{E}_k[P^*(\cdot\mid s,a)]$ denote the posterior mean kernel. Let $\widehat{\mathcal P}$ denote the implemented planner and assume $V_i^{\widehat{\mathcal P}(M)}(s;M) \ge V_i^{\mathcal P(M)}(s;M)-\epsilon_{\mathrm{plan}}$ relative to the fixed exact mapping in (DP). The finite HP-SPGG and compact Concordia planners enumerate their menus exactly, hence $\epsilon_{\mathrm{plan}}=0$; SOTOPIA-Hard lies outside this finite-planner theorem. Since (TI) makes the transition persona-blind, the only type-dependent observation is the per-agent per-turn outcome channel (emitted action and realized reward), and Assumption~\ref{ass:TID} is read on that channel, written $q_{\theta_i}(\cdot\mid s,a)$ below.
+
+\begin{lemma}[Factored sampling is exact posterior sampling]
+\label{lem:exact-sampling}
+Under Assumption~\ref{ass:struct}, the pair $\hat M_k$ produced by drawing $\hat P_k \sim \mu_k^P$ and $\hat\theta_i^k \sim \mu_k^{\Theta,i}$ independently across $i$ satisfies $\hat M_k \sim P(\,\cdot \mid \mathcal H_k)$. Conditionally on $\mathcal H_k$, the sample $\hat M_k$ and the true world $M^*$ are independent and identically distributed.
+\end{lemma}
+
+\begin{proof}
+By Theorem~\ref{thm:decoupling-app} the joint posterior of $(P^*, \boldsymbol\theta^*)$ given $\mathcal H_k$ is the product measure $\mu_k^P \otimes \bigotimes_i \mu_k^{\Theta,i}$. Algorithm~\ref{alg:pact} draws the coordinates independently from exactly these marginals, so the conditional law of $\hat M_k$ given $\mathcal H_k$ coincides with the posterior. Independence from $M^*$ holds because the sampling randomness is exogenous.
+\end{proof}
+
+\begin{lemma}[Posterior matching]
+\label{lem:matching}
+For every bounded measurable $g$ and every $k$, $\mathbb{E}_k[g(M^*)] = \mathbb{E}_k[g(\hat M_k)]$. Under (ISI) the identity also holds conditionally on $(\mathcal H_k, s_1^k)$.
+\end{lemma}
+
+\begin{proof}
+Immediate from Lemma~\ref{lem:exact-sampling}. Under (ISI) the initial state $s_1^k$ is independent of $M^*$ and of the sampling randomness, so conditioning on it changes neither the posterior nor the sampling law.
+\end{proof}
+
+\begin{theorem}[Bayesian Regret of PACT]
+\label{thm:main-regret-app}
+Under Assumptions~\ref{ass:TI}, \ref{ass:RL}, \ref{ass:PF}, \ref{ass:ISI}, and \ref{ass:DP}, and a Dirichlet prior on $P^*$,
+\begin{equation}\label{eq:main-regret-sketch}\resizebox{0.9\linewidth}{!}{$\displaystyle \mathbb{E}\big[\mathrm{Reg}_i^B(K)\big] \leq \tilde O\big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K}\big) + O\big(H\sqrt{|\Theta_i|\,\mathcal H(P_0^{\Theta,i})\cdot K}\big) + K\epsilon_{\mathrm{plan}}, $}\end{equation}
+where $\mathcal H(P_0^{\Theta,i})$ is the Shannon entropy of agent $i$'s persona prior.
+\end{theorem}
+
+Since $\mathcal H(P_0^{\Theta,i}) \le \log|\Theta_i|$ with equality iff the prior is uniform, the uniform-prior form $O(H\sqrt{|\Theta_i|\log|\Theta_i|\,K})$ is the worst case of the persona term. The prior enters the bound only through its entropy, so any prior information about agent $i$'s persona translates into a provable regret reduction.
+
+\begin{lemma}[Regret decomposition]
+\label{lem:decomp}
+Under (RL), (ISI), and (DP) with an $\epsilon_{\mathrm{plan}}$-approximate planner,
+\begin{equation*}
+\mathrm{Reg}_i^B(K) \;\le\; K\epsilon_{\mathrm{plan}} + \mathbb{E}\sum_{k=1}^{K}\big(\Delta_k^{P} + \Delta_k^{\Theta}\big),
+\end{equation*}
+where, writing $\hat\theta_i^k$ for the $i$-th coordinate of $\hat{\boldsymbol\theta}_k$,
+\begin{align*}
+\Delta_k^{P} &\coloneqq V_i^{\pi_k}(s_1^k; \hat P_k, \hat\theta_i^k) - V_i^{\pi_k}(s_1^k; P^*, \hat\theta_i^k),\\
+\Delta_k^{\Theta} &\coloneqq V_i^{\pi_k}(s_1^k; P^*, \hat\theta_i^k) - V_i^{\pi_k}(s_1^k; P^*, \theta_i^*).
+\end{align*}
+\end{lemma}
+
+\begin{proof}
+Write $\pi_k^* \coloneqq \mathcal P(M^*)$ for the comparator in Eq.~\eqref{eq:regret-def} and add and subtract $V_i^{\pi_k}(s_1^k; \hat M_k)$, so that the per-episode regret equals
+\begin{equation*}\resizebox{0.9\linewidth}{!}{$\displaystyle \big(V_i^{\pi_k^*}(s_1^k; M^*) - V_i^{\pi_k}(s_1^k; \hat M_k)\big) + \big(V_i^{\pi_k}(s_1^k;\hat M_k) - V_i^{\pi_k}(s_1^k; M^*)\big). $}\end{equation*}
+For the first bracket, define $g(M) \coloneqq V_i^{\mathcal P(M)}(s_1^k; M)$ with $\mathcal P$ the exact deterministic mapping of (DP). The map $g$ is measurable and bounded by $H$. By Lemma~\ref{lem:matching}, $\mathbb{E}[g(M^*) \mid \mathcal H_k, s_1^k] = \mathbb{E}[g(\hat M_k) \mid \mathcal H_k, s_1^k]$, and by the planner convention $V_i^{\pi_k}(s_1^k; \hat M_k) \ge g(\hat M_k) - \epsilon_{\mathrm{plan}}$. Taking expectations, the first bracket contributes at most $\epsilon_{\mathrm{plan}}$ per episode. The second bracket splits into $\Delta_k^P + \Delta_k^\Theta$ by adding and subtracting $V_i^{\pi_k}(s_1^k; P^*, \hat\theta_i^k)$, where (RL) guarantees that agent $i$'s value depends on $\hat{\boldsymbol\theta}_k$ only through $\hat\theta_i^k$.
+\end{proof}
+
+\begin{lemma}[Transition channel]
+\label{lem:transition}
+Under a Dirichlet prior on $P^*$,
+$\mathbb{E}\sum_{k=1}^K \Delta_k^P \le \tilde O\big(H^{3/2}\sqrt{S A_{\mathrm{joint}} K}\big)$.
+\end{lemma}
+
+\begin{proof}
+Fix $k$ and abbreviate $\hat V_{h+1}(\cdot) \coloneqq V_{i,h+1}^{\pi_k}(\,\cdot\,; \hat P_k, \hat\theta_i^k) \in [0, H-h]$. The standard simulation identity \citep{osband2013more} gives
+\begin{equation*}\resizebox{0.9\linewidth}{!}{$\displaystyle \Delta_k^P = \sum_{h=1}^{H} \mathbb{E}^{P^*\!,\pi_k}\Big[\big\langle \hat P_k(\cdot\mid s_h, a_h) - P^*(\cdot\mid s_h, a_h),\, \hat V_{h+1}\big\rangle\Big], $}\end{equation*}
+where the outer expectation is over the trajectory executed under the true kernel. Let $\beta_k(s,a) \coloneqq \sqrt{14 S \log(2 S A_{\mathrm{joint}} H K)/\max\{1, N_k(s,a)\}}$ and let $B_k$ be the set of kernels $P$ with $\|P(\cdot\mid s,a) - \bar P_k(\cdot\mid s,a)\|_1 \le \beta_k(s,a)$ for all $(s,a)$. By the $\ell_1$ concentration inequality of \citet{weissman2003inequalities} applied to the transition samples collected at each $(s,a)$, combined with the stopping-time argument of \citet{auer2008near} to handle adaptive data collection, $\Pr(P^* \notin B_k) \le 1/(KH)$, where the $O(S/\max\{1,N_k\})$ smoothing gap between the Dirichlet posterior mean and the empirical mean is absorbed into the constant. Since $B_k$ is $\mathcal H_k$-measurable, Lemma~\ref{lem:matching} gives $\Pr(\hat P_k \notin B_k) = \Pr(P^* \notin B_k)$. On the event $\{P^* \in B_k,\, \hat P_k \in B_k\}$, centring $\hat V_{h+1}$ at its midpoint yields, uniformly over state-action pairs,
+\begin{equation*}
+\big|\langle \hat P_k - P^*,\, \hat V_{h+1}\rangle(s_h,a_h)\big| \;\le\; H\,\beta_k(s_h, a_h),
+\end{equation*}
+and the uniformity over $(s,a)$ makes the bound valid despite the adaptivity of the visitation sequence. Off the event, $|\Delta_k^P| \le H$, which contributes at most $2H$ over all $K$ episodes at the chosen failure probability. The pigeonhole bound over visitation counts, with counts frozen within an episode \citep{auer2008near,osband2013more}, gives $\sum_{k,h} \max\{1, N_k(s_h^k, a_h^k)\}^{-1/2} \le (\sqrt 2 + 1)\sqrt{S A_{\mathrm{joint}} K H} + S A_{\mathrm{joint}} H$. Combining,
+\begin{equation*}
+\mathbb{E}\sum_k \Delta_k^P \;\le\; \tilde O\big(H^{3/2}\, S \sqrt{A_{\mathrm{joint}} K}\big).
+\end{equation*}
+This elementary route carries an extra $\sqrt S$ factor relative to the stated rate. The stated rate follows by replacing the $\ell_1$ step with the Gaussian--Dirichlet stochastic-optimism analysis of \citet{osband2017posterior}, which bounds the inner product $\langle \hat P_k - P^*, \hat V_{h+1}\rangle$ directly at $\tilde O(H/\sqrt{\max\{1, N_k(s,a)\}})$ per visited pair, without paying the $\ell_1$ union over next states. That analysis requires the sample to come from the exact posterior under a Dirichlet prior, which Lemma~\ref{lem:exact-sampling} supplies. Repeating the pigeonhole step then yields $\mathbb{E}\sum_k \Delta_k^P \le \tilde O(H^{3/2}\sqrt{S A_{\mathrm{joint}} K})$.
+\end{proof}
+
+\begin{lemma}[Reward channel]
+\label{lem:reward}
+Under Assumption~\ref{ass:struct}, (ISI), and (DP),
+\begin{equation*}
+\mathbb{E}\sum_{k=1}^K \Delta_k^\Theta \;\le\; H\sqrt{\tfrac 12\, |\Theta_i|\, \mathcal H(P_0^{\Theta,i}) \, K}.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+Condition on $\mathcal H_k$ and write $\nu \coloneqq \mu_k^{\Theta,i}$, which is both the posterior of $\theta_i^*$ and the sampling law of $\hat\theta_i^k$ by Lemma~\ref{lem:exact-sampling}. Let $\xi_k \coloneqq (\hat P_k, \hat\theta_{-i}^k, s_1^k)$ collect the remaining episode-$k$ randomness. By Theorem~\ref{thm:decoupling-app}, (ISI), and independent sampling, the variables $\xi_k$, $\hat\theta_i^k$, $\theta_i^*$, and $P^*$ are mutually independent given $\mathcal H_k$. For $\theta, \theta' \in \Theta_i$ define
+\begin{equation*}
+G(\theta, \theta') \;\coloneqq\; \mathbb{E}_k\Big[\textstyle\sum_{h=1}^H r_i(s_h^k, a_h^k, \theta') \,\Big|\, \hat\theta_i^k = \theta\Big] \in [0, H],
+\end{equation*}
+where the trajectory is generated by executing $\pi_k = \mathcal P(\hat P_k, (\theta, \hat\theta_{-i}^k))$ under $P^*$ and the expectation integrates over $\xi_k$ and $P^*$. This quantity is well defined because, under centralized dispatch and (TI), the trajectory law depends on personas only through the sampled profile entering the planner and not through $\boldsymbol\theta^*$. Since $\hat\theta_i^k \perp \theta_i^* \mid \mathcal H_k$ with common law $\nu$,
+\begin{equation*}\resizebox{0.9\linewidth}{!}{$\displaystyle \mathbb{E}_k[\Delta_k^\Theta] = \sum_\theta \nu(\theta)\, G(\theta,\theta) - \sum_{\theta,\theta'} \nu(\theta)\nu(\theta')\, G(\theta,\theta') = \sum_\theta \nu(\theta)\big(G(\theta,\theta) - \bar G(\theta)\big), $}\end{equation*}
+where $\bar G(\theta) \coloneqq \sum_{\theta'} \nu(\theta')\, G(\theta,\theta')$. Let $R_k \coloneqq \sum_{h} r_{i,h}^k \in [0,H]$ denote the realized episode reward of agent $i$, an observed quantity, and let $I_k \coloneqq I(\theta_i^*;\, (\hat\theta_i^k, R_k))$ with mutual information computed under the conditional law given $\mathcal H_k$. Since $\hat\theta_i^k \perp \theta_i^* \mid \mathcal H_k$, the chain rule gives $I_k = I(\theta_i^*; R_k \mid \hat\theta_i^k)$.
+
+\emph{Step 1 (Cauchy--Schwarz).} By Cauchy--Schwarz over $\Theta_i$,
+\begin{equation*}
+\big(\mathbb{E}_k[\Delta_k^\Theta]\big)^2 \;\le\; |\Theta_i| \sum_\theta \nu(\theta)^2 \big(G(\theta,\theta) - \bar G(\theta)\big)^2.
+\end{equation*}
+
+\emph{Step 2 (Pinsker).} Given $\hat\theta_i^k = \theta$, the conditional law of $R_k$ given additionally $\theta_i^* = \theta'$ has mean $G(\theta,\theta')$ and support in $[0,H]$, while its $\theta'$-marginal mixture has mean $\bar G(\theta)$. Pinsker's inequality combined with $|\mathbb{E} X - \mathbb{E} Y| \le H\cdot\mathrm{TV}$ for $[0,H]$-valued variables gives
+\begin{equation*}\resizebox{0.9\linewidth}{!}{$\displaystyle \mathrm{KL}\big(\mathcal L(R_k \mid \hat\theta_i^k{=}\theta, \theta_i^*{=}\theta') \,\big\|\, \mathcal L(R_k \mid \hat\theta_i^k{=}\theta)\big) \;\ge\; \tfrac{2}{H^2}\big(G(\theta,\theta') - \bar G(\theta)\big)^2. $}\end{equation*}
+Averaging over $\theta \sim \nu$ and $\theta' \sim \nu$ and keeping only the diagonal terms $\theta' = \theta$,
+\begin{equation*}\resizebox{0.9\linewidth}{!}{$\displaystyle I_k \;\ge\; \tfrac{2}{H^2}\sum_{\theta,\theta'} \nu(\theta)\nu(\theta') \big(G(\theta,\theta') - \bar G(\theta)\big)^2 \;\ge\; \tfrac{2}{H^2} \sum_\theta \nu(\theta)^2 \big(G(\theta,\theta) - \bar G(\theta)\big)^2. $}\end{equation*}
+Combining Steps 1 and 2 yields the information-ratio bound $\big(\mathbb{E}_k[\Delta_k^\Theta]\big)^2 \le \tfrac{H^2 |\Theta_i|}{2}\, I_k$, the finite-class bound of \citet{russo2016information} instantiated on the type space with the truth $\theta_i^*$ in the role of the target variable. The argument uses only the algebraic structure above, so optimality of the target is not required.
+
+\emph{Step 3 (information budget).} The pair $(\hat\theta_i^k, R_k)$ is measurable with respect to the episode-$k$ increment of the history augmented with the coordinator's internal sampling randomness, which is independent of $\theta_i^*$. By the data-processing inequality and the chain rule for mutual information,
+\begin{equation*}
+\sum_{k=1}^K \mathbb{E}\big[I_k\big] \;\le\; I\big(\theta_i^*;\, \mathcal H_{K+1}\big) \;\le\; \mathcal H(\theta_i^*) \;=\; \mathcal H(P_0^{\Theta,i}),
+\end{equation*}
+where the final equality holds because $\theta_i^*$ is drawn from $P_0^{\Theta,i}$. By Cauchy--Schwarz over episodes,
+\begin{equation*}\resizebox{0.88\linewidth}{!}{$\displaystyle \mathbb{E}\sum_{k} \Delta_k^\Theta \le \sqrt{K \cdot \mathbb{E}\textstyle\sum_k \big(\mathbb{E}_k[\Delta_k^\Theta]\big)^2} \le \sqrt{K \cdot \tfrac{H^2|\Theta_i|}{2}\, \mathcal H(P_0^{\Theta,i})}. $}\end{equation*}
+The resulting bound depends only on the per-agent library size $|\Theta_i|$ and the entropy of the per-agent prior, not on the joint space $\prod_j |\Theta_j|$. Decoupling enters twice, once to license the marginal sampler (Lemma~\ref{lem:exact-sampling}) and once to remove every other agent's type from the conditional analysis through the independence of $\xi_k$.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main-regret-app}]
+Combine Lemma~\ref{lem:decomp} with Lemmas~\ref{lem:transition} and \ref{lem:reward}.
+\end{proof}
+
+\begin{proposition}[Geometric collapse of the reward channel under TID]
+\label{prop:tid-collapse}
+Under the assumptions of Theorem~\ref{thm:main-regret-app}, Assumption~\ref{ass:TID} with gap $\rho > 0$ on the per-turn outcome channel, and a prior with $\pi_{\min} \coloneqq \min_\theta P_0^{\Theta,i}(\theta) > 0$,
+\begin{equation*}
+\mathbb{E}\sum_{k=1}^K \Delta_k^\Theta \;\le\; O\Big(H + \rho^{-1}\log\tfrac{|\Theta_i|}{\pi_{\min}}\Big),
+\end{equation*}
+a constant independent of $K$. Transition learning is then the asymptotically dominant term of Eq.~\eqref{eq:main-regret-sketch} at rate $\tilde O(\sqrt K)$.
+\end{proposition}
+
+\begin{proof}
+For a wrong type $\theta' \ne \theta_i^*$ let $\Lambda_k(\theta') \coloneqq \mu_k^{\Theta,i}(\theta') / \mu_k^{\Theta,i}(\theta_i^*)$ denote the posterior odds. Bayes' rule gives $\Lambda_{k+1}(\theta') = \Lambda_k(\theta') \prod_{h=1}^H q_{\theta'}(y_h \mid s_h, a_h)/q_{\theta_i^*}(y_h \mid s_h, a_h)$ with $y_h$ the turn-$h$ outcome of agent $i$. Conditionally on $(s_h, a_h)$ and the past, the Hellinger affinity of the per-turn likelihood ratio satisfies
+\begin{equation*}\resizebox{0.85\linewidth}{!}{$\displaystyle \mathbb{E}\Big[\sqrt{q_{\theta'}(y_h \mid s_h,a_h)/q_{\theta_i^*}(y_h \mid s_h,a_h)}\Big] = 1 - D_H^2\big(q_{\theta'}, q_{\theta_i^*}\big) \;\le\; e^{-\rho} $}\end{equation*}
+by Assumption~\ref{ass:TID}, uniformly over $(s,a)$, and the uniformity handles the adaptive visitation \citep{ghosal2017fundamentals}. Hence $\sqrt{\Lambda_k(\theta')}$ is a nonnegative supermartingale contracting by $e^{-\rho}$ per turn, so $\mathbb{E}\sqrt{\Lambda_k(\theta')} \le \pi_{\min}^{-1/2}\, e^{-\rho H (k-1)}$. Since $\mu_k(\theta') \le \min\{1, \Lambda_k(\theta')\} \le \sqrt{\Lambda_k(\theta')}$, this gives $\mathbb{E}\,\mu_k^{\Theta,i}(\theta') \le \pi_{\min}^{-1/2} e^{-\rho H(k-1)}$.
+
+The reward channel vanishes on the event $\{\hat\theta_i^k = \theta_i^*\}$ because $\Delta_k^\Theta$ compares the same policy under the same kernel with identical reward parameters, and $|\Delta_k^\Theta| \le H$ otherwise. Averaging the truth over the posterior, $\Pr_k(\hat\theta_i^k \ne \theta_i^*) = \mathbb{E}_k\big[\sum_{\theta' \ne \theta_i^*} \mu_k^{\Theta,i}(\theta')\big]$, so
+\begin{equation*}
+\mathbb{E}\big[\Delta_k^\Theta\big] \;\le\; H \min\big\{1,\; (|\Theta_i|-1)\, \pi_{\min}^{-1/2}\, e^{-\rho H(k-1)}\big\}.
+\end{equation*}
+Let $C \coloneqq |\Theta_i|\pi_{\min}^{-1/2}$ and $k_0 \coloneqq \lceil 1 + \log C/(\rho H)\rceil$. The first $k_0$ episodes contribute at most $H k_0 = O(H + \rho^{-1}\log C)$ and the geometric tail contributes at most $H/(1 - e^{-\rho H}) \le H + \rho^{-1}$. Summing proves the claim. For the uniform prior, $\log C = O(\log|\Theta_i|)$, recovering the $O(H\log|\Theta_i|/\rho)$ collapse cited in the main text as a weaker corollary.
+\end{proof}
+
+\begin{remark}[Prior information is double-edged]
+\label{rem:prior-double-edged}
+The persona prior enters the two regimes of the reward channel in opposite directions. In the $\sqrt K$ regime of Lemma~\ref{lem:reward} the channel scales with $\sqrt{\mathcal H(P_0^{\Theta,i})}$, so a more informative prior provably reduces regret. In the TID regime of Proposition~\ref{prop:tid-collapse} the burn-in constant scales with $\log(1/\pi_{\min})$, so a prior that is sharp in the wrong direction, placing near-zero mass on the realized persona, inflates the constant even though its entropy is small. Concentrated beliefs help exactly when they are aimed correctly, and a confidently wrong belief is worse than an uninformed one. The MaaSSim belief-source decomposition (Table~\ref{tab:maassim-mechanism}) exhibits the empirical counterpart, where the shuffled belief, sharp but attached to the wrong drivers, falls below the uniform prior.
+\end{remark}
+
+\subsection{Rate Separation}
+\label{app:rate-separation}
+\label{sec:rate-separation}
+
+\begin{theorem}[Rate Separation from Type-Agnostic Sampling]
+\label{thm:rate-separation}
+There exists an HT-MG instance satisfying Assumptions~\ref{ass:TI}--\ref{ass:DP} on which PACT attains $\tilde O(\sqrt K)$ regret while PSRL-NoType, which samples $\hat\theta\sim\mathrm{Unif}(\Theta)$ each episode without updating, attains $\Omega(K)$ regret. The gap quantifies the value of online persona inference relative to type-agnostic sampling.
+\end{theorem}
+
+\begin{remark}[Scope]
+\label{rem:rate-sep-scope}
+We do not claim a rate separation against an updating MAP estimator. MAP-Type-Greedy can fail on instances requiring exploration by the standard PSRL-vs-greedy gap \citep{osband2013more}, but that comparison is not part of the retained empirical claim set.
+\end{remark}
+
+\subsection{Idealized PACT\textsuperscript{+} Burn-in Improvement}
+\label{app:pact-plus}
+
+The \emph{deep-trap family} $\mathcal G_m^{\mathrm{trap}}$ is parameterized by $(m,n)$: $|\Theta_i|=m$ types per agent, $n$ agents, $S = m+2$ states, two actions per agent, deterministic unanimity-vote transitions, a distinguished jackpot type $\theta_{\mathrm{jack}}$ with $r_i = 1$ at the rightmost state $s^\star$ and $r_i = 0.5$ elsewhere, uniform prior, true types $\theta_i^\star = \theta_{\mathrm{jack}}$ for all $i$.
+
+\begin{theorem}[Regret of idealized PACT\textsuperscript{+}]
+\label{thm:pact-plus-app}
+Let $\beta > 0$. Under Assumptions~\ref{ass:TI}--\ref{ass:TID}:
+
+\textbf{(i) Asymptotic match.} For the pairwise-disagreement bonus in Eq.~\eqref{eq:bonus}, the bound \eqref{eq:main-regret-sketch} carries over up to a $K$-independent additive constant $O(\beta n|\Theta_i|/\rho)$, since that bonus decays geometrically as the posterior concentrates. This statement does not apply to the nonvanishing action-spread term in the empirical proxy.
+
+\textbf{(ii) Burn-in separation.} On $\mathcal G_m^{\mathrm{trap}}$, expected burn-in regret is $\Theta(m^n H)$ for PACT and Joint-PSRL versus $O(H)$ for PACT\textsuperscript{+} at any $\beta > 0$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+\textbf{(i)} The PACT\textsuperscript{+}-vs-PACT excess regret is bounded by the expected cumulative bonus, which under (TID) decays geometrically as $|\Theta_i|\exp(-\rho H k/2)$ (Proposition~\ref{prop:tid-collapse}; \citealp{ghosal2017fundamentals}). Summing gives the $O(\beta n|\Theta_i|/\rho)$ constant. \textbf{(ii)} PACT samples the all-jackpot profile with probability $m^{-n}$ per episode. Off the jackpot state the marginal does not update (constant likelihood), giving expected wait $m^n$ at $\Theta(H)$ regret each. PACT\textsuperscript{+}'s bonus $D_k(s^\star,a) = n(m-1)/m^2 > 0$ at $s^\star$ back-propagates to make the welfare gap strictly positive at every state regardless of the sampled profile. The exhaustive welfare-argmax planner steers to $s^\star$ in $S{-}1$ steps and the marginal collapses in episode one.
+\end{proof}
+
+At finite $K$, cumulative regret is capped at $KH$. The theorem is a property of the constructed deep-trap family and idealized bonus; the reported live scaling figures evaluate a different proxy and are not presented as a realization of this asymptotic separation.
+
+\subsection{Worst-Case Burn-in Without Reward Locality}
+\label{app:lower-no-rl}
+\label{sec:lower-no-rl-app}
+
+\begin{theorem}[Exponential burn-in without RL]
+\label{thm:lower-no-rl}
+For every $n,m$ and $K\geq1$, there is an HT-MG satisfying TI, PF, ISI, and DP but violating RL, with $|\Theta_i|=m$ and $A_{\mathrm{joint}}=m^n$, on which every algorithm has Bayesian regret
+\begin{equation}
+\mathbb E[\mathrm{Reg}_i^B(K)] = \Omega\!\left(\min\{K,m^n\}\right).
+\end{equation}
+In particular, at $K=\Theta(m^n)$ the expected burn-in is $\Omega(m^n)$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Let $M=m^n$, take $S=H=1$, and index the $M$ joint actions by the $M$ joint type profiles. Draw $\boldsymbol\theta^\star$ from the product-uniform prior, which satisfies PF, and give every agent the deterministic reward $r_i(a,\boldsymbol\theta)=\mathbf1[a=a^\star(\boldsymbol\theta)]$ for a bijection $a^\star\colon\Theta\to\mathcal A_{\mathrm{joint}}$. The oracle chooses $a^\star(\boldsymbol\theta^\star)$ and receives one each episode. Before the first reward of one, an algorithm can eliminate at most one candidate profile per distinct zero-reward action. Under the uniform prior, the position of the rewarding action in any adaptive no-repeat search order is uniform on $\{1,\ldots,M\}$. Hence the expected number of zero-reward episodes is $\mathbb E[\min\{K,J-1\}]$, where $J\sim\mathrm{Unif}\{1,\ldots,M\}$. This quantity is at least $K/2$ for $K\leq M/2$ and at least $(M-1)/4$ for $K\geq M/2$, proving $\Omega(\min\{K,M\})$. Each $r_i$ depends on the full joint type, so RL is violated.
+\end{proof}
+
+\begin{remark}[Scope and what is open]
+\label{rem:lower-bound-scope}
+This construction keeps PF and drops RL; it therefore does not establish that PF is necessary. It also sets $A_{\mathrm{joint}}=m^n$, so the exponential burn-in combines a joint-type reward with an exponentially large action menu and does not isolate persona-posterior storage from planning complexity. Whether an exponential decision-regret gap persists under RL, or with a fixed-size action menu, is open. The RL-only diagnostic of Figure~\ref{fig:rl-violation} produces measurable posterior coupling but no resolved regret gap on its finite geometry. The positive decoupling result is therefore a sufficient representation theorem, not a tight tractability characterization.
+\end{remark}
+
+\subsection{Empirical Validation}
+\label{app:theory-empirical}
+\label{sec:theory-sim}
+
+Table~\ref{tab:storage-comparison} shows that well-specified Joint-PSRL-Uniform and PACT remain unresolved under the same iid DGP, while Table~\ref{tab:true-shared-dgp} reports the complementary coupled-DGP robustness result; neither table is presented as a realization of the without-RL counterexample.
+
+\section{Cost, Compute, and Prompts}
+\label{app:cost-compute}
+
+This section reports the LLM-call budget, wall-clock cost, hardware/software environment, and prompt templates used by the LLM-facing components. Numbers are aggregated across the four backbones (DeepSeek-V3.2, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick-17B-128E-Instruct-FP8) and the three substrates (HP-SPGG, Concordia, SOTOPIA-Hard).
+
+\subsection{LLM-call accounting}
+\label{app:cost-accounting}
+
+\paragraph{Per-episode LLM calls.} The online numeric tracker issues no LLM calls: HP-SPGG evaluates its Gaussian likelihood analytically after one offline tensor calibration. Prompted HP-SPGG baselines issue agent/action calls as specified by their adapters. Compact Concordia uses an analytic payoff function and adds no judge call, whereas open-text SOTOPIA-Hard uses both action generations and a scenario judge. The practical bonus is computed from cached tensors and adds no provider calls.
+
+\paragraph{Total-call scope.} The historical experiments were produced by several runners whose retry logs and discarded attempts were not normalized into one billing ledger. We therefore do not infer a paper-wide provider-call total from episode counts. The auditable fresh E-A accepted-response counts are reported below; they exclude retries and should not be interpreted as billed calls.
+
+\paragraph{Supplemental-run accounting.} The historical E-A source audit and the E-B/E-D simulations make zero online model calls; E-D adds $324$ live DeepSeek calibration calls. E-E also makes zero provider calls: it regenerates $50$ MaaSSim sub-fleet cells and produces $240$ tracker-level replay rows from analytic hidden-rule events. E-F adds $20$ zero-provider bonus-ablation rows on saved states. The fresh environment-matched E-A control separately records $23{,}178$ accepted response-cache entries: $6{,}000$ complete calibration judge cells, $1{,}208$ LLM-PSRL verbal entries, and $15{,}970$ external-baseline entries. E-C adds $240$ episodes for the requested $p{=}0.25,0.5$ corruption cells and $240$ corrected component-control episodes. Each accepted E-C episode records six agent generations and one judge call, giving $3{,}360$ accepted-output calls, or $3{,}684$ including E-D calibration. These accepted-output totals exclude transient provider retries; rejected fallback-bearing E-C attempts are checkpointed separately.
+
+\paragraph{E-A replay and provider constraints.} The four full-grid E-A calibrations each contain exactly $1{,}500$ accepted cells and zero parse failures. External malformed outputs were accepted only after $262$ cache-pinned strict JSON format repairs that preserved the numeric decisions; no heuristic parse fallback is permitted. Provider sampling seeds are unavailable, so environment seeds and type profiles are matched while raw accepted responses are replayed from SHA-256-keyed caches rather than claimed to be provider-RNG matched. The hosted Kimi endpoint rejects custom temperature, so its calibration and action requests used the supported value $1$. The final LLM-PSRL belief update is skipped only after episode $K$, because no subsequent decision consumes it. Every tensor, cache, report, and aggregate, plus all 400 method/backbone/seed NPZs, is covered by the release manifest together with tensor hashes, snapshot IDs, and UTC timestamps.
+
+\paragraph{Artifact scope.} The fresh E-A matched package is complete at the accepted-response and per-seed levels. Some earlier scaling NPZs and the historical SOTOPIA all-70 episode JSONs were removed during workspace cleanup; their retained figures and aggregate reports are not substitutes for raw trajectories. Reproducing those legacy cells therefore requires regenerating provider outputs, and provider RNG paths cannot be recreated exactly. The checklist marks data/code/seed availability as partial accordingly.
+
+\paragraph{Token and monetary cost.} The retained caches do not store authoritative provider token-usage or billing fields for every historical call, and the hosted Llama endpoint has no comparable public price. We therefore report accepted-response counts and wall-clock environment details rather than extrapolating a total token or dollar bill.
+
+\subsection{Wall-clock cost}
+\label{app:cost-wallclock}
+
+Wall-clock time is dominated by provider latency and deployment-specific rate limits. Runs used bounded concurrency between one and five requests depending on the deployment; Kimi calls were serialized when required by its rate limit. Because historical terminal-level timing was not retained in a normalized per-cell ledger, we do not claim comparable median episode times across substrates.
+
+\subsection{Compute environment}
+\label{app:cost-hardware}
+
+\paragraph{Workstation.} All orchestration, posterior updates, finite-action planner calls, and figure generation ran on a single workstation with an Intel x64 CPU, 64\,GB RAM, and Windows 10 + PowerShell 5.1. No local GPU was used. LLM inference is offloaded entirely to the backbone providers' APIs. The Python environment is managed with \texttt{uv}, with separate virtual environments for the three substrates (HP-SPGG, Concordia, SOTOPIA-Hard) and a shared package layout under \texttt{external/}.
+
+\paragraph{API backbones.} The four backbones are accessed through an organization-managed provider proxy with token-based authentication. Per-call timeouts are $180$\,s with $2$--$3$ retries; concurrency is deployment-specific and Kimi requests are serialized when required. Streaming is disabled. The models are pinned to DeepSeek-V3.2, GPT-5.4-nano-20260317, Kimi-K2.6, and Llama-4-Maverick-17B-128E-Instruct-FP8. The proxy implementation and credentials are not part of the anonymous artifact, so exact provider-path replay is unavailable.
+
+\paragraph{Algorithmic compute.} HP-SPGG uses backward induction with deterministic exhaustive joint-action argmax, and compact Concordia enumerates its one-step finite action menu. SOTOPIA-Hard has no finite planner. These finite searches run in $<1$\,ms per decision on the workstation CPU and are dominated by LLM latency. Posterior updates use closed-form Dirichlet conjugacy for the transition belief and direct Bayes' rule for the per-agent persona belief, both $O(n|\Theta_i|H)$ per episode and negligible relative to the LLM cost.
+
+
+
+\subsection{Prompt Templates}
+\label{app:prompt-templates}
+
+This appendix reports the prompt templates used by the LLM-facing components of
+PACT and PACT\textsuperscript{+}. Templates are written with symbolic placeholders in braces. In
+the implementation, structured payloads are rendered as JSON and the model is
+instructed to return machine-parseable JSON when a structured response is
+required. For display in this two-column format, lines that exceed the column
+width are soft-wrapped (\textcolor{gray}{$\hookleftarrow$}). The rendered prompt
+sent to the model contains no wrap marker.
+
+\lstdefinestyle{prompt}{%
+  basicstyle=\ttfamily\scriptsize,%
+  breaklines=true,%
+  breakatwhitespace=true,%
+  postbreak=\mbox{\textcolor{gray}{$\hookrightarrow$}\space},%
+  breakindent=0.5em,%
+  columns=fullflexible,%
+  keepspaces=true,%
+  upquote=false,%
+  showstringspaces=false,%
+  frame=single,%
+  framesep=3pt,%
+  xleftmargin=0pt,%
+  xrightmargin=0pt,%
+  aboveskip=4pt,%
+  belowskip=4pt%
+}
+
+\subsubsection{HP-SPGG Persona-Conditioned Outcome Scoring}
+\label{app:prompt-hp-spgg-scoring}
+
+PACT uses persona-conditioned scores to build the reward/likelihood table for
+the controlled HP-SPGG substrate. The judge sees one candidate persona and one
+realized contribution profile, then returns a scalar satisfaction score.
+
+\begin{lstlisting}[style=prompt]
+[System]
+Score the player satisfaction in a public-goods-game
+outcome. Return only valid JSON with key "score", a
+number from 0.0 to 1.0.
+
+[User]
+You are scoring exactly one HP-SPGG outcome. Your
+entire response must be one valid JSON object and
+nothing else. No explanation, no markdown, no prose.
+Use exactly this schema: {"score": 0.73}.
+
+Persona key:        {persona_key}
+Persona description:{persona_description}
+Player index:       {player_index}
+Player contribution:{own_contribution}
+Other contributions:{other_contributions}
+Group mean:         {group_mean_contribution}
+Sample index:       {sample_index}
+
+Score satisfaction from 0.0 to 1.0 using the persona's
+private behavioural profile. Return only the JSON
+object now.
+\end{lstlisting}
+
+\subsubsection{PACT and PACT\textsuperscript{+} Action Selection in Open-Ended Tasks}
+\label{app:prompt-pact-sotopia}
+
+For SOTOPIA-style open-ended interaction, PACT and PACT\textsuperscript{+} expose the maintained
+numeric posterior to the action-selection model. PACT uses the same template
+with no exploration bonus. PACT\textsuperscript{+} additionally sets $\beta = 0.25$ and the
+beta policy. The \texttt{baseline\_instruction} and \texttt{beta\_policy} fields
+are the only PACT-versus-PACT\textsuperscript{+} differences. All other fields are shared.
+
+\begin{lstlisting}[style=prompt]
+[System]
+You are a careful social-interaction agent.
+Return valid JSON only.
+
+[User: JSON payload]
+{
+ "task": "SOTOPIA action selection",
+ "agent": "{agent_name}",
+ "baseline": "{pact_or_pact_plus}",
+ "strategy_profile": "{strategy_profile}",
+ "goal": "{private_goal}",
+ "private_profile": "{private_profile_summary}",
+ "observation": "{current_observation}",
+ "history": "{recent_dialogue_history}",
+ "available_actions": {available_actions},
+ "action_instruction":
+     "{environment_action_instruction}",
+
+ "baseline_instruction":
+     "Maintain a posterior over the partner's hidden
+      goal, type, and willingness to cooperate. Use
+      the provided numeric persona posterior as the
+      belief state before selecting a robust
+      joint-value action. PACT: no exploration bonus.
+      PACT+: add a small bonus only when a clarifying
+      probe reduces uncertainty without sacrificing
+      the current goal.",
+
+ "opponent_persona_posterior":
+     {opponent_persona_posterior},
+ "opponent_persona_labels":
+     {opponent_persona_labels},
+ "posterior_usage":
+     "Treat as quantitative belief over partner
+      personas. Prefer actions robust under the
+      high-probability personas.",
+
+ "exploration_beta": 0.25,
+ "beta_policy":
+     "Use exploratory probes only when information
+      gain is useful and the probe still advances
+      the current social goal.",
+
+ "response_schema": {
+   "action_type": "one of available_actions",
+   "argument":    "utterance or content; empty if none",
+   "to":          "list of private recipients, usually []",
+   "reason":      "brief reason"
+ },
+ "instruction":
+     "Return only JSON. Use an action_type from
+      available_actions."
+}
+\end{lstlisting}
+
+% \subsection{Notes on Template Use}
+% \label{app:prompt-notes}
+
+% PACT's posterior update is not performed by a prompt. The LLM-facing scoring
+% prompts produce persona-conditioned scores or open-ended actions. Posterior
+% normalization, Bayesian updates, posterior sampling, and PACT\textsuperscript{+}'s bonus are
+% computed outside the language model. This separation is deliberate. The numeric
+% belief state is maintained by the coordinator, while prompts are used only for
+% persona-conditioned scoring and action generation in open-ended substrates.

@@ -1,0 +1,21 @@
+{
+  "backend": "managed",
+  "out": "analysis\\e_d_reward_locality_violation\\deepseek_live_smoke.npy",
+  "base_calibration": null,
+  "cache": "analysis\\e_d_reward_locality_violation\\deepseek_live_smoke_cache.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 1,
+  "new_live_cells": 1,
+  "cached_cells_loaded": 0,
+  "skipped_cached_cells": 0,
+  "partial_cached_cells_rescored": 0,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "workers": 1,
+  "trap": false,
+  "judge_model": "DeepSeek-V3.2",
+  "tid_min_gap": 0.0519000538361058
+}

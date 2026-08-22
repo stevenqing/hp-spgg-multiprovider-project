@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "artifacts": [
+    {
+      "path": "e_h_mechanism_diagnostics.json",
+      "bytes": 55513,
+      "sha256": "85fed9a55361e71a694f94ec11e711719a0212f183d46daac67f2d8659a757a6"
+    },
+    {
+      "path": "e_h_mechanism_diagnostics.csv",
+      "bytes": 17173,
+      "sha256": "b02d74141a8e0829cd46f247e3060b88cbb5842e4ebebefdcba16a0340880ce8"
+    },
+    {
+      "path": "e_h_mechanism_diagnostics.md",
+      "bytes": 107,
+      "sha256": "392fc1952f4e433998d671baae15914796f6e2ea5f490b5d94aaf29d7d57dbec"
+    }
+  ]
+}

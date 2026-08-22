@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "repository": "harp_anonymous_experiment_repo_20260728",
+  "release_date": "2026-07-29",
+  "anonymous": true,
+  "git_history_included": false,
+  "network_required_for_validation": false,
+  "experiment_families": [
+    "E-A",
+    "E-B",
+    "E-C",
+    "E-D",
+    "E-E",
+    "E-F",
+    "E-G",
+    "E-H",
+    "HP-SPGG scaling",
+    "MaaSSim mechanism"
+  ],
+  "main_experiment_figure_order": [
+    "Figure 2: environment-matched HP-SPGG",
+    "Figure 3: storage scaling and component attribution",
+    "Figure 4: MaaSSim dispatch under conflict",
+    "Figure 5: Concordia Pub Coordination and Haggling",
+    "Figure 6: iterated Concordia",
+    "Figure 7: MaaSSim joint prior, cost, and mechanism"
+  ],
+  "integrity_files": [
+    "MANIFEST.csv",
+    "SHA256SUMS.txt"
+  ]
+}

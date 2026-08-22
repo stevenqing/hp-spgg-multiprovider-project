@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "artifacts": [
+    {
+      "path": "e_h_maassim_grouped_prior.csv",
+      "bytes": 83801,
+      "sha256": "1012bc062826e446cffd8cabc3c5f10da003dd7312eb1f0952d9e7a92bea952b"
+    },
+    {
+      "path": "e_h_maassim_grouped_prior_metadata.json",
+      "bytes": 73546,
+      "sha256": "fe056f774316836c8be53e9d6b39e19d2bd6a0cfdc99e146ac0306f36191b2c9"
+    },
+    {
+      "path": "e_h_rho0p0_g4_n8_m2_s40.npz",
+      "bytes": 30802,
+      "sha256": "e92883230f22c88db391713753675829bdffe9078803ba064b5ee84c18af8ea2"
+    },
+    {
+      "path": "e_h_rho1p0_g4_n8_m2_s40.npz",
+      "bytes": 31278,
+      "sha256": "7ded20cced85f4101c6f08db7ec3a519091573c0f433aca141b4c7ce98e67e20"
+    },
+    {
+      "path": "e_h_maassim_grouped_prior_minimal.md",
+      "bytes": 1521,
+      "sha256": "66e47564c5fddc48ebd26c6ffb2cfc446b2c10c9f8f138423efaf294017c2fa3"
+    }
+  ]
+}

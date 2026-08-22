@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering\scriptsize
+\caption{Environment-matched HP-SPGG control ($K{=}20$, $10$ common seeds). Within each backbone every method shares the pinned full-grid live reward tensor, true-type profile, uniform prior, no additional board state, and exact tensor oracle; each receives its own realised-reward history from that tensor. Provider sampling seeds are unavailable; accepted responses are cache-pinned. Values are cumulative regret, mean $\pm$ SEM; the ratio is the strongest LLM-coordination baseline divided by the lower-regret PACT-family member.}
+\label{tab:hp-spgg-matched}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrlr}
+\toprule
+Backbone & PACT$^+$ & PACT & Joint-PSRL & LLM-PSRL & Best coordination & Coord./best PACT \\
+\midrule
+DeepSeek-V3.2 & $0.360\pm0.142$ & $0.985\pm0.298$ & $0.955\pm0.203$ & $18.270\pm5.141$ & ECON-BNE $2.550\pm1.049$ & $7.08\times$ \\
+GPT-5.4-nano & $0.159\pm0.038$ & $0.544\pm0.150$ & $0.391\pm0.100$ & $2.193\pm0.714$ & ECON-BNE $6.960\pm1.376$ & $43.77\times$ \\
+Kimi-K2.6 & $0.325\pm0.088$ & $0.547\pm0.116$ & $0.642\pm0.159$ & $6.701\pm1.325$ & ECON-BNE $2.957\pm1.366$ & $9.10\times$ \\
+Llama-4-Maverick & $0.430\pm0.217$ & $1.202\pm0.212$ & $1.276\pm0.228$ & $13.510\pm3.431$ & A-ToM-0 $0.700\pm0.396$ & $1.63\times$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

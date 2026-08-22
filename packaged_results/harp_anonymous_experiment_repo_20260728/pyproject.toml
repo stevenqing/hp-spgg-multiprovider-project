@@ -1,0 +1,20 @@
+[project]
+name = "harp-anonymous-experiments"
+version = "1.0.0"
+description = "Anonymous HARP experiment code and completed-data artifact"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "networkx>=3.2",
+  "Pillow>=10.0",
+  "PyMuPDF>=1.24",
+  "PyYAML>=6.0",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+providers = ["openai>=1.0", "anthropic>=0.39", "google-genai>=0.3"]
+
+[tool.uv]
+package = false

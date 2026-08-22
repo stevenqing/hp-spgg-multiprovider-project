@@ -1,0 +1,21 @@
+{
+  "experiment": "E-D true reward-locality violation",
+  "episodes": 10,
+  "seeds": 2,
+  "seed_offset": 91000,
+  "alphas": [
+    0.0,
+    1.0
+  ],
+  "sigma": 0.08,
+  "beta": null,
+  "coupling": "agent0_local_reward - alpha * agent1_local_reward",
+  "planner": "exact exhaustive joint-action argmax",
+  "provenance": {
+    "analytic-mixed": {
+      "source": "analytic build_reward_tensor",
+      "backend": "mixed",
+      "seed": 19
+    }
+  }
+}

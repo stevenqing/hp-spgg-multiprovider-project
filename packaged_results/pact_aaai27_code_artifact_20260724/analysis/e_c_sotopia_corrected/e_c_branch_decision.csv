@@ -1,0 +1,4 @@
+family,corrected_p0_mean,corrected_p0_sem,historical_best_method,historical_best_mean,delta_vs_historical_best,branch
+craigslist_bargains,2.6651785714285716,0.07387966459371953,llm_belief,2.7605,-0.09532142857142833,clean-boundary
+donate_funds,3.2285714285714286,0.12081890292489092,atom_tom1,3.386,-0.15742857142857147,clean-boundary
+revenge_plot,2.742857142857143,0.10238823777773956,llm_greedy,3.2,-0.4571428571428573,clean-boundary

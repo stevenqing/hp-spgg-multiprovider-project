@@ -1,0 +1,858 @@
+{
+  "config": "london_mini",
+  "model": "DeepSeek-V3.2",
+  "seeds": [
+    2,
+    3,
+    4
+  ],
+  "methods": [
+    "llm_greedy",
+    "llm_belief",
+    "atom_tom1",
+    "econ_bne",
+    "hpsmg_plus_proxy",
+    "oracle_joint"
+  ],
+  "summary": [
+    {
+      "method": "oracle_joint",
+      "episodes": 3,
+      "focal_score_mean": 1.3333333333333333,
+      "focal_score_min_mean": 1.1666666666666667,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "episodes": 3,
+      "focal_score_mean": 1.0138888888888888,
+      "focal_score_min_mean": 0.9166666666666666,
+      "coordination_rate_mean": 0.8333333333333334,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_belief",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_greedy",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "llm_greedy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"The Crooked Billet is Thomas Wilson's private favorite pub, which likely maximizes his personal enjoyment regardless of other relationships or venue descriptions.\"\n}"
+          },
+          "Harry Davies": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"The Princess of Wales is Harry Davies's private favorite pub, which likely maximizes his personal enjoyment, especially given the cozy atmosphere described.\"\n}"
+          },
+          "Phoebe Young": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"The Crooked Billet is Phoebe Young's private favorite pub, which maximizes her own expected enjoyment as instructed.\"\n}\n```"
+          },
+          "Jacob Walker": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"The Crooked Billet is Jacob Walker's private favorite pub, which likely maximizes his personal enjoyment regardless of other factors.\"\n}\n```"
+          },
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"The Princess of Wales is Lily Walker's private favorite pub, and the instruction is to maximize her own expected enjoyment, making it the clear choice.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Thomas Wilson's private favorite pub is The Crooked Billet, and since it's available and aligns with his preference while still being a viable group option, he would choose it.\"\n}"
+          },
+          "Harry Davies": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Harry Davies's private favorite pub is The Princess of Wales, and it aligns with his preference while being a viable group option given no closed venues or conflicting signals from relationships.\"\n}"
+          },
+          "Phoebe Young": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Phoebe's private favorite pub is The Crooked Billet, and with no closed venues or strong group signals to override her preference, she chooses it.\"\n}"
+          },
+          "Jacob Walker": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Jacob's private favorite pub is The Crooked Billet, and with no closed venues or conflicting group signals, he can choose his preferred venue while still coordinating with friends who may follow his lead.\"\n}"
+          },
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Lily's private favorite pub is The Princess of Wales, aligning with her personal preference, and it is available. The cozy atmosphere suits a cold day, and coordinating with friends is balanced by choosing a venue she genuinely enjoys.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Thomas Wilson's private favorite pub is The Crooked Billet, and it's available. While modeling friends' choices might vary, choosing his personal favorite aligns with his preferences and the available options.\"\n}\n```"
+          },
+          "Harry Davies": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Harry Davies's private favorite pub is The Princess of Wales, and it's available. Given his relationships emphasize trust and understanding, he'd likely choose his genuine preference, setting a reliable example for friends.\"\n}\n```"
+          },
+          "Phoebe Young": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Phoebe's private favorite pub is The Crooked Billet, and it's available. Given her deep understanding with Harry Davies and honesty with Jacob Walker, she'd likely choose her genuine preference rather than conforming. The Crooked Billet's historic and quirky atmosphere aligns with her personal taste.\"\n}\n```"
+          },
+          "Jacob Walker": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Jacob Walker's private favorite pub is The Crooked Billet, and it's available. While relationships might influence others, his personal preference for his favorite pub is the strongest factor for his own choice.\"\n}\n```"
+          },
+          "Lily Walker": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Lily's private favorite pub is The Princess of Wales, which is available and matches her preference for a cozy, traditional atmosphere. Given her strong connection with Jacob Walker and fun relationship with Thomas Wilson, she would likely choose her favorite venue to maximize enjoyment with close friends.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"The Crooked Billet is Thomas Wilson's private favorite pub, and it is available. Choosing it aligns with personal preference while still being a viable coordination option for others who know him well (like Harry Davies, with whom he is always honest).\"\n}\n```"
+          },
+          "Harry Davies": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Harry Davies's private favorite pub is The Princess of Wales, and with no closed venues or conflicting relationships, choosing it aligns with personal preference and stable coordination.\"\n}"
+          },
+          "Phoebe Young": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Phoebe's private favorite pub is The Crooked Billet, and it's available. Choosing it aligns with practical equilibrium given her preferences and the coordination goal.\"\n}\n```"
+          },
+          "Jacob Walker": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Jacob Walker's private favorite pub is The Crooked Billet, and with no closed venues or conflicting relationships, choosing it aligns with personal preference and practical equilibrium.\"\n}"
+          },
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Lily's private favorite pub is The Princess of Wales, making it the natural focal point for stable coordination in a practical equilibrium.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.5,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"The King's Head is Henry Green's private favorite pub and focuses on sports, which aligns with the event being The European football cup, maximizing expected enjoyment.\"\n}"
+          },
+          "Ruby White": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Ruby White's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup), maximizing her expected enjoyment.\"\n}\n```"
+          },
+          "William Jones": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"The Black Swan is William Jones' private favorite pub, which maximizes his personal enjoyment regardless of other relationships or venue descriptions.\"\n}\n```"
+          },
+          "Evie Green": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"The Black Swan is Evie Green's private favorite pub, which likely maximizes her personal enjoyment.\"\n}"
+          },
+          "Logan Brown": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"The King's Head is Logan Brown's private favorite pub and focuses on sports, which aligns well with the European football cup event, maximizing expected enjoyment.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Henry Green's private favorite pub is The King's Head, which aligns with the European football cup event due to its sports focus. While group coordination is important, the event strongly favors a sports-oriented venue, making The King's Head the logical choice that balances personal preference with likely group consensus.\"\n}\n```"
+          },
+          "Ruby White": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Ruby's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup). While relationships suggest some might prefer The Black Swan, coordinating at the sports-focused venue balances personal preference with likely group interest for the football event.\"\n}\n```"
+          },
+          "William Jones": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"William Jones's private favorite pub is The Black Swan, and while The King's Head might appeal to sports fans during the European football cup, his relationships with friends who trust him completely (like Evie Green) and those who look out for each other (like Logan Brown) suggest he would prioritize his genuine preference while trusting friends to coordinate accordingly.\"\n}\n```"
+          },
+          "Evie Green": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Evie's private favorite pub is The Black Swan, and while The King's Head is sports-focused for the football cup, her strong relationships (especially with Logan Brown for sharing secrets) suggest a preference for a more intimate, historic setting like The Black Swan, balancing her personal preference with likely group coordination toward a venue accommodating social bonding.\"\n}"
+          },
+          "Logan Brown": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Logan's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup). While relationships suggest some friends might prefer The Black Swan for live music, coordinating at the sports-focused venue balances personal preference with the group's likely interest in watching the match together.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Henry Green's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup), making it his most likely personal choice and the best coordination point.\"\n}"
+          },
+          "Ruby White": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Ruby's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup. While relationships with others vary, choosing her preferred venue increases personal enjoyment and consistency with her known preferences.\"\n}\n```"
+          },
+          "William Jones": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"William Jones's private favorite pub is The Black Swan, and his relationships with friends (especially Evie Green, whom he trusts completely) suggest they would likely follow his preference. The Black Swan being his favorite makes it the most natural choice for coordination.\"\n}\n```"
+          },
+          "Evie Green": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Evie Green's private favorite pub is The Black Swan, and while The King's Head is sports-focused for the football cup, her personal preference and the venue's live music atmosphere likely align better with her social style and relationships.\"\n}\n```"
+          },
+          "Logan Brown": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Logan's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup. While relationships with others might influence decisions, the combination of personal preference and event relevance makes The King's Head the most logical choice.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Henry Green's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup, making it a natural focal point for coordination.\"\n}\n```"
+          },
+          "Ruby White": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Ruby's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup) and provides a stable, practical equilibrium given her relationships.\"\n}"
+          },
+          "William Jones": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"William Jones's private favorite pub is The Black Swan, and choosing it aligns with personal preference while being a stable coordination point given no conflicting relationships or closed venues.\"\n}"
+          },
+          "Evie Green": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Evie Green's private favorite pub is The Black Swan, and the instruction emphasizes choosing a stable coordination action, making selecting her known preference the most practical equilibrium.\"\n}"
+          },
+          "Logan Brown": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Logan's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup) and supports stable coordination by following personal preference.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.5
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"The Queen's Arms is Lily Walker's private favorite pub, which likely maximizes her personal enjoyment.\"\n}"
+          },
+          "Poppy Evans": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"The King's Head is Poppy Evans' private favorite pub, and its description as a traditional pub with a focus on sports aligns well with the European football cup event, maximizing her expected enjoyment.\"\n}\n```"
+          },
+          "Jessica Davies": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"The King's Head is Jessica's private favorite pub and focuses on sports, aligning with the European football cup event for maximum personal enjoyment.\"\n}"
+          },
+          "Michael Wood": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"The King's Head is Michael Wood's private favorite pub and focuses on sports, aligning with the European football cup event, maximizing his expected enjoyment.\"\n}"
+          },
+          "Emily Wilson": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"The Queen's Arms is Emily Wilson's private favorite pub, which likely maximizes her personal enjoyment regardless of relationships or venue descriptions.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Lily's private favorite pub is The Queen's Arms, and the event is the European football cup, which suggests a sports-focused venue might be popular. However, The Queen's Arms is family-friendly with outdoor space, which could appeal to a broader group, especially if friends have varied interests. Balancing personal preference with group coordination, Lily chooses her favorite while considering it may accommodate different relationship dynamics.\"\n}"
+          },
+          "Poppy Evans": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"The King's Head is Poppy's private favorite pub, aligns with the sports-focused event (European football cup), and balances personal preference with likely group coordination for watching the match.\"\n}\n```"
+          },
+          "Jessica Davies": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Jessica's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup), and she has strong positive relationships with Poppy Evans and Michael Wood, who may also prefer a sports-friendly venue for watching the match.\"\n}"
+          },
+          "Michael Wood": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Michael Wood's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup). While group coordination is important, the strong personal preference combined with the venue's suitability for watching sports makes this the optimal choice.\"\n}\n```"
+          },
+          "Emily Wilson": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Emily's private favorite pub is The Queen's Arms, aligning with her personal preference, and the group coordination aspect is balanced as no strong social ties or group consensus indicated otherwise.\"\n}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Lily's private favorite pub is The Queen's Arms, and the venue description aligns with her likely preference for a family-friendly atmosphere, making it her natural choice despite other relationships.\"\n}\n```"
+          },
+          "Poppy Evans": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Poppy's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup. The venue descriptions support this choice for a sports event.\"\n}\n```"
+          },
+          "Jessica Davies": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Jessica's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup. Given her relationships, Poppy Evans and Michael Wood (who share common interests) would likely prefer a sports pub over a family-friendly one, making The King's Head the optimal choice for group coordination.\"\n}\n```"
+          },
+          "Michael Wood": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Michael Wood's private favorite pub is The King's Head, which aligns with the sports-focused atmosphere suitable for watching The European football cup. Given his relationships with friends who likely share his interests, The King's Head is the most natural choice.\"\n}\n```"
+          },
+          "Emily Wilson": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Emily's private favorite pub is The Queen's Arms, and her relationships with others are mostly distant or polite, so she's likely to choose her preferred venue rather than trying to coordinate with others who aren't close friends.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\n  \"index\": 1,\n  \"reason\": \"Lily's private favorite pub is The Queen's Arms, and with no closed venues or strong social pressures to override her personal preference, choosing it aligns with a stable, practical equilibrium in this coordination scenario.\"\n}"
+          },
+          "Poppy Evans": {
+            "reply": "{\n  \"index\": 0,\n  \"reason\": \"Poppy's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup) and supports stable coordination by following personal preference in a practical equilibrium.\"\n}"
+          },
+          "Jessica Davies": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Jessica's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup). Given the coordination goal and her relationships with others who likely share sports interests (particularly Michael Wood with common interests), choosing her preferred venue provides a stable practical equilibrium.\"\n}\n```"
+          },
+          "Michael Wood": {
+            "reply": "```json\n{\n    \"index\": 0,\n    \"reason\": \"Michael Wood's private favorite pub is The King's Head, which aligns with the sports-focused event (European football cup) and represents a stable coordination point where he would naturally prefer to go.\"\n}\n```"
+          },
+          "Emily Wilson": {
+            "reply": "```json\n{\n    \"index\": 1,\n    \"reason\": \"Emily's private favorite pub is The Queen's Arms, which aligns with her personal preference and creates a stable coordination point. Given the event is The European football cup, both pubs could work, but choosing her known favorite provides a clear focal point for coordination with others.\"\n}\n```"
+          }
+        }
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "study": "HP-SPGG Claim B v3 confirmatory contraction study",
+  "version": 1,
+  "status": "locked_before_confirmatory_outcomes",
+  "provider_calls": 0,
+  "relationship_to_prior_work": {
+    "original_scaling_run": "Retained as a preregistered null; it is not overwritten or pooled into this study.",
+    "v2_pilot": "Used only to design this independent confirmatory study; pilot seeds 2000-2199 are excluded.",
+    "claim_correction": "The original (n+1) log(m)/(rho H) formula is retired. Proposition prop:tid-collapse is per-agent. The confirmatory target is log(m*pi_min^(-1/2))/(rho H) per agent, with an additional log(n)/(rho H) only for simultaneous all-agent concentration."
+  },
+  "theory_target": {
+    "primary": "Under the stochastic Gaussian per-agent outcome channel, expected square-root posterior odds contract by the product of Hellinger affinities; cumulative posterior-sampling type error is K-independent.",
+    "operational_secondary": "First-passage episodes to posterior true-type mass > 0.9 increase with log(m*pi_min^(-1/2))/(rho_action*H); simultaneous all-agent first passage adds log(n)/(rho_action*H), not a linear n term.",
+    "uniform_prior": true,
+    "pi_min": "1/m",
+    "log_C": "log(m*sqrt(m))"
+  },
+  "dgp": {
+    "substrate": "analytic HP-SPGG local reward channel",
+    "sigma": 0.08,
+    "diagnostic_action": "all agents contribute 1.0",
+    "type_family": "nested prefixes of the existing respaced m=16 analytic type library",
+    "type_family_reason": "Adjacent spacing, action-specific rho, and full-grid rho are identical for every m, separating library-size effects from rho.",
+    "outcome": "For each episode, the sufficient sample mean is drawn independently as Normal(mu_true, sigma/sqrt(H)); this is exactly equivalent for Bayesian updating to H independent Normal(mu_true,sigma) turns.",
+    "posterior_threshold": 0.9
+  },
+  "randomization": {
+    "confirmatory_seed_start": 30000,
+    "confirmatory_seed_count": 500,
+    "adaptive_seed_start": 50000,
+    "adaptive_seed_count": 200,
+    "affinity_replicates_per_cell": 200000,
+    "affinity_batches": 200,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 91073,
+    "independence": "Every (phase,n,m,H) cell receives a distinct RNG stream. H cells are not regroupings of one turn stream."
+  },
+  "phases": {
+    "affinity_core": {
+      "adjacent_type_gaps": [1, 2, 3],
+      "target_information": [0.25, 0.5, 1.0, 1.5, 2.0],
+      "estimand": "-log of the empirical mean square-root likelihood ratio versus turns times -log(1-rho_pair)"
+    },
+    "type_horizon": {
+      "n": 3,
+      "m": [2, 3, 4, 6, 8, 12, 16],
+      "H": [1, 2, 4, 8],
+      "max_episodes": 2048,
+      "proxy_checkpoints": [512, 1024, 2048]
+    },
+    "population": {
+      "m": 8,
+      "H": 4,
+      "n": [2, 4, 8, 16, 32, 64],
+      "max_episodes": 2048
+    },
+    "adaptive_robustness": {
+      "method": "PACT sampled-profile planner",
+      "n": 3,
+      "m": [4, 8, 16],
+      "H": [1, 4],
+      "max_episodes": 4096,
+      "role": "A separately reported robustness gate; it does not replace the fixed-channel identification experiment."
+    }
+  },
+  "analysis": {
+    "censoring": "No complete-case deletion. First passages are analyzed as restricted values min(T,max_episodes+1); the censoring fraction is a hard gate.",
+    "uncertainty": "Nonparametric bootstrap resampling independent seed clusters within each cell; agents from one seed remain together.",
+    "type_horizon_fit": "OLS across 28 prespecified cell restricted means against log(m*sqrt(m))/(rho_action*H).",
+    "population_fit": "OLS across six prespecified cell restricted all-agent means against [log(m*sqrt(m))+log(n)]/(rho_action*H).",
+    "original_formula_comparator": "The same six population means are also fit against (n+1)*log(m)/(rho_action*H); this comparator is diagnostic and cannot rescue a failed corrected fit.",
+    "posterior_error_proxy": "H times the sum over episodes of 1-posterior_mass(true type), evaluated before each episode update."
+  },
+  "hard_gates": {
+    "G1_affinity_core": {
+      "r_squared_min": 0.995,
+      "point_slope_min": 0.98,
+      "point_slope_max": 1.02,
+      "bootstrap_ci_must_cover_one": true,
+      "absolute_intercept_max": 0.03,
+      "maximum_absolute_standardized_cell_error": 4.5
+    },
+    "G2_type_horizon": {
+      "r_squared_min": 0.9,
+      "bootstrap_slope_ci_low_strictly_positive": true,
+      "maximum_censoring_fraction": 0.01,
+      "maximum_within_m_turn_equivalent_ratio": 1.35
+    },
+    "G3_population": {
+      "r_squared_min": 0.9,
+      "bootstrap_slope_ci_low_strictly_positive": true,
+      "maximum_censoring_fraction": 0.01,
+      "corrected_r_squared_advantage_over_original_min": 0.1
+    },
+    "G4_K_independent_proxy": {
+      "all_empirical_upper_95_means_below_finite_Hellinger_bound": true,
+      "maximum_relative_increment_1024_to_2048": 0.02
+    },
+    "G5_adaptive_robustness": {
+      "maximum_censoring_fraction": 0.05,
+      "all_empirical_upper_95_errors_below_prespecified_global_rho_bound": true,
+      "maximum_relative_proxy_increment_half_to_end": 0.05
+    }
+  },
+  "decision_rule": "Claim B-v3 is supported only if G1 through G5 all pass without changing the grid, seeds, thresholds, estimands, censor handling, or cutoffs. Otherwise it remains unsupported and every failed gate is reported.",
+  "paper_policy": "Do not modify LaTeX until the locked confirmatory run and independent validator complete."
+}

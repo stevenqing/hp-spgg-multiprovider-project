@@ -1,0 +1,161 @@
+{
+  "experiment": "E-B iterated Concordia-derived compact benchmark",
+  "native_protocol": false,
+  "backbone_invariant": true,
+  "selection_source": "retained one-shot seed-0..29 margin summaries",
+  "selection_seeds": "0..29",
+  "report_seed_range": "1000..1000",
+  "episodes": 20,
+  "seeds": 1,
+  "sigma": 0.08,
+  "beta": 0.25,
+  "configs": [
+    "pub/london_mini",
+    "pub/capetown",
+    "haggling/fruitville_gullible",
+    "haggling/vegbrooke_stubborn",
+    "haggling_multi_item/fruitville_gullible",
+    "haggling_multi_item/cumulative_score"
+  ],
+  "planner": "exact exhaustive finite-action argmax",
+  "pf": "imposed independent four-type marginals",
+  "provenance": [
+    {
+      "seed": 1000,
+      "config_id": "pub/london_mini",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.pub_coordination.configs.london_mini",
+      "focal_players": [
+        "Florence Hall",
+        "Jacob Walker"
+      ],
+      "fixed_background_actions": {
+        "Jack Taylor": "The Crooked Billet",
+        "Benjamin Roberts": "The Red Lion",
+        "Joshua Clark": "The Red Lion"
+      },
+      "persona_layer": "0.70 * exact PubCoordinationPayoff + 0.30 * one-hot persona venue score",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "pub/capetown",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.pub_coordination.configs.capetown",
+      "focal_players": [
+        "Thamsanqa Mthembu",
+        "Ntombizanele Mthembu",
+        "Zandile Afrikaans",
+        "Philani Mkhize",
+        "Bongani Ndlovu",
+        "Buhle Mkhize"
+      ],
+      "fixed_background_actions": {
+        "Ofentse Mnguni": "The Lion's Den",
+        "Amahle Nkosi": "The Kirstenbosch Kraal"
+      },
+      "persona_layer": "0.70 * exact PubCoordinationPayoff + 0.30 * one-hot persona venue score",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling/fruitville_gullible",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling.configs.fruitville_gullible",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Jasper Quincehill",
+        "seller": "Nova Peachwood",
+        "buyer_reward": 6.0,
+        "seller_cost": 1.0
+      },
+      "players": [
+        "Jasper Quincehill",
+        "Nova Peachwood"
+      ],
+      "focal_players": [
+        "Nova Peachwood"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling/vegbrooke_stubborn",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling.configs.vegbrooke_stubborn",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Bryony Trufflewood",
+        "seller": "Jasper Peppercorn",
+        "buyer_reward": 2.0,
+        "seller_cost": 3.0
+      },
+      "players": [
+        "Bryony Trufflewood",
+        "Jasper Peppercorn"
+      ],
+      "focal_players": [
+        "Bryony Trufflewood"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling_multi_item/fruitville_gullible",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling_multi_item.configs.fruitville_gullible",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Jasper Quincehill",
+        "seller": "Nova Peachwood",
+        "buyer_rewards": {
+          "apple": 5.0,
+          "banana": 6.0,
+          "pear": 5.0
+        },
+        "seller_costs": {
+          "apple": 1.0,
+          "banana": 2.0,
+          "pear": 1.0
+        }
+      },
+      "players": [
+        "Jasper Quincehill",
+        "Nova Peachwood"
+      ],
+      "focal_players": [
+        "Nova Peachwood"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling_multi_item/cumulative_score",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling_multi_item.configs.cumulative_score",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Bob Testseller",
+        "seller": "Alice Testbuyer",
+        "buyer_rewards": {
+          "apple": 5.0
+        },
+        "seller_costs": {
+          "apple": 1.0
+        }
+      },
+      "players": [
+        "Bob Testseller",
+        "Alice Testbuyer"
+      ],
+      "focal_players": [
+        "Bob Testseller"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    }
+  ]
+}

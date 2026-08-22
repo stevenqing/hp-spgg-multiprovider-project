@@ -1,0 +1,94 @@
+{
+  "sotopia": {
+    "llm_call_counts": {
+      "player": 0,
+      "judge": 0
+    },
+    "samples": [
+      {
+        "turn_number": 1,
+        "last_turn": "agent_2 said: \"I want a fair compromise if we can both agree.\"",
+        "increments": {
+          "altruistic_builder": 1.95,
+          "conditional_cooperator": 1.4,
+          "risk_averse_balancer": 0.2,
+          "free_rider": -1.2
+        },
+        "log_before": {
+          "altruistic_builder": -1.3862943611198906,
+          "conditional_cooperator": -1.3862943611198906,
+          "risk_averse_balancer": -1.3862943611198906,
+          "free_rider": -1.3862943611198906
+        },
+        "log_after": {
+          "altruistic_builder": 0.5637056388801094,
+          "conditional_cooperator": 0.013705638880109339,
+          "risk_averse_balancer": -1.1862943611198906,
+          "free_rider": -2.5862943611198905
+        },
+        "posterior_after": {
+          "altruistic_builder": 0.5575,
+          "conditional_cooperator": 0.3217,
+          "risk_averse_balancer": 0.0969,
+          "free_rider": 0.0239
+        }
+      },
+      {
+        "turn_number": 2,
+        "last_turn": "agent_2 said: \"My price is firm and non-negotiable.\"",
+        "increments": {
+          "altruistic_builder": -0.6,
+          "conditional_cooperator": -0.4,
+          "risk_averse_balancer": -0.2,
+          "free_rider": 1.1
+        },
+        "log_before": {
+          "altruistic_builder": 0.5637056388801094,
+          "conditional_cooperator": 0.013705638880109339,
+          "risk_averse_balancer": -1.1862943611198906,
+          "free_rider": -2.5862943611198905
+        },
+        "log_after": {
+          "altruistic_builder": -0.036294361119890595,
+          "conditional_cooperator": -0.3862943611198907,
+          "risk_averse_balancer": -1.3862943611198906,
+          "free_rider": -1.4862943611198904
+        },
+        "posterior_after": {
+          "altruistic_builder": 0.4549,
+          "conditional_cooperator": 0.3205,
+          "risk_averse_balancer": 0.1179,
+          "free_rider": 0.1067
+        }
+      },
+      {
+        "turn_number": 3,
+        "last_turn": "agent_2 said: \"Let us verify first and avoid risk.\"",
+        "increments": {
+          "altruistic_builder": 0.15,
+          "conditional_cooperator": 0.8,
+          "risk_averse_balancer": 2.2,
+          "free_rider": -0.6
+        },
+        "log_before": {
+          "altruistic_builder": -0.036294361119890595,
+          "conditional_cooperator": -0.3862943611198907,
+          "risk_averse_balancer": -1.3862943611198906,
+          "free_rider": -1.4862943611198904
+        },
+        "log_after": {
+          "altruistic_builder": 0.1137056388801094,
+          "conditional_cooperator": 0.41370563888010936,
+          "risk_averse_balancer": 0.8137056388801096,
+          "free_rider": -2.0862943611198905
+        },
+        "posterior_after": {
+          "altruistic_builder": 0.2235,
+          "conditional_cooperator": 0.3017,
+          "risk_averse_balancer": 0.4501,
+          "free_rider": 0.0248
+        }
+      }
+    ]
+  }
+}

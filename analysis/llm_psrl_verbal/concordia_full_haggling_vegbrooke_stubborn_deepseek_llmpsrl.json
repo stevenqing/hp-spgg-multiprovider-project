@@ -1,0 +1,5224 @@
+{
+  "domain": "haggling",
+  "config": "vegbrooke_stubborn",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "llm_psrl_verbal"
+  ],
+  "model": "DeepSeek-V3.2",
+  "information_audit": {
+    "llm_psrl_verbal": {
+      "mode": "centralized_verbal_posterior",
+      "sees_full_case": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "llm_psrl_verbal",
+      "episodes": 30,
+      "focal_score_mean": 0.6,
+      "focal_score_min_mean": 0.6,
+      "deal_score_mean": 0.30666666666666664,
+      "deal_min_score_mean": -0.37333333333333335,
+      "nash_product_mean": 0.1,
+      "agreement_rate_mean": 0.74,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 0,
+      "scores": {
+        "Elara Greenleaf": -2.0,
+        "Maeve Parsnipvale": 2.0
+      },
+      "focal_players": [
+        "Elara Greenleaf"
+      ],
+      "focal_score_mean": -2.0,
+      "focal_score_min": -2.0,
+      "deal_score_mean": 0.0,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Parsnipvale": -1.0,
+            "Elara Greenleaf": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Maeve likely believes Elara's true cost is around 3-4 coins, and offering 3 coins might be accepted as it's above the midpoint while still giving Maeve a positive reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Maeve Parsnipvale": 0.0,
+            "Elara Greenleaf": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Maeve likely believes Elara's cost is around 4 coins, so she's testing with 3 coins to gauge willingness, while Elara probably expects at least 4 coins to cover her cost and make a profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Parsnipvale": 1.0,
+            "Elara Greenleaf": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 4, but mutual compromise at midpoint seems plausible.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Parsnipvale": 2.0,
+            "Elara Greenleaf": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Maeve likely believes Elara's cost is around 2-3 coins, so offering 3 coins balances fairness with securing the deal while leaving some surplus for both.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Maeve Parsnipvale",
+            "seller": "Elara Greenleaf",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Maeve Parsnipvale": 0.0,
+            "Elara Greenleaf": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Maeve likely believes Elara's cost is around 4 coins, so she offers 3 to test willingness while leaving room for counter. Elara likely rejects as 3 is below her 5 coin cost, but may counter if she thinks Maeve will go higher.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 1,
+      "scores": {
+        "Seraphina Rootwood": 3.0,
+        "Silas Trufflebrook": -1.0
+      },
+      "focal_players": [
+        "Seraphina Rootwood"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 0.4,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.2,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": 1.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 1.0,
+          "nash_product": 1.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Silas likely values the item at 4 coins but wants a fair deal, while Seraphina's cost is 2 coins, making 3 coins a plausible compromise that benefits both parties.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": 0.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Silas likely believes Seraphina's true cost is around 2 coins, making 3 coins a fair offer that provides profit for both while testing her willingness to accept moderate gains.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": -1.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept as low as 2, making 3 a plausible compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Silas Trufflebrook": 0.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Silas likely believes Seraphina's true cost is around 4 coins, so he offers 3 to test her flexibility while leaving room for counteroffer.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": -1.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The buyer believes the seller's cost is likely around 3 coins, making a 3-coin offer a fair compromise that splits the surplus while being acceptable to both parties.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 2,
+      "scores": {
+        "Gareth Parsnipfield": -3.0,
+        "Eamon Beetlebranch": 4.0
+      },
+      "focal_players": [
+        "Gareth Parsnipfield"
+      ],
+      "focal_score_mean": -3.0,
+      "focal_score_min": -3.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.6,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 2.0,
+            "Gareth Parsnipfield": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their respective thresholds, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 1.0,
+            "Gareth Parsnipfield": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between buyer's maximum reward and seller's cost, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"The buyer's reward of 2 coins suggests they value the item below the seller's 5 coin cost, making a middle-ground offer of 3 coins plausible but likely insufficient for the seller to accept given their higher cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Eamon likely values the item around 3-4 coins but wants to start lower, while Gareth needs at least 4 coins to cover costs and make minimal profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 1.0,
+            "Gareth Parsnipfield": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The buyer likely believes the seller's cost is around 2-3 coins, making 3 coins a reasonable offer that splits the surplus while still providing profit for both parties.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 3,
+      "scores": {
+        "Torin Gourdwhisper": 2.0,
+        "Asher Nettlewood": 4.0
+      },
+      "focal_players": [
+        "Torin Gourdwhisper"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 1.2,
+      "deal_min_score_mean": 0.0,
+      "nash_product_mean": 0.4,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Asher Nettlewood": 2.0,
+            "Torin Gourdwhisper": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Asher likely believes Torin's cost is around 2-3 coins, making 3 coins a fair compromise that splits the surplus while still giving both parties a positive gain.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Asher Nettlewood": 0.0,
+            "Torin Gourdwhisper": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 3 coins and seller's cost of 2 coins, a price of 3 coins splits the surplus evenly, making it a fair compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Asher Nettlewood": 0.0,
+            "Torin Gourdwhisper": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely recognize the fair value at 3 coins, matching the buyer's reward and seller's cost, suggesting mutual acceptance for an equitable deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Asher Nettlewood": 0.0,
+            "Torin Gourdwhisper": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 3 coins and seller's cost of 2 coins, a price of 3 coins splits the surplus evenly, making it a fair compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Asher Nettlewood",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Asher Nettlewood": 2.0,
+            "Torin Gourdwhisper": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Asher likely believes Torin's cost is around 2-3 coins, while Torin probably thinks Asher values the item at 4-5 coins. A 3-coin offer splits the difference and gives both some surplus.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 4,
+      "scores": {
+        "Linnea Beetleblossom": 3.0,
+        "Thora Gourdvine": -2.0
+      },
+      "focal_players": [
+        "Linnea Beetleblossom"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 1.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely recognize a fair price near the middle ground, with buyer valuing at 4 coins and seller's cost at 3 coins, making 3 coins a plausible agreement point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely recognize the equal reward and cost at 3 coins, making this a natural focal point for agreement.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Thora likely expects at least 4 coins to cover her cost, but Linnea may test if she'll accept less given the potential for mutual gain.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 1.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 4, making 3 a plausible compromise that splits the difference.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 1.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay slightly above cost and seller willing to accept slightly below reward to secure a deal.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 5,
+      "scores": {
+        "Jasper Peppercorn": 2.0,
+        "Callum Leekstone": -1.0
+      },
+      "focal_players": [
+        "Jasper Peppercorn"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.4,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": -1.0,
+            "Callum Leekstone": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -3.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper believes Callum might accept a mid-range offer since his cost is 5 coins, making 3 coins a reasonable compromise that still gives Jasper some reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, making this a fair middle ground where both can gain from trade.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 2.0,
+            "Callum Leekstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper likely believes Callum's cost is around 2 coins and may accept 3 as a fair compromise, while Callum might see 3 coins as profitable enough to accept rather than risk losing the deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 1.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The seller likely expects a price near their cost plus a small profit, making 3 coins a plausible compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Callum's true cost is around 4 coins, so starting at 3 leaves room to negotiate upward while still securing a profit.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 6,
+      "scores": {
+        "Jasper Peppercorn": 1.0,
+        "Willow Thistlebrook": -3.0
+      },
+      "focal_players": [
+        "Jasper Peppercorn"
+      ],
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "deal_score_mean": -0.4,
+      "deal_min_score_mean": -1.0,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 1.0,
+            "Willow Thistlebrook": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 4, making 3 a plausible compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": -1.0,
+            "Willow Thistlebrook": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -3.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper believes Willow might accept a moderate price above her cost but below his maximum, as both have room for mutual gain.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 2.0,
+            "Willow Thistlebrook": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow might accept 3 coins since it's above her cost but still gives Jasper a decent profit, balancing both parties' interests.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Willow Thistlebrook": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Willow's cost is around 4 coins, so he offers 3 to test her willingness while leaving room for counter-offer.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Willow Thistlebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": -1.0,
+            "Willow Thistlebrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between buyer's reward and seller's cost, suggesting a fair compromise.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 7,
+      "scores": {
+        "Linnea Beetleblossom": 0.0,
+        "Anya Pepperbloom": 0.0
+      },
+      "focal_players": [
+        "Linnea Beetleblossom"
+      ],
+      "focal_score_mean": 0.0,
+      "focal_score_min": 0.0,
+      "deal_score_mean": 0.0,
+      "deal_min_score_mean": -0.8,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 2.0,
+            "Anya Pepperbloom": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value a fair middle ground around 3 coins, balancing buyer's reward and seller's cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": -1.0,
+            "Anya Pepperbloom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between buyer's reward and seller's cost, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": -1.0,
+            "Anya Pepperbloom": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely recognize the fair market value is around 3 coins, balancing buyer's reward and seller's cost, making this a mutually acceptable compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 0.0,
+            "Anya Pepperbloom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Linnea likely values the item at around 3 coins, while Anya's cost is 2 coins, making 3 coins a plausible compromise that gives both parties a small surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Linnea Beetleblossom",
+            "seller": "Anya Pepperbloom",
+            "buyer_action": "2 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Linnea Beetleblossom": 0.0,
+            "Anya Pepperbloom": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Linnea likely believes Anya's cost is around 2-3 coins and will start low, while Anya probably expects at least 3 coins to cover her cost, making early low offers likely rejected.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 8,
+      "scores": {
+        "Thora Gourdvine": -2.0,
+        "Rosalind Nettleford": 4.0
+      },
+      "focal_players": [
+        "Thora Gourdvine"
+      ],
+      "focal_score_mean": -2.0,
+      "focal_score_min": -2.0,
+      "deal_score_mean": 0.4,
+      "deal_min_score_mean": -0.6,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 0.0,
+            "Thora Gourdvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Rosalind likely believes Thora's cost is around 2 coins and may accept 3, while Thora probably thinks Rosalind values the item at 3 coins and would accept that price.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 2.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Rosalind likely believes Thora's cost is around 2-3 coins, while Thora might accept 3 coins as it's above her cost but still gives Rosalind a decent surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Rosalind Nettleford": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Rosalind likely believes Thora's cost is moderate, but Thora may reject 3 coins as too low given her 5 coin cost, testing willingness to counter.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 2.0,
+            "Thora Gourdvine": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their respective thresholds, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Rosalind Nettleford": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Rosalind likely believes Thora's cost is around 4 coins, while Thora suspects Rosalind values the item at 4-5 coins, creating a moderate gap where 3 coins is a plausible opening but insufficient for immediate acceptance.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 9,
+      "scores": {
+        "Finnian Thistledew": 0.0,
+        "Thora Gourdvine": -1.0
+      },
+      "focal_players": [
+        "Finnian Thistledew"
+      ],
+      "focal_score_mean": 0.0,
+      "focal_score_min": 0.0,
+      "deal_score_mean": -0.2,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "2 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Finnian Thistledew": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Both parties likely value the item around 3 coins, but initial offers may be strategic to test willingness to compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Finnian Thistledew": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Thora likely believes Finnian's cost is around 2 coins, making 3 coins a fair compromise that still yields her a small profit while being acceptable to Finnian.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Finnian Thistledew": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Thora likely believes Finnian's cost is around 4 coins, while Finnian suspects Thora values the item at 2-3 coins, creating a moderate gap that requires further negotiation.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Finnian Thistledew": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item near 2 coins, making this a fair compromise point where both can achieve positive surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": -1.0,
+            "Finnian Thistledew": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Thora likely believes Finnian's cost is around 3-4 coins, and Finnian may accept 3 coins as it's above his cost but still gives Thora a reasonable reward.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 10,
+      "scores": {
+        "Rosalind Nettleford": 6.0,
+        "Seraphina Rootwood": -2.0
+      },
+      "focal_players": [
+        "Rosalind Nettleford"
+      ],
+      "focal_score_mean": 6.0,
+      "focal_score_min": 6.0,
+      "deal_score_mean": 0.8,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Rosalind Nettleford": 0.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Seller likely expects at least 4 coins to cover their 5 coin cost, while buyer may aim for 3 coins given their 4 coin reward, creating a gap where seller might reject lower offers hoping for buyer to increase.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 2.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 5 and seller's cost of 3, a price of 3 coins splits the surplus evenly, making it a fair compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 2.0,
+            "Seraphina Rootwood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 5 coins and seller's cost of 4 coins, a price of 3 coins offers a fair split of surplus where both parties gain: buyer gets 2 coins profit, seller gets 1 coin profit above cost, making acceptance likely.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 1.0,
+            "Seraphina Rootwood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their respective valuations, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Rosalind Nettleford",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Rosalind Nettleford": 1.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The seller likely expects a price near their cost, while the buyer aims to pay less than their reward. A 3-coin offer splits the difference and gives both parties a small surplus.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 11,
+      "scores": {
+        "Jasper Peppercorn": 2.0,
+        "Anya Pepperbloom": 0.0
+      },
+      "focal_players": [
+        "Jasper Peppercorn"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 0.4,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.4,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 2.0,
+            "Jasper Peppercorn": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya believes Jasper might accept a moderate price that still gives her a decent reward, while Jasper likely wants at least his cost covered with some profit, making 3 coins a plausible middle ground.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Jasper Peppercorn": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, making this a fair middle ground that balances buyer reward and seller cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": -1.0,
+            "Jasper Peppercorn": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya believes Jasper might accept 3 coins since it covers his cost, while Jasper thinks Anya values the item enough to pay slightly above cost for a fair deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": -1.0,
+            "Jasper Peppercorn": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 2, making 3 a plausible compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Jasper Peppercorn",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Jasper Peppercorn": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Anya likely values the item around 3-4 coins given her reward of 2, while Jasper's cost is 5, making agreement challenging unless Anya raises her offer significantly.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 12,
+      "scores": {
+        "Finnian Thistledew": 3.0,
+        "Callum Leekstone": -1.0
+      },
+      "focal_players": [
+        "Finnian Thistledew"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 0.4,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Callum Leekstone": 0.0,
+            "Finnian Thistledew": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Callum likely believes Finnian's true cost is around 4 coins, while Finnian suspects Callum values the item at 4-5 coins, creating a moderate gap where 3 coins is too low for Finnian but signals willingness to negotiate upward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": -1.0,
+            "Finnian Thistledew": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between buyer's reward and seller's cost, suggesting a fair compromise is achievable.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 0.0,
+            "Finnian Thistledew": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Callum likely values the item around 3 coins, while Finnian's cost is 2 coins, making 3 coins a plausible compromise that benefits both parties.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": -1.0,
+            "Finnian Thistledew": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value a fair middle ground, with the buyer willing to pay slightly above cost and the seller accepting a reasonable profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Finnian Thistledew",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 1.0,
+            "Finnian Thistledew": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely recognize a fair price near the middle ground, with buyer valuing at 4 coins and seller's cost at 3 coins, making 3 coins a plausible agreement point.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 13,
+      "scores": {
+        "Thora Gourdvine": -4.0,
+        "Eamon Beetlebranch": 4.0
+      },
+      "focal_players": [
+        "Thora Gourdvine"
+      ],
+      "focal_score_mean": -4.0,
+      "focal_score_min": -4.0,
+      "deal_score_mean": 0.0,
+      "deal_min_score_mean": -0.8,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around its true cost of 3 coins, making this a fair middle ground that balances buyer reward and seller cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": -1.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The seller's cost is 4 coins, but they might accept 3 coins to avoid losing the sale entirely, given the buyer's maximum reward is only 2 coins, suggesting the buyer is willing to pay above their true value to secure the deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 1.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3-4 coins, with buyer hoping to pay less than full value and seller willing to accept slightly above cost to secure a deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 2.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon likely believes Thora's cost is around 2-3 coins, while Thora probably thinks Eamon values the item at 4-5 coins, creating a moderate overlap zone where 3 coins could be mutually acceptable.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 2.0,
+            "Thora Gourdvine": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their extremes, suggesting a fair compromise is achievable.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 14,
+      "scores": {
+        "Silas Trufflebrook": 3.0,
+        "Callum Leekstone": 2.0
+      },
+      "focal_players": [
+        "Silas Trufflebrook"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 1.0,
+      "deal_min_score_mean": 0.0,
+      "nash_product_mean": 0.2,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_reward": 4.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 1.0,
+            "Silas Trufflebrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 1.0,
+          "nash_product": 1.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Callum likely believes Silas will accept 3 coins, as it's above his cost and offers a reasonable profit, while still saving Callum 1 coin from his maximum reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 0.0,
+            "Silas Trufflebrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Callum likely believes Silas will accept 3 coins as it's above his cost but below the full reward, offering mutual benefit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 0.0,
+            "Silas Trufflebrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Callum likely believes Silas will accept 3 coins as it's above his cost but still gives Callum a fair reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 1.0,
+            "Silas Trufflebrook": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value a fair middle ground; 3 coins splits the difference between buyer's reward and seller's cost, making acceptance probable.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Callum Leekstone",
+            "seller": "Silas Trufflebrook",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Callum Leekstone": 0.0,
+            "Silas Trufflebrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Callum likely believes Silas will accept 3 coins as it's above his cost but below the full reward, offering mutual benefit.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 15,
+      "scores": {
+        "Thora Gourdvine": -1.0,
+        "Jasper Peppercorn": 2.0
+      },
+      "focal_players": [
+        "Thora Gourdvine"
+      ],
+      "focal_score_mean": -1.0,
+      "focal_score_min": -1.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 1.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper likely believes Thora's cost is around 2-3 coins, making 3 coins a plausible compromise that splits the surplus while still giving both some profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Thora Gourdvine": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper believes Thora might accept 3 coins as it's above her cost, while Thora thinks Jasper values the item at 3 coins and might settle there.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Thora's cost is around 4 coins, making 3 coins a plausible opening offer that still leaves room for negotiation, while Thora probably expects at least 4 coins to cover her costs and secure a profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 1.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 4 coins and seller's cost of 3 coins, a price of 3 coins is mutually beneficial\u2014buyer gains 1 coin surplus, seller breaks even, making acceptance likely.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Thora Gourdvine",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Thora Gourdvine": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Thora's cost is around 4 coins and will try to settle near that, while Thora probably expects at least 4 coins to cover her 5-coin cost with minimal profit.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 16,
+      "scores": {
+        "Rowan Mossglen": 0.0,
+        "Thora Gourdvine": -2.0
+      },
+      "focal_players": [
+        "Rowan Mossglen"
+      ],
+      "focal_score_mean": 0.0,
+      "focal_score_min": 0.0,
+      "deal_score_mean": -0.4,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": -1.0,
+            "Rowan Mossglen": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, making it a fair middle ground that balances buyer's reward and seller's cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Rowan Mossglen": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Thora likely believes Rowan's true cost is around 4 coins, testing with 3 to gauge willingness while leaving room for compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Rowan Mossglen": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"The buyer likely believes the seller's cost is around 3-4 coins and is testing with a moderate offer, while the seller probably expects at least 4 coins to cover their 5-coin cost with minimal profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": -1.0,
+            "Rowan Mossglen": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The buyer likely values the item around 3-4 coins, while the seller's cost is 4 coins. A 3-coin offer may be acceptable to both as it gives the buyer some surplus and covers most of the seller's cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Thora Gourdvine",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Thora Gourdvine": 0.0,
+            "Rowan Mossglen": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties value the item at 3 coins, making this price the natural equilibrium where both can agree without further negotiation.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 17,
+      "scores": {
+        "Gareth Parsnipfield": 1.0,
+        "Eamon Beetlebranch": -1.0
+      },
+      "focal_players": [
+        "Gareth Parsnipfield"
+      ],
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "deal_score_mean": 0.0,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "2 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Both parties value the item at 3 coins, creating a narrow bargaining zone. The buyer may test lower prices first while the seller likely expects at least 3 coins to accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": -1.0,
+            "Gareth Parsnipfield": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The buyer likely believes the seller's cost is around 3 coins and is testing a moderate offer that still provides profit for both, while the seller may accept to secure a deal rather than risk losing it.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The buyer likely believes the seller's cost is around 2 coins and is testing a moderate offer that still provides mutual benefit, while the seller may accept since 3 coins exceeds their cost and leaves room for profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon likely believes Gareth's cost is around 2 coins, making 3 coins a fair compromise that gives both some surplus while being acceptable to Gareth.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Gareth Parsnipfield",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Gareth Parsnipfield": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"The buyer's reward of 3 coins suggests they value the item at that price, while the seller's cost is 4 coins, making them unlikely to accept less than 4. Offering 3 coins tests if the seller might compromise, but rejection is probable as it's below their cost.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 18,
+      "scores": {
+        "Torin Gourdwhisper": 2.0,
+        "Linnea Beetleblossom": -1.0
+      },
+      "focal_players": [
+        "Torin Gourdwhisper"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 0.0,
+            "Linnea Beetleblossom": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Torin likely believes Linnea's cost is around 4 coins, so starting at 3 might test her willingness while leaving room to increase. Linnea probably expects at least 4 coins to cover her 5 coin cost with some profit, making 3 too low to accept immediately.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 1.0,
+            "Linnea Beetleblossom": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, but starting with a lower offer may test seller's flexibility while leaving room for negotiation.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 0.0,
+            "Linnea Beetleblossom": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Torin likely believes Linnea's cost is around 2-3 coins, while Linnea probably thinks Torin values the item at 4-5 coins, creating a moderate expectation gap.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 1.0,
+            "Linnea Beetleblossom": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their respective thresholds, making it a fair compromise that satisfies both.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 0.0,
+            "Linnea Beetleblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Torin believes Linnea's cost is around 2 coins and may accept 3 as a fair profit, while Linnea thinks Torin values the item at 3 coins and would accept that price.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 19,
+      "scores": {
+        "Ivy Mossheart": 2.0,
+        "Gareth Parsnipfield": -1.0
+      },
+      "focal_players": [
+        "Ivy Mossheart"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 0.2,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.4,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Gareth Parsnipfield": 0.0,
+            "Ivy Mossheart": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Gareth likely values the item around 3-4 coins, but Ivy's cost is 5 coins, so she'll probably reject offers below that unless she's desperate to sell.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Gareth Parsnipfield": 0.0,
+            "Ivy Mossheart": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Gareth likely believes Ivy's cost is around 4 coins, so he offers 3 hoping she'll accept a small profit, but Ivy probably wants at least 4 to cover most of her cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gareth Parsnipfield": -1.0,
+            "Ivy Mossheart": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value a fair middle ground; 3 coins splits the difference between buyer's reward and seller's cost, making acceptance probable.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gareth Parsnipfield": 0.0,
+            "Ivy Mossheart": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The seller likely expects a price near the midpoint between their cost and the buyer's maximum value, making 3 coins a plausible compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_reward": 2.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Gareth Parsnipfield",
+            "seller": "Ivy Mossheart",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Gareth Parsnipfield": 0.0,
+            "Ivy Mossheart": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Gareth likely believes Ivy's cost is around 4 coins, so he's testing with 3 to gauge her flexibility while leaving room for counter-offer.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 20,
+      "scores": {
+        "Callum Leekstone": 2.0,
+        "Willow Thistlebrook": 6.0
+      },
+      "focal_players": [
+        "Callum Leekstone"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 1.6,
+      "deal_min_score_mean": 0.2,
+      "nash_product_mean": 0.6,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 4.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Thistlebrook": 1.0,
+            "Callum Leekstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 1.0,
+          "nash_product": 1.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow believes Callum's cost is around 2 coins, so offering 3 coins provides a fair profit while keeping some surplus for herself.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Thistlebrook": 2.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow believes Callum's cost is around 3 coins, so offering exactly that price might be accepted as fair while still securing a 2-coin surplus for herself.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Thistlebrook": -1.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow believes Callum might accept 3 coins since it matches his cost, making the deal fair and avoiding a potential rejection at lower prices.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Thistlebrook": 2.0,
+            "Callum Leekstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow believes Callum might accept a moderate price around 3 coins, balancing her reward of 5 coins and his cost of 2 coins, aiming for a fair split of the surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Willow Thistlebrook",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Thistlebrook": 2.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Willow believes Callum's cost is around 3 coins, so offering exactly that price might be accepted as fair while still securing a 2-coin profit for herself.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 21,
+      "scores": {
+        "Jasper Peppercorn": 1.0,
+        "Rowan Mossglen": -2.0
+      },
+      "focal_players": [
+        "Jasper Peppercorn"
+      ],
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "deal_score_mean": -0.2,
+      "deal_min_score_mean": -0.6,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Rowan Mossglen": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Rowan's cost is around 4 coins, so starting at 3 leaves room to move up while still securing a profit, but Rowan probably needs at least 4 to accept given their 5 coin cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Rowan Mossglen": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Rowan's cost is around 4 coins, while Rowan thinks Jasper values the item at 2-3 coins, creating a gap where 3 coins is too low for Rowan but Jasper may not go higher.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Rowan Mossglen": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper likely values the item at around 3 coins, while Rowan's cost is 2 coins, making 3 coins a plausible compromise that gives both parties some surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": -1.0,
+            "Rowan Mossglen": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper believes Rowan might accept a mid-range offer since the seller's cost is 4 coins, making 3 coins a plausible compromise that still yields Jasper a small profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Rowan Mossglen",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 2.0,
+            "Rowan Mossglen": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value a fair middle ground; 3 coins splits the surplus evenly, making acceptance probable.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 22,
+      "scores": {
+        "Eamon Beetlebranch": 3.0,
+        "Torin Gourdwhisper": 1.0
+      },
+      "focal_players": [
+        "Eamon Beetlebranch"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 0.8,
+      "deal_min_score_mean": 0.0,
+      "nash_product_mean": 0.4,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": -1.0,
+            "Torin Gourdwhisper": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon believes Torin might accept 3 coins as it's close to his cost, while still securing a reasonable profit for himself.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 4.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 1.0,
+            "Torin Gourdwhisper": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 1.0,
+          "nash_product": 1.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon likely believes Torin's cost is around 2 coins and is testing a moderate offer that still leaves profit for both, while Torin probably sees this as reasonable given his costs and the buyer's potential valuation.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 4.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 1.0,
+            "Torin Gourdwhisper": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 1.0,
+          "nash_product": 1.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon likely values the item around 3-4 coins, while Torin's cost is 2 coins, making 3 coins a plausible compromise that both might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 2.0,
+            "Torin Gourdwhisper": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Eamon likely believes Torin's cost is around 2-3 coins, while Torin probably thinks Eamon values the item at 4-5 coins. A 3-coin offer splits the difference and gives both parties positive surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Eamon Beetlebranch",
+            "seller": "Torin Gourdwhisper",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Eamon Beetlebranch": 0.0,
+            "Torin Gourdwhisper": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Eamon likely believes Torin's cost is around 2-3 coins and will try to settle near 3, while Torin knows his actual cost is 4 coins and will reject offers below that threshold.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 23,
+      "scores": {
+        "Rosalind Nettleford": 0.0,
+        "Seraphina Rootwood": 3.0
+      },
+      "focal_players": [
+        "Rosalind Nettleford"
+      ],
+      "focal_score_mean": 0.0,
+      "focal_score_min": 0.0,
+      "deal_score_mean": 0.6,
+      "deal_min_score_mean": -0.6,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Seraphina Rootwood": 2.0,
+            "Rosalind Nettleford": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Seller likely expects a moderate price around 3-4 coins, given her cost is 3 coins and buyer's reward is 5 coins, making a 3-coin offer plausible for mutual gain.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Seraphina Rootwood": -1.0,
+            "Rosalind Nettleford": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between buyer's reward and seller's cost, making it a fair compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Seraphina Rootwood": 2.0,
+            "Rosalind Nettleford": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Seraphina likely believes Rosalind's cost is around 2-3 coins, making 3 coins a plausible compromise that still yields her a small profit while appearing generous.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_reward": 4.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Seraphina Rootwood": 1.0,
+            "Rosalind Nettleford": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 4 coins and seller's cost of 3 coins, a price of 3 coins splits the surplus evenly, making it a fair compromise that both parties might accept.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Seraphina Rootwood",
+            "seller": "Rosalind Nettleford",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Seraphina Rootwood": -1.0,
+            "Rosalind Nettleford": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Seraphina may test the midpoint, knowing Rosalind's cost is 3 coins but hoping she'll accept slightly below her true value to secure a deal.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 24,
+      "scores": {
+        "Seraphina Rootwood": -2.0,
+        "Anya Pepperbloom": 5.0
+      },
+      "focal_players": [
+        "Seraphina Rootwood"
+      ],
+      "focal_score_mean": -2.0,
+      "focal_score_min": -2.0,
+      "deal_score_mean": 0.6,
+      "deal_min_score_mean": -0.8,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 2.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya likely believes Seraphina's cost is around 2-3 coins, making 3 coins a fair compromise that ensures mutual benefit while leaving some surplus for both.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 1.0,
+            "Seraphina Rootwood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 4, making 3 a plausible compromise point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 2.0,
+            "Seraphina Rootwood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya likely values the item around 4 coins but starts lower to test Seraphina's willingness, while Seraphina may accept 3 coins as it still yields a small profit above her cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 2.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": -1.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, making it a fair compromise between buyer's reward and seller's cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 1.0,
+            "Seraphina Rootwood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 4, making 3 a plausible compromise point where both gain positive surplus.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 25,
+      "scores": {
+        "Silas Trufflebrook": 0.0,
+        "Asher Nettlewood": -1.0
+      },
+      "focal_players": [
+        "Silas Trufflebrook"
+      ],
+      "focal_score_mean": 0.0,
+      "focal_score_min": 0.0,
+      "deal_score_mean": -0.2,
+      "deal_min_score_mean": -0.6,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Silas Trufflebrook": 0.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Silas likely believes Asher's true cost is around 4 coins, so starting at 3 leaves room to negotiate upward while still securing a deal below his 4 coin reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": 2.0,
+            "Asher Nettlewood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Silas likely believes Asher's cost is around 2-3 coins, so offering 3 coins balances getting a deal while ensuring acceptance.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": -1.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Silas likely believes Asher's true cost is around 3 coins, making a 3-coin offer a fair compromise that balances his reward with Asher's willingness to sell.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Trufflebrook": -1.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 2.0 and seller's cost of 3.0, a price of 3 coins splits the difference and is likely acceptable to both parties, as it covers the seller's cost while offering the buyer a fair deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Silas Trufflebrook",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Silas Trufflebrook": 0.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Silas likely believes Asher's true cost is around 4 coins, so he's testing with 3 to gauge flexibility while leaving room to increase.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 26,
+      "scores": {
+        "Anya Pepperbloom": 2.0,
+        "Seraphina Rootwood": 2.0
+      },
+      "focal_players": [
+        "Anya Pepperbloom"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 0.8,
+      "deal_min_score_mean": 0.2,
+      "nash_product_mean": 0.4,
+      "agreement_rate": 0.6,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Anya likely believes Seraphina's true cost is around 4 coins, so she offers 3 hoping for a small profit margin, but Seraphina probably needs at least 4 to cover her 5-coin cost with minimal loss.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Anya likely believes Seraphina's true cost is around 2-3 coins, while Seraphina knows her actual cost is 4 coins, making a deal at 3 coins improbable but worth testing.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Seraphina Rootwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties value the item at 3 coins, making this a fair equilibrium price where trade is mutually beneficial.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 3.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 0.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya likely believes Seraphina's cost is around 2 coins, so offering 3 coins provides a fair profit while staying below her maximum of 3 coins reward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_reward": 5.0,
+            "seller_cost": 2.0
+          },
+          "action": {
+            "buyer": "Anya Pepperbloom",
+            "seller": "Seraphina Rootwood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Pepperbloom": 2.0,
+            "Seraphina Rootwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Anya likely believes Seraphina's cost is around 2 coins, so offering 3 coins provides a fair profit while staying below her 5 coin reward, making acceptance probable.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 27,
+      "scores": {
+        "Linnea Beetleblossom": -4.0,
+        "Elara Greenleaf": 4.0
+      },
+      "focal_players": [
+        "Linnea Beetleblossom"
+      ],
+      "focal_score_mean": -4.0,
+      "focal_score_min": -4.0,
+      "deal_score_mean": 0.0,
+      "deal_min_score_mean": -0.8,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 5.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Greenleaf": 2.0,
+            "Linnea Beetleblossom": -2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -2.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, as it's midway between their respective thresholds, making it a fair compromise that balances reward and cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Greenleaf": -1.0,
+            "Linnea Beetleblossom": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Elara likely believes Linnea's true cost is around 3-4 coins, and offering 3 coins might be accepted as it provides some profit while still being below her maximum valuation of 5 coins.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Greenleaf": 2.0,
+            "Linnea Beetleblossom": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Elara likely believes Linnea's cost is around 2-3 coins, making 3 coins a fair compromise that ensures mutual benefit while leaving some surplus for both.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 4.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Greenleaf": 1.0,
+            "Linnea Beetleblossom": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around 3 coins, with buyer willing to pay up to 4 and seller willing to accept down to 2, making 3 a fair compromise.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Elara Greenleaf",
+            "seller": "Linnea Beetleblossom",
+            "buyer_action": "2 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Elara Greenleaf": 0.0,
+            "Linnea Beetleblossom": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"2 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Elara likely believes Linnea's cost is around 2-3 coins, so she'll start low but may be willing to go higher if Linnea counters firmly.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 28,
+      "scores": {
+        "Callum Leekstone": -1.0,
+        "Torin Gourdwhisper": 0.0
+      },
+      "focal_players": [
+        "Callum Leekstone"
+      ],
+      "focal_score_mean": -1.0,
+      "focal_score_min": -1.0,
+      "deal_score_mean": -0.2,
+      "deal_min_score_mean": -0.4,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.8,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 3.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 0.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Both parties likely value the item around its true cost of 3 coins, making this a fair middle ground that balances buyer reward and seller cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 2.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": -1.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Given the buyer's reward of 2.0 and seller's cost of 3.0, a price of 3 coins splits the difference and may be acceptable to both parties, as it covers the seller's cost while offering the buyer a fair deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 2.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": -1.0,
+            "Callum Leekstone": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": -2.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"The seller's cost is 4 coins, but they might accept 3 coins to avoid losing the sale entirely, especially since the buyer's reward is only 2 coins, suggesting limited willingness to pay much higher.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 2.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Torin believes Callum's cost is around 2-3 coins, so offering 3 coins might be accepted while still securing a reasonable profit.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_reward": 4.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Torin Gourdwhisper",
+            "seller": "Callum Leekstone",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Torin Gourdwhisper": 0.0,
+            "Callum Leekstone": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Torin likely believes Callum's true cost is around 3-4 coins, so starting at 3 coins tests willingness while leaving room to move up. Callum probably expects at least 4 coins to cover costs, making 3 coins too low to accept immediately.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 29,
+      "scores": {
+        "Asher Nettlewood": -1.0,
+        "Jasper Peppercorn": 4.0
+      },
+      "focal_players": [
+        "Asher Nettlewood"
+      ],
+      "focal_score_mean": -1.0,
+      "focal_score_min": -1.0,
+      "deal_score_mean": 0.6,
+      "deal_min_score_mean": -0.2,
+      "nash_product_mean": 0.0,
+      "agreement_rate": 0.4,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Asher's true cost is around 4 coins, while Asher suspects Jasper values the item at 4-5 coins but is testing lower offers first.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 5.0,
+            "seller_cost": 3.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 2.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 2.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper likely believes Asher's cost is around 2-3 coins, making 3 coins a plausible compromise that yields moderate profit for both while avoiding rejection.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 3.0,
+            "seller_cost": 5.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Asher's true cost is around 4 coins, making 3 coins a plausible opening offer that might be rejected but leaves room for negotiation.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 3,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 3.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Jasper Peppercorn": 0.0,
+            "Asher Nettlewood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"reject\",\n    \"belief\": \"Jasper likely believes Asher's true cost is around 3 coins, but Asher's actual cost of 4 coins means he'll reject offers below that threshold.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 4,
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_reward": 5.0,
+            "seller_cost": 4.0
+          },
+          "action": {
+            "buyer": "Jasper Peppercorn",
+            "seller": "Asher Nettlewood",
+            "buyer_action": "3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Peppercorn": 2.0,
+            "Asher Nettlewood": -1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 1.0,
+          "min_score": -1.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n    \"buyer_action\": \"3 coins\",\n    \"seller_action\": \"accept\",\n    \"belief\": \"Jasper likely believes Asher's cost is around 2-3 coins, while Asher might accept 3 coins as it's above cost but still gives Jasper a decent surplus.\"\n}\n```"
+          }
+        }
+      ]
+    }
+  ]
+}

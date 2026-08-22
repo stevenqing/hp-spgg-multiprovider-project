@@ -1,0 +1,100 @@
+{
+  "experiment": "E-G HP-SPGG analytic component knock-out ladder",
+  "status": "complete",
+  "provider_calls": 0,
+  "kernel": "build_reward_tensor(n=3, backend='mixed', samples=3, seed=0, trap=False)",
+  "calibration": "analysis/e_g_hp_spgg_component_ladder/calibration_analytic_n3.npy",
+  "calibration_sha256": "d6362fd4a067e1c9cc653201acf6f28d08f0e20404aeff2ec7a64f8a8697c986",
+  "n": 3,
+  "type_count": 4,
+  "action_values": 5,
+  "action_profiles": 125,
+  "K": 20,
+  "beta": 0.25,
+  "sigma": 0.08,
+  "common_environment_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "environment_matching": "shared iid-uniform true type profile, product-uniform prior, analytic tensor, and exact oracle; variant trajectories are independent conditional on the environment seed",
+  "oracle": "exact centralized welfare argmax; zero-regret reference, not a bar",
+  "variants": {
+    "full": "practical PACT+ posterior-mean centralized objective with beta=0.25",
+    "minus_bonus": "same posterior-mean centralized objective and update as full, uncertainty bonus disabled",
+    "minus_update": "iid-uniform profile draw each episode, centralized sampled-profile objective, no update",
+    "minus_identity": "correct update; planning posterior rows attached by a fixed derangement",
+    "minus_dispatch": "same public-history factored posterior per actor; independent sampled profiles and own-utility best responses, with local disagreement bonus; no shared sample or centralized joint argmax"
+  },
+  "derangements": {
+    "0": [
+      1,
+      2,
+      0
+    ],
+    "1": [
+      2,
+      0,
+      1
+    ],
+    "2": [
+      1,
+      2,
+      0
+    ],
+    "3": [
+      2,
+      0,
+      1
+    ],
+    "4": [
+      1,
+      2,
+      0
+    ],
+    "5": [
+      2,
+      0,
+      1
+    ],
+    "6": [
+      1,
+      2,
+      0
+    ],
+    "7": [
+      2,
+      0,
+      1
+    ],
+    "8": [
+      1,
+      2,
+      0
+    ],
+    "9": [
+      2,
+      0,
+      1
+    ]
+  },
+  "decentralized_other_action_model": "uniform marginal over simultaneous actions of the other agents",
+  "decentralized_global_spread_bonus": "omitted because no actor selects a joint action profile",
+  "identity_minus_no_update": {
+    "mean": 0.024790317522858783,
+    "sem": 0.35001077631299493,
+    "ci95": [
+      -0.7669890671501177,
+      0.8165697021958352
+    ],
+    "significantly_worse": false
+  },
+  "long_rows": 1000
+}

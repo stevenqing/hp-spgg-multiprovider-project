@@ -1,0 +1,47 @@
+{
+  "registered_date": "2026-07-28",
+  "status": "frozen_before_generation_or_evaluation_of_seed_20_59_outcomes",
+  "experiment": "E-H MaaSSim grouped coupling prior confirmatory unit",
+  "seed_indices": [
+    20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
+    30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
+    40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+    50, 51, 52, 53, 54, 55, 56, 57, 58, 59
+  ],
+  "seed_count": 40,
+  "configuration": {
+    "rho": [0.0, 1.0],
+    "group_size": 4,
+    "n": 8,
+    "m": 2,
+    "K": 20,
+    "lambda": 0.0,
+    "likelihood_mode": "deterministic-rule",
+    "common_random_numbers": true,
+    "n_llm_calls": 0
+  },
+  "primary_endpoint": "paired final cumulative regret difference HARP minus Joint at rho=1",
+  "primary_prediction": "mean HARP minus Joint is positive",
+  "primary_confirmation_rule": "paired mean > 0 and two-sided 95% Student-t confidence interval lower bound > 0",
+  "confidence_interval": {
+    "degrees_of_freedom": 39,
+    "two_sided_t_critical_95": 2.02269092
+  },
+  "hard_correctness_gates": {
+    "rho0_joint_harp_action_mismatch_rounds": 0,
+    "rho0_joint_harp_utility_mismatch_transitions": 0,
+    "rho0_joint_harp_regret_mismatch_transitions": 0,
+    "rho1_joint_harp_s_action_mismatch_rounds": 0,
+    "rho1_joint_harp_s_utility_mismatch_transitions": 0,
+    "rho1_joint_harp_s_regret_mismatch_transitions": 0,
+    "deterministic_joint_true_profile_mass_decreases": 0
+  },
+  "secondary_endpoint": "paired final cumulative regret difference HARP-S minus Joint at rho=1",
+  "secondary_prediction": "HARP-S minus Joint equals exactly zero under deterministic 0/1 likelihood and CRN",
+  "analysis_policy": {
+    "exploratory_seed_0_19_results_are_not_combined_with_confirmation": true,
+    "no_parameter_tuning": true,
+    "no_additional_rho_group_size_m_K_or_alpha_values": true,
+    "no_paper_changes_before_result_review": true
+  }
+}

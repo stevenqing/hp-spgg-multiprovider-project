@@ -1,0 +1,171 @@
+{
+  "experiment": "E-B iterated Concordia-derived compact benchmark",
+  "native_protocol": false,
+  "backbone_invariant": true,
+  "selection_source": "retained one-shot margin screen followed by persona decision-value scan",
+  "selection_seeds": "0..4",
+  "report_seed_range": "1000..1000",
+  "episodes": 20,
+  "seeds": 1,
+  "sigma": 0.08,
+  "beta": 0.25,
+  "configs": [
+    "pub/london",
+    "pub/london_mini",
+    "haggling/fruitville",
+    "haggling/vegbrooke",
+    "haggling_multi_item/vegbrooke",
+    "haggling_multi_item/fruitville_multi"
+  ],
+  "planner": "exact exhaustive finite-action argmax",
+  "pf": "imposed independent four-type marginals",
+  "provenance": [
+    {
+      "seed": 1000,
+      "config_id": "pub/london",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.pub_coordination.configs.london",
+      "focal_players": [
+        "Florence Hall",
+        "Jacob Walker",
+        "Jack Taylor",
+        "Benjamin Roberts"
+      ],
+      "fixed_background_actions": {
+        "Joshua Clark": "The Red Lion",
+        "Jackson Young": "The Red Lion",
+        "Olivia Smith": "The Red Lion"
+      },
+      "persona_layer": "0.70 * exact PubCoordinationPayoff + 0.30 * one-hot persona venue score",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "pub/london_mini",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.pub_coordination.configs.london_mini",
+      "focal_players": [
+        "Florence Hall",
+        "Jacob Walker"
+      ],
+      "fixed_background_actions": {
+        "Jack Taylor": "The Crooked Billet",
+        "Benjamin Roberts": "The Red Lion",
+        "Joshua Clark": "The Red Lion"
+      },
+      "persona_layer": "0.70 * exact PubCoordinationPayoff + 0.30 * one-hot persona venue score",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling/fruitville",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling.configs.fruitville",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Nova Peachwood",
+        "seller": "Cedric Meadowbrook",
+        "buyer_reward": 6.0,
+        "seller_cost": 2.0
+      },
+      "players": [
+        "Nova Peachwood",
+        "Cedric Meadowbrook"
+      ],
+      "focal_players": [
+        "Nova Peachwood",
+        "Jasper Quincehill",
+        "Cedric Meadowbrook"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling/vegbrooke",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling.configs.vegbrooke",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Iris Cucumberford",
+        "seller": "Finnian Thistledew",
+        "buyer_reward": 3.0,
+        "seller_cost": 4.0
+      },
+      "players": [
+        "Iris Cucumberford",
+        "Finnian Thistledew"
+      ],
+      "focal_players": [
+        "Iris Cucumberford",
+        "Callum Leekstone",
+        "Finnian Thistledew",
+        "Griffin Cucumberpatch"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling_multi_item/vegbrooke",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling_multi_item.configs.vegbrooke",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Callum Leekstone",
+        "seller": "Iris Cucumberford",
+        "buyer_rewards": {
+          "apple": 5.0,
+          "banana": 6.0,
+          "pear": 5.0
+        },
+        "seller_costs": {
+          "apple": 1.0,
+          "banana": 2.0,
+          "pear": 1.0
+        }
+      },
+      "players": [
+        "Callum Leekstone",
+        "Iris Cucumberford"
+      ],
+      "focal_players": [
+        "Iris Cucumberford",
+        "Callum Leekstone"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    },
+    {
+      "seed": 1000,
+      "config_id": "haggling_multi_item/fruitville_multi",
+      "case_seed": 1000,
+      "upstream_config": "examples.games.haggling_multi_item.configs.fruitville_multi",
+      "deal": {
+        "game_index": 0,
+        "buyer": "Gaia Willowbrook",
+        "seller": "Elias Berryfield",
+        "buyer_rewards": {
+          "apple": 5.0,
+          "banana": 6.0,
+          "pear": 5.0
+        },
+        "seller_costs": {
+          "apple": 2.0,
+          "banana": 2.0,
+          "pear": 1.0
+        }
+      },
+      "players": [
+        "Gaia Willowbrook",
+        "Elias Berryfield"
+      ],
+      "focal_players": [
+        "Gaia Willowbrook",
+        "Elias Berryfield"
+      ],
+      "persona_layer": "persona-specific own/partner utility transform over exact HagglingPayoff",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    }
+  ]
+}

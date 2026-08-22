@@ -1,0 +1,2579 @@
+{
+  "experiment": "E-H MaaSSim grouped coupling prior",
+  "status": "minimal_complete_positive_null",
+  "backbone": "gpt-5.4-mini-20260317 (pinned but unused; deterministic rule replay)",
+  "n_llm_calls": 0,
+  "m_definition": "maximum requests/elicited drivers per replay round",
+  "beta": 0.25,
+  "preregistered_predictions": {
+    "P1": "At rho=0, HARP-Joint covers zero and HARP-S is trajectory-identical to HARP.",
+    "P2": "The paired gap rises monotonically with rho and measured posterior correlation.",
+    "P3": "The paired gap rises with group size g.",
+    "P4": "HARP-S restores a zero-covering paired gap at unchanged HARP storage."
+  },
+  "likelihood": "unchanged CourierDispatchEnv analytic likelihood",
+  "queue_snapshots": "unchanged E-E saved MaaSSim snapshots",
+  "joint_prior": "global pi_rho=(1-rho)*pi_independent+rho*pi_group_shared over full 16-type personas; exact two-component evidence updates",
+  "harp_s_sampling": "weighted group categorical log probabilities: log(mu_i)+rho*sum_{j!=i}log(mu_j); rho=1 samples one shared full persona per group",
+  "gates": {
+    "rho0_parity": [
+      {
+        "n": 2,
+        "max_marginal_tv": 1.3921155894713877e-16
+      },
+      {
+        "n": 3,
+        "max_marginal_tv": 8.326672684688674e-17
+      },
+      {
+        "n": 4,
+        "max_marginal_tv": 8.326672684688674e-17
+      }
+    ],
+    "repeat_determinism": true,
+    "oracle_regret_zero": true,
+    "decision_relevance": {
+      "native_lambda0": {
+        "definition": "enumerate all 16^(n/g) group-shared full-persona profiles; compare oracle assignments to the modal assignment",
+        "lambda": 0.0,
+        "group_size": 4,
+        "profile_count_per_round": 256,
+        "threshold": 0.1,
+        "mean_profile_change_fraction": 0.12234375,
+        "sensitive_round_fraction": 0.295,
+        "rounds": 400,
+        "passed": true,
+        "per_round": [
+          {
+            "seed": 0,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 4,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 0,
+            "round": 5,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 0,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 7,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 0,
+            "round": 8,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 0,
+            "round": 9,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 0,
+            "round": 10,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 0,
+            "round": 11,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 0,
+            "round": 12,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 0,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 0,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 4,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 1,
+            "round": 5,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 1,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 9,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 1,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 17,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 1,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 1,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 2,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 2,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 2,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 7,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 3,
+            "round": 8,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.3125
+          },
+          {
+            "seed": 3,
+            "round": 9,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 3,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 12,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 3,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 14,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 3,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 3,
+            "round": 16,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 3,
+            "round": 17,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 3,
+            "round": 18,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 3,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 4,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 2,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 4,
+            "round": 3,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 4,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 5,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 4,
+            "round": 6,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 4,
+            "round": 7,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 4,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 4,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 12,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 4,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 4,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 1,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 5,
+            "round": 2,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 5,
+            "round": 3,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 5,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 5,
+            "round": 9,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 5,
+            "round": 10,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 5,
+            "round": 11,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 5,
+            "round": 12,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 5,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 5,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 6,
+            "round": 16,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 6,
+            "round": 17,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 6,
+            "round": 18,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 6,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 7,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 4,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 7,
+            "round": 5,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 7,
+            "round": 6,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 7,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 7,
+            "round": 19,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 8,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 8,
+            "round": 15,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 8,
+            "round": 16,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 8,
+            "round": 17,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 8,
+            "round": 18,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 8,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 9,
+            "round": 14,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 9,
+            "round": 15,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 9,
+            "round": 16,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 9,
+            "round": 17,
+            "distinct_oracle_assignments": 5,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 9,
+            "round": 18,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 9,
+            "round": 19,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 10,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 7,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 10,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 10,
+            "round": 9,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 10,
+            "round": 10,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 10,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 10,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 2,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 11,
+            "round": 3,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 11,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 11,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 0,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 12,
+            "round": 1,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 12,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 3,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 12,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 5,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 12,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 7,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 12,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 16,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 12,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 12,
+            "round": 18,
+            "distinct_oracle_assignments": 5,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 12,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 5,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 13,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 12,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 13,
+            "round": 14,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 13,
+            "round": 15,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 16,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 17,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 13,
+            "round": 18,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 13,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 14,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 1,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 14,
+            "round": 2,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 14,
+            "round": 3,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 14,
+            "round": 4,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 14,
+            "round": 5,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 14,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 14,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 6,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 15,
+            "round": 7,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 15,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 15,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 10,
+            "distinct_oracle_assignments": 6,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 15,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 15,
+            "round": 18,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 15,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 16,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 3,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 4,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 5,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 16,
+            "round": 6,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 16,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 9,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 16,
+            "round": 10,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 16,
+            "round": 11,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 16,
+            "round": 12,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.4375
+          },
+          {
+            "seed": 16,
+            "round": 13,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.1875
+          },
+          {
+            "seed": 16,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 16,
+            "round": 19,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 17,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 1,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 17,
+            "round": 2,
+            "distinct_oracle_assignments": 6,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 17,
+            "round": 3,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.75
+          },
+          {
+            "seed": 17,
+            "round": 4,
+            "distinct_oracle_assignments": 4,
+            "profile_change_fraction": 0.3125
+          },
+          {
+            "seed": 17,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 7,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 17,
+            "round": 8,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 17,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 11,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 17,
+            "round": 12,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 17,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 14,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 17,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 0,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 1,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 18,
+            "round": 2,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.125
+          },
+          {
+            "seed": 18,
+            "round": 3,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 18,
+            "round": 4,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.125
+          },
+          {
+            "seed": 18,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 7,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 18,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 9,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 10,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 14,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 18,
+            "round": 15,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 18,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 18,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 0,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 19,
+            "round": 1,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 2,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 3,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 19,
+            "round": 4,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 19,
+            "round": 5,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 6,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 7,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 8,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 9,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 19,
+            "round": 10,
+            "distinct_oracle_assignments": 2,
+            "profile_change_fraction": 0.25
+          },
+          {
+            "seed": 19,
+            "round": 11,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 12,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 13,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 14,
+            "distinct_oracle_assignments": 3,
+            "profile_change_fraction": 0.5
+          },
+          {
+            "seed": 19,
+            "round": 15,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 16,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 17,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 18,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          },
+          {
+            "seed": 19,
+            "round": 19,
+            "distinct_oracle_assignments": 1,
+            "profile_change_fraction": 0.0
+          }
+        ]
+      },
+      "conflict_lambda1": null,
+      "selected_lambda": 0.0,
+      "passed": true
+    },
+    "joint_prior_verified": {
+      "formula": "global pi_rho=(1-rho)*pi_independent+rho*pi_group_shared over full personas",
+      "rho0_independent_full_persona_prior": true,
+      "rho1_shared_state_count": 256
+    },
+    "arm_regret_write_paths_verified": true
+  },
+  "minimal_evaluation": {
+    "paired_gaps": {
+      "rho0_harp": {
+        "arm": "harp",
+        "rho": 0.0,
+        "seeds": 20,
+        "mean": -0.5175000000000016,
+        "sem": 0.877380333720787,
+        "ci95_low": -2.353857038477609,
+        "ci95_high": 1.3188570384776057,
+        "ci95_covers_zero": true
+      },
+      "rho0_harp_s": {
+        "arm": "harp_s",
+        "rho": 0.0,
+        "seeds": 20,
+        "mean": -0.5175000000000016,
+        "sem": 0.877380333720787,
+        "ci95_low": -2.353857038477609,
+        "ci95_high": 1.3188570384776057,
+        "ci95_covers_zero": true
+      },
+      "rho1_harp": {
+        "arm": "harp",
+        "rho": 1.0,
+        "seeds": 20,
+        "mean": -0.6734999999999995,
+        "sem": 0.4991394041115589,
+        "ci95_low": -1.7181987728054924,
+        "ci95_high": 0.3711987728054933,
+        "ci95_covers_zero": true
+      },
+      "rho1_harp_s": {
+        "arm": "harp_s",
+        "rho": 1.0,
+        "seeds": 20,
+        "mean": -2.080000000000001,
+        "sem": 0.7366878221936489,
+        "ci95_low": -3.6218876118513084,
+        "ci95_high": -0.5381123881486938,
+        "ci95_covers_zero": false
+      }
+    },
+    "direct_harp_s_minus_harp": {
+      "left_arm": "harp_s",
+      "right_arm": "harp",
+      "rho": 1.0,
+      "seeds": 20,
+      "mean": -1.4065000000000012,
+      "sem": 0.4796880976766378,
+      "ci95_low": -2.4104871884372043,
+      "ci95_high": -0.4025128115627983,
+      "ci95_covers_zero": false
+    },
+    "belief_movement_gate": {
+      "definition": "rho=1 final-round pre-decision mean marginal probability assigned to each driver's true full persona, averaged over n=8 drivers and 20 seeds",
+      "uniform_prior": 0.0625,
+      "threshold": 0.125,
+      "threshold_multiple": 2.0,
+      "arms": {
+        "joint": {
+          "mean": 0.15236638242484496,
+          "sem": 0.026781788863827403,
+          "ratio_to_uniform_prior": 2.4378621187975194
+        },
+        "harp": {
+          "mean": 0.10247222397202707,
+          "sem": 0.007142265785256714,
+          "ratio_to_uniform_prior": 1.6395555835524331
+        },
+        "harp_s": {
+          "mean": 0.10247222397202707,
+          "sem": 0.007142265785256714,
+          "ratio_to_uniform_prior": 1.6395555835524331
+        }
+      },
+      "passed": true
+    },
+    "diagnostics": {
+      "rho0": {
+        "corr_tv_mean": 0.0,
+        "unelicited_frac_mean": 0.54125,
+        "realized_rule_corr_mean": 0.4416666666666666,
+        "oracle_max_abs_regret": 0.0
+      },
+      "rho1": {
+        "corr_tv_mean": 0.9999831657004445,
+        "unelicited_frac_mean": 0.54125,
+        "realized_rule_corr_mean": 1.0,
+        "oracle_max_abs_regret": 0.0
+      }
+    },
+    "action_mismatches": {
+      "rho0_harp_vs_harp_s": 0,
+      "rho1_harp_vs_harp_s": 72
+    },
+    "prediction_status": {
+      "P1": true,
+      "P2": "not supported by rho={0,1} endpoints; rho=0.5 not run after minimal stop",
+      "P3": "not tested after minimal stop",
+      "P4": false
+    },
+    "rho1_harp_significantly_positive": false,
+    "regret_comparable": true,
+    "continue_full_grid": false,
+    "stop_reason": "The full-persona decision-relevance gate passed and posterior correlation reached its maximum, but Joint showed no measurable oracle-regret advantage over HARP. This is the preregistered positive null result; the wider parameter grid was halted without tuning."
+  },
+  "artifacts": [
+    {
+      "path": "e_h_rho0p0_g4_n8_m2_s20.npz",
+      "bytes": 31409,
+      "sha256": "177edb91e5878624af58e651de23cfa7e1fed85f67bc8a9bccd93dc94c354820"
+    },
+    {
+      "path": "e_h_rho1p0_g4_n8_m2_s20.npz",
+      "bytes": 38137,
+      "sha256": "196afc4ba7c708b10cf2f6635f47b2c9f37774adaa16cc9dd52442de4a0d5303"
+    }
+  ]
+}

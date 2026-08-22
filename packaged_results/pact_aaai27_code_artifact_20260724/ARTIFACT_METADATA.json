@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "artifact": "pact_aaai27_code_artifact_20260724",
+  "release_date": "2026-07-25",
+  "anonymized": true,
+  "network_calls_required_for_validation": false,
+  "source_submission_sha256": "3603066a6294695a939674764a226139742f7bb735c11b65511fec558a53c35d",
+  "source_full_paper_sha256": "39360fd33bd0488a872e591c23270729df6bbce2eff10256eea919ae996f2e24",
+  "integrity_files": [
+    "MANIFEST.csv",
+    "SHA256SUMS.txt"
+  ]
+}

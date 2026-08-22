@@ -1,0 +1,172 @@
+{
+  "config": {
+    "rho0_gate": {
+      "rho": 0.0,
+      "g": 4,
+      "n": 8,
+      "m": 2,
+      "K": 20,
+      "seeds": 20
+    },
+    "temperature": {
+      "rho": 1.0,
+      "g": 4,
+      "n": 8,
+      "m": 2,
+      "K": 20,
+      "seeds": 20,
+      "alphas": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "likelihood_mode": "deterministic-rule"
+  },
+  "rho0_trajectory_gate": {
+    "action_mismatch_rounds": 0,
+    "utility_mismatch_transitions": 0,
+    "regret_mismatch_transitions": 0,
+    "harp_minus_joint": {
+      "mean": 0.0,
+      "sem": 0.0,
+      "ci95_low": 0.0,
+      "ci95_high": 0.0
+    }
+  },
+  "alpha1_baseline_exact": {
+    "action_traces": true,
+    "utility_traces": true,
+    "regret_traces": true
+  },
+  "temperature_reverse_gate": {
+    "alpha_low": 0.25,
+    "alpha_reference": 1.0,
+    "profile_difference_rounds": 0,
+    "profile_difference_seed_count": 0,
+    "total_rounds": 400,
+    "passed": false,
+    "alpha1_shared_support_size_min": 16,
+    "alpha1_shared_support_size_max": 256,
+    "alpha1_positive_probability_ratio_max": 1.0
+  },
+  "temperature": [
+    {
+      "alpha": 0.25,
+      "harp_s_minus_joint": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "harp_minus_joint": {
+        "mean": 0.7750000000000009,
+        "sem": 0.3690945535681666,
+        "ci95_low": 0.002485099381828171,
+        "ci95_high": 1.5475149006181736
+      },
+      "joint_le_harp_s_seed_count": 20,
+      "joint_harp_s_action_mismatch_rounds": 0,
+      "joint_assigned_type_hit": {
+        "mean": 0.14999999999999997,
+        "sem": 0.013693063937629153,
+        "ci95_low": 0.12134041717854215,
+        "ci95_high": 0.17865958282145777
+      },
+      "joint_final_assigned_type_hit": {
+        "mean": 0.2,
+        "sem": 0.0917662935482247,
+        "ci95_low": 0.007933147603565727,
+        "ci95_high": 0.3920668523964343
+      }
+    },
+    {
+      "alpha": 0.5,
+      "harp_s_minus_joint": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "harp_minus_joint": {
+        "mean": 0.7750000000000009,
+        "sem": 0.3690945535681666,
+        "ci95_low": 0.002485099381828171,
+        "ci95_high": 1.5475149006181736
+      },
+      "joint_le_harp_s_seed_count": 20,
+      "joint_harp_s_action_mismatch_rounds": 0,
+      "joint_assigned_type_hit": {
+        "mean": 0.14999999999999997,
+        "sem": 0.013693063937629153,
+        "ci95_low": 0.12134041717854215,
+        "ci95_high": 0.17865958282145777
+      },
+      "joint_final_assigned_type_hit": {
+        "mean": 0.2,
+        "sem": 0.0917662935482247,
+        "ci95_low": 0.007933147603565727,
+        "ci95_high": 0.3920668523964343
+      }
+    },
+    {
+      "alpha": 0.75,
+      "harp_s_minus_joint": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "harp_minus_joint": {
+        "mean": 0.7750000000000009,
+        "sem": 0.3690945535681666,
+        "ci95_low": 0.002485099381828171,
+        "ci95_high": 1.5475149006181736
+      },
+      "joint_le_harp_s_seed_count": 20,
+      "joint_harp_s_action_mismatch_rounds": 0,
+      "joint_assigned_type_hit": {
+        "mean": 0.14999999999999997,
+        "sem": 0.013693063937629153,
+        "ci95_low": 0.12134041717854215,
+        "ci95_high": 0.17865958282145777
+      },
+      "joint_final_assigned_type_hit": {
+        "mean": 0.2,
+        "sem": 0.0917662935482247,
+        "ci95_low": 0.007933147603565727,
+        "ci95_high": 0.3920668523964343
+      }
+    },
+    {
+      "alpha": 1.0,
+      "harp_s_minus_joint": {
+        "mean": 0.0,
+        "sem": 0.0,
+        "ci95_low": 0.0,
+        "ci95_high": 0.0
+      },
+      "harp_minus_joint": {
+        "mean": 0.7750000000000009,
+        "sem": 0.3690945535681666,
+        "ci95_low": 0.002485099381828171,
+        "ci95_high": 1.5475149006181736
+      },
+      "joint_le_harp_s_seed_count": 20,
+      "joint_harp_s_action_mismatch_rounds": 0,
+      "joint_assigned_type_hit": {
+        "mean": 0.14999999999999997,
+        "sem": 0.013693063937629153,
+        "ci95_low": 0.12134041717854215,
+        "ci95_high": 0.17865958282145777
+      },
+      "joint_final_assigned_type_hit": {
+        "mean": 0.2,
+        "sem": 0.0917662935482247,
+        "ci95_low": 0.007933147603565727,
+        "ci95_high": 0.3920668523964343
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "backend": "cloudgpt",
+  "out": "analysis\\e_d_reward_locality_violation\\deepseek_live_3action_full.npy",
+  "base_calibration": null,
+  "cache": "analysis\\e_d_reward_locality_violation\\deepseek_live_3action_cache.jsonl",
+  "n": 3,
+  "samples": 1,
+  "profile_count": 125,
+  "live_profile_count": 27,
+  "new_live_cells": 125,
+  "cached_cells_loaded": 199,
+  "skipped_cached_cells": 199,
+  "partial_cached_cells_rescored": 0,
+  "total_cells": 1500,
+  "parse_failure_count": 0,
+  "parse_failures": [],
+  "workers": 4,
+  "trap": false,
+  "judge_model": "DeepSeek-V3.2",
+  "tid_min_gap": 0.07120303361007134
+}

@@ -1,0 +1,36 @@
+{
+  "experiment": "E-B iterated Concordia-derived compact benchmark",
+  "native_protocol": false,
+  "backbone_invariant": true,
+  "selection_source": "retained one-shot seed-0..29 margin summaries",
+  "selection_seeds": "0..29",
+  "report_seed_range": "99000..99000",
+  "episodes": 5,
+  "seeds": 1,
+  "sigma": 0.08,
+  "beta": 0.25,
+  "configs": [
+    "pub/london_mini"
+  ],
+  "planner": "exact exhaustive finite-action argmax",
+  "pf": "imposed independent four-type marginals",
+  "provenance": [
+    {
+      "seed": 99000,
+      "config_id": "pub/london_mini",
+      "case_seed": 99000,
+      "upstream_config": "examples.games.pub_coordination.configs.london_mini",
+      "focal_players": [
+        "Sophie Martin",
+        "Benjamin Roberts"
+      ],
+      "fixed_background_actions": {
+        "Lily Walker": "The Red Lion",
+        "Amelia Jones": "The Red Lion",
+        "Ava Brown": "The Red Lion"
+      },
+      "persona_layer": "0.70 * exact PubCoordinationPayoff + 0.30 * one-hot persona venue score",
+      "normalization": "per-player affine to [0,1] across all types/actions"
+    }
+  ]
+}

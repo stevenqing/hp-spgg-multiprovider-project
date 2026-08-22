@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "artifacts": [
+    {
+      "path": "e_h_joint_monotonicity.json",
+      "bytes": 13311,
+      "sha256": "9e3d14678a8d82ab85106eac2b585d15b90dc506518fd09c4fc20a73fb2b9cf5"
+    },
+    {
+      "path": "e_h_joint_monotonicity.md",
+      "bytes": 185,
+      "sha256": "448fbbe8f33a570944205cc079a9adffd5b10b108bef8480e5a81694c8caab61"
+    }
+  ]
+}

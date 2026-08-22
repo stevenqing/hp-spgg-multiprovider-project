@@ -1,0 +1,5826 @@
+{
+  "substrate": "haggling",
+  "domain": "haggling_multi_item",
+  "config": "fruitville_gullible",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "moa"
+  ],
+  "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "orchestration_budget": 4,
+  "information_audit": {
+    "moa": {
+      "mode": "centralized_orchestration",
+      "sees_full_case": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "moa",
+      "episodes": 30,
+      "focal_score_mean": 6.233333333333333,
+      "focal_score_min_mean": 6.233333333333333,
+      "deal_score_mean": 4.288888888888889,
+      "deal_min_score_mean": 0.8222222222222222,
+      "nash_product_mean": 2.7666666666666666,
+      "agreement_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "moa",
+      "seed": 0,
+      "scores": {
+        "Aiden Riversong": 3.0,
+        "Hazel Nutgrove": 10.0
+      },
+      "focal_players": [
+        "Aiden Riversong"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 4.0,
+            "Aiden Riversong": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 4.0,
+            "Aiden Riversong": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Aiden Riversong": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 1,
+      "scores": {
+        "Della Plumstone": 9.0,
+        "Cedric Meadowbrook": 1.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 3.3333333333333335,
+      "deal_min_score_mean": 0.3333333333333333,
+      "nash_product_mean": 1.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Cedric Meadowbrook": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Cedric Meadowbrook": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 2,
+      "scores": {
+        "Gaia Willowbrook": 10.0,
+        "Elias Berryfield": 1.0
+      },
+      "focal_players": [
+        "Gaia Willowbrook"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 3.6666666666666665,
+      "deal_min_score_mean": 0.3333333333333333,
+      "nash_product_mean": 1.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 3.0,
+            "Elias Berryfield": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 4.0,
+            "Elias Berryfield": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 3.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 3,
+      "scores": {
+        "Flynn Honeycomb": 3.0,
+        "Orion Apricotwood": 11.0
+      },
+      "focal_players": [
+        "Flynn Honeycomb"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 4.0,
+            "Flynn Honeycomb": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Flynn Honeycomb": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 4.0,
+            "Flynn Honeycomb": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 4,
+      "scores": {
+        "Ivy Pearblossom": 2.0,
+        "Hazel Nutgrove": 9.0
+      },
+      "focal_players": [
+        "Ivy Pearblossom"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 3.6666666666666665,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 1.6666666666666667,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Ivy Pearblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Ivy Pearblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "candidate_consensus",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 4.0,
+            "Ivy Pearblossom": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 5,
+      "scores": {
+        "Della Plumstone": 10.0,
+        "Elara Berryvine": 3.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 4.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "candidate_consensus",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 6,
+      "scores": {
+        "Willow Blackberry": 12.0,
+        "Tristan Blackberrylane": 2.0
+      },
+      "focal_players": [
+        "Willow Blackberry"
+      ],
+      "focal_score_mean": 12.0,
+      "focal_score_min": 12.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Tristan Blackberrylane": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Tristan Blackberrylane": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Tristan Blackberrylane": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 7,
+      "scores": {
+        "Flynn Honeycomb": 11.0,
+        "Sasha Grapevine": 2.0
+      },
+      "focal_players": [
+        "Flynn Honeycomb"
+      ],
+      "focal_score_mean": 11.0,
+      "focal_score_min": 11.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 3.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 4.0,
+            "Sasha Grapevine": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 4.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 8,
+      "scores": {
+        "Blaise Windwillow": 3.0,
+        "Jasper Quincehill": 9.0
+      },
+      "focal_players": [
+        "Blaise Windwillow"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 4.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 5 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 2.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 9,
+      "scores": {
+        "Faye Honeydew": 11.0,
+        "Quentin Cherrybrook": 3.0
+      },
+      "focal_players": [
+        "Faye Honeydew"
+      ],
+      "focal_score_mean": 11.0,
+      "focal_score_min": 11.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Quentin Cherrybrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Quentin Cherrybrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Quentin Cherrybrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 10,
+      "scores": {
+        "Sasha Grapevine": 9.0,
+        "Ivor Pearbrook": 3.0
+      },
+      "focal_players": [
+        "Sasha Grapevine"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 11,
+      "scores": {
+        "Silas Honeybrook": 10.0,
+        "Hunter Nutwood": 3.0
+      },
+      "focal_players": [
+        "Silas Honeybrook"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 4.0,
+            "Hunter Nutwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 3.0,
+            "Hunter Nutwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 3.0,
+            "Hunter Nutwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 12,
+      "scores": {
+        "Maeve Mulberry": 11.0,
+        "Cedric Meadowbrook": 3.0
+      },
+      "focal_players": [
+        "Maeve Mulberry"
+      ],
+      "focal_score_mean": 11.0,
+      "focal_score_min": 11.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 4.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 3.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 4.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 13,
+      "scores": {
+        "Blaise Windwillow": 2.0,
+        "Anya Blossomwood": 11.0
+      },
+      "focal_players": [
+        "Blaise Windwillow"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 4.0,
+            "Blaise Windwillow": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 4.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 14,
+      "scores": {
+        "Rowan Cranberry": 2.0,
+        "Faye Honeydew": 12.0
+      },
+      "focal_players": [
+        "Rowan Cranberry"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Rowan Cranberry": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Rowan Cranberry": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Rowan Cranberry": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 15,
+      "scores": {
+        "Opal Apricot": 2.0,
+        "Quinn Cherryblossom": 10.0
+      },
+      "focal_players": [
+        "Opal Apricot"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Opal Apricot": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 3.0,
+            "Opal Apricot": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 3.0,
+            "Opal Apricot": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 16,
+      "scores": {
+        "Lennon Figtree": 2.0,
+        "Garen Willowshade": 12.0
+      },
+      "focal_players": [
+        "Lennon Figtree"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 4.0,
+            "Lennon Figtree": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 4.0,
+            "Lennon Figtree": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 4.0,
+            "Lennon Figtree": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 17,
+      "scores": {
+        "Jasper Quincehill": 2.0,
+        "Elara Berryvine": 11.0
+      },
+      "focal_players": [
+        "Jasper Quincehill"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 4.0,
+            "Jasper Quincehill": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 4.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 5 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 18,
+      "scores": {
+        "Quinn Cherryblossom": 2.0,
+        "Kira Citronbloom": 13.0
+      },
+      "focal_players": [
+        "Quinn Cherryblossom"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 5.0,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "apple for 1 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 5.0,
+            "Quinn Cherryblossom": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 1 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 4.0,
+            "Quinn Cherryblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 4.0,
+            "Quinn Cherryblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 19,
+      "scores": {
+        "Orion Apricotwood": 10.0,
+        "Rowan Cranberryfield": 3.0
+      },
+      "focal_players": [
+        "Orion Apricotwood"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 4.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 20,
+      "scores": {
+        "Faye Honeydew": 8.0,
+        "Ivor Pearbrook": 3.0
+      },
+      "focal_players": [
+        "Faye Honeydew"
+      ],
+      "focal_score_mean": 8.0,
+      "focal_score_min": 8.0,
+      "deal_score_mean": 3.6666666666666665,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 2.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 21,
+      "scores": {
+        "Brynn Orchardheart": 12.0,
+        "Orion Apricotwood": 2.0
+      },
+      "focal_players": [
+        "Brynn Orchardheart"
+      ],
+      "focal_score_mean": 12.0,
+      "focal_score_min": 12.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Brynn Orchardheart": 4.0,
+            "Orion Apricotwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Brynn Orchardheart": 4.0,
+            "Orion Apricotwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Brynn Orchardheart": 4.0,
+            "Orion Apricotwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 22,
+      "scores": {
+        "Quinn Cherryblossom": 12.0,
+        "Garen Willowshade": 2.0
+      },
+      "focal_players": [
+        "Quinn Cherryblossom"
+      ],
+      "focal_score_mean": 12.0,
+      "focal_score_min": 12.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Garen Willowshade": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Garen Willowshade": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Garen Willowshade": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 23,
+      "scores": {
+        "Kieran Citronbrook": 3.0,
+        "Ivy Pearblossom": 9.0
+      },
+      "focal_players": [
+        "Kieran Citronbrook"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 3.0,
+            "Kieran Citronbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 3.0,
+            "Kieran Citronbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 3.0,
+            "Kieran Citronbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 24,
+      "scores": {
+        "Ivor Pearbrook": 3.0,
+        "Quinn Cherryblossom": 10.0
+      },
+      "focal_players": [
+        "Ivor Pearbrook"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "candidate_consensus",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```c to \"seller_"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 25,
+      "scores": {
+        "Elias Berryfield": 4.0,
+        "Hunter Nutwood": 9.0
+      },
+      "focal_players": [
+        "Elias Berryfield"
+      ],
+      "focal_score_mean": 4.0,
+      "focal_score_min": 4.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 2.0,
+            "Elias Berryfield": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 3.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"reject\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json dataTruncate the2.operations,\n 3.-ves Do\n 2.operations,\n 4.operations,\n 5"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 4.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 26,
+      "scores": {
+        "Rowan Cranberryfield": 3.0,
+        "Nova Peachwood": 10.0
+      },
+      "focal_players": [
+        "Rowan Cranberryfield"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 4.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"reject\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 4.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 2.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 27,
+      "scores": {
+        "Willow Blackberry": 11.0,
+        "Jasper Quincehill": 2.0
+      },
+      "focal_players": [
+        "Willow Blackberry"
+      ],
+      "focal_score_mean": 11.0,
+      "focal_score_min": 11.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Jasper Quincehill": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 28,
+      "scores": {
+        "Sasha Grapevine": 3.0,
+        "Clara Applebrook": 10.0
+      },
+      "focal_players": [
+        "Sasha Grapevine"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 4.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 2.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 4.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "moa",
+      "seed": 29,
+      "scores": {
+        "Della Plumstone": 2.0,
+        "Kira Citronbloom": 10.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_orchestration",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 3.0,
+            "Della Plumstone": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 4.0,
+            "Della Plumstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 3.0,
+            "Della Plumstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "family": "MoA",
+            "policy": "fixed_layer_aggregation",
+            "call_budget": 4,
+            "calls_used": 4,
+            "valid_model_action": true,
+            "action_source": "final_aggregator",
+            "trace": [
+              {
+                "role": "buyer analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "seller analyst",
+                "reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              },
+              {
+                "role": "surplus planner",
+                "reply": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+              }
+            ],
+            "final_reply": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\"\n}\n```"
+          }
+        }
+      ]
+    }
+  ]
+}

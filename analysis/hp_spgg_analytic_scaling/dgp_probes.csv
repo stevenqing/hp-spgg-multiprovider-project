@@ -1,0 +1,18 @@
+n,m,seed,true_types,pf_pass,ti_pass,rl_pass,all_pass
+2,4,1000,"[0, 2]",True,True,True,True
+2,16,1000,"[3, 8]",True,True,True,True
+3,4,1000,"[0, 2, 3]",True,True,True,True
+3,8,1000,"[1, 4, 6]",True,True,True,True
+3,16,1000,"[3, 8, 13]",True,True,True,True
+4,4,1000,"[0, 2, 3, 2]",True,True,True,True
+4,16,1000,"[3, 8, 13, 9]",True,True,True,True
+5,4,1000,"[0, 2, 3, 2, 3]",True,True,True,True
+5,16,1000,"[3, 8, 13, 9, 13]",True,True,True,True
+6,4,1000,"[0, 2, 3, 2, 3, 1]",True,True,True,True
+6,16,1000,"[3, 8, 13, 9, 13, 7]",True,True,True,True
+7,4,1000,"[0, 2, 3, 2, 3, 1, 0]",True,True,True,True
+7,16,1000,"[3, 8, 13, 9, 13, 7, 3]",True,True,True,True
+8,4,1000,"[0, 2, 3, 2, 3, 1, 0, 0]",True,True,True,True
+8,16,1000,"[3, 8, 13, 9, 13, 7, 3, 3]",True,True,True,True
+9,4,1000,"[0, 2, 3, 2, 3, 1, 0, 0, 2]",True,True,True,True
+10,4,1000,"[0, 2, 3, 2, 3, 1, 0, 0, 2, 2]",True,True,True,True

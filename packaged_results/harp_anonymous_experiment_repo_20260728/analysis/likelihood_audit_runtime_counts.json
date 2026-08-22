@@ -1,0 +1,16 @@
+{
+  "sotopia_e_r3": {
+    "episodes": 480,
+    "generation_calls": 2880,
+    "generation_failures": 0,
+    "calls_per_episode": 6.0,
+    "likelihood_path_calls": 0
+  },
+  "maassim_e_r0": {
+    "rows": 130,
+    "llm_calls": 1700,
+    "cache_hits": 1323,
+    "llm_calls_are_assignment_selection_not_likelihood": true,
+    "likelihood_path_calls_in_probe": 0
+  }
+}

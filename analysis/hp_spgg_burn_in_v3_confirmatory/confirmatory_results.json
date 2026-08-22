@@ -1,0 +1,153 @@
+{
+  "status": "supported",
+  "claim_b_v3_supported": true,
+  "original_linear_n_formula_supported": false,
+  "original_linear_n_formula_disposition": "retired as inconsistent with the current per-agent proposition",
+  "preregistration_sha256": "1cbaf2a8eaf215f241e9274e4296c7be9137bdff8ad8f84eefb053e81f84fb44",
+  "preregistration_markdown_sha256": "4acdb89a5dd39b8a13ef73f160a56ca17f4faee2dda862a02b0969e43ddf11fd",
+  "provider_calls": 0,
+  "gates": {
+    "G1_affinity_core": {
+      "fit": {
+        "slope": 1.0006662000190958,
+        "intercept": -0.002796939059747679,
+        "r_squared": 0.999961566366418,
+        "observations": 15
+      },
+      "slope_ci95": [
+        0.9908306842746964,
+        1.0092331281289515
+      ],
+      "intercept_ci95": [
+        -0.008503541803895679,
+        0.0033210416287198577
+      ],
+      "max_abs_standardized_cell_error": 2.271146732087432,
+      "gates": {
+        "r_squared": true,
+        "point_slope": true,
+        "bootstrap_ci_covers_one": true,
+        "absolute_intercept": true,
+        "maximum_standardized_cell_error": true
+      },
+      "passed": true
+    },
+    "G2_type_horizon": {
+      "fit": {
+        "slope": 0.26857190925472035,
+        "intercept": 22.22312038611031,
+        "r_squared": 0.9063552092907146,
+        "observations": 28
+      },
+      "slope_ci95": [
+        0.26445659991076587,
+        0.27282188942087177
+      ],
+      "max_censoring_fraction": 0.0,
+      "turn_equivalent_ratios": {
+        "2": 1.0950687922385194,
+        "3": 1.085082437321566,
+        "4": 1.0628053853928758,
+        "6": 1.0499523336032723,
+        "8": 1.049089952552554,
+        "12": 1.03715531762697,
+        "16": 1.0571672892569421
+      },
+      "gates": {
+        "r_squared": true,
+        "bootstrap_slope_ci_low_positive": true,
+        "censoring": true,
+        "turn_equivalent_ratio": true
+      },
+      "passed": true
+    },
+    "G3_population": {
+      "corrected_fit": {
+        "slope": 0.587070592635135,
+        "intercept": -70.6672761904762,
+        "r_squared": 0.9939789286305318,
+        "observations": 6
+      },
+      "corrected_slope_ci95": [
+        0.5613050935193366,
+        0.6128584550020979
+      ],
+      "original_linear_n_fit": {
+        "slope": 0.014261609741729483,
+        "intercept": 115.00730063965882,
+        "r_squared": 0.8489110276396015,
+        "observations": 6
+      },
+      "original_linear_n_slope_ci95": [
+        0.013518119397880826,
+        0.014989264348703813
+      ],
+      "r_squared_advantage": 0.14506790099093037,
+      "max_censoring_fraction": 0.0,
+      "gates": {
+        "r_squared": true,
+        "bootstrap_slope_ci_low_positive": true,
+        "censoring": true,
+        "corrected_advantage": true
+      },
+      "passed": true
+    },
+    "G4_K_independent_proxy": {
+      "max_relative_increment_1024_to_2048": 0.018275419337221235,
+      "relative_increments": {
+        "m2_H1": 0.006895750870023861,
+        "m2_H2": 0.0016988470008615756,
+        "m2_H4": 5.770703788962479e-13,
+        "m2_H8": 0.0,
+        "m3_H1": 0.016851045031331266,
+        "m3_H2": 0.00015573082827633283,
+        "m3_H4": 8.087551001599697e-12,
+        "m3_H8": 0.0,
+        "m4_H1": 0.01624186330266621,
+        "m4_H2": 6.989443351952574e-05,
+        "m4_H4": 2.9406919208307876e-11,
+        "m4_H8": 0.0,
+        "m6_H1": 0.013502523170294654,
+        "m6_H2": 0.00021942536209146758,
+        "m6_H4": 5.360846539127555e-13,
+        "m6_H8": 0.0,
+        "m8_H1": 0.012144479406989232,
+        "m8_H2": 1.1322843559937422e-05,
+        "m8_H4": 1.9341091459920413e-13,
+        "m8_H8": 0.0,
+        "m12_H1": 0.018275419337221235,
+        "m12_H2": 1.7593183592465618e-05,
+        "m12_H4": 2.6033743025880954e-13,
+        "m12_H8": 0.0,
+        "m16_H1": 0.015571318062792494,
+        "m16_H2": 5.14541109078781e-05,
+        "m16_H4": 1.3837901003820546e-10,
+        "m16_H8": 0.0
+      },
+      "gates": {
+        "all_upper95_below_bound": true,
+        "relative_increment": true
+      },
+      "passed": true
+    },
+    "G5_adaptive_robustness": {
+      "max_censoring_fraction": 0.0,
+      "max_relative_proxy_increment": 0.004797564321331912,
+      "gates": {
+        "censoring": true,
+        "all_upper95_errors_below_global_bound": true,
+        "relative_proxy_increment": true
+      },
+      "passed": true
+    }
+  },
+  "row_counts": {
+    "affinity_batches": 3000,
+    "affinity_summary": 15,
+    "fixed_agent_results": 105000,
+    "fixed_cell_summary": 34,
+    "proxy_checkpoints": 84,
+    "adaptive_seed_results": 1200,
+    "adaptive_cell_summary": 6
+  }
+}

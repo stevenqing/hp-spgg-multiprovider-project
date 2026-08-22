@@ -1,0 +1,1050 @@
+{
+  "status": "diagnosed",
+  "claim_b_supported": false,
+  "current_fit": {
+    "x_definition": "(n+1)*log(m)",
+    "method": "pact",
+    "response": "median all-agent posterior true-mass > 0.9 first-passage episode",
+    "censoring": "cells with fewer than five observed passages are plotted open at K+1 and excluded from OLS",
+    "slope": -0.24778382996700402,
+    "intercept": 13.64323607427056,
+    "r_squared": 0.006498673740053196,
+    "observations": 11,
+    "rho_hat_per_m": {
+      "4": 9.419005153610271e-08,
+      "8": 0.005359387236888669,
+      "16": 0.0011696097542561734
+    },
+    "inverse_rho_H_per_m": {
+      "4": 10616832.496547721,
+      "8": 186.58849525128522,
+      "16": 854.9860296231552
+    },
+    "points": [
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 2,
+        "m": 4,
+        "x": 4.1588830833596715,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 3,
+        "m": 4,
+        "x": 5.545177444479562,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 4,
+        "m": 4,
+        "x": 6.931471805599453,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 5,
+        "m": 4,
+        "x": 8.317766166719343,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 6,
+        "m": 4,
+        "x": 9.704060527839234,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 7,
+        "m": 4,
+        "x": 11.090354888959125,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 8,
+        "m": 4,
+        "x": 12.476649250079015,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 9,
+        "m": 4,
+        "x": 13.862943611198906,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s1_population_m4",
+        "method": "pact",
+        "n": 10,
+        "m": 4,
+        "x": 15.249237972318797,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s2_library_n3",
+        "method": "pact",
+        "n": 3,
+        "m": 4,
+        "x": 5.545177444479562,
+        "median_burn_in": 8.0,
+        "plotted_y": 8.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s2_library_n3",
+        "method": "pact",
+        "n": 3,
+        "m": 8,
+        "x": 8.317766166719343,
+        "median_burn_in": 45.0,
+        "plotted_y": 45.0,
+        "censored_seeds": 0
+      },
+      {
+        "sweep": "s2_library_n3",
+        "method": "pact",
+        "n": 3,
+        "m": 16,
+        "x": 11.090354888959125,
+        "median_burn_in": NaN,
+        "plotted_y": 51.0,
+        "censored_seeds": 9
+      }
+    ]
+  },
+  "proposition": {
+    "paper_statement": "per-agent expected cumulative reward-channel regret is O(H + rho^{-1} log(m/pi_min))",
+    "proof_switching_term": "the displayed proof sets C=m*pi_min^{-1/2}, hence log(C)",
+    "uniform_prior_log_term": "statement: 2 log(m); proof switching point: 1.5 log(m); both are O(log m)",
+    "population_dependence": "none in the proposition; an all-agent union bound adds log(n), not n log(m)",
+    "measured_quantity": "median first episode at which every agent posterior true-type mass exceeds 0.9",
+    "mismatch": "the measured all-agent threshold maximum is neither the proposition's per-agent expected regret nor an equality case of its upper bound"
+  },
+  "causes": [
+    {
+      "cause": "theory-target mismatch",
+      "detail": "Proposition prop:tid-collapse bounds per-agent expected cumulative reward-channel regret. It does not predict that an all-agent posterior first-passage median equals (n+1) log(m)/(rho H)."
+    },
+    {
+      "cause": "wrong population functional form",
+      "detail": "For independent agent channels, controlling all agents by a union bound contributes log(n). A linear n factor is not present in the current proof, and thm:any-coupling is not a label in the current paper source."
+    },
+    {
+      "cause": "deterministic analytic observations",
+      "detail": "The runner observes the calibrated reward mean exactly and only evaluates a Gaussian likelihood around it; it does not sample y from the Gaussian q_theta used in the Hellinger contraction proof. Conditional hitting times therefore become almost deterministic by true type."
+    },
+    {
+      "cause": "no horizon scaling dimension",
+      "detail": "The analytic runner has one action/reward observation per episode and records H=1. It cannot test inverse-H dependence because H is neither greater than one nor swept."
+    },
+    {
+      "cause": "S1 action/channel degeneracy",
+      "detail": "PACT visits only the all-contribution action in every S1 episode. At m=4, types 0/1 cross 0.9 at episode 8 and types 2/3 at episode 3. From n=2 onward, the median maximum is already the slow-type value 8 and cannot reveal further n growth."
+    },
+    {
+      "cause": "rho_hat is a worst-case unvisited margin",
+      "detail": "The global reachable-grid rho_hat can be orders of magnitude smaller than the margin on actions actually visited. It is valid for a conservative uniform bound but not an empirical equality predictor."
+    },
+    {
+      "cause": "rho varies with m but the OLS x-axis omits it",
+      "detail": "m=8 and m=16 use different rho_hat values, while Fig B regresses only on (n+1) log(m). There is no single slope that can be compared with 1/(rho_hat H) across libraries."
+    },
+    {
+      "cause": "informative censoring and pseudo-replication",
+      "detail": "The m=16 point is 9/10 censored at K=50 and excluded from OLS, biasing the complete-case slope downward. Nine flat S1 points from one m=4 channel dominate the pooled fit."
+    },
+    {
+      "cause": "median saturation and low seed resolution",
+      "detail": "The all-agent median is discrete and saturates once more than half of profiles contain any slow type; ten seeds cannot resolve the much weaker max-order/log(n) effect."
+    }
+  ],
+  "s1": [
+    {
+      "sweep": "s1_population_m4",
+      "n": 2,
+      "m": 4,
+      "x_preregistered": 4.1588830833596715,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 7.5,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        3.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 24,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 8,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 5,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 6,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 1,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 3,
+      "m": 4,
+      "x_preregistered": 5.545177444479562,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 7.5,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        3.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 124,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 10,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 6,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 9,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 5,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 4,
+      "m": 4,
+      "x_preregistered": 6.931471805599453,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 624,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 12,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 9,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 11,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 8,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 5,
+      "m": 4,
+      "x_preregistered": 8.317766166719343,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 3124,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 13,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 11,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 16,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 10,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 6,
+      "m": 4,
+      "x_preregistered": 9.704060527839234,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 15624,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 17,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 15,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 18,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 10,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 7,
+      "m": 4,
+      "x_preregistered": 11.090354888959125,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 78124,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 9.419005153610271e-08,
+      "per_type": {
+        "0": {
+          "observations": 20,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 17,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 20,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 13,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 8,
+      "m": 4,
+      "x_preregistered": 12.476649250079015,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 390624,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 3.721461408034976e-06,
+      "per_type": {
+        "0": {
+          "observations": 23,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 20,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 22,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 15,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 9,
+      "m": 4,
+      "x_preregistered": 13.862943611198906,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 1953124,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 24,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 23,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 24,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 19,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s1_population_m4",
+      "n": 10,
+      "m": 4,
+      "x_preregistered": 15.249237972318797,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 8.0,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 9765624,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 25,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 24,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 27,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 24,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    }
+  ],
+  "s2": [
+    {
+      "sweep": "s2_library_n3",
+      "n": 3,
+      "m": 4,
+      "x_preregistered": 5.545177444479562,
+      "all_agent_median": 8.0,
+      "all_agent_mean_observed": 7.5,
+      "censored_seeds": 0,
+      "passages": [
+        8.0,
+        3.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "unique_actions": 1,
+      "modal_action_index": 124,
+      "modal_action_share": 1.0,
+      "visited_action_rho_min": 0.07433819726669055,
+      "modal_action_rho": 0.07433819726669055,
+      "global_rho_hat": 7.294051330375417e-06,
+      "per_type": {
+        "0": {
+          "observations": 10,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "1": {
+          "observations": 6,
+          "median": 8.0,
+          "censored": 0,
+          "unique_passages": [
+            8.0
+          ]
+        },
+        "2": {
+          "observations": 9,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        },
+        "3": {
+          "observations": 5,
+          "median": 3.0,
+          "censored": 0,
+          "unique_passages": [
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s2_library_n3",
+      "n": 3,
+      "m": 8,
+      "x_preregistered": 8.317766166719343,
+      "all_agent_median": 45.0,
+      "all_agent_mean_observed": 41.1,
+      "censored_seeds": 0,
+      "passages": [
+        47.0,
+        13.0,
+        42.0,
+        45.0,
+        45.0,
+        43.0,
+        45.0,
+        45.0,
+        46.0,
+        40.0
+      ],
+      "unique_actions": 8,
+      "modal_action_index": 124,
+      "modal_action_share": 0.774,
+      "visited_action_rho_min": 0.009977586624017487,
+      "modal_action_rho": 0.015992267610175137,
+      "global_rho_hat": 0.005359387236888669,
+      "per_type": {
+        "0": {
+          "observations": 6,
+          "median": 35.0,
+          "censored": 0,
+          "unique_passages": [
+            35.0,
+            42.0
+          ]
+        },
+        "1": {
+          "observations": 4,
+          "median": 45.0,
+          "censored": 0,
+          "unique_passages": [
+            42.0,
+            45.0,
+            47.0
+          ]
+        },
+        "2": {
+          "observations": 3,
+          "median": 45.0,
+          "censored": 0,
+          "unique_passages": [
+            45.0,
+            46.0
+          ]
+        },
+        "3": {
+          "observations": 3,
+          "median": 42.0,
+          "censored": 0,
+          "unique_passages": [
+            42.0,
+            43.0
+          ]
+        },
+        "4": {
+          "observations": 6,
+          "median": 38.5,
+          "censored": 0,
+          "unique_passages": [
+            13.0,
+            34.0,
+            37.0,
+            40.0,
+            45.0
+          ]
+        },
+        "5": {
+          "observations": 3,
+          "median": 45.0,
+          "censored": 0,
+          "unique_passages": [
+            38.0,
+            45.0
+          ]
+        },
+        "6": {
+          "observations": 3,
+          "median": 25.0,
+          "censored": 0,
+          "unique_passages": [
+            12.0,
+            25.0,
+            28.0
+          ]
+        },
+        "7": {
+          "observations": 2,
+          "median": 9.5,
+          "censored": 0,
+          "unique_passages": [
+            9.0,
+            10.0
+          ]
+        }
+      }
+    },
+    {
+      "sweep": "s2_library_n3",
+      "n": 3,
+      "m": 16,
+      "x_preregistered": 11.090354888959125,
+      "all_agent_median": NaN,
+      "all_agent_mean_observed": 44.0,
+      "censored_seeds": 9,
+      "passages": [
+        NaN,
+        44.0,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "unique_actions": 8,
+      "modal_action_index": 124,
+      "modal_action_share": 0.794,
+      "visited_action_rho_min": 0.0021814266473220156,
+      "modal_action_rho": 0.0035047535997874135,
+      "global_rho_hat": 0.0011696097542561734,
+      "per_type": {
+        "0": {
+          "observations": 3,
+          "median": NaN,
+          "censored": 3,
+          "unique_passages": []
+        },
+        "1": {
+          "observations": 3,
+          "median": NaN,
+          "censored": 3,
+          "unique_passages": []
+        },
+        "2": {
+          "observations": 1,
+          "median": NaN,
+          "censored": 1,
+          "unique_passages": []
+        },
+        "3": {
+          "observations": 3,
+          "median": NaN,
+          "censored": 3,
+          "unique_passages": []
+        },
+        "4": {
+          "observations": 1,
+          "median": NaN,
+          "censored": 1,
+          "unique_passages": []
+        },
+        "5": {
+          "observations": 2,
+          "median": NaN,
+          "censored": 2,
+          "unique_passages": []
+        },
+        "6": {
+          "observations": 2,
+          "median": NaN,
+          "censored": 2,
+          "unique_passages": []
+        },
+        "7": {
+          "observations": 1,
+          "median": NaN,
+          "censored": 1,
+          "unique_passages": []
+        },
+        "8": {
+          "observations": 2,
+          "median": NaN,
+          "censored": 2,
+          "unique_passages": []
+        },
+        "9": {
+          "observations": 4,
+          "median": 44.0,
+          "censored": 3,
+          "unique_passages": [
+            44.0
+          ]
+        },
+        "11": {
+          "observations": 3,
+          "median": NaN,
+          "censored": 3,
+          "unique_passages": []
+        },
+        "12": {
+          "observations": 1,
+          "median": NaN,
+          "censored": 1,
+          "unique_passages": []
+        },
+        "13": {
+          "observations": 2,
+          "median": 44.0,
+          "censored": 1,
+          "unique_passages": [
+            44.0
+          ]
+        },
+        "14": {
+          "observations": 1,
+          "median": 44.0,
+          "censored": 0,
+          "unique_passages": [
+            44.0
+          ]
+        },
+        "15": {
+          "observations": 1,
+          "median": 49.0,
+          "censored": 0,
+          "unique_passages": [
+            49.0
+          ]
+        }
+      }
+    }
+  ],
+  "recommendation": {
+    "disposition": "retain the current result as a preregistered null; do not tune it into support",
+    "valid_follow_up": [
+      "Test per-agent posterior error or log-odds contraction, the quantity directly controlled by prop:tid-collapse.",
+      "Sample stochastic outcomes from q_theta instead of always observing the channel mean.",
+      "Use realized cumulative information sum_h D_H^2(q_true,q_competitor) on visited actions, or hold rho fixed across libraries.",
+      "If measuring all-agent first passage, use a predictor with log(n), not linear n, and analyze right censoring with survival/AFT methods.",
+      "Sweep a genuine multi-turn H if inverse-H behavior is a target; the completed runner has H=1 only.",
+      "Increase K for m=16 and increase seeds before estimating a population-order effect; preregister this as a new experiment rather than altering the completed run."
+    ]
+  }
+}

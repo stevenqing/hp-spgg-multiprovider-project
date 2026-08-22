@@ -1,0 +1,11 @@
+{
+  "experiment": "E-A source audit",
+  "git_commit": "historical_snapshot",
+  "source_dir": "analysis\\e_a_matched_likelihood\\source_snapshot",
+  "result": "blocked",
+  "reason": "Historical external baselines consumed analytic c19 rewards in their prompt history, but used algorithm-specific true-type RNG seeds. The retained c19 calibration tensors and baseline caches are absent, so histories cannot be rerun counterfactually without new LLM calls.",
+  "condition_a_complete": false,
+  "condition_b_complete": false,
+  "condition_a_interface_decision": "Use the existing recent_public_history/history rewards field rather than a bypass; the historical runners already inject analytic realized outcomes through this interface.",
+  "paper_action": "retain evaluation-asymmetry caveat; do not claim a matched-likelihood result"
+}

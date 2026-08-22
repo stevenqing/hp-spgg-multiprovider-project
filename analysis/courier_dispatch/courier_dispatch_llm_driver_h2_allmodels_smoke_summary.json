@@ -1,0 +1,914 @@
+{
+  "setting": {
+    "backend": "cloudgpt",
+    "driver_models": [
+      "gpt-5.4-mini-20260317",
+      "DeepSeek-V3.2",
+      "Kimi-K2.6",
+      "Llama-4-Maverick-17B-128E-Instruct-FP8"
+    ],
+    "methods": [
+      [
+        "pact",
+        0.0
+      ],
+      [
+        "pact_plus",
+        0.1
+      ],
+      [
+        "atom_tom1",
+        0.0
+      ],
+      [
+        "oracle",
+        0.0
+      ]
+    ],
+    "horizon": 2,
+    "seeds": 1,
+    "candidate_states_per_round": 2,
+    "n_agents": 3,
+    "rule_count": 4,
+    "actions": [
+      "accept",
+      "decline-a",
+      "decline-b",
+      "decline-c",
+      "decline-d",
+      "reposition",
+      "choose-from-menu"
+    ],
+    "tau": 0.5,
+    "version": "courier-llm-driver-v1",
+    "cache_path": "analysis\\courier_dispatch\\courier_dispatch_llm_driver_cache.json"
+  },
+  "summary": [
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 0.7878333333333334,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.4042708333333334,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "oracle",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.5436666666666667,
+      "final_mean_true_tuple_posterior": 1.0,
+      "final_mean_rule_marginal_accuracy": 1.0,
+      "final_mean_cumulative_exploration_cost": 0.0,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.5
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 0.7878333333333334,
+      "final_mean_true_tuple_posterior": 0.07342405766015155,
+      "final_mean_rule_marginal_accuracy": 0.566885693276794,
+      "final_mean_cumulative_exploration_cost": 0.2743437500000001,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 0.7878333333333334,
+      "final_mean_true_tuple_posterior": 0.07342405766015155,
+      "final_mean_rule_marginal_accuracy": 0.566885693276794,
+      "final_mean_cumulative_exploration_cost": 0.2743437500000001,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.0292166666666667,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.4042708333333334,
+      "driver_parse_ok_rate": 0.8333333333333333,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "oracle",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.9021666666666666,
+      "final_mean_true_tuple_posterior": 1.0,
+      "final_mean_rule_marginal_accuracy": 1.0,
+      "final_mean_cumulative_exploration_cost": 0.0,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.5
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.0292166666666667,
+      "final_mean_true_tuple_posterior": 0.11094358575052778,
+      "final_mean_rule_marginal_accuracy": 0.638849534289508,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 0.8333333333333333,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.0292166666666667,
+      "final_mean_true_tuple_posterior": 0.11094358575052778,
+      "final_mean_rule_marginal_accuracy": 0.638849534289508,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 0.8333333333333333,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.1463333333333332,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.4042708333333334,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "oracle",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.9021666666666666,
+      "final_mean_true_tuple_posterior": 1.0,
+      "final_mean_rule_marginal_accuracy": 1.0,
+      "final_mean_cumulative_exploration_cost": 0.0,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.5
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.1463333333333332,
+      "final_mean_true_tuple_posterior": 0.11508624605147606,
+      "final_mean_rule_marginal_accuracy": 0.6193752402938864,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.1463333333333332,
+      "final_mean_true_tuple_posterior": 0.11508624605147606,
+      "final_mean_rule_marginal_accuracy": 0.6193752402938864,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.6304999999999998,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.4042708333333334,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "oracle",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.9021666666666666,
+      "final_mean_true_tuple_posterior": 1.0,
+      "final_mean_rule_marginal_accuracy": 1.0,
+      "final_mean_cumulative_exploration_cost": 0.0,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact",
+      "beta": 0.0,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.6304999999999998,
+      "final_mean_true_tuple_posterior": 0.25652045335129037,
+      "final_mean_rule_marginal_accuracy": 0.7034409917123935,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "episodes": 1,
+      "final_mean_cumulative_reward": 1.6304999999999998,
+      "final_mean_true_tuple_posterior": 0.25652045335129037,
+      "final_mean_rule_marginal_accuracy": 0.7034409917123935,
+      "final_mean_cumulative_exploration_cost": 0.46693958333333346,
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    }
+  ],
+  "rows": [
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.42416666666666664,
+      "cumulative_reward": 1.6304999999999998,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.25652045335129037,
+      "mean_rule_marginal_accuracy": 0.7034409917123935,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-b",
+        "decline-a",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.42416666666666664,
+      "cumulative_reward": 1.6304999999999998,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.25652045335129037,
+      "mean_rule_marginal_accuracy": 0.7034409917123935,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-b",
+        "decline-a",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.42416666666666664,
+      "cumulative_reward": 1.6304999999999998,
+      "exploration_cost": 0.39120208333333334,
+      "cumulative_exploration_cost": 0.4042708333333334,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-b",
+        "decline-a",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "gpt-5.4-mini-20260317",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.6958333333333334,
+      "cumulative_reward": 1.9021666666666666,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 1,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 0.8478333333333333,
+      "cumulative_reward": 0.8478333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.07228318034190571,
+      "mean_rule_marginal_accuracy": 0.519101074647658,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 0.7878333333333334,
+      "exploration_cost": 0.26127500000000003,
+      "cumulative_exploration_cost": 0.2743437500000001,
+      "mean_true_tuple_posterior": 0.07342405766015155,
+      "mean_rule_marginal_accuracy": 0.566885693276794,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 0.8478333333333333,
+      "cumulative_reward": 0.8478333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.07228318034190571,
+      "mean_rule_marginal_accuracy": 0.519101074647658,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 0.7878333333333334,
+      "exploration_cost": 0.26127500000000003,
+      "cumulative_exploration_cost": 0.2743437500000001,
+      "mean_true_tuple_posterior": 0.07342405766015155,
+      "mean_rule_marginal_accuracy": 0.566885693276794,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 0.8478333333333333,
+      "cumulative_reward": 0.8478333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 0.7878333333333334,
+      "exploration_cost": 0.39120208333333334,
+      "cumulative_exploration_cost": 0.4042708333333334,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 0.8478333333333333,
+      "cumulative_reward": 0.8478333333333333,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "DeepSeek-V3.2",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.6958333333333334,
+      "cumulative_reward": 1.5436666666666667,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 1,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.17711666666666667,
+      "cumulative_reward": 1.0292166666666667,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.11094358575052778,
+      "mean_rule_marginal_accuracy": 0.638849534289508,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-c",
+        "choose-from-menu",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 0.6666666666666666,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.17711666666666667,
+      "cumulative_reward": 1.0292166666666667,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.11094358575052778,
+      "mean_rule_marginal_accuracy": 0.638849534289508,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-c",
+        "choose-from-menu",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 0.6666666666666666,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.17711666666666667,
+      "cumulative_reward": 1.0292166666666667,
+      "exploration_cost": 0.39120208333333334,
+      "cumulative_exploration_cost": 0.4042708333333334,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-c",
+        "choose-from-menu",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 0.6666666666666666,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Kimi-K2.6",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.6958333333333334,
+      "cumulative_reward": 1.9021666666666666,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 1,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 1.1463333333333332,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.11508624605147606,
+      "mean_rule_marginal_accuracy": 0.6193752402938864,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.11103512655219372,
+      "mean_rule_marginal_accuracy": 0.5972847150095423,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "pact_plus",
+      "beta": 0.1,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 1.1463333333333332,
+      "exploration_cost": 0.4538708333333334,
+      "cumulative_exploration_cost": 0.46693958333333346,
+      "mean_true_tuple_posterior": 0.11508624605147606,
+      "mean_rule_marginal_accuracy": 0.6193752402938864,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.013068750000000073,
+      "cumulative_exploration_cost": 0.013068750000000073,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": -0.06,
+      "cumulative_reward": 1.1463333333333332,
+      "exploration_cost": 0.39120208333333334,
+      "cumulative_exploration_cost": 0.4042708333333334,
+      "mean_true_tuple_posterior": 0.0625,
+      "mean_rule_marginal_accuracy": 0.5,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "decline-a",
+        "decline-a"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 0,
+      "mean_reward": 1.2063333333333333,
+      "cumulative_reward": 1.2063333333333333,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 0,
+      "observed_actions": [
+        "decline-a",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 1.0
+    },
+    {
+      "driver_model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+      "method": "oracle",
+      "beta": 0.0,
+      "seed": 0,
+      "round": 1,
+      "mean_reward": 0.6958333333333334,
+      "cumulative_reward": 1.9021666666666666,
+      "exploration_cost": 0.0,
+      "cumulative_exploration_cost": 0.0,
+      "mean_true_tuple_posterior": 1.0,
+      "mean_rule_marginal_accuracy": 1.0,
+      "chosen_candidate": 1,
+      "observed_actions": [
+        "accept",
+        "accept",
+        "accept"
+      ],
+      "driver_parse_ok_rate": 1.0,
+      "driver_cache_hit_rate": 0.0
+    }
+  ]
+}

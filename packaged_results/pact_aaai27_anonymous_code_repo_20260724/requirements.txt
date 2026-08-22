@@ -1,0 +1,12 @@
+# Core and plotting dependencies
+numpy>=1.24
+matplotlib>=3.7
+networkx>=3.2
+
+# Public and generic managed-provider adapters
+openai>=1.0
+anthropic>=0.39
+google-genai>=0.3
+azure-identity>=1.17
+azure-identity-broker>=1.1; sys_platform == "win32"
+msal>=1.28

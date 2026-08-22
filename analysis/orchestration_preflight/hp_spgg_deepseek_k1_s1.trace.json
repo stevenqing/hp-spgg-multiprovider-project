@@ -1,0 +1,113 @@
+[
+  {
+    "algorithm": "moa",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 87,
+        "contributions": [
+          0.75,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.85,
+          0.85,
+          0.65
+        ],
+        "welfare": 2.35,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "MoA",
+          "round": 0,
+          "call_budget": 4,
+          "calls_used": 4,
+          "roles": [
+            "persona analyst",
+            "history analyst",
+            "joint-welfare planner"
+          ],
+          "proposals": [
+            "```json\n{\n    \"persona_beliefs\": \"No public history exists (round 0), so no evidence about true personas is available. All four persona types are equally plausible based on the given information.\",\n    \"contributions\": [0.75, 0.5, 0.5],\n    \"reason\": \"Initial round with no history; proposing a balanced profile that encourages cooperation: a high contribution (0.75) to signal group welfare, paired with two moderate contributions (0.5) to avoid over\u2011burdening any player while maintaining a reasonable group total. This is robust to uncertainty about personas and can adapt based on future rounds.\"\n}\n```",
+            "```json\n{\n    \"persona_beliefs\": \"No public history exists yet, so no evidence about actual player behavior is available. All four persona types are equally plausible based on the given information.\",\n    \"contributions\": [0.75, 0.5, 0.5],\n    \"reason\": \"Initial round strategy balances risk and cooperation: a high contribution (0.75) from a potential Altruistic Builder or Conditional Cooperator, paired with two moderate contributions (0.5) that are acceptable to Risk-Averse Balancers and may encourage Conditional Cooperators. This avoids extreme free-riding while gathering initial behavioral data.\"\n}\n```",
+            "```json\n{\n    \"persona_beliefs\": \"No public history exists (round 0), so no evidence about players' true personas is available. All four persona types are equally plausible based on the given information.\",\n    \"contributions\": [0.75, 0.5, 0.5],\n    \"reason\": \"Initial profile balances cooperation and risk: a high contribution (0.75) encourages conditional cooperators, two moderate contributions (0.5) appeal to risk-averse balancers, avoids extreme free-riding (0.0) that could collapse cooperation, and tests responsiveness for future rounds while building public history.\"\n}\n```"
+          ],
+          "aggregation": {
+            "contributions": [
+              0.75,
+              0.5,
+              0.5
+            ],
+            "reason": "All three proposals converge on the same balanced initial profile, which is optimal given no public history: high contribution (0.75) signals cooperation, moderate contributions (0.5) avoid extremes, and the combination is robust to persona uncertainty while gathering initial behavioral data."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "puppeteer",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 86,
+        "contributions": [
+          0.75,
+          0.5,
+          0.25
+        ],
+        "rewards": [
+          0.85,
+          0.8,
+          0.65
+        ],
+        "welfare": 2.3,
+        "oracle_welfare": 2.95,
+        "info": {
+          "family": "Puppeteer",
+          "round": 0,
+          "call_budget": 4,
+          "calls_used": 4,
+          "trajectory": [
+            {
+              "activation": 0,
+              "router": "{\n  \"next_agent\": \"persona_inference\",\n  \"reason\": \"Round 0 has no history, so initial action must rely on persona likelihoods and welfare implications.\"\n}",
+              "agent": "persona_inference",
+              "output": "```json\n{\n    \"analysis\": \"No historical data exists for persona inference; all personas remain equally plausible. Initial coordination requires a baseline strategy that balances exploration of cooperation potential with protection against free-riding.\",\n    \"recommended_next_agent\": \"joint_action_selector\"\n}\n```"
+            },
+            {
+              "activation": 1,
+              "router": "```json\n{\n    \"next_agent\": \"conclude\",\n    \"reason\": \"Persona inference has been completed for round 0, and no further analysis is needed before selecting the initial joint contribution profile.\"\n}\n```",
+              "agent": "conclude",
+              "output": "```json\n{\n    \"contributions\": [0.75, 0.5, 0.25],\n    \"reason\": \"Balanced initial profile: high contribution encourages cooperation, medium provides stability, low allows for free-rider possibility while maintaining group welfare potential.\"\n}\n```"
+            }
+          ],
+          "conclusion": {
+            "contributions": [
+              0.75,
+              0.5,
+              0.25
+            ],
+            "reason": "Balanced initial profile: high contribution encourages cooperation, medium provides stability, low allows for free-rider possibility while maintaining group welfare potential."
+          },
+          "offline": false
+        }
+      }
+    ]
+  }
+]

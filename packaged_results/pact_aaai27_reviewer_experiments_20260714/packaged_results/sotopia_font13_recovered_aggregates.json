@@ -1,0 +1,1076 @@
+{
+  "schema_version": "1.0",
+  "generated_on": "2026-07-13",
+  "data_level": "aggregate_only",
+  "warning": "This is not the original episode-level experiment JSON. The raw all70 and partial-judge JSON inputs are absent from the cleaned workspace. Means and SEMs were recovered from the canonical Matplotlib vector PDFs and used to rerender the requested font-13 PDFs.",
+  "score_definition": "Mean focal score: arithmetic mean of evaluator overall.agent_1 and overall.agent_2, aggregated over four backbones and family episodes.",
+  "provenance": {
+    "source_pdfs": [
+      {
+        "path": "arr_paper/figs/fig_sotopia_three_exp_v1.pdf",
+        "sha256": "2271b318b9882be336a54f037fcb6ef58ccc495903c42a6a0dd1a8ef15c72857",
+        "role": "bar endpoints and visual cross-check"
+      },
+      {
+        "path": "arr_paper/figs/fig_sotopia_traj_v1.pdf",
+        "sha256": "6ac50dc8139cae9994629325dfa0a2a18256b95a37f8cfecad00ff519742a2ed",
+        "role": "trajectory means, SEM bands, and k=6 bar aggregates"
+      }
+    ],
+    "rerendered_pdfs": [
+      {
+        "path": "packaged_results/fig_sotopia_three_exp_v1_font13.pdf",
+        "sha256": "c03d79dad8017ee5afbd96da70392221da4f857ab8e03600f2b9265bd959f660"
+      },
+      {
+        "path": "packaged_results/fig_sotopia_traj_v1_font13.pdf",
+        "sha256": "806aa4d87906f0ed14e9142f03dad0611b562d61f31bc98b38f4b25073b57bbd"
+      }
+    ],
+    "recovery_method": "Affine map from PDF tick/grid coordinates to data coordinates; bar endpoints yield means, horizontal error bars yield three-exp SEMs, line centers yield trajectory means, and fill_between upper/lower paths yield trajectory SEMs. Three-exp means were snapped to the evaluator 1/(14*n) score grid.",
+    "original_episode_records_available": false
+  },
+  "families": [
+    {
+      "id": "craigslist_bargains",
+      "display_name": "Craigslist bargains",
+      "n": 80
+    },
+    {
+      "id": "revenge_plot",
+      "display_name": "Revenge plot",
+      "n": 20
+    },
+    {
+      "id": "donate_funds",
+      "display_name": "Donate funds",
+      "n": 20
+    }
+  ],
+  "three_exp": {
+    "producer": "plot_sotopia_three_exp",
+    "font_size": 13,
+    "methods": [
+      "hpsmg_plus",
+      "llm_psrl",
+      "atom_tom1",
+      "econ_bne",
+      "llm_belief",
+      "llm_greedy"
+    ],
+    "rows": [
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "n": 80,
+        "mean": 3.039285714,
+        "sem": 0.078933808
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_psrl",
+        "n": 80,
+        "mean": 2.934821429,
+        "sem": 0.0908609
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "n": 80,
+        "mean": 2.975892857,
+        "sem": 0.085190694
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "n": 80,
+        "mean": 2.921428571,
+        "sem": 0.077046784
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "n": 80,
+        "mean": 2.960714286,
+        "sem": 0.081963302
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "n": 80,
+        "mean": 2.914285714,
+        "sem": 0.076876642
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "n": 20,
+        "mean": 2.932142857,
+        "sem": 0.094202921
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_psrl",
+        "n": 20,
+        "mean": 2.657142857,
+        "sem": 0.131666973
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "n": 20,
+        "mean": 2.760714286,
+        "sem": 0.111174253
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "n": 20,
+        "mean": 2.832142857,
+        "sem": 0.081815469
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "n": 20,
+        "mean": 2.739285714,
+        "sem": 0.100117147
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "n": 20,
+        "mean": 2.785714286,
+        "sem": 0.104926836
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "n": 20,
+        "mean": 3.260714286,
+        "sem": 0.117514944
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_psrl",
+        "n": 20,
+        "mean": 3.0,
+        "sem": 0.135472667
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "n": 20,
+        "mean": 3.242857143,
+        "sem": 0.112985908
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "n": 20,
+        "mean": 3.042857143,
+        "sem": 0.12896755
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "n": 20,
+        "mean": 3.225,
+        "sem": 0.101845758
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "n": 20,
+        "mean": 2.975,
+        "sem": 0.141181275
+      }
+    ]
+  },
+  "trajectory": {
+    "producer": "scripts/plot_fig_sotopia_traj.py",
+    "font_size": 13,
+    "methods": [
+      "llm_greedy",
+      "llm_belief",
+      "econ_bne",
+      "atom_tom1",
+      "hpsmg_plus",
+      "oracle_policy"
+    ],
+    "checkpoints": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "rows": [
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.144636622,
+        "sem": 0.088061488
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.044642131,
+        "sem": 0.057185143
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.097320748,
+        "sem": 0.062756378
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.165178405,
+        "sem": 0.065714467
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.131249682,
+        "sem": 0.055814476
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "atom_tom1",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 2.975891601,
+        "sem": 0.085190694
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.08213641,
+        "sem": 0.086321934
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.054463514,
+        "sem": 0.060981863
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.124999576,
+        "sem": 0.061878973
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.243750318,
+        "sem": 0.057877362
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.074999364,
+        "sem": 0.068802653
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "econ_bne",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 2.921426816,
+        "sem": 0.077046784
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.224994279,
+        "sem": 0.090619756
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.100892449,
+        "sem": 0.050853462
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.116071065,
+        "sem": 0.059699339
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.11071362,
+        "sem": 0.061003899
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.071427663,
+        "sem": 0.066379354
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "hpsmg_plus",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 3.039284685,
+        "sem": 0.078933808
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.112493644,
+        "sem": 0.081726206
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.141071065,
+        "sem": 0.046738495
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.183928511,
+        "sem": 0.048264895
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.18839266,
+        "sem": 0.064344436
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.057142131,
+        "sem": 0.060997118
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_belief",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 2.96115942,
+        "sem": 0.081963302
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.098207899,
+        "sem": 0.087328587
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.098213832,
+        "sem": 0.054496144
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.086606492,
+        "sem": 0.061985762
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.137499576,
+        "sem": 0.061371515
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.002677346,
+        "sem": 0.060825494
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "llm_greedy",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 2.914284049,
+        "sem": 0.076876642
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 1,
+        "n": 80,
+        "mean": 2.077672048,
+        "sem": 0.082467794
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 2,
+        "n": 80,
+        "mean": 3.067856386,
+        "sem": 0.054666709
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 3,
+        "n": 80,
+        "mean": 3.101785109,
+        "sem": 0.060430333
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 4,
+        "n": 80,
+        "mean": 3.143749682,
+        "sem": 0.059348462
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 5,
+        "n": 80,
+        "mean": 3.149106916,
+        "sem": 0.057967836
+      },
+      {
+        "family": "craigslist_bargains",
+        "method": "oracle_policy",
+        "checkpoint": 6,
+        "n": 80,
+        "mean": 3.419644038,
+        "sem": 0.056831087
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.971429123,
+        "sem": 0.13367073
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.210714057,
+        "sem": 0.087554436
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.267856952,
+        "sem": 0.111608044
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.228570964,
+        "sem": 0.135089429
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.324999583,
+        "sem": 0.111077448
+      },
+      {
+        "family": "donate_funds",
+        "method": "atom_tom1",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.242856754,
+        "sem": 0.112985908
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 2.060714715,
+        "sem": 0.172978057
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.135713991,
+        "sem": 0.113401375
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.171428333,
+        "sem": 0.098919839
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.407142412,
+        "sem": 0.108090934
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.349999517,
+        "sem": 0.134721121
+      },
+      {
+        "family": "donate_funds",
+        "method": "econ_bne",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.042856754,
+        "sem": 0.12896755
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.835715045,
+        "sem": 0.156414708
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.253570899,
+        "sem": 0.120024343
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.332142346,
+        "sem": 0.122657829
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.382142214,
+        "sem": 0.095448833
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.37142807,
+        "sem": 0.102283355
+      },
+      {
+        "family": "donate_funds",
+        "method": "hpsmg_plus",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.260713925,
+        "sem": 0.117514944
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.83928669,
+        "sem": 0.142751197
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.274999715,
+        "sem": 0.113681953
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.364285043,
+        "sem": 0.09898781
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.485713859,
+        "sem": 0.094220611
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.364285307,
+        "sem": 0.073995253
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_belief",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.224999583,
+        "sem": 0.101845758
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 2.000000439,
+        "sem": 0.157091521
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.160713925,
+        "sem": 0.118719719
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.239285372,
+        "sem": 0.126005274
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.124999846,
+        "sem": 0.14819679
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.285713859,
+        "sem": 0.123174198
+      },
+      {
+        "family": "donate_funds",
+        "method": "llm_greedy",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.974999978,
+        "sem": 0.141181275
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.853572216,
+        "sem": 0.184704655
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 3.196428267,
+        "sem": 0.095110558
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 3.421427938,
+        "sem": 0.065115801
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 3.435713727,
+        "sem": 0.099394056
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 3.407142412,
+        "sem": 0.073119005
+      },
+      {
+        "family": "donate_funds",
+        "method": "oracle_policy",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.549999254,
+        "sem": 0.078434451
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.910714263,
+        "sem": 0.205710365
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.232142363,
+        "sem": 0.102581379
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.40714219,
+        "sem": 0.130488969
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.514285005,
+        "sem": 0.126252783
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.646427499,
+        "sem": 0.095476988
+      },
+      {
+        "family": "revenge_plot",
+        "method": "atom_tom1",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.760713376,
+        "sem": 0.111174253
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.600000066,
+        "sem": 0.190284833
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.457142239,
+        "sem": 0.114988167
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.414285252,
+        "sem": 0.112533257
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.682142116,
+        "sem": 0.11107723
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.757141845,
+        "sem": 0.123652513
+      },
+      {
+        "family": "revenge_plot",
+        "method": "econ_bne",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.832141919,
+        "sem": 0.081815469
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.650000115,
+        "sem": 0.202488253
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.339285178,
+        "sem": 0.084336671
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.639284783,
+        "sem": 0.117993446
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.671427869,
+        "sem": 0.099731129
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.671427869,
+        "sem": 0.098102119
+      },
+      {
+        "family": "revenge_plot",
+        "method": "hpsmg_plus",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.932141672,
+        "sem": 0.094202921
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.689286263,
+        "sem": 0.190980218
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.21785693,
+        "sem": 0.102528897
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.649999375,
+        "sem": 0.095957267
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.699999425,
+        "sem": 0.083973441
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.774999153,
+        "sem": 0.094601369
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_belief",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.739284882,
+        "sem": 0.100117147
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.703571695,
+        "sem": 0.209422768
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.335713647,
+        "sem": 0.116461803
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.632142067,
+        "sem": 0.129266349
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.639284783,
+        "sem": 0.096317044
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.742856067,
+        "sem": 0.111911416
+      },
+      {
+        "family": "revenge_plot",
+        "method": "llm_greedy",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 2.7857134,
+        "sem": 0.104926836
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 1,
+        "n": 20,
+        "mean": 1.803571449,
+        "sem": 0.183054416
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 2,
+        "n": 20,
+        "mean": 2.271428165,
+        "sem": 0.092784875
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 3,
+        "n": 20,
+        "mean": 2.642856314,
+        "sem": 0.081769893
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 4,
+        "n": 20,
+        "mean": 2.710713671,
+        "sem": 0.087400992
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 5,
+        "n": 20,
+        "mean": 2.782141869,
+        "sem": 0.102398038
+      },
+      {
+        "family": "revenge_plot",
+        "method": "oracle_policy",
+        "checkpoint": 6,
+        "n": 20,
+        "mean": 3.117855746,
+        "sem": 0.038873198
+      }
+    ]
+  }
+}

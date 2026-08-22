@@ -1,0 +1,16 @@
+{
+  "status": "forensic_audit_complete",
+  "source": "superseded e_h_rho1p0_g4_n8_m2_s20.npz action traces",
+  "purpose": "Determine whether identical HARP and HARP-S cumulative regret was caused by a copied report column.",
+  "assignment_mismatches": 6,
+  "unequal_realized_utility_mismatches": 0,
+  "conclusion": "The regret columns were not copied. All six differing assignments realized identical utility increments under the saved environment and persona map, consistent with decision degeneracy.",
+  "mismatches": [
+    {"seed": 14, "round": 3, "harp_assignment": [[5, 1]], "harp_s_assignment": [[3, 1]], "harp_utility_increment": -2.0, "harp_s_utility_increment": -2.0},
+    {"seed": 14, "round": 4, "harp_assignment": [[8, 1]], "harp_s_assignment": [[2, 1]], "harp_utility_increment": -2.0, "harp_s_utility_increment": -2.0},
+    {"seed": 17, "round": 4, "harp_assignment": [[1, 4], [7, 3]], "harp_s_assignment": [[1, 4], [2, 3]], "harp_utility_increment": -2.5000000000000004, "harp_s_utility_increment": -2.5000000000000004},
+    {"seed": 18, "round": 2, "harp_assignment": [[4, 1]], "harp_s_assignment": [[1, 1]], "harp_utility_increment": -2.0, "harp_s_utility_increment": -2.0},
+    {"seed": 18, "round": 3, "harp_assignment": [[4, 1]], "harp_s_assignment": [[2, 1]], "harp_utility_increment": -2.0, "harp_s_utility_increment": -2.0},
+    {"seed": 18, "round": 4, "harp_assignment": [[6, 1]], "harp_s_assignment": [[2, 1]], "harp_utility_increment": -1.9999999999999996, "harp_s_utility_increment": -1.9999999999999996}
+  ]
+}

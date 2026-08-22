@@ -1,0 +1,84 @@
+{
+  "seed": 5,
+  "snapshots": 51,
+  "policy": "nearest",
+  "beta": 0.25,
+  "control_match": true,
+  "synthetic_rules": true,
+  "intervene_driver_rules": true,
+  "passenger_personas": true,
+  "persona_assignment": "random",
+  "synthetic_rule_config": {
+    "long_trip_seconds": 300.0,
+    "far_pickup_seconds": 180.0,
+    "surge_fare_per_second": 0.006,
+    "home_after_seconds": 2700.0
+  },
+  "kpi_policy_config": {
+    "wait_weight": 0.01,
+    "travel_weight": 0.0,
+    "fare_weight": 0.0,
+    "reject_penalty": 2.0
+  },
+  "maassim_overrides": {
+    "n_passengers": 40,
+    "n_vehicles": 4,
+    "batch_time": 120
+  },
+  "out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_queue_snapshots.jsonl",
+  "runs": 1,
+  "maassim_summary": {
+    "run_id": 0,
+    "pax_count": 40,
+    "pax_wait_sum": 7881.0,
+    "pax_wait_mean": 197.025,
+    "pax_travel_sum": 3604.0,
+    "pax_travel_mean": 90.1,
+    "pax_arrives_at_dest_sum": 0.0,
+    "pax_arrives_at_dest_mean": 0.0,
+    "pax_prefers_other_service_sum": 0.0,
+    "pax_prefers_other_service_mean": 0.0,
+    "pax_loses_patience_sum": 2911.0,
+    "pax_loses_patience_mean": 72.775,
+    "veh_count": 4,
+    "veh_nrides_sum": 22.0,
+    "veh_nrides_mean": 5.5,
+    "veh_nrejects_sum": 19.0,
+    "veh_nrejects_mean": 6.333333333333333,
+    "veh_nrejected_sum": 12.0,
+    "veh_nrejected_mean": 3.0,
+    "veh_revenue_sum": 0.0,
+    "veh_revenue_mean": 0.0,
+    "veh_idle_sum": 21548.0,
+    "veh_idle_mean": 5387.0,
+    "veh_travel_sum": 3604.0,
+    "veh_travel_mean": 901.0,
+    "veh_cruise_sum": 2247.0,
+    "veh_cruise_mean": 561.75
+  },
+  "exported": {
+    "rides_rows": 248,
+    "trips_rows": 350,
+    "rides_out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_rides.csv",
+    "trips_out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_trips.csv"
+  },
+  "posterior_out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_driver_events.csv",
+  "posterior_summary": {
+    "events": 63,
+    "drivers": 4,
+    "mean_final_ptrue": 0.5066713075501308,
+    "mean_final_rule_acc": 0.8474125624122939,
+    "synthetic_decline_rate": 0.4603174603174603,
+    "actual_decline_rate": 0.4603174603174603,
+    "intervened": true
+  },
+  "passenger_posterior_out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_passenger_events.csv",
+  "passenger_posterior_summary": {
+    "events": 34,
+    "passengers": 34,
+    "mean_final_ptrue": 0.08882874325057853,
+    "mean_final_rule_acc": 0.5423833671399594,
+    "rejection_rate": 0.35294117647058826
+  },
+  "persona_out": "analysis\\e_e_maassim_rq2\\subfleets\\n4\\nearest_n4_s5_personas.json"
+}

@@ -1,0 +1,2224 @@
+{
+  "substrate": "pub",
+  "domain": "pub_coordination",
+  "config": "edinburgh_closures",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "moa"
+  ],
+  "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "orchestration_budget": 4,
+  "information_audit": {
+    "moa": {
+      "mode": "centralized_public_orchestration",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "moa",
+      "episodes": 30,
+      "focal_score_mean": 0.6261772486772487,
+      "focal_score_min_mean": 0.185,
+      "coordination_rate_mean": 0.5222222222222223,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "moa",
+      "seed": 0,
+      "venues": [
+        "The Blue Moon",
+        "The Hanging Bat",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Isla MacLeod",
+        "Catriona Campbell",
+        "Morag MacKay",
+        "Ailsa MacDonald",
+        "Angus Graham"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Blue Moon",
+        "Isla MacLeod": "The Blue Moon",
+        "Catriona Campbell": "The Hanging Bat",
+        "Morag MacKay": "The Blue Moon",
+        "Ailsa MacDonald": "The Hanging Bat",
+        "Angus Graham": "The Blue Moon",
+        "Iain Brown": "The Hanging Bat",
+        "Kirsty Robertson": "The Blue Moon"
+      },
+      "scores": {
+        "Calum Scott": 0.75,
+        "Isla MacLeod": 1.1666666666666665,
+        "Catriona Campbell": 1.0,
+        "Morag MacKay": 0.75,
+        "Ailsa MacDonald": 0.0,
+        "Angus Graham": 1.5,
+        "Iain Brown": 0.3333333333333333,
+        "Kirsty Robertson": 0.75
+      },
+      "focal_score_mean": 0.861111111111111,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.6666666666666666,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Blue Moon\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Morag MacKay\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Angus Graham\": \"The Blue Moon\",\n    \"Iain Brown\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Blue Moon\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Blue Moon\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Morag MacKay\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Angus Graham\": \"The Blue Moon\",\n    \"Iain Brown\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Blue Moon\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Angus Graham\": \"The Hanging Bat\",\n    \"Iain Brown\": \"The Blue Moon\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Blue Moon\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Morag MacKay\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Angus Graham\": \"The Blue Moon\",\n    \"Iain Brown\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Blue Moon\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 1,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Salt Horse",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Niall Thomson",
+        "Catriona Campbell",
+        "Fraser Clark",
+        "Mhairi Wilson",
+        "Douglas Reid",
+        "Isla MacLeod"
+      ],
+      "joint_action": {
+        "Niall Thomson": "The Sheep Held Inn",
+        "Catriona Campbell": "The Salt Horse",
+        "Fraser Clark": "The Sheep Held Inn",
+        "Mhairi Wilson": "The Salt Horse",
+        "Douglas Reid": "The Sheep Held Inn",
+        "Isla MacLeod": "The Salt Horse",
+        "Hamish Taylor": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Salt Horse"
+      },
+      "scores": {
+        "Niall Thomson": 0.5,
+        "Catriona Campbell": 0.25,
+        "Fraser Clark": 0.75,
+        "Mhairi Wilson": 0.5,
+        "Douglas Reid": 0.0,
+        "Isla MacLeod": 1.0,
+        "Hamish Taylor": 0.4,
+        "Ailsa MacDonald": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 2,
+      "venues": [
+        "Sandy Bell's",
+        "The Salt Horse",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Malcolm Mitchell",
+        "Isla MacLeod",
+        "Eilidh Davidson",
+        "Iona Ross",
+        "Euan Murray"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Salt Horse",
+        "Malcolm Mitchell": "The Hanging Bat",
+        "Isla MacLeod": "The Salt Horse",
+        "Eilidh Davidson": "The Hanging Bat",
+        "Iona Ross": "The Salt Horse",
+        "Euan Murray": "The Hanging Bat",
+        "Fraser Clark": "The Salt Horse",
+        "Kirsty Robertson": "The Hanging Bat"
+      },
+      "scores": {
+        "Calum Scott": 0.9,
+        "Malcolm Mitchell": 0.0,
+        "Isla MacLeod": 0.75,
+        "Eilidh Davidson": 0.9,
+        "Iona Ross": 0.6,
+        "Euan Murray": 1.1666666666666665,
+        "Fraser Clark": 0.4,
+        "Kirsty Robertson": 0.4
+      },
+      "focal_score_mean": 0.7194444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 3,
+      "venues": [
+        "The Canny Man's",
+        "The Sheep Held Inn",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Iain Brown",
+        "Iona Ross",
+        "Mhairi Wilson",
+        "Morag MacKay",
+        "Calum Scott",
+        "Hamish Taylor"
+      ],
+      "joint_action": {
+        "Iain Brown": "The Canny Man's",
+        "Iona Ross": "The Ensign Ewart",
+        "Mhairi Wilson": "The Canny Man's",
+        "Morag MacKay": "The Ensign Ewart",
+        "Calum Scott": "The Canny Man's",
+        "Hamish Taylor": "The Ensign Ewart",
+        "Catriona Campbell": "The Canny Man's",
+        "Ailsa MacDonald": "The Ensign Ewart"
+      },
+      "scores": {
+        "Iain Brown": 0.5,
+        "Iona Ross": 0.42857142857142855,
+        "Mhairi Wilson": 0.5,
+        "Morag MacKay": 1.0,
+        "Calum Scott": 0.3333333333333333,
+        "Hamish Taylor": 1.0,
+        "Catriona Campbell": 0.9,
+        "Ailsa MacDonald": 0.75
+      },
+      "focal_score_mean": 0.626984126984127,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 4,
+      "venues": [
+        "The Canny Man's",
+        "The Guildford Arms",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Malcolm Mitchell",
+        "Rory Stewart",
+        "Catriona Campbell",
+        "Isla MacLeod",
+        "Ailsa MacDonald",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Malcolm Mitchell": "The Canny Man's",
+        "Rory Stewart": "Sandy Bell's",
+        "Catriona Campbell": "The Canny Man's",
+        "Isla MacLeod": "Sandy Bell's",
+        "Ailsa MacDonald": "The Canny Man's",
+        "Calum Scott": "Sandy Bell's",
+        "Kirsty Robertson": "The Canny Man's",
+        "Hamish Taylor": "Sandy Bell's"
+      },
+      "scores": {
+        "Malcolm Mitchell": 0.9,
+        "Rory Stewart": 0.3333333333333333,
+        "Catriona Campbell": 0.75,
+        "Isla MacLeod": 0.6,
+        "Ailsa MacDonald": 0.3333333333333333,
+        "Calum Scott": 0.25,
+        "Kirsty Robertson": 0.75,
+        "Hamish Taylor": 0.3333333333333333
+      },
+      "focal_score_mean": 0.5277777777777778,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 5,
+      "venues": [
+        "The Guildford Arms",
+        "The Bow Bar",
+        "The Blue Moon"
+      ],
+      "focal_players": [
+        "Niall Thomson",
+        "Isla MacLeod",
+        "Rory Stewart",
+        "Catriona Campbell",
+        "Kirsty Robertson",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Niall Thomson": "The Guildford Arms",
+        "Isla MacLeod": "The Bow Bar",
+        "Rory Stewart": "The Guildford Arms",
+        "Catriona Campbell": "The Bow Bar",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Ailsa MacDonald": "The Bow Bar",
+        "Fraser Clark": "The Guildford Arms",
+        "Fiona Stewart": "The Bow Bar"
+      },
+      "scores": {
+        "Niall Thomson": 1.0,
+        "Isla MacLeod": 0.0,
+        "Rory Stewart": 1.1666666666666665,
+        "Catriona Campbell": 1.0,
+        "Kirsty Robertson": 0.6666666666666666,
+        "Ailsa MacDonald": 0.5,
+        "Fraser Clark": 0.5,
+        "Fiona Stewart": 0.3333333333333333
+      },
+      "focal_score_mean": 0.7222222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 6,
+      "venues": [
+        "The Salt Horse",
+        "The Ensign Ewart",
+        "The Blue Moon"
+      ],
+      "focal_players": [
+        "Douglas Reid",
+        "Kirsty Robertson",
+        "Iain Brown",
+        "Ailsa MacDonald",
+        "Rory Stewart",
+        "Eilidh Davidson"
+      ],
+      "joint_action": {
+        "Douglas Reid": "The Salt Horse",
+        "Kirsty Robertson": "The Ensign Ewart",
+        "Iain Brown": "The Salt Horse",
+        "Ailsa MacDonald": "The Ensign Ewart",
+        "Rory Stewart": "The Salt Horse",
+        "Eilidh Davidson": "The Ensign Ewart",
+        "Isla MacLeod": "The Salt Horse",
+        "Euan Murray": "The Ensign Ewart"
+      },
+      "scores": {
+        "Douglas Reid": 0.4,
+        "Kirsty Robertson": 0.5,
+        "Iain Brown": 0.5,
+        "Ailsa MacDonald": 0.75,
+        "Rory Stewart": 0.3333333333333333,
+        "Eilidh Davidson": 0.25,
+        "Isla MacLeod": 0.3333333333333333,
+        "Euan Murray": 0.8333333333333333
+      },
+      "focal_score_mean": 0.45555555555555555,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 7,
+      "venues": [
+        "The Bow Bar",
+        "The Sheep Held Inn",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Hamish Taylor",
+        "Kirsty Robertson",
+        "Fraser Clark",
+        "Shona Cameron",
+        "Malcolm Mitchell",
+        "Morag MacKay"
+      ],
+      "joint_action": {
+        "Hamish Taylor": "The Bow Bar",
+        "Kirsty Robertson": "The Canny Man's",
+        "Fraser Clark": "The Bow Bar",
+        "Shona Cameron": "The Canny Man's",
+        "Malcolm Mitchell": "The Bow Bar",
+        "Morag MacKay": "The Canny Man's",
+        "Ailsa MacDonald": "The Bow Bar",
+        "Fiona Stewart": "The Canny Man's"
+      },
+      "scores": {
+        "Hamish Taylor": 0.5,
+        "Kirsty Robertson": 0.3333333333333333,
+        "Fraser Clark": 0.0,
+        "Shona Cameron": 1.0,
+        "Malcolm Mitchell": 0.3333333333333333,
+        "Morag MacKay": 0.25,
+        "Ailsa MacDonald": 0.25,
+        "Fiona Stewart": 1.1666666666666665
+      },
+      "focal_score_mean": 0.40277777777777773,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 8,
+      "venues": [
+        "The Canny Man's",
+        "The Bow Bar",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Rory Stewart",
+        "Shona Cameron",
+        "Mhairi Wilson",
+        "Hamish Taylor",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Bow Bar",
+        "Rory Stewart": "The Hanging Bat",
+        "Shona Cameron": "The Bow Bar",
+        "Mhairi Wilson": "The Hanging Bat",
+        "Hamish Taylor": "The Bow Bar",
+        "Ailsa MacDonald": "The Hanging Bat",
+        "Catriona Campbell": "The Bow Bar",
+        "Isla MacLeod": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.9,
+        "Rory Stewart": 0.5,
+        "Shona Cameron": 0.0,
+        "Mhairi Wilson": 0.5,
+        "Hamish Taylor": 1.1666666666666665,
+        "Ailsa MacDonald": 0.8333333333333333,
+        "Catriona Campbell": 0.5,
+        "Isla MacLeod": 0.5
+      },
+      "focal_score_mean": 0.65,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 9,
+      "venues": [
+        "The Ensign Ewart",
+        "The Bow Bar",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Malcolm Mitchell",
+        "Douglas Reid",
+        "Iona Ross",
+        "Eilidh Davidson",
+        "Euan Murray",
+        "Catriona Campbell"
+      ],
+      "joint_action": {
+        "Malcolm Mitchell": "The Bow Bar",
+        "Douglas Reid": "The Sheep Held Inn",
+        "Iona Ross": "The Bow Bar",
+        "Eilidh Davidson": "The Sheep Held Inn",
+        "Euan Murray": "The Bow Bar",
+        "Catriona Campbell": "The Sheep Held Inn",
+        "Fiona Stewart": "The Bow Bar",
+        "Iain Brown": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Malcolm Mitchell": 1.0,
+        "Douglas Reid": 0.6666666666666666,
+        "Iona Ross": 0.5,
+        "Eilidh Davidson": 0.0,
+        "Euan Murray": 0.6666666666666666,
+        "Catriona Campbell": 0.3333333333333333,
+        "Fiona Stewart": 0.6,
+        "Iain Brown": 0.5
+      },
+      "focal_score_mean": 0.5277777777777778,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 10,
+      "venues": [
+        "Sandy Bell's",
+        "The Blue Moon",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Euan Murray",
+        "Rory Stewart",
+        "Mhairi Wilson",
+        "Catriona Campbell",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Iona Ross": "Sandy Bell's",
+        "Euan Murray": "The Canny Man's",
+        "Rory Stewart": "Sandy Bell's",
+        "Mhairi Wilson": "The Canny Man's",
+        "Catriona Campbell": "Sandy Bell's",
+        "Calum Scott": "The Canny Man's",
+        "Fiona Stewart": "Sandy Bell's",
+        "Hamish Taylor": "The Canny Man's"
+      },
+      "scores": {
+        "Iona Ross": 0.5,
+        "Euan Murray": 0.6,
+        "Rory Stewart": 0.3333333333333333,
+        "Mhairi Wilson": 0.4,
+        "Catriona Campbell": 1.0,
+        "Calum Scott": 0.4,
+        "Fiona Stewart": 0.4,
+        "Hamish Taylor": 0.8333333333333333
+      },
+      "focal_score_mean": 0.5388888888888889,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 11,
+      "venues": [
+        "The Ensign Ewart",
+        "The Hanging Bat",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Isla MacLeod",
+        "Eilidh Davidson",
+        "Morag MacKay",
+        "Euan Murray",
+        "Mhairi Wilson",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Isla MacLeod": "The Ensign Ewart",
+        "Eilidh Davidson": "The Canny Man's",
+        "Morag MacKay": "The Ensign Ewart",
+        "Euan Murray": "The Canny Man's",
+        "Mhairi Wilson": "The Ensign Ewart",
+        "Niall Thomson": "The Canny Man's",
+        "Angus Graham": "The Canny Man's",
+        "Catriona Campbell": "The Ensign Ewart"
+      },
+      "scores": {
+        "Isla MacLeod": 0.5,
+        "Eilidh Davidson": 0.25,
+        "Morag MacKay": 0.75,
+        "Euan Murray": 0.4,
+        "Mhairi Wilson": 0.0,
+        "Niall Thomson": 0.0,
+        "Angus Graham": 0.75,
+        "Catriona Campbell": 0.25
+      },
+      "focal_score_mean": 0.31666666666666665,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Ensign Ewart\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Ensign Ewart\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 12,
+      "venues": [
+        "The Ensign Ewart",
+        "The Guildford Arms",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Douglas Reid",
+        "Kirsty Robertson",
+        "Iain Brown",
+        "Niall Thomson",
+        "Calum Scott",
+        "Eilidh Davidson"
+      ],
+      "joint_action": {
+        "Douglas Reid": "The Ensign Ewart",
+        "Kirsty Robertson": "The Ensign Ewart",
+        "Iain Brown": "The Guildford Arms",
+        "Niall Thomson": "The Ensign Ewart",
+        "Calum Scott": "The Guildford Arms",
+        "Eilidh Davidson": "The Guildford Arms",
+        "Morag MacKay": "The Ensign Ewart",
+        "Shona Cameron": "The Guildford Arms"
+      },
+      "scores": {
+        "Douglas Reid": 0.6666666666666666,
+        "Kirsty Robertson": 1.0,
+        "Iain Brown": 0.6666666666666666,
+        "Niall Thomson": 0.5,
+        "Calum Scott": 1.1666666666666665,
+        "Eilidh Davidson": 1.25,
+        "Morag MacKay": 0.8333333333333333,
+        "Shona Cameron": 0.6
+      },
+      "focal_score_mean": 0.875,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Iain Brown\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 13,
+      "venues": [
+        "The Guildford Arms",
+        "The Hanging Bat",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Catriona Campbell",
+        "Isla MacLeod",
+        "Rory Stewart",
+        "Ailsa MacDonald",
+        "Shona Cameron"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Guildford Arms",
+        "Catriona Campbell": "The Hanging Bat",
+        "Isla MacLeod": "The Guildford Arms",
+        "Rory Stewart": "The Hanging Bat",
+        "Ailsa MacDonald": "The Guildford Arms",
+        "Shona Cameron": "The Hanging Bat",
+        "Fiona Stewart": "The Guildford Arms",
+        "Morag MacKay": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.6,
+        "Catriona Campbell": 0.6,
+        "Isla MacLeod": 1.25,
+        "Rory Stewart": 1.1,
+        "Ailsa MacDonald": 0.9,
+        "Shona Cameron": 1.1,
+        "Fiona Stewart": 0.4,
+        "Morag MacKay": 1.0
+      },
+      "focal_score_mean": 0.9249999999999999,
+      "focal_score_min": 0.6,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 14,
+      "venues": [
+        "The Salt Horse",
+        "The Canny Man's",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Shona Cameron",
+        "Eilidh Davidson",
+        "Angus Graham",
+        "Isla MacLeod",
+        "Iona Ross",
+        "Catriona Campbell"
+      ],
+      "joint_action": {
+        "Shona Cameron": "The Canny Man's",
+        "Eilidh Davidson": "The Sheep Held Inn",
+        "Angus Graham": "The Canny Man's",
+        "Isla MacLeod": "The Sheep Held Inn",
+        "Iona Ross": "The Canny Man's",
+        "Catriona Campbell": "The Sheep Held Inn",
+        "Mhairi Wilson": "The Canny Man's",
+        "Hamish Taylor": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Shona Cameron": 0.0,
+        "Eilidh Davidson": 0.25,
+        "Angus Graham": 0.3333333333333333,
+        "Isla MacLeod": 0.5,
+        "Iona Ross": 0.9,
+        "Catriona Campbell": 0.5,
+        "Mhairi Wilson": 0.3333333333333333,
+        "Hamish Taylor": 0.0
+      },
+      "focal_score_mean": 0.4138888888888889,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 15,
+      "venues": [
+        "The Canny Man's",
+        "Sandy Bell's",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Iain Brown",
+        "Niall Thomson",
+        "Fraser Clark",
+        "Catriona Campbell",
+        "Mhairi Wilson"
+      ],
+      "joint_action": {
+        "Iona Ross": "Sandy Bell's",
+        "Iain Brown": "The Guildford Arms",
+        "Niall Thomson": "Sandy Bell's",
+        "Fraser Clark": "The Guildford Arms",
+        "Catriona Campbell": "Sandy Bell's",
+        "Mhairi Wilson": "The Guildford Arms",
+        "Rory Stewart": "Sandy Bell's",
+        "Isla MacLeod": "The Guildford Arms"
+      },
+      "scores": {
+        "Iona Ross": 0.25,
+        "Iain Brown": 0.2,
+        "Niall Thomson": 0.3333333333333333,
+        "Fraser Clark": 0.0,
+        "Catriona Campbell": 0.5,
+        "Mhairi Wilson": 0.5,
+        "Rory Stewart": 0.25,
+        "Isla MacLeod": 0.25
+      },
+      "focal_score_mean": 0.2972222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Iain Brown\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Iain Brown\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Iain Brown\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Arms\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 16,
+      "venues": [
+        "The Bow Bar",
+        "The Ensign Ewart",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Niall Thomson",
+        "Fiona Stewart",
+        "Calum Scott",
+        "Hamish Taylor",
+        "Iona Ross"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Bow Bar",
+        "Niall Thomson": "The Canny Man's",
+        "Fiona Stewart": "The Bow Bar",
+        "Calum Scott": "The Canny Man's",
+        "Hamish Taylor": "The Bow Bar",
+        "Iona Ross": "The Canny Man's",
+        "Douglas Reid": "The Bow Bar",
+        "Shona Cameron": "The Canny Man's"
+      },
+      "scores": {
+        "Mhairi Wilson": 0.5,
+        "Niall Thomson": 0.6,
+        "Fiona Stewart": 0.7,
+        "Calum Scott": 1.1,
+        "Hamish Taylor": 0.5,
+        "Iona Ross": 0.75,
+        "Douglas Reid": 0.5,
+        "Shona Cameron": 0.5
+      },
+      "focal_score_mean": 0.6916666666666668,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 17,
+      "venues": [
+        "The Hanging Bat",
+        "The Blue Moon",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Isla MacLeod",
+        "Douglas Reid",
+        "Morag MacKay",
+        "Fiona Stewart",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Blue Moon",
+        "Isla MacLeod": "The Ensign Ewart",
+        "Douglas Reid": "The Blue Moon",
+        "Morag MacKay": "The Ensign Ewart",
+        "Fiona Stewart": "The Blue Moon",
+        "Ailsa MacDonald": "The Ensign Ewart",
+        "Malcolm Mitchell": "The Blue Moon",
+        "Iona Ross": "The Ensign Ewart"
+      },
+      "scores": {
+        "Mhairi Wilson": 0.5,
+        "Isla MacLeod": 1.25,
+        "Douglas Reid": 0.75,
+        "Morag MacKay": 0.4,
+        "Fiona Stewart": 0.5,
+        "Ailsa MacDonald": 0.8333333333333333,
+        "Malcolm Mitchell": 0.6666666666666666,
+        "Iona Ross": 1.5
+      },
+      "focal_score_mean": 0.7055555555555556,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "candidate_consensus",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Douglas Reid\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Fiona Stewart\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Malcolm Mitchell\": \"The Blue Moon\",\n    \"Iona Ross\": \"The Ensign Ewart\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```"
+          }
+        ],
+        "final_reply": "```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 18,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Salt Horse",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Niall Thomson",
+        "Rory Stewart",
+        "Iona Ross",
+        "Angus Graham",
+        "Hamish Taylor"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Bow Bar",
+        "Niall Thomson": "The Salt Horse",
+        "Rory Stewart": "The Bow Bar",
+        "Iona Ross": "The Salt Horse",
+        "Angus Graham": "The Salt Horse",
+        "Hamish Taylor": "The Bow Bar",
+        "Fiona Stewart": "The Salt Horse",
+        "Euan Murray": "The Bow Bar"
+      },
+      "scores": {
+        "Calum Scott": 1.0,
+        "Niall Thomson": 0.75,
+        "Rory Stewart": 0.5,
+        "Iona Ross": 1.25,
+        "Angus Graham": 0.75,
+        "Hamish Taylor": 1.5,
+        "Fiona Stewart": 1.1,
+        "Euan Murray": 0.4
+      },
+      "focal_score_mean": 0.9583333333333334,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 19,
+      "venues": [
+        "Sandy Bell's",
+        "The Salt Horse",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Ailsa MacDonald",
+        "Euan Murray",
+        "Malcolm Mitchell",
+        "Kirsty Robertson",
+        "Niall Thomson",
+        "Angus Graham"
+      ],
+      "joint_action": {
+        "Ailsa MacDonald": "Sandy Bell's",
+        "Euan Murray": "The Guildford Arms",
+        "Malcolm Mitchell": "Sandy Bell's",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Niall Thomson": "Sandy Bell's",
+        "Angus Graham": "The Guildford Arms",
+        "Isla MacLeod": "Sandy Bell's",
+        "Hamish Taylor": "The Guildford Arms"
+      },
+      "scores": {
+        "Ailsa MacDonald": 0.5,
+        "Euan Murray": 0.5,
+        "Malcolm Mitchell": 0.0,
+        "Kirsty Robertson": 0.5,
+        "Niall Thomson": 1.0,
+        "Angus Graham": 0.9,
+        "Isla MacLeod": 0.25,
+        "Hamish Taylor": 0.5
+      },
+      "focal_score_mean": 0.5666666666666667,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Guildford Arms\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Euan Murray\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Guildford Arms\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Hamish Taylor\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Euan Murray\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Guildford Arms\",\n    \"Kirsty Robertson\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Guildford Arms\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 20,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Guildford Arms",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Eilidh Davidson",
+        "Kirsty Robertson",
+        "Fraser Clark",
+        "Catriona Campbell",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Guildford Arms",
+        "Eilidh Davidson": "The Bow Bar",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Fraser Clark": "The Bow Bar",
+        "Catriona Campbell": "The Guildford Arms",
+        "Niall Thomson": "The Bow Bar",
+        "Fiona Stewart": "The Bow Bar",
+        "Morag MacKay": "The Guildford Arms"
+      },
+      "scores": {
+        "Iona Ross": 0.5,
+        "Eilidh Davidson": 1.0,
+        "Kirsty Robertson": 0.6666666666666666,
+        "Fraser Clark": 0.0,
+        "Catriona Campbell": 1.1666666666666665,
+        "Niall Thomson": 1.0,
+        "Fiona Stewart": 0.6666666666666666,
+        "Morag MacKay": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7222222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Guildford Arms\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 21,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Blue Moon",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Iona Ross",
+        "Hamish Taylor",
+        "Malcolm Mitchell",
+        "Kirsty Robertson",
+        "Fraser Clark"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Sheep Held Inn",
+        "Iona Ross": "The Bow Bar",
+        "Hamish Taylor": "The Sheep Held Inn",
+        "Malcolm Mitchell": "The Bow Bar",
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Fraser Clark": "The Bow Bar",
+        "Morag MacKay": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Bow Bar"
+      },
+      "scores": {
+        "Calum Scott": 0.25,
+        "Iona Ross": 0.0,
+        "Hamish Taylor": 0.0,
+        "Malcolm Mitchell": 0.3333333333333333,
+        "Kirsty Robertson": 1.0,
+        "Fraser Clark": 0.3333333333333333,
+        "Morag MacKay": 1.0,
+        "Ailsa MacDonald": 0.0
+      },
+      "focal_score_mean": 0.3194444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "candidate_consensus",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Bow Bar\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Bow Bar\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 22,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Canny Man's",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Kirsty Robertson",
+        "Isla MacLeod",
+        "Niall Thomson",
+        "Malcolm Mitchell",
+        "Shona Cameron",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Isla MacLeod": "Sandy Bell's",
+        "Niall Thomson": "The Sheep Held Inn",
+        "Malcolm Mitchell": "Sandy Bell's",
+        "Shona Cameron": "The Sheep Held Inn",
+        "Ailsa MacDonald": "Sandy Bell's",
+        "Rory Stewart": "The Sheep Held Inn",
+        "Iain Brown": "Sandy Bell's"
+      },
+      "scores": {
+        "Kirsty Robertson": 0.8333333333333333,
+        "Isla MacLeod": 0.9,
+        "Niall Thomson": 0.6,
+        "Malcolm Mitchell": 0.4,
+        "Shona Cameron": 0.9,
+        "Ailsa MacDonald": 0.6666666666666666,
+        "Rory Stewart": 0.4,
+        "Iain Brown": 0.4
+      },
+      "focal_score_mean": 0.7166666666666667,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"Sandy Bell's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"Sandy Bell's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 23,
+      "venues": [
+        "The Guildford Arms",
+        "The Salt Horse",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Morag MacKay",
+        "Mhairi Wilson",
+        "Calum Scott",
+        "Niall Thomson",
+        "Hamish Taylor",
+        "Iain Brown"
+      ],
+      "joint_action": {
+        "Morag MacKay": "The Guildford Arms",
+        "Mhairi Wilson": "The Guildford Arms",
+        "Calum Scott": "The Guildford Arms",
+        "Niall Thomson": "The Guildford Arms",
+        "Hamish Taylor": "Sandy Bell's",
+        "Iain Brown": "The Guildford Arms",
+        "Eilidh Davidson": "The Guildford Arms",
+        "Ailsa MacDonald": "Sandy Bell's"
+      },
+      "scores": {
+        "Morag MacKay": 1.0,
+        "Mhairi Wilson": 0.8,
+        "Calum Scott": 1.0,
+        "Niall Thomson": 1.5,
+        "Hamish Taylor": 0.0,
+        "Iain Brown": 1.5,
+        "Eilidh Davidson": 0.8333333333333334,
+        "Ailsa MacDonald": 0.0
+      },
+      "focal_score_mean": 0.9666666666666667,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.8333333333333334,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Hamish Taylor\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Hamish Taylor\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Hamish Taylor\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 24,
+      "venues": [
+        "The Blue Moon",
+        "The Sheep Held Inn",
+        "The Salt Horse"
+      ],
+      "focal_players": [
+        "Kirsty Robertson",
+        "Mhairi Wilson",
+        "Iona Ross",
+        "Euan Murray",
+        "Niall Thomson",
+        "Morag MacKay"
+      ],
+      "joint_action": {
+        "Kirsty Robertson": "The Blue Moon",
+        "Mhairi Wilson": "The Blue Moon",
+        "Iona Ross": "The Sheep Held Inn",
+        "Euan Murray": "The Blue Moon",
+        "Niall Thomson": "The Sheep Held Inn",
+        "Morag MacKay": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Blue Moon",
+        "Calum Scott": "The Blue Moon"
+      },
+      "scores": {
+        "Kirsty Robertson": 0.6,
+        "Mhairi Wilson": 1.0,
+        "Iona Ross": 1.0,
+        "Euan Murray": 0.6,
+        "Niall Thomson": 0.25,
+        "Morag MacKay": 0.5,
+        "Ailsa MacDonald": 1.0,
+        "Calum Scott": 0.8
+      },
+      "focal_score_mean": 0.6583333333333333,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "candidate_consensus",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Blue Moon\",\n    \"Mhairi Wilson\": \"The Blue Moon\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Blue Moon\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Calum Scott\": \"The Blue Moon\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Blue Moon\",\n    \"Mhairi Wilson\": \"The Blue Moon\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Blue Moon\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Calum Scott\": \"The Blue Moon\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```"
+          }
+        ],
+        "final_reply": "```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 25,
+      "venues": [
+        "The Blue Moon",
+        "Sandy Bell's",
+        "The Salt Horse"
+      ],
+      "focal_players": [
+        "Angus Graham",
+        "Malcolm Mitchell",
+        "Iona Ross",
+        "Douglas Reid",
+        "Morag MacKay",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Angus Graham": "Sandy Bell's",
+        "Malcolm Mitchell": "The Salt Horse",
+        "Iona Ross": "Sandy Bell's",
+        "Douglas Reid": "The Salt Horse",
+        "Morag MacKay": "Sandy Bell's",
+        "Ailsa MacDonald": "The Salt Horse",
+        "Fiona Stewart": "Sandy Bell's",
+        "Hamish Taylor": "The Salt Horse"
+      },
+      "scores": {
+        "Angus Graham": 0.3333333333333333,
+        "Malcolm Mitchell": 1.0,
+        "Iona Ross": 0.5,
+        "Douglas Reid": 0.4,
+        "Morag MacKay": 0.25,
+        "Ailsa MacDonald": 0.4,
+        "Fiona Stewart": 0.0,
+        "Hamish Taylor": 0.8333333333333333
+      },
+      "focal_score_mean": 0.48055555555555557,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 26,
+      "venues": [
+        "The Canny Man's",
+        "The Hanging Bat",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Fiona Stewart",
+        "Isla MacLeod",
+        "Morag MacKay",
+        "Kirsty Robertson",
+        "Malcolm Mitchell"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Canny Man's",
+        "Fiona Stewart": "The Hanging Bat",
+        "Isla MacLeod": "The Canny Man's",
+        "Morag MacKay": "The Hanging Bat",
+        "Kirsty Robertson": "The Canny Man's",
+        "Malcolm Mitchell": "The Canny Man's",
+        "Hamish Taylor": "The Hanging Bat",
+        "Euan Murray": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.6666666666666666,
+        "Fiona Stewart": 0.5,
+        "Isla MacLeod": 0.4,
+        "Morag MacKay": 0.5,
+        "Kirsty Robertson": 0.6,
+        "Malcolm Mitchell": 1.0,
+        "Hamish Taylor": 0.75,
+        "Euan Murray": 0.0
+      },
+      "focal_score_mean": 0.611111111111111,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.6666666666666666,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Hanging Bat\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Canny Man's\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Canny Man's\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Hanging Bat\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 27,
+      "venues": [
+        "The Ensign Ewart",
+        "The Guildford Arms",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Rory Stewart",
+        "Iona Ross",
+        "Catriona Campbell",
+        "Angus Graham",
+        "Morag MacKay",
+        "Fiona Stewart"
+      ],
+      "joint_action": {
+        "Rory Stewart": "The Guildford Arms",
+        "Iona Ross": "The Sheep Held Inn",
+        "Catriona Campbell": "The Guildford Arms",
+        "Angus Graham": "The Sheep Held Inn",
+        "Morag MacKay": "The Guildford Arms",
+        "Fiona Stewart": "The Sheep Held Inn",
+        "Isla MacLeod": "The Guildford Arms",
+        "Calum Scott": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Rory Stewart": 0.4,
+        "Iona Ross": 0.6666666666666666,
+        "Catriona Campbell": 0.0,
+        "Angus Graham": 0.5,
+        "Morag MacKay": 1.0,
+        "Fiona Stewart": 1.1666666666666665,
+        "Isla MacLeod": 1.1666666666666665,
+        "Calum Scott": 0.5
+      },
+      "focal_score_mean": 0.6222222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Calum Scott\": \"The Guildford Arms\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Calum Scott\": \"The Guildford Arms\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 28,
+      "venues": [
+        "The Salt Horse",
+        "The Sheep Held Inn",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Catriona Campbell",
+        "Rory Stewart",
+        "Angus Graham",
+        "Kirsty Robertson",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Salt Horse",
+        "Catriona Campbell": "The Salt Horse",
+        "Rory Stewart": "The Sheep Held Inn",
+        "Angus Graham": "The Salt Horse",
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Calum Scott": "The Sheep Held Inn",
+        "Iona Ross": "The Sheep Held Inn",
+        "Niall Thomson": "The Salt Horse"
+      },
+      "scores": {
+        "Mhairi Wilson": 1.1666666666666665,
+        "Catriona Campbell": 1.5,
+        "Rory Stewart": 0.3333333333333333,
+        "Angus Graham": 1.0,
+        "Kirsty Robertson": 0.3333333333333333,
+        "Calum Scott": 1.0,
+        "Iona Ross": 1.0,
+        "Niall Thomson": 0.4
+      },
+      "focal_score_mean": 0.8888888888888888,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Salt Horse\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Kirsty Robertson\": \"The Salt Horse\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Kirsty Robertson\": \"The Salt Horse\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Salt Horse\"\n  }\n}\n```"
+      }
+    },
+    {
+      "method": "moa",
+      "seed": 29,
+      "venues": [
+        "The Hanging Bat",
+        "The Salt Horse",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Ailsa MacDonald",
+        "Isla MacLeod",
+        "Fraser Clark",
+        "Kirsty Robertson",
+        "Mhairi Wilson",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Ailsa MacDonald": "The Sheep Held Inn",
+        "Isla MacLeod": "The Salt Horse",
+        "Fraser Clark": "The Sheep Held Inn",
+        "Kirsty Robertson": "The Salt Horse",
+        "Mhairi Wilson": "The Sheep Held Inn",
+        "Niall Thomson": "The Salt Horse",
+        "Shona Cameron": "The Sheep Held Inn",
+        "Hamish Taylor": "The Salt Horse"
+      },
+      "scores": {
+        "Ailsa MacDonald": 0.25,
+        "Isla MacLeod": 0.9,
+        "Fraser Clark": 0.4,
+        "Kirsty Robertson": 0.25,
+        "Mhairi Wilson": 0.4,
+        "Niall Thomson": 0.9,
+        "Shona Cameron": 0.25,
+        "Hamish Taylor": 0.25
+      },
+      "focal_score_mean": 0.5166666666666667,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "MoA",
+        "policy": "fixed_layer_aggregation",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "action_source": "final_aggregator",
+        "trace": [
+          {
+            "role": "social-belief analyst",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "coordination planner",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          },
+          {
+            "role": "counterfactual critic",
+            "reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}\n```"
+          }
+        ],
+        "final_reply": "```json\n{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Kirsty Robertson\": \"The Salt Horse\",\n    \"Mhairi Wilson\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Salt Horse\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}\n```"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[project]
+name = "pact-aaai27-artifact"
+version = "1.0.0"
+description = "Anonymous PACT AAAI-27 code and data artifact"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24",
+  "matplotlib>=3.7",
+  "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+providers = ["openai>=1.0", "anthropic>=0.39", "google-genai>=0.3"]
+
+[tool.uv]
+package = false

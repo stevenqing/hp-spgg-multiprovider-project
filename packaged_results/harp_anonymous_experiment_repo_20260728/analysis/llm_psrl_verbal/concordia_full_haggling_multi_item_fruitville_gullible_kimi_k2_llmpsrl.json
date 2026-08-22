@@ -1,0 +1,4204 @@
+{
+  "domain": "haggling_multi_item",
+  "config": "fruitville_gullible",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "llm_psrl_verbal"
+  ],
+  "model": "Kimi-K2.6",
+  "information_audit": {
+    "llm_psrl_verbal": {
+      "mode": "centralized_verbal_posterior",
+      "sees_full_case": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "llm_psrl_verbal",
+      "episodes": 30,
+      "focal_score_mean": 5.933333333333334,
+      "focal_score_min_mean": 5.933333333333334,
+      "deal_score_mean": 4.144444444444444,
+      "deal_min_score_mean": 1.1444444444444446,
+      "nash_product_mean": 3.3222222222222224,
+      "agreement_rate_mean": 0.9777777777777777,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 0,
+      "scores": {
+        "Aiden Riversong": 3.0,
+        "Hazel Nutgrove": 5.0
+      },
+      "focal_players": [
+        "Aiden Riversong"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 2.6666666666666665,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 0.6666666666666666,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Aiden Riversong": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The apple has high value to Hazel (6) and low cost to Aiden (1), so 3 coins splits surplus evenly at 3-2; Aiden likely accepts this reasonable opening offer to build rapport for potential multi-item expansion.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Hazel Nutgrove": 0.0,
+            "Aiden Riversong": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"reject\",\n  \"belief\": \"Hazel believes Aiden may accept a lowball opening on apples since her value is high, but Aiden knows his cost is 2 and will hold out for at least 3 to make any profit, seeing this as an aggressive anchor rather than a fair offer.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Aiden Riversong",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Aiden Riversong": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Hazel values all fruits equally at 5 coins but should start with apple since Aiden's cost is highest there (2 coins), making a 3 coin offer give Aiden 1 coin profit while Hazel still gains 2 coins surplus\u2014likely acceptable without haggling.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 1,
+      "scores": {
+        "Della Plumstone": 6.0,
+        "Cedric Meadowbrook": 3.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 6.0,
+      "focal_score_min": 6.0,
+      "deal_score_mean": 3.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 2.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 2.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Seller Cedric sees Della as a serious buyer who prioritizes bananas; at 3 coins, margin is 1 and trade gets done without wasting rounds\u2014mutual surplus 2 is decent and Cedric fears Della might pivot to pears if banana is rejected.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 2.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Della values pears at 5 and Cedric's cost is only 2, so 3 coins leaves both with positive surplus; Cedric likely accepts this fair-split offer to avoid deadlock, especially since pear has the widest bargaining zone among items where buyer surplus (2) still exceeds seller surplus (1).\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 2.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Della values bananas at 5 and Cedric's cost is only 2, so splitting the surplus at 3 coins leaves both with positive gain\u2014Della gets her highest-margin fruit first, and Cedric secures an early profitable deal to build goodwill for further trades.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 2,
+      "scores": {
+        "Gaia Willowbrook": 8.0,
+        "Elias Berryfield": 4.0
+      },
+      "focal_players": [
+        "Gaia Willowbrook"
+      ],
+      "focal_score_mean": 8.0,
+      "focal_score_min": 8.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "pear for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 2.0,
+            "Elias Berryfield": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\"buyer_action\":\"pear for 4 coins\",\"seller_action\":\"accept\",\"belief\":\"Gaia values pears highly at 6 and Elias's cost is only 2, so 4 coins gives both a fair split of the 4-coin surplus; Elias should accept this as it doubles his return and avoids risk of impasse.\"}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 3.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Proposing banana at midpoint creates surplus; seller earns 1 coin, buyer keeps 3 value. Pear too cheap risks rejection, apple lower margin. Quick deal on banana builds trust for future rounds.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Gaia Willowbrook",
+            "seller": "Elias Berryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Gaia Willowbrook": 3.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Gaia believes Elias is a reasonable seller who will accept fair offers at cost-plus where both parties gain equally; she strategically starts with a single-item probe at midpoint to establish trust before potentially bundling for better surplus extraction, anticipating Elias's 2 coin cost means 3 coins splits the 4 coin surplus evenly.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 3,
+      "scores": {
+        "Flynn Honeycomb": 5.0,
+        "Orion Apricotwood": 8.0
+      },
+      "focal_players": [
+        "Flynn Honeycomb"
+      ],
+      "focal_score_mean": 5.0,
+      "focal_score_min": 5.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.6666666666666667,
+      "nash_product_mean": 4.333333333333333,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "apple for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 2.0,
+            "Flynn Honeycomb": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Flynn sees Orion values apple most at 6; offering 4 gives Flynn 2 profit (above 2 cost) while Orion still gains 2 surplus\u2014efficient split for highest-value item with clear mutual benefit, likely acceptable opening trade to build rapport.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Flynn Honeycomb": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Orion values bananas highest at 6, Flynn's cost is 2, so offering 3 gives Flynn positive surplus (1 coin) while leaving Orion substantial value (3 coins); banana is the efficient item to trade.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Flynn Honeycomb",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Flynn Honeycomb": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Banana has the highest margin for both: buyer values it at 6 and seller cost is only 1, so a mid-range offer of 3 splits the surplus fairly while leaving strong value for both parties.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 4,
+      "scores": {
+        "Ivy Pearblossom": 3.0,
+        "Hazel Nutgrove": 8.0
+      },
+      "focal_players": [
+        "Ivy Pearblossom"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 3.6666666666666665,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 2.0,
+            "Ivy Pearblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Hazel seeks apples most urgently given equal rewards across fruits; Ivy's lowest cost is pear at 1 but apples cost her 2, so splitting surplus evenly at 3 coins gives both positive margins (Hazel +2, Ivy +1) and builds trust for potential bundle expansion.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Ivy Pearblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Hazel wants to build rapport with a small win first; bananas have moderate value for her and minimal cost for Ivy, making this a low-friction opening that leaves room for larger apple and pear deals afterward.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hazel Nutgrove",
+            "seller": "Ivy Pearblossom",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hazel Nutgrove": 3.0,
+            "Ivy Pearblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The buyer likely values all goods at 6 and knows the seller has low costs, so starting with apple at 3 (splitting surplus evenly) sets a cooperative baseline the seller should accept.\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 5,
+      "scores": {
+        "Della Plumstone": 9.0,
+        "Elara Berryvine": 3.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 4.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Della values all fruits highly (5-6) while Elara's costs are minimal (1 each), so a low opening on apple at 2 coins\u2014still doubling Elara's cost\u2014should be accepted to establish cooperation and leave room for future multi-item bundles.\"\n}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 3.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Della needs to start with a strong offer that gives Elara profit while securing her highest-value item. Apple yields Della 6 value at cost 2 to Elara; 3 coins splits surplus evenly at 3 each, making acceptance likely and establishing cooperative momentum for banana/pear bundling.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Della Plumstone",
+            "seller": "Elara Berryvine",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Della Plumstone": 2.0,
+            "Elara Berryvine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Della believes Elara is reasonable and the apple at 3 coins splits surplus fairly\u2014Della gains 2, Elara gains 1\u2014establishing trust for future multi-item bundle negotiation.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 6,
+      "scores": {
+        "Willow Blackberry": 9.0,
+        "Tristan Blackberrylane": 4.0
+      },
+      "focal_players": [
+        "Willow Blackberry"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "banana for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 2.0,
+            "Tristan Blackberrylane": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The seller likely recognizes bananas have highest cost (2) but still good margin; buyer values all fruits similarly and banana at 4 leaves buyer surplus of 2, seller surplus of 2\u2014fair split suggesting willingness to deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Tristan Blackberrylane": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Willow believes Tristan is family-friendly given the shared surname root 'Blackberry', suggesting cooperative surplus-splitting where buyer gets strong deal on one item to build rapport.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Tristan Blackberrylane",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 3.0,
+            "Tristan Blackberrylane": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The banana offers the best value for the buyer with high reward and a price that still gives seller profit. Since Willow values banana at 6 and Tristan's cost is 2, splitting surplus evenly at 3 coins makes both parties better off and is a natural focal point for agreement.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 7,
+      "scores": {
+        "Flynn Honeycomb": 9.0,
+        "Sasha Grapevine": 5.0
+      },
+      "focal_players": [
+        "Flynn Honeycomb"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.6666666666666667,
+      "nash_product_mean": 5.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 3.0,
+            "Sasha Grapevine": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Flynn values pear highest at 6 and Sasha's cost is only 1, so splitting surplus at 3 gives Flynn 3 profit and Sasha 2 profit\u2014both gain and Sasha should accept this reasonable offer.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 3.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Flynn values pear highly at 6 and Sasha's cost is only 2, so splitting the surplus at 3 coins gives both players positive gain (Flynn: +3, Sasha: +1) and is a mutually acceptable focal point.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Flynn Honeycomb",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Flynn Honeycomb": 3.0,
+            "Sasha Grapevine": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Fair split of surplus\u2014buyer gets 3 value, seller gets 2 profit, establishing cooperative baseline for multi-item expansion.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 8,
+      "scores": {
+        "Blaise Windwillow": 3.0,
+        "Jasper Quincehill": 9.0
+      },
+      "focal_players": [
+        "Blaise Windwillow"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Blaise sees Jasper as a fair dealer who starts with modest offers on items with low seller cost, allowing quick agreement to build rapport before pressing harder on apples later.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Blaise sees Jasper values bananas highly at 5 and has low banana cost at 1, so a 2-coin offer gives Blaise profit while Jasper still gains 3\u2014mutually beneficial ground where Jasper tests cooperation before pushing harder on apple/pear.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Jasper Quincehill",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Jasper Quincehill": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The pear offers the highest buyer value (6 coins) with a seller cost of only 2 coins, so splitting the surplus at 3 coins leaves both parties strictly better off than trades on apple or banana, and the seller still earns positive profit.\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 9,
+      "scores": {
+        "Faye Honeydew": 10.0,
+        "Quentin Cherrybrook": 5.0
+      },
+      "focal_players": [
+        "Faye Honeydew"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 5.0,
+      "deal_min_score_mean": 1.6666666666666667,
+      "nash_product_mean": 5.333333333333333,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Quentin Cherrybrook": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye Honeydew thinks Quentin Cherrybrook will view 3 coins per item as a reasonable starting offer since it splits the surplus evenly\u2014she profits 3, he profits 2\u2014and starting with one item tests cooperation without overcommitting.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Quentin Cherrybrook": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye values pear highly at 6, while Quentin's cost is only 1, so a mid-range offer of 3 gives Faye surplus 3 and Quentin profit 2\u2014a fair split where both benefit, and Quentin should accept since any positive profit beats no deal.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Quentin Cherrybrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Quentin Cherrybrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye values banana highest at 6, so prioritizing it for a low price maximizes her surplus; Quentin's cost is just 1, so 2 coins still yields profit and should be acceptable given the cooperative surplus.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 10,
+      "scores": {
+        "Sasha Grapevine": 10.0,
+        "Ivor Pearbrook": 3.0
+      },
+      "focal_players": [
+        "Sasha Grapevine"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Ivor will accept a small profit on apples\u2014his lowest-cost item\u2014since Sasha values all fruits equally and leading with a fair, minimal-offer signals cooperativeness while preserving leverage for bananas and pears later.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Ivor likely treats pears as low-margin inventory and will accept minimal profit to build rapport with Sasha, who slightly prefers bananas and pears equally but starts with the cheapest-to-produce item.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Sasha Grapevine",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Sasha Grapevine": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The apple has the highest value gap (buyer reward 6 vs seller cost 2), leaving 4 coins of surplus. At 3 coins, seller earns 1 coin profit and buyer gets 3 coins surplus\u2014both gain, with buyer capturing slightly more. Seller should accept as this beats their next best alternative of holding out for uncertain higher price, especially since buyer could pivot to pear or banana at similar prices where surplus is smaller but seller competition for deal is tighter.\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 11,
+      "scores": {
+        "Silas Honeybrook": 10.0,
+        "Hunter Nutwood": 2.0
+      },
+      "focal_players": [
+        "Silas Honeybrook"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 3.0,
+            "Hunter Nutwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Hunter sees Silas values bananas highly (6) and wants to build trust for future trades by accepting a fair middle price that gives solid profit margin.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 4.0,
+            "Hunter Nutwood": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Silas values apples highly at 6 coins, while Hunter's cost is only 2 coins. Offering exactly 2 coins is the minimal acceptable price for Hunter, giving Silas maximum surplus of 4 coins on this trade while ensuring immediate agreement.\"\n}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Silas Honeybrook",
+            "seller": "Hunter Nutwood",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Silas Honeybrook": 3.0,
+            "Hunter Nutwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Silas prioritizes securing any fruit quickly to anchor cooperation; Hunter accepts on banana since price equals cost\u2014zero profit but builds trust for future rounds where higher-margin deals may emerge.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 12,
+      "scores": {
+        "Maeve Mulberry": 10.0,
+        "Cedric Meadowbrook": 3.0
+      },
+      "focal_players": [
+        "Maeve Mulberry"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 3.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\"buyer_action\":\"apple for 3 coins\",\"seller_action\":\"accept\",\"belief\":\"Given Cedric's low apple cost of 2 coins, Maeve offering 3 coins gives him 1 coin profit\u2014likely acceptable early to build rapport, while Maeve still captures 3 coins surplus on her highest-value item.\"}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 3.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Opening with a low-risk offer on the most profitable item for both: apple has highest buyer value and lowest seller cost, making 2 coins an obvious mutual-gain starting point that Cedric should accept to build trust for larger bundle negotiations.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Maeve Mulberry",
+            "seller": "Cedric Meadowbrook",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Maeve Mulberry": 4.0,
+            "Cedric Meadowbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Cedric likely accepts a low first offer on pear since his cost is minimal; Maeve tests if seller is cooperative early by starting below midpoint, saving room to negotiate other fruits later if rejected.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 13,
+      "scores": {
+        "Blaise Windwillow": 3.0,
+        "Anya Blossomwood": 9.0
+      },
+      "focal_players": [
+        "Blaise Windwillow"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Anya prioritizes pears where her surplus is weakest relative to costs; Blaise accepts at cost-plus-one since quick trades on low-margin items avoid deadlock risk.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Anya values apples highest at 6 and Blaise's cost is only 2, so 3 coins splits surplus fairly; Blaise should accept this profitable offer to build goodwill for possible future trades on bananas and pears.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Anya Blossomwood",
+            "seller": "Blaise Windwillow",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Anya Blossomwood": 3.0,
+            "Blaise Windwillow": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Anya believes Blaise is eager to sell the apple at a modest profit and that offering a middle-range price will signal fairness while securing the item quickly; Blaise sees the offer covers cost-plus-1 and accepts as a clean opening deal that builds rapport for potential further trades.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 14,
+      "scores": {
+        "Rowan Cranberry": 2.0,
+        "Faye Honeydew": 12.0
+      },
+      "focal_players": [
+        "Rowan Cranberry"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Rowan Cranberry": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Rowan likely views the apple as easy profit at minimal cost and will accept a low-but-fair opening offer to build rapport for future rounds.\"\n}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Rowan Cranberry": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye values banana most at 6, Rowan's cost is only 2\u2014offering 3 signals cooperativeness while leaving Rowan clear profit; Rowan likely accepts this mutually beneficial deal to build rapport and secure quick agreement.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Rowan Cranberry",
+            "buyer_action": "apple for 1 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 5.0,
+            "Rowan Cranberry": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 1 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye sees apple as her first move to test cooperation at seller's cost\u2014Rowan accepts to build trust, knowing profit comes from volume or future rounds.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 15,
+      "scores": {
+        "Opal Apricot": 4.0,
+        "Quinn Cherryblossom": 8.0
+      },
+      "focal_players": [
+        "Opal Apricot"
+      ],
+      "focal_score_mean": 4.0,
+      "focal_score_min": 4.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Opal Apricot": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Pear has low seller cost (1) and solid buyer value (6); offering 2 coins gives seller positive surplus while buyer captures most gains, making acceptance likely and building cooperation.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Opal Apricot": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Pear has healthy surplus for both: buyer values at 5, seller cost is 2, so splitting at 3 satisfies fairness norms and avoids risk of impasse; Quinn likely testifies Opal accommodates middle-ground proposals to preserve relationship.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Opal Apricot",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Opal Apricot": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The banana has a good surplus split: Quinn values it at 5 and Opal's cost is only 1, so 3 coins leaves both with positive surplus and feels fair as a midpoint.\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 16,
+      "scores": {
+        "Lennon Figtree": 3.0,
+        "Garen Willowshade": 10.0
+      },
+      "focal_players": [
+        "Lennon Figtree"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 4.0,
+            "Lennon Figtree": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The seller likely wants to move inventory quickly given low costs; offering at-cost for pear signals fairness while leaving room to negotiate other items later.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 3.0,
+            "Lennon Figtree": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The pear offers the highest buyer surplus (6-3=3) with strong seller profit (3-2=1). Buyer opens near seller's reservation to signal cooperation, expecting Figtree to accept given positive margin and relationship-building incentive.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Garen Willowshade",
+            "seller": "Lennon Figtree",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Garen Willowshade": 3.0,
+            "Lennon Figtree": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Garen values bananas highest at 6, and Lennon likely knows banana production costs are low; offering 3 coins splits surplus evenly (buyer surplus 3, seller profit 1) and signals fairness to build trust for potential multi-item bundle later.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 17,
+      "scores": {
+        "Jasper Quincehill": 2.0,
+        "Elara Berryvine": 11.0
+      },
+      "focal_players": [
+        "Jasper Quincehill"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Jasper likely values banana at cost and knows Elara has high willingness-to-pay; splitting surplus near equally builds rapport for potential pear follow-up.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The banana offers the highest buyer surplus at 6-3=3 coins, and Jasper likely accepts fair split proposals since his cost is only 2\u2014he gains 1 coin and avoids deadlock risk on the most valuable item for me.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Elara Berryvine",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "apple for 1 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Elara Berryvine": 5.0,
+            "Jasper Quincehill": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 1 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Jasper is desperate to move inventory and will accept any profitable offer; starting with the cheapest apple signals cooperative frugality while still giving him positive surplus.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 18,
+      "scores": {
+        "Quinn Cherryblossom": 5.0,
+        "Kira Citronbloom": 9.0
+      },
+      "focal_players": [
+        "Quinn Cherryblossom"
+      ],
+      "focal_score_mean": 5.0,
+      "focal_score_min": 5.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.6666666666666667,
+      "nash_product_mean": 4.666666666666667,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 3.0,
+            "Quinn Cherryblossom": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Kira values all fruits equally at 6 and likely wants the apple cheapest-to-procure item as a focal point to build trust; Quinn should accept the 3-coin apple offer since it yields 2 profit while leaving room for follow-up banana and pear deals at similar margins.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 4.0,
+            "Quinn Cherryblossom": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Banana offers highest buyer surplus (6-2=4) with low seller cost (1), making 2 coins a credible opening that splits value fairly and signals cooperative intent on the most efficient trade.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Quinn Cherryblossom",
+            "buyer_action": "pear for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 2.0,
+            "Quinn Cherryblossom": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Kira values pears highly at 6 coins and Quinn's cost is only 2 coins, so splitting the surplus at 4 coins gives both parties positive gain\u2014Kira gets 2 coins consumer surplus and Quinn gets 2 coins profit. This is a natural focal point for agreement on the highest-value item.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 19,
+      "scores": {
+        "Orion Apricotwood": 9.0,
+        "Rowan Cranberryfield": 4.0
+      },
+      "focal_players": [
+        "Orion Apricotwood"
+      ],
+      "focal_score_mean": 9.0,
+      "focal_score_min": 9.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 3.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Orion values pears highly at 5 coins, and Rowan's cost is only 1 coin, so a 2-coin offer gives both parties positive surplus (Orion gains 3, Rowan gains 1). This is a straightforward win-win on the most efficient item where buyer valuation far exceeds seller cost.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 4.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Buyer Orion values pear highest at 6, and offering 2 coins still gives Rowan 1 coin profit above cost\u2014cheap enough to tempt acceptance while leaving buyer 4 coins surplus.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Orion Apricotwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Orion Apricotwood": 2.0,
+            "Rowan Cranberryfield": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The buyer values all fruits highly (5-6) while seller costs are uniformly low (2), suggesting a zone of agreement where prices 3-4 allow both parties to profit; opening with apple at 4 splits surplus fairly and signals reasonableness, making acceptance likely.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 20,
+      "scores": {
+        "Faye Honeydew": 11.0,
+        "Ivor Pearbrook": 3.0
+      },
+      "focal_players": [
+        "Faye Honeydew"
+      ],
+      "focal_score_mean": 11.0,
+      "focal_score_min": 11.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye values pears highest at 6 and Ivor's cost is just 1, so offering 2 gives Ivor profit while Faye gains 4\u2014this surplus-maximizing, mutually beneficial deal should close quickly, especially since pears are the efficient item to trade.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 3.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Ivor likely accepts offers at or above cost while Faye targets high-value pears where her surplus is largest; splitting the difference leaves both with positive gain.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Faye Honeydew",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Faye Honeydew": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Faye values pear highly at 6 and Ivor's cost is only 1, so offering 2 gives Ivor positive surplus while Faye gets large surplus; Ivor should accept this mutually beneficial trade rather than risk no deal.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 21,
+      "scores": {
+        "Brynn Orchardheart": 6.0,
+        "Orion Apricotwood": 3.0
+      },
+      "focal_players": [
+        "Brynn Orchardheart"
+      ],
+      "focal_score_mean": 6.0,
+      "focal_score_min": 6.0,
+      "deal_score_mean": 3.0,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 0.6666666666666666,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "pear for 1 coins",
+            "seller_action": "reject"
+          },
+          "scores": {
+            "Brynn Orchardheart": 0.0,
+            "Orion Apricotwood": 0.0
+          },
+          "accepted": false,
+          "valid_action": true,
+          "surplus": 0.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 1 coins\",\n  \"seller_action\": \"reject\",\n  \"belief\": \"Buyer Brynn values all items equally at 6 coins each, so they'll likely start with lowball offers to maximize surplus. Seller Orion has rock-bottom costs of 1 coin each and should hold out for better prices, knowing the buyer can afford much more.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Brynn Orchardheart": 4.0,
+            "Orion Apricotwood": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Seller has low costs and should accept a small premium; apple yields highest buyer surplus at this price\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Brynn Orchardheart",
+            "seller": "Orion Apricotwood",
+            "buyer_action": "banana for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Brynn Orchardheart": 2.0,
+            "Orion Apricotwood": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Brynn likely recognizes banana as the highest-value item and targets a fair split\u2014Orion accepts since 4 exceeds cost and avoids negotiation risk.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 22,
+      "scores": {
+        "Quinn Cherryblossom": 6.0,
+        "Garen Willowshade": 4.0
+      },
+      "focal_players": [
+        "Quinn Cherryblossom"
+      ],
+      "focal_score_mean": 6.0,
+      "focal_score_min": 6.0,
+      "deal_score_mean": 3.3333333333333335,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 2.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Garen Willowshade": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Quinn values pears least at 5, so pushing for modest surplus while Garen still profits at 3 (cost 2). First offer on pear tests cooperation without revealing banana/apple priorities.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "pear for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Garen Willowshade": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Quinn's priority is maximizing surplus on high-value items; pear yields 4 coins surplus at this price, and Garen still earns 2 coins profit above cost, making mutual acceptance likely.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Garen Willowshade",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Garen Willowshade": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Quinn thinks Garen will accept a 50/50 surplus split on apples since 3 is above Garen's 2 cost and leaves Quinn with positive value, establishing cooperation for potential multi-item expansion.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 23,
+      "scores": {
+        "Kieran Citronbrook": 5.0,
+        "Ivy Pearblossom": 8.0
+      },
+      "focal_players": [
+        "Kieran Citronbrook"
+      ],
+      "focal_score_mean": 5.0,
+      "focal_score_min": 5.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.6666666666666667,
+      "nash_product_mean": 4.333333333333333,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "banana for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 2.0,
+            "Kieran Citronbrook": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The buyer values banana highest at 6 coins while the seller's cost is lowest relative to buyer value\u2014offering 4 gives buyer 2 surplus and seller 2 profit, a fair split that both should find acceptable.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 3.0,
+            "Kieran Citronbrook": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Kieran likely recognizes that pear is his highest-margin item and Ivy values it most; offering 3 coins splits the surplus fairly while leaving both better off than trading apple or banana at this price.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Ivy Pearblossom",
+            "seller": "Kieran Citronbrook",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Ivy Pearblossom": 3.0,
+            "Kieran Citronbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The banana offers the highest surplus for the buyer (6-3=3) and gives the seller profit (3-2=1). Starting with this single-item anchor builds trust before expanding to a bundle.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 24,
+      "scores": {
+        "Ivor Pearbrook": 4.0,
+        "Quinn Cherryblossom": 10.0
+      },
+      "focal_players": [
+        "Ivor Pearbrook"
+      ],
+      "focal_score_mean": 4.0,
+      "focal_score_min": 4.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 4.0,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 2.0,
+            "Ivor Pearbrook": 2.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 2.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Ivor sees Quinn as a first-time buyer who values all fruits highly, so offering a fair middle-ground price on the highest-margin item (from Ivor's perspective) should signal cooperation while leaving ample surplus for both; Ivor accepts because 2 coins profit beats risking impasse with a generous buyer.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Quinn values all fruits equally at 6, Ivor's cheapest cost is banana at 1; offering 2 gives Ivor positive surplus and Quinn gets banana below her value, a clear mutual gain opening.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Quinn Cherryblossom",
+            "seller": "Ivor Pearbrook",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Quinn Cherryblossom": 4.0,
+            "Ivor Pearbrook": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Pearbrook grows pears cheaply and knows I value them most; offering marginal cost-plus shows cooperation without exploitation, likely accepted to build rapport for future trades.\"\n}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 25,
+      "scores": {
+        "Elias Berryfield": 2.0,
+        "Hunter Nutwood": 11.0
+      },
+      "focal_players": [
+        "Elias Berryfield"
+      ],
+      "focal_score_mean": 2.0,
+      "focal_score_min": 2.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 0.6666666666666666,
+      "nash_product_mean": 2.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 3.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Elias likely recognizes that selling at 2 coins still yields a profit and equitable offers across items build trust; Hunter values all items equally so starting low but fair on apple may set a cooperative tone.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 4.0,
+            "Elias Berryfield": 0.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 0.0,
+          "nash_product": 0.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The buyer likely wants all items but starts with one fruit at cost price to test cooperation; seller accepts this fair opening to build trust for larger bundles.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Hunter Nutwood",
+            "seller": "Elias Berryfield",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Hunter Nutwood": 4.0,
+            "Elias Berryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Hunter Nutwood opens with a low-but-fair offer on bananas, the highest-value item for buyer, knowing Elias Berryfield's cost is minimal\u2014seller accepts to secure quick profit on highest-margin fruit while leaving room for future pear negotiation where surplus is largest.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 26,
+      "scores": {
+        "Rowan Cranberryfield": 5.0,
+        "Nova Peachwood": 7.0
+      },
+      "focal_players": [
+        "Rowan Cranberryfield"
+      ],
+      "focal_score_mean": 5.0,
+      "focal_score_min": 5.0,
+      "deal_score_mean": 4.0,
+      "deal_min_score_mean": 1.3333333333333333,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 3.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The pear is a fair deal where both parties profit\u2014Nova values it at 5 coins, and Rowan's cost is only 1 coin, so splitting gains roughly evenly at 2 coins leaves both satisfied and builds trust for potential future trading.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 4 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 2.0,
+            "Rowan Cranberryfield": 3.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 2.0,
+          "nash_product": 6.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 4 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The seller should accept because 4 coins for apple still gives them 3 profit while buyer gets 2 surplus - a fair split that builds trust for potential future multi-item deals involving banana and pear where we can both do even better.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Nova Peachwood",
+            "seller": "Rowan Cranberryfield",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Nova Peachwood": 2.0,
+            "Rowan Cranberryfield": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 3.0,
+          "min_score": 1.0,
+          "nash_product": 2.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Rowan likely believes Nova values all fruits equally and will start conservatively with apple; offering cost+1 gives seller small profit while signaling cooperative intent to build rapport for banana/pear bundle later.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 27,
+      "scores": {
+        "Willow Blackberry": 10.0,
+        "Jasper Quincehill": 3.0
+      },
+      "focal_players": [
+        "Willow Blackberry"
+      ],
+      "focal_score_mean": 10.0,
+      "focal_score_min": 10.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "apple for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\n  \"buyer_action\": \"apple for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Willow opens with a reasonable apple offer at 2 coins\u2014well above Jasper's 1-coin cost\u2014testing cooperation while keeping 3 coins surplus. Jasper accepts to build trust, expecting higher-margin banana/pear negotiations next.\"\n}"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 1.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 3.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The pear offers the largest surplus to divide\u2014buyer values it at 6 while seller's cost is only 2\u2014so splitting that 4-coin surplus at 3 gives both strong gains and signals cooperation for future multi-item expansion.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Willow Blackberry",
+            "seller": "Jasper Quincehill",
+            "buyer_action": "pear for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Willow Blackberry": 4.0,
+            "Jasper Quincehill": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "{\"buyer_action\":\"pear for 2 coins\",\"seller_action\":\"accept\",\"belief\":\"Jasper has lowest cost on pear at 1 coin, so offering 2 coins gives him positive profit while I still gain 4 coins value; this is the easiest mutual gains trade to start with.\"}"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 28,
+      "scores": {
+        "Sasha Grapevine": 3.0,
+        "Clara Applebrook": 11.0
+      },
+      "focal_players": [
+        "Sasha Grapevine"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.666666666666667,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.6666666666666665,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 4.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Sasha's banana cost is extremely low at 1 coin, making 2 coins a profitable offer; Clara values banana highest at 6 coins, so this maximizes her surplus while ensuring acceptance.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "apple for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 3.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"apple for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Fair-value opening: Clara believes Sasha will accept a 50-50 split on apples (3 coins, 4 coin surplus each) to establish cooperation early, expecting favorable follow-up trades on banana and pear.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 1.0
+            }
+          },
+          "action": {
+            "buyer": "Clara Applebrook",
+            "seller": "Sasha Grapevine",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Clara Applebrook": 4.0,
+            "Sasha Grapevine": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Clara values bananas most highly after pears, and at 2 coins Sasha still makes profit; this is a cooperative opening that builds trust for future rounds where Clara may pursue her top-value pear.\"\n}\n```"
+          }
+        }
+      ]
+    },
+    {
+      "method": "llm_psrl_verbal",
+      "seed": 29,
+      "scores": {
+        "Della Plumstone": 3.0,
+        "Kira Citronbloom": 10.0
+      },
+      "focal_players": [
+        "Della Plumstone"
+      ],
+      "focal_score_mean": 3.0,
+      "focal_score_min": 3.0,
+      "deal_score_mean": 4.333333333333333,
+      "deal_min_score_mean": 1.0,
+      "nash_product_mean": 3.3333333333333335,
+      "agreement_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_verbal_posterior",
+        "sees_full_case": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "deals": [
+        {
+          "deal": {
+            "game_index": 0,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 6.0,
+              "banana": 5.0,
+              "pear": 6.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "pear for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 3.0,
+            "Della Plumstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"pear for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Kira gets highest value from apples and pears (6 each). Opening with pear at 3 coins splits surplus evenly (seller profits 1, buyer gains 3), signaling cooperation while testing if Della's receptive to fair deals; accepting builds trust for multi-item bundling later.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 1,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 1.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "banana for 2 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 4.0,
+            "Della Plumstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 5.0,
+          "min_score": 1.0,
+          "nash_product": 4.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 2 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"Kira values bananas highest at 6, and Della's cost is lowest at 1\u2014offering 2 gives Della small profit while Kira gets large surplus; Della likely accepts this efficient trade.\"\n}\n```"
+          }
+        },
+        {
+          "deal": {
+            "game_index": 2,
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_rewards": {
+              "apple": 5.0,
+              "banana": 6.0,
+              "pear": 5.0
+            },
+            "seller_costs": {
+              "apple": 2.0,
+              "banana": 2.0,
+              "pear": 2.0
+            }
+          },
+          "action": {
+            "buyer": "Kira Citronbloom",
+            "seller": "Della Plumstone",
+            "buyer_action": "banana for 3 coins",
+            "seller_action": "accept"
+          },
+          "scores": {
+            "Kira Citronbloom": 3.0,
+            "Della Plumstone": 1.0
+          },
+          "accepted": true,
+          "valid_action": true,
+          "surplus": 4.0,
+          "min_score": 1.0,
+          "nash_product": 3.0,
+          "info": {
+            "policy": "llm_psrl_verbal_direct_multi_haggling",
+            "sample_ok": true,
+            "reply_preview": "```json\n{\n  \"buyer_action\": \"banana for 3 coins\",\n  \"seller_action\": \"accept\",\n  \"belief\": \"The banana has the highest buyer reward (6) and at 3 coins both parties get positive surplus\u2014buyer gains 3, seller gains 1\u2014making it the most attractive mutually beneficial deal to propose and accept.\"\n}\n```"
+          }
+        }
+      ]
+    }
+  ]
+}

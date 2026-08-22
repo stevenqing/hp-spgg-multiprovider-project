@@ -1,0 +1,2612 @@
+{
+  "config": "london_mini",
+  "model": "gpt-5.4-nano-20260317",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "methods": [
+    "llm_greedy",
+    "llm_belief",
+    "atom_tom1",
+    "econ_bne",
+    "atom_tom1_mech",
+    "econ_bne_mech",
+    "hpsmg_plus_proxy",
+    "hpsmg_plus_joint_proxy",
+    "oracle_joint"
+  ],
+  "summary": [
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "episodes": 5,
+      "focal_score_mean": 1.3,
+      "focal_score_min_mean": 1.1,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "oracle_joint",
+      "episodes": 5,
+      "focal_score_mean": 1.3,
+      "focal_score_min_mean": 1.1,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne",
+      "episodes": 5,
+      "focal_score_mean": 1.125,
+      "focal_score_min_mean": 0.9,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1_mech",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne_mech",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_greedy",
+      "episodes": 5,
+      "focal_score_mean": 1.05,
+      "focal_score_min_mean": 0.8,
+      "coordination_rate_mean": 0.9,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1",
+      "episodes": 5,
+      "focal_score_mean": 1.0083333333333333,
+      "focal_score_min_mean": 0.75,
+      "coordination_rate_mean": 0.7,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_belief",
+      "episodes": 5,
+      "focal_score_mean": 1.0083333333333333,
+      "focal_score_min_mean": 0.75,
+      "coordination_rate_mean": 0.7,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "llm_greedy",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 0.5,
+        "Benjamin Roberts": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Noah Smith": {
+            "reply": "{\"index\":1,\"reason\":\"The Golden Fleece is the user\u2019s private favorite pub and is likely to maximize enjoyment, especially with its board-game atmosphere.\"}"
+          },
+          "Sophie Martin": {
+            "reply": "{\"index\":0,\"reason\":\"The Red Lion matches your private favorite and offers a cozy, conversation-focused atmosphere that should maximize your expected enjoyment.\"}"
+          },
+          "Benjamin Roberts": {
+            "reply": "{\"index\":1,\"reason\":\"Benjamin\u2019s private favorite is The Golden Fleece, and its board-game vibe should maximize enjoyment for him.\"}"
+          },
+          "Amelia Jones": {
+            "reply": "{\"index\":1,\"reason\":\"The Golden Fleece is Amelia\u2019s private favorite and its board-game vibe should maximize enjoyment during the European football cup.\"}"
+          },
+          "Molly Clark": {
+            "reply": "{\"index\":0,\"reason\":\"The Red Lion is cozy and conversation-focused, which should maximize Molly Clark\u2019s expected enjoyment for a relaxed pre-match meetup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 0.5,
+        "Benjamin Roberts": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Noah Smith": {
+            "reply": "{\"index\":1,\"reason\":\"Noah Smith\u2019s private favorite is The Golden Fleece, and its board-game vibe fits a group coordination setting for the European football cup.\"}"
+          },
+          "Sophie Martin": {
+            "reply": "{\"index\":0,\"reason\":\"Sophie\u2019s private favorite is The Red Lion, and its conversation-focused vibe fits coordinating with close friends for the European football cup.\"}"
+          },
+          "Benjamin Roberts": {
+            "reply": "{\"index\":1,\"reason\":\"Benjamin feels very comfortable around Amelia Jones, and the group may prefer a more engaging setting; The Golden Fleece\u2019s board-game focus helps coordinate friends while matching the private favorite pub.\"}"
+          },
+          "Amelia Jones": {
+            "reply": "{\"index\":1,\"reason\":\"Amelia\u2019s private favorite is The Golden Fleece, and its board-game vibe fits well for a fun group coordination around the European football cup.\"}"
+          },
+          "Molly Clark": {
+            "reply": "{\"index\":0,\"reason\":\"Molly\u2019s private favorite is The Red Lion, and its conversation-focused vibe fits coordinating with friends for the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 0.5,
+        "Benjamin Roberts": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Noah Smith": {
+            "reply": "{\"index\":1,\"reason\":\"Noah Smith\u2019s private favorite pub is The Golden Fleece, and its board-game vibe fits well for a group coordination around the European football cup.\"}"
+          },
+          "Sophie Martin": {
+            "reply": "{\"index\":0,\"reason\":\"Sophie\u2019s private favorite is The Red Lion, and it\u2019s a cozy, conversation-focused pub that fits a comfortable meetup for the European football cup.\"}"
+          },
+          "Benjamin Roberts": {
+            "reply": "{\"index\":1,\"reason\":\"Benjamin Roberts likely prefers The Golden Fleece for its board-game vibe, making it a comfortable, engaging choice for coordinating around the European football cup.\"}"
+          },
+          "Amelia Jones": {
+            "reply": "{\"index\":1,\"reason\":\"Amelia Jones\u2019s private favorite pub is The Golden Fleece, and its board-game vibe fits a fun, social match-cup outing.\"}"
+          },
+          "Molly Clark": {
+            "reply": "{\"index\":0,\"reason\":\"Molly likely prefers a conversation-focused, cozy setting for coordinating with friends, making The Red Lion the best fit.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 0.5,
+        "Benjamin Roberts": 1.1666666666666665,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 0.5
+      },
+      "focal_score_mean": 0.75,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Noah Smith": {
+            "reply": "{\"index\":1,\"reason\":\"Noah Smith\u2019s private favorite is The Golden Fleece, and choosing it supports stable coordination by aligning with a known preference while still being a suitable venue for the event.\"}"
+          },
+          "Sophie Martin": {
+            "reply": "{\"index\":0,\"reason\":\"Sophie\u2019s private favorite is The Red Lion, and its conversation-focused atmosphere supports stable coordination for a practical equilibrium.\"}"
+          },
+          "Benjamin Roberts": {
+            "reply": "{\"index\":1,\"reason\":\"Benjamin Roberts feels very comfortable around Amelia Jones, and the Golden Fleece\u2019s board-game vibe supports stable, practical coordination for a group watching the European football cup together.\"}"
+          },
+          "Amelia Jones": {
+            "reply": "{\"index\":1,\"reason\":\"The Golden Fleece is a stable coordination choice because its board-game focus offers a shared activity that helps the group align quickly and comfortably for the European football cup.\"}"
+          },
+          "Molly Clark": {
+            "reply": "{\"index\":0,\"reason\":\"The Red Lion is a stable, conversation-focused choice that fits a practical equilibrium for coordinating with others.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Noah Smith": {
+            "predicted_others": {
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Sophie Martin": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Benjamin Roberts": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Amelia Jones": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Molly Clark": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece"
+            },
+            "selected": "The Golden Fleece"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Golden Fleece"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Golden Fleece"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.6800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Red Lion",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Red Lion",
+        "Amelia Jones": "The Red Lion",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 1.5,
+        "Benjamin Roberts": 1.0,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 0.0,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.5,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Evie Green": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart\u2019s modern, vibrant atmosphere is likely to maximize overall enjoyment for watching the European football cup.\"}"
+          },
+          "Jack Taylor": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart is modern and vibrant, which is likely to maximize my expected enjoyment for a lively European football cup atmosphere.\"}"
+          },
+          "Alexander White": {
+            "reply": "{\"index\":1,\"reason\":\"The Crooked Billet is Alexander White\u2019s private favorite pub and its historic, quirky atmosphere is likely to maximize his personal enjoyment.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart is modern and vibrant, which is likely to maximize my expected enjoyment for a lively European football cup atmosphere.\"}"
+          },
+          "Thomas Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart is modern and vibrant, which is likely to maximize my expected enjoyment for a lively European football cup atmosphere.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Evie Green": {
+            "reply": "{\"index\":1,\"reason\":\"Evie Green\u2019s private favorite is The Crooked Billet, and its historic, quirky vibe fits a casual, group-friendly pub choice for the European football cup.\"}"
+          },
+          "Jack Taylor": {
+            "reply": "{\"index\":0,\"reason\":\"Jack Taylor has strong chemistry and great-times history with friends likely to prefer a vibrant, modern setting, and The Clapton Hart matches the private favorite while still supporting group coordination.\"}"
+          },
+          "Alexander White": {
+            "reply": "{\"index\":1,\"reason\":\"Alexander White\u2019s private favorite is The Crooked Billet, and its historic, quirky vibe fits well for a fun group outing around the European football cup.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"William Jones\u2019s private favorite is The Clapton Hart, and its modern vibrant atmosphere suits a group outing for the European football cup while still allowing coordination with friends.\"}"
+          },
+          "Thomas Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"Thomas Wilson\u2019s casual preference aligns with the modern, vibrant atmosphere of The Clapton Hart, making it the best choice for group coordination.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Evie Green": {
+            "reply": "{\"index\":1,\"reason\":\"Evie Green\u2019s private favorite is The Crooked Billet, and its historic, quirky vibe fits well for a lively European football cup gathering.\"}"
+          },
+          "Jack Taylor": {
+            "reply": "{\"index\":0,\"reason\":\"Jack Taylor likely prefers the modern, vibrant atmosphere of The Clapton Hart for a major European football cup event, aligning with his strong chemistry with friends and past great times.\"}"
+          },
+          "Alexander White": {
+            "reply": "{\"index\":1,\"reason\":\"Alexander White\u2019s private favorite pub is The Crooked Billet, and it fits a fun, quirky match-day vibe for the group.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"William Jones\u2019s private favorite is The Clapton Hart, and it best matches a likely choice for a vibrant, modern match-day atmosphere.\"}"
+          },
+          "Thomas Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"Thomas Wilson\u2019s casual relationship with William Jones and the modern, vibrant vibe of The Clapton Hart make it the most likely best fit for coordinating a group outing for the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.0,
+        "Jack Taylor": 1.5,
+        "Alexander White": 1.0,
+        "William Jones": 1.5,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Evie Green": {
+            "reply": "{\"index\":0,\"reason\":\"A modern, vibrant pub like The Clapton Hart is more likely to support stable coordination for a large event (the European football cup) with reliable atmosphere and services.\"}"
+          },
+          "Jack Taylor": {
+            "reply": "{\"index\":0,\"reason\":\"Jack Taylor\u2019s private favorite is The Clapton Hart, and its modern, vibrant atmosphere supports stable coordination for a practical pub meetup during the European football cup.\"}"
+          },
+          "Alexander White": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart is modern and consistently vibrant, making it a stable, practical choice for coordinating with others for the European football cup.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"Select The Clapton Hart as the stable, practical coordination choice given its modern, vibrant atmosphere and William Jones\u2019s likely preference for a reliable meetup spot.\"}"
+          },
+          "Thomas Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"The Clapton Hart is a modern, vibrant option that likely supports smoother, more predictable coordination for a practical equilibrium during the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Evie Green": {
+            "predicted_others": {
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Jack Taylor": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          },
+          "Alexander White": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "William Jones": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          },
+          "Thomas Wilson": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.0,
+        "Jack Taylor": 1.5,
+        "Alexander White": 1.0,
+        "William Jones": 1.5,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.4800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.0,
+        "Jack Taylor": 1.5,
+        "Alexander White": 1.0,
+        "William Jones": 1.5,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.5,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales is cozy and traditional with a roaring fireplace, which is likely to maximize overall comfort and enjoyment in London during the cold.\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales is cozy and traditional with a roaring fireplace, which is likely to maximize comfort and enjoyment during the cold while watching the European football cup.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales sounds more comfortable and enjoyable for escaping the cold, with a cozy traditional setting and roaring fireplace.\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales sounds cozy and traditional with a roaring fireplace, which is likely to maximize Jacob Walker\u2019s immediate comfort and enjoyment for the cold London setting.\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales is cozy and warm with a roaring fireplace, which is likely to maximize enjoyment for the cold London setting and aligns with a comfortable, traditional pub experience.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"Thomas Wilson\u2019s private favorite is The Crooked Billet, and its historic, quirky atmosphere fits a lively European football cup outing while still supporting group coordination.\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\":0,\"reason\":\"Harry\u2019s private favorite is The Princess of Wales, and its cozy, traditional vibe fits a cold London day while supporting easy group coordination.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\":1,\"reason\":\"Phoebe\u2019s private favorite is The Crooked Billet, and its historic, quirky atmosphere fits a relaxed group meetup for the European football cup.\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\":1,\"reason\":\"Jacob Walker\u2019s strong loyalty/respect ties and the group\u2019s likely preference align best with the historic, quirky atmosphere of The Crooked Billet.\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"Lily\u2019s private favorite is The Princess of Wales, and its cozy, traditional vibe fits a comfortable meetup for friends while still supporting group coordination.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"Thomas Wilson\u2019s private favorite pub is The Crooked Billet, and its historic, quirky atmosphere fits a relaxed pre-match get-together for the European football cup.\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\":0,\"reason\":\"Harry Davies\u2019s private favorite is The Princess of Wales, and its cozy, traditional vibe fits a cold London day for watching the European football cup.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\":1,\"reason\":\"Phoebe\u2019s private favorite pub is The Crooked Billet, and it\u2019s available, so it\u2019s the most likely best choice for her.\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\":1,\"reason\":\"Jacob Walker would likely prefer the historic, quirky atmosphere of The Crooked Billet, matching his social preferences and the group\u2019s loyalty and mutual respect.\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"Lily\u2019s private favorite is The Princess of Wales, and its cozy, traditional vibe fits a cold London day for the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.5,
+        "Harry Davies": 1.25,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 0.75,
+        "Lily Walker": 1.1666666666666665
+      },
+      "focal_score_mean": 0.875,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"Thomas Wilson\u2019s private favorite is The Crooked Billet, and choosing it provides a stable, practical equilibrium given its distinctive, welcoming atmosphere.\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales is a cozy, traditional, and reliable choice for stable coordination, especially in cold weather, making it the practical equilibrium for the group.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\":0,\"reason\":\"A cozy, traditional pub with a roaring fireplace offers a stable, practical meeting point for coordination during the cold, making it a reliable equilibrium choice.\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\":0,\"reason\":\"The Princess of Wales offers a cozy, traditional setting with a roaring fireplace, making it a stable, practical choice for coordinating comfortably during the cold while attending the European football cup.\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"Stable coordination: Lily\u2019s private favorite is The Princess of Wales, and its cozy, traditional setting is well-suited for a practical group meetup during the cold.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Thomas Wilson": {
+            "predicted_others": {
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Harry Davies": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Princess of Wales"
+          },
+          "Phoebe Young": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Jacob Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Lily Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet"
+            },
+            "selected": "The Princess of Wales"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Crooked Billet",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Crooked Billet"
+      },
+      "scores": {
+        "Thomas Wilson": 1.5,
+        "Harry Davies": 1.0,
+        "Phoebe Young": 1.5,
+        "Jacob Walker": 1.5,
+        "Lily Walker": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.6800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.5,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment for the event.\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.6666666666666666,
+        "Evie Green": 0.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\":0,\"reason\":\"Henry Green has the most relaxed, easy-going relationship with William Jones, and The King's Head is a sports-focused pub that fits the European football cup, making it the best coordinated choice.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\":0,\"reason\":\"Ruby has a strong connection with Evie Green and the King's Head is a sports-focused pub, making it the best fit for coordinating around the European football cup while still aligning with Ruby\u2019s preference.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"For the European football cup, a sports-focused pub like The King's Head is the best fit, and it also supports group coordination despite William\u2019s private favorite being The Black Swan.\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\":1,\"reason\":\"Evie Green\u2019s private favorite is The Black Swan, and its live-music vibe fits well for a European football cup gathering while still supporting group coordination.\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\":0,\"reason\":\"Logan Brown\u2019s private favorite is The King\u2019s Head, and since the event is a European football cup, a sports-focused pub is the best fit for group coordination.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.6666666666666666,
+        "Evie Green": 0.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\":0,\"reason\":\"Henry Green has a relaxed, easy-going relationship with William Jones, and The King's Head is a traditional sports-focused pub that fits the European football cup.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\":0,\"reason\":\"For a European football cup, Ruby White is most likely to choose the sports-focused pub, The King's Head.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"William Jones likely prefers a sports-focused venue for the European football cup, making The King's Head the best fit.\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\":1,\"reason\":\"Evie Green\u2019s private favorite is The Black Swan, and its live-music vibe fits the European football cup atmosphere better than a purely sports-focused pub.\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\":0,\"reason\":\"Logan Brown\u2019s likely preference is for a sports-focused venue, making The King's Head the best fit for the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\":0,\"reason\":\"Henry Green has a relaxed, easy-going relationship with William Jones, making a sports-focused pub like The King's Head a stable coordination choice for the European football cup.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, making it the most stable coordination choice for a European football cup event.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\":0,\"reason\":\"A sports-focused pub is the most stable coordination choice for watching the European football cup, aligning with practical equilibrium.\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\":0,\"reason\":\"A sports-focused pub is the most stable coordination choice for the European football cup, making it easier for the group to align on a practical equilibrium.\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, making it the more stable coordination choice for watching the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Henry Green": {
+            "predicted_others": {
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Ruby White": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "William Jones": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Evie Green": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Logan Brown": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan"
+            },
+            "selected": "The Black Swan"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.8050000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.5
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, which should maximize enjoyment for a European football cup event.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\":0,\"reason\":\"The King\u2019s Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, which best matches the European football cup and should maximize enjoyment.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"It matches Emily Wilson\u2019s private favorite pub, which should maximize her expected enjoyment for the event.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a sports-focused pub, making it the best fit for watching the European football cup and coordinating with others likely sharing that interest.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\":0,\"reason\":\"Poppy\u2019s private favorite is The King\u2019s Head, and it\u2019s also a sports-focused venue that fits the European football cup while still supporting group coordination.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\":0,\"reason\":\"Jessica Davies has a strong personal preference for The King's Head, and it also fits the sports-focused setting for the European football cup; group coordination is unlikely to be harmed since no close-friend venue constraints are given.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\":0,\"reason\":\"Michael Wood is likely to choose the sports-focused pub, and The King's Head best matches the European football cup while still supporting group coordination.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"Emily\u2019s private favorite is The Queen\u2019s Arms, and it\u2019s also family-friendly with a large outdoor play area, making it a good choice for coordinating a group around the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"For the European football cup, Lily is likely to prefer a sports-focused pub, making The King's Head the best fit.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\":0,\"reason\":\"The King's Head is a traditional sports-focused pub, making it the best fit for coordinating around the European football cup.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\":0,\"reason\":\"Jessica Davies likely prefers a sports-focused pub for the European football cup, making The King's Head the best fit.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\":0,\"reason\":\"Michael Wood is likely to choose a sports-focused venue for the European football cup, and The King's Head fits that description.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\":1,\"reason\":\"Emily likely prefers the family-friendly Queen's Arms, matching her private favorite pub and offering a comfortable place to coordinate for the European football cup.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\":0,\"reason\":\"For a European football cup event, a sports-focused pub like The King's Head is the most stable coordination choice and aligns with practical equilibrium.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\":0,\"reason\":\"A sports-focused pub is the most directly aligned with the European football cup, making it a stable coordination choice for Poppy and likely others.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\":0,\"reason\":\"Jessica\u2019s private favorite is The King\u2019s Head, and it\u2019s a sports-focused pub that fits the European football cup, making it a stable coordination choice.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\":0,\"reason\":\"A sports-focused pub is the most stable coordination choice for watching the European football cup, aligning with Michael Wood\u2019s comfort around people there and minimizing uncertainty.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\":0,\"reason\":\"A sports-focused pub is the most stable coordination choice for a European football cup event, making it easier for Emily and others to align on a common venue.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Lily Walker": {
+            "predicted_others": {
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Poppy Evans": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Jessica Davies": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Michael Wood": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Emily Wilson": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head"
+            },
+            "selected": "The King's Head"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.6800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    }
+  ],
+  "sources": [
+    "analysis\\concordia_pub_coordination_compact_gpt_5_4_nano_20260317_live_s2.json",
+    "analysis\\concordia_pub_coordination_compact_gpt_5_4_nano_20260317_live_s3_seed2_4.json"
+  ]
+}

@@ -1,0 +1,5 @@
+Wins cells (DeepSeek, GPT-5.4-nano, Kimi-K2.6, Llama-4-Maverick):
+7/10 | 10/10 | 8/10 | 2/10
+
+Sentence:
+and wins the seed-level pairing against the strongest coordination baseline on 7/10, 10/10, 8/10, and 2/10 seeds across the four backbones

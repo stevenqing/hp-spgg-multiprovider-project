@@ -1,0 +1,18 @@
+{
+  "experiment": "E-C corrected SOTOPIA analysis",
+  "episode_count_p0": 120,
+  "native_true_persona_labels": false,
+  "concentration_target": "profile-derived oracle_one_hot_from_profile proxy",
+  "component_ablation_corrected": true,
+  "available_corruption_levels": [
+    0.0,
+    0.1,
+    0.2,
+    0.25,
+    0.3,
+    0.5
+  ],
+  "branch": "clean-boundary",
+  "restore_rule": "revenge paired PACT-minus-naive lower 95% bound > 0 and profile-proxy mass > 0.25",
+  "llm_calls": 0
+}

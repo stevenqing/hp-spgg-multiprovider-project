@@ -1,0 +1,5 @@
+driver_model,method,beta,episodes,final_mean_cumulative_reward,final_mean_true_tuple_posterior,final_mean_rule_marginal_accuracy,final_mean_cumulative_exploration_cost,driver_parse_ok_rate,driver_cache_hit_rate
+gpt-5.4-mini-20260317,atom_tom1,0.0,1,1.6304999999999998,0.0625,0.5,0.4042708333333334,1.0,1.0
+gpt-5.4-mini-20260317,oracle,0.0,1,1.9021666666666666,1.0,1.0,0.0,1.0,0.5
+gpt-5.4-mini-20260317,pact,0.0,1,1.6304999999999998,0.25652045335129037,0.7034409917123935,0.46693958333333346,1.0,0.0
+gpt-5.4-mini-20260317,pact_plus,0.1,1,1.6304999999999998,0.25652045335129037,0.7034409917123935,0.46693958333333346,1.0,1.0

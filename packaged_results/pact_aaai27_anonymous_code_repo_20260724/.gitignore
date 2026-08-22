@@ -1,0 +1,36 @@
+# Python
+.venv/
+.venvs/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Secrets and local configuration
+.env
+.env.*
+!config/providers.example.yaml
+*.pem
+*.key
+
+# Generated experiments and figures
+analysis/
+figs/
+logs/
+results/
+results_phase2/
+*.npy
+*.npz
+*.pdf
+*.png
+*.gif
+*.zip
+
+# Third-party checkouts
+external/
+
+# Editor and OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

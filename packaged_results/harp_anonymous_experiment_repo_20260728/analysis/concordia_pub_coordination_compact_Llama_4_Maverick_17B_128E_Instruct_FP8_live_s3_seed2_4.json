@@ -1,0 +1,1678 @@
+{
+  "config": "london_mini",
+  "model": "Llama-4-Maverick-17B-128E-Instruct-FP8",
+  "seeds": [
+    2,
+    3,
+    4
+  ],
+  "methods": [
+    "llm_greedy",
+    "llm_belief",
+    "atom_tom1",
+    "econ_bne",
+    "atom_tom1_mech",
+    "econ_bne_mech",
+    "hpsmg_plus_proxy",
+    "hpsmg_plus_joint_proxy",
+    "oracle_joint"
+  ],
+  "information_audit": {
+    "llm_greedy": {
+      "mode": "decentralized_per_player_prompt",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": false,
+      "uses_known_payoff_model": false,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "llm_belief": {
+      "mode": "decentralized_per_player_prompt",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": false,
+      "uses_known_payoff_model": false,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "atom_tom1": {
+      "mode": "decentralized_per_player_prompt",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": false,
+      "uses_known_payoff_model": false,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "econ_bne": {
+      "mode": "decentralized_per_player_prompt",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": false,
+      "uses_known_payoff_model": false,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "atom_tom1_mech": {
+      "mode": "centralized_full_case",
+      "sees_all_person_preferences": true,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "econ_bne_mech": {
+      "mode": "centralized_full_case",
+      "sees_all_person_preferences": true,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "hpsmg_plus_proxy": {
+      "mode": "centralized_full_case",
+      "sees_all_person_preferences": true,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "hpsmg_plus_joint_proxy": {
+      "mode": "centralized_full_case",
+      "sees_all_person_preferences": true,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    },
+    "oracle_joint": {
+      "mode": "privileged_upper_bound",
+      "sees_all_person_preferences": true,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": true,
+      "comparable_as_baseline": false
+    }
+  },
+  "summary": [
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "episodes": 3,
+      "focal_score_mean": 1.3333333333333333,
+      "focal_score_min_mean": 1.1666666666666667,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "oracle_joint",
+      "episodes": 3,
+      "focal_score_mean": 1.3333333333333333,
+      "focal_score_min_mean": 1.1666666666666667,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1_mech",
+      "episodes": 3,
+      "focal_score_mean": 1.0138888888888888,
+      "focal_score_min_mean": 0.9166666666666666,
+      "coordination_rate_mean": 0.8333333333333334,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne_mech",
+      "episodes": 3,
+      "focal_score_mean": 1.0138888888888888,
+      "focal_score_min_mean": 0.9166666666666666,
+      "coordination_rate_mean": 0.8333333333333334,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "episodes": 3,
+      "focal_score_mean": 1.0138888888888888,
+      "focal_score_min_mean": 0.9166666666666666,
+      "coordination_rate_mean": 0.8333333333333334,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_belief",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "llm_greedy",
+      "episodes": 3,
+      "focal_score_mean": 0.7083333333333334,
+      "focal_score_min_mean": 0.5833333333333334,
+      "coordination_rate_mean": 0.6666666666666666,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "llm_greedy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"The Crooked Billet is Thomas Wilson's private favorite pub\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"The private favorite pub is 'The Princess of Wales', which is available and matches the player's preference.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\": 1, \"reason\": \"The Crooked Billet is my private favorite pub\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"The Crooked Billet is my private favorite pub\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\": 0, \"reason\": \"The Princess of Wales is my private favorite pub\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Thomas Wilson's private favorite pub is The Crooked Billet and it is available\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"Harry's private favorite pub is The Princess of Wales, and since there are no closed venues, it's a viable option for coordination.\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\": 1, \"reason\": \"Phoebe Young's private favorite pub is The Crooked Billet and it is available\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Jacob's private favorite pub is The Crooked Billet and it is available\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\": 0, \"reason\": \"Lily Walker's private favorite pub is The Princess of Wales, so it's likely she will choose it.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Thomas Wilson's private favorite pub is The Crooked Billet\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"Harry Davies' private favorite pub is The Princess of Wales\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\": 1, \"reason\": \"Phoebe Young's private favorite pub is The Crooked Billet\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Jacob Walker's private favorite pub is The Crooked Billet\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\": 0, \"reason\": \"Lily Walker's private favorite pub is The Princess of Wales\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Thomas Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Thomas Wilson's private favorite pub is The Crooked Billet, making it a stable coordination choice as it aligns with his preference.\"}"
+          },
+          "Harry Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"Private favorite pub\"}"
+          },
+          "Phoebe Young": {
+            "reply": "{\"index\": 1, \"reason\": \"Phoebe Young's private favorite pub is The Crooked Billet, and it is available, making it a stable coordination choice.\"}"
+          },
+          "Jacob Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Jacob Walker's private favorite pub is The Crooked Billet, making it a stable coordination choice as it aligns with his preference.\"}"
+          },
+          "Lily Walker": {
+            "reply": "{\"index\": 0, \"reason\": \"Choosing The Princess of Wales as it is the private favorite pub\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Thomas Wilson": {
+            "predicted_others": {
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Harry Davies": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Princess of Wales"
+          },
+          "Phoebe Young": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Jacob Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Lily Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet"
+            },
+            "selected": "The Princess of Wales"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Crooked Billet",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Crooked Billet"
+      },
+      "scores": {
+        "Thomas Wilson": 1.5,
+        "Harry Davies": 1.0,
+        "Phoebe Young": 1.5,
+        "Jacob Walker": 1.5,
+        "Lily Walker": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.6800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.5,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Henry Green's private favorite pub and has a focus on sports, which is relevant to the European football cup event.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Ruby White's private favorite pub and has a focus on sports, which is relevant to the European football cup event.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\": 1, \"reason\": \"The Black Swan is the private favorite pub\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\": 1, \"reason\": \"The Black Swan is Evie's private favorite pub\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is my private favorite pub and it is focused on sports, which is relevant to the European football cup event.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\": 0, \"reason\": \"The player's private favorite pub is 'The King's Head', which aligns with their preference for watching sports, as indicated by the event being 'The European football cup'.\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\": 0, \"reason\": \"Ruby White's private favorite pub is The King's Head, and it is available, so it is likely she will choose it to balance her preference with group coordination.\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\": 1, \"reason\": \"William Jones' private favorite pub is The Black Swan, and it is available, so it is the most likely choice for him.\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\": 1, \"reason\": \"Evie Green's private favorite pub is The Black Swan and it is available\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Logan Brown's private favorite pub and it aligns with the event of watching the European football cup as it has a focus on sports.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\": 0, \"reason\": \"Henry Green's private favorite pub is The King's Head\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\": 0, \"reason\": \"Ruby White's private favorite pub is The King's Head\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\": 1, \"reason\": \"The player's private favorite pub is The Black Swan\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\": 1, \"reason\": \"Evie Green's private favorite pub is The Black Swan, which is available, so she is likely to choose it.\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\": 0, \"reason\": \"Logan Brown's private favorite pub is The King's Head\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 0.5,
+        "Ruby White": 0.5,
+        "William Jones": 0.8333333333333333,
+        "Evie Green": 0.8333333333333333,
+        "Logan Brown": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Henry Green": {
+            "reply": "{\"index\": 0, \"reason\": \"Choosing The King's Head as it is Henry Green's private favorite pub and is available\"}"
+          },
+          "Ruby White": {
+            "reply": "{\"index\": 0, \"reason\": \"Choosing The King's Head as it is Ruby White's private favorite pub and it is available\"}"
+          },
+          "William Jones": {
+            "reply": "{\"index\": 1, \"reason\": \"The Black Swan is the private favorite pub\"}"
+          },
+          "Evie Green": {
+            "reply": "{\"index\": 1, \"reason\": \"Evie's private favorite pub is The Black Swan\"}"
+          },
+          "Logan Brown": {
+            "reply": "{\"index\": 0, \"reason\": \"Choosing The King's Head as it is Logan Brown's private favorite pub and it is available\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Henry Green": {
+            "predicted_others": {
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Ruby White": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "William Jones": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Evie Green": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Logan Brown": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan"
+            },
+            "selected": "The Black Swan"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.8050000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.5
+      }
+    },
+    {
+      "method": "llm_greedy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"The Queen's Arms is my private favorite pub\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is my private favorite pub and is described as a traditional pub with a focus on sports, which is relevant for watching the European football cup, thus likely maximizing my expected enjoyment.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Jessica's private favorite pub and is described as a traditional pub with a focus on sports, which is relevant for watching the European football cup.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Michael Wood's private favorite pub and is described as a traditional pub with a focus on sports, which is relevant for watching the European football cup.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"The Queen's Arms is Emily's private favorite pub\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "llm_belief",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Lily Walker's private favorite pub is The Queen's Arms, so it's likely she'll choose it to balance her preference with group coordination.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Poppy's private favorite pub and is described as a traditional pub with a focus on sports, which is relevant for watching the European football cup.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Jessica's private favorite pub and it is described as a traditional pub with a focus on sports, which is relevant for watching the European football cup.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\": 0, \"reason\": \"Michael Wood's private favorite pub is The King's Head, and since it's available and aligns with his preference for watching sports, it's the most likely choice.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Emily's private favorite pub is The Queen's Arms, and it is available, so she is likely to choose it to balance her preference with group coordination.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Lily Walker's private favorite pub is The Queen's Arms, so it's likely she will choose it.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\": 0, \"reason\": \"The King's Head is Poppy Evans' private favorite pub.\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"Jessica's private favorite pub is The King's Head\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\": 0, \"reason\": \"Michael Wood's private favorite pub is The King's Head\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Emily's private favorite pub is The Queen's Arms\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The Queen's Arms",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The Queen's Arms"
+      },
+      "scores": {
+        "Lily Walker": 0.5,
+        "Poppy Evans": 1.1666666666666665,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.1666666666666665,
+        "Emily Wilson": 0.5
+      },
+      "focal_score_mean": 0.8333333333333333,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "decentralized_per_player_prompt",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": false,
+        "uses_known_payoff_model": false,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "llm_replies": {
+          "Lily Walker": {
+            "reply": "{\"index\": 1, \"reason\": \"Lily Walker's private favorite pub is The Queen's Arms, making it a stable coordination choice as it aligns with her preference.\"}"
+          },
+          "Poppy Evans": {
+            "reply": "{\"index\": 0, \"reason\": \"Private favorite pub is The King's Head\"}"
+          },
+          "Jessica Davies": {
+            "reply": "{\"index\": 0, \"reason\": \"Jessica's private favorite pub is The King's Head, making it a stable choice for a practical equilibrium as it aligns with her preference.\"}"
+          },
+          "Michael Wood": {
+            "reply": "{\"index\": 0, \"reason\": \"The player's private favorite pub is 'The King's Head', indicating a personal preference for this venue.\"}"
+          },
+          "Emily Wilson": {
+            "reply": "{\"index\": 1, \"reason\": \"Emily's private favorite pub is The Queen's Arms, making it a stable coordination choice.\"}"
+          }
+        }
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Lily Walker": {
+            "predicted_others": {
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Poppy Evans": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Jessica Davies": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Michael Wood": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Emily Wilson": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head"
+            },
+            "selected": "The King's Head"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "hpsmg_plus_joint_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_full_case",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "policy": "posterior_guided_joint_social_objective",
+        "best_value": 1.6800000000000002
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "privileged_upper_bound",
+        "sees_all_person_preferences": true,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": true,
+        "comparable_as_baseline": false
+      },
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    }
+  ]
+}

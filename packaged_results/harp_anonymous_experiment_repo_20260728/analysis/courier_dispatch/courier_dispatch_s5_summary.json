@@ -1,0 +1,277 @@
+{
+  "setting": {
+    "n_agents": 3,
+    "rule_count": 4,
+    "rules": [
+      "avoid_long",
+      "zone_loyal",
+      "home_pull",
+      "surge_only"
+    ],
+    "actions": [
+      "accept",
+      "decline-a",
+      "decline-b",
+      "decline-c",
+      "decline-d",
+      "reposition",
+      "choose-from-menu"
+    ],
+    "messages": [
+      "none",
+      "msg-a",
+      "msg-b",
+      "msg-c",
+      "msg-d"
+    ],
+    "horizon": 8,
+    "seeds": 5,
+    "tau": 0.5,
+    "penalty_scale": 2.0,
+    "home_scale": 1.2,
+    "menu_friction": 0.2,
+    "message_cost": 0.03,
+    "candidate_states_per_round": 4,
+    "couple_lambdas": [
+      0.0,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "conditions": {
+      "TI": "Public transition depends on public state and joint action, not hidden rules.",
+      "RL": "At couple_lambda=0, reward_i is invariant to theta_-i; tested by assert_reward_locality().",
+      "PF": "Initial rule tuples are sampled independently across drivers; smoke-tested by assert_prior_factorization()."
+    }
+  },
+  "summary": [
+    {
+      "method": "atom_tom0",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 5.802833333333332,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.6652504166666666,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.6652504166666666
+    },
+    {
+      "method": "atom_tom1",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.3255099999999995,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.5674020833333335,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.5674020833333335
+    },
+    {
+      "method": "joint_psrl",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.455926666666666,
+      "final_mean_true_tuple_posterior": 0.5009757140749707,
+      "final_mean_rule_marginal_accuracy": 0.8332584794012737,
+      "final_mean_cumulative_exploration_cost": 0.7715262500000002,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.7715262500000002
+    },
+    {
+      "method": "map_greedy",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.35796,
+      "final_mean_true_tuple_posterior": 0.41839318256503655,
+      "final_mean_rule_marginal_accuracy": 0.8165915971699385,
+      "final_mean_cumulative_exploration_cost": 0.49315291666666655,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.49315291666666655
+    },
+    {
+      "method": "oracle",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 7.34346,
+      "final_mean_true_tuple_posterior": 1.0,
+      "final_mean_rule_marginal_accuracy": 1.0,
+      "final_mean_cumulative_exploration_cost": 0.0,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.0
+    },
+    {
+      "method": "pact",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.60582,
+      "final_mean_true_tuple_posterior": 0.535542890565715,
+      "final_mean_rule_marginal_accuracy": 0.8562880545496798,
+      "final_mean_cumulative_exploration_cost": 0.704025,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.704025
+    },
+    {
+      "method": "pact",
+      "beta": 0.0,
+      "couple_lambda": 1.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 8.4795,
+      "final_mean_true_tuple_posterior": 0.4810087780846805,
+      "final_mean_rule_marginal_accuracy": 0.8251623452036817,
+      "final_mean_cumulative_exploration_cost": 0.6178125000000001,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.6178125000000001
+    },
+    {
+      "method": "pact",
+      "beta": 0.0,
+      "couple_lambda": 2.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 10.450416666666667,
+      "final_mean_true_tuple_posterior": 0.3331297462171363,
+      "final_mean_rule_marginal_accuracy": 0.7782774263314602,
+      "final_mean_cumulative_exploration_cost": 0.9459362500000003,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.9459362500000003
+    },
+    {
+      "method": "pact",
+      "beta": 0.0,
+      "couple_lambda": 4.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 16.761580000000002,
+      "final_mean_true_tuple_posterior": 0.2572445352719647,
+      "final_mean_rule_marginal_accuracy": 0.729434879970491,
+      "final_mean_cumulative_exploration_cost": 1.2293295833333335,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 1.2293295833333335
+    },
+    {
+      "method": "pact_message",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.60582,
+      "final_mean_true_tuple_posterior": 0.5322708720751781,
+      "final_mean_rule_marginal_accuracy": 0.8530192681981348,
+      "final_mean_cumulative_exploration_cost": 0.6543141666666668,
+      "final_mean_cumulative_message_cost": 0.24,
+      "final_mean_cumulative_total_information_cost": 0.8943141666666667
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.60582,
+      "final_mean_true_tuple_posterior": 0.535542890565715,
+      "final_mean_rule_marginal_accuracy": 0.8562880545496798,
+      "final_mean_cumulative_exploration_cost": 0.704025,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.704025
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.1,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.591510000000001,
+      "final_mean_true_tuple_posterior": 0.5116926157458084,
+      "final_mean_rule_marginal_accuracy": 0.8594871979955135,
+      "final_mean_cumulative_exploration_cost": 0.49460458333333346,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.49460458333333346
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.25,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 5.43492,
+      "final_mean_true_tuple_posterior": 0.5332583740819085,
+      "final_mean_rule_marginal_accuracy": 0.861540195357269,
+      "final_mean_cumulative_exploration_cost": 1.2783020833333336,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 1.2783020833333336
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.25,
+      "couple_lambda": 1.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 7.796519999999999,
+      "final_mean_true_tuple_posterior": 0.5657298625505105,
+      "final_mean_rule_marginal_accuracy": 0.8650805397984278,
+      "final_mean_cumulative_exploration_cost": 1.2497754166666668,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 1.2497754166666668
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.25,
+      "couple_lambda": 2.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 10.183583333333335,
+      "final_mean_true_tuple_posterior": 0.5067541165710306,
+      "final_mean_rule_marginal_accuracy": 0.83076183598278,
+      "final_mean_cumulative_exploration_cost": 1.0469654166666666,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 1.0469654166666666
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.25,
+      "couple_lambda": 4.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 16.046906666666665,
+      "final_mean_true_tuple_posterior": 0.3347229776282966,
+      "final_mean_rule_marginal_accuracy": 0.7456172683165267,
+      "final_mean_cumulative_exploration_cost": 1.5154562499999997,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 1.5154562499999997
+    },
+    {
+      "method": "pact_plus",
+      "beta": 0.5,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 4.82728,
+      "final_mean_true_tuple_posterior": 0.4432717897388952,
+      "final_mean_rule_marginal_accuracy": 0.8092728432179002,
+      "final_mean_cumulative_exploration_cost": 2.28181625,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 2.28181625
+    },
+    {
+      "method": "psrl_notype",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 6.121696666666667,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 0.5004379166666667,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 0.5004379166666667
+    },
+    {
+      "method": "random",
+      "beta": 0.0,
+      "couple_lambda": 0.0,
+      "episodes": 5,
+      "final_mean_cumulative_reward": 3.133906666666666,
+      "final_mean_true_tuple_posterior": 0.0625,
+      "final_mean_rule_marginal_accuracy": 0.5,
+      "final_mean_cumulative_exploration_cost": 3.5472195833333338,
+      "final_mean_cumulative_message_cost": 0.0,
+      "final_mean_cumulative_total_information_cost": 3.5472195833333338
+    }
+  ]
+}

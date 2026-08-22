@@ -1,0 +1,12 @@
+# Anonymous provider configuration example
+backend: offline
+providers:
+  openai:
+    api_key_env: OPENAI_API_KEY
+  anthropic:
+    api_key_env: ANTHROPIC_API_KEY
+  google:
+    api_key_env: GOOGLE_API_KEY
+  managed:
+    base_url_env: MANAGED_PROVIDER_BASE_URL
+    bearer_token_env: MANAGED_PROVIDER_BEARER_TOKEN

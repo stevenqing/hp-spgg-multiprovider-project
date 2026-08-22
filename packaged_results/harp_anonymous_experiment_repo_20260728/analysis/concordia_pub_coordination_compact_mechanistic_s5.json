@@ -1,0 +1,1053 @@
+{
+  "config": "london_mini",
+  "model": "none",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "methods": [
+    "atom_tom1_mech",
+    "econ_bne_mech",
+    "hpsmg_plus_proxy",
+    "oracle_joint"
+  ],
+  "summary": [
+    {
+      "method": "oracle_joint",
+      "episodes": 5,
+      "focal_score_mean": 1.3,
+      "focal_score_min_mean": 1.1,
+      "coordination_rate_mean": 1.0,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "atom_tom1_mech",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "econ_bne_mech",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "episodes": 5,
+      "focal_score_mean": 1.1083333333333334,
+      "focal_score_min_mean": 0.95,
+      "coordination_rate_mean": 0.8,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "atom_tom1_mech",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Noah Smith": {
+            "predicted_others": {
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Sophie Martin": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Benjamin Roberts": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Amelia Jones": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Molly Clark": "The Red Lion"
+            },
+            "selected": "The Golden Fleece"
+          },
+          "Molly Clark": {
+            "predicted_others": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Red Lion",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece"
+            },
+            "selected": "The Golden Fleece"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Golden Fleece"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Noah Smith": "The Golden Fleece",
+              "Sophie Martin": "The Golden Fleece",
+              "Benjamin Roberts": "The Golden Fleece",
+              "Amelia Jones": "The Golden Fleece",
+              "Molly Clark": "The Golden Fleece"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Golden Fleece",
+        "Sophie Martin": "The Golden Fleece",
+        "Benjamin Roberts": "The Golden Fleece",
+        "Amelia Jones": "The Golden Fleece",
+        "Molly Clark": "The Golden Fleece"
+      },
+      "scores": {
+        "Noah Smith": 1.5,
+        "Sophie Martin": 1.0,
+        "Benjamin Roberts": 1.5,
+        "Amelia Jones": 1.5,
+        "Molly Clark": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 0,
+      "venues": [
+        "The Red Lion",
+        "The Golden Fleece"
+      ],
+      "focal_players": [
+        "Noah Smith",
+        "Sophie Martin"
+      ],
+      "joint_action": {
+        "Noah Smith": "The Red Lion",
+        "Sophie Martin": "The Red Lion",
+        "Benjamin Roberts": "The Red Lion",
+        "Amelia Jones": "The Red Lion",
+        "Molly Clark": "The Red Lion"
+      },
+      "scores": {
+        "Noah Smith": 1.0,
+        "Sophie Martin": 1.5,
+        "Benjamin Roberts": 1.0,
+        "Amelia Jones": 1.0,
+        "Molly Clark": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Evie Green": {
+            "predicted_others": {
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Jack Taylor": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          },
+          "Alexander White": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "William Jones": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "Thomas Wilson": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          },
+          "Thomas Wilson": {
+            "predicted_others": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart"
+            },
+            "selected": "The Clapton Hart"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Evie Green": "The Crooked Billet",
+              "Jack Taylor": "The Clapton Hart",
+              "Alexander White": "The Crooked Billet",
+              "William Jones": "The Clapton Hart",
+              "Thomas Wilson": "The Clapton Hart"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Crooked Billet",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Crooked Billet",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.5,
+        "Jack Taylor": 1.0,
+        "Alexander White": 0.8333333333333333,
+        "William Jones": 1.0,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 1,
+      "venues": [
+        "The Clapton Hart",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Evie Green",
+        "Jack Taylor"
+      ],
+      "joint_action": {
+        "Evie Green": "The Clapton Hart",
+        "Jack Taylor": "The Clapton Hart",
+        "Alexander White": "The Clapton Hart",
+        "William Jones": "The Clapton Hart",
+        "Thomas Wilson": "The Clapton Hart"
+      },
+      "scores": {
+        "Evie Green": 1.0,
+        "Jack Taylor": 1.5,
+        "Alexander White": 1.0,
+        "William Jones": 1.5,
+        "Thomas Wilson": 0.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Thomas Wilson": {
+            "predicted_others": {
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Harry Davies": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Princess of Wales"
+          },
+          "Phoebe Young": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Jacob Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            },
+            "selected": "The Crooked Billet"
+          },
+          "Lily Walker": {
+            "predicted_others": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet"
+            },
+            "selected": "The Princess of Wales"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Thomas Wilson": "The Crooked Billet",
+              "Harry Davies": "The Princess of Wales",
+              "Phoebe Young": "The Crooked Billet",
+              "Jacob Walker": "The Crooked Billet",
+              "Lily Walker": "The Princess of Wales"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Crooked Billet",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Crooked Billet",
+        "Jacob Walker": "The Crooked Billet",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 0.8333333333333333,
+        "Harry Davies": 0.75,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 0.8333333333333333
+      },
+      "focal_score_mean": 0.7916666666666666,
+      "focal_score_min": 0.75,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 2,
+      "venues": [
+        "The Princess of Wales",
+        "The Crooked Billet"
+      ],
+      "focal_players": [
+        "Thomas Wilson",
+        "Harry Davies"
+      ],
+      "joint_action": {
+        "Thomas Wilson": "The Princess of Wales",
+        "Harry Davies": "The Princess of Wales",
+        "Phoebe Young": "The Princess of Wales",
+        "Jacob Walker": "The Princess of Wales",
+        "Lily Walker": "The Princess of Wales"
+      },
+      "scores": {
+        "Thomas Wilson": 1.0,
+        "Harry Davies": 1.5,
+        "Phoebe Young": 1.0,
+        "Jacob Walker": 1.0,
+        "Lily Walker": 1.5
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Henry Green": {
+            "predicted_others": {
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Ruby White": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "William Jones": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Evie Green": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Logan Brown": "The King's Head"
+            },
+            "selected": "The Black Swan"
+          },
+          "Logan Brown": {
+            "predicted_others": {
+              "Henry Green": "The King's Head",
+              "Ruby White": "The King's Head",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan"
+            },
+            "selected": "The Black Swan"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Henry Green": "The Black Swan",
+              "Ruby White": "The Black Swan",
+              "William Jones": "The Black Swan",
+              "Evie Green": "The Black Swan",
+              "Logan Brown": "The Black Swan"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The Black Swan",
+        "Ruby White": "The Black Swan",
+        "William Jones": "The Black Swan",
+        "Evie Green": "The Black Swan",
+        "Logan Brown": "The Black Swan"
+      },
+      "scores": {
+        "Henry Green": 1.0,
+        "Ruby White": 1.0,
+        "William Jones": 1.5,
+        "Evie Green": 1.5,
+        "Logan Brown": 1.0
+      },
+      "focal_score_mean": 1.0,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 3,
+      "venues": [
+        "The King's Head",
+        "The Black Swan"
+      ],
+      "focal_players": [
+        "Henry Green",
+        "Ruby White"
+      ],
+      "joint_action": {
+        "Henry Green": "The King's Head",
+        "Ruby White": "The King's Head",
+        "William Jones": "The King's Head",
+        "Evie Green": "The King's Head",
+        "Logan Brown": "The King's Head"
+      },
+      "scores": {
+        "Henry Green": 1.5,
+        "Ruby White": 1.5,
+        "William Jones": 1.0,
+        "Evie Green": 1.0,
+        "Logan Brown": 1.5
+      },
+      "focal_score_mean": 1.5,
+      "focal_score_min": 1.5,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.5
+      }
+    },
+    {
+      "method": "atom_tom1_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "A-ToM",
+        "tom_level": 1,
+        "players": {
+          "Lily Walker": {
+            "predicted_others": {
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Poppy Evans": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Jessica Davies": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Michael Wood": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Emily Wilson": "The Queen's Arms"
+            },
+            "selected": "The King's Head"
+          },
+          "Emily Wilson": {
+            "predicted_others": {
+              "Lily Walker": "The Queen's Arms",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head"
+            },
+            "selected": "The King's Head"
+          }
+        }
+      }
+    },
+    {
+      "method": "econ_bne_mech",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "family": "ECON",
+        "policy": "iterated_best_response",
+        "iterations": [
+          {
+            "iteration": 0,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          },
+          {
+            "iteration": 1,
+            "commitment": {
+              "Lily Walker": "The King's Head",
+              "Poppy Evans": "The King's Head",
+              "Jessica Davies": "The King's Head",
+              "Michael Wood": "The King's Head",
+              "Emily Wilson": "The King's Head"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "hpsmg_plus_proxy",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "posterior_expected_social_score"
+      }
+    },
+    {
+      "method": "oracle_joint",
+      "seed": 4,
+      "venues": [
+        "The King's Head",
+        "The Queen's Arms"
+      ],
+      "focal_players": [
+        "Lily Walker",
+        "Poppy Evans"
+      ],
+      "joint_action": {
+        "Lily Walker": "The King's Head",
+        "Poppy Evans": "The King's Head",
+        "Jessica Davies": "The King's Head",
+        "Michael Wood": "The King's Head",
+        "Emily Wilson": "The King's Head"
+      },
+      "scores": {
+        "Lily Walker": 1.0,
+        "Poppy Evans": 1.5,
+        "Jessica Davies": 1.5,
+        "Michael Wood": 1.5,
+        "Emily Wilson": 1.0
+      },
+      "focal_score_mean": 1.25,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "info": {
+        "policy": "best_focal_mean",
+        "best_value": 1.25
+      }
+    }
+  ]
+}

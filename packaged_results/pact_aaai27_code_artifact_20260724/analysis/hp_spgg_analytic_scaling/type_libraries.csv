@@ -1,0 +1,29 @@
+m,type_index,label,target_contribution,cooperation_weight,self_interest_weight,fairness_weight,synthesis,initial_rho_hat,respaced,rho_hat_min_across_cells
+4,0,altruistic_builder,1.0,1.2,0.15,0.5,retained four-archetype Fischbacher-Gaechter-Fehr library,,False,9.419005153610271e-08
+4,1,conditional_cooperator,0.8,0.95,0.25,0.8,retained four-archetype Fischbacher-Gaechter-Fehr library,,False,9.419005153610271e-08
+4,2,risk_averse_balancer,0.4,0.3,0.6,1.0,retained four-archetype Fischbacher-Gaechter-Fehr library,,False,9.419005153610271e-08
+4,3,free_rider,0.05,0.1,1.1,0.15,retained four-archetype Fischbacher-Gaechter-Fehr library,,False,9.419005153610271e-08
+8,0,synthetic_00,0.5,0.1,0.15,0.15,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,1,synthetic_01,0.5,0.2571428571428571,0.2857142857142857,0.2714285714285714,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,2,synthetic_02,0.5,0.41428571428571426,0.4214285714285714,0.3928571428571428,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,3,synthetic_03,0.5,0.5714285714285714,0.557142857142857,0.5142857142857142,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,4,synthetic_04,0.5,0.7285714285714285,0.6928571428571428,0.6357142857142857,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,5,synthetic_05,0.5,0.8857142857142857,0.8285714285714285,0.7571428571428571,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,6,synthetic_06,0.5,1.042857142857143,0.9642857142857142,0.8785714285714286,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+8,7,synthetic_07,0.5,1.2000000000000002,1.0999999999999999,1.0,re-spaced monotone grid inside four-archetype parameter bounds,3.075593613122152e-08,True,0.005359387236888669
+16,0,synthetic_00,0.5,0.1,0.15,0.15,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,1,synthetic_01,0.5,0.17333333333333334,0.21333333333333332,0.20666666666666667,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,2,synthetic_02,0.5,0.24666666666666667,0.2766666666666666,0.2633333333333333,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,3,synthetic_03,0.5,0.32000000000000006,0.33999999999999997,0.32,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,4,synthetic_04,0.5,0.3933333333333333,0.4033333333333333,0.37666666666666665,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,5,synthetic_05,0.5,0.4666666666666667,0.4666666666666667,0.43333333333333335,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,6,synthetic_06,0.5,0.54,0.53,0.49,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,7,synthetic_07,0.5,0.6133333333333334,0.5933333333333333,0.5466666666666666,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,8,synthetic_08,0.5,0.6866666666666666,0.6566666666666666,0.6033333333333333,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,9,synthetic_09,0.5,0.76,0.72,0.66,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,10,synthetic_10,0.5,0.8333333333333334,0.7833333333333333,0.7166666666666667,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,11,synthetic_11,0.5,0.9066666666666666,0.8466666666666666,0.7733333333333333,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,12,synthetic_12,0.5,0.9800000000000001,0.91,0.8300000000000001,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,13,synthetic_13,0.5,1.0533333333333335,0.9733333333333334,0.8866666666666667,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,14,synthetic_14,0.5,1.126666666666667,1.0366666666666666,0.9433333333333334,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734
+16,15,synthetic_15,0.5,1.2000000000000002,1.0999999999999999,1.0,re-spaced monotone grid inside four-archetype parameter bounds,6.172839461804358e-09,True,0.0011696097542561734

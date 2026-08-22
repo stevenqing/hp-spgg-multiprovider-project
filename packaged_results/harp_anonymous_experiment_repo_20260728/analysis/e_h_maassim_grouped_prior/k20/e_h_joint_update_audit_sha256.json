@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "artifacts": [
+    {
+      "path": "e_h_joint_update_audit.json",
+      "bytes": 194950,
+      "sha256": "13feabfb816ed85e70f57b7fd364175f225404c423aa772939f31c5bd6b494b8"
+    },
+    {
+      "path": "e_h_joint_update_audit.md",
+      "bytes": 195,
+      "sha256": "2b13dc0210a01ccca1a0d2ae685cf22ad31ba3dc07e387a2a84828797bdb8041"
+    }
+  ]
+}

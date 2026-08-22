@@ -1,0 +1,295 @@
+{
+  "metric": "focal_score_mean",
+  "error_bar": "standard error of the mean over retained method/config observations",
+  "llm_aggregation": "pooled equally sized backbone-seed observations",
+  "configurations": {
+    "pub/london_mini_s30": {
+      "panel": "pub",
+      "label": "London mini",
+      "methods": {
+        "pact_family": {
+          "mean": 1.3083333333333333,
+          "sem": 0.02857570438722471,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mini_mechanistic_joint_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 1.2104166666666667,
+          "sem": 0.02084995835260402,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_pub_london_mini_s30_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 1.0638888888888889,
+          "sem": 0.07436763350227583,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mini_mechanistic_joint_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 1.0763888888888888,
+          "sem": 0.05657881872945718,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mini_mechanistic_joint_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 1.3166666666666667,
+          "sem": 0.02919743861121963,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mini_mechanistic_joint_s30.json#oracle_joint"
+        }
+      }
+    },
+    "pub/capetown_s100": {
+      "panel": "pub",
+      "label": "Cape Town (s=100)",
+      "methods": {
+        "pact_family": {
+          "mean": 1.2483333333333333,
+          "sem": 0.008862017464175611,
+          "n": 100,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_capetown_mechanistic_joint_s100.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 1.1564444444444444,
+          "sem": 0.006036059736419073,
+          "n": 400,
+          "source": "analysis/llm_psrl_verbal/concordia_full_pub_capetown_s100_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 0.9830357142857143,
+          "sem": 0.019315350221836825,
+          "n": 100,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_capetown_mechanistic_joint_s100.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 1.042265873015873,
+          "sem": 0.021429213120369092,
+          "n": 100,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_capetown_mechanistic_joint_s100.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 1.2650833333333333,
+          "sem": 0.006948119678425156,
+          "n": 100,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_capetown_mechanistic_joint_s100.json#oracle_joint"
+        }
+      }
+    },
+    "pub/london_s30": {
+      "panel": "pub",
+      "label": "London",
+      "methods": {
+        "pact_family": {
+          "mean": 1.3166666666666667,
+          "sem": 0.016666666666666666,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mechanistic_joint_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 1.2447916666666667,
+          "sem": 0.011520236401887282,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_pub_london_s30_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 1.1537499999999998,
+          "sem": 0.034776212813503196,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mechanistic_joint_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 1.2016666666666667,
+          "sem": 0.03440077258629295,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mechanistic_joint_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 1.3354166666666667,
+          "sem": 0.013562373646497249,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_london_mechanistic_joint_s30.json#oracle_joint"
+        }
+      }
+    },
+    "pub/edinburgh_closures_s30": {
+      "panel": "pub",
+      "label": "Edinburgh closures",
+      "methods": {
+        "pact_family": {
+          "mean": 1.2083333333333333,
+          "sem": 0.018200494007582623,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_edinburgh_closures_mechanistic_joint_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 1.1366203703703703,
+          "sem": 0.012234222921983156,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_pub_edinburgh_closures_s30_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 1.0132142857142858,
+          "sem": 0.046035607760996064,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_edinburgh_closures_mechanistic_joint_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 1.086494708994709,
+          "sem": 0.03997287278539072,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_edinburgh_closures_mechanistic_joint_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 1.2257407407407408,
+          "sem": 0.01647286930414642,
+          "n": 30,
+          "source": "9e7f12b:analysis/concordia_pub_coordination_compact_edinburgh_closures_mechanistic_joint_s30.json#oracle_joint"
+        }
+      }
+    },
+    "haggling/vegbrooke": {
+      "panel": "haggling",
+      "label": "Vegbrooke (single)",
+      "methods": {
+        "pact_family": {
+          "mean": 1.9833333333333334,
+          "sem": 0.16078709656392187,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 1.1458333333333333,
+          "sem": 0.09437911386276138,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_haggling_vegbrooke_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 1.9833333333333334,
+          "sem": 0.16078709656392187,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 1.7333333333333334,
+          "sem": 0.16863776954765403,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 1.9833333333333334,
+          "sem": 0.0,
+          "n": 30,
+          "source": "analysis/concordia_haggling_true_oracle_focal.csv"
+        }
+      }
+    },
+    "haggling/vegbrooke_stubborn": {
+      "panel": "haggling",
+      "label": "Vegbrooke stubborn",
+      "methods": {
+        "pact_family": {
+          "mean": 1.1,
+          "sem": 0.19387162478442202,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_stubborn_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 0.16666666666666666,
+          "sem": 0.21896539682029337,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_haggling_vegbrooke_stubborn_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 0.7666666666666667,
+          "sem": 0.2655868943819197,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_stubborn_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 0.9666666666666667,
+          "sem": 0.21699797834395598,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_vegbrooke_stubborn_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 9.266666666666667,
+          "sem": 0.0,
+          "n": 30,
+          "source": "analysis/concordia_haggling_true_oracle_focal.csv"
+        }
+      }
+    },
+    "haggling_multi_item/fruitville_gullible": {
+      "panel": "haggling",
+      "label": "Fruitville gullible (multi)",
+      "methods": {
+        "pact_family": {
+          "mean": 6.766666666666667,
+          "sem": 0.18987796040284216,
+          "n": 30,
+          "source": "analysis/concordia_haggling_multi_item_compact_fruitville_gullible_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 5.65,
+          "sem": 0.2868866005386579,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_haggling_multi_item_fruitville_gullible_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 5.666666666666667,
+          "sem": 1.1339416893250165,
+          "n": 30,
+          "source": "analysis/concordia_haggling_multi_item_compact_fruitville_gullible_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 6.7,
+          "sem": 0.34624421651670134,
+          "n": 30,
+          "source": "analysis/concordia_haggling_multi_item_compact_fruitville_gullible_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 14.6,
+          "sem": 0.0,
+          "n": 30,
+          "source": "analysis/concordia_haggling_true_oracle_focal.csv"
+        }
+      }
+    },
+    "haggling/fruitville": {
+      "panel": "haggling",
+      "label": "Fruitville (single)",
+      "methods": {
+        "pact_family": {
+          "mean": 7.822222222222222,
+          "sem": 0.12037970294895015,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_fruitville_s30.json#hpsmg_plus_joint_proxy"
+        },
+        "llm_psrl": {
+          "mean": 6.705555555555555,
+          "sem": 0.1908742533702418,
+          "n": 120,
+          "source": "analysis/llm_psrl_verbal/concordia_full_haggling_fruitville_*_llmpsrl.json"
+        },
+        "atom_tom1": {
+          "mean": 7.822222222222222,
+          "sem": 0.12037970294895015,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_fruitville_s30.json#atom_tom1_mech"
+        },
+        "econ_bne": {
+          "mean": 7.822222222222222,
+          "sem": 0.12037970294895015,
+          "n": 30,
+          "source": "analysis/concordia_haggling_compact_fruitville_s30.json#econ_bne_mech"
+        },
+        "oracle": {
+          "mean": 7.822222222222222,
+          "sem": 0.0,
+          "n": 30,
+          "source": "analysis/concordia_haggling_true_oracle_focal.csv"
+        }
+      }
+    }
+  }
+}

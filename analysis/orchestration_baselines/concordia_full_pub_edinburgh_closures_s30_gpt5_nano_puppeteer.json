@@ -1,0 +1,2194 @@
+{
+  "substrate": "pub",
+  "domain": "pub_coordination",
+  "config": "edinburgh_closures",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29
+  ],
+  "methods": [
+    "puppeteer"
+  ],
+  "model": "gpt-5.4-nano-20260317",
+  "orchestration_budget": 4,
+  "information_audit": {
+    "puppeteer": {
+      "mode": "centralized_public_orchestration",
+      "sees_all_person_preferences": false,
+      "sees_full_relationship_matrix": true,
+      "uses_known_payoff_model": true,
+      "uses_privileged_oracle_objective": false,
+      "comparable_as_baseline": true
+    }
+  },
+  "summary": [
+    {
+      "method": "puppeteer",
+      "episodes": 30,
+      "focal_score_mean": 0.5843253968253969,
+      "focal_score_min_mean": 0.18555555555555556,
+      "coordination_rate_mean": 0.5166666666666667,
+      "valid_action_rate_mean": 1.0
+    }
+  ],
+  "episodes": [
+    {
+      "method": "puppeteer",
+      "seed": 0,
+      "venues": [
+        "The Blue Moon",
+        "The Hanging Bat",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Isla MacLeod",
+        "Catriona Campbell",
+        "Morag MacKay",
+        "Ailsa MacDonald",
+        "Angus Graham"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Blue Moon",
+        "Isla MacLeod": "The Hanging Bat",
+        "Catriona Campbell": "The Blue Moon",
+        "Morag MacKay": "The Hanging Bat",
+        "Ailsa MacDonald": "The Blue Moon",
+        "Angus Graham": "The Hanging Bat",
+        "Iain Brown": "The Blue Moon",
+        "Kirsty Robertson": "The Hanging Bat"
+      },
+      "scores": {
+        "Calum Scott": 0.25,
+        "Isla MacLeod": 0.5,
+        "Catriona Campbell": 0.5,
+        "Morag MacKay": 1.25,
+        "Ailsa MacDonald": 1.0,
+        "Angus Graham": 0.6666666666666666,
+        "Iain Brown": 0.8333333333333333,
+        "Kirsty Robertson": 0.5
+      },
+      "focal_score_mean": 0.6944444444444445,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Blue Moon\",\n      \"The Hanging Bat\",\n      \"Sandy Bell's\"\n    ],\n    \"closed_venues\": [\n      \"Sandy Bell's\"\n    ],\n    \"constraint_applied\": \"Only use non-closed venues from the public context.\",\n    \"non_closed_venues\": [\n      \"The Blue Moon\",\n      \"The Hanging Bat\"\n    ],\n    \"assignment_rationale\": \"No public relationship evidence ties specific individuals to specific venues. Therefore, assign each person to one of the two non-closed venues without using any hidden/private venue preferences.\"\n  },\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Hanging Bat\",\n    \"Catriona Camp"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Angus Graham\": \"The Hanging Bat\",\n    \"Iain Brown\": \"The Blue Moon\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Angus Graham\": \"The Hanging Bat\",\n    \"Iain Brown\": \"The Blue Moon\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 1,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Salt Horse",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Niall Thomson",
+        "Catriona Campbell",
+        "Fraser Clark",
+        "Mhairi Wilson",
+        "Douglas Reid",
+        "Isla MacLeod"
+      ],
+      "joint_action": {
+        "Niall Thomson": "The Sheep Held Inn",
+        "Catriona Campbell": "The Salt Horse",
+        "Fraser Clark": "The Sheep Held Inn",
+        "Mhairi Wilson": "The Salt Horse",
+        "Douglas Reid": "The Sheep Held Inn",
+        "Isla MacLeod": "The Salt Horse",
+        "Hamish Taylor": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Salt Horse"
+      },
+      "scores": {
+        "Niall Thomson": 0.5,
+        "Catriona Campbell": 0.25,
+        "Fraser Clark": 0.75,
+        "Mhairi Wilson": 0.5,
+        "Douglas Reid": 0.0,
+        "Isla MacLeod": 1.0,
+        "Hamish Taylor": 0.4,
+        "Ailsa MacDonald": 0.5
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (excluding The Hanging Bat) and produce the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Sheep Held Inn\",\n      \"The Salt Horse\",\n      \"The Hanging Bat\"\n    ],\n    \"closed_venues\": [\n      \"The Hanging Bat\"\n    ],\n    \"effective_open_venues\": [\n      \"The Sheep Held Inn\",\n      \"The Salt Horse\"\n    ],\n    \"constraint_applied\": \"Only non-closed venues may be assigned; private favorite venues are hidden.\",\n    \"relationship_evidence_note\": \"Relationship statements are provided but do not constrain venue choice beyond the requirement to select an available non-closed venue for each person.\"\n  },\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Salt Horse\",\n    \"Fraser Clark\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Salt Horse\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 2,
+      "venues": [
+        "Sandy Bell's",
+        "The Salt Horse",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Malcolm Mitchell",
+        "Isla MacLeod",
+        "Eilidh Davidson",
+        "Iona Ross",
+        "Euan Murray"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Salt Horse",
+        "Malcolm Mitchell": "The Hanging Bat",
+        "Isla MacLeod": "The Salt Horse",
+        "Eilidh Davidson": "The Hanging Bat",
+        "Iona Ross": "The Salt Horse",
+        "Euan Murray": "The Hanging Bat",
+        "Fraser Clark": "The Salt Horse",
+        "Kirsty Robertson": "The Hanging Bat"
+      },
+      "scores": {
+        "Calum Scott": 0.9,
+        "Malcolm Mitchell": 0.0,
+        "Isla MacLeod": 0.75,
+        "Eilidh Davidson": 0.9,
+        "Iona Ross": 0.6,
+        "Euan Murray": 1.1666666666666665,
+        "Fraser Clark": 0.4,
+        "Kirsty Robertson": 0.4
+      },
+      "focal_score_mean": 0.7194444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all public constraints (venues and relationship context) and need to assign one available non-closed venue per person for the joint action.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"venue_status\": {\n      \"available_venues\": [\n        \"Sandy Bell's\",\n        \"The Salt Horse\",\n        \"The Hanging Bat\"\n      ],\n      \"closed_venues\": [\n        \"Sandy Bell's\"\n      ],\n      \"usable_venues_for_assignment\": [\n        \"The Salt Horse\",\n        \"The Hanging Bat\"\n      ]\n    },\n    \"constraint_check\": {\n      \"information_constraint\": \"Private favorite venues are hidden. Use only this public context.\",\n      \"schema_requirement\": \"Each person must be assigned one available non-closed venue.\",\n      \"feasibility\": \"Feasible: 8 people can be assigned using only the two usable venues (The Salt Horse, The Hanging Bat).\"\n    },\n    \"rel"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Hanging Bat\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Hanging Bat\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Hanging Bat\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 3,
+      "venues": [
+        "The Canny Man's",
+        "The Sheep Held Inn",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Iain Brown",
+        "Iona Ross",
+        "Mhairi Wilson",
+        "Morag MacKay",
+        "Calum Scott",
+        "Hamish Taylor"
+      ],
+      "joint_action": {
+        "Iain Brown": "The Canny Man's",
+        "Iona Ross": "The Ensign Ewart",
+        "Mhairi Wilson": "The Canny Man's",
+        "Morag MacKay": "The Ensign Ewart",
+        "Calum Scott": "The Canny Man's",
+        "Hamish Taylor": "The Ensign Ewart",
+        "Catriona Campbell": "The Canny Man's",
+        "Ailsa MacDonald": "The Ensign Ewart"
+      },
+      "scores": {
+        "Iain Brown": 0.5,
+        "Iona Ross": 0.42857142857142855,
+        "Mhairi Wilson": 0.5,
+        "Morag MacKay": 1.0,
+        "Calum Scott": 0.3333333333333333,
+        "Hamish Taylor": 1.0,
+        "Catriona Campbell": 0.9,
+        "Ailsa MacDonald": 0.75
+      },
+      "focal_score_mean": 0.626984126984127,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"constraint_applied\": \"Use only available non-closed venues; 'The Sheep Held Inn' is closed, so it cannot be assigned.\",\n    \"available_non_closed_venues\": [\n      \"The Canny Man's\",\n      \"The Ensign Ewart\"\n    ],\n    \"joint_action_assignments\": {\n      \"Iain Brown\": \"The Canny Man's\",\n      \"Iona Ross\": \"The Ensign Ewart\",\n      \"Mhairi Wilson\": \"The Canny Man's\",\n      \"Morag MacKay\": \"The Ensign Ewart\",\n      \"Calum Scott\": \"The Canny Man's\",\n      \"Hamish Taylor\": \"The Ensign Ewart\",\n      \"Catriona Campbell\": \"The Canny Man's\",\n      \"Ailsa MacDonald\": \"The Ensign Ewart\"\n    },\n    \"rationale\": \"No public context links specific people to specific venues; therefore assignments are made using only the venue availability constraint (excluding the cl"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iain Brown\": \"The Canny Man's\",\n    \"Iona Ross\": \"The Ensign Ewart\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 4,
+      "venues": [
+        "The Canny Man's",
+        "The Guildford Arms",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Malcolm Mitchell",
+        "Rory Stewart",
+        "Catriona Campbell",
+        "Isla MacLeod",
+        "Ailsa MacDonald",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Malcolm Mitchell": "The Canny Man's",
+        "Rory Stewart": "Sandy Bell's",
+        "Catriona Campbell": "The Canny Man's",
+        "Isla MacLeod": "Sandy Bell's",
+        "Ailsa MacDonald": "The Canny Man's",
+        "Calum Scott": "Sandy Bell's",
+        "Kirsty Robertson": "The Canny Man's",
+        "Hamish Taylor": "Sandy Bell's"
+      },
+      "scores": {
+        "Malcolm Mitchell": 0.9,
+        "Rory Stewart": 0.3333333333333333,
+        "Catriona Campbell": 0.75,
+        "Isla MacLeod": 0.6,
+        "Ailsa MacDonald": 0.3333333333333333,
+        "Calum Scott": 0.25,
+        "Kirsty Robertson": 0.75,
+        "Hamish Taylor": 0.3333333333333333
+      },
+      "focal_score_mean": 0.5277777777777778,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person a single available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Canny Man's\",\n      \"The Guildford Arms\",\n      \"Sandy Bell's\"\n    ],\n    \"closed_venues\": [\n      \"The Guildford Arms\"\n    ],\n    \"effective_non_closed_venues\": [\n      \"The Canny Man's\",\n      \"Sandy Bell's\"\n    ],\n    \"constraint_applied\": \"Private favorite venues are hidden; only public context is used. Therefore, each person must be assigned an available non-closed venue from the effective_non_closed_venues list.\",\n    \"schema_compliance_note\": \"The response schema requires exactly one available non-closed venue per person; relationship statements are not needed to select venues under the given public-only con"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Catriona Campbell\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Canny Man's\",\n    \"Calum Scott\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"Sandy Bell's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 5,
+      "venues": [
+        "The Guildford Arms",
+        "The Bow Bar",
+        "The Blue Moon"
+      ],
+      "focal_players": [
+        "Niall Thomson",
+        "Isla MacLeod",
+        "Rory Stewart",
+        "Catriona Campbell",
+        "Kirsty Robertson",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Niall Thomson": "The Guildford Arms",
+        "Isla MacLeod": "The Bow Bar",
+        "Rory Stewart": "The Guildford Arms",
+        "Catriona Campbell": "The Bow Bar",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Ailsa MacDonald": "The Bow Bar",
+        "Fraser Clark": "The Guildford Arms",
+        "Fiona Stewart": "The Bow Bar"
+      },
+      "scores": {
+        "Niall Thomson": 1.0,
+        "Isla MacLeod": 0.0,
+        "Rory Stewart": 1.1666666666666665,
+        "Catriona Campbell": 1.0,
+        "Kirsty Robertson": 0.6666666666666666,
+        "Ailsa MacDonald": 0.5,
+        "Fraser Clark": 0.5,
+        "Fiona Stewart": 0.3333333333333333
+      },
+      "focal_score_mean": 0.7222222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue for the Rugby World Cup coordination task.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_status\": {\n      \"available_non_closed\": [\n        \"The Guildford Arms\",\n        \"The Bow Bar\"\n      ],\n      \"closed\": [\n        \"The Blue Moon\"\n      ]\n    },\n    \"coordination_constraint\": \"Each person must be assigned exactly one venue from the available non-closed list (The Guildford Arms or The Bow Bar).\",\n    \"relationship_notes_used\": \"No relationship-based venue preferences are provided in the public context; only the venue availability constraint is applicable.\"\n  },\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fras"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Bow Bar\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 6,
+      "venues": [
+        "The Salt Horse",
+        "The Ensign Ewart",
+        "The Blue Moon"
+      ],
+      "focal_players": [
+        "Douglas Reid",
+        "Kirsty Robertson",
+        "Iain Brown",
+        "Ailsa MacDonald",
+        "Rory Stewart",
+        "Eilidh Davidson"
+      ],
+      "joint_action": {
+        "Douglas Reid": "The Salt Horse",
+        "Kirsty Robertson": "The Ensign Ewart",
+        "Iain Brown": "The Salt Horse",
+        "Ailsa MacDonald": "The Ensign Ewart",
+        "Rory Stewart": "The Salt Horse",
+        "Eilidh Davidson": "The Ensign Ewart",
+        "Isla MacLeod": "The Salt Horse",
+        "Euan Murray": "The Ensign Ewart"
+      },
+      "scores": {
+        "Douglas Reid": 0.4,
+        "Kirsty Robertson": 0.5,
+        "Iain Brown": 0.5,
+        "Ailsa MacDonald": 0.75,
+        "Rory Stewart": 0.3333333333333333,
+        "Eilidh Davidson": 0.25,
+        "Isla MacLeod": 0.3333333333333333,
+        "Euan Murray": 0.8333333333333333
+      },
+      "focal_score_mean": 0.45555555555555555,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all public constraints (venues, relationships, and required per-person venue selection). Next step is to plan the joint_action assignments using only available non-closed venues.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_availability\": {\n      \"available_venues\": [\n        \"The Salt Horse\",\n        \"The Ensign Ewart\",\n        \"The Blue Moon\"\n      ],\n      \"closed_venues\": [\n        \"The Blue Moon\"\n      ],\n      \"usable_venues_for_assignment\": [\n        \"The Salt Horse\",\n        \"The Ensign Ewart\"\n      ]\n    },\n    \"constraint_handling\": {\n      \"information_constraint\": \"Private favorite venues are hidden; only public context used.\",\n      \"assignment_rule\": \"Each person must be assigned exactly one available non-closed venue.\"\n    },\n    \"joint_action\": {\n      \"Douglas Reid\": \"The Salt Horse\",\n      \"Kirsty Robertson\": \"The Ensign Ewart\",\n      \"Iain Brown\": \"The Salt Horse\",\n      \"Ailsa MacDonald\": \"The Ensign Ewart\",\n      \"Rory Stewart\": \"The Salt Horse"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Ensign Ewart\",\n    \"Iain Brown\": \"The Salt Horse\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Eilidh Davidson\": \"The Ensign Ewart\",\n    \"Isla MacLeod\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Ensign Ewart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 7,
+      "venues": [
+        "The Bow Bar",
+        "The Sheep Held Inn",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Hamish Taylor",
+        "Kirsty Robertson",
+        "Fraser Clark",
+        "Shona Cameron",
+        "Malcolm Mitchell",
+        "Morag MacKay"
+      ],
+      "joint_action": {
+        "Hamish Taylor": "The Bow Bar",
+        "Kirsty Robertson": "The Canny Man's",
+        "Fraser Clark": "The Bow Bar",
+        "Shona Cameron": "The Canny Man's",
+        "Malcolm Mitchell": "The Bow Bar",
+        "Morag MacKay": "The Canny Man's",
+        "Ailsa MacDonald": "The Bow Bar",
+        "Fiona Stewart": "The Canny Man's"
+      },
+      "scores": {
+        "Hamish Taylor": 0.5,
+        "Kirsty Robertson": 0.3333333333333333,
+        "Fraser Clark": 0.0,
+        "Shona Cameron": 1.0,
+        "Malcolm Mitchell": 0.3333333333333333,
+        "Morag MacKay": 0.25,
+        "Ailsa MacDonald": 0.25,
+        "Fiona Stewart": 1.1666666666666665
+      },
+      "focal_score_mean": 0.40277777777777773,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list, ensuring the joint_action mapping is consistent.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": {\n    \"available_non_closed_venues\": [\n      \"The Bow Bar\",\n      \"The Canny Man's\"\n    ],\n    \"venue_assignment_rationale\": \"Only public context is used. The Sheep Held Inn is closed, so each person must be assigned one venue from the remaining available non-closed venues: The Bow Bar or The Canny Man's. No public evidence links specific people to specific venues, so assignments cannot be justified beyond venue availability.\",\n    \"joint_action\": {\n      \"Hamish Taylor\": \"The Bow Bar\",\n      \"Kirsty Robertson\": \"The Canny Man's\",\n      \"Fraser Clark\": \"The Bow Bar\",\n      \"Shona Cameron\": \"The Canny Man's\",\n      \"Malcolm Mitchell\": \"The Bow Bar\",\n      \"Morag MacKay\": \"The Canny Man's\",\n      \"Ailsa MacDonald\": \"The Bow Bar\",\n      \"Fiona Stewart\": \"The Canny Man's\"\n    }"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Canny Man's\",\n    \"Ailsa MacDonald\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Canny Man's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 8,
+      "venues": [
+        "The Canny Man's",
+        "The Bow Bar",
+        "The Hanging Bat"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Rory Stewart",
+        "Shona Cameron",
+        "Mhairi Wilson",
+        "Hamish Taylor",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Bow Bar",
+        "Rory Stewart": "The Hanging Bat",
+        "Shona Cameron": "The Bow Bar",
+        "Mhairi Wilson": "The Hanging Bat",
+        "Hamish Taylor": "The Bow Bar",
+        "Ailsa MacDonald": "The Hanging Bat",
+        "Catriona Campbell": "The Bow Bar",
+        "Isla MacLeod": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.9,
+        "Rory Stewart": 0.5,
+        "Shona Cameron": 0.0,
+        "Mhairi Wilson": 0.5,
+        "Hamish Taylor": 1.1666666666666665,
+        "Ailsa MacDonald": 0.8333333333333333,
+        "Catriona Campbell": 0.5,
+        "Isla MacLeod": 0.5
+      },
+      "focal_score_mean": 0.65,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have the public venue list (excluding closed ones) and must assign one available non-closed venue to each person; coordination_planning is the most suitable next step.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_non_closed_venues\": [\n      \"The Bow Bar\",\n      \"The Hanging Bat\"\n    ],\n    \"closed_venues\": [\n      \"The Canny Man's\"\n    ],\n    \"venue_selection_rationale\": \"Only venues listed as available and not closed can be assigned. The Canny Man's is closed, so every person must be assigned either The Bow Bar or The Hanging Bat. No additional public constraints about venue preferences are provided (private favorite venues are hidden).\",\n    \"joint_action\": {\n      \"Iona Ross\": \"The Bow Bar\",\n      \"Rory Stewart\": \"The Hanging Bat\",\n      \"Shona Cameron\": \"The Bow Bar\",\n      \"Mhairi Wilson\": \"The Hanging Bat\",\n      \"Hamish Taylor\": \"The Bow "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Shona Cameron\": \"The Bow Bar\",\n    \"Mhairi Wilson\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Ailsa MacDonald\": \"The Hanging Bat\",\n    \"Catriona Campbell\": \"The Bow Bar\",\n    \"Isla MacLeod\": \"The Hanging Bat\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 9,
+      "venues": [
+        "The Ensign Ewart",
+        "The Bow Bar",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Malcolm Mitchell",
+        "Douglas Reid",
+        "Iona Ross",
+        "Eilidh Davidson",
+        "Euan Murray",
+        "Catriona Campbell"
+      ],
+      "joint_action": {
+        "Malcolm Mitchell": "The Bow Bar",
+        "Douglas Reid": "The Sheep Held Inn",
+        "Iona Ross": "The Bow Bar",
+        "Eilidh Davidson": "The Sheep Held Inn",
+        "Euan Murray": "The Bow Bar",
+        "Catriona Campbell": "The Sheep Held Inn",
+        "Fiona Stewart": "The Bow Bar",
+        "Iain Brown": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Malcolm Mitchell": 1.0,
+        "Douglas Reid": 0.6666666666666666,
+        "Iona Ross": 0.5,
+        "Eilidh Davidson": 0.0,
+        "Euan Murray": 0.6666666666666666,
+        "Catriona Campbell": 0.3333333333333333,
+        "Fiona Stewart": 0.6,
+        "Iain Brown": 0.5
+      },
+      "focal_score_mean": 0.5277777777777778,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have the public venue list (excluding closed) and must assign one available non-closed venue per person per the required joint_action schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"venue_availability\": {\n      \"available_venues\": [\n        \"The Ensign Ewart\",\n        \"The Bow Bar\",\n        \"The Sheep Held Inn\"\n      ],\n      \"closed_venues\": [\n        \"The Ensign Ewart\"\n      ],\n      \"usable_venues_for_assignment\": [\n        \"The Bow Bar\",\n        \"The Sheep Held Inn\"\n      ]\n    },\n    \"constraint_handling\": {\n      \"information_constraint\": \"Private favorite venues are hidden. Use only this public context.\",\n      \"applied_rule\": \"Only assign from non-closed venues: The Bow Bar or The Sheep Held Inn.\"\n    },\n    \"relationship_context_note\": {\n      \"status\": \"Not used for venue selection beyond satisfying the public cons"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Douglas Reid\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Euan Murray\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 10,
+      "venues": [
+        "Sandy Bell's",
+        "The Blue Moon",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Euan Murray",
+        "Rory Stewart",
+        "Mhairi Wilson",
+        "Catriona Campbell",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Iona Ross": "Sandy Bell's",
+        "Euan Murray": "The Canny Man's",
+        "Rory Stewart": "Sandy Bell's",
+        "Mhairi Wilson": "The Canny Man's",
+        "Catriona Campbell": "Sandy Bell's",
+        "Calum Scott": "The Canny Man's",
+        "Fiona Stewart": "Sandy Bell's",
+        "Hamish Taylor": "The Canny Man's"
+      },
+      "scores": {
+        "Iona Ross": 0.5,
+        "Euan Murray": 0.6,
+        "Rory Stewart": 0.3333333333333333,
+        "Mhairi Wilson": 0.4,
+        "Catriona Campbell": 1.0,
+        "Calum Scott": 0.4,
+        "Fiona Stewart": 0.4,
+        "Hamish Taylor": 0.8333333333333333
+      },
+      "focal_score_mean": 0.5388888888888889,
+      "focal_score_min": 0.3333333333333333,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (Blue Moon is closed) using only the provided public context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"available_non_closed_venues\": [\n      \"Sandy Bell's\",\n      \"The Canny Man's\"\n    ],\n    \"venue_assignment_rationale\": \"Only use non-closed venues. With no additional public constraints linking specific people to specific venues, assign each person one available non-closed venue. Ensure The Blue Moon is excluded because it is listed as closed.\",\n    \"joint_action\": {\n      \"Iona Ross\": \"Sandy Bell's\",\n      \"Euan Murray\": \"The Canny Man's\",\n      \"Rory Stewart\": \"Sandy Bell's\",\n      \"Mhairi Wilson\": \"The Canny Man's\",\n      \"Catriona Campbell\": \"Sandy Bell's\",\n      \"Calum Scott\": \"The Canny Man's\",\n      \"Fiona Stewart\": \"Sandy Bell's\",\n      \"Hamish Taylor\": \"The Canny Man's\"\n    }\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Canny Man's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 11,
+      "venues": [
+        "The Ensign Ewart",
+        "The Hanging Bat",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Isla MacLeod",
+        "Eilidh Davidson",
+        "Morag MacKay",
+        "Euan Murray",
+        "Mhairi Wilson",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Isla MacLeod": "The Ensign Ewart",
+        "Eilidh Davidson": "The Canny Man's",
+        "Morag MacKay": "The Ensign Ewart",
+        "Euan Murray": "The Canny Man's",
+        "Mhairi Wilson": "The Ensign Ewart",
+        "Niall Thomson": "The Canny Man's",
+        "Angus Graham": "The Ensign Ewart",
+        "Catriona Campbell": "The Canny Man's"
+      },
+      "scores": {
+        "Isla MacLeod": 0.5,
+        "Eilidh Davidson": 0.5,
+        "Morag MacKay": 0.75,
+        "Euan Murray": 0.4,
+        "Mhairi Wilson": 0.3333333333333333,
+        "Niall Thomson": 0.0,
+        "Angus Graham": 0.5,
+        "Catriona Campbell": 0.5
+      },
+      "focal_score_mean": 0.4138888888888889,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (excluding The Hanging Bat) to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"constraint_check\": {\n      \"location\": \"Edinburgh\",\n      \"event\": \"The Rugby World Cup\",\n      \"available_venues\": [\n        \"The Ensign Ewart\",\n        \"The Hanging Bat\",\n        \"The Canny Man's\"\n      ],\n      \"closed_venues\": [\n        \"The Hanging Bat\"\n      ],\n      \"usable_venues_after_closure\": [\n        \"The Ensign Ewart\",\n        \"The Canny Man's\"\n      ]\n    },\n    \"relationship_notes_used_or_ignored\": {\n      \"used\": [],\n      \"ignored_reason\": \"The response schema only requires selecting one non-closed available venue per person; no additional venue-selection logic based on private preferences is permitted.\"\n    },\n    \"joint_action_feasibility\": {\n      \"status\": \"feasible\",\n      \"reason\": \"Each person can be assigned any one venue fro"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Euan Murray\": \"The Canny Man's\",\n    \"Mhairi Wilson\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Angus Graham\": \"The Ensign Ewart\",\n    \"Catriona Campbell\": \"The Canny Man's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 12,
+      "venues": [
+        "The Ensign Ewart",
+        "The Guildford Arms",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Douglas Reid",
+        "Kirsty Robertson",
+        "Iain Brown",
+        "Niall Thomson",
+        "Calum Scott",
+        "Eilidh Davidson"
+      ],
+      "joint_action": {
+        "Douglas Reid": "The Ensign Ewart",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Iain Brown": "The Ensign Ewart",
+        "Niall Thomson": "The Guildford Arms",
+        "Calum Scott": "The Ensign Ewart",
+        "Eilidh Davidson": "The Guildford Arms",
+        "Morag MacKay": "The Ensign Ewart",
+        "Shona Cameron": "The Guildford Arms"
+      },
+      "scores": {
+        "Douglas Reid": 0.3333333333333333,
+        "Kirsty Robertson": 0.5,
+        "Iain Brown": 0.0,
+        "Niall Thomson": 0.0,
+        "Calum Scott": 0.3333333333333333,
+        "Eilidh Davidson": 0.75,
+        "Morag MacKay": 1.1666666666666665,
+        "Shona Cameron": 0.4
+      },
+      "focal_score_mean": 0.3194444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (The Ensign Ewart or The Guildford Arms) and produce the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Ensign Ewart\",\n      \"The Guildford Arms\",\n      \"The Bow Bar\"\n    ],\n    \"closed_venues\": [\n      \"The Bow Bar\"\n    ],\n    \"open_venues\": [\n      \"The Ensign Ewart\",\n      \"The Guildford Arms\"\n    ],\n    \"constraint_applied\": \"Only use non-closed venues from the public context; private favorite venues are hidden.\",\n    \"relationship_notes_used\": \"Relationship statements are available but do not affect venue eligibility; venue selection is constrained only by open/closed status in the provided schema.\",\n    \"joint_action_plan\": {\n      \"Douglas Reid\": \"The Ensign Ewart\",\n      \"Kirsty Robertson\": \"The Guildford Arm"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Iain Brown\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Douglas Reid\": \"The Ensign Ewart\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Iain Brown\": \"The Ensign Ewart\",\n    \"Niall Thomson\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Ensign Ewart\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Shona Cameron\": \"The Guildford Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 13,
+      "venues": [
+        "The Guildford Arms",
+        "The Hanging Bat",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Catriona Campbell",
+        "Isla MacLeod",
+        "Rory Stewart",
+        "Ailsa MacDonald",
+        "Shona Cameron"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Guildford Arms",
+        "Catriona Campbell": "The Hanging Bat",
+        "Isla MacLeod": "The Guildford Arms",
+        "Rory Stewart": "The Hanging Bat",
+        "Ailsa MacDonald": "The Guildford Arms",
+        "Shona Cameron": "The Hanging Bat",
+        "Fiona Stewart": "The Guildford Arms",
+        "Morag MacKay": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.6,
+        "Catriona Campbell": 0.6,
+        "Isla MacLeod": 1.25,
+        "Rory Stewart": 1.1,
+        "Ailsa MacDonald": 0.9,
+        "Shona Cameron": 1.1,
+        "Fiona Stewart": 0.4,
+        "Morag MacKay": 1.0
+      },
+      "focal_score_mean": 0.9249999999999999,
+      "focal_score_min": 0.6,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person an available non-closed venue from the public list to form the joint action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Guildford Arms\",\n      \"The Hanging Bat\",\n      \"The Bow Bar\"\n    ],\n    \"closed_venues\": [\n      \"The Bow Bar\"\n    ],\n    \"open_venues_used_for_assignment\": [\n      \"The Guildford Arms\",\n      \"The Hanging Bat\"\n    ],\n    \"constraint_applied\": \"Private favorite venues are hidden; only public context is used. Therefore, each person is assigned an available non-closed venue from the open set.\",\n    \"joint_action\": {\n      \"Iona Ross\": \"The Guildford Arms\",\n      \"Catriona Campbell\": \"The Hanging Bat\",\n      \"Isla MacLeod\": \"The Guildford Arms\",\n      \"Rory Stewart\": \"The Hanging Bat\",\n      \"Ailsa MacDonald\": \"The G"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"The Hanging Bat\",\n    \"Ailsa MacDonald\": \"The Guildford Arms\",\n    \"Shona Cameron\": \"The Hanging Bat\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Hanging Bat\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 14,
+      "venues": [
+        "The Salt Horse",
+        "The Canny Man's",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Shona Cameron",
+        "Eilidh Davidson",
+        "Angus Graham",
+        "Isla MacLeod",
+        "Iona Ross",
+        "Catriona Campbell"
+      ],
+      "joint_action": {
+        "Shona Cameron": "The Canny Man's",
+        "Eilidh Davidson": "The Sheep Held Inn",
+        "Angus Graham": "The Canny Man's",
+        "Isla MacLeod": "The Sheep Held Inn",
+        "Iona Ross": "The Canny Man's",
+        "Catriona Campbell": "The Sheep Held Inn",
+        "Mhairi Wilson": "The Canny Man's",
+        "Hamish Taylor": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Shona Cameron": 0.0,
+        "Eilidh Davidson": 0.25,
+        "Angus Graham": 0.3333333333333333,
+        "Isla MacLeod": 0.5,
+        "Iona Ross": 0.9,
+        "Catriona Campbell": 0.5,
+        "Mhairi Wilson": 0.3333333333333333,
+        "Hamish Taylor": 0.0
+      },
+      "focal_score_mean": 0.4138888888888889,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one available non-closed venue (excluding The Salt Horse) and produce the joint_action mapping.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_availability\": {\n      \"location\": \"Edinburgh\",\n      \"event\": \"The Rugby World Cup\",\n      \"available_venues\": [\n        \"The Canny Man's\",\n        \"The Sheep Held Inn\"\n      ],\n      \"closed_venues\": [\n        \"The Salt Horse\"\n      ]\n    },\n    \"coordination_logic\": {\n      \"constraint_used\": \"Only use non-closed venues from the provided public context.\",\n      \"assignment_rule\": \"Assign each person exactly one venue chosen from {The Canny Man's, The Sheep Held Inn}.\"\n    },\n    \"joint_action\": {\n      \"Shona Cameron\": \"The Canny Man's\",\n      \"Eilidh Davidson\": \"The Sheep Held Inn\",\n      \"Angus Graham\": \"The Canny Man's\",\n      \"Isla MacLeod\": \"The Sheep Held Inn\",\n      \"Iona Ross\": \"The Canny Man's\",\n      \"Catriona Campbell\": \"The Sheep "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Shona Cameron\": \"The Canny Man's\",\n    \"Eilidh Davidson\": \"The Sheep Held Inn\",\n    \"Angus Graham\": \"The Canny Man's\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 15,
+      "venues": [
+        "The Canny Man's",
+        "Sandy Bell's",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Iain Brown",
+        "Niall Thomson",
+        "Fraser Clark",
+        "Catriona Campbell",
+        "Mhairi Wilson"
+      ],
+      "joint_action": {
+        "Iona Ross": "Sandy Bell's",
+        "Iain Brown": "The Guildford Arms",
+        "Niall Thomson": "Sandy Bell's",
+        "Fraser Clark": "The Guildford Arms",
+        "Catriona Campbell": "Sandy Bell's",
+        "Mhairi Wilson": "The Guildford Arms",
+        "Rory Stewart": "Sandy Bell's",
+        "Isla MacLeod": "The Guildford Arms"
+      },
+      "scores": {
+        "Iona Ross": 0.25,
+        "Iain Brown": 0.2,
+        "Niall Thomson": 0.3333333333333333,
+        "Fraser Clark": 0.0,
+        "Catriona Campbell": 0.5,
+        "Mhairi Wilson": 0.5,
+        "Rory Stewart": 0.25,
+        "Isla MacLeod": 0.25
+      },
+      "focal_score_mean": 0.2972222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_availability\": {\n      \"available_non_closed\": [\n        \"Sandy Bell's\",\n        \"The Guildford Arms\"\n      ],\n      \"closed\": [\n        \"The Canny Man's\"\n      ]\n    },\n    \"assignment_rationale\": \"Each person must be assigned exactly one venue from the non-closed list. Relationship statements are not needed to satisfy the schema because the constraint only restricts venues to those that are available (non-closed).\"\n  },\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Ar"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Iain Brown\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Fraser Clark\": \"The Guildford Arms\",\n    \"Catriona Campbell\": \"Sandy Bell's\",\n    \"Mhairi Wilson\": \"The Guildford Arms\",\n    \"Rory Stewart\": \"Sandy Bell's\",\n    \"Isla MacLeod\": \"The Guildford Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 16,
+      "venues": [
+        "The Bow Bar",
+        "The Ensign Ewart",
+        "The Canny Man's"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Niall Thomson",
+        "Fiona Stewart",
+        "Calum Scott",
+        "Hamish Taylor",
+        "Iona Ross"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Bow Bar",
+        "Niall Thomson": "The Canny Man's",
+        "Fiona Stewart": "The Bow Bar",
+        "Calum Scott": "The Canny Man's",
+        "Hamish Taylor": "The Bow Bar",
+        "Iona Ross": "The Canny Man's",
+        "Douglas Reid": "The Bow Bar",
+        "Shona Cameron": "The Canny Man's"
+      },
+      "scores": {
+        "Mhairi Wilson": 0.5,
+        "Niall Thomson": 0.6,
+        "Fiona Stewart": 0.7,
+        "Calum Scott": 1.1,
+        "Hamish Taylor": 0.5,
+        "Iona Ross": 0.75,
+        "Douglas Reid": 0.5,
+        "Shona Cameron": 0.5
+      },
+      "focal_score_mean": 0.6916666666666668,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (excluding The Ensign Ewart) and produce the joint_action mapping.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"analysis\": \"In Edinburgh for The Rugby World Cup, the only available (non-closed) venues are The Bow Bar, The Canny Man's, and The Ensign Ewart is closed. Therefore, each person in the joint_action plan must be assigned to one of the two open venues (The Bow Bar or The Canny Man's). The provided relationship statements do not mention any venue preferences, and the constraint explicitly hides private favorites, so venue assignments should be based solely on availability rather than interpersonal closeness.\"\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Bow Bar\",\n    \"Niall Thomson\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Bow Bar\",\n    \"Calum Scott\": \"The Canny Man's\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Douglas Reid\": \"The Bow Bar\",\n    \"Shona Cameron\": \"The Canny Man's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 17,
+      "venues": [
+        "The Hanging Bat",
+        "The Blue Moon",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Isla MacLeod",
+        "Douglas Reid",
+        "Morag MacKay",
+        "Fiona Stewart",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Blue Moon",
+        "Isla MacLeod": "The Ensign Ewart",
+        "Douglas Reid": "The Blue Moon",
+        "Morag MacKay": "The Ensign Ewart",
+        "Fiona Stewart": "The Blue Moon",
+        "Ailsa MacDonald": "The Ensign Ewart",
+        "Malcolm Mitchell": "The Blue Moon",
+        "Iona Ross": "The Ensign Ewart"
+      },
+      "scores": {
+        "Mhairi Wilson": 0.5,
+        "Isla MacLeod": 1.25,
+        "Douglas Reid": 0.75,
+        "Morag MacKay": 0.4,
+        "Fiona Stewart": 0.5,
+        "Ailsa MacDonald": 0.8333333333333333,
+        "Malcolm Mitchell": 0.6666666666666666,
+        "Iona Ross": 1.5
+      },
+      "focal_score_mean": 0.7055555555555556,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (The Hanging Bat is closed) and produce the joint_action mapping.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_availability\": {\n      \"available_venues\": [\n        \"The Hanging Bat\",\n        \"The Blue Moon\",\n        \"The Ensign Ewart\"\n      ],\n      \"closed_venues\": [\n        \"The Hanging Bat\"\n      ],\n      \"open_venues_for_coordination\": [\n        \"The Blue Moon\",\n        \"The Ensign Ewart\"\n      ]\n    },\n    \"constraint_handling\": {\n      \"information_constraint\": \"Private favorite venues are hidden; only public context used.\",\n      \"selection_rule\": \"Each person must be assigned one available non-closed venue.\"\n    },\n    \"relationship_context_note\": \"The provided relationship statements are not required to satisfy the venue-availability constraint; venue assignment can be based solely on open venues.\"\n  },\n  \"joint_action\": {\n    \"Mhairi Wilson\": \""
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Douglas Reid\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Fiona Stewart\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Malcolm Mitchell\": \"The Blue Moon\",\n    \"Iona Ross\": \"The Ensign Ewart\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Blue Moon\",\n    \"Isla MacLeod\": \"The Ensign Ewart\",\n    \"Douglas Reid\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Ensign Ewart\",\n    \"Fiona Stewart\": \"The Blue Moon\",\n    \"Ailsa MacDonald\": \"The Ensign Ewart\",\n    \"Malcolm Mitchell\": \"The Blue Moon\",\n    \"Iona Ross\": \"The Ensign Ewart\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 18,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Salt Horse",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Niall Thomson",
+        "Rory Stewart",
+        "Iona Ross",
+        "Angus Graham",
+        "Hamish Taylor"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Salt Horse",
+        "Niall Thomson": "The Bow Bar",
+        "Rory Stewart": "The Salt Horse",
+        "Iona Ross": "The Bow Bar",
+        "Angus Graham": "The Salt Horse",
+        "Hamish Taylor": "The Bow Bar",
+        "Fiona Stewart": "The Salt Horse",
+        "Euan Murray": "The Bow Bar"
+      },
+      "scores": {
+        "Calum Scott": 0.5,
+        "Niall Thomson": 1.0,
+        "Rory Stewart": 1.0,
+        "Iona Ross": 0.5,
+        "Angus Graham": 0.5,
+        "Hamish Taylor": 0.5,
+        "Fiona Stewart": 0.9,
+        "Euan Murray": 0.4
+      },
+      "focal_score_mean": 0.6666666666666666,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all public constraints (venues open/closed and each person\u2019s required single non-closed venue). Next step is to assign one available non-closed venue per person to satisfy the joint_action schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"available_non_closed_venues\": [\n      \"The Salt Horse\",\n      \"The Bow Bar\"\n    ],\n    \"venue_selection_rationale\": \"Only non-closed venues may be used. The Sheep Held Inn is listed as closed, so each person must be assigned one of the remaining available venues: The Salt Horse or The Bow Bar. Relationship statements provide no public evidence about venue preferences, so assignments should be based solely on venue availability.\",\n    \"joint_action\": {\n      \"Calum Scott\": \"The Salt Horse\",\n      \"Niall Thomson\": \"The Bow Bar\",\n      \"Rory Stewart\": \"The Salt Horse\",\n      \"Iona Ross\": \"The Bow Bar\",\n      \"Angus Graham\": \"The Salt Horse\",\n      \"Hamish Taylor\": \"The Bow Bar\",\n      \"Fiona Stewart\": \"The Salt Horse\",\n      \"Euan Murray\": \"The Bow Bar\"\n"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Angus Graham\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Salt Horse\",\n    \"Euan Murray\": \"The Bow Bar\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 19,
+      "venues": [
+        "Sandy Bell's",
+        "The Salt Horse",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Ailsa MacDonald",
+        "Euan Murray",
+        "Malcolm Mitchell",
+        "Kirsty Robertson",
+        "Niall Thomson",
+        "Angus Graham"
+      ],
+      "joint_action": {
+        "Ailsa MacDonald": "Sandy Bell's",
+        "Euan Murray": "The Guildford Arms",
+        "Malcolm Mitchell": "Sandy Bell's",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Niall Thomson": "Sandy Bell's",
+        "Angus Graham": "The Guildford Arms",
+        "Isla MacLeod": "Sandy Bell's",
+        "Hamish Taylor": "The Guildford Arms"
+      },
+      "scores": {
+        "Ailsa MacDonald": 0.5,
+        "Euan Murray": 0.5,
+        "Malcolm Mitchell": 0.0,
+        "Kirsty Robertson": 0.5,
+        "Niall Thomson": 1.0,
+        "Angus Graham": 0.9,
+        "Isla MacLeod": 0.25,
+        "Hamish Taylor": 0.5
+      },
+      "focal_score_mean": 0.5666666666666667,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person a single available non-closed venue (excluding The Salt Horse) and produce the joint_action mapping.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"Sandy Bell's\",\n      \"The Guildford Arms\"\n    ],\n    \"closed_venues\": [\n      \"The Salt Horse\"\n    ],\n    \"constraint_applied\": \"Only use non-closed venues from the provided public context.\",\n    \"venue_assignment_logic\": \"Because the public context does not provide any venue-specific preferences, each person is assigned one venue chosen from the non-closed list (Sandy Bell's or The Guildford Arms) without using hidden/private information.\",\n    \"joint_action\": {\n      \"Ailsa MacDonald\": \"Sandy Bell's\",\n      \"Euan Murray\": \"The Guildford Arms\",\n      \"Malcolm Mitchell\": \"Sandy Bell's\",\n      \"Kirsty Robertson\": \"The G"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Guildford Arms\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"Sandy Bell's\",\n    \"Euan Murray\": \"The Guildford Arms\",\n    \"Malcolm Mitchell\": \"Sandy Bell's\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Angus Graham\": \"The Guildford Arms\",\n    \"Isla MacLeod\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 20,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Guildford Arms",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Eilidh Davidson",
+        "Kirsty Robertson",
+        "Fraser Clark",
+        "Catriona Campbell",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Guildford Arms",
+        "Eilidh Davidson": "The Bow Bar",
+        "Kirsty Robertson": "The Guildford Arms",
+        "Fraser Clark": "The Bow Bar",
+        "Catriona Campbell": "The Guildford Arms",
+        "Niall Thomson": "The Bow Bar",
+        "Fiona Stewart": "The Guildford Arms",
+        "Morag MacKay": "The Bow Bar"
+      },
+      "scores": {
+        "Iona Ross": 0.5,
+        "Eilidh Davidson": 1.0,
+        "Kirsty Robertson": 0.6666666666666666,
+        "Fraser Clark": 0.0,
+        "Catriona Campbell": 0.8333333333333333,
+        "Niall Thomson": 0.0,
+        "Fiona Stewart": 0.5,
+        "Morag MacKay": 0.3333333333333333
+      },
+      "focal_score_mean": 0.5,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_status\": {\n      \"available_non_closed\": [\n        \"The Guildford Arms\",\n        \"The Bow Bar\"\n      ],\n      \"closed\": [\n        \"The Sheep Held Inn\"\n      ]\n    },\n    \"assignment_feasibility\": {\n      \"constraint_applied\": \"Each person must be assigned exactly one venue from the non-closed list.\",\n      \"result\": \"Only two venues are available for eight people, so multiple people will share the same venue; relationship statements do not specify venue preferences and cannot be used to differentiate beyond the non-closed constraint.\"\n    },\n    \"recommended_joint_action_plan\": {\n      \"Iona Ross\": \"The Guildford Arms\",\n      \"Eilidh Davidson\": \"The Bow Bar\",\n      \"Kirsty Robertson\": \"The Guildford Arms\",\n      \"Fraser Clark\": \"The Bow Bar\",\n  "
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Bow Bar\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Guildford Arms\",\n    \"Eilidh Davidson\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Guildford Arms\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"The Bow Bar\",\n    \"Fiona Stewart\": \"The Guildford Arms\",\n    \"Morag MacKay\": \"The Bow Bar\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 21,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Blue Moon",
+        "The Bow Bar"
+      ],
+      "focal_players": [
+        "Calum Scott",
+        "Iona Ross",
+        "Hamish Taylor",
+        "Malcolm Mitchell",
+        "Kirsty Robertson",
+        "Fraser Clark"
+      ],
+      "joint_action": {
+        "Calum Scott": "The Sheep Held Inn",
+        "Iona Ross": "The Bow Bar",
+        "Hamish Taylor": "The Sheep Held Inn",
+        "Malcolm Mitchell": "The Bow Bar",
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Fraser Clark": "The Bow Bar",
+        "Morag MacKay": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Bow Bar"
+      },
+      "scores": {
+        "Calum Scott": 0.25,
+        "Iona Ross": 0.0,
+        "Hamish Taylor": 0.0,
+        "Malcolm Mitchell": 0.3333333333333333,
+        "Kirsty Robertson": 1.0,
+        "Fraser Clark": 0.3333333333333333,
+        "Morag MacKay": 1.0,
+        "Ailsa MacDonald": 0.0
+      },
+      "focal_score_mean": 0.3194444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue for the joint action, using only the public venue list.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Sheep Held Inn\",\n      \"The Blue Moon\",\n      \"The Bow Bar\"\n    ],\n    \"closed_venues\": [\n      \"The Blue Moon\"\n    ],\n    \"constraint_applied\": \"Only non-closed venues may be selected; private favorite venues are hidden.\",\n    \"eligible_venues\": [\n      \"The Sheep Held Inn\",\n      \"The Bow Bar\"\n    ],\n    \"venue_assignment_feasibility\": {\n      \"note\": \"The provided public relationship statements do not mention any venue names, so they cannot be used to differentiate venue choice. Therefore, any assignment using only eligible venues satisfies the public-evidence constraint.\",\n      \"schema_requirement\": \"Each pers"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Bow Bar\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Bow Bar\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Bow Bar\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Bow Bar\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Bow Bar\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 22,
+      "venues": [
+        "The Sheep Held Inn",
+        "The Canny Man's",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Kirsty Robertson",
+        "Isla MacLeod",
+        "Niall Thomson",
+        "Malcolm Mitchell",
+        "Shona Cameron",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Isla MacLeod": "The Sheep Held Inn",
+        "Niall Thomson": "The Sheep Held Inn",
+        "Malcolm Mitchell": "The Sheep Held Inn",
+        "Shona Cameron": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Sheep Held Inn",
+        "Rory Stewart": "The Sheep Held Inn",
+        "Iain Brown": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Kirsty Robertson": 1.5,
+        "Isla MacLeod": 1.0,
+        "Niall Thomson": 1.0,
+        "Malcolm Mitchell": 1.5,
+        "Shona Cameron": 1.5,
+        "Ailsa MacDonald": 1.5,
+        "Rory Stewart": 1.0,
+        "Iain Brown": 1.0
+      },
+      "focal_score_mean": 1.3333333333333333,
+      "focal_score_min": 1.0,
+      "coordination_rate": 1.0,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person to one available non-closed venue using only the public venue list, then prepare the joint_action output.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  },\n  \"analysis\": \"Only one non-closed venue is available in the public context: The Sheep Held Inn (The Canny Man's is closed; Sandy Bell's is not listed as available). Therefore, all eight people are assigned to the single available non-closed venue to satisfy the schema constraint.\"\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Malcolm Mitchell\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Sheep Held Inn\",\n    \"Iain Brown\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 23,
+      "venues": [
+        "The Guildford Arms",
+        "The Salt Horse",
+        "Sandy Bell's"
+      ],
+      "focal_players": [
+        "Morag MacKay",
+        "Mhairi Wilson",
+        "Calum Scott",
+        "Niall Thomson",
+        "Hamish Taylor",
+        "Iain Brown"
+      ],
+      "joint_action": {
+        "Morag MacKay": "The Guildford Arms",
+        "Mhairi Wilson": "Sandy Bell's",
+        "Calum Scott": "The Guildford Arms",
+        "Niall Thomson": "Sandy Bell's",
+        "Hamish Taylor": "The Guildford Arms",
+        "Iain Brown": "Sandy Bell's",
+        "Eilidh Davidson": "The Guildford Arms",
+        "Ailsa MacDonald": "Sandy Bell's"
+      },
+      "scores": {
+        "Morag MacKay": 0.6666666666666666,
+        "Mhairi Wilson": 0.9,
+        "Calum Scott": 0.5,
+        "Niall Thomson": 0.3333333333333333,
+        "Hamish Taylor": 0.0,
+        "Iain Brown": 0.3333333333333333,
+        "Eilidh Davidson": 0.3333333333333333,
+        "Ailsa MacDonald": 0.0
+      },
+      "focal_score_mean": 0.45555555555555555,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"venue_availability\": {\n      \"location\": \"Edinburgh\",\n      \"event\": \"The Rugby World Cup\",\n      \"available_venues\": [\n        \"The Guildford Arms\",\n        \"The Salt Horse\",\n        \"Sandy Bell's\"\n      ],\n      \"closed_venues\": [\n        \"The Salt Horse\"\n      ],\n      \"usable_venues_for_planning\": [\n        \"The Guildford Arms\",\n        \"Sandy Bell's\"\n      ]\n    },\n    \"relationship_constraints_used\": {\n      \"note\": \"No public context links specific people to specific venues; only venue availability/closure is usable.\",\n      \"private_favorites\": \"Hidden by constraint; not used.\"\n    },\n    \"joint_action_recommendation\": {\n      \"Morag MacKay\": \"The Guildford Arms\",\n      \"Mhairi Wilson\": \"Sandy Bell's\",\n      \"Calum Scott\": \"The Guildford Arms\""
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\",\n    \"Iain Brown\": \"Sandy Bell's\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Mhairi Wilson\": \"Sandy Bell's\",\n    \"Calum Scott\": \"The Guildford Arms\",\n    \"Niall Thomson\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Guildford Arms\",\n    \"Iain Brown\": \"Sandy Bell's\",\n    \"Eilidh Davidson\": \"The Guildford Arms\",\n    \"Ailsa MacDonald\": \"Sandy Bell's\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 24,
+      "venues": [
+        "The Blue Moon",
+        "The Sheep Held Inn",
+        "The Salt Horse"
+      ],
+      "focal_players": [
+        "Kirsty Robertson",
+        "Mhairi Wilson",
+        "Iona Ross",
+        "Euan Murray",
+        "Niall Thomson",
+        "Morag MacKay"
+      ],
+      "joint_action": {
+        "Kirsty Robertson": "The Blue Moon",
+        "Mhairi Wilson": "The Sheep Held Inn",
+        "Iona Ross": "The Blue Moon",
+        "Euan Murray": "The Sheep Held Inn",
+        "Niall Thomson": "The Blue Moon",
+        "Morag MacKay": "The Sheep Held Inn",
+        "Ailsa MacDonald": "The Blue Moon",
+        "Calum Scott": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Kirsty Robertson": 0.6,
+        "Mhairi Wilson": 0.5,
+        "Iona Ross": 1.0,
+        "Euan Murray": 1.1,
+        "Niall Thomson": 0.5,
+        "Morag MacKay": 1.5,
+        "Ailsa MacDonald": 0.25,
+        "Calum Scott": 0.9
+      },
+      "focal_score_mean": 0.8666666666666667,
+      "focal_score_min": 0.5,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint_action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"constraint_applied\": \"Private favorite venues are hidden; only use available_venues minus closed_venues.\",\n    \"available_non_closed_venues\": [\n      \"The Blue Moon\",\n      \"The Sheep Held Inn\"\n    ],\n    \"joint_action_recommendation\": {\n      \"Kirsty Robertson\": \"The Blue Moon\",\n      \"Mhairi Wilson\": \"The Sheep Held Inn\",\n      \"Iona Ross\": \"The Blue Moon\",\n      \"Euan Murray\": \"The Sheep Held Inn\",\n      \"Niall Thomson\": \"The Blue Moon\",\n      \"Morag MacKay\": \"The Sheep Held Inn\",\n      \"Ailsa MacDonald\": \"The Blue Moon\",\n      \"Calum Scott\": \"The Sheep Held Inn\"\n    },\n    \"rationale\": \"Each person is assigned one venue chosen only from the two non-closed options (The Blue Moon, The Sheep Held Inn), satisfying the response schema without using any"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Blue Moon\",\n    \"Mhairi Wilson\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Blue Moon\",\n    \"Euan Murray\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Kirsty Robertson\": \"The Blue Moon\",\n    \"Mhairi Wilson\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Blue Moon\",\n    \"Euan Murray\": \"The Sheep Held Inn\",\n    \"Niall Thomson\": \"The Blue Moon\",\n    \"Morag MacKay\": \"The Sheep Held Inn\",\n    \"Ailsa MacDonald\": \"The Blue Moon\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 25,
+      "venues": [
+        "The Blue Moon",
+        "Sandy Bell's",
+        "The Salt Horse"
+      ],
+      "focal_players": [
+        "Angus Graham",
+        "Malcolm Mitchell",
+        "Iona Ross",
+        "Douglas Reid",
+        "Morag MacKay",
+        "Ailsa MacDonald"
+      ],
+      "joint_action": {
+        "Angus Graham": "Sandy Bell's",
+        "Malcolm Mitchell": "The Salt Horse",
+        "Iona Ross": "Sandy Bell's",
+        "Douglas Reid": "The Salt Horse",
+        "Morag MacKay": "Sandy Bell's",
+        "Ailsa MacDonald": "The Salt Horse",
+        "Fiona Stewart": "Sandy Bell's",
+        "Hamish Taylor": "The Salt Horse"
+      },
+      "scores": {
+        "Angus Graham": 0.3333333333333333,
+        "Malcolm Mitchell": 1.0,
+        "Iona Ross": 0.5,
+        "Douglas Reid": 0.4,
+        "Morag MacKay": 0.25,
+        "Ailsa MacDonald": 0.4,
+        "Fiona Stewart": 0.0,
+        "Hamish Taylor": 0.8333333333333333
+      },
+      "focal_score_mean": 0.48055555555555557,
+      "focal_score_min": 0.25,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (only The Salt Horse or Sandy Bell's) based on the public constraints and relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Blue Moon\",\n      \"Sandy Bell's\",\n      \"The Salt Horse\"\n    ],\n    \"closed_venues\": [\n      \"The Blue Moon\"\n    ],\n    \"open_venues_used_for_assignment\": [\n      \"Sandy Bell's\",\n      \"The Salt Horse\"\n    ],\n    \"constraint_applied\": \"Private favorite venues are hidden; only public context (open vs closed venues) is used.\",\n    \"relationship_context_note\": \"Relationship statements are provided but do not affect venue availability because the schema requires only 'one available non-closed venue' per person.\"\n  },\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \""
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Angus Graham\": \"Sandy Bell's\",\n    \"Malcolm Mitchell\": \"The Salt Horse\",\n    \"Iona Ross\": \"Sandy Bell's\",\n    \"Douglas Reid\": \"The Salt Horse\",\n    \"Morag MacKay\": \"Sandy Bell's\",\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Fiona Stewart\": \"Sandy Bell's\",\n    \"Hamish Taylor\": \"The Salt Horse\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 26,
+      "venues": [
+        "The Canny Man's",
+        "The Hanging Bat",
+        "The Ensign Ewart"
+      ],
+      "focal_players": [
+        "Iona Ross",
+        "Fiona Stewart",
+        "Isla MacLeod",
+        "Morag MacKay",
+        "Kirsty Robertson",
+        "Malcolm Mitchell"
+      ],
+      "joint_action": {
+        "Iona Ross": "The Canny Man's",
+        "Fiona Stewart": "The Hanging Bat",
+        "Isla MacLeod": "The Canny Man's",
+        "Morag MacKay": "The Hanging Bat",
+        "Kirsty Robertson": "The Canny Man's",
+        "Malcolm Mitchell": "The Hanging Bat",
+        "Hamish Taylor": "The Canny Man's",
+        "Euan Murray": "The Hanging Bat"
+      },
+      "scores": {
+        "Iona Ross": 0.6666666666666666,
+        "Fiona Stewart": 0.5,
+        "Isla MacLeod": 0.4,
+        "Morag MacKay": 0.0,
+        "Kirsty Robertson": 0.6,
+        "Malcolm Mitchell": 0.5,
+        "Hamish Taylor": 0.75,
+        "Euan Murray": 0.0
+      },
+      "focal_score_mean": 0.4444444444444444,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have all public constraints (people, available/closed venues, and required per-person venue selection). Next step is to plan a valid joint_action assignment using only non-closed venues.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"task\": \"Concordia Pub Coordination\",\n    \"location\": \"Edinburgh\",\n    \"event\": \"The Rugby World Cup\",\n    \"available_venues\": [\n      \"The Canny Man's\",\n      \"The Hanging Bat\",\n      \"The Ensign Ewart\"\n    ],\n    \"closed_venues\": [\n      \"The Ensign Ewart\"\n    ],\n    \"constraint_applied\": \"Only non-closed venues may be assigned; private favorite venues are hidden.\",\n    \"eligible_venues\": [\n      \"The Canny Man's\",\n      \"The Hanging Bat\"\n    ],\n    \"joint_action_plan\": {\n      \"Iona Ross\": \"The Canny Man's\",\n      \"Fiona Stewart\": \"The Hanging Bat\",\n      \"Isla MacLeod\": \"The Canny Man's\",\n      \"Morag MacKay\": \"The Hanging Bat\",\n      \"Kirsty Robertson\": \"The Canny Man's\",\n      \"Malcolm Mitchell\": \"The Hanging Bat\",\n      \"Hamish Taylor\": \"The Can"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Canny Man's\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Iona Ross\": \"The Canny Man's\",\n    \"Fiona Stewart\": \"The Hanging Bat\",\n    \"Isla MacLeod\": \"The Canny Man's\",\n    \"Morag MacKay\": \"The Hanging Bat\",\n    \"Kirsty Robertson\": \"The Canny Man's\",\n    \"Malcolm Mitchell\": \"The Hanging Bat\",\n    \"Hamish Taylor\": \"The Canny Man's\",\n    \"Euan Murray\": \"The Hanging Bat\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 27,
+      "venues": [
+        "The Ensign Ewart",
+        "The Guildford Arms",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Rory Stewart",
+        "Iona Ross",
+        "Catriona Campbell",
+        "Angus Graham",
+        "Morag MacKay",
+        "Fiona Stewart"
+      ],
+      "joint_action": {
+        "Rory Stewart": "The Guildford Arms",
+        "Iona Ross": "The Sheep Held Inn",
+        "Catriona Campbell": "The Guildford Arms",
+        "Angus Graham": "The Sheep Held Inn",
+        "Morag MacKay": "The Guildford Arms",
+        "Fiona Stewart": "The Sheep Held Inn",
+        "Isla MacLeod": "The Guildford Arms",
+        "Calum Scott": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Rory Stewart": 0.4,
+        "Iona Ross": 0.6666666666666666,
+        "Catriona Campbell": 0.0,
+        "Angus Graham": 0.5,
+        "Morag MacKay": 1.0,
+        "Fiona Stewart": 1.1666666666666665,
+        "Isla MacLeod": 1.1666666666666665,
+        "Calum Scott": 0.5
+      },
+      "focal_score_mean": 0.6222222222222222,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue from the public list to form the joint action plan.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"constraint_applied\": \"Selected venues must be from available_venues and not from closed_venues (closed: The Ensign Ewart).\",\n    \"available_non_closed_venues\": [\n      \"The Guildford Arms\",\n      \"The Sheep Held Inn\"\n    ],\n    \"venue_assignment_rationale\": \"No public context links specific people to specific venues; therefore, assignments are made using only the non-closed venue constraint and the requirement to provide one venue per person.\"\n  },\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Guildfor"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Rory Stewart\": \"The Guildford Arms\",\n    \"Iona Ross\": \"The Sheep Held Inn\",\n    \"Catriona Campbell\": \"The Guildford Arms\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Morag MacKay\": \"The Guildford Arms\",\n    \"Fiona Stewart\": \"The Sheep Held Inn\",\n    \"Isla MacLeod\": \"The Guildford Arms\",\n    \"Calum Scott\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 28,
+      "venues": [
+        "The Salt Horse",
+        "The Sheep Held Inn",
+        "The Guildford Arms"
+      ],
+      "focal_players": [
+        "Mhairi Wilson",
+        "Catriona Campbell",
+        "Rory Stewart",
+        "Angus Graham",
+        "Kirsty Robertson",
+        "Calum Scott"
+      ],
+      "joint_action": {
+        "Mhairi Wilson": "The Salt Horse",
+        "Catriona Campbell": "The Sheep Held Inn",
+        "Rory Stewart": "The Salt Horse",
+        "Angus Graham": "The Sheep Held Inn",
+        "Kirsty Robertson": "The Salt Horse",
+        "Calum Scott": "The Sheep Held Inn",
+        "Iona Ross": "The Salt Horse",
+        "Niall Thomson": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Mhairi Wilson": 0.8333333333333333,
+        "Catriona Campbell": 1.0,
+        "Rory Stewart": 0.5,
+        "Angus Graham": 0.25,
+        "Kirsty Robertson": 0.6666666666666666,
+        "Calum Scott": 0.0,
+        "Iona Ross": 0.25,
+        "Niall Thomson": 0.2
+      },
+      "focal_score_mean": 0.5416666666666666,
+      "focal_score_min": 0.0,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We have the public venue list (excluding closed ones) and need to assign one available non-closed venue to each person per the required joint_action schema.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"available_venues\": [\n      \"The Salt Horse\",\n      \"The Sheep Held Inn\"\n    ],\n    \"closed_venues\": [\n      \"The Guildford Arms\"\n    ],\n    \"venue_assignment_rationale\": {\n      \"Mhairi Wilson\": {\n        \"evidence\": [\n          \"Mhairi Wilson and Angus Graham have a strong mutual respect for each other.\",\n          \"Mhairi Wilson and Kirsty Robertson truly enjoy each others company.\"\n        ],\n        \"assigned_venue\": \"The Salt Horse\"\n      },\n      \"Catriona Campbell\": {\n        \"evidence\": [\n          \"Catriona Campbell and Angus Graham are the best of friends. They trust each other completely.\",\n          \"Catriona Campbell and Niall Thomson have a strong sense of loyalty to each other.\"\n        ],\n        \"assigned_venue\": \"The Sheep Held Inn\"\n"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Kirsty Robertson\": \"The Salt Horse\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Catriona Campbell\": \"The Sheep Held Inn\",\n    \"Rory Stewart\": \"The Salt Horse\",\n    \"Angus Graham\": \"The Sheep Held Inn\",\n    \"Kirsty Robertson\": \"The Salt Horse\",\n    \"Calum Scott\": \"The Sheep Held Inn\",\n    \"Iona Ross\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    },
+    {
+      "method": "puppeteer",
+      "seed": 29,
+      "venues": [
+        "The Hanging Bat",
+        "The Salt Horse",
+        "The Sheep Held Inn"
+      ],
+      "focal_players": [
+        "Ailsa MacDonald",
+        "Isla MacLeod",
+        "Fraser Clark",
+        "Kirsty Robertson",
+        "Mhairi Wilson",
+        "Niall Thomson"
+      ],
+      "joint_action": {
+        "Ailsa MacDonald": "The Salt Horse",
+        "Isla MacLeod": "The Sheep Held Inn",
+        "Fraser Clark": "The Salt Horse",
+        "Kirsty Robertson": "The Sheep Held Inn",
+        "Mhairi Wilson": "The Salt Horse",
+        "Niall Thomson": "The Sheep Held Inn",
+        "Shona Cameron": "The Salt Horse",
+        "Hamish Taylor": "The Sheep Held Inn"
+      },
+      "scores": {
+        "Ailsa MacDonald": 0.75,
+        "Isla MacLeod": 0.4,
+        "Fraser Clark": 0.9,
+        "Kirsty Robertson": 0.75,
+        "Mhairi Wilson": 0.4,
+        "Niall Thomson": 0.4,
+        "Shona Cameron": 0.75,
+        "Hamish Taylor": 0.75
+      },
+      "focal_score_mean": 0.6,
+      "focal_score_min": 0.4,
+      "coordination_rate": 0.5,
+      "valid_action_rate": 1.0,
+      "information_scope": {
+        "mode": "centralized_public_orchestration",
+        "sees_all_person_preferences": false,
+        "sees_full_relationship_matrix": true,
+        "uses_known_payoff_model": true,
+        "uses_privileged_oracle_objective": false,
+        "comparable_as_baseline": true
+      },
+      "info": {
+        "family": "Puppeteer",
+        "policy": "inference_only_dynamic_orchestration",
+        "call_budget": 4,
+        "calls_used": 4,
+        "valid_model_action": true,
+        "trace": [
+          {
+            "activation": 0,
+            "router": "{\n  \"next_agent\": \"coordination_planning\",\n  \"reason\": \"We need to assign each person one available non-closed venue (The Salt Horse or The Sheep Held Inn) according to the public relationship context.\"\n}",
+            "agent": "coordination_planning",
+            "reply": "{\n  \"public_evidence_analysis\": {\n    \"constraint_applied\": \"Only use available_venues excluding closed_venues. The Hanging Bat is closed; The Salt Horse and The Sheep Held Inn are available.\",\n    \"venue_selection_logic\": \"Assign each person exactly one venue from the available set {The Salt Horse, The Sheep Held Inn} without using any hidden/private venue preferences.\",\n    \"joint_action\": {\n      \"Ailsa MacDonald\": \"The Salt Horse\",\n      \"Isla MacLeod\": \"The Sheep Held Inn\",\n      \"Fraser Clark\": \"The Salt Horse\",\n      \"Kirsty Robertson\": \"The Sheep Held Inn\",\n      \"Mhairi Wilson\": \"The Salt Horse\",\n      \"Niall Thomson\": \"The Sheep Held Inn\",\n      \"Shona Cameron\": \"The Salt Horse\",\n      \"Hamish Taylor\": \"The Sheep Held Inn\"\n    }\n  }\n}"
+          },
+          {
+            "activation": 1,
+            "router": "{\n  \"next_agent\": \"conclude\",\n  \"reason\": \"short\"\n}",
+            "agent": "conclude",
+            "reply": "{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}"
+          }
+        ],
+        "final_reply": "{\n  \"joint_action\": {\n    \"Ailsa MacDonald\": \"The Salt Horse\",\n    \"Isla MacLeod\": \"The Sheep Held Inn\",\n    \"Fraser Clark\": \"The Salt Horse\",\n    \"Kirsty Robertson\": \"The Sheep Held Inn\",\n    \"Mhairi Wilson\": \"The Salt Horse\",\n    \"Niall Thomson\": \"The Sheep Held Inn\",\n    \"Shona Cameron\": \"The Salt Horse\",\n    \"Hamish Taylor\": \"The Sheep Held Inn\"\n  }\n}"
+      }
+    }
+  ]
+}

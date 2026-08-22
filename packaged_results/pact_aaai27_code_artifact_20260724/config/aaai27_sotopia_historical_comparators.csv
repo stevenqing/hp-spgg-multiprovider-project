@@ -1,0 +1,4 @@
+family,model,comparator_set,best_method,mean,source
+craigslist_bargains,gpt-5.4-nano-20260317,"A-ToM-1;ECON-BNE;llm-belief;llm-greedy",llm_belief,2.7605,analysis/sotopia_tuned_all70_full_report.md
+donate_funds,gpt-5.4-nano-20260317,"A-ToM-1;ECON-BNE;llm-belief;llm-greedy",atom_tom1,3.3860,analysis/sotopia_tuned_all70_full_report.md
+revenge_plot,gpt-5.4-nano-20260317,"A-ToM-1;ECON-BNE;llm-belief;llm-greedy",llm_greedy,3.2000,analysis/sotopia_tuned_all70_full_report.md

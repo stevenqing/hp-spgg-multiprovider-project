@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "artifacts": [
+    {
+      "path": "e_h_diagnostics.json",
+      "bytes": 24984,
+      "sha256": "c44b5b74226ba7e11c7b7c402fbf7f6e8f2e1cc29dbf53f0b7f0f516c1d2d10e"
+    },
+    {
+      "path": "e_h_diagnostics.csv",
+      "bytes": 12695,
+      "sha256": "d5c85aad7b85c60be45d3e3b5d2535140840cdc9be66e18004edfa8defee051e"
+    },
+    {
+      "path": "e_h_diagnostics.md",
+      "bytes": 3386,
+      "sha256": "6f7669bd3c0af3bad3eb4cadd7902e070ebe175b330e6a28bac5adc87f700f04"
+    }
+  ]
+}

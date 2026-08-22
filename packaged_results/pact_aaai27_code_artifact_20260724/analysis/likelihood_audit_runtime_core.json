@@ -1,0 +1,276 @@
+{
+  "hp_spgg": {
+    "algorithm": "hpsmg_plus",
+    "n": 3,
+    "K_probe": 2,
+    "calibration_backend": "mixed",
+    "calibration_seed": 19,
+    "llm_call_counts": {
+      "player": 0,
+      "judge": 0
+    },
+    "samples": [
+      {
+        "player_index": 0,
+        "type_index": 0,
+        "profile_index": 124,
+        "observed_reward": 0.41605555555555557,
+        "expected_reward": 0.7033333333333334,
+        "residual": -0.2872777777777778,
+        "sigma": 0.08,
+        "likelihood": 0.0015844148506171168
+      },
+      {
+        "player_index": 0,
+        "type_index": 1,
+        "profile_index": 124,
+        "observed_reward": 0.41605555555555557,
+        "expected_reward": 0.6404444444444444,
+        "residual": -0.2243888888888888,
+        "sigma": 0.08,
+        "likelihood": 0.019572634736814372
+      },
+      {
+        "player_index": 0,
+        "type_index": 2,
+        "profile_index": 124,
+        "observed_reward": 0.41605555555555557,
+        "expected_reward": 0.5253333333333333,
+        "residual": -0.10927777777777775,
+        "sigma": 0.08,
+        "likelihood": 0.39339540496840947
+      },
+      {
+        "player_index": 0,
+        "type_index": 3,
+        "profile_index": 124,
+        "observed_reward": 0.41605555555555557,
+        "expected_reward": 0.41605555555555557,
+        "residual": 0.0,
+        "sigma": 0.08,
+        "likelihood": 1.000000001
+      },
+      {
+        "player_index": 1,
+        "type_index": 0,
+        "profile_index": 124,
+        "observed_reward": 0.5253333333333333,
+        "expected_reward": 0.7033333333333334,
+        "residual": -0.17800000000000005,
+        "sigma": 0.08,
+        "likelihood": 0.08413669443194784
+      }
+    ],
+    "regrets": [
+      0.0,
+      0.0
+    ]
+  },
+  "concordia_compact": {
+    "pub_method": "hpsmg_plus_joint_proxy",
+    "pub_action_size": 5,
+    "pub_static_posterior_samples": [
+      {
+        "player": "Noah Smith",
+        "persona": "altruistic_builder",
+        "prob": 0.1866
+      },
+      {
+        "player": "Noah Smith",
+        "persona": "conditional_cooperator",
+        "prob": 0.2279
+      },
+      {
+        "player": "Noah Smith",
+        "persona": "risk_averse_balancer",
+        "prob": 0.2279
+      },
+      {
+        "player": "Sophie Martin",
+        "persona": "altruistic_builder",
+        "prob": 0.1866
+      },
+      {
+        "player": "Sophie Martin",
+        "persona": "conditional_cooperator",
+        "prob": 0.2279
+      }
+    ],
+    "haggling_method": "hpsmg_plus_proxy",
+    "haggling_action": {
+      "buyer": "Magnus Mulberrylane",
+      "seller": "Aiden Riversong",
+      "buyer_action": "4 coins",
+      "seller_action": "accept"
+    },
+    "haggling_static_posterior_samples": [
+      {
+        "role": "buyer_persona_posterior",
+        "persona": "altruistic_builder",
+        "prob": 0.2008
+      },
+      {
+        "role": "buyer_persona_posterior",
+        "persona": "conditional_cooperator",
+        "prob": 0.2579
+      },
+      {
+        "role": "buyer_persona_posterior",
+        "persona": "risk_averse_balancer",
+        "prob": 0.2357
+      },
+      {
+        "role": "seller_persona_posterior",
+        "persona": "altruistic_builder",
+        "prob": 0.2081
+      },
+      {
+        "role": "seller_persona_posterior",
+        "persona": "conditional_cooperator",
+        "prob": 0.2809
+      }
+    ],
+    "llm_call_counts": {
+      "player": 0,
+      "judge": 0
+    }
+  },
+  "maassim": {
+    "llm_call_counts": {
+      "player": 0,
+      "judge": 0
+    },
+    "samples": [
+      {
+        "type_index": 0,
+        "theta": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "action": 2,
+        "reason": "avoid_long",
+        "features": {
+          "long_trip": 1.0,
+          "leaves_zone": 1.0,
+          "home_ward": 0.0,
+          "surge": 0.0,
+          "pay": 1.5,
+          "after_deadline": 0.0,
+          "congestion": 0.0,
+          "menu_long_trip": 0.0,
+          "menu_leaves_zone": 0.0,
+          "menu_home_ward": 0.0,
+          "menu_surge": 0.0,
+          "menu_pay": 1.5
+        },
+        "likelihood": 0.015485307099472078
+      },
+      {
+        "type_index": 1,
+        "theta": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "action": 2,
+        "reason": "avoid_long",
+        "features": {
+          "long_trip": 1.0,
+          "leaves_zone": 1.0,
+          "home_ward": 0.0,
+          "surge": 0.0,
+          "pay": 1.5,
+          "after_deadline": 0.0,
+          "congestion": 0.0,
+          "menu_long_trip": 0.0,
+          "menu_leaves_zone": 0.0,
+          "menu_home_ward": 0.0,
+          "menu_surge": 0.0,
+          "menu_pay": 1.5
+        },
+        "likelihood": 0.0766294777225703
+      },
+      {
+        "type_index": 2,
+        "theta": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "action": 2,
+        "reason": "avoid_long",
+        "features": {
+          "long_trip": 1.0,
+          "leaves_zone": 1.0,
+          "home_ward": 0.0,
+          "surge": 0.0,
+          "pay": 1.5,
+          "after_deadline": 0.0,
+          "congestion": 0.0,
+          "menu_long_trip": 0.0,
+          "menu_leaves_zone": 0.0,
+          "menu_home_ward": 0.0,
+          "menu_surge": 0.0,
+          "menu_pay": 1.5
+        },
+        "likelihood": 0.015485307099472078
+      },
+      {
+        "type_index": 3,
+        "theta": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "action": 2,
+        "reason": "avoid_long",
+        "features": {
+          "long_trip": 1.0,
+          "leaves_zone": 1.0,
+          "home_ward": 0.0,
+          "surge": 0.0,
+          "pay": 1.5,
+          "after_deadline": 0.0,
+          "congestion": 0.0,
+          "menu_long_trip": 0.0,
+          "menu_leaves_zone": 0.0,
+          "menu_home_ward": 0.0,
+          "menu_surge": 0.0,
+          "menu_pay": 1.5
+        },
+        "likelihood": 0.0766294777225703
+      },
+      {
+        "type_index": 4,
+        "theta": [
+          0,
+          1,
+          0,
+          0
+        ],
+        "action": 2,
+        "reason": "avoid_long",
+        "features": {
+          "long_trip": 1.0,
+          "leaves_zone": 1.0,
+          "home_ward": 0.0,
+          "surge": 0.0,
+          "pay": 1.5,
+          "after_deadline": 0.0,
+          "congestion": 0.0,
+          "menu_long_trip": 0.0,
+          "menu_leaves_zone": 0.0,
+          "menu_home_ward": 0.0,
+          "menu_surge": 0.0,
+          "menu_pay": 1.5
+        },
+        "likelihood": 0.02773434980392664
+      }
+    ]
+  }
+}

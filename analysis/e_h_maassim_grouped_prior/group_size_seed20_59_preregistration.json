@@ -1,0 +1,39 @@
+{
+  "registered_date": "2026-07-28",
+  "status": "frozen_before_g2_outcome_evaluation",
+  "experiment": "E-H group-size confirmatory control",
+  "seed_start": 20,
+  "seed_end": 59,
+  "seed_count": 40,
+  "configuration": {
+    "rho": [0.0, 1.0],
+    "group_sizes": [2, 4],
+    "n": 8,
+    "m": 2,
+    "K": 20,
+    "lambda": 0.0,
+    "likelihood_mode": "deterministic-rule",
+    "common_random_numbers": true,
+    "n_llm_calls": 0
+  },
+  "primary_endpoint": "paired difference across group sizes: (HARP minus Joint regret at g=4) minus (HARP minus Joint regret at g=2), evaluated at rho=1",
+  "primary_prediction": "the HARP-minus-Joint gap increases from g=2 to g=4",
+  "primary_confirmation_rule": "paired mean > 0 and two-sided 95% Student-t confidence interval lower bound > 0",
+  "confidence_interval": {
+    "degrees_of_freedom": 39,
+    "two_sided_t_critical_95": 2.02269092
+  },
+  "relative_effect_definition": "100 * (mean HARP oracle regret - mean Joint oracle regret) / mean HARP oracle regret",
+  "relative_effect_zero_denominator_policy": "aggregate means are divided; no per-seed regret ratios are formed",
+  "hard_correctness_gates": {
+    "rho0_joint_harp_trajectory_mismatches": 0,
+    "rho1_joint_harp_s_trajectory_mismatches": 0,
+    "deterministic_joint_true_profile_mass_decreases": 0
+  },
+  "analysis_policy": {
+    "g4_seed20_59_result_is_frozen_before_g2_run": true,
+    "no_parameter_tuning": true,
+    "no_additional_group_sizes": true,
+    "no_paper_result_claim_before_g2_completion": true
+  }
+}

@@ -1,0 +1,814 @@
+[
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.3799703519263429,
+          0.4247935347344214,
+          0.42989452255566496
+        ],
+        "welfare": 1.2346584092164292,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 67,
+        "contributions": [
+          0.5,
+          0.75,
+          0.5
+        ],
+        "rewards": [
+          0.39940269254694066,
+          0.3797715139699011,
+          0.4449272458090436
+        ],
+        "welfare": 1.2241014523258853,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom0",
+    "seed_index": 1,
+    "seed": 1,
+    "true_types": [
+      1,
+      2,
+      3
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.46568438647612487,
+          0.4247935347344214,
+          0.350502484449798
+        ],
+        "welfare": 1.2409804056603442,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.46568438647612487,
+          0.4247935347344214,
+          0.350502484449798
+        ],
+        "welfare": 1.2409804056603442,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 0,
+              "predicted_others": [],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.41951888308912694,
+          0.49839731641593527,
+          0.48667817992069956
+        ],
+        "welfare": 1.4045943794257618,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.41951888308912694,
+          0.49839731641593527,
+          0.48667817992069956
+        ],
+        "welfare": 1.4045943794257618,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom1",
+    "seed_index": 1,
+    "seed": 1,
+    "true_types": [
+      1,
+      2,
+      3
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.5992998811908604,
+          0.49839731641593527,
+          0.4062509760345723
+        ],
+        "welfare": 1.503948173641368,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.5420929133709445,
+          0.4721447601910988,
+          0.35086818302456874
+        ],
+        "welfare": 1.365105856586612,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 1,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.41951888308912694,
+          0.49839731641593527,
+          0.48667817992069956
+        ],
+        "welfare": 1.4045943794257618,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.41951888308912694,
+          0.49839731641593527,
+          0.48667817992069956
+        ],
+        "welfare": 1.4045943794257618,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "atom_tom2",
+    "seed_index": 1,
+    "seed": 1,
+    "true_types": [
+      1,
+      2,
+      3
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 93,
+        "contributions": [
+          0.75,
+          0.75,
+          0.75
+        ],
+        "rewards": [
+          0.5992998811908604,
+          0.49839731641593527,
+          0.4062509760345723
+        ],
+        "welfare": 1.503948173641368,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 0,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.5,
+                0.5
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 88,
+        "contributions": [
+          0.75,
+          0.5,
+          0.75
+        ],
+        "rewards": [
+          0.5420929133709445,
+          0.4721447601910988,
+          0.35086818302456874
+        ],
+        "welfare": 1.365105856586612,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "A-ToM",
+          "round": 1,
+          "players": [
+            {
+              "player": 0,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 1,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            },
+            {
+              "player": 2,
+              "tom_level": 2,
+              "predicted_others": [
+                0.75,
+                0.75
+              ],
+              "parsed": {
+                "offline": true
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 0,
+    "seed": 0,
+    "true_types": [
+      3,
+      2,
+      2
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.3799703519263429,
+          0.4247935347344214,
+          0.42989452255566496
+        ],
+        "welfare": 1.2346584092164292,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 0
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.3799703519263429,
+          0.4247935347344214,
+          0.42989452255566496
+        ],
+        "welfare": 1.2346584092164292,
+        "oracle_welfare": 1.4764120481708047,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 1
+        }
+      }
+    ]
+  },
+  {
+    "algorithm": "econ_bne",
+    "seed_index": 1,
+    "seed": 1,
+    "true_types": [
+      1,
+      2,
+      3
+    ],
+    "initial_state_id": "fixed_hp_spgg_initial_state",
+    "trace": [
+      {
+        "round": 0,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.46568438647612487,
+          0.4247935347344214,
+          0.350502484449798
+        ],
+        "welfare": 1.2409804056603442,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 0
+        }
+      },
+      {
+        "round": 1,
+        "profile_index": 62,
+        "contributions": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "rewards": [
+          0.46568438647612487,
+          0.4247935347344214,
+          0.350502484449798
+        ],
+        "welfare": 1.2409804056603442,
+        "oracle_welfare": 1.5879641298362208,
+        "info": {
+          "family": "ECON",
+          "offline": true,
+          "round": 1
+        }
+      }
+    ]
+  }
+]

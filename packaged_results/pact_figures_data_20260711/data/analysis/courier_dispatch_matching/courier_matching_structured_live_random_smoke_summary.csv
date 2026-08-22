@@ -1,0 +1,2 @@
+model,method,episodes,final_mean_cumulative_reward,final_mean_cumulative_regret,final_mean_cumulative_exploration_cost,final_mean_true_tuple_posterior,final_mean_rule_marginal_accuracy,final_mean_nll_true,live_score_parse_ok_rate,type_readout_parse_rate,type_estimate_flag,mean_llm_assignment_score,mean_structured_assignment_score
+gpt-5.4-mini-20260317,live_random,1,2.031283333333333,1.2258831433626602,1.3068223619007897,0.0625,0.5,2.772588722239781,1.0,1.0,no_type_estimate_floor_by_construction,0.0,0.0

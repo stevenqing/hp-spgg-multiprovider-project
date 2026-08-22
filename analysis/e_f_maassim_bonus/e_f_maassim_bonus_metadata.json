@@ -1,0 +1,18 @@
+{
+  "experiment": "E-F MaaSSim frozen bonus ablation",
+  "status": "complete",
+  "provider_calls": 0,
+  "beta": 0.25,
+  "beta_selection": "frozen from disjoint HP-SPGG selection; no MaaSSim retuning",
+  "states": "same ten saved nearest-policy Persona-v2 replay sequences",
+  "bonus": "posterior-weighted pairwise absolute disagreement in one-step assignment utility",
+  "tie_breaking": "lexicographic deterministic assignment order",
+  "paired_gap": {
+    "seeds": 10,
+    "pact_plus_minus_pact_mean": -0.24699999999999775,
+    "pact_plus_minus_pact_sem": 0.24699999999999775,
+    "ci95_low": -0.8057139999999927,
+    "ci95_high": 0.31171399999999716,
+    "ci_covers_zero": true
+  }
+}

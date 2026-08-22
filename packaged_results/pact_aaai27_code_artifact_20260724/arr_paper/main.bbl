@@ -1,0 +1,307 @@
+\begin{thebibliography}{45}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Abdulhai et~al.(2023)Abdulhai, White, Snell, Sun, Hong, Zhai, Xu, and
+  Levine}]{abdulhai2023lmrl}
+Abdulhai, M.; White, I.; Snell, C.; Sun, C.; Hong, J.; Zhai, Y.; Xu, K.; and
+  Levine, S. 2023.
+\newblock Lmrl gym: Benchmarks for multi-turn reinforcement learning with
+  language models.
+\newblock \emph{arXiv preprint arXiv:2311.18232}.
+
+\bibitem[{Agashe et~al.(2025)Agashe, Fan, Reyna, and Wang}]{agashe2025llm}
+Agashe, S.; Fan, Y.; Reyna, A.; and Wang, X.~E. 2025.
+\newblock Llm-coordination: evaluating and analyzing multi-agent coordination
+  abilities in large language models.
+\newblock In \emph{Findings of the Association for Computational Linguistics:
+  NAACL 2025}, 8038--8057.
+
+\bibitem[{Agrawal and Jia(2017)}]{agrawal2017optimistic}
+Agrawal, S.; and Jia, R. 2017.
+\newblock Optimistic posterior sampling for reinforcement learning: worst-case
+  regret bounds.
+\newblock \emph{Advances in neural information processing systems}, 30.
+
+\bibitem[{Albrecht and Ramamoorthy(2015)}]{albrecht2015game}
+Albrecht, S.~V.; and Ramamoorthy, S. 2015.
+\newblock A game-theoretic model and best-response learning method for ad hoc
+  coordination in multiagent systems.
+\newblock \emph{arXiv preprint arXiv:1506.01170}.
+
+\bibitem[{Albrecht and Ramamoorthy(2019)}]{albrecht2019convergence}
+Albrecht, S.~V.; and Ramamoorthy, S. 2019.
+\newblock On convergence and optimality of best-response learning with policy
+  types in multiagent systems.
+\newblock \emph{arXiv preprint arXiv:1907.06995}.
+
+\bibitem[{Arumugam and Griffiths(2025)}]{arumugam2025toward}
+Arumugam, D.; and Griffiths, T.~L. 2025.
+\newblock Toward efficient exploration by large language model agents.
+\newblock \emph{arXiv preprint arXiv:2504.20997}.
+
+\bibitem[{Auer, Jaksch, and Ortner(2008)}]{auer2008near}
+Auer, P.; Jaksch, T.; and Ortner, R. 2008.
+\newblock Near-optimal regret bounds for reinforcement learning.
+\newblock \emph{Advances in neural information processing systems}, 21.
+
+\bibitem[{Cesa-Bianchi et~al.(1997)Cesa-Bianchi, Freund, Haussler, Helmbold,
+  Schapire, and Warmuth}]{cesa1997use}
+Cesa-Bianchi, N.; Freund, Y.; Haussler, D.; Helmbold, D.~P.; Schapire, R.~E.;
+  and Warmuth, M.~K. 1997.
+\newblock How to use expert advice.
+\newblock \emph{Journal of the ACM (JACM)}, 44(3): 427--485.
+
+\bibitem[{Chen et~al.(2023)Chen, Dong, Shu, Zhang, Sesay, Karlsson, Fu, and
+  Shi}]{chen2023autoagents}
+Chen, G.; Dong, S.; Shu, Y.; Zhang, G.; Sesay, J.; Karlsson, B.~F.; Fu, J.; and
+  Shi, Y. 2023.
+\newblock Autoagents: A framework for automatic agent generation.
+\newblock \emph{arXiv preprint arXiv:2309.17288}.
+
+\bibitem[{Dasgupta et~al.(2025)Dasgupta, Jain, Suggala, Shanmugam, Tambe, and
+  Taneja}]{dasgupta2025bayesian}
+Dasgupta, A.; Jain, G.; Suggala, A.; Shanmugam, K.; Tambe, M.; and Taneja, A.
+  2025.
+\newblock Bayesian Collaborative Bandits with Thompson Sampling for Improved
+  Outreach in Maternal Health.
+\newblock In \emph{Proceedings of the 24th International Conference on
+  Autonomous Agents and Multiagent Systems}, 547--555.
+
+\bibitem[{Erez et~al.(2023)Erez, Lancewicki, Sherman, Koren, and
+  Mansour}]{erez2023regret}
+Erez, L.; Lancewicki, T.; Sherman, U.; Koren, T.; and Mansour, Y. 2023.
+\newblock Regret minimization and convergence to equilibria in general-sum
+  markov games.
+\newblock In \emph{International Conference on Machine Learning}, 9343--9373.
+  PMLR.
+
+\bibitem[{(FAIR)† et~al.(2022)(FAIR)†, Bakhtin, Brown, Dinan, Farina,
+  Flaherty, Fried, Goff, Gray, Hu et~al.}]{meta2022human}
+(FAIR)†, M. F. A. R. D.~T.; Bakhtin, A.; Brown, N.; Dinan, E.; Farina, G.;
+  Flaherty, C.; Fried, D.; Goff, A.; Gray, J.; Hu, H.; et~al. 2022.
+\newblock Human-level play in the game of diplomacy by combining language
+  models with strategic reasoning.
+\newblock \emph{Science}, 378(6624): 1067--1074.
+
+\bibitem[{Fischbacher, G{\"a}chter, and Fehr(2001)}]{fischbacher2001people}
+Fischbacher, U.; G{\"a}chter, S.; and Fehr, E. 2001.
+\newblock Are people conditionally cooperative? Evidence from a public goods
+  experiment.
+\newblock \emph{Economics letters}, 71(3): 397--404.
+
+\bibitem[{Ghosal and Van~der Vaart(2017)}]{ghosal2017fundamentals}
+Ghosal, S.; and Van~der Vaart, A.~W. 2017.
+\newblock \emph{Fundamentals of nonparametric Bayesian inference}, volume~44.
+\newblock Cambridge University Press.
+
+\bibitem[{Gmytrasiewicz and Doshi(2005)}]{gmytrasiewicz2005framework}
+Gmytrasiewicz, P.~J.; and Doshi, P. 2005.
+\newblock A framework for sequential planning in multi-agent settings.
+\newblock \emph{Journal of Artificial Intelligence Research}, 24: 49--79.
+
+\bibitem[{Hong et~al.(2024)Hong, Zhuge, Chen, Zheng, Cheng, Wang, Zhang, Yau,
+  Lin, Zhou et~al.}]{hong2024metagpt}
+Hong, S.; Zhuge, M.; Chen, J.; Zheng, X.; Cheng, Y.; Wang, J.; Zhang, C.; Yau,
+  S.; Lin, Z.; Zhou, L.; et~al. 2024.
+\newblock MetaGPT: Meta programming for a multi-agent collaborative framework.
+\newblock In \emph{International Conference on Learning Representations},
+  volume 2024, 23247--23275.
+
+\bibitem[{Jahromi, Jain, and Nayyar(2024)}]{jahromi2024bayesian}
+Jahromi, M.~J.; Jain, R.~A.; and Nayyar, A. 2024.
+\newblock A bayesian learning algorithm for unknown zero-sum stochastic games
+  with an arbitrary opponent.
+\newblock In \emph{International Conference on Artificial Intelligence and
+  Statistics}, 3880--3888. PMLR.
+
+\bibitem[{Jin et~al.(2024)Jin, Liu, Wang, and Yu}]{jin2024v}
+Jin, C.; Liu, Q.; Wang, Y.; and Yu, T. 2024.
+\newblock V-learning—a simple, efficient, decentralized algorithm for
+  multiagent reinforcement learning.
+\newblock \emph{Mathematics of Operations Research}, 49(4): 2295--2322.
+
+\bibitem[{Kucharski and Cats(2022)}]{kucharski2022simulating}
+Kucharski, R.; and Cats, O. 2022.
+\newblock Simulating two-sided mobility platforms with MaaSSim.
+\newblock \emph{Plos one}, 17(6): e0269682.
+
+\bibitem[{Kwon et~al.(2021)Kwon, Efroni, Caramanis, and Mannor}]{kwon2021rl}
+Kwon, J.; Efroni, Y.; Caramanis, C.; and Mannor, S. 2021.
+\newblock Rl for latent mdps: Regret guarantees and a lower bound.
+\newblock \emph{Advances in Neural Information Processing Systems}, 34:
+  24523--24534.
+
+\bibitem[{Lanctot et~al.(2017)Lanctot, Zambaldi, Gruslys, Lazaridou, Tuyls,
+  P{\'e}rolat, Silver, and Graepel}]{lanctot2017unified}
+Lanctot, M.; Zambaldi, V.; Gruslys, A.; Lazaridou, A.; Tuyls, K.; P{\'e}rolat,
+  J.; Silver, D.; and Graepel, T. 2017.
+\newblock A unified game-theoretic approach to multiagent reinforcement
+  learning.
+\newblock \emph{Advances in neural information processing systems}, 30.
+
+\bibitem[{Li et~al.(2023)Li, Hammoud, Itani, Khizbullin, and
+  Ghanem}]{li2023camel}
+Li, G.; Hammoud, H.; Itani, H.; Khizbullin, D.; and Ghanem, B. 2023.
+\newblock Camel: Communicative agents for" mind" exploration of large language
+  model society.
+\newblock \emph{Advances in neural information processing systems}, 36:
+  51991--52008.
+
+\bibitem[{Mao and Ba{\c{s}}ar(2023)}]{mao2023provably}
+Mao, W.; and Ba{\c{s}}ar, T. 2023.
+\newblock Provably efficient reinforcement learning in decentralized
+  general-sum markov games.
+\newblock \emph{Dynamic Games and Applications}, 13(1): 165--186.
+
+\bibitem[{Marris et~al.(2021)Marris, Muller, Lanctot, Tuyls, and
+  Graepel}]{marris2021multi}
+Marris, L.; Muller, P.; Lanctot, M.; Tuyls, K.; and Graepel, T. 2021.
+\newblock Multi-agent training beyond zero-sum with correlated equilibrium
+  meta-solvers.
+\newblock In \emph{International Conference on Machine Learning}, 7480--7491.
+  PMLR.
+
+\bibitem[{Mu et~al.(2026)Mu, Zeng, Zhang, Shao, Chu, Guo, Jia, Wang, and
+  Hu}]{mu2026adaptive}
+Mu, C.; Zeng, Y.; Zhang, Q.; Shao, K.; Chu, C.; Guo, H.; Jia, D.; Wang, Z.; and
+  Hu, S. 2026.
+\newblock Adaptive Theory of Mind for LLM-based Multi-Agent Coordination.
+\newblock In \emph{Proceedings of the AAAI Conference on Artificial
+  Intelligence}, volume~40, 29608--29616.
+
+\bibitem[{Muller et~al.(2019)Muller, Omidshafiei, Rowland, Tuyls, Perolat, Liu,
+  Hennes, Marris, Lanctot, Hughes et~al.}]{muller2019generalized}
+Muller, P.; Omidshafiei, S.; Rowland, M.; Tuyls, K.; Perolat, J.; Liu, S.;
+  Hennes, D.; Marris, L.; Lanctot, M.; Hughes, E.; et~al. 2019.
+\newblock A generalized training approach for multiagent learning.
+\newblock \emph{arXiv preprint arXiv:1909.12823}.
+
+\bibitem[{Mutti et~al.(2024)Mutti, De~Santi, Restelli, Marx, and
+  Ramponi}]{mutti2024exploiting}
+Mutti, M.; De~Santi, R.; Restelli, M.; Marx, A.; and Ramponi, G. 2024.
+\newblock Exploiting causal graph priors with posterior sampling for
+  reinforcement learning.
+\newblock In \emph{International Conference on Learning Representations},
+  volume 2024, 10592--10624.
+
+\bibitem[{Nguyen-Tang and Arora(2024)}]{nguyen2024learning}
+Nguyen-Tang, T.; and Arora, R. 2024.
+\newblock Learning in markov games with adaptive adversaries: Policy regret,
+  fundamental barriers, and efficient algorithms.
+\newblock \emph{Advances in Neural Information Processing Systems}, 37:
+  56268--56303.
+
+\bibitem[{Osband, Russo, and Van~Roy(2013)}]{osband2013more}
+Osband, I.; Russo, D.; and Van~Roy, B. 2013.
+\newblock (More) efficient reinforcement learning via posterior sampling.
+\newblock \emph{Advances in Neural Information Processing Systems}, 26.
+
+\bibitem[{Osband and Van~Roy(2017)}]{osband2017posterior}
+Osband, I.; and Van~Roy, B. 2017.
+\newblock Why is posterior sampling better than optimism for reinforcement
+  learning?
+\newblock In \emph{International conference on machine learning}, 2701--2710.
+  PMLR.
+
+\bibitem[{Ouyang et~al.(2017)Ouyang, Gagrani, Nayyar, and
+  Jain}]{ouyang2017learning}
+Ouyang, Y.; Gagrani, M.; Nayyar, A.; and Jain, R. 2017.
+\newblock Learning unknown markov decision processes: A thompson sampling
+  approach.
+\newblock \emph{Advances in neural information processing systems}, 30.
+
+\bibitem[{Park et~al.(2024)Park, Liu, Ozdaglar, and Zhang}]{park2024llm}
+Park, C.; Liu, X.; Ozdaglar, A.; and Zhang, K. 2024.
+\newblock Do llm agents have regret? a case study in online learning and games.
+\newblock \emph{arXiv preprint arXiv:2403.16843}.
+
+\bibitem[{Park et~al.(2023)Park, O'Brien, Cai, Morris, Liang, and
+  Bernstein}]{park2023generative}
+Park, J.~S.; O'Brien, J.; Cai, C.~J.; Morris, M.~R.; Liang, P.; and Bernstein,
+  M.~S. 2023.
+\newblock Generative agents: Interactive simulacra of human behavior.
+\newblock In \emph{Proceedings of the 36th annual acm symposium on user
+  interface software and technology}, 1--22.
+
+\bibitem[{Russo and Van~Roy(2014)}]{russo2014learning}
+Russo, D.; and Van~Roy, B. 2014.
+\newblock Learning to optimize via posterior sampling.
+\newblock \emph{Mathematics of Operations Research}, 39(4): 1221--1243.
+
+\bibitem[{Russo and Van~Roy(2016)}]{russo2016information}
+Russo, D.; and Van~Roy, B. 2016.
+\newblock An information-theoretic analysis of thompson sampling.
+\newblock \emph{Journal of Machine Learning Research}, 17(68): 1--30.
+
+\bibitem[{Smith et~al.(2026)Smith, Abdulhai, Diaz, Tesic, Trivedi, Vezhnevets,
+  Hammond, Clifton, Chang, Duenez-Guzman et~al.}]{smith2026evaluating}
+Smith, C.; Abdulhai, M.; Diaz, M.; Tesic, M.; Trivedi, R.; Vezhnevets, S.;
+  Hammond, L.; Clifton, J.; Chang, M.; Duenez-Guzman, E.; et~al. 2026.
+\newblock Evaluating generalization capabilities of LLM-based agents in
+  mixed-motive scenarios using concordia.
+\newblock \emph{Advances in neural information processing systems}, 38.
+
+\bibitem[{Song, Mei, and Bai(2021)}]{song2021can}
+Song, Z.; Mei, S.; and Bai, Y. 2021.
+\newblock When can we learn general-sum Markov games with a large number of
+  players sample-efficiently?
+\newblock \emph{arXiv preprint arXiv:2110.04184}.
+
+\bibitem[{Strens(2000)}]{strens2000bayesian}
+Strens, M. 2000.
+\newblock A Bayesian framework for reinforcement learning.
+\newblock In \emph{ICML}, volume 2000, 943--950.
+
+\bibitem[{Vezhnevets et~al.(2023)Vezhnevets, Agapiou, Aharon, Ziv, Matyas,
+  Du{\'e}{\~n}ez-Guzm{\'a}n, Cunningham, Osindero, Karmon, and
+  Leibo}]{vezhnevets2023generative}
+Vezhnevets, A.~S.; Agapiou, J.~P.; Aharon, A.; Ziv, R.; Matyas, J.;
+  Du{\'e}{\~n}ez-Guzm{\'a}n, E.~A.; Cunningham, W.~A.; Osindero, S.; Karmon,
+  D.; and Leibo, J.~Z. 2023.
+\newblock Generative agent-based modeling with actions grounded in physical,
+  social, or digital space using Concordia.
+\newblock \emph{arXiv preprint arXiv:2312.03664}.
+
+\bibitem[{Weissman et~al.(2003)Weissman, Ordentlich, Seroussi, Verdu, and
+  Weinberger}]{weissman2003inequalities}
+Weissman, T.; Ordentlich, E.; Seroussi, G.; Verdu, S.; and Weinberger, M.~J.
+  2003.
+\newblock Inequalities for the l1 deviation of the empirical distribution.
+\newblock \emph{Hewlett-Packard Labs, Tech. Rep}, 125.
+
+\bibitem[{Wu et~al.(2023)Wu, Bansal, Zhang, Wu, Zhang, Zhu, Li, Jiang, Zhang,
+  and Wang}]{wu2023autogen}
+Wu, Q.; Bansal, G.; Zhang, J.; Wu, Y.; Zhang, S.; Zhu, E.; Li, B.; Jiang, L.;
+  Zhang, X.; and Wang, C. 2023.
+\newblock Autogen: Enabling next-gen llm applications via multi-agent
+  conversation framework.
+\newblock \emph{arXiv preprint arXiv:2308.08155}, 3(4).
+
+\bibitem[{Xiong et~al.(2022)Xiong, Zhong, Shi, Shen, and Zhang}]{xiong2022self}
+Xiong, W.; Zhong, H.; Shi, C.; Shen, C.; and Zhang, T. 2022.
+\newblock A self-play posterior sampling algorithm for zero-sum markov games.
+\newblock In \emph{International Conference on Machine Learning}, 24496--24523.
+  PMLR.
+
+\bibitem[{Yang et~al.(2025)Yang, Dai, Xiao, and Chi}]{yang2025incentivize}
+Yang, T.; Dai, B.; Xiao, L.; and Chi, Y. 2025.
+\newblock Incentivize without bonus: Provably efficient model-based online
+  multi-agent RL for Markov games.
+\newblock \emph{arXiv preprint arXiv:2502.09780}.
+
+\bibitem[{Yi et~al.(2025)Yi, Zhou, Cao, Niu, Liu, and Han}]{yi2025debate}
+Yi, X.; Zhou, Z.; Cao, C.; Niu, Q.; Liu, T.; and Han, B. 2025.
+\newblock From debate to equilibrium: Belief-driven multi-agent llm reasoning
+  via bayesian nash equilibrium.
+\newblock \emph{arXiv preprint arXiv:2506.08292}.
+
+\bibitem[{Zhou et~al.(2024)Zhou, Zhu, Mathur, Zhang, Yu, Qi, Morency, Bisk,
+  Fried, Neubig et~al.}]{zhou2024sotopia}
+Zhou, X.; Zhu, H.; Mathur, L.; Zhang, R.; Yu, H.; Qi, Z.; Morency, L.-P.; Bisk,
+  Y.; Fried, D.; Neubig, G.; et~al. 2024.
+\newblock Sotopia: Interactive evaluation for social intelligence in language
+  agents.
+\newblock In \emph{International Conference on Learning Representations},
+  volume 2024, 40975--41019.
+
+\end{thebibliography}

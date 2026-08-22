@@ -1,0 +1,35 @@
+{
+  "experiment": "E-D true reward-locality violation",
+  "episodes": 100,
+  "seeds": 10,
+  "seed_offset": 40000,
+  "alphas": [
+    0.0,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0
+  ],
+  "sigma": 0.08,
+  "action_values": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "beta": null,
+  "coupling": "(agent0_local_reward - alpha * agent1_local_reward + alpha) / (1 + alpha)",
+  "reward_range_preserved": true,
+  "planner": "exact exhaustive joint-action argmax",
+  "provenance": {
+    "analytic-mixed": {
+      "source": "analytic build_reward_tensor",
+      "backend": "mixed",
+      "seed": 19
+    },
+    "DeepSeek-V3.2-live": {
+      "source": "analysis\\e_d_reward_locality_violation\\deepseek_live_3action_full.npy",
+      "backend": "cloudgpt_live"
+    }
+  }
+}

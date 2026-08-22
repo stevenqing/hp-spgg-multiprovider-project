@@ -1,0 +1,4 @@
+scenario_id,scenario,description,llm_pact_utility,llm_pact_utility_sem,llm_pact_driver_rejects,best_prompt_policy,best_prompt_label,best_prompt_utility,best_prompt_utility_sem,best_prompt_driver_rejects,utility_gap,driver_reject_gap,oracle_utility
+stress_p5,Reject-stress,Driver reject penalty 5.0; conflict strength lambda=0,18.366000000000003,10.116756199493988,4.2,llm_psrl,LLM-PSRL,13.766,11.135665045249882,5.0,4.600000000000003,0.7999999999999998,36.444
+conflict_mid_p5,Mid-conflict,Driver reject penalty 5.0; conflict strength lambda=0.5,8.956,5.472129018946831,3.2,puppeteer,Puppeteer,-20.857999999999997,9.863036753454788,9.8,29.813999999999997,6.6000000000000005,30.698
+conflict_p5,Full-conflict,Driver reject penalty 5.0; conflict strength lambda=1,8.786,4.844574903951842,3.2,llm_belief,LLM-belief,-30.9,4.199757135835356,10.8,39.686,7.6000000000000005,22.439999999999998
